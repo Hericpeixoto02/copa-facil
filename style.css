@@ -527,7 +527,7 @@ td.checkbox-cell {
 .tabela-tecnico td {
     border: 1px solid #000;
     /* Diminuímos a altura para alinhar com o bloco lateral */
-    height: 17.4px; 
+    height: 17px; 
     /* Padding mínimo para o texto não encostar nas bordas */
     padding: 0 5px; 
     /* Garante que o texto fique centralizado verticalmente na linha menor */
@@ -653,7 +653,7 @@ td.col-texto-largo {
 @media print {
     .faltas-topo, .faltas-label {
         background-color: #ededed !important;
-        -webkit-print-color-adjust: exact;
+        
     }
 }
 
@@ -806,111 +806,193 @@ td#t1_ver_4 {
     font-weight:600 !important;
     font-size:12px;
     background-color: #fff !Important;
+    margin-left: 4px;
 }
 
 .gol span#t1_gol_n_1{
     font-weight:600 !important;
     font-size:12px;
     background-color: #fff !Important;
+    margin-left: 4px;
 }
 
 .gol span#t1_gol_n_2{
     font-weight:600 !important;
     font-size:12px;
     background-color: #fff !Important;
+    margin-left: 4px;
 }
 
 .gol span#t1_gol_n_3{
     font-weight:600 !important;
     font-size:12px;
     background-color: #fff !Important;
+    margin-left: 4px;
 }
 
 .gol span#t1_gol_n_4{
     font-weight:600 !important;
     font-size:12px;
     background-color: #fff !Important;
+    margin-left: 4px;
 }
 
 .gol span#t1_gol_n_5{
     font-weight:600 !important;
     font-size:12px;
     background-color: #fff !Important;
+    margin-left: 4px;
 }
 
 .gol span#t1_gol_n_6{
     font-weight:600 !important;
     font-size:12px;
     background-color: #fff !Important;
+    margin-left: 4px;
 }
 
 .gol span#t1_gol_n_7{
     font-weight:600 !important;
     font-size:12px;
     background-color: #fff !Important;
+    margin-left: 4px;
 }
 
 .gol span#t1_gol_n_8{
     font-weight:600 !important;
     font-size:12px;
     background-color: #fff !Important;
+    margin-left: 4px;
 }
 
 .gol span#t1_gol_n_9{
     font-weight:600 !important;
     font-size:12px;
     background-color: #fff !Important;
+    margin-left: 4px;
 }
 
 .gol span#t1_gol_n_10{
     font-weight:600 !important;
     font-size:12px;
     background-color: #fff !Important;
+    margin-left: 4px;
 }
 
 .gol span#t1_gol_n_11{
     font-weight:600 !important;
     font-size:12px;
     background-color: #fff !Important;
+    margin-left: 4px;
 }
 
 .gol span#t1_gol_n_12{
     font-weight:600 !important;
     font-size:12px;
     background-color: #fff !Important;
+    margin-left: 4px;
 }
 .gol span#t1_gol_n_13{
     font-weight:600 !important;
     font-size:12px;
     background-color: #fff !Important;
+    margin-left: 4px;
 }
-
-
-
-
-
-
-
 .gol span#t2_gol_n_0{
     font-weight:600 !important;
     font-size:12px;
     background-color: #fff !Important;
+    margin-left: 4px;
 }
 
 .gol span#t2_gol_n_1{
     font-weight:600 !important;
     font-size:12px;
     background-color: #fff !Important;
+    margin-left: 4px;
 }
 
 .gol span#t2_gol_n_2{
     font-weight:600 !important;
     font-size:12px;
     background-color: #fff !Important;
+    margin-left: 4px;
 }
 
 .gol span#t2_gol_n_3{
     font-weight:600 !important;
     font-size:12px;
     background-color: #fff !Important;
+    margin-left: 4px;
+}
+
+
+/* Container que trava o tamanho da folha A4 */
+.pagina-sumula {
+    width: 190mm; /* Reduzimos de 210mm para 190mm para dar margem de respiro */
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+    box-sizing: border-box; /* Garante que padding/border não aumentem a largura */
+    overflow: hidden; /* Evita que qualquer elemento "vaze" para os lados */
+}
+
+/* Força as tabelas a respeitarem o espaço interno */
+.lista-jogadores table {
+    width: 100%;
+    table-layout: fixed; /* ESSENCIAL: Impede que o nome do jogador estique a tabela */
+    border-collapse: collapse;
+}
+
+@media print {
+    /* Remove cabeçalhos e rodapés automáticos do navegador (data, título, etc) */
+    @page {
+        margin: 5mm; /* Margem física pequena para a impressora não cortar */
+        size: A4 portrait;
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+        
+    }
+
+    /* Reduz o container principal para garantir que as assinaturas subam */
+    .pagina-sumula {
+        width: 100%;
+        height: 285mm !important; /* Altura um pouco menor que o A4 (297mm) para segurança */
+        margin: 0;
+        padding: 0;
+        overflow: hidden; /* Garante que nada ultrapasse o limite */
+    }
+
+    /* Ajuste fino para as tabelas não ficarem muito largas e não empurrarem o fundo */
+    table {
+        page-break-inside: avoid;
+    }
+    
+    /* Força o rodapé/assinaturas a ficarem no final da página atual */
+    .rodape-assinaturas {
+        position: absolute;
+        bottom: 5mm;
+        width: 100%;
+    }
+}
+
+/* Ajuste preventivo para as tabelas de 20 jogadores */
+.tabela-compacta td {
+    height: 15px !important; /* Redução extra para dar espaço ao rodapé */
+}
+
+
+td {
+    font-weight:bold;
+    
+}
+
+/* Estilo para jogador suspenso */
+.jogador-suspenso {
+    text-decoration: line-through;
+    color: #777; /* Deixa o nome um pouco mais claro para dar destaque ao risco */
+    font-style: italic;
 }
