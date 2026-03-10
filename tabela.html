@@ -448,7 +448,7 @@
         "place": "GINASIO UEPA"
     },
     "config":{
-        "player_length": 15
+        "player_length": 20
     },
     "team_1": {
         "name": "RESENHA ",
@@ -959,13 +959,9 @@ document.addEventListener("DOMContentLoaded", function() {
         set('general_date', d.general.date);
     }
 
-    // 2. FILTRO DE JOGADORES E CONFIGURAÇÃO DE LINHAS
-    const jogadoresReaisT1 = d.team_1.player ? d.team_1.player.filter(p => p.name && p.name.trim() !== "") : [];
-    const jogadoresReaisT2 = d.team_2.player ? d.team_2.player.filter(p => p.name && p.name.trim() !== "") : [];
-    const minConfig = (d.config && d.config.player_length) ? parseInt(d.config.player_length) : 15;
-    
-    let totalExibir = Math.max(jogadoresReaisT1.length, jogadoresReaisT2.length, minConfig);
-    if (totalExibir > 20) totalExibir = 20;
+    // 2. TRAVA ABSOLUTA DE LINHAS
+    let limiteExibicao = (d.config && d.config.player_length) ? parseInt(d.config.player_length) : 15;
+    if (limiteExibicao > 20) limiteExibicao = 20; // Segurança A4
 
     // 3. FUNÇÃO PARA MONTAR AS TABELAS
     function montarTabela(timeData, idTbody) {
@@ -974,23 +970,24 @@ document.addEventListener("DOMContentLoaded", function() {
         tbody.innerHTML = ''; 
 
         const tabela = tbody.closest('table');
-        if (totalExibir > 15) {
+        if (limiteExibicao > 15) {
             tabela.classList.add('tabela-compacta');
         } else {
             tabela.classList.remove('tabela-compacta');
         }
 
-        for (let i = 0; i < totalExibir; i++) {
+        for (let i = 0; i < limiteExibicao; i++) {
             const p = (timeData.player && timeData.player[i]) ? timeData.player[i] : null;
             
-            // Lógica de Suspensão (Riscado)
-            const estiloSuspenso = (p && p.supend === true) ? 'style="text-decoration: line-through; color: #777;"' : '';
+            // Riscado se suspenso
+            const suspenso = (p && p.supend === true) ? 'style="text-decoration: line-through; color: #777;"' : '';
+            const nomeExibir = (p && p.name) ? p.name : "";
 
             const tr = document.createElement('tr');
             tr.innerHTML = `
                 <td>
                     <span class="numero-jogador" style="border-right: 1px solid #000; padding-right: 5px; margin-right: 5px; display: inline-block; width: 22px; text-align: center;">${i + 1}</span>
-                    <strong ${estiloSuspenso} class="nome-atleta">${(p && p.name) ? p.name : ""}</strong>
+                    <strong ${suspenso} class="nome-atleta">${nomeExibir}</strong>
                 </td>
                 <td></td>
                 <td style="text-align: center;">
@@ -1008,7 +1005,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function preencherGols(timeData, prefixo) {
         if (!timeData.goals) return;
         timeData.goals.forEach((gol, i) => {
-            set(`${prefixo}_gol_n_${i}`, ` ${gol.n || 'X'}`);
+            set(`${prefixo}_gol_n_${i}`, ` ${gol.n || ''}`);
             set(`${prefixo}_gol_min_${i}`, String(gol.minutes || 0).padStart(2, '0'));
             set(`${prefixo}_gol_seg_${i}`, String(gol.seconds || 0).padStart(2, '0'));
         });
