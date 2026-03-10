@@ -1,204 +1,393 @@
-/* RESET E CONFIGURAÇÃO A4 */
-* { box-sizing: border-box; font-family: 'Arial Narrow', Arial, sans-serif; margin: 0; padding: 0; }
+/* Reset Global */
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
 
-body { background: #555; display: flex; justify-content: center; padding: 20px; }
+body { background: #e0e0e0; display: flex; justify-content: center; padding: 20px; }
 
-.a4-landscape {
-    width: 297mm;
-    height: 210mm;
+.a4-container {
     background: #fff;
+    width: 297mm; 
+    height: 280mm;
     padding: 10mm;
-    border: 1px solid #000;
-    position: relative;
-    overflow: hidden;
-}
-
-/* HEADER */
-.header-principal { text-align: center; margin-bottom: 10px; border-bottom: 2px solid #000; padding-bottom: 5px; }
-.titulo-sumula { font-size: 24px; font-weight: bold; margin-bottom: 5px; }
-.logo-sumula { position: absolute; right: 40px; top: 30px; }
-.logo-sumula img { width: 60px; }
-
-.placar-topo { display: flex; justify-content: center; align-items: center; gap: 8px; }
-.time-label { border: 1px solid #000; padding: 4px 15px; min-width: 300px; font-weight: bold; font-size: 13px; text-transform: uppercase; }
-.box-score { width: 45px; height: 35px; border: 1px solid #000; }
-.vs { font-weight: bold; font-size: 18px; }
-
-/* LAYOUT GRID */
-.layout-conteudo { display: grid; grid-template-columns: 1fr 220px; gap: 10px; }
-
-/* TABELAS JOGADORES */
-.info-superior { display: flex; justify-content: space-between; font-size: 11px; margin-bottom: 2px; }
-.tabela-flex { display: flex; gap: 0; align-items: stretch; }
-
-.tab-jogadores { border-collapse: collapse; flex-grow: 1; }
-.tab-jogadores th, .tab-jogadores td { border: 1px solid #000; font-size: 10px; height: 21px; padding: 0 5px; }
-.bg-preto { background: #000; color: #fff; text-align: center; }
-.linha-assinatura { font-weight: bold; padding: 5px; height: 35px !important; vertical-align: top; }
-
-/* COLUNA DE GOLS*/
-.coluna-gols { width: 150px;
-     border: 1px solid #000; 
-     border-left: none; 
-     display: flex; 
-     flex-direction: column;
-     }
-.gols-header { 
-    background: #000; 
-    color: #fff; 
-    text-align: center; 
-    font-size: 11px; 
-    padding: 2px; 
-    font-weight: bold; 
-    }
-
-.gols-container { 
-    flex-grow: 1; 
-    display: flex; 
+    border: 1px solid #999;
+    
     flex-direction: column;
- }
-.gol-row { 
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    height: 21px; 
-    border-bottom: 1px solid #000;
- }
-.bg-preto-num { 
-    background: #000;
 }
-.bg-preto-num .n { 
-    color: #fff; 
-    font-weight: bold; 
-    text-align: center; 
-    border-right: 1px solid #fff; 
-    display: flex;
-     align-items: center; 
-     justify-content: center; 
-     font-size: 11px; 
-    }
 
-.row-tracejada { background: #fff; }
-.row-tracejada span { border-right: 2px dotted #000; }
-.row-tracejada span:last-child { border-right: none; }
+/* Cabeçalho */
+.top-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 12px; }
+.spacer { width: 65px; }
+.center-title { flex-grow: 1; text-align: center; }
+.center-title h1 { font-size: 29px; font-weight: normal; margin-bottom: 8px; margin-left: -339px;}
+.score-line { display: flex; justify-content: start; align-items: center; gap: 22px;margin-left: -66px; }
+.team-name-box { border: 2px solid #000; padding: 4px; font-weight: bold; font-size: 15px; width: 309px; text-align: center; }
+.score-box { border: 2px solid #000; width: 64px; height: 34px; }
+.vs-text { font-size: 14px; }
 
-/* BLOCOS VERTICAIS (FALTAS/TEMPO) */
-.coluna-v-info { display: flex; flex-direction: column; width: 60px; border: 1px solid #000; border-left: none; }
-.bloco-v-faltas, .bloco-v-tempo { flex-grow: 1; display: flex; border-bottom: 1px solid #000; }
-.v-text { writing-mode: vertical-rl; transform: rotate(180deg); background: #000; color: #fff; font-size: 9px; text-align: center; padding: 5px 2px; text-transform: uppercase; }
-.v-grid, .v-boxes { flex-grow: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; font-size: 8px; text-align: center; }
-.v-sub { font-size: 7px; background: #eee; text-align: center; width: 100%; border-top: 1px solid #000; }
-.v-boxes div { border-bottom: 1px solid #000; width: 100%; padding: 4px 0; }
+/* Layout Principal */
+.main-layout { display: flex; gap: 35px; flex-grow: 1; }
+.teams-column { flex: 1; display: flex; flex-direction: column; gap: 17px; }
+.info-column { width: 170px; display: flex; flex-direction: column; gap: 10px; margin-right: 127px;}
 
-/* SIDEBAR */
-.tab-lateral { width: 100%; border-collapse: collapse; margin-bottom: 10px; }
-.tab-lateral th, .tab-lateral td { border: 1px solid #000; font-size: 10px; padding: 5px; text-align: center; }
-.bg-x { background: #000; color: #fff; font-weight: bold; }
+/* Wrapper dos Times e Tabelas */
+.team-wrapper { display: flex; gap: 5px; height: 325px; width:841px; }
+.team-table { flex-grow: 1; border-collapse: collapse; table-layout: fixed; width: 100%; }
+.team-table th, .team-table td { border: 2px solid #7c7979; font-size: 11px; padding: 0 4px; height: 21px; }
 
-.box-identificacao, .box-arbitragem { border: 1px solid #000; display: flex; margin-bottom: 10px; }
-.v-tag { writing-mode: vertical-rl; transform: rotate(180deg); background: #000; color: #fff; font-size: 10px; padding: 10px 5px; text-align: center; font-weight: bold; }
-.id-detalhes { padding: 8px; flex-grow: 1; }
-.id-row { font-size: 10px; margin-bottom: 6px; border-bottom: 1px solid #eee; }
-.arb-espaço { flex-grow: 1; height: 150px; }
+.header-white td { height: 22px; }
+.header-black th { background: #000; color: #fff; font-weight: normal; text-align: center; }
 
-/* PRINT CONFIG */
+/* Colunas (Proporções exatas) */
+.col-jog { width: 26%; text-align: left !important; padding-left: 4px !important; }
+.col-n { width: 4%; text-align: center; }
+.col-ini { width: 15%; }
+.col-ama { width: 12%; }
+.col-ver { width: 12%; }
+.col-gol { width: 20%; background: #000 !important; color: #fff !important; }
+
+/* Traços e Bordas Internas */
+.double-right { border-right: 3px double #000 !important; }
+.dashed-right { border-right: 1px dashed #000 !important; }
+/* Container da Célula de Gols */
+.gols-cell { 
+    padding: 0 !important; 
+    vertical-align: top !important; 
+    border: 1px solid #000 !important;
+}
+
+.gols-wrapper { 
+    display: flex !important; 
+    width: 100% !important; 
+    height: 100% !important; 
+}
+
+.gols-col { 
+    flex: 1 !important; 
+    display: flex !important; 
+    flex-direction: column !important; 
+    border-right: 1px solid #000 !important; 
+}
+
+.gols-col:last-child { 
+    border-right: none !important; 
+}
+
+/* Item Individual de Gol */
+.gol-item { 
+    flex: 1 !important; 
+    display: flex !important; 
+    flex-direction: column !important; 
+    border-bottom: 1px solid #000 !important;
+}
+
+.gol-item:last-child { 
+    border-bottom: none !important; 
+}
+
+/* Linha de cima: Quadrado Preto + Espaço Branco */
+.gol-top-row {
+    
+    height: 14px !important; /* Altura do quadrado preto */
+}
+
+.gol-num { 
+    background: #000 !important; 
+    color: #fff !important; 
+    width: 15px !important; 
+    height: 12px !important; 
+    font-size: 8px !important; 
+    text-align: center !important; 
+    line-height: 12px !important; 
+    font-weight: bold !important; 
+    margin-left: 0px;
+    margin-top: -1px;
+}
+
+.gol-space {
+    flex-grow: 1 !important;
+    background: #fff !important;
+    border-bottom: 1px solid #000 !important; /* Linha preta horizontal do original */
+}
+
+/* Linha de baixo: Pontilhados Centrais */
+.gol-dots { 
+    flex-grow: 1 !important;
+    min-height: 8px !important;
+    background-image: linear-gradient(to bottom, #000 30%, rgba(255,255,255,0) 0%) !important;
+    background-position: center !important;
+    background-size: 2px 6px !important; /* Cria o efeito de pontilhado vertical */
+    background-repeat: repeat-y !important;
+    width: 100% !important;
+}
+
+/* Blocos Laterais (Faltas e Tempo - Rotacionados nativamente) */
+.rotated-v { writing-mode: vertical-rl; transform: rotate(180deg); display: flex;  gap: 5px; width: 60px; }
+.stat-block {  border: 1px solid #000; }
+.faltas-block { flex: 7; }
+.tempo-block { flex: 6; }
+.black-header { background: #000; color: #fff; font-size: 8px; font-weight: bold; text-align: center; padding: 3px; text-transform: uppercase; display: flex; align-items: center; justify-content: center; width: 14px; }
+.stat-rows { display: flex; flex-direction: row; flex-grow: 1; }
+.stat-row { flex: 1; display: flex; flex-direction: column; border-left: 1px solid #000; }
+.row-label { font-size: 8px; text-align: center; padding: 2px; border-top: 1px solid #000; }
+.grid-2x3 { display: grid; grid-template-columns: repeat(6, 1fr); gap: 3px; flex-grow: 1; padding: 2px;border: 1px solid #000; }
+.grid-2x3 div { border: 1px solid #000; font-size: 8px; display: flex; align-items: center; justify-content: center; }
+.empty-flex { flex-grow: 1; border-top: 1px solid #000; }
+
+
+
+
+/* Coluna Direita - Topo */
+.top-info-table, .contagens-table { width: 188px; text-align: center; border-collapse: collapse; margin-bottom: 10px; }
+.top-info-table th, .top-info-table td, .contagens-table th, .contagens-table td { border: 1px solid #000; padding: 3px; height: 22px; font-size: 10px; }
+.black-bg th { background: #000; color: #fff; }
+.black-box-x { background: #000; color: #fff; font-weight: bold; width: 25px; }
+
+/* ---------------------------------------------------
+   Identificação do Jogo e Arbitragem Reconstruídos na orientação física correta
+------------------------------------------------------ */
+.sidebar-bottom { flex-grow: 1; position: relative; width: 100%; min-height: 250px; }
+.rotated-container {
+    position: absolute; top: 0; left: 0; bottom: 0; right: 0;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    display: grid;
+    flex-direction: row-reverse; /* Força a Identificação a ficar no topo físico */
+    gap: 10px;
+}
+
+.true-rotated { border-collapse: collapse; table-layout: fixed; }
+.true-rotated th, .true-rotated td { border: 1px solid #000; font-size: 9px; padding: 4px; }
+
+.th-black { background: #000; color: #fff; text-align: center; font-weight: bold; width: 20px; } /* width controla a altura física */
+
+.id-table { height: auto; } /* height em vertical-rl = largura física */
+.arb-table { flex: 1; }
+
+/* Controles de altura e quebras de célula (Valores percentuais controlam as larguras físicas) */
+.h-30 { height: 25%; }
+.h-35 { height: 25.5%; }
+.h-85 { height: 85%; }
+.h-15 { height: 15%; }
+
+.split-cell { padding: 0 !important; flex-direction: column; }
+.split-bottom { flex: 6; display: flex; align-items: center; padding-left: 4px; margin-top: 5px;}
+.split-top { flex: 4; display: flex; align-items: center; padding-left: 4px; }
+
+/* Impressão */
 @media print {
-    body { background: none; padding: 0; }
-    .a4-landscape { border: none; margin: 0; width: 297mm; height: 210mm; }
+    @page { size: A4 landscape; margin: 0; }
+    body { padding: 0; background: none; }
+    .a4-container { border: none; box-shadow: none; width: 100%; height: 100%; }
+}
+
+.logo-box {
+    margin-right: 39px;
+}
+
+
+table.true-rotated.arb-table {
+    width:100px;
+}
+
+tr.header-black th {
+    text-align: center !important;
+}
+
+/*barra de divisoria das cédula "amarelo" e "vermelho" */
+td[colspan="3"].double-right {
+    position: relative !important;
+    text-align: center !important;
+}
+
+/* Cria o caractere "|" centralizado */
+td[colspan="3"].double-right::before {
+    content: "|" !important;
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    color: #000 !important;
+    font-weight: normal !important;
+    font-size: 14px !important; /* Ajuste o tamanho da barra se necessário */
+    margin-top: -8px;
+}
+
+/* Garante que os nomes no cabeçalho (th) fiquem sem a barra */
+th.col-ama::before, th.col-ama::after,
+th.col-ver::before, th.col-ver::after {
+    content: none !important;
+}
+
+
+/*4 divisores na célula de Início */
+td[colspan="2"].double-right {
+    position: relative !important;
+    background-image: linear-gradient(to right, 
+        transparent 19%, 
+        #000 19%, #000 20%, 
+        transparent 20%, 
+        transparent 39%, 
+        #000 39%, #000 40%, 
+        transparent 40%,
+        transparent 59%, 
+        #000 59%, #000 60%, 
+        transparent 60%,
+        transparent 79%, 
+        #000 79%, #000 80%, 
+        transparent 80%
+    ) !important;
+    background-size: 100% 100%;
+}
+
+/* Garante que o cabeçalho "Início" continue limpo */
+th.col-ini {
+    background-image: none !important;
+}
+
+
+/* 1. Ajuste para a barra "|" (Amarelos e Vermelhos) */
+/* Aplica apenas se a célula NÃO estiver nas últimas 3 linhas do corpo */
+tbody tr:not(:nth-last-child(-n+3)) td[colspan="3"].double-right::before {
+    content: "|" !important;
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    color: #000 !important;
+    font-weight: normal !important;
+    font-size: 10px !important;
+}
+
+/* 2. Ajuste para as 4 linhas (Início) */
+/* Aplica o gradiente apenas se NÃO estiver nas últimas 3 linhas */
+tbody tr:not(:nth-last-child(-n+3)) td[colspan="2"].double-right {
+    position: relative !important;
+    background-image: linear-gradient(to right, 
+        transparent 19%, #000 19%, #000 20%, 
+        transparent 20%, transparent 39%, #000 39%, #000 40%, 
+        transparent 40%, transparent 59%, #000 59%, #000 60%, 
+        transparent 60%, transparent 79%, #000 79%, #000 80%, 
+        transparent 80%
+    ) !important;
+    background-size: 100% 100%;
+}
+
+/* Remove qualquer resquício das últimas 3 linhas caso o seletor acima precise de reforço */
+tbody tr:nth-last-child(-n+3) td {
+    background-image: none !important;
+}
+tbody tr:nth-last-child(-n+3) td::before {
+    content: none !important;
 }
 
 
 
 
-
-
-
-/* Ajuste da Coluna de Informações Verticais */
-.coluna-v-info {
-    display: flex;
-    flex-direction: column;
-    width: 140px; /* Ajuste a largura conforme necessário */
-    border: 1px solid #000;
-    border-left: none;
+#faltas-1, #faltas-2 {
+    font-size: 10px;
+    font-weight: 400;
+   
 }
 
-.v-header-preto {
-    background-color: #000;
-    color: #fff;
-    text-align: center;
-    font-size: 9px;
-    padding: 2px 0;
-    font-weight: bold;
-    text-transform: uppercase;
+#faltas-div {
+    border: none !important;
+    height: 10px;
 }
 
-/* Estilo de Faltas */
-.v-conteudo-faltas {
-    display: flex;
-    flex-direction: column;
+.stat-block {
+    width: 59px;
 }
 
-.v-linha-faltas {
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid #000;
+
+
+#faltas-2 {
+    margin-right: 6px;
 }
 
-.v-label {
-    font-size: 8px;
-    width: 50px;
-    padding-left: 3px;
-    border-right: 1px solid #000;
-    height: 100%;
-    display: flex;
-    align-items: center;
+#faltas-1 {
+    margin-right: 5px;
 }
 
-.v-numeros-faltas {
-    display: flex;
-    flex-grow: 1;
-    justify-content: space-around;
+div#faltas-1, div#faltas-2 {
+    
+    border-top: none;
 }
 
-.v-numeros-faltas span {
-    font-size: 9px;
-    padding: 2px;
-    width: 100%;
-    text-align: center;
-    border-right: 1px solid #eee;
+
+/* Configuração de Impressão Blindada */
+@media print {
+    @page { 
+        size: A4 landscape !important; 
+        margin: 0 !important; 
+    }
+    body { 
+        padding: 0 !important; 
+        background: none !important; 
+    }
+    .a4-container { 
+        border: none !important; 
+        box-shadow: none !important; 
+        width: 100% !important; 
+        height: 100% !important; 
+        padding: 5mm !important; /* Espaço de segurança para a impressora */
+        margin: 0 !important;
+    }
 }
 
-.v-numeros-faltas span:last-child {
-    border-right: none;
+.a4-container {
+    background: #fff !important;
+    width: 297mm !important; /* Largura total do A4 Paisagem */
+    height: 210mm !important; /* Altura exata do A4 Paisagem */
+    padding: 10mm !important;
+    border: 1px solid #999 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important; /* Trava tudo em uma página só */
 }
 
-/* Estilo de Pedidos de Tempo */
-.v-conteudo-tempo {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    height: 100%;
+/* Compactação de tabelas e fontes para evitar transbordamento */
+.team-table {
+    font-size: 9px !important;
+    width: 100% !important;
 }
 
-.v-col-tempo {
-    display: flex;
-    flex-direction: column;
-    border-right: 1px solid #000;
-    text-align: center;
+.team-table th, .team-table td {
+    height: 14px !important; /* Altura reduzida para economizar espaço vertical */
+    
 }
 
-.v-col-tempo:last-child {
-    border-right: none;
+.black-header {
+    font-size: 9px !important;
+    padding: 2px 0 !important;
+    height: auto !important;
 }
 
-.v-col-tempo .v-label {
-    width: 100%;
-    border-right: none;
-    border-bottom: 1px solid #000;
-    justify-content: center;
-    font-size: 7px;
-    padding: 2px 0;
+table.contagens-table td{
+    width: 139px;
 }
 
-.v-box-vazia {
-    flex-grow: 1;
-    min-height: 25px;
+
+/* Ajuste das fontes do cabeçalho */
+h1, .header-title {
+    font-size: 16px !important;
+    margin: 2px 0 !important;
+}
+
+/*Ajuste no titulo "Súmula da partida"*/
+
+.center-title h1 {
+    margin-right: 184px !important;
+    font-weight:500;
+    font-size:29px !important;
+    margin-top: -10px !important;
+    margin-bottom: 5px;
+
+}
+
+table.contagens-table {
+    margin-top:-20px;
+}
+
+
+.divisor {
+    border:1px solid #000;
+    margin-right: 0px;
 }
