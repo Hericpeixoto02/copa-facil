@@ -9,7 +9,7 @@
             margin: 0;
             padding: 0;
             color: #000;
-            -webkit-print-color-adjust: exact;
+            
         }
 
         .folha-a4 {
@@ -314,4 +314,9 @@ td.tecnico-row {
 /*Aumentando nome da fonte do jogador*/
 td.nome-jogador {
     font-size:12px;
+}
+
+
+td.txt-left {
+    width:5px;
 }
