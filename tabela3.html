@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="score-header">
+        <div class="team-box1">Equipe 4</div>
+        <div id="placar1" class="vs-box"></div>
+        <div class="vs-box">X</div>
+        <div id="placar2" class="vs-box"></div>
+        <div  class="team-box2">Equipe 9</div>
+    </div>
+
+    <div class="header-main">
+        <div class="info-section">
+            <div style="display: grid; grid-template-columns: 3fr 1fr;">
+                <div class="cell"><span class="label">COMPETIÇÃO</span> <span class="val">Grupo Contra todos</span></div>
+                <div class="cell" style="border-right:1px solid; margin-right: 5px;"><span class="label">DATA</span> <span class="val">&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;/</span></div>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr;">
+                <div class="cell"><span class="label">CATEGORIA</span></div>
+                <div class="cell"><span class="label">FASE</span> <span class="val">1º Fase</span></div>
+                <div class="cell" style="border-right:1px solid; margin-right: 5px;"><span class="label">RODADA</span> <span class="val">2º Rodada</span></div>
+            </div>
+            <div style="display: grid; grid-template-columns: 3fr 1fr;">
+                <div class="cell"><span class="label">LOCAL</span></div>
+                <div class="cell" style="border-right:1px solid; margin-right: 5px;"><span class="label">JOGO Nº</span></div>
+            </div>
+
+            <div class="arbitragem-container">
+                <div class="arbitragem-label">ARBITRAGEM</div>
+                <div class="arbitragem-fields">
+                    <div class="arb-row"><div class="arb-col"></div><div class="arb-col"></div><div></div></div>
+                    <div class="arb-row"><div class="arb-col"></div><div class="arb-col"></div><div></div></div>
+                    <div class="arb-row"><div class="arb-col"></div><div class="arb-col"></div><div></div></div>
+                    <div class="arb-row" style="border-bottom:0;"><div class="arb-col"></div><div class="arb-col"></div><div></div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="side-tables">
+            <table class="mini-table">
+                <tr><th>HORÁRIO</th><th>INÍCIO</th><th style="border-right:0;">TÉRMINO</th></tr>
+                <tr><td class="txt-left">1. PER</td><td></td><td style="border-right:0;"></td></tr>
+                <tr><td class="txt-left">2. PER</td><td></td><td style="border-right:0;"></td></tr>
+                <tr><td class="txt-left">3. PER</td><td></td><td style="border-right:0;"></td></tr>
+                <tr><td class="txt-left">PRORROG</td><td></td><td style="border-right:0;"></td></tr>
+            </table>
+            <table class="mini-table">
+                <tr><th colspan="3" style="border-right:0;">CONTAGEM</th></tr>
+                <tr><td class="txt-left" colspan="2">1. PER</td><td style="border-right:0;">X</td></tr>
+                <tr><td class="txt-left" colspan="2">2. PER</td><td style="border-right:0;">X</td></tr>
+                <tr><td class="txt-left" colspan="2">3. PER</td><td style="border-right:0;">X</td></tr>
+                <tr><td class="txt-left" colspan="2">TÉRMINO</td><td style="border-right:0;">X</td></tr>
+                <tr><td class="txt-left" colspan="2">PRORROG</td><td style="border-right:0;">X</td></tr>
+                <tr><td class="txt-left" colspan="2">PENALTY</td><td style="border-right:0;">X</td></tr>
+            </table>
+        </div>
+    </div>
+
+   <div id="team-a" class="team-section">
+    <div class="team-header-name">
+        EQUIPE 'A' Equipe 4
+    </div>
+
+    <table class="main-table">
+        <thead>
+            <tr>
+                <th class="col-doc">DOCUMENTO</th>
+                <th class="col-jog">JOGADORES</th>
+                <th class="col-n">Nº</th>
+                <th class="col-ama">AMARELOS</th>
+                <th class="col-ver">VERMELHOS</th>
+                <th class="col-sub">SUBSTITUIÇÕES</th>
+                <th colspan="10" class="col-faltas-header">FALTAS</th>
+            </tr>
+        </thead>
+        <tbody>
+    <tr>
+        <td>Doc 1</td>
+        <td>Escreva o Nome do Jogador 1 Aqui</td>
+        <td>1</td>
+        <td></td><td></td>
+        <td class="sub-marks">| | | |</td>
+        <td colspan="2" class="f-num">1</td><td colspan="2" class="f-num">2</td><td colspan="2" class="f-num">3</td><td colspan="2" class="f-num">4</td><td colspan="2" class="f-num">5</td>
+    </tr>
+    <tr>
+        <td>Doc 2</td>
+        <td>Escreva o Nome do Jogador 2 Aqui</td>
+        <td>2</td>
+        <td></td><td></td>
+        <td class="sub-marks">| | | |</td>
+        <td colspan="2" class="f-num">1</td><td colspan="2" class="f-num">2</td><td colspan="2" class="f-num">3</td><td colspan="2" class="f-num">4</td><td colspan="2" class="f-num">5</td>
+    </tr>
+    <tr>
+        <td>Doc 3</td>
+        <td>Escreva o Nome do Jogador 3 Aqui</td>
+        <td>3</td>
+        <td></td><td></td>
+        <td class="sub-marks">| | | |</td>
+        <td colspan="10" class="time-title">PEDIDOS DE TEMPO</td>
+    </tr>
+    <tr>
+        <td>Doc 4</td>
+        <td>Escreva o Nome do Jogador 4 Aqui</td>
+        <td>4</td>
+        <td></td><td></td>
+        <td class="sub-marks">| | | |</td>
+        <td colspan="10" class="time-periods"><div class="flex-periods"><span>1. PER</span><span>2. PER</span></div></td>
+    </tr>
+    <tr>
+        <td>Doc 5</td>
+        <td>Escreva o Nome do Jogador 5 Aqui</td>
+        <td>5</td>
+        <td></td><td></td>
+        <td class="sub-marks">| | | |</td>
+        <td colspan="5"></td><td colspan="5"></td>
+    </tr>
+    <tr>
+        <td>Doc 6</td>
+        <td>Escreva o Nome do Jogador 6 Aqui</td>
+        <td>6</td>
+        <td></td><td></td>
+        <td class="sub-marks">| | | |</td>
+        <td colspan="5" rowspan="15" class="col-sig">Capitão</td>
+        <td colspan="5" rowspan="15" class="col-sig">Técnico</td>
+    </tr>
+    <tr><td>Doc 7</td><td>Escreva o Nome do Jogador 7 Aqui</td><td>7</td><td></td><td></td><td class="sub-marks">| | | |</td></tr>
+    <tr><td>Doc 8</td><td>Escreva o Nome do Jogador 8 Aqui</td><td>8</td><td></td><td></td><td class="sub-marks">| | | |</td></tr>
+    <tr><td>Doc 9</td><td>Escreva o Nome do Jogador 9 Aqui</td><td>9</td><td></td><td></td><td class="sub-marks">| | | |</td></tr>
+    <tr><td>Doc 10</td><td>Escreva o Nome do Jogador 10 Aqui</td><td>10</td><td></td><td></td><td class="sub-marks">| | | |</td></tr>
+    <tr><td>Doc 11</td><td>Escreva o Nome do Jogador 11 Aqui</td><td>11</td><td></td><td></td><td class="sub-marks">| | | |</td></tr>
+    <tr><td>Doc 12</td><td>Escreva o Nome do Jogador 12 Aqui</td><td>12</td><td></td><td></td><td class="sub-marks">| | | |</td></tr>
+    <tr><td>Doc 13</td><td>Escreva o Nome do Jogador 13 Aqui</td><td>13</td><td></td><td></td><td class="sub-marks">| | | |</td></tr>
+    <tr><td>Doc 14</td><td>Escreva o Nome do Jogador 14 Aqui</td><td>14</td><td></td><td></td><td class="sub-marks">| | | |</td></tr>
+    <tr><td>Doc 15</td><td>Escreva o Nome do Jogador 15 Aqui</td><td>15</td><td></td><td></td><td class="sub-marks">| | | |</td></tr>
+    <tr><td>Doc 16</td><td>Escreva o Nome do Jogador 16 Aqui</td><td>16</td><td></td><td></td><td class="sub-marks">| | | |</td></tr>
+    
+    
+    <tr>
+        <td></td>
+        <td colspan="3" class="tecnico-row"><strong>TÉCNICO:</strong></td>
+        <td colspan="1"></td>
+        <td colspan="1"></td>
+    </tr>
+</tbody>
+    </table>
+
+    <table class="grid-footer">
+        <tr>
+            <script>for(let i=1; i<=20; i++) document.write(`<td>${i}</td>`);</script>
+        </tr>
+        <tr>
+            <script>for(let i=1; i<=20; i++) document.write(`<td>&nbsp;</td>`);</script>
+        </tr>
+    </table>
+</div>
+
+<div id="team-b" class="team-section">
+    <div class="team-header-name">
+        EQUIPE 'B' Equipe 9
+    </div>
+
+    <table class="main-table">
+        <thead>
+            <tr>
+                <th class="col-doc">DOCUMENTO</th>
+                <th class="col-jog">JOGADORES</th>
+                <th class="col-n">Nº</th>
+                <th class="col-ama">AMARELOS</th>
+                <th class="col-ver">VERMELHOS</th>
+                <th class="col-sub">SUBSTITUIÇÕES</th>
+                <th colspan="10" class="col-faltas-header">FALTAS</th>
+            </tr>
+        </thead>
+       <tbody>
+    <tr>
+        <td>Doc 1</td>
+        <td>Escreva o Nome do Jogador 1 Aqui</td>
+        <td>1</td>
+        <td></td><td></td>
+        <td class="sub-marks">| | | |</td>
+        <td colspan="2" class="f-num">1</td><td colspan="2" class="f-num">2</td><td colspan="2" class="f-num">3</td><td colspan="2" class="f-num">4</td><td colspan="2" class="f-num">5</td>
+    </tr>
+    <tr>
+        <td>Doc 2</td>
+        <td>Escreva o Nome do Jogador 2 Aqui</td>
+        <td>2</td>
+        <td></td><td></td>
+        <td class="sub-marks">| | | |</td>
+        <td colspan="2" class="f-num">1</td><td colspan="2" class="f-num">2</td><td colspan="2" class="f-num">3</td><td colspan="2" class="f-num">4</td><td colspan="2" class="f-num">5</td>
+    </tr>
+    <tr>
+        <td>Doc 3</td>
+        <td>Escreva o Nome do Jogador 3 Aqui</td>
+        <td>3</td>
+        <td></td><td></td>
+        <td class="sub-marks">| | | |</td>
+        <td colspan="10" class="time-title">PEDIDOS DE TEMPO</td>
+    </tr>
+    <tr>
+        <td>Doc 4</td>
+        <td>Escreva o Nome do Jogador 4 Aqui</td>
+        <td>4</td>
+        <td></td><td></td>
+        <td class="sub-marks">| | | |</td>
+        <td colspan="10" class="time-periods"><div class="flex-periods"><span>1. PER</span><span>2. PER</span></div></td>
+    </tr>
+    <tr>
+        <td>Doc 5</td>
+        <td>Escreva o Nome do Jogador 5 Aqui</td>
+        <td>5</td>
+        <td></td><td></td>
+        <td class="sub-marks">| | | |</td>
+        <td colspan="5"></td><td colspan="5"></td>
+    </tr>
+    <tr>
+        <td>Doc 6</td>
+        <td>Escreva o Nome do Jogador 6 Aqui</td>
+        <td>6</td>
+        <td></td><td></td>
+        <td class="sub-marks">| | | |</td>
+        <td colspan="5" rowspan="15" class="col-sig">Capitão</td>
+        <td colspan="5" rowspan="15" class="col-sig">Técnico</td>
+    </tr>
+    <tr><td>Doc 7</td><td>Escreva o Nome do Jogador 7 Aqui</td><td>7</td><td></td><td></td><td class="sub-marks">| | | |</td></tr>
+    <tr><td>Doc 8</td><td>Escreva o Nome do Jogador 8 Aqui</td><td>8</td><td></td><td></td><td class="sub-marks">| | | |</td></tr>
+    <tr><td>Doc 9</td><td>Escreva o Nome do Jogador 9 Aqui</td><td>9</td><td></td><td></td><td class="sub-marks">| | | |</td></tr>
+    <tr><td>Doc 10</td><td>Escreva o Nome do Jogador 10 Aqui</td><td>10</td><td></td><td></td><td class="sub-marks">| | | |</td></tr>
+    <tr><td>Doc 11</td><td>Escreva o Nome do Jogador 11 Aqui</td><td>11</td><td></td><td></td><td class="sub-marks">| | | |</td></tr>
+    <tr><td>Doc 12</td><td>Escreva o Nome do Jogador 12 Aqui</td><td>12</td><td></td><td></td><td class="sub-marks">| | | |</td></tr>
+    <tr><td>Doc 13</td><td>Escreva o Nome do Jogador 13 Aqui</td><td>13</td><td></td><td></td><td class="sub-marks">| | | |</td></tr>
+    <tr><td>Doc 14</td><td>Escreva o Nome do Jogador 14 Aqui</td><td>14</td><td></td><td></td><td class="sub-marks">| | | |</td></tr>
+    <tr><td>Doc 15</td><td>Escreva o Nome do Jogador 15 Aqui</td><td>15</td><td></td><td></td><td class="sub-marks">| | | |</td></tr>
+    <tr><td>Doc 16</td><td>Escreva o Nome do Jogador 15 Aqui</td><td>15</td><td></td><td></td><td class="sub-marks">| | | |</td></tr>
+    
+    
+    
+    <tr>
+        <td></td>
+        <td colspan="3" class="tecnico-row"><strong>TÉCNICO:</strong></td>
+        <td colspan="1"></td>
+        <td colspan="1"></td>
+    </tr>
+</tbody>
+    </table>
+
+    <table class="grid-footer">
+        <tr>
+            <script>for(let i=1; i<=20; i++) document.write(`<td>${i}</td>`);</script>
+        </tr>
+        <tr>
+            <script>for(let i=1; i<=20; i++) document.write(`<td>&nbsp;</td>`);</script>
+        </tr>
+    </table>
+</div>
+
+
+</div>
+
+
+
+</body>
+</html>
