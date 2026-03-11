@@ -50,68 +50,76 @@
     </thead>
     <tbody>
         <tr>
-            <td colspan="5">123</td>
+            <td colspan="5"><strong id="team_1_player_1" class="nome-jogador"></strong></td>
             <td class="double-right" colspan="1"></td>
             <td class="double-right" colspan="2"></td>
             <td class="double-right" colspan="3"></td>
             <td class="double-right" colspan="3"></td>
-            <td colspan="2" rowspan="16" class="gols-cell">
+            <td colspan="2" rowspan="15" class="gols-cell">
     <div class="gols-wrapper">
         <div class="gols-col">
             <script>
-                for(i=1;i<=28;i+=3) document.write(`
-                    <div class="gol-item">
-                        <div class="gol-top-row">
-                            <div class="gol-num">${i}</div>
-                            <div class="gol-space"></div>
-                        </div>
-                        <div class="gol-dots"></div>
-                    </div>`);
+                for(let i=0; i<30; i+=3) {
+                    let numGol = i + 1;
+                    document.write(`
+                        <div class="gol-item">
+                            <div class="gol-top-row">
+                                <div class="gol-num">${numGol}</div>
+                                <div class="gol-space" id="t1_gol_n_${i}"></div>
+                            </div>
+                            <div  id="t1_gol_time_${i}" style="font-size: 8px; font-weight: bold; text-align:center !important; margin-top:3px;"></div>
+                        </div>`);
+                }
             </script>
         </div>
-        
         <div class="gols-col">
             <script>
-                for(i=2;i<=29;i+=3) document.write(`
-                    <div class="gol-item">
-                        <div class="gol-top-row">
-                            <div class="gol-num">${i}</div>
-                            <div class="gol-space"></div>
-                        </div>
-                        <div class="gol-dots"></div>
-                    </div>`);
+                for(let i=1; i<30; i+=3) {
+                    let numGol = i + 1;
+                    document.write(`
+                        <div class="gol-item">
+                            <div class="gol-top-row">
+                                <div class="gol-num">${numGol}</div>
+                                <div class="gol-space" id="t1_gol_n_${i}"></div>
+                            </div>
+                            <div  id="t1_gol_time_${i}" style="font-size: 8px; font-weight: bold; text-align:center !important; margin-top:3px;"></div>
+                        </div>`);
+                }
             </script>
         </div>
-        
         <div class="gols-col">
             <script>
-                for(i=3;i<=30;i+=3) document.write(`
-                    <div class="gol-item">
-                        <div class="gol-top-row">
-                            <div class="gol-num">${i}</div>
-                            <div class="gol-space"></div>
-                        </div>
-                        <div class="gol-dots"></div>
-                    </div>`);
+                for(let i=2; i<30; i+=3) {
+                    let numGol = i + 1;
+                    document.write(`
+                        <div class="gol-item">
+                            <div class="gol-top-row">
+                                <div class="gol-num">${numGol}</div>
+                                <div class="gol-space" id="t1_gol_n_${i}"></div>
+                            </div>
+                            <div  id="t1_gol_time_${i}" style="font-size: 8px; font-weight: bold; text-align:center !important; margin-top:3px;"></div>
+                        </div>`);
+                }
             </script>
         </div>
     </div>
 </td>
         </tr>
-        <tr><td colspan="5">123</td><td class="double-right" colspan="1"></td><td class="double-right"colspan="2"></td><td class="double-right" colspan="3"></td><td class="double-right" colspan="3"></td></tr>
-        <tr><td colspan="5">1234</td><td class="double-right" colspan="1"></td><td class="double-right" colspan="2"></td><td class="double-right"colspan="3"></td><td class="double-right" colspan="3"></td></tr>
-        <tr><td colspan="5">Antonio Garcia </td><td class="double-right" colspan="1"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3"></td><td class="double-right" colspan="3"></td></tr>
-        <tr><td colspan="5">Eliezer Setton</td><td class="double-right" colspan="1"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3"></td><td class="double-right" colspan="3"></td></tr>
-        <tr><td colspan="5">Francisco Camara</td><td class="double-right" colspan="1"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3"></td><td class="double-right" colspan="3"></td></tr>
-        <tr><td colspan="5">Isaac Jose Necveo costa</td><td class="double-right" colspan="1"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3"></td><td class="double-right" colspan="3"></td></tr>
-        <tr><td colspan="5">Jao hum</td><td class="double-right" colspan="1"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3"></td><td class="double-right" colspan="3"></td></tr>
-        <tr><td colspan="5">Jos e Paulo</td><td class="double-right" colspan="1"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3"></td><td class="double-right" colspan="3"></td></tr>
-        <tr><td colspan="5">Jose agusto</td><td class="double-right" colspan="1"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3"></td><td class="double-right" colspan="3"></td></tr>
-        <tr><td colspan="5">Pedro Miguel</td><td class="double-right" colspan="1"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3"></td><td class="double-right" colspan="3"></td></tr>
-        <tr><td colspan="5"></td><td class="double-right" colspan="1"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3"></td><td class="double-right" colspan="3"></td></tr>
-        <tr><td colspan="5"></td><td class="double-right" colspan="1"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3"></td><td class="double-right" colspan="3"></td></tr>
-        <tr><td colspan="5"></td><td class="double-right" colspan="1"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3"></td><td class="double-right" colspan="3"></td></tr>
-        <tr><td colspan="5"></td><td class="double-right" colspan="1"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3"></td><td class="double-right" colspan="3"></td></tr>
+
+<tr><td colspan="5"><strong id="team_1_player_2" class="nome-jogador"></strong></td><td class="double-right" colspan="1" id="team_1_n_2" style="text-align: center;"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_1_yellow1_2" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_1_yellow2_2" style="display: inline-block; width: 15px; text-align: center;"></strong></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_1_red1_2" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_1_red2_2" style="display: inline-block; width: 15px; text-align: center;"></strong></td></tr>
+<tr><td colspan="5"><strong id="team_1_player_3" class="nome-jogador"></strong></td><td class="double-right" colspan="1" id="team_1_n_3" style="text-align: center;"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_1_yellow1_3" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_1_yellow2_3" style="display: inline-block; width: 15px; text-align: center;"></strong></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_1_red1_3" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_1_red2_3" style="display: inline-block; width: 15px; text-align: center;"></strong></td></tr>
+<tr><td colspan="5"><strong id="team_1_player_4" class="nome-jogador"></strong></td><td class="double-right" colspan="1" id="team_1_n_4" style="text-align: center;"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_1_yellow1_4" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_1_yellow2_4" style="display: inline-block; width: 15px; text-align: center;"></strong></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_1_red1_4" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_1_red2_4" style="display: inline-block; width: 15px; text-align: center;"></strong></td></tr>
+<tr><td colspan="5"><strong id="team_1_player_5" class="nome-jogador"></strong></td><td class="double-right" colspan="1" id="team_1_n_5" style="text-align: center;"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_1_yellow1_5" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_1_yellow2_5" style="display: inline-block; width: 15px; text-align: center;"></strong></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_1_red1_5" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_1_red2_5" style="display: inline-block; width: 15px; text-align: center;"></strong></td></tr>
+<tr><td colspan="5"><strong id="team_1_player_6" class="nome-jogador"></strong></td><td class="double-right" colspan="1" id="team_1_n_6" style="text-align: center;"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_1_yellow1_6" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_1_yellow2_6" style="display: inline-block; width: 15px; text-align: center;"></strong></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_1_red1_6" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_1_red2_6" style="display: inline-block; width: 15px; text-align: center;"></strong></td></tr>
+<tr><td colspan="5"><strong id="team_1_player_7" class="nome-jogador"></strong></td><td class="double-right" colspan="1" id="team_1_n_7" style="text-align: center;"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_1_yellow1_7" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_1_yellow2_7" style="display: inline-block; width: 15px; text-align: center;"></strong></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_1_red1_7" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_1_red2_7" style="display: inline-block; width: 15px; text-align: center;"></strong></td></tr>
+<tr><td colspan="5"><strong id="team_1_player_8" class="nome-jogador"></strong></td><td class="double-right" colspan="1" id="team_1_n_8" style="text-align: center;"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_1_yellow1_8" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_1_yellow2_8" style="display: inline-block; width: 15px; text-align: center;"></strong></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_1_red1_8" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_1_red2_8" style="display: inline-block; width: 15px; text-align: center;"></strong></td></tr>
+<tr><td colspan="5"><strong id="team_1_player_9" class="nome-jogador"></strong></td><td class="double-right" colspan="1" id="team_1_n_9" style="text-align: center;"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_1_yellow1_9" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_1_yellow2_9" style="display: inline-block; width: 15px; text-align: center;"></strong></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_1_red1_9" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_1_red2_9" style="display: inline-block; width: 15px; text-align: center;"></strong></td></tr>
+<tr><td colspan="5"><strong id="team_1_player_10" class="nome-jogador"></strong></td><td class="double-right" colspan="1" id="team_1_n_10" style="text-align: center;"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_1_yellow1_10" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_1_yellow2_10" style="display: inline-block; width: 15px; text-align: center;"></strong></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_1_red1_10" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_1_red2_10" style="display: inline-block; width: 15px; text-align: center;"></strong></td></tr>
+<tr><td colspan="5"><strong id="team_1_player_11" class="nome-jogador"></strong></td><td class="double-right" colspan="1" id="team_1_n_11" style="text-align: center;"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_1_yellow1_11" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_1_yellow2_11" style="display: inline-block; width: 15px; text-align: center;"></strong></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_1_red1_11" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_1_red2_11" style="display: inline-block; width: 15px; text-align: center;"></strong></td></tr>
+<tr><td colspan="5"><strong id="team_1_player_12" class="nome-jogador"></strong></td><td class="double-right" colspan="1" id="team_1_n_12" style="text-align: center;"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_1_yellow1_12" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_1_yellow2_12" style="display: inline-block; width: 15px; text-align: center;"></strong></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_1_red1_12" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_1_red2_12" style="display: inline-block; width: 15px; text-align: center;"></strong></td></tr>
+<tr><td colspan="5"><strong id="team_1_player_13" class="nome-jogador"></strong></td><td class="double-right" colspan="1" id="team_1_n_13" style="text-align: center;"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_1_yellow1_13" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_1_yellow2_13" style="display: inline-block; width: 15px; text-align: center;"></strong></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_1_red1_13" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_1_red2_13" style="display: inline-block; width: 15px; text-align: center;"></strong></td></tr>
+<tr><td colspan="5"><strong id="team_1_player_14" class="nome-jogador"></strong></td><td class="double-right" colspan="1" id="team_1_n_14" style="text-align: center;"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_1_yellow1_14" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_1_yellow2_14" style="display: inline-block; width: 15px; text-align: center;"></strong></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_1_red1_14" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_1_red2_14" style="display: inline-block; width: 15px; text-align: center;"></strong></td></tr>
+<tr><td colspan="5"><strong id="team_1_player_15" class="nome-jogador"></strong></td><td class="double-right" colspan="1" id="team_1_n_15" style="text-align: center;"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_1_yellow1_15" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_1_yellow2_15" style="display: inline-block; width: 15px; text-align: center;"></strong></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_1_red1_15" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_1_red2_15" style="display: inline-block; width: 15px; text-align: center;"></strong></td></tr>
         <tr><td colspan="5" style="text-align: left; padding-left: 5px;">Técnico:</td><td class="double-right" colspan="1"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3"></td><td class="double-right" colspan="3"></td></tr>
         <tr><td colspan="16"></td></tr>
         <tr><td colspan="16"></td></tr>
@@ -151,7 +159,7 @@
                 <table class="team-table">
     <thead>
         <tr class="header-white">
-            <td colspan="4"><strong>FLAMENGO DE PIRACIACABA ( )</strong></td>
+            <td colspan="4"><strong>Flamengo de Piraciacaba ( )</strong></td>
             <td colspan="6">Técnico:</td>
             <td colspan="6">Capitão:</td>
         </tr>
@@ -166,68 +174,76 @@
     </thead>
     <tbody>
         <tr>
-            <td colspan="5">123</td>
+            <td colspan="5"><strong  id="team_2_player_1"  class="nome-jogador" ></strong></td>
             <td class="double-right" colspan="1"></td>
             <td class="double-right" colspan="2"></td>
             <td class="double-right" colspan="3"></td>
             <td class="double-right" colspan="3"></td>
-           <td colspan="2" rowspan="16" class="gols-cell">
+          <td colspan="2" rowspan="16" class="gols-cell">
     <div class="gols-wrapper">
         <div class="gols-col">
             <script>
-                for(i=1;i<=28;i+=3) document.write(`
-                    <div class="gol-item">
-                        <div class="gol-top-row">
-                            <div class="gol-num">${i}</div>
-                            <div class="gol-space"></div>
-                        </div>
-                        <div class="gol-dots"></div>
-                    </div>`);
+                for(let i=0; i<30; i+=3) {
+                    let numGol = i + 1;
+                    document.write(`
+                        <div class="gol-item">
+                            <div class="gol-top-row">
+                                <div class="gol-num">${numGol}</div>
+                                <div class="gol-space" id="t2_gol_n_${i}"></div>
+                            </div>
+                            <div  id="t2_gol_time_${i}" style="font-size: 8px; font-weight: bold;text-align:center !important; margin-top:3px;"></div>
+                        </div>`);
+                }
             </script>
         </div>
-        
         <div class="gols-col">
             <script>
-                for(i=2;i<=29;i+=3) document.write(`
-                    <div class="gol-item">
-                        <div class="gol-top-row">
-                            <div class="gol-num">${i}</div>
-                            <div class="gol-space"></div>
-                        </div>
-                        <div class="gol-dots"></div>
-                    </div>`);
+                for(let i=1; i<30; i+=3) {
+                    let numGol = i + 1;
+                    document.write(`
+                        <div class="gol-item">
+                            <div class="gol-top-row">
+                                <div class="gol-num">${numGol}</div>
+                                <div class="gol-space" id="t2_gol_n_${i}"></div>
+                            </div>
+                            <div  id="t2_gol_time_${i}" style="font-size: 8px; font-weight: bold; text-align:center !important; margin-top:3px;"></div>
+                        </div>`);
+                }
             </script>
         </div>
-        
         <div class="gols-col">
             <script>
-                for(i=3;i<=30;i+=3) document.write(`
-                    <div class="gol-item">
-                        <div class="gol-top-row">
-                            <div class="gol-num">${i}</div>
-                            <div class="gol-space"></div>
-                        </div>
-                        <div class="gol-dots"></div>
-                    </div>`);
+                for(let i=2; i<30; i+=3) {
+                    let numGol = i + 1;
+                    document.write(`
+                        <div class="gol-item">
+                            <div class="gol-top-row">
+                                <div class="gol-num">${numGol}</div>
+                                <div class="gol-space" id="t2_gol_n_${i}"></div>
+                            </div>
+                            <div  id="t2_gol_time_${i}" style="font-size: 8px; font-weight: bold; text-align:center !important; margin-top:3px;"></div>
+                        </div>`);
+                }
             </script>
         </div>
     </div>
 </td>
         </tr>
-        <tr><td colspan="5">123</td><td class="double-right" colspan="1"></td><td class="double-right"colspan="2"></td><td class="double-right" colspan="3"></td><td class="double-right" colspan="3"></td></tr>
-        <tr><td colspan="5">1234</td><td class="double-right" colspan="1"></td><td class="double-right" colspan="2"></td><td class="double-right"colspan="3"></td><td class="double-right" colspan="3"></td></tr>
-        <tr><td colspan="5">Antonio Garcia </td><td class="double-right" colspan="1"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3"></td><td class="double-right" colspan="3"></td></tr>
-        <tr><td colspan="5">Eliezer Setton</td><td class="double-right" colspan="1"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3"></td><td class="double-right" colspan="3"></td></tr>
-        <tr><td colspan="5">Francisco Camara</td><td class="double-right" colspan="1"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3"></td><td class="double-right" colspan="3"></td></tr>
-        <tr><td colspan="5">Isaac Jose Necveo costa</td><td class="double-right" colspan="1"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3"></td><td class="double-right" colspan="3"></td></tr>
-        <tr><td colspan="5">Jao hum</td><td class="double-right" colspan="1"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3"></td><td class="double-right" colspan="3"></td></tr>
-        <tr><td colspan="5">Jos e Paulo</td><td class="double-right" colspan="1"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3"></td><td class="double-right" colspan="3"></td></tr>
-        <tr><td colspan="5">Jose agusto</td><td class="double-right" colspan="1"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3"></td><td class="double-right" colspan="3"></td></tr>
-        <tr><td colspan="5">Pedro Miguel</td><td class="double-right" colspan="1"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3"></td><td class="double-right" colspan="3"></td></tr>
-        <tr><td colspan="5"></td><td class="double-right" colspan="1"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3"></td><td class="double-right" colspan="3"></td></tr>
-        <tr><td colspan="5"></td><td class="double-right" colspan="1"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3"></td><td class="double-right" colspan="3"></td></tr>
-        <tr><td colspan="5"></td><td class="double-right" colspan="1"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3"></td><td class="double-right" colspan="3"></td></tr>
-        <tr><td colspan="5"></td><td class="double-right" colspan="1"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3"></td><td class="double-right" colspan="3"></td></tr>
+
+<tr><td colspan="5"><strong id="team_2_player_2" class="nome-jogador"></strong></td><td class="double-right" colspan="1" id="team_2_n_2" style="text-align: center;"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_2_yellow1_2" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_2_yellow2_2" style="display: inline-block; width: 15px; text-align: center;"></strong></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_2_red1_2" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_2_red2_2" style="display: inline-block; width: 15px; text-align: center;"></strong></td></tr>
+<tr><td colspan="5"><strong id="team_2_player_3" class="nome-jogador"></strong></td><td class="double-right" colspan="1" id="team_2_n_3" style="text-align: center;"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_2_yellow1_3" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_2_yellow2_3" style="display: inline-block; width: 15px; text-align: center;"></strong></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_2_red1_3" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_2_red2_3" style="display: inline-block; width: 15px; text-align: center;"></strong></td></tr>
+<tr><td colspan="5"><strong id="team_2_player_4" class="nome-jogador"></strong></td><td class="double-right" colspan="1" id="team_2_n_4" style="text-align: center;"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_2_yellow1_4" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_2_yellow2_4" style="display: inline-block; width: 15px; text-align: center;"></strong></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_2_red1_4" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_2_red2_4" style="display: inline-block; width: 15px; text-align: center;"></strong></td></tr>
+<tr><td colspan="5"><strong id="team_2_player_5" class="nome-jogador"></strong></td><td class="double-right" colspan="1" id="team_2_n_5" style="text-align: center;"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_2_yellow1_5" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_2_yellow2_5" style="display: inline-block; width: 15px; text-align: center;"></strong></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_2_red1_5" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_2_red2_5" style="display: inline-block; width: 15px; text-align: center;"></strong></td></tr>
+<tr><td colspan="5"><strong id="team_2_player_6" class="nome-jogador"></strong></td><td class="double-right" colspan="1" id="team_2_n_6" style="text-align: center;"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_2_yellow1_6" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_2_yellow2_6" style="display: inline-block; width: 15px; text-align: center;"></strong></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_2_red1_6" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_2_red2_6" style="display: inline-block; width: 15px; text-align: center;"></strong></td></tr>
+<tr><td colspan="5"><strong id="team_2_player_7" class="nome-jogador"></strong></td><td class="double-right" colspan="1" id="team_2_n_7" style="text-align: center;"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_2_yellow1_7" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_2_yellow2_7" style="display: inline-block; width: 15px; text-align: center;"></strong></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_2_red1_7" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_2_red2_7" style="display: inline-block; width: 15px; text-align: center;"></strong></td></tr>
+<tr><td colspan="5"><strong id="team_2_player_8" class="nome-jogador"></strong></td><td class="double-right" colspan="1" id="team_2_n_8" style="text-align: center;"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_2_yellow1_8" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_2_yellow2_8" style="display: inline-block; width: 15px; text-align: center;"></strong></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_2_red1_8" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_2_red2_8" style="display: inline-block; width: 15px; text-align: center;"></strong></td></tr>
+<tr><td colspan="5"><strong id="team_2_player_9" class="nome-jogador"></strong></td><td class="double-right" colspan="1" id="team_2_n_9" style="text-align: center;"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_2_yellow1_9" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_2_yellow2_9" style="display: inline-block; width: 15px; text-align: center;"></strong></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_2_red1_9" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_2_red2_9" style="display: inline-block; width: 15px; text-align: center;"></strong></td></tr>
+<tr><td colspan="5"><strong id="team_2_player_10" class="nome-jogador"></strong></td><td class="double-right" colspan="1" id="team_2_n_10" style="text-align: center;"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_2_yellow1_10" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_2_yellow2_10" style="display: inline-block; width: 15px; text-align: center;"></strong></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_2_red1_10" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_2_red2_10" style="display: inline-block; width: 15px; text-align: center;"></strong></td></tr>
+<tr><td colspan="5"><strong id="team_2_player_11" class="nome-jogador"></strong></td><td class="double-right" colspan="1" id="team_2_n_11" style="text-align: center;"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_2_yellow1_11" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_2_yellow2_11" style="display: inline-block; width: 15px; text-align: center;"></strong></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_2_red1_11" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_2_red2_11" style="display: inline-block; width: 15px; text-align: center;"></strong></td></tr>
+<tr><td colspan="5"><strong id="team_2_player_12" class="nome-jogador"></strong></td><td class="double-right" colspan="1" id="team_2_n_12" style="text-align: center;"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_2_yellow1_12" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_2_yellow2_12" style="display: inline-block; width: 15px; text-align: center;"></strong></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_2_red1_12" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_2_red2_12" style="display: inline-block; width: 15px; text-align: center;"></strong></td></tr>
+<tr><td colspan="5"><strong id="team_2_player_13" class="nome-jogador"></strong></td><td class="double-right" colspan="1" id="team_2_n_13" style="text-align: center;"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_2_yellow1_13" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_2_yellow2_13" style="display: inline-block; width: 15px; text-align: center;"></strong></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_2_red1_13" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_2_red2_13" style="display: inline-block; width: 15px; text-align: center;"></strong></td></tr>
+<tr><td colspan="5"><strong id="team_2_player_14" class="nome-jogador"></strong></td><td class="double-right" colspan="1" id="team_2_n_14" style="text-align: center;"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_2_yellow1_14" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_2_yellow2_14" style="display: inline-block; width: 15px; text-align: center;"></strong></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_2_red1_14" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_2_red2_14" style="display: inline-block; width: 15px; text-align: center;"></strong></td></tr>
+<tr><td colspan="5"><strong id="team_2_player_15" class="nome-jogador"></strong></td><td class="double-right" colspan="1" id="team_2_n_15" style="text-align: center;"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_2_yellow1_15" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_2_yellow2_15" style="display: inline-block; width: 15px; text-align: center;"></strong></td><td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;"><strong id="team_2_red1_15" style="display: inline-block; width: 15px; text-align: center;"></strong> | <strong id="team_2_red2_15" style="display: inline-block; width: 15px; text-align: center;"></strong></td></tr>
 
     <tr><td colspan="5" style="text-align: left; padding-left: 5px;">Técnico:</td><td class="double-right" colspan="1"></td><td class="double-right" colspan="2"></td><td class="double-right" colspan="3"></td><td class="double-right" colspan="3"></td></tr>
         <tr><td  colspan="16"></td></tr>
@@ -350,7 +366,7 @@
         "place": "GINASIO UEPA"
     },
     "config":{
-        "player_length": 20
+        "player_length": 15
     },
     "team_1": {
         "name": "Corinthias Alagoano 1",
@@ -369,13 +385,13 @@
                 "name": "ISAIAS PINTO LIMA",
                 "nickname": "",
                 "n": "",
-                "yellow_card": 0,
+                "yellow_card": 1,
                 "red_card": 0,
                 "blue_card": 0,
                 "goals": 0
             },
             {   "supend":false,
-                "name": "JOSE  AUGUSTO CARVALHO DO ROSARIO ",
+                "name": "JOSE  AUGUSTO",
                 "nickname": "",
                 "n": "",
                 "yellow_card": 0,
@@ -384,7 +400,7 @@
                 "goals": 0
             },
             {   "supend":false,
-                "name": "JEFFERSON BRUNO DE JESUS NASCIMENTO ",
+                "name": "JEFFERSON BRUNO",
                 "nickname": "",
                 "n": "",
                 "yellow_card": 0,
@@ -393,25 +409,16 @@
                 "goals": 6
             },
             {   "supend":true,
-                "name": "JUAN ADRIAN SALAZAR DE SOUZA",
+                "name": "JUAN ADRIAN",
                 "nickname": "",
                 "n": "",
                 "yellow_card": 0,
-                "red_card": 2,
+                "red_card": 1,
                 "blue_card": 0,
                 "goals": 0
             },
             {   "supend":false,
-                "name": "GILBERT ROMARIO GONÇALVES MARTINS",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "JHON RENATO DAS CHAGAS MAGNO",
+                "name": "GILBERT ROMARIO",
                 "nickname": "",
                 "n": "",
                 "yellow_card": 0,
@@ -420,7 +427,16 @@
                 "goals": 0
             },
             {   "supend":false,
-                "name": "JEFFERSON BRENO DE JESUS NASCIMENTO ",
+                "name": "JHON RENATO",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+            {   "supend":false,
+                "name": "JEFFERSON BRENO",
                 "nickname": "",
                 "n": "",
                 "yellow_card": 0,
@@ -447,7 +463,7 @@
                 "goals": 2
             },  
             {   "supend":false,
-                "name": "ELIDELSON FERREIRA DOS SANTOS",
+                "name": "ELIDELSON FERREIRA",
                 "nickname": "",
                 "n": "",
                 "yellow_card": 0,
@@ -456,7 +472,7 @@
                 "goals": 0
             },
             {   "supend":false,
-                "name": "ANDERSON MACHADO DE SOUZA",
+                "name": "ANDERSON MACHADO",
                 "nickname": "",
                 "n": "",
                 "yellow_card": 0,
@@ -629,12 +645,12 @@
     "team_2": {
         "name": "FLAMENGO DE PIRACIACABA",
         "player": [
-            {   "supend":true,
+            {   "supend":false,
                 "name": "LUCAS SOARES BARATA",
                 "nickname": "",
                 "n": "",
                 "yellow_card": 0,
-                "red_card": 1,
+                "red_card": 0,
                 "blue_card": 0,
                 "goals": 2
             },
@@ -711,7 +727,7 @@
                 "goals": 0
             },
             {   "supend":false,
-                "name": "RONALD HILBERT NASCIMENTO VITORIO",
+                "name": "RONALD HILBERT",
                 "nickname": "",
                 "n": "",
                 "yellow_card": 0,
@@ -737,12 +753,12 @@
                 "blue_card": 0,
                 "goals": 0
             },
-            {   "supend":false,
+            {   "supend":true,
                 "name": "JOSE CAUA MACHADO RESENDE",
                 "nickname": "",
                 "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
+                "yellow_card": 2,
+                "red_card": 1,
                 "blue_card": 0,
                 "goals": 0
             },
@@ -814,7 +830,7 @@
             {
                 "n": "",
                 "minutes": 10,
-                "seconds": 0,
+                "seconds": 35,
                 "period": 2
             },
             {
@@ -834,6 +850,12 @@
                 "minutes": 13,
                 "seconds": 0,
                 "period": 2
+            },
+            {
+                "n": "",
+                "minutes": 20,
+                "seconds": 0,
+                "period": 2
             }
         ]
     }
@@ -844,6 +866,9 @@
 document.addEventListener("DOMContentLoaded", function() {
     const d = window.__DADOS_SUMULA__;
     if (!d) return;
+
+    // Pega o limite da config (máximo 15) ou assume 15 se não existir
+    const playerLimit = (d.config && d.config.player_length) ? Math.min(parseInt(d.config.player_length), 15) : 15;
 
     // Função auxiliar para preencher texto por ID
     const set = (id, val) => {
@@ -861,72 +886,105 @@ document.addEventListener("DOMContentLoaded", function() {
         set('general_date', d.general.date);
     }
 
-    // 2. TRAVA ABSOLUTA DE LINHAS
-    let limiteExibicao = (d.config && d.config.player_length) ? parseInt(d.config.player_length) : 15;
-    if (limiteExibicao > 20) limiteExibicao = 20; // Segurança A4
+    // 2. NOMES DOS TIMES
+    if (d.team_1) set('team_1_name', d.team_1.name);
+    if (d.team_2) set('team_2_name', d.team_2.name);
 
-    // 3. FUNÇÃO PARA MONTAR AS TABELAS
-    function montarTabela(timeData, idTbody) {
-        const tbody = document.getElementById(idTbody);
-        if (!tbody) return;
-        tbody.innerHTML = ''; 
+    // 3. FUNÇÃO PARA JOGADORES E CARTÕES (COM LÓGICA DE ESCONDER LINHAS)
+    function preencherTimeManual(timeData, prefixo) {
+        // Percorremos de 1 a 15 (limite do seu HTML fixo)
+        for (let i = 1; i <= 15; i++) {
+            const nomeEl = document.getElementById(`${prefixo}_player_${i}`);
+            // Encontra a linha (TR) para poder esconder se necessário
+            const linhaTr = nomeEl ? nomeEl.closest('tr') : null;
 
-        const tabela = tbody.closest('table');
-        if (limiteExibicao > 15) {
-            tabela.classList.add('tabela-compacta');
-        } else {
-            tabela.classList.remove('tabela-compacta');
-        }
+            if (linhaTr) {
+                if (i > playerLimit) {
+                    // Esconde a linha que passa do limite da config
+                    linhaTr.style.display = "none";
+                } else {
+                    // Garante que a linha apareça (caso estivesse escondida)
+                    linhaTr.style.display = "table-row";
 
-        for (let i = 0; i < limiteExibicao; i++) {
-            const p = (timeData.player && timeData.player[i]) ? timeData.player[i] : null;
-            
-            // Riscado se suspenso
-            const suspenso = (p && p.supend === true) ? 'style="text-decoration: line-through; color: #777;"' : '';
-            const nomeExibir = (p && p.name) ? p.name : "";
+                    // Pega o dado do jogador (i-1 porque o array começa em 0)
+                    const p = (timeData && timeData.player) ? timeData.player[i-1] : null;
 
-            const tr = document.createElement('tr');
-            tr.innerHTML = `
-                <td>
-                    <span class="numero-jogador" style="border-right: 1px solid #000; padding-right: 5px; margin-right: 5px; display: inline-block; width: 22px; text-align: center;">${i + 1}</span>
-                    <strong ${suspenso} class="nome-atleta">${nomeExibir}</strong>
-                </td>
-                <td></td>
-                <td style="text-align: center;">
-                    <span>${p && p.yellow_card >= 1 ? 'X' : ''}</span> | <span>${p && p.yellow_card >= 2 ? 'X' : ''}</span>
-                </td>
-                <td style="text-align: center;">
-                    ${p && p.red_card > 0 ? 'X' : ''}
-                </td>
-            `;
-            tbody.appendChild(tr);
+                    if (p) {
+                        // Nome e Suspensão
+                        nomeEl.innerText = p.name || "";
+                        if (p.supend) {
+                            nomeEl.style.textDecoration = "line-through";
+                            nomeEl.style.color = "red";
+                        } else {
+                            nomeEl.style.textDecoration = "none";
+                            nomeEl.style.color = "inherit";
+                        }
+
+                        // Número do Jogador
+                        set(`${prefixo}_n_${i}`, p.n);
+
+                        // AMARELOS (X | X)
+                        const y1 = document.getElementById(`${prefixo}_yellow1_${i}`);
+                        const y2 = document.getElementById(`${prefixo}_yellow2_${i}`);
+                        if (y1) y1.innerText = (p.yellow_card >= 1) ? "X" : "";
+                        if (y2) y2.innerText = (p.yellow_card >= 2) ? "X" : "";
+
+                        // VERMELHOS (r1 | r2)
+                        const r1 = document.getElementById(`${prefixo}_red1_${i}`);
+                        const r2 = document.getElementById(`${prefixo}_red2_${i}`);
+                        const v = parseInt(p.red_card || p.red || 0);
+
+                        if (r1) {
+                            r1.innerText = (v >= 1) ? "X" : "";
+                            if (v >= 1) r1.style.color = "red";
+                        }
+                        if (r2) {
+                            r2.innerText = (v >= 2) ? "X" : "";
+                            if (v >= 2) r2.style.color = "red";
+                        }
+
+                        // AZUL
+                        const blueEl = document.getElementById(`${prefixo}_blue_${i}`);
+                        if (blueEl) blueEl.innerText = (p.blue_card > 0) ? "X" : "";
+                    } else {
+                        // Se não houver dados para esta linha, limpa os campos
+                        nomeEl.innerText = "";
+                        set(`${prefixo}_n_${i}`, "");
+                    }
+                }
+            }
         }
     }
 
-    // 4. FUNÇÃO PARA PREENCHER OS GOLS
-    function preencherGols(timeData, prefixo) {
-        if (!timeData.goals) return;
+    // 4. FUNÇÃO PARA GOLS
+    function preencherGolsManual(timeData, prefixo) {
+        if (!timeData || !timeData.goals) return;
         timeData.goals.forEach((gol, i) => {
-            set(`${prefixo}_gol_n_${i}`, ` ${gol.n || ''}`);
-            set(`${prefixo}_gol_min_${i}`, String(gol.minutes || 0).padStart(2, '0'));
-            set(`${prefixo}_gol_seg_${i}`, String(gol.seconds || 0).padStart(2, '0'));
+            const nEl = document.getElementById(`${prefixo}_gol_n_${i}`);
+            if (nEl) nEl.innerText = gol.n || "";
+
+            const timeEl = document.getElementById(`${prefixo}_gol_time_${i}`);
+            if (timeEl) {
+                if (gol.minutes !== undefined) {
+                    const min = String(gol.minutes).padStart(2, '0');
+                    const seg = String(gol.seconds || 0).padStart(2, '0');
+                    timeEl.innerText = `${min}:${seg}`;
+                } else {
+                    timeEl.innerText = ". . : . ."; 
+                }
+            }
         });
     }
 
-    // --- EXECUÇÃO FINAL ---
-    set('team_1_name', d.team_1.name);
-    set('team_2_name', d.team_2.name);
-    set('team_1_coach', d.team_1.coach);
-    set('team_1_captain', d.team_1.captain);
-    set('team_2_coach', d.team_2.coach);
-    set('team_2_captain', d.team_2.captain);
-
-    montarTabela(d.team_1, 'tabela-time-1');
-    montarTabela(d.team_2, 'tabela-time-2');
-    preencherGols(d.team_1, 't1');
-    preencherGols(d.team_2, 't2');
+    // --- EXECUÇÃO ---
+    preencherTimeManual(d.team_1, 'team_1');
+    preencherTimeManual(d.team_2, 'team_2');
+    preencherGolsManual(d.team_1, 't1');
+    preencherGolsManual(d.team_2, 't2');
 });
 </script>
+
+
 
 </body>
 </html>

@@ -59,14 +59,14 @@ body {
     padding: 4px;
     font-weight: bold;
     font-size: 15px;
-    width: 309px;
+    width: 319px;
     text-align: center;
 }
 
 .score-box {
     border: 1px solid #000;
-    width: 64px;
-    height: 32px;
+    width: 54px;
+    height: 27px;
 }
 
 .vs-text {
@@ -84,7 +84,7 @@ body {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 17px;
+    gap: 9px;
 }
 
 .info-column {
@@ -99,7 +99,7 @@ body {
 .team-wrapper {
     display: flex;
     gap: 5px;
-    height: 325px;
+    height: 336px;
     width: 841px;
 }
 
@@ -206,7 +206,7 @@ body {
 
 /* Linha de cima: Quadrado Preto + Espaço Branco */
 .gol-top-row {
-    height: 14px !important;
+    height: 10px !important;
 }
 
 .gol-num {
@@ -225,7 +225,7 @@ body {
 .gol-space {
     flex-grow: 1 !important;
     background: #fff !important;
-    border-bottom: 1px solid #000 !important;
+    
 }
 
 /* Linha de baixo: Pontilhados Centrais */
@@ -651,4 +651,81 @@ table.contagens-table {
 /*Peso da fonte dos noes dos times*/
 strong {
     font-weight: 600;
+}
+
+/*Fonte dos nomes dos jogadores*/
+
+.nome-jogador  {
+    font-weight: 200 !important;
+    font-size:12px;
+}
+
+
+
+.gol-item {
+        border-bottom: 1px solid #000;
+        height: 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 0;
+        overflow: hidden;
+    }
+    .gol-top-row {
+        display: flex;
+        align-items: center;
+        background: #fff;
+        height: 11px;
+    }
+    .gol-num {
+        background: #000;
+        color: #fff;
+        width: 14px;
+        height: 14px;
+        text-align: center;
+        font-size: 9px;
+        font-weight: bold;
+        line-height: 14px;
+    }
+    .gol-player-n {
+        margin-left: 4px;
+        font-size: 11px;
+        font-weight: bold;
+        color: #000;
+    }
+    .gol-time-display {
+        font-size: 9px;
+        text-align: center;
+        height: 14px;
+        line-height: 14px;
+        color: #000;
+        background: #fff;
+        width: 100%;
+        /* Removemos o border-top para não poluir visualmente */
+    }
+    .gol-space {
+    font-size:8px;
+    margin-left: 2px;
+}
+
+.gol-top-row {
+    border-bottom: 1px solid #000;
+    
+}
+
+
+/*Ajustes no "X" das cédulas de cartões*/
+table.team-table {
+    margin-top: -6px;
+}
+
+.score-line {
+    margin-top:-2px
+}
+
+
+
+td.double-right strong {
+    font-size:11px;
+    font-weight:550
 }
