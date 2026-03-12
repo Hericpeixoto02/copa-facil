@@ -34,7 +34,6 @@ body {
     display: flex;
     width: 80%;
     height: 25px;
-    margin-top: 15px;
     justify-self: center;
     align-items: stretch;
     border-top: 1px solid #000;
@@ -101,7 +100,7 @@ body {
 /* Área de Arbitragem */
 .arbitragem-container {
     display: flex;
-    height: 80px;
+    height: 100px;
     border-right: 1px solid #000;
     border: 1px solid;
     margin-top:2px;
@@ -109,7 +108,7 @@ body {
 }
 
 .arbitragem-label {
-    width: 25px;
+    width: 71px;
     font-size: 9px;
     font-weight: bold;
     text-align: center;
@@ -166,9 +165,10 @@ body {
 }
 
 table.mini-table {
+    height: 72px;
     border: 1px solid;
-    margin-top:3px;
-    margin-bottom: 2px;
+    margin-top:2px;
+   
     
 }
 .arbitragem-fields {
@@ -200,11 +200,11 @@ div#placar2 {
 
 .team-section {
     width: 190mm;
-    margin-top: 10px;
+    margin-top: 3px;
 }
 
 .team-header-name {
-    width: 505px;
+    width: 502.3px;
     padding: 2px 8px;
     font-size: 10px;
     font-weight: bold;
@@ -285,8 +285,9 @@ div#placar2 {
 /* Grade 1-20 */
 .grid-footer {
     width: 100%;
-    margin-top: 5px;
+    margin-top: 2px;
     border-collapse: collapse;
+    margin-top: 5px;
 }
 
 .grid-footer td {
@@ -299,7 +300,7 @@ div#placar2 {
 }
 
 div#team-a {
-    margin-top: -10px;
+    margin-top: -14px;
 }
 
 td.col-sig {
@@ -319,4 +320,97 @@ td.nome-jogador {
 
 td.txt-left {
     width:5px;
+}
+
+
+/*fonte do nome do atleta*/
+.nome-jogador {
+    font-weight: 400;
+    font-size: 12px;
+}
+
+/*Peso da fonte dos nomes dos times*/
+
+strong#team_1_name {
+    font-weight: 600 !important;
+}
+
+strong#team_2_name {
+    font-weight: 600 !important;
+}
+
+/*Peso da fonte nome do local*/
+strong#general_place {
+    font-weight:600;
+}
+
+.sub-marks {
+    letter-spacing: 2px; /* Aumente este valor para afastar mais as barras */
+    text-align: center;   /* Garante que o bloco de barras fique centralizado */
+    padding-left: 12px;   /* Compensa o espaço da última barra para centralizar perfeito */
+    white-space: nowrap;  /* Impede que as barras quebrem linha em telas menores */
+}
+
+/*aumentando fonte dos documentos*/
+td.doc {
+    font-size: 12px;
+}
+
+
+div#col-1 {
+    width:150px;
+}
+.grid-footer {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.grid-footer td {
+    border: 1px solid #000;
+    text-align: center;
+    padding: 0;
+    height: 13px;
+    font-size: 9px;
+}
+
+/* 1. Remove a borda de baixo dos números para "fundir" com a célula inferior */
+.row-numbers td {
+    border-bottom: none !important;
+}
+
+/* 2. Célula do número: Garante a borda na esquerda e na direita (|) */
+.cell-num {
+    font-weight: bold;
+    border-right: 1px solid #000 !important; 
+    width: 8px; /* Ajuste para o número não ficar apertado */
+}
+
+/* 3. Aba vazia ao lado do número: Removemos a borda direita dela para não ficar duplo */
+/* Mas mantemos a borda esquerda (que é a do número) */
+.cell-empty {
+    border-right: 1px solid #000 !important;
+}
+
+/* 4. Linha de baixo: Remove a borda de cima para completar a fusão */
+.row-empty td {
+    border-top: none !important;
+    height: 15px; /* Espaço maior para marcar o X ou preencher */
+}
+
+tr.row-numbers {
+    border-bottom:1px solid;
+}
+
+/* Alinha o texto da célula à esquerda */
+.main-table td:nth-child(2) { 
+    text-align: left !important;
+    padding-left: 5px; /* Adiciona um pequeno respiro para o nome não colar na borda */
+}
+
+/* Garante que o strong se comporte como bloco ou herde o alinhamento */
+.nome-jogador {
+    
+    text-align: left;
+    
 }
