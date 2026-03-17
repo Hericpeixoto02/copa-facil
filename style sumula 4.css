@@ -48,7 +48,7 @@ body {
 
 /* Tabela Global para reset */
 table {
-    width: 100%;
+    width: 100.3%;
     border-collapse: collapse;
     font-size: 8px;
     table-layout: fixed; /* Ajuda a manter as larguras exatas */
@@ -198,7 +198,7 @@ th, td {
 .tempo-inputs div:last-child { border-right: none; }
 
 /* --- PAINÉIS INFERIORES ESQUERDOS --- */
-.bottom-left-panel { display: flex; gap: 0px; height: 120px; }
+.bottom-left-panel { display: flex; gap: 0px; height: 122px; }
 .penalidades { flex: 0 0 35%; }
 .observacoes { flex: 0 0 30%; border: 2px solid #000; display: flex; flex-direction: column; padding: 2px; font-size: 8px;}
 .aprovacoes { flex: 0 0 35%; }

@@ -381,10 +381,10 @@
             <th id="times22" class="team-col">A<br>B</th>
         </tr>
         <tr class="sub-header-row">
-            <th class="number-col">Nº</th>
+            <th id="num-1" class="number-col">Nº</th>
             <th class="team-col">Relação de jogadores</th>
             <th class="divider-middle">Nº</th>
-            <th class="number-col">Nº</th>
+            
             <th class="team-col">Relação de jogadores</th>
         </tr>
     </thead>
@@ -1336,7 +1336,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 <script>
-    function createRosterRows(totalRows = 14) {
+    function createRosterRows(totalRows = 15) {
         const tbody = document.getElementById('roster-body');
         tbody.innerHTML = '';
 
