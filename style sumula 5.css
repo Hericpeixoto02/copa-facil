@@ -59,7 +59,7 @@ body { background-color: #fff; display: flex; justify-content: center; padding: 
 
 
 /* Título Vertical SET */
-.set-vertical-title { width: 20px; display: flex; align-items: center; justify-content: center; text-align: center;  font-size: 10px; background-color: #fff; }
+.set-vertical-title { width: 20px; display: flex; align-items: center; justify-content: center; text-align: center;  font-size: 9px; background-color: #fff; }
 
 /* Estrutura Interna de Dados (Equipes e Pontos) */
 .set-main-data { flex: 1; display: flex; flex-direction: column; }
@@ -349,4 +349,8 @@ div#troca-lado {
 .section-title.border-bottom {
     border-left: 1px solid #000;
     border-right: 1px solid #000;
+}
+
+.footer-col.border-right.flex-col {
+    height: 185px;
 }
