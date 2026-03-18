@@ -640,3 +640,6 @@ td.saque-cell::after {
     padding:8px;
 }
 
+td#team_2_n_1, td#team_2_n_2, td#team_2_n_3,td#team_2_n_4, td#team_2_n_5,td#team_2_n_6,td#team_2_n_7, td#team_2_n_8, td#team_2_n_9, td#team_2_n_10, td#team_2_n_11, td#team_2_n_12{
+    display: none;
+}
