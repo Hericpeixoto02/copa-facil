@@ -30,7 +30,7 @@ body {
 }
 
 /* Utilitários de Borda e Texto */
-.border-thick { border: 2px solid #000; }
+.border-thick { border: 1px solid #000; }
 .border-thin { border: 1px solid #000; }
 .text-center { text-align: center; }
 .text-bold { font-weight: bold; }
@@ -70,14 +70,14 @@ th, td {
 
 /* --- SETS --- */
 .set-wrapper { 
-    border: 2px solid #000; 
+    border: 1px solid #000; 
     
     display: flex;
     flex-direction: column;
 }
 .set-header {
     display: flex;
-    border-bottom: 2px solid #000;
+    border-bottom: 1px solid #000;
     font-size: 8px;
     font-weight: bold;
 }
@@ -93,7 +93,7 @@ th, td {
 .sh-2 { width: 131.5px; justify-content: flex-start !important; }
 .sh-3 { width: 109px; }
 .sh-sr { width: 3%; text-align: center; font-size: 7px; line-height: 1; }
-.sh-pts { width: 93px; }
+.sh-pts { width: 95.8px; }
 
 .set-body { 
     display: flex; 
@@ -140,7 +140,7 @@ th, td {
     font-size: 5px; 
     display: flex;
     align-items: flex-start;
-    padding-top: 1px;
+    padding-top: 7px;
     padding-left: 2px;
     color: #444;
 }
@@ -149,8 +149,8 @@ th, td {
 /* Bloco de Pontos Central */
 .pontos-block {
     width: 12%;
-    border-left: 2px solid #000;
-    border-right: 2px solid #000;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
     display: flex;
     flex-direction: column;
 }
@@ -209,21 +209,21 @@ th, td {
 .roster-table td:nth-child(1), .roster-table td:nth-child(3) { width: 12px; text-align: center; font-size: 7px;}
 
 .section-title {
-    border: 2px solid #000;
+    border: 1px solid #000;
     border-bottom: none;
     text-align: center;
     font-weight: bold;
     font-size: 9px;
     padding: 2px;
 }
-.staff-table td { height: 13px; }
+.staff-table td { height: 17px; }
 
 /* Troca de Quadra Set 3 */
-.set3-side { display: flex; border: 2px solid #000; }
+.set3-side { display: flex;  }
 .set3-side-table td { text-align: center; }
 .set3-side-points {
     width: 82px;
-    border-left: 2px solid #000;
+    
     font-size: 6px;
     text-align: center;
     line-height: 1.1;
@@ -231,7 +231,7 @@ th, td {
 }
 
 /* Resultados Finais */
-.resultados-table { border: 2px solid #000; }
+.resultados-table { border: 1px solid #000; }
 .resultados-table th, .resultados-table td { text-align: center; }
 .resultados-table td { height: 10px; }
 .res-footer td { text-align: left; padding: 2px 4px; }
@@ -440,7 +440,7 @@ th, td {
     .roster-main-table {
     width: 100%;
     border-collapse: collapse;
-    border: 2px solid #000;
+    border: 1px solid #000;
     font-family: Arial, sans-serif;
     table-layout: fixed;
 }
@@ -448,7 +448,7 @@ th, td {
 .roster-main-table th,
 .roster-main-table td {
     border: 1px solid #000;
-    height: 13px;
+    height: 17.5px;
     padding: 2px 4px;
     font-size: 8px;
     text-transform: uppercase;
@@ -528,6 +528,7 @@ th {
 td#rodada-saque {
     transform: none;
     writing-mode: horizontal-tb;
+    font-size:5px
 }
 
 td.saque-cell {
@@ -638,8 +639,48 @@ td.saque-cell::after {
 .titulo-pontos {
     border-bottom:1px solid #000;
     padding:8px;
+    border: 1px solid;
 }
 
 td#team_2_n_1, td#team_2_n_2, td#team_2_n_3,td#team_2_n_4, td#team_2_n_5,td#team_2_n_6,td#team_2_n_7, td#team_2_n_8, td#team_2_n_9, td#team_2_n_10, td#team_2_n_11, td#team_2_n_12{
     display: none;
 }
+
+.equipe-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+
+
+.pontos-grid > div:nth-child(1), .pontos-grid > div:nth-child(2){
+    line-height: 1.4
+}
+
+.pontos-grid div {
+    line-height: 1.4
+}
+
+
+.border {
+    line-height: 1.6;
+    margin-top:-17px;
+}
+
+
+.aprovacoes td {
+    height:12px;
+}
+
+div#pontos-b {
+    margin-left: 55px;
+    width: 0px !important;
+}
+
+table.resultados-table
+
+ {
+    margin-top: -1px !important;
+
+ }
