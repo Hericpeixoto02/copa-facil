@@ -1,28 +1,9 @@
-/* Reset Geral */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    font-size: 10px;
-}
+/* Reset Geral e Fixação A4 */
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; font-size: 8px; }
+body { background-color: #fff; display: flex; justify-content: center; padding: 20px; }
 
-body {
-    background-color: #fff;
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-}
-
-/* Container Principal - Proporção A4 Paisagem */
-.sumula-container {
-    width: 297mm;
-    height: 210mm;
-    background-color: #fff;
-    border: 3px solid #000;
-    display: flex;
-    flex-direction: column;
-}
+/* Container Principal - Proporção Exata A4 Paisagem (297x210) */
+.sumula-container { width: 279mm; height: 201mm; background-color: #fff; display: flex; flex-direction: column; overflow: hidden;margin-top: 15px; }
 
 /* Classes Utilitárias */
 .bold { font-weight: bold; }
@@ -31,155 +12,341 @@ body {
 .border-top { border-top: 1px solid #000; }
 .border-left { border-left: 1px solid #000; }
 .border-right { border-right: 1px solid #000; }
-.thick-bottom { border-bottom: 2px solid #000; }
-.thick-right { border-right: 2px solid #000; }
-.thick-left { border-left: 2px solid #000; }
 .flex-col { display: flex; flex-direction: column; }
 
-/* Sistema de Grid Simples do Cabeçalho */
-.header { display: flex; flex-direction: column; }
-.row { display: flex; width: 100%; min-height: 20px; }
-.col { padding: 4px; }
-.flex-1 { flex: 1; }
-.flex-2 { flex: 2; }
-.flex-3 { flex: 3; }
-.flex-5 { flex: 5; }
-.flex-8 { flex: 8; }
+/* Cabeçalho */
+.header { border: 1px solid #000; font-family: sans-serif; font-size: 12px; width: 100%; }
+    .row { display: flex; width: 100%; }
+    .col { border-right: 1px solid #000; padding: 5px; align-items: center; }
+    .col:last-child { border-right: none; }
+    .border-bottom { border-bottom: 1px solid #000; }
+    .center { justify-content: center; text-align: center; }
+    .bold { font-weight: bold; }
+    .flex-1 { flex: 1; }
+    .flex-2 { flex: 2; }
+    .flex-3 { flex: 3; }
+    .flex-4 { flex: 4; }
+    .flex-8 { flex: 8; }
 
-/* Grid dos Sets (1 a 4) */
+/* ========================================= */
+/* GRID DOS SETS (COM ESPAÇAMENTO REAL)      */
+/* ========================================= */
 .sets-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    flex: 4; /* Ocupa a maior parte da tela */
+    flex: 3.5; /* Altura ajustada para dar espaço ao rodapé */
+    gap: 3px; /* <--- MAGIA AQUI: O espaçamento pedido no print 1 */
+    
 }
 
-.set-box { display: flex; }
+.set-box { display: flex; width: 100%; height: 148px; background: #fff;border-top: 1px solid; }
 
-.set-label {
-    width: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-weight: bold;
-    font-size: 11px;
+/* Barra Lateral de Nomes */
+.set-labels-sidebar { width: 65px; display: flex; flex-direction: column; font-size: 6px; }
+.sl-header { height: 16px; } 
+.sl-row { height: 14px; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 7px;}
+.sl-row-group { display: flex; flex: 1; }
+.sl-group-title { flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 6px; padding: 2px;}
+.sl-group-items { flex: 1.5; display: flex; flex-direction: column; }
+.sl-item { flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 6px;}
+.sl-item-dual { flex: 1; display: flex; }
+.sl-item-dual span { flex: 1; display: flex; align-items: center; justify-content: center; font-size: 7px; ;
+    
 }
 
-.set-main {
+
+
+
+/* Título Vertical SET */
+.set-vertical-title { width: 20px; display: flex; align-items: center; justify-content: center; text-align: center;  font-size: 10px; background-color: #fff; }
+
+/* Estrutura Interna de Dados (Equipes e Pontos) */
+.set-main-data { flex: 1; display: flex; flex-direction: column; }
+.smd-header { height: 16px; display: flex; font-size: 6px; text-align: center;  }
+.smd-h-time {  display: flex; align-items: center; justify-content: center; font-weight: 400; padding: 5px;}
+.smd-h-team { flex: 3; display: flex; align-items: center; justify-content: center; }
+.smd-h-sr { width: 14px; display: flex; align-items: center; justify-content: center; font-size: 5px; }
+.smd-h-pts { flex: 1; display: flex; align-items: center; justify-content: center; }
+
+.smd-body { flex: 1; display: flex; }
+.team-block { flex: 3; display: flex; }
+.team-col { flex: 1; display: flex; flex-direction: column; }
+.tc-head { height: 12px; display: flex; align-items: center; justify-content: center;  font-size: 8px;}
+.tc-ini { height: 14px; }
+.tc-sub { height: 12px; }
+.tc-sub-pts { height: 12px; display: flex; align-items: center; justify-content: center; font-size: 8px; color: #333; }
+.tc-rod { flex: 1; border-bottom: 1px solid #ccc; display: flex; align-items: center; justify-content: center; font-size: 6px;}
+
+.points-block { flex: 1; display: flex; }
+.pts-col { flex: 1; display: flex; flex-direction: column; font-size: 6px; color: #111; }
+.pts-col span { flex: 1; border-bottom: 1px solid #ddd; display: flex; align-items: center; justify-content: center; }
+
+.sr-divider { width: 14px; background: #fafafa; } 
+
+/* ========================================= */
+/* SET 5 HORIZONTAL (Troca de Lado - Print 2 e 3)*/
+/* ========================================= */
+.set5-container { 
+    display: flex; 
+    flex: 1.2; 
+    border-bottom: 3px solid #000;
+}
+.set5-section {
     flex: 1;
     display: flex;
     flex-direction: column;
 }
 
-.set-header {
-    display: flex;
-    text-align: center;
-    font-weight: bold;
-    height: 18px;
-    align-items: center;
+/* ========================================= */
+/* RODAPÉ (Tamanhos reajustados - Print 4 e 5)*/
+/* ========================================= */
+.footer-grid { 
+    display: grid; 
+    /* Colunas: Penalidades (0.8), Observações (1.8), Resultados (1.3), Equipe (1.8) */
+    grid-template-columns: 0.8fr 1.8fr 1.3fr 1.8fr; 
+    flex: 1.3; /* Dá mais altura vertical ao rodapé inteiro */
 }
-
-.sh-side { flex: 1; }
-.sh-center { width: 40px; }
-
-.set-body {
-    flex: 1;
-    display: flex;
-}
-
-.set-table {
-    flex: 1;
-    border-collapse: collapse;
-    text-align: center;
-}
-
-.set-table td {
-    border: 1px solid #000;
-    width: 16.66%; /* 6 colunas iguais */
-}
-
-.set-table .tall-row td {
-    height: 40px; /* Linhas vazias grandes como no print 2 */
-}
-
-.set-points {
-    width: 40px;
-    border-left: 1px solid #000;
-    border-right: 1px solid #000;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    font-size: 8px;
-    line-height: 1.2;
-}
-
-/* Set 5 */
-.set5-container {
-    display: flex;
-    height: 60px;
-}
-
-.set5-main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.set5-row {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 11px;
-}
-
-/* Rodapé */
-.footer-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr 1.5fr 1.2fr;
-    flex: 2;
-}
-
-.footer-col {
-    display: flex;
-    flex-direction: column;
-}
-
-.section-title {
-    text-align: center;
-    font-weight: bold;
-    padding: 4px;
-    background-color: #fff;
-}
-
-.footer-table {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: center;
-}
-
-.footer-table th, .footer-table td {
-    border: 1px solid #000;
-    padding: 3px;
-    height: 18px;
-}
+.footer-col { display: flex; flex-direction: column; }
+.section-title { text-align: center; font-weight: bold; padding: 4px; background-color: #fff; }
+.footer-table { width: 100%; border-collapse: collapse; text-align: center; height: 18px; }
+.footer-table th, .footer-table td { border: 1px solid #000; padding: 3px; }
 
 /* Ajustes Específicos do Rodapé */
-.obs-area {
+.obs-area { flex: 1; display: flex; flex-direction: column; justify-content: space-evenly; padding: 5px 10px; }
+.obs-line { border-bottom: 1px solid #999; height: 1px; width: 100%; }
+.table-approvals { margin-top: auto; height: auto; }
+.table-approvals th, .table-approvals td { height: 16px; }
+.table-roster td:nth-child(1), .table-roster td:nth-child(3) { width: 12%; }
+
+
+.set-box {
+    border: 1px solid #000;
+}
+
+.set5-container {
+    border: 1px solid #000;
+    margin-bottom:10px !important;
+}
+
+/*Bordar e espaçamento inferior header*/
+.header {
+    
+    margin-bottom: 5px;
+}
+
+.col.flex-1 {
+    justify-content: center !important;
+    font-weight:600;
+}
+
+p.volei {
+    border-bottom:1px solid;
+    width:100%;
+    text-align:center;
+    padding: 1px;
+}
+
+.smd-h-team.border-right {
+    font-weight:300;
+}
+
+.section-title.border-bottom {
+    border-top: 1px solid #000;
+}
+
+div#horario {
+    border-bottom:1px solid #000;
+    margin-top:-5px;
+    width:100%;
+    border-left:1px solid #000;
+    
+}
+
+div#time-horario {
+    padding: 0px;
+    margin-top: 5px;
+    
+}
+
+p.time-volei {
+    border-left:1px solid #000;
+    line-height: 2.5;
+    font-weight:300;
+}
+
+div#horario {
+    text-align: left !important;
+    font-weight:300;
+}
+
+
+b.vs {
+    font-size: 5px;
+}
+
+/* Container principal com a borda externa mais grossa */
+.sumula-header {
+    display: flex;
+    width: 100%;
+    border: 1px solid #000; 
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    box-sizing: border-box;
+    background-color: #fff;
+    margin-bottom: 3px;
+}
+
+/* Grid perfeitamente alinhado para a parte da esquerda */
+.sumula-left {
     flex: 1;
+    display: grid;
+    /* Ajuste as proporções das colunas aqui se precisar de mais espaço em alguma */
+    grid-template-columns: auto 1fr 1.2fr 1.8fr; 
+}
+
+/* Estilo padrão de cada célula (bordas internas) */
+.cell {
+    height: 13px;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    padding: 6px 8px;
+    display: flex;
+    align-items: center;
+    /*min-height: 28px;  Altura mínima de cada linha */
+}
+
+/* Faz a célula ocupar todas as 4 colunas da esquerda */
+.span-4 {
+    grid-column: span 4;
+    border-right: none;
+}
+
+.title-cell {
+    font-size: 16px;
+}
+
+/* Classes utilitárias para remover bordas duplas */
+.border-right-none {
+    border-right: none;
+}
+
+.border-bottom-none {
+    border-bottom: none;
+}
+
+.center-text {
+    justify-content: center;
+    text-align: center;
+}
+
+/* Caixa da direita que ocupa toda a altura automaticamente */
+.sumula-right {
+    width: 100px;
+    border-left: 1px solid #000;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    padding: 5px;
+    align-items: center;
+    justify-content: center;
 }
 
-.obs-line {
-    border-bottom: 1px solid #999;
-    height: 1px;
-    width: 100%;
+.volle-text {
+    font-weight: bold;
+    font-size: 8px;
+    margin-bottom: 2px;
 }
 
-.table-approvals { margin-top: auto; }
-.table-roster td:nth-child(1), .table-roster td:nth-child(3) { width: 15%; } /* Coluna Nº menor */
+/* Aquele tracinho embaixo da palavra "volle" */
+.volle-line {
+    width: 50%;
+    border-bottom: 1px solid #000;
+}
+
+
+
+
+div#set4 {
+    margin-top:-131px !important;
+}
+
+div#set3 {
+    margin-top:-131px !important;
+}
+
+.set5-container {
+    margin-top:-259px
+}
+
+.footer-grid {
+    margin-top: -5px
+}
+
+
+/* 1. CONFIGURAÇÃO DA IMPRESSORA */
+@media print {
+    @page {
+        size: A4 landscape;
+        margin: 0; /* Tiramos a margem da página para controlar via CSS */
+    }
+
+    html, body {
+        width: 297mm;
+        height: 210mm;
+        margin: 0;
+        padding: 0;
+    }
+
+    .pagina {
+        margin: 0;
+        border: none;
+        width: 297mm;
+        height: 210mm;
+        page-break-after: always;
+        overflow: hidden; /* Evita que conteúdo extra crie páginas em branco */
+        box-sizing: border-box;
+        padding: 10mm; /* Margem interna real do conteúdo */
+    }
+
+    /* Forçar cores e imagens de fundo */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+}
+
+/* 2. VISUALIZAÇÃO NA TELA (Para você ajustar o design) */
+@media screen {
+    body {
+       
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .pagina {
+        background: white;
+        width: 297mm;
+        height: 210mm;
+        margin-bottom: 10mm;
+        box-shadow: 0 0 15px rgba(0,0,0,0.5);
+        box-sizing: border-box;
+        padding: 10mm;
+    }
+}
+
+div#troca-lado {
+    margin-left:44px;
+    border-left: 1px solid #000;
+
+}
+
+.set5-container .smd-header.border-bottom {
+    padding:4px;
+}
+
+
+.section-title.border-bottom {
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+}
