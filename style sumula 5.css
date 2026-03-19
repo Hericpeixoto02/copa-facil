@@ -125,7 +125,7 @@ body {
 .set-box {
     display: flex;
     width: 100%;
-    height: 148px;
+    height: 171px;
     background: #fff;
     border-top: 1px solid;
 }
@@ -155,6 +155,10 @@ body {
     display: flex;
     flex: 1;
 }
+div#pontos-trocas {
+    margin-top:7px;
+}
+
 
 .sl-group-title {
     flex: 1;
@@ -173,6 +177,7 @@ body {
 }
 
 .sl-item {
+    max-height: 16px;
     flex: 1;
     display: flex;
     align-items: center;
@@ -196,7 +201,7 @@ body {
 
 /* Título Vertical SET */
 .set-vertical-title {
-    width: 20px;
+    width: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -243,7 +248,7 @@ body {
 }
 
 .smd-h-pts {
-    flex: 1;
+    flex: 1.2;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -273,16 +278,14 @@ body {
     font-size: 8px;
 }
 
-.tc-ini {
-    height: 14px;
-}
+
 
 .tc-sub {
-    height: 12px;
+    height: 15.5px;
 }
 
 .tc-sub-pts {
-    height: 12px;
+    height: 23.5px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -292,11 +295,13 @@ body {
 
 .tc-rod {
     flex: 1;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #000;
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 6px;
+    justify-content: start;
+    padding: 3px;
+    font-size: 4px;
+   
 }
 
 .points-block {
@@ -313,6 +318,7 @@ body {
 }
 
 .pts-col span {
+    font-size: 6px;
     flex: 1;
     border-bottom: 1px solid #ddd;
     display: flex;
@@ -323,6 +329,7 @@ body {
 .sr-divider {
     width: 14px;
     background: #fafafa;
+    display: none;
 }
 
 /* ========================================= */
@@ -332,12 +339,14 @@ body {
     display: flex;
     flex: 1.2;
     border-bottom: 3px solid #000;
+    gap: 3px;
 }
 
 .set5-section {
     flex: 1;
     display: flex;
     flex-direction: column;
+    max-width: 439px;
 }
 
 /* ========================================= */
@@ -358,7 +367,7 @@ body {
 .section-title {
     text-align: center;
     font-weight: bold;
-    padding: 4px;
+    
     background-color: #fff;
 }
 
@@ -372,7 +381,7 @@ body {
 .footer-table th,
 .footer-table td {
     border: 1px solid #000;
-    padding: 3px;
+    padding: 1px;
 }
 
 /* Ajustes Específicos do Rodapé */
@@ -381,7 +390,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    padding: 5px 10px;
+    
 }
 
 .obs-line {
@@ -407,6 +416,7 @@ body {
 
 .set-box {
     border: 1px solid #000;
+    margin-bottom: 3px;
 }
 
 .set5-container {
@@ -543,17 +553,6 @@ b.vs {
     border-bottom: 1px solid #000;
 }
 
-div#set4 {
-    margin-top: -131px !important;
-}
-
-div#set3 {
-    margin-top: -131px !important;
-}
-
-.set5-container {
-    margin-top: -259px;
-}
 
 .footer-grid {
     margin-top: -5px;
@@ -612,7 +611,7 @@ div#set3 {
 }
 
 div#troca-lado {
-    margin-left: 44px;
+    max-width: 525px;
     border-left: 1px solid #000;
 }
 
@@ -626,5 +625,105 @@ div#troca-lado {
 }
 
 .footer-col.border-right.flex-col {
-    height: 185px;
+    height: 258.5px;
+}
+
+
+b.barra {
+    font-weight: 100;
+    font-size: 5px;
+    width:100%;
+    text-align: center;
+    line-height:1;
+}
+
+.set5-container {
+    max-height:165px;
+       
+}
+.barra-num {
+    border-right: 1px solid #000;
+    padding-right:3px;
+    padding:px;
+    margin-top:-2px;
+    margin-bottom:-3px;
+    font-size:6px;
+    line-height:15px;
+    
+}
+
+
+.tc-rod {
+    padding: 5px !important;
+  position: relative; /* Para ancorar o elemento absoluto */
+  display: flex;
+  justify-content: space-around; /* Espaçamento igual para centralizar horizontalmente */
+  align-items: center; /* Centraliza verticalmente os números */
+  height: 20px; /* Mantém a altura fixa */
+  box-sizing: border-box; /* Importante para encaixe perfeito */
+  padding: 0; /* Remove padding que pode quebrar o layout */
+}
+
+/* Usamos um pseudo-elemento para criar a linha sólida */
+.tc-rod::after {
+  content: ""; /* Elemento vazio, remove o caractere | do HTML */
+  position: absolute;
+  left: 50%; /* Centraliza o canto esquerdo da linha */
+  top: 0; /* Cola no topo */
+  bottom: 0; /* Cola na base */
+  width: 1px; /* Largura da linha */
+  background-color: #000; /* Cor preta da linha sólida */
+  transform: translateX(-50%); /* Ajuste de centralização perfeito */
+}
+
+div#container-pontos {
+    height: 18.8px;
+}
+
+
+/* Container principal com borda grossa em volta de tudo */
+.pontuacao-container {
+        border-right: 1px solid;
+    width: 100px; /* Ajuste a largura conforme o seu layout atual */
+    box-sizing: border-box;
+    font-family: Arial, sans-serif; /* Ajuste para a fonte da sua súmula */
+}
+
+/* Deixa as colunas lado a lado */
+.points-block {
+    display: flex;
+}
+
+/* Configuração de cada coluna de números */
+.pts-col {
+    flex: 1; /* Faz todas as 4 colunas terem a mesma largura */
+    display: flex;
+    flex-direction: column; /* Empilha os números verticalmente */
+    text-align: center;
+    padding: 5px 0;
+}
+
+/* Remove qualquer borda que os números tivessem e ajusta a altura */
+.pts-col span {
+    display: block;
+    border: none; /* Garante que as linhas horizontais sumam */
+    line-height: 1.3; /* Ajusta o espaçamento vertical entre os números */
+}
+
+/* Configuração das 3 linhas de baixo */
+.pontuacao-footer {
+    text-align: center;
+    
+}
+
+.points-block.border-bottom-thick {
+    border-bottom: 1px solid #000;
+}
+
+.pontuacao-footer.border-bottom-thick {
+    border-bottom:1px solid;
+    padding:3px;
+}
+.pts-col.border-right-thick {
+    border-right:1px solid #000;
 }

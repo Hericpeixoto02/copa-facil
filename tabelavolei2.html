@@ -43,7 +43,7 @@
                     <div class="sl-group-title border-right">Substituições</div>
                     <div class="sl-group-items">
                         <div class="sl-item border-bottom">Número</div>
-                        <div class="sl-item">Pontos na Troca</div>
+                        <div id="pontos-trocas" class="sl-item">Pontos na Troca</div>
                     </div>
                 </div>
                 <div class="sl-row-group">
@@ -65,36 +65,65 @@
                 </div>
                 <div class="smd-body">
                     <div class="team-block border-right">
-                        <div class="team-col border-right"><div class="tc-head border-bottom">I</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod">1</div><div class="tc-rod">2</div><div class="tc-rod">3</div><div class="tc-rod">4</div></div>
-                        <div class="team-col border-right"><div class="tc-head border-bottom">II</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod">5</div><div class="tc-rod">6</div><div class="tc-rod">7</div><div class="tc-rod">8</div></div>
-                        <div class="team-col border-right"><div class="tc-head border-bottom">III</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                        <div class="team-col border-right"><div class="tc-head border-bottom">IV</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                        <div class="team-col border-right"><div class="tc-head border-bottom">V</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                        <div class="team-col"><div class="tc-head border-bottom">VI</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
+                        <div class="team-col border-right"><div class="tc-head border-bottom">I</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  5</div><div class="tc-rod">2 <b class="barra">|</b> 6</div><div class="tc-rod">3 <b class="barra">|</b>  7</div><div class="tc-rod">4 <b class="barra">|</b> 8</div></div>
+                        <div class="team-col border-right"><div class="tc-head border-bottom">II</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  5</div><div class="tc-rod">2 <b class="barra">|</b> 6</div><div class="tc-rod">3 <b class="barra">|</b>  7</div><div class="tc-rod">4 <b class="barra">|</b> 8</div></div>
+                        <div class="team-col border-right"><div class="tc-head border-bottom">III</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  5</div><div class="tc-rod">2 <b class="barra">|</b> 6</div><div class="tc-rod">3 <b class="barra">|</b>  7</div><div class="tc-rod">4 <b class="barra">|</b> 8</div></div>
+                        <div class="team-col border-right"><div class="tc-head border-bottom">IV</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  5</div><div class="tc-rod">2 <b class="barra">|</b> 6</div><div class="tc-rod">3 <b class="barra">|</b>  7</div><div class="tc-rod">4 <b class="barra">|</b> 8</div></div>
+                        <div class="team-col border-right"><div class="tc-head border-bottom">V</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  5</div><div class="tc-rod">2 <b class="barra">|</b> 6</div><div class="tc-rod">3 <b class="barra">|</b>  7</div><div class="tc-rod">4 <b class="barra">|</b> 8</div></div>
+                       <div class="team-col border-right"><div class="tc-head border-bottom">VI</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  5</div><div class="tc-rod">2 <b class="barra">|</b> 6</div><div class="tc-rod">3 <b class="barra">|</b>  7</div><div class="tc-rod">4 <b class="barra">|</b> 8</div></div>
                     </div>
-                    <div class="points-block border-right">
-                        <div class="pts-col border-right"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span style="border:none;">12</span></div>
-                        <div class="pts-col border-right"><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span style="border:none;">24</span></div>
-                        <div class="pts-col border-right"><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span><span>32</span><span>33</span><span>34</span><span>35</span><span style="border:none;">36</span></div>
-                        <div class="pts-col"><span>37</span><span>38</span><span>39</span><span>40</span><span>41</span><span>42</span><span>43</span><span>44</span><span>45</span><span>46</span><span>47</span><span style="border:none;">48</span></div>
-                    </div>
+                    <div class="pontuacao-container">
+    <div class="points-block border-bottom-thick">
+        <div class="pts-col border-right-thick">
+            <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span>
+        </div>
+        <div class="pts-col border-right-thick">
+            <span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span>24</span>
+        </div>
+        <div class="pts-col border-right-thick">
+            <span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span><span>32</span><span>33</span><span>34</span><span>35</span><span>36</span>
+        </div>
+        <div class="pts-col">
+            <span>37</span><span>38</span><span>39</span><span>40</span><span>41</span><span>42</span><span>43</span><span>44</span><span>45</span><span>46</span><span>47</span><span>48</span>
+        </div>
+    </div>
+
+    <div class="pontuacao-footer border-bottom-thick">"T"</div>
+    <div class="pontuacao-footer border-bottom-thick">:</div>
+    <div class="pontuacao-footer">:</div>
+</div>
                     <div class="sr-divider border-right"></div>
                     <div class="team-block border-right">
-                        <div class="team-col border-right"><div class="tc-head border-bottom">I</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                        <div class="team-col border-right"><div class="tc-head border-bottom">II</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                        <div class="team-col border-right"><div class="tc-head border-bottom">III</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                        <div class="team-col border-right"><div class="tc-head border-bottom">IV</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                        <div class="team-col border-right"><div class="tc-head border-bottom">V</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                        <div class="team-col"><div class="tc-head border-bottom">VI</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
+                         <div class="team-col border-right"><div class="tc-head border-bottom">I</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  5</div><div class="tc-rod">2 <b class="barra">|</b> 6</div><div class="tc-rod">3 <b class="barra">|</b>  7</div><div class="tc-rod">4 <b class="barra">|</b> 8</div></div>
+                        <div class="team-col border-right"><div class="tc-head border-bottom">II</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  5</div><div class="tc-rod">2 <b class="barra">|</b> 6</div><div class="tc-rod">3 <b class="barra">|</b>  7</div><div class="tc-rod">4 <b class="barra">|</b> 8</div></div>
+                        <div class="team-col border-right"><div class="tc-head border-bottom">III</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  5</div><div class="tc-rod">2 <b class="barra">|</b> 6</div><div class="tc-rod">3 <b class="barra">|</b>  7</div><div class="tc-rod">4 <b class="barra">|</b> 8</div></div>
+                        <div class="team-col border-right"><div class="tc-head border-bottom">IV</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  5</div><div class="tc-rod">2 <b class="barra">|</b> 6</div><div class="tc-rod">3 <b class="barra">|</b>  7</div><div class="tc-rod">4 <b class="barra">|</b> 8</div></div>
+                        <div class="team-col border-right"><div class="tc-head border-bottom">V</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  5</div><div class="tc-rod">2 <b class="barra">|</b> 6</div><div class="tc-rod">3 <b class="barra">|</b>  7</div><div class="tc-rod">4 <b class="barra">|</b> 8</div></div>
+                       <div class="team-col border-right"><div class="tc-head border-bottom">VI</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  5</div><div class="tc-rod">2 <b class="barra">|</b> 6</div><div class="tc-rod">3 <b class="barra">|</b>  7</div><div class="tc-rod">4 <b class="barra">|</b> 8</div></div>
                     </div>
-                    <div class="points-block">
-                        <div class="pts-col border-right"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span style="border:none;">12</span></div>
-                        <div class="pts-col border-right"><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span style="border:none;">24</span></div>
-                        <div class="pts-col border-right"><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span><span>32</span><span>33</span><span>34</span><span>35</span><span style="border:none;">36</span></div>
-                        <div class="pts-col"><span>37</span><span>38</span><span>39</span><span>40</span><span>41</span><span>42</span><span>43</span><span>44</span><span>45</span><span>46</span><span>47</span><span style="border:none;">48</span></div>
-                    </div>
+                    <div class="pontuacao-container">
+    <div class="points-block border-bottom-thick">
+        <div class="pts-col border-right-thick">
+            <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span>
+        </div>
+        <div class="pts-col border-right-thick">
+            <span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span>24</span>
+        </div>
+        <div class="pts-col border-right-thick">
+            <span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span><span>32</span><span>33</span><span>34</span><span>35</span><span>36</span>
+        </div>
+        <div class="pts-col">
+            <span>37</span><span>38</span><span>39</span><span>40</span><span>41</span><span>42</span><span>43</span><span>44</span><span>45</span><span>46</span><span>47</span><span>48</span>
+        </div>
+    </div>
+
+    <div class="pontuacao-footer border-bottom-thick">"T"</div>
+    <div class="pontuacao-footer border-bottom-thick">:</div>
+    <div class="pontuacao-footer">:</div>
+</div> 
                 </div>
             </div>
+            
         </div>
 
         <div class="set-box">
@@ -105,38 +134,65 @@
                 </div>
                 <div class="smd-body">
                     <div class="team-block border-right">
-                        <div class="team-col border-right"><div class="tc-head border-bottom">I</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                        <div class="team-col border-right"><div class="tc-head border-bottom">II</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                        <div class="team-col border-right"><div class="tc-head border-bottom">III</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                        <div class="team-col border-right"><div class="tc-head border-bottom">IV</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                        <div class="team-col border-right"><div class="tc-head border-bottom">V</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                        <div class="team-col"><div class="tc-head border-bottom">VI</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
+                         <div class="team-col border-right"><div class="tc-head border-bottom">I</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  5</div><div class="tc-rod">2 <b class="barra">|</b> 6</div><div class="tc-rod">3 <b class="barra">|</b>  7</div><div class="tc-rod">4 <b class="barra">|</b> 8</div></div>
+                        <div class="team-col border-right"><div class="tc-head border-bottom">II</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  5</div><div class="tc-rod">2 <b class="barra">|</b> 6</div><div class="tc-rod">3 <b class="barra">|</b>  7</div><div class="tc-rod">4 <b class="barra">|</b> 8</div></div>
+                        <div class="team-col border-right"><div class="tc-head border-bottom">III</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  5</div><div class="tc-rod">2 <b class="barra">|</b> 6</div><div class="tc-rod">3 <b class="barra">|</b>  7</div><div class="tc-rod">4 <b class="barra">|</b> 8</div></div>
+                        <div class="team-col border-right"><div class="tc-head border-bottom">IV</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  5</div><div class="tc-rod">2 <b class="barra">|</b> 6</div><div class="tc-rod">3 <b class="barra">|</b>  7</div><div class="tc-rod">4 <b class="barra">|</b> 8</div></div>
+                        <div class="team-col border-right"><div class="tc-head border-bottom">V</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  5</div><div class="tc-rod">2 <b class="barra">|</b> 6</div><div class="tc-rod">3 <b class="barra">|</b>  7</div><div class="tc-rod">4 <b class="barra">|</b> 8</div></div>
+                       <div class="team-col border-right"><div class="tc-head border-bottom">VI</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  5</div><div class="tc-rod">2 <b class="barra">|</b> 6</div><div class="tc-rod">3 <b class="barra">|</b>  7</div><div class="tc-rod">4 <b class="barra">|</b> 8</div></div>
                     </div>
-                    <div class="points-block border-right">
-                        <div class="pts-col border-right"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span style="border:none;">12</span></div>
-                        <div class="pts-col border-right"><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span style="border:none;">24</span></div>
-                        <div class="pts-col border-right"><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span><span>32</span><span>33</span><span>34</span><span>35</span><span style="border:none;">36</span></div>
-                        <div class="pts-col"><span>37</span><span>38</span><span>39</span><span>40</span><span>41</span><span>42</span><span>43</span><span>44</span><span>45</span><span>46</span><span>47</span><span style="border:none;">48</span></div>
-                    </div>
+                    <div class="pontuacao-container">
+    <div class="points-block border-bottom-thick">
+        <div class="pts-col border-right-thick">
+            <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span>
+        </div>
+        <div class="pts-col border-right-thick">
+            <span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span>24</span>
+        </div>
+        <div class="pts-col border-right-thick">
+            <span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span><span>32</span><span>33</span><span>34</span><span>35</span><span>36</span>
+        </div>
+        <div class="pts-col">
+            <span>37</span><span>38</span><span>39</span><span>40</span><span>41</span><span>42</span><span>43</span><span>44</span><span>45</span><span>46</span><span>47</span><span>48</span>
+        </div>
+    </div>
+
+    <div class="pontuacao-footer border-bottom-thick">"T"</div>
+    <div class="pontuacao-footer border-bottom-thick">:</div>
+    <div class="pontuacao-footer">:</div>
+</div>
                     <div class="sr-divider border-right"></div>
                     <div class="team-block border-right">
-                        <div class="team-col border-right"><div class="tc-head border-bottom">I</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                        <div class="team-col border-right"><div class="tc-head border-bottom">II</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                        <div class="team-col border-right"><div class="tc-head border-bottom">III</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                        <div class="team-col border-right"><div class="tc-head border-bottom">IV</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                        <div class="team-col border-right"><div class="tc-head border-bottom">V</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                        <div class="team-col"><div class="tc-head border-bottom">VI</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
+                         <div class="team-col border-right"><div class="tc-head border-bottom">I</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  5</div><div class="tc-rod">2 <b class="barra">|</b> 6</div><div class="tc-rod">3 <b class="barra">|</b>  7</div><div class="tc-rod">4 <b class="barra">|</b> 8</div></div>
+                        <div class="team-col border-right"><div class="tc-head border-bottom">II</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  5</div><div class="tc-rod">2 <b class="barra">|</b> 6</div><div class="tc-rod">3 <b class="barra">|</b>  7</div><div class="tc-rod">4 <b class="barra">|</b> 8</div></div>
+                        <div class="team-col border-right"><div class="tc-head border-bottom">III</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  5</div><div class="tc-rod">2 <b class="barra">|</b> 6</div><div class="tc-rod">3 <b class="barra">|</b>  7</div><div class="tc-rod">4 <b class="barra">|</b> 8</div></div>
+                        <div class="team-col border-right"><div class="tc-head border-bottom">IV</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  5</div><div class="tc-rod">2 <b class="barra">|</b> 6</div><div class="tc-rod">3 <b class="barra">|</b>  7</div><div class="tc-rod">4 <b class="barra">|</b> 8</div></div>
+                        <div class="team-col border-right"><div class="tc-head border-bottom">V</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  5</div><div class="tc-rod">2 <b class="barra">|</b> 6</div><div class="tc-rod">3 <b class="barra">|</b>  7</div><div class="tc-rod">4 <b class="barra">|</b> 8</div></div>
+                       <div class="team-col border-right"><div class="tc-head border-bottom">VI</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  5</div><div class="tc-rod">2 <b class="barra">|</b> 6</div><div class="tc-rod">3 <b class="barra">|</b>  7</div><div class="tc-rod">4 <b class="barra">|</b> 8</div></div>
                     </div>
-                    <div class="points-block">
-                        <div class="pts-col border-right"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span style="border:none;">12</span></div>
-                        <div class="pts-col border-right"><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span style="border:none;">24</span></div>
-                        <div class="pts-col border-right"><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span><span>32</span><span>33</span><span>34</span><span>35</span><span style="border:none;">36</span></div>
-                        <div class="pts-col"><span>37</span><span>38</span><span>39</span><span>40</span><span>41</span><span>42</span><span>43</span><span>44</span><span>45</span><span>46</span><span>47</span><span style="border:none;">48</span></div>
-                    </div>
+                    <div class="pontuacao-container">
+    <div class="points-block border-bottom-thick">
+        <div class="pts-col border-right-thick">
+            <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span>
+        </div>
+        <div class="pts-col border-right-thick">
+            <span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span>24</span>
+        </div>
+        <div class="pts-col border-right-thick">
+            <span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span><span>32</span><span>33</span><span>34</span><span>35</span><span>36</span>
+        </div>
+        <div class="pts-col">
+            <span>37</span><span>38</span><span>39</span><span>40</span><span>41</span><span>42</span><span>43</span><span>44</span><span>45</span><span>46</span><span>47</span><span>48</span>
+        </div>
+    </div>
+
+    <div class="pontuacao-footer border-bottom-thick">"T"</div>
+    <div class="pontuacao-footer border-bottom-thick">:</div>
+    <div class="pontuacao-footer">:</div>
+</div>
                 </div>
             </div>
         </div>
-
         <div id="set3" class="set-box">
             <div class="set-labels-sidebar border-right">
                 <div class="sl-header border-bottom"></div>
@@ -146,7 +202,7 @@
                     <div class="sl-group-title border-right">Substituições</div>
                     <div class="sl-group-items">
                         <div class="sl-item border-bottom">Número</div>
-                        <div class="sl-item">Pontos na Troca</div>
+                        <div id="pontos-trocas" class="sl-item">Pontos na Troca</div>
                     </div>
                 </div>
                 <div class="sl-row-group">
@@ -161,41 +217,71 @@
             </div>
 
             <div  class="set-vertical-title border-right">S<br>E<br>T<br><br>3</div>
-            
+
+          
+
             <div class="set-main-data">
                 <div class="smd-header border-bottom">
                     <div class="smd-h-time border-right"> Início [_ : _]</div><div class="smd-h-team border-right">Equipe COR (A)</div><div class="smd-h-sr border-right">S<br>R</div><div class="smd-h-pts border-right">Pontos</div><div class="smd-h-sr border-right">S<br>R</div><div class="smd-h-team border-right">(B) COR Equipe</div><div class="smd-h-time">Horário do fim [_ : _]</div><div class="smd-h-pts border-left">Pontos</div>
                 </div>
                 <div class="smd-body">
                     <div class="team-block border-right">
-                        <div class="team-col border-right"><div class="tc-head border-bottom">I</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                        <div class="team-col border-right"><div class="tc-head border-bottom">II</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                        <div class="team-col border-right"><div class="tc-head border-bottom">III</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                        <div class="team-col border-right"><div class="tc-head border-bottom">IV</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                        <div class="team-col border-right"><div class="tc-head border-bottom">V</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                        <div class="team-col"><div class="tc-head border-bottom">VI</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
+                        <div class="team-col border-right"><div class="tc-head border-bottom">I</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  5</div><div class="tc-rod">2 <b class="barra">|</b> 6</div><div class="tc-rod">3 <b class="barra">|</b>  7</div><div class="tc-rod">4 <b class="barra">|</b> 8</div></div>
+                        <div class="team-col border-right"><div class="tc-head border-bottom">II</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  5</div><div class="tc-rod">2 <b class="barra">|</b> 6</div><div class="tc-rod">3 <b class="barra">|</b>  7</div><div class="tc-rod">4 <b class="barra">|</b> 8</div></div>
+                        <div class="team-col border-right"><div class="tc-head border-bottom">III</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  5</div><div class="tc-rod">2 <b class="barra">|</b> 6</div><div class="tc-rod">3 <b class="barra">|</b>  7</div><div class="tc-rod">4 <b class="barra">|</b> 8</div></div>
+                        <div class="team-col border-right"><div class="tc-head border-bottom">IV</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  5</div><div class="tc-rod">2 <b class="barra">|</b> 6</div><div class="tc-rod">3 <b class="barra">|</b>  7</div><div class="tc-rod">4 <b class="barra">|</b> 8</div></div>
+                        <div class="team-col border-right"><div class="tc-head border-bottom">V</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  5</div><div class="tc-rod">2 <b class="barra">|</b> 6</div><div class="tc-rod">3 <b class="barra">|</b>  7</div><div class="tc-rod">4 <b class="barra">|</b> 8</div></div>
+                       <div class="team-col border-right"><div class="tc-head border-bottom">VI</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  5</div><div class="tc-rod">2 <b class="barra">|</b> 6</div><div class="tc-rod">3 <b class="barra">|</b>  7</div><div class="tc-rod">4 <b class="barra">|</b> 8</div></div>
                     </div>
-                    <div class="points-block border-right">
-                        <div class="pts-col border-right"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span style="border:none;">12</span></div>
-                        <div class="pts-col border-right"><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span style="border:none;">24</span></div>
-                        <div class="pts-col border-right"><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span><span>32</span><span>33</span><span>34</span><span>35</span><span style="border:none;">36</span></div>
-                        <div class="pts-col"><span>37</span><span>38</span><span>39</span><span>40</span><span>41</span><span>42</span><span>43</span><span>44</span><span>45</span><span>46</span><span>47</span><span style="border:none;">48</span></div>
-                    </div>
+                    <div class="pontuacao-container">
+    <div class="points-block border-bottom-thick">
+        <div class="pts-col border-right-thick">
+            <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span>
+        </div>
+        <div class="pts-col border-right-thick">
+            <span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span>24</span>
+        </div>
+        <div class="pts-col border-right-thick">
+            <span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span><span>32</span><span>33</span><span>34</span><span>35</span><span>36</span>
+        </div>
+        <div class="pts-col">
+            <span>37</span><span>38</span><span>39</span><span>40</span><span>41</span><span>42</span><span>43</span><span>44</span><span>45</span><span>46</span><span>47</span><span>48</span>
+        </div>
+    </div>
+
+    <div class="pontuacao-footer border-bottom-thick">"T"</div>
+    <div class="pontuacao-footer border-bottom-thick">:</div>
+    <div class="pontuacao-footer">:</div>
+</div>
                     <div class="sr-divider border-right"></div>
                     <div class="team-block border-right">
-                        <div class="team-col border-right"><div class="tc-head border-bottom">I</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                        <div class="team-col border-right"><div class="tc-head border-bottom">II</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                        <div class="team-col border-right"><div class="tc-head border-bottom">III</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                        <div class="team-col border-right"><div class="tc-head border-bottom">IV</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                        <div class="team-col border-right"><div class="tc-head border-bottom">V</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                        <div class="team-col"><div class="tc-head border-bottom">VI</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
+                         <div class="team-col border-right"><div class="tc-head border-bottom">I</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  5</div><div class="tc-rod">2 <b class="barra">|</b> 6</div><div class="tc-rod">3 <b class="barra">|</b>  7</div><div class="tc-rod">4 <b class="barra">|</b> 8</div></div>
+                        <div class="team-col border-right"><div class="tc-head border-bottom">II</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  5</div><div class="tc-rod">2 <b class="barra">|</b> 6</div><div class="tc-rod">3 <b class="barra">|</b>  7</div><div class="tc-rod">4 <b class="barra">|</b> 8</div></div>
+                        <div class="team-col border-right"><div class="tc-head border-bottom">III</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  5</div><div class="tc-rod">2 <b class="barra">|</b> 6</div><div class="tc-rod">3 <b class="barra">|</b>  7</div><div class="tc-rod">4 <b class="barra">|</b> 8</div></div>
+                        <div class="team-col border-right"><div class="tc-head border-bottom">IV</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  5</div><div class="tc-rod">2 <b class="barra">|</b> 6</div><div class="tc-rod">3 <b class="barra">|</b>  7</div><div class="tc-rod">4 <b class="barra">|</b> 8</div></div>
+                        <div class="team-col border-right"><div class="tc-head border-bottom">V</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  5</div><div class="tc-rod">2 <b class="barra">|</b> 6</div><div class="tc-rod">3 <b class="barra">|</b>  7</div><div class="tc-rod">4 <b class="barra">|</b> 8</div></div>
+                       <div class="team-col border-right"><div class="tc-head border-bottom">VI</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  5</div><div class="tc-rod">2 <b class="barra">|</b> 6</div><div class="tc-rod">3 <b class="barra">|</b>  7</div><div class="tc-rod">4 <b class="barra">|</b> 8</div></div>
                     </div>
-                    <div class="points-block">
-                        <div class="pts-col border-right"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span style="border:none;">12</span></div>
-                        <div class="pts-col border-right"><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span style="border:none;">24</span></div>
-                        <div class="pts-col border-right"><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span><span>32</span><span>33</span><span>34</span><span>35</span><span style="border:none;">36</span></div>
-                        <div class="pts-col"><span>37</span><span>38</span><span>39</span><span>40</span><span>41</span><span>42</span><span>43</span><span>44</span><span>45</span><span>46</span><span>47</span><span style="border:none;">48</span></div>
-                    </div>
+                    <div class="pontuacao-container">
+    <div class="points-block border-bottom-thick">
+        <div class="pts-col border-right-thick">
+            <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span>
+        </div>
+        <div class="pts-col border-right-thick">
+            <span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span>24</span>
+        </div>
+        <div class="pts-col border-right-thick">
+            <span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span><span>32</span><span>33</span><span>34</span><span>35</span><span>36</span>
+        </div>
+        <div class="pts-col">
+            <span>37</span><span>38</span><span>39</span><span>40</span><span>41</span><span>42</span><span>43</span><span>44</span><span>45</span><span>46</span><span>47</span><span>48</span>
+        </div>
+    </div>
+
+    <div class="pontuacao-footer border-bottom-thick">"T"</div>
+    <div class="pontuacao-footer border-bottom-thick">:</div>
+    <div class="pontuacao-footer">:</div>
+</div>
                 </div>
             </div>
         </div>
@@ -208,88 +294,164 @@
                 </div>
                 <div class="smd-body">
                     <div class="team-block border-right">
-                        <div class="team-col border-right"><div class="tc-head border-bottom">I</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                        <div class="team-col border-right"><div class="tc-head border-bottom">II</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                        <div class="team-col border-right"><div class="tc-head border-bottom">III</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                        <div class="team-col border-right"><div class="tc-head border-bottom">IV</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                        <div class="team-col border-right"><div class="tc-head border-bottom">V</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                        <div class="team-col"><div class="tc-head border-bottom">VI</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
+                         <div class="team-col border-right"><div class="tc-head border-bottom">I</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  5</div><div class="tc-rod">2 <b class="barra">|</b> 6</div><div class="tc-rod">3 <b class="barra">|</b>  7</div><div class="tc-rod">4 <b class="barra">|</b> 8</div></div>
+                        <div class="team-col border-right"><div class="tc-head border-bottom">II</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  5</div><div class="tc-rod">2 <b class="barra">|</b> 6</div><div class="tc-rod">3 <b class="barra">|</b>  7</div><div class="tc-rod">4 <b class="barra">|</b> 8</div></div>
+                        <div class="team-col border-right"><div class="tc-head border-bottom">III</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  5</div><div class="tc-rod">2 <b class="barra">|</b> 6</div><div class="tc-rod">3 <b class="barra">|</b>  7</div><div class="tc-rod">4 <b class="barra">|</b> 8</div></div>
+                        <div class="team-col border-right"><div class="tc-head border-bottom">IV</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  5</div><div class="tc-rod">2 <b class="barra">|</b> 6</div><div class="tc-rod">3 <b class="barra">|</b>  7</div><div class="tc-rod">4 <b class="barra">|</b> 8</div></div>
+                        <div class="team-col border-right"><div class="tc-head border-bottom">V</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  5</div><div class="tc-rod">2 <b class="barra">|</b> 6</div><div class="tc-rod">3 <b class="barra">|</b>  7</div><div class="tc-rod">4 <b class="barra">|</b> 8</div></div>
+                       <div class="team-col border-right"><div class="tc-head border-bottom">VI</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  5</div><div class="tc-rod">2 <b class="barra">|</b> 6</div><div class="tc-rod">3 <b class="barra">|</b>  7</div><div class="tc-rod">4 <b class="barra">|</b> 8</div></div>
                     </div>
-                    <div class="points-block border-right">
-                        <div class="pts-col border-right"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span style="border:none;">12</span></div>
-                        <div class="pts-col border-right"><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span style="border:none;">24</span></div>
-                        <div class="pts-col border-right"><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span><span>32</span><span>33</span><span>34</span><span>35</span><span style="border:none;">36</span></div>
-                        <div class="pts-col"><span>37</span><span>38</span><span>39</span><span>40</span><span>41</span><span>42</span><span>43</span><span>44</span><span>45</span><span>46</span><span>47</span><span style="border:none;">48</span></div>
-                    </div>
+                    <div class="pontuacao-container">
+    <div class="points-block border-bottom-thick">
+        <div class="pts-col border-right-thick">
+            <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span>
+        </div>
+        <div class="pts-col border-right-thick">
+            <span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span>24</span>
+        </div>
+        <div class="pts-col border-right-thick">
+            <span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span><span>32</span><span>33</span><span>34</span><span>35</span><span>36</span>
+        </div>
+        <div class="pts-col">
+            <span>37</span><span>38</span><span>39</span><span>40</span><span>41</span><span>42</span><span>43</span><span>44</span><span>45</span><span>46</span><span>47</span><span>48</span>
+        </div>
+    </div>
+
+    <div class="pontuacao-footer border-bottom-thick">"T"</div>
+    <div class="pontuacao-footer border-bottom-thick">:</div>
+    <div class="pontuacao-footer">:</div>
+</div>
                     <div class="sr-divider border-right"></div>
                     <div class="team-block border-right">
-                        <div class="team-col border-right"><div class="tc-head border-bottom">I</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                        <div class="team-col border-right"><div class="tc-head border-bottom">II</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                        <div class="team-col border-right"><div class="tc-head border-bottom">III</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                        <div class="team-col border-right"><div class="tc-head border-bottom">IV</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                        <div class="team-col border-right"><div class="tc-head border-bottom">V</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                        <div class="team-col"><div class="tc-head border-bottom">VI</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
+                         <div class="team-col border-right"><div class="tc-head border-bottom">I</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  5</div><div class="tc-rod">2 <b class="barra">|</b> 6</div><div class="tc-rod">3 <b class="barra">|</b>  7</div><div class="tc-rod">4 <b class="barra">|</b> 8</div></div>
+                        <div class="team-col border-right"><div class="tc-head border-bottom">II</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  5</div><div class="tc-rod">2 <b class="barra">|</b> 6</div><div class="tc-rod">3 <b class="barra">|</b>  7</div><div class="tc-rod">4 <b class="barra">|</b> 8</div></div>
+                        <div class="team-col border-right"><div class="tc-head border-bottom">III</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  5</div><div class="tc-rod">2 <b class="barra">|</b> 6</div><div class="tc-rod">3 <b class="barra">|</b>  7</div><div class="tc-rod">4 <b class="barra">|</b> 8</div></div>
+                        <div class="team-col border-right"><div class="tc-head border-bottom">IV</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  5</div><div class="tc-rod">2 <b class="barra">|</b> 6</div><div class="tc-rod">3 <b class="barra">|</b>  7</div><div class="tc-rod">4 <b class="barra">|</b> 8</div></div>
+                        <div class="team-col border-right"><div class="tc-head border-bottom">V</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  5</div><div class="tc-rod">2 <b class="barra">|</b> 6</div><div class="tc-rod">3 <b class="barra">|</b>  7</div><div class="tc-rod">4 <b class="barra">|</b> 8</div></div>
+                       <div class="team-col border-right"><div class="tc-head border-bottom">VI</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  5</div><div class="tc-rod">2 <b class="barra">|</b> 6</div><div class="tc-rod">3 <b class="barra">|</b>  7</div><div class="tc-rod">4 <b class="barra">|</b> 8</div></div>
                     </div>
-                    <div class="points-block">
-                        <div class="pts-col border-right"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span style="border:none;">12</span></div>
-                        <div class="pts-col border-right"><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span style="border:none;">24</span></div>
-                        <div class="pts-col border-right"><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span><span>32</span><span>33</span><span>34</span><span>35</span><span style="border:none;">36</span></div>
-                        <div class="pts-col"><span>37</span><span>38</span><span>39</span><span>40</span><span>41</span><span>42</span><span>43</span><span>44</span><span>45</span><span>46</span><span>47</span><span style="border:none;">48</span></div>
-                    </div>
+                    <div class="pontuacao-container">
+    <div class="points-block border-bottom-thick">
+        <div class="pts-col border-right-thick">
+            <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span>
+        </div>
+        <div class="pts-col border-right-thick">
+            <span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span>24</span>
+        </div>
+        <div class="pts-col border-right-thick">
+            <span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span><span>32</span><span>33</span><span>34</span><span>35</span><span>36</span>
+        </div>
+        <div class="pts-col">
+            <span>37</span><span>38</span><span>39</span><span>40</span><span>41</span><span>42</span><span>43</span><span>44</span><span>45</span><span>46</span><span>47</span><span>48</span>
+        </div>
+    </div>
+
+    <div class="pontuacao-footer border-bottom-thick">"T"</div>
+    <div class="pontuacao-footer border-bottom-thick">:</div>
+    <div class="pontuacao-footer">:</div>
+</div>
                 </div>
             </div>
         </div>
-    </div> <div class="set5-container">
+    </div> 
+    
+    <div class="set5-container">
+<div class="set-labels-sidebar border-right">
+                <div class="sl-header border-bottom"></div>
+                <div class="sl-row border-bottom">Ordem de Saque</div>
+                <div class="sl-row border-bottom">Jogadores Iniciais</div>
+                <div class="sl-row-group border-bottom">
+                    <div class="sl-group-title border-right">Substituições</div>
+                    <div class="sl-group-items">
+                        <div class="sl-item border-bottom">Número</div>
+                        <div id="pontos-trocas" class="sl-item">Pontos na Troca</div>
+                    </div>
+                </div>
+                <div class="sl-row-group">
+                    <div class="sl-group-title border-right">Rodada<br>de<br>Saques</div>
+                    <div class="sl-group-items">
+                        <div class="sl-item-dual border-bottom"><span class="border-right">1º</span><span>5º</span></div>
+                        <div class="sl-item-dual border-bottom"><span class="border-right">2º</span><span>6º</span></div>
+                        <div class="sl-item-dual border-bottom"><span class="border-right">3º</span><span>7º</span></div>
+                        <div class="sl-item-dual"><span class="border-right">4º</span><span>8º</span></div>
+                    </div>
+                </div>
+            </div>
+
         <div class="set-vertical-title border-right">S<br>E<br>T<br><br>5</div>
         
         <div class="set5-section border-right">
-            <div class="smd-header border-bottom">Equipe COR (A)</div>
-            <div class="smd-body">
-                <div class="team-block border-right">
-                    <div class="team-col border-right"><div class="tc-head border-bottom">I</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                    <div class="team-col border-right"><div class="tc-head border-bottom">II</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                    <div class="team-col border-right"><div class="tc-head border-bottom">III</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                    <div class="team-col border-right"><div class="tc-head border-bottom">IV</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                    <div class="team-col border-right"><div class="tc-head border-bottom">V</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                    <div class="team-col"><div class="tc-head border-bottom">VI</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
+            <div class="set-main-data">
+                <div class="smd-header border-bottom">
+                    <div class="smd-h-time border-right"> Início [_ : _]</div><div class="smd-h-team border-right">Equipe COR (A)</div><div class="smd-h-sr border-right">S<br>R</div><div class="smd-h-pts border-right">Pontos</div><div class="smd-h-sr border-right">S<br>R</div><div class="smd-h-team border-right">(B) COR Equipe</div><div class="smd-h-time">Horário do fim [_ : _]</div><div class="smd-h-pts border-left">Pontos</div>
                 </div>
-                <div class="points-block">
-                    <div class="pts-col border-right"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span style="border:none;">12</span></div>
-                    <div class="pts-col"><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span style="border:none;">24</span></div>
-                </div>
-            </div>
+                <div class="smd-body">
+                    <div class="team-block border-right">
+                        <div class="team-col border-right"><div class="tc-head border-bottom">I</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div id="container-pontos" class="tc-sub-pts border-bottom">:</div><div id="container-pontos" class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  4</div><div class="tc-rod">2 <b class="barra">|</b> 5</div><div class="tc-rod">3 <b class="barra">|</b>  6</div></div>
+                        <div class="team-col border-right"><div class="tc-head border-bottom">II</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div id="container-pontos" class="tc-sub-pts border-bottom">:</div><div id="container-pontos" class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  4</div><div class="tc-rod">2 <b class="barra">|</b> 5</div><div class="tc-rod">3 <b class="barra">|</b>  6</div></div>
+                        <div class="team-col border-right"><div class="tc-head border-bottom">III</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div id="container-pontos" class="tc-sub-pts border-bottom">:</div><div id="container-pontos" class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b> 4</div><div class="tc-rod">2 <b class="barra">|</b> 5</div><div class="tc-rod">3 <b class="barra">|</b>  6</div></div>
+                        <div class="team-col border-right"><div class="tc-head border-bottom">IV</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div  id="container-pontos" class="tc-sub-pts border-bottom">:</div><div id="container-pontos" class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  4</div><div class="tc-rod">2 <b class="barra">|</b> 5</div><div class="tc-rod">3 <b class="barra">|</b>  6</div></div>
+                        <div class="team-col border-right"><div class="tc-head border-bottom">V</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div id="container-pontos" class="tc-sub-pts border-bottom">:</div><div id="container-pontos" class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>   4</div><div class="tc-rod">2 <b class="barra">|</b> 5</div><div class="tc-rod">3 <b class="barra">|</b>  6</div></div>
+                        <div class="team-col border-right"><div class="tc-head border-bottom">VI</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div id="container-pontos" class="tc-sub-pts border-bottom">:</div><div id="container-pontos" class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>   4</div><div class="tc-rod">2 <b class="barra">|</b> 5</div><div class="tc-rod">3 <b class="barra">|</b>  6</div></div>
+                    </div>
+                    <div class="points-block border-right">
+                        <div class="pts-col border-right"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span></div>
+                        
+                    </div>
+                    <div class="sr-divider border-right"></div>
+                    <div class="team-block border-right">
+                        <div class="team-col border-right"><div class="tc-head border-bottom">I</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div id="container-pontos" class="tc-sub-pts border-bottom">:</div><div id="container-pontos" class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  4</div><div class="tc-rod">2 <b class="barra">|</b> 5</div><div class="tc-rod">3 <b class="barra">|</b>  6</div></div>
+                        <div class="team-col border-right"><div class="tc-head border-bottom">II</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div id="container-pontos" class="tc-sub-pts border-bottom">:</div><div id="container-pontos" class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  4</div><div class="tc-rod">2 <b class="barra">|</b> 5</div><div class="tc-rod">3 <b class="barra">|</b>  6</div></div>
+                        <div class="team-col border-right"><div class="tc-head border-bottom">III</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div id="container-pontos" class="tc-sub-pts border-bottom">:</div><div id="container-pontos" class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b> 4</div><div class="tc-rod">2 <b class="barra">|</b> 5</div><div class="tc-rod">3 <b class="barra">|</b>  6</div></div>
+                        <div class="team-col border-right"><div class="tc-head border-bottom">IV</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div  id="container-pontos" class="tc-sub-pts border-bottom">:</div><div id="container-pontos" class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  4</div><div class="tc-rod">2 <b class="barra">|</b> 5</div><div class="tc-rod">3 <b class="barra">|</b>  6</div></div>
+                        <div class="team-col border-right"><div class="tc-head border-bottom">V</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div id="container-pontos" class="tc-sub-pts border-bottom">:</div><div id="container-pontos" class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>   4</div><div class="tc-rod">2 <b class="barra">|</b> 5</div><div class="tc-rod">3 <b class="barra">|</b>  6</div></div>
+                        <div class="team-col border-right"><div class="tc-head border-bottom">VI</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub border-bottom"></div><div id="container-pontos" class="tc-sub-pts border-bottom">:</div><div id="container-pontos" class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>   4</div><div class="tc-rod">2 <b class="barra">|</b> 5</div><div class="tc-rod">3 <b class="barra">|</b>  6</div></div>
+                    </div>
+                    <div class="pontuacao-container">
+    <div class="points-block border-bottom-thick">
+        <div class="pts-col border-right-thick">
+            <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span>
         </div>
+        <div class="pts-col border-right-thick">
+            <span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span>24</span>
+        </div>
+        <div class="pts-col border-right-thick">
+            <span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span><span>32</span><span>33</span><span>34</span><span>35</span><span>36</span>
+        </div>
+        <div class="pts-col">
+            <span>37</span><span>38</span><span>39</span><span>40</span><span>41</span><span>42</span><span>43</span><span>44</span><span>45</span><span>46</span><span>47</span><span>48</span>
+        </div>
+    </div>
 
-        <div class="set5-section border-right">
-            <div class="smd-header border-bottom">(B) COR Equipe</div>
-            <div class="smd-body">
-                <div class="team-block border-right">
-                    <div class="team-col border-right"><div class="tc-head border-bottom">I</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                    <div class="team-col border-right"><div class="tc-head border-bottom">II</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                    <div class="team-col border-right"><div class="tc-head border-bottom">III</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                    <div class="team-col border-right"><div class="tc-head border-bottom">IV</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                    <div class="team-col border-right"><div class="tc-head border-bottom">V</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                    <div class="team-col"><div class="tc-head border-bottom">VI</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                </div>
-                <div class="points-block">
-                    <div class="pts-col border-right"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span style="border:none;">12</span></div>
-                    <div class="pts-col"><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span style="border:none;">24</span></div>
+    <div class="pontuacao-footer border-bottom-thick">"T"</div>
+    <div class="pontuacao-footer border-bottom-thick">:</div>
+    <div class="pontuacao-footer">:</div>
+</div>
                 </div>
             </div>
-        </div>
+            </div>
+        
 
         <div id="troca-lado" class="set5-section">
+            
             <div class="smd-header border-bottom">TROCA DE LADO (A)</div>
+            <div class="smd-header border-bottom">
+                
+                    <div class="smd-h-time border-right"> Início [_ : _]</div><div class="smd-h-team border-right">PONTOS NA TROCA [_ : _]</div><div class="smd-h-pts border-left">Pontos</div>
+                </div>
             <div class="smd-body">
+                
                 <div class="team-block border-right">
-                    <div class="team-col border-right"><div class="tc-head border-bottom">I</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                    <div class="team-col border-right"><div class="tc-head border-bottom">II</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                    <div class="team-col border-right"><div class="tc-head border-bottom">III</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                    <div class="team-col border-right"><div class="tc-head border-bottom">IV</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                    <div class="team-col border-right"><div class="tc-head border-bottom">V</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
-                    <div class="team-col"><div class="tc-head border-bottom">VI</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod"></div><div class="tc-rod" style="border:none;"></div></div>
+                    
+                     <div class="team-col border-right"><div class="tc-head border-bottom">I</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  4</div><div class="tc-rod">2 <b class="barra">|</b> 5</div><div class="tc-rod">3 <b class="barra">|</b>  6</div></div>
+                        <div class="team-col border-right"><div class="tc-head border-bottom">II</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  4</div><div class="tc-rod">2 <b class="barra">|</b> 5</div><div class="tc-rod">3 <b class="barra">|</b>  6</div></div>
+                        <div class="team-col border-right"><div class="tc-head border-bottom">III</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b> 4</div><div class="tc-rod">2 <b class="barra">|</b> 5</div><div class="tc-rod">3 <b class="barra">|</b>  6</div></div>
+                        <div class="team-col border-right"><div class="tc-head border-bottom">IV</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>  4</div><div class="tc-rod">2 <b class="barra">|</b> 5</div><div class="tc-rod">3 <b class="barra">|</b>  6</div></div>
+                        <div class="team-col border-right"><div class="tc-head border-bottom">V</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>   4</div><div class="tc-rod">2 <b class="barra">|</b> 5</div><div class="tc-rod">3 <b class="barra">|</b>  6</div></div>
+                        <div class="team-col border-right"><div class="tc-head border-bottom">VI</div><div class="tc-ini border-bottom"></div><div class="tc-sub border-bottom"></div><div class="tc-sub-pts border-bottom">:</div><div class="tc-sub-pts border-bottom">:</div><div class="tc-rod"> 1 <b class="barra">|</b>   4</div><div class="tc-rod">2 <b class="barra">|</b> 5</div><div class="tc-rod">3 <b class="barra">|</b>  6</div></div>
                 </div>
                 <div class="points-block">
+                    <div class="pts-col border-right"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span style="border:none;">12</span></div>
                     <div class="pts-col border-right"><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span style="border:none;">24</span></div>
                     <div class="pts-col"><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span><span>31</span><span>32</span><span>33</span><span>34</span><span>35</span><span style="border:none;">36</span></div>
                 </div>
@@ -298,7 +460,7 @@
     </div> <div class="footer-grid">
         <div class="footer-col border-right" >
             <div class="section-title border-bottom">Quadro de Penalidades</div>
-            <table class="footer-table">
+            <table style="height: 180.5px;" class="footer-table">
                 <tr class="border-bottom"><th>A</th><th>P</th><th>E</th><th>D</th><th>(A/B)</th><th>SET</th><th>Placar</th></tr>
                 <tr><td></td><td></td><td></td><td></td><td></td><td></td><td>:</td></tr>
                 <tr><td></td><td></td><td></td><td></td><td></td><td></td><td>:</td></tr>
@@ -306,6 +468,15 @@
                 <tr><td></td><td></td><td></td><td></td><td></td><td></td><td>:</td></tr>
                 <tr><td></td><td></td><td></td><td></td><td></td><td></td><td>:</td></tr>
                 <tr><td></td><td></td><td></td><td></td><td></td><td></td><td>:</td></tr>
+                <tr><td></td><td></td><td></td><td></td><td></td><td></td><td>:</td></tr>
+                <tr><td></td><td></td><td></td><td></td><td></td><td></td><td>:</td></tr>
+                <tr><td></td><td></td><td></td><td></td><td></td><td></td><td>:</td></tr>
+                <tr><td></td><td></td><td></td><td></td><td></td><td></td><td>:</td></tr>
+                <tr><td></td><td></td><td></td><td></td><td></td><td></td><td>:</td></tr>
+                <tr><td></td><td></td><td></td><td></td><td></td><td></td><td>:</td></tr>
+                <tr><td></td><td></td><td></td><td></td><td></td><td></td><td>:</td></tr>
+                <tr><td></td><td></td><td></td><td></td><td></td><td></td><td>:</td></tr>
+                
             </table>
         </div>
 
@@ -320,51 +491,120 @@
             <div class="section-title border-bottom">APROVAÇÕES</div>
             <table class="footer-table table-approvals">
                 <tr class="border-bottom"><th>ÁRBITRO</th><th>NOME</th><th>ASSINATURA</th></tr>
-                <tr><td>1º</td><td></td><td></td></tr>
-                <tr><td>2º</td><td></td><td></td></tr>
-                <tr><td>Apontador</td><td></td><td></td></tr>
+                <tr><td></td><td></td><td></td></tr>
+                <tr><td></td><td></td><td></td></tr>
+                <tr><td></td><td></td><td></td></tr>
+                <tr><td></td><td></td><td></td></tr>
+                <tr><td></td><td></td><td></td></tr>
+                <tr><td></td><td></td><td></td></tr>
+                <tr><td></td><td></td><td></td></tr>
+                <tr><td></td><td></td><td></td></tr>
             </table>
+              <div style="display: flex; width: 100%; border-bottom: 2px solid #000; height: 35px;">
+        <div style="flex: 1; border-right: 1px solid #000;  min-height: 40px;">
+            <span style="font-size: 6px; display: block; margin-bottom: 5px; margin-top:2px; margin-left: 8px;">(A)</span>
+            <div style="border:1px solid;"></div>
+            <span style="font-size: 6px; display: block; margin-top: 5px; margin-left: 8px;">(B)</span>
+            
+        </div>
+        
+        <div style="flex: 0.8; border-right: 1px solid #000; padding: 5px;">
+            <span style="font-size: 6px; display: block;"></span>
+           
+        </div>
+        
+    </div>
         </div>
 
-        <div class="footer-col border-right">
-            <div class="section-title border-bottom">RESULTADOS</div>
-            <table class="footer-table">
-                <tr class="border-bottom"><th colspan="3">EQUIPE COR (A)</th><th colspan="3">(B) COR EQUIPE</th></tr>
-                <tr class="border-bottom"><th>T</th><th>S</th><th>V</th><th>P</th><th>SET</th><th>P</th><th>V</th><th>S</th><th>T</th></tr>
-                <tr><td></td><td></td><td></td><td></td><td>1º ( )</td><td></td><td></td><td></td><td></td></tr>
-                <tr><td></td><td></td><td></td><td></td><td>2º ( )</td><td></td><td></td><td></td><td></td></tr>
-                <tr><td></td><td></td><td></td><td></td><td>3º ( )</td><td></td><td></td><td></td><td></td></tr>
-                <tr><td></td><td></td><td></td><td></td><td>4º ( )</td><td></td><td></td><td></td><td></td></tr>
-                <tr><td></td><td></td><td></td><td></td><td>5º ( )</td><td></td><td></td><td></td><td></td></tr>
-            </table>
+       <div class="footer-col border-right">
+    <div class="section-title border-bottom">RESULTADOS</div>
+    <table style="height: 106px;" class="footer-table">
+        <colgroup>
+            <col class="col-quadrado">
+            <col class="col-quadrado">
+            <col class="col-quadrado">
+            <col class="col-quadrado">
+            <col class="col-set">
+            <col class="col-quadrado">
+            <col class="col-quadrado">
+            <col class="col-quadrado">
+            <col class="col-quadrado">
+        </colgroup>
+
+        <tr class="border-bottom">
+            <th colspan="4">EQUIPE COR (A)</th>
+            <th></th> <th colspan="4">(B) COR EQUIPE</th>
+        </tr>
+        <tr class="border-bottom">
+            <th>T</th><th>S</th><th>V</th><th>P</th>
+            <th>SET</th>
+            <th>P</th><th>V</th><th>S</th><th>T</th>
+        </tr>
+        <tr><td></td><td></td><td></td><td></td><td>1º (____)</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td><td>2º (____)</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td><td>3º (____)</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td><td>4º (____)</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td><td>5º (____)</td><td></td><td></td><td></td><td></td></tr>
+        <tr><td></td><td></td><td></td><td></td><td>Duração</td><td></td><td></td><td></td><td></td></tr>
+    </table>
+
+
+            <div style="display: flex; width: 100%; border-bottom: 2px solid #000;">
+        <div style="flex: 1; border-right: 1px solid #000; padding: 5px; min-height: 40px;">
+            <span style="font-size: 6px; display: block;">Início</span>
+            <div >__ __</div>
         </div>
+        <div style="flex: 1; border-right: 1px solid #000; padding: 5px;">
+            <span style="font-size: 6px; display: block;">Término</span>
+            <div >__ __</div>
+        </div>
+        <div style="flex: 1; padding: 5px;">
+            <span style="font-size: 6px; display: block;">Duração</span>
+            <div >__ __</div>
+        </div>
+        
+    </div>
+<div  style=" height: 33.5px;  text-align: center; padding: 8px; font-weight: bold; font-size: 6px; letter-spacing: 2px; border: 1px solid #000">
+        VENCEDOR
+    </div>
+    
+        </div>
+
+
+        
 
         <div class="footer-col">
             <div class="section-title border-bottom">(A) COR EQUIPE COR (B)</div>
             <table class="footer-table table-roster">
                 <tr class="border-bottom"><th>Nº</th><th>Nome do jogador</th><th>Nº</th><th>Nome do jogador</th></tr>
-                <tr><td></td><td></td><td></td><td></td></tr>
-                <tr><td></td><td></td><td></td><td></td></tr>
-                <tr><td></td><td></td><td></td><td></td></tr>
-                <tr><td></td><td></td><td></td><td></td></tr>
-                <tr><td></td><td></td><td></td><td></td></tr>
-                <tr><td></td><td></td><td></td><td></td></tr>
-                <tr><td></td><td></td><td></td><td></td></tr>
-                <tr><td></td><td></td><td></td><td></td></tr>
-                <tr><td></td><td></td><td></td><td></td></tr>
-                <tr><td></td><td></td><td></td><td></td></tr>
-                <tr><td></td><td></td><td></td><td></td></tr>
-                <tr><td></td><td></td><td></td><td></td></tr>   
+                <tr><td style="height: 9px;"></td><td ><strong style="font-size:6px; font-weight: 200;" id="team_1_player_1"></strong></td><td></td><td><strong style="font-size:6px; font-weight: 200;" id="team_2_player_1"></td></tr>
+                <tr><td style="height: 9px;"></td><td ><strong style="font-size:6px; font-weight: 200;" id="team_1_player_2"></strong></td><td></td><td><strong style="font-size:6px; font-weight: 200;" id="team_2_player_2"></td></tr>
+                <tr><td style="height: 9px;"></td><td ><strong style="font-size:6px; font-weight: 200;" id="team_1_player_3"></strong></td><td></td><td><strong style="font-size:6px; font-weight: 200;" id="team_2_player_3"></td></tr>
+                <tr><td style="height: 9px;"></td><td ><strong style="font-size:6px; font-weight: 200;" id="team_1_player_4"></strong></td><td></td><td><strong style="font-size:6px; font-weight: 200;" id="team_2_player_4"></td></tr>
+                <tr><td style="height: 9px;"></td><td ><strong style="font-size:6px; font-weight: 200;" id="team_1_player_5"></strong></td><td></td><td><strong style="font-size:6px; font-weight: 200;" id="team_2_player_5"></td></tr>
+                <tr><td style="height: 9px;"></td><td ><strong style="font-size:6px; font-weight: 200;" id="team_1_player_6"></strong></td><td></td><td><strong style="font-size:6px; font-weight: 200;" id="team_2_player_6"></td></tr>
+                <tr><td style="height: 9px;"></td><td ><strong style="font-size:6px; font-weight: 200;" id="team_1_player_7"></strong></td><td></td><td><strong style="font-size:6px; font-weight: 200;" id="team_2_player_7"></td></tr>
+                <tr><td style="height: 9px;"></td><td ><strong style="font-size:6px; font-weight: 200;" id="team_1_player_8"></strong></td><td></td><td><strong style="font-size:6px; font-weight: 200;" id="team_2_player_8"></td></tr>
+                <tr><td style="height: 9px;"></td><td ><strong style="font-size:6px; font-weight: 200;" id="team_1_player_9"></strong></td><td></td><td><strong style="font-size:6px; font-weight: 200;" id="team_2_player_9"></td></tr>
+                <tr><td style="height: 9px;"></td><td ><strong style="font-size:6px; font-weight: 200;" id="team_1_player_10"></strong></td><td></td><td><strong style="font-size:6px; font-weight: 200;" id="team_2_player_10"></td></tr>
+                <tr><td style="height: 9px;"></td><td ><strong style="font-size:6px; font-weight: 200;" id="team_1_player_11"></strong></td><td></td><td><strong style="font-size:6px; font-weight: 200;" id="team_2_player_11"></td></tr>
+                <tr><td style="height: 9px;"></td><td ><strong style="font-size:6px; font-weight: 200;" id="team_1_player_12"></strong></td><td></td><td><strong style="font-size:6px; font-weight: 200;" id="team_2_player_12"></td></tr>
             </table>
             <div class="section-title border-top border-bottom">JOGADORES LÍBERO (L')</div>
             <table class="footer-table">
-                <tr><td style="height: 18px;"></td><td></td><td></td><td></td></tr>
+                <tr><td style="height: 11.1px;"></td><td></td><td></td><td></td></tr>
+                <tr><td style="height: 11.1px;"></td><td></td><td></td><td></td></tr>
                 
                 
             </table>
                  <div class="section-title border-top border-bottom">EQUIPE TÉCNICA</div>
                <table class="footer-table">
-                <tr><td style="height: 18px;"></td><td></td><td></td><td></td></tr>
+                <tr><td style="height: 10px;"></td><td></td><td></td><td></td></tr>
+                <tr><td style="height: 10px;"></td><td></td><td></td><td></td></tr>
+                <tr><td style="height: 10px;"></td><td></td><td></td><td></td></tr>
+                <tr><td style="height: 10px;"></td><td></td><td></td><td></td></tr>
+                <tr><td style="height: 10px;"></td><td></td><td></td><td></td></tr>
+                <tr><td style="height: 10px;"></td><td></td><td></td><td></td></tr>
                 
                 
             </table>
@@ -377,6 +617,642 @@
         </div>
     </div>
 </div>
+
+<script>
+        window.__DADOS_SUMULA__ = {
+    "general": {
+        "title": "GRUPO CONTRA TODOS",
+        "sub_title": "4° PARAZÃO DO FUTSAL",
+        "stage": "1º Fase",
+        "round": "2º Rodada",
+        "place": "GINASIO UEPA"
+    },
+    "config":{
+        "player_length": 12
+    },
+    "team_1": {
+        "name": "Equipe 4",
+        "player": [
+            {
+                "supend":false,
+                "name": "MAURO",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 2,
+                "red_card": 1,
+                "blue_card": 0,
+                "goals": 2
+            },
+            {   "supend":false,
+                "name": "ISAIAS PINTO",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 1,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+            {   "supend":false,
+                "name": "JOSE  AUGUSTO",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+            {   "supend":false,
+                "name": "JEFFERSON BRUNO",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 6
+            },
+            {   "supend":false,
+                "name": "JUAN ADRIAN",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 1,
+                "blue_card": 0,
+                "goals": 0
+            },
+            {   "supend":false,
+                "name": "GILBERT ROMARIO",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+            {   "supend":false,
+                "name": "JHON RENATO",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+            {   "supend":false,
+                "name": "JEFFERSON BRENO",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+            {   "supend":false,
+                "name": "CRISTIAN",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 4
+            },
+            {   "supend":false,
+                "name": "LUCAS ARAUJO",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 2
+            },  
+            {   "supend":false,
+                "name": "ELIDELSON",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+            {   "supend":false,
+                "name": "ANDERSON",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+                
+            {   "supend":false,
+                "name": "THALISON ALVES",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+             {  "supend":false,
+                "name": "HÉRIC PEIXOTO",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+             {  
+                "supend":false,
+                "name": "TESTE 1",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            }, { 
+                "supend":false,   
+                "name": "TESTE 2",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            }, {
+                "supend":false,
+                "name": "TESTE 3",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            }, {
+                "supend":false,
+                "name": "TESTE 4",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            }, {
+                "supend":false,
+                "name": "TESTE 5",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            }, {
+                "supend":false,
+                "name": "TESTE 6",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+        ],
+        "goals": [
+            {
+                "n": "10",
+                "minutes": 7,
+                "seconds": 45,
+                "period": 1
+            },
+            {
+                "n": "11",
+                "minutes": 1,
+                "seconds": 0,
+                "period": 1
+            },
+            {
+                "n": "12",
+                "minutes": 13,
+                "seconds": 0,
+                "period": 1
+            },
+            {
+                "n": "",
+                "minutes": 16,
+                "seconds": 0,
+                "period": 1
+            },
+            {
+                "n": "",
+                "minutes": 3,
+                "seconds": 0,
+                "period": 2
+            },
+            {
+                "n": "",
+                "minutes": 14,
+                "seconds": 0,
+                "period": 2
+            },
+            {
+                "n": "",
+                "minutes": 17,
+                "seconds": 0,
+                "period": 2
+            },
+            {
+                "n": "",
+                "minutes": 7,
+                "seconds": 0,
+                "period": 1
+            },
+            {
+                "n": "",
+                "minutes": 1,
+                "seconds": 0,
+                "period": 1
+            },
+            {
+                "n": "",
+                "minutes": 13,
+                "seconds": 0,
+                "period": 1
+            },
+            {
+                "n": "",
+                "minutes": 16,
+                "seconds": 0,
+                "period": 1
+            },
+            {
+                "n": "",
+                "minutes": 3,
+                "seconds": 0,
+                "period": 2
+            },
+            {
+                "n": "",
+                "minutes": 14,
+                "seconds": 0,
+                "period": 2
+            },
+            {
+                "n": "",
+                "minutes": 17,
+                "seconds": 0,
+                "period": 2
+            }
+        ]
+    },
+    "team_2": {
+        "name": "Equipe 9",
+        "player": [
+            {   "supend":false,
+                "name": "LUCAS SOARES",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 2
+            },
+            {   "supend":false,
+                "name": "THIAGO ALMEIDA",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+            {   "supend":false,
+                "name": "ALLEX SANDER",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+            {   "supend":false,
+                "name": "YAGO PIETRO",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 2
+            },
+            {   "supend":false,
+                "name": "RENAN LUIS",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+            {   "supend":false,
+                "name": "DAVI LUCAS",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+            {   "supend":false,
+                "name": "IVISON CARNEIRO",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+            {   "supend":false,
+                "name": "CLAUDIO CALEBE",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+            {   "supend":false,
+                "name": "THALES GABRIEL",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+            {   "supend":false,
+                "name": "RONALD HILBERT",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+            {   "supend":false,
+                "name": "FABIO FURTADO",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+            {   "supend":false,
+                "name": "FABIO ATAIDE",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+            {   "supend":true,
+                "name": "JOSE CAUA",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 2,
+                "red_card": 1,
+                "blue_card": 0,
+                "goals": 0
+            },
+            {   "supend":false,
+                "name": "ATILA LOBATO",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+            {   "supend":false,
+                "name": "ARTHUR MOREIRA",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+            {   "supend":false,
+                "name": "MAURICIO KAUA",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+            {   "supend":false,
+                "name": "ARTHUR CARLOS",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+            {   "supend":false,
+                "name": "THIAGO VIANA",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+            {   "supend":false,
+                "name": "ANTONIO EDUARDO",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+            {   "supend":false,
+                "name": "PAULO ENZO",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+        ],
+        "goals": [
+            {
+                "n": "15",
+                "minutes": 10,
+                "seconds": 35,
+                "period": 2
+            },
+            {
+                "n": "55",
+                "minutes": 13,
+                "seconds": 0,
+                "period": 2
+            },
+            {
+                "n": "",
+                "minutes": 10,
+                "seconds": 0,
+                "period": 2
+            },
+            {
+                "n": "",
+                "minutes": 13,
+                "seconds": 0,
+                "period": 2
+            },
+            {
+                "n": "",
+                "minutes": 20,
+                "seconds": 0,
+                "period": 2
+            }
+        ]
+    }
+};
+    </script>
+
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const d = window.__DADOS_SUMULA__;
+    if (!d) return;
+
+    const playerLimit = (d.config && d.config.player_length) ? Math.min(parseInt(d.config.player_length), 15) : 15;
+
+    const set = (id, val) => {
+        const el = document.getElementById(id);
+        if (el) el.innerText = val || "";
+    };
+
+    // 1. DADOS GERAIS
+    if (d.general) {
+        set('general_title', d.general.title);
+        set('general_sub_title', d.general.sub_title);
+        set('general_stage', d.general.stage);
+        set('general_round', d.general.round);
+        set('general_place', d.general.place);
+        set('general_date', d.general.date);
+    }
+
+    // 2. NOMES DOS TIMES
+    if (d.team_1) set('team_1_name', d.team_1.name);
+    if (d.team_2) set('team_2_name', d.team_2.name);
+
+    // 3. JOGADORES E CARTÕES
+    function preencherTimeManual(timeData, prefixo) {
+        for (let i = 1; i <= 15; i++) {
+            const nomeEl = document.getElementById(`${prefixo}_player_${i}`);
+            const linhaTr = nomeEl ? nomeEl.closest('tr') : null;
+
+            if (linhaTr) {
+                if (i > playerLimit) {
+                    linhaTr.style.display = "none";
+                } else {
+                    linhaTr.style.display = "table-row";
+                    const p = (timeData && timeData.player) ? timeData.player[i-1] : null;
+
+                    if (p) {
+                        nomeEl.innerText = p.name || "";
+                        // Lógica de Suspensão
+                        if (p.supend) {
+                            nomeEl.style.textDecoration = "line-through";
+                            nomeEl.style.color = "red";
+                        } else {
+                            nomeEl.style.textDecoration = "none";
+                            nomeEl.style.color = "inherit";
+                        }
+
+                        set(`${prefixo}_n_${i}`, p.n);
+
+                        // Amarelos
+                        const y1 = document.getElementById(`${prefixo}_yellow1_${i}`);
+                        const y2 = document.getElementById(`${prefixo}_yellow2_${i}`);
+                        if (y1) y1.innerText = (p.yellow_card >= 1) ? "X" : "";
+                        if (y2) y2.innerText = (p.yellow_card >= 2) ? "X" : "";
+
+                        // Vermelhos
+                        const r1 = document.getElementById(`${prefixo}_red1_${i}`);
+                        const r2 = document.getElementById(`${prefixo}_red2_${i}`);
+                        const v = parseInt(p.red_card || p.red || 0);
+                        if (r1) r1.innerText = (v >= 1) ? "X" : "";
+                        if (r2) r2.innerText = (v >= 2) ? "X" : "";
+
+                        // Azul
+                        const blueEl = document.getElementById(`${prefixo}_blue_${i}`);
+                        if (blueEl) blueEl.innerText = (p.blue_card > 0) ? "X" : "";
+                    } else {
+                        nomeEl.innerText = "";
+                        set(`${prefixo}_n_${i}`, "");
+                    }
+                }
+            }
+        }
+    }
+
+    // 4. GOLS
+    function preencherGolsManual(timeData, prefixo) {
+        if (!timeData || !timeData.goals) return;
+        timeData.goals.forEach((gol, i) => {
+            const nEl = document.getElementById(`${prefixo}_gol_n_${i}`);
+            const timeEl = document.getElementById(`${prefixo}_gol_time_${i}`);
+            
+            if (nEl) nEl.innerText = gol.n || "";
+            if (timeEl) {
+                if (gol.minutes !== undefined) {
+                    const min = String(gol.minutes).padStart(2, '0');
+                    const seg = String(gol.seconds || 0).padStart(2, '0');
+                    timeEl.innerText = `${min}:${seg}`;
+                } else {
+                    timeEl.innerText = ""; 
+                }
+            }
+        });
+    }
+
+    // --- EXECUÇÃO ---
+    preencherTimeManual(d.team_1, 'team_1');
+    preencherTimeManual(d.team_2, 'team_2');
+    preencherGolsManual(d.team_1, 'team_1'); // Ajustado para bater com os IDs HTML
+    preencherGolsManual(d.team_2, 'team_2'); // Ajustado para bater com os IDs HTML
+});
+</script>
+
+
+<script>
+    function createRosterRows(totalRows = 15) {
+        const tbody = document.getElementById('roster-body');
+        tbody.innerHTML = '';
+
+        for (let i = 1; i <= totalRows; i++) {
+            const tr = document.createElement('tr');
+
+            tr.innerHTML = `
+                <td id="team_1_n_${i}" class="text-center"></td>
+                <td class="player-cell"><strong id="team_1_player_${i}"></strong></td>
+                <td  class="divider-line"></td>
+                <td id="team_2_n_${i}" class="text-center"></td>
+                <td class="player-cell"><strong id="team_2_player_${i}"></strong></td>
+            `;
+
+            tbody.appendChild(tr);
+        }
+    }
+
+    // Cria o layout antes de preencher os nomes
+    createRosterRows(13);
+</script>
 
 </body>
 </html>
