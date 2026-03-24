@@ -113,7 +113,7 @@ body {
 
 .extra-text {
     font-size: 9px;
-    margin-left: auto;
+    margin-left: 22px;
     text-align: right;
 }
 
@@ -243,3 +243,8 @@ table {
     padding: 6px 5px;
     min-height: 25px;
 }
+
+.points-section.box-border {
+    max-height:578px;
+}
+
