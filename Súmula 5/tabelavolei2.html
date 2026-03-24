@@ -4,7 +4,737 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Súmula de Voleibol - Oficial</title>
-    <link rel="stylesheet" href="style sumula 5.css">
+    <style>
+        /* Reset Geral e Fixação A4 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    font-size: 8px;
+}
+
+body {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Container Principal - Proporção Exata A4 Paisagem (297x210) */
+.sumula-container {
+    width: 279mm;
+    height: 201mm;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin-top: 15px;
+}
+
+/* Classes Utilitárias */
+.bold {
+    font-weight: bold;
+}
+
+.center {
+    text-align: center;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #000;
+}
+
+.border-top {
+    border-top: 1px solid #000;
+}
+
+.border-left {
+    border-left: 1px solid #000;
+}
+
+.border-right {
+    border-right: 1px solid #000;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Cabeçalho */
+.header {
+    border: 1px solid #000;
+    font-family: sans-serif;
+    font-size: 12px;
+    width: 100%;
+}
+
+.row {
+    display: flex;
+    width: 100%;
+}
+
+.col {
+    border-right: 1px solid #000;
+    padding: 5px;
+    align-items: center;
+}
+
+.col:last-child {
+    border-right: none;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #000;
+}
+
+.center {
+    justify-content: center;
+    text-align: center;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.flex-1 {
+    flex: 1;
+}
+
+.flex-2 {
+    flex: 2;
+}
+
+.flex-3 {
+    flex: 3;
+}
+
+.flex-4 {
+    flex: 4;
+}
+
+.flex-8 {
+    flex: 8;
+}
+
+/* ========================================= */
+/* GRID DOS SETS (COM ESPAÇAMENTO REAL)      */
+/* ========================================= */
+.sets-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    flex: 3.5; /* Altura ajustada para dar espaço ao rodapé */
+    gap: 3px; /* <--- MAGIA AQUI: O espaçamento pedido no print 1 */
+}
+
+.set-box {
+    display: flex;
+    width: 100%;
+    height: 171px;
+    background: #fff;
+    border-top: 1px solid;
+}
+
+/* Barra Lateral de Nomes */
+.set-labels-sidebar {
+    width: 65px;
+    display: flex;
+    flex-direction: column;
+    font-size: 6px;
+}
+
+.sl-header {
+    height: 16px;
+}
+
+.sl-row {
+    height: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 7px;
+}
+
+.sl-row-group {
+    display: flex;
+    flex: 1;
+}
+div#pontos-trocas {
+    margin-top:7px;
+}
+
+
+.sl-group-title {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 6px;
+    padding: 2px;
+}
+
+.sl-group-items {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+}
+
+.sl-item {
+    max-height: 16px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 6px;
+}
+
+.sl-item-dual {
+    flex: 1;
+    display: flex;
+}
+
+.sl-item-dual span {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 7px;
+}
+
+/* Título Vertical SET */
+.set-vertical-title {
+    width: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 9px;
+    background-color: #fff;
+}
+
+/* Estrutura Interna de Dados (Equipes e Pontos) */
+.set-main-data {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.smd-header {
+    height: 16px;
+    display: flex;
+    font-size: 6px;
+    text-align: center;
+}
+
+.smd-h-time {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    padding: 5px;
+}
+
+.smd-h-team {
+    flex: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.smd-h-sr {
+    width: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5px;
+}
+
+.smd-h-pts {
+    flex: 1.2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.smd-body {
+    flex: 1;
+    display: flex;
+}
+
+.team-block {
+    flex: 3;
+    display: flex;
+}
+
+.team-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.tc-head {
+    height: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8px;
+}
+
+
+
+.tc-sub {
+    height: 15.5px;
+}
+
+.tc-sub-pts {
+    height: 23.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8px;
+    color: #333;
+}
+
+.tc-rod {
+    flex: 1;
+    border-bottom: 1px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 3px;
+    font-size: 4px;
+   
+}
+
+.points-block {
+    flex: 1;
+    display: flex;
+}
+
+.pts-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    font-size: 6px;
+    color: #111;
+}
+
+.pts-col span {
+    font-size: 6px;
+    flex: 1;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sr-divider {
+    width: 14px;
+    background: #fafafa;
+    display: none;
+}
+
+/* ========================================= */
+/* SET 5 HORIZONTAL (Troca de Lado - Print 2 e 3)*/
+/* ========================================= */
+.set5-container {
+    display: flex;
+    flex: 1.2;
+    border-bottom: 3px solid #000;
+    gap: 3px;
+}
+
+.set5-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    max-width: 439px;
+}
+
+/* ========================================= */
+/* RODAPÉ (Tamanhos reajustados - Print 4 e 5)*/
+/* ========================================= */
+.footer-grid {
+    display: grid;
+    /* Colunas: Penalidades (0.8), Observações (1.8), Resultados (1.3), Equipe (1.8) */
+    grid-template-columns: 0.8fr 1.8fr 1.3fr 1.8fr;
+    flex: 1.3; /* Dá mais altura vertical ao rodapé inteiro */
+}
+
+.footer-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.section-title {
+    text-align: center;
+    font-weight: bold;
+    
+    background-color: #fff;
+}
+
+.footer-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    height: 18px;
+}
+
+.footer-table th,
+.footer-table td {
+    border: 1px solid #000;
+    padding: 1px;
+}
+
+/* Ajustes Específicos do Rodapé */
+.obs-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
+}
+
+.obs-line {
+    border-bottom: 1px solid #999;
+    height: 1px;
+    width: 100%;
+}
+
+.table-approvals {
+    margin-top: auto;
+    height: auto;
+}
+
+.table-approvals th,
+.table-approvals td {
+    height: 16px;
+}
+
+.table-roster td:nth-child(1),
+.table-roster td:nth-child(3) {
+    width: 12%;
+}
+
+.set-box {
+    border: 1px solid #000;
+    margin-bottom: 3px;
+}
+
+.set5-container {
+    border: 1px solid #000;
+    margin-bottom: 10px !important;
+}
+
+/* Bordar e espaçamento inferior header */
+.header {
+    margin-bottom: 5px;
+}
+
+.col.flex-1 {
+    justify-content: center !important;
+    font-weight: 600;
+}
+
+p.volei {
+    border-bottom: 1px solid;
+    width: 100%;
+    text-align: center;
+    padding: 1px;
+}
+
+.smd-h-team.border-right {
+    font-weight: 300;
+}
+
+.section-title.border-bottom {
+    border-top: 1px solid #000;
+}
+
+div#horario {
+    border-bottom: 1px solid #000;
+    margin-top: -5px;
+    width: 100%;
+    border-left: 1px solid #000;
+}
+
+div#time-horario {
+    padding: 0px;
+    margin-top: 5px;
+}
+
+p.time-volei {
+    border-left: 1px solid #000;
+    line-height: 2.5;
+    font-weight: 300;
+}
+
+div#horario {
+    text-align: left !important;
+    font-weight: 300;
+}
+
+b.vs {
+    font-size: 5px;
+}
+
+/* Container principal com a borda externa mais grossa */
+.sumula-header {
+    display: flex;
+    width: 100%;
+    border: 1px solid #000;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    box-sizing: border-box;
+    background-color: #fff;
+    margin-bottom: 3px;
+}
+
+/* Grid perfeitamente alinhado para a parte da esquerda */
+.sumula-left {
+    flex: 1;
+    display: grid;
+    /* Ajuste as proporções das colunas aqui se precisar de mais espaço em alguma */
+    grid-template-columns: auto 1fr 1.2fr 1.8fr;
+}
+
+/* Estilo padrão de cada célula (bordas internas) */
+.cell {
+    height: 13px;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    padding: 6px 8px;
+    display: flex;
+    align-items: center;
+    /*min-height: 28px;  Altura mínima de cada linha */
+}
+
+/* Faz a célula ocupar todas as 4 colunas da esquerda */
+.span-4 {
+    grid-column: span 4;
+    border-right: none;
+}
+
+.title-cell {
+    font-size: 16px;
+}
+
+/* Classes utilitárias para remover bordas duplas */
+.border-right-none {
+    border-right: none;
+}
+
+.border-bottom-none {
+    border-bottom: none;
+}
+
+.center-text {
+    justify-content: center;
+    text-align: center;
+}
+
+/* Caixa da direita que ocupa toda a altura automaticamente */
+.sumula-right {
+    width: 100px;
+    border-left: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.volle-text {
+    font-weight: bold;
+    font-size: 8px;
+    margin-bottom: 2px;
+}
+
+/* Aquele tracinho embaixo da palavra "volle" */
+.volle-line {
+    width: 50%;
+    border-bottom: 1px solid #000;
+}
+
+
+.footer-grid {
+    margin-top: -5px;
+}
+
+/* 1. CONFIGURAÇÃO DA IMPRESSORA */
+@media print {
+    @page {
+        size: A4 landscape;
+        margin: 0; /* Tiramos a margem da página para controlar via CSS */
+    }
+
+    html, body {
+        width: 297mm;
+        height: 210mm;
+        margin: 0;
+        padding: 0;
+    }
+
+    .pagina {
+        margin: 0;
+        border: none;
+        width: 297mm;
+        height: 210mm;
+        page-break-after: always;
+        overflow: hidden; /* Evita que conteúdo extra crie páginas em branco */
+        box-sizing: border-box;
+        padding: 10mm; /* Margem interna real do conteúdo */
+    }
+
+    /* Forçar cores e imagens de fundo */
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+}
+
+/* 2. VISUALIZAÇÃO NA TELA (Para você ajustar o design) */
+@media screen {
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .pagina {
+        background: white;
+        width: 297mm;
+        height: 210mm;
+        margin-bottom: 10mm;
+        box-shadow: 0 0 15px rgba(0,0,0,0.5);
+        box-sizing: border-box;
+        padding: 10mm;
+    }
+}
+
+div#troca-lado {
+    max-width: 525px;
+    border-left: 1px solid #000;
+}
+
+.set5-container .smd-header.border-bottom {
+    padding: 4px;
+}
+
+.section-title.border-bottom {
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+}
+
+.footer-col.border-right.flex-col {
+    height: 258.5px;
+}
+
+
+b.barra {
+    font-weight: 100;
+    font-size: 5px;
+    width:100%;
+    text-align: center;
+    line-height:1;
+}
+
+.set5-container {
+    max-height:165px;
+       
+}
+.barra-num {
+    border-right: 1px solid #000;
+    padding-right:3px;
+    padding:px;
+    margin-top:-2px;
+    margin-bottom:-3px;
+    font-size:6px;
+    line-height:15px;
+    
+}
+
+
+.tc-rod {
+    padding: 5px !important;
+  position: relative; /* Para ancorar o elemento absoluto */
+  display: flex;
+  justify-content: space-around; /* Espaçamento igual para centralizar horizontalmente */
+  align-items: center; /* Centraliza verticalmente os números */
+  height: 20px; /* Mantém a altura fixa */
+  box-sizing: border-box; /* Importante para encaixe perfeito */
+  padding: 0; /* Remove padding que pode quebrar o layout */
+}
+
+/* Usamos um pseudo-elemento para criar a linha sólida */
+.tc-rod::after {
+  content: ""; /* Elemento vazio, remove o caractere | do HTML */
+  position: absolute;
+  left: 50%; /* Centraliza o canto esquerdo da linha */
+  top: 0; /* Cola no topo */
+  bottom: 0; /* Cola na base */
+  width: 1px; /* Largura da linha */
+  background-color: #000; /* Cor preta da linha sólida */
+  transform: translateX(-50%); /* Ajuste de centralização perfeito */
+}
+
+div#container-pontos {
+    height: 18.8px;
+}
+
+
+/* Container principal com borda grossa em volta de tudo */
+.pontuacao-container {
+        border-right: 1px solid;
+    width: 100px; /* Ajuste a largura conforme o seu layout atual */
+    box-sizing: border-box;
+    font-family: Arial, sans-serif; /* Ajuste para a fonte da sua súmula */
+}
+
+/* Deixa as colunas lado a lado */
+.points-block {
+    display: flex;
+}
+
+/* Configuração de cada coluna de números */
+.pts-col {
+    flex: 1; /* Faz todas as 4 colunas terem a mesma largura */
+    display: flex;
+    flex-direction: column; /* Empilha os números verticalmente */
+    text-align: center;
+    padding: 5px 0;
+}
+
+/* Remove qualquer borda que os números tivessem e ajusta a altura */
+.pts-col span {
+    display: block;
+    border: none; /* Garante que as linhas horizontais sumam */
+    line-height: 1.3; /* Ajusta o espaçamento vertical entre os números */
+}
+
+/* Configuração das 3 linhas de baixo */
+.pontuacao-footer {
+    text-align: center;
+    
+}
+
+.points-block.border-bottom-thick {
+    border-bottom: 1px solid #000;
+}
+
+.pontuacao-footer.border-bottom-thick {
+    border-bottom:1px solid;
+    padding:3px;
+}
+.pts-col.border-right-thick {
+    border-right:1px solid #000;
+}
+    </style>
 </head>
 <body>
 
