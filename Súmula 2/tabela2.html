@@ -4,741 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Súmula Futsal 2</title>
-    
-
-    <style>
-        /* Global */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-}
-
-body {
-    background: #e0e0e0;
-    display: flex;
-    justify-content: center;
-    padding: 20px;
-}
-
-.a4-container {
-    background: #fff;
-    width: 297mm;
-    height: 280mm;
-    padding: 10mm;
-    border: 1px solid #999;
-    flex-direction: column;
-}
-
-/* Cabeçalho */
-.top-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 12px;
-}
-
-.spacer {
-    width: 65px;
-}
-
-.center-title {
-    flex-grow: 1;
-    text-align: center;
-}
-
-.center-title h1 {
-    font-size: 29px;
-    font-weight: normal;
-    margin-bottom: 8px;
-    margin-left: -339px;
-}
-
-.score-line {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    gap: 22px;
-    margin-left: -66px;
-}
-
-.team-name-box {
-    border: 1px solid #000;
-    padding: 4px;
-    font-weight: bold;
-    font-size: 15px;
-    width: 319px;
-    text-align: center;
-}
-
-.score-box {
-    border: 1px solid #000;
-    width: 54px;
-    height: 27px;
-}
-
-.vs-text {
-    font-size: 14px;
-}
-
-/* Layout Principal */
-.main-layout {
-    display: flex;
-    gap: 35px;
-    flex-grow: 1;
-}
-
-.teams-column {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 9px;
-}
-
-.info-column {
-    width: 170px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-right: 127px;
-}
-
-/* Wrapper dos Times e Tabelas */
-.team-wrapper {
-    display: flex;
-    gap: 5px;
-    height: 336px;
-    width: 841px;
-}
-
-.team-table {
-    flex-grow: 1;
-    border-collapse: collapse;
-    table-layout: fixed;
-    width: 100%;
-}
-
-.team-table th,
-.team-table td {
-    border: 1px solid #7c7979;
-    font-size: 12px;
-    padding: 0 4px;
-    height: 21px;
-}
-
-.header-white td {
-    height: 22px;
-}
-
-.header-black th {
-    background: #000;
-    color: #fff;
-    font-weight: normal;
-    text-align: center;
-}
-
-/* Colunas (Proporções exatas) */
-.col-jog {
-    width: 26%;
-    text-align: left !important;
-    padding-left: 4px !important;
-}
-
-.col-n {
-    width: 4%;
-    text-align: center;
-}
-
-.col-ini {
-    width: 15%;
-}
-
-.col-ama {
-    width: 12%;
-}
-
-.col-ver {
-    width: 12%;
-}
-
-.col-gol {
-    width: 20%;
-    background: #000 !important;
-    color: #fff !important;
-}
-
-/* Traços e Bordas Internas */
-.double-right {
-    border-right: 3px double #000 !important;
-}
-
-.dashed-right {
-    border-right: 1px dashed #000 !important;
-}
-
-/* Container da Célula de Gols */
-.gols-cell {
-    padding: 0 !important;
-    vertical-align: top !important;
-    border: 1px solid #000 !important;
-}
-
-.gols-wrapper {
-    display: flex !important;
-    width: 100% !important;
-    height: 100% !important;
-}
-
-.gols-col {
-    flex: 1 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    border-right: 1px solid #000 !important;
-}
-
-.gols-col:last-child {
-    border-right: none !important;
-}
-
-/* Item Individual de Gol */
-.gol-item {
-    flex: 1 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    border-bottom: 1px solid #000 !important;
-}
-
-.gol-item:last-child {
-    border-bottom: none !important;
-}
-
-/* Linha de cima: Quadrado Preto + Espaço Branco */
-.gol-top-row {
-    height: 10px !important;
-}
-
-.gol-num {
-    background: #000 !important;
-    color: #fff !important;
-    width: 15px !important;
-    height: 12px !important;
-    font-size: 8px !important;
-    text-align: center !important;
-    line-height: 12px !important;
-    font-weight: bold !important;
-    margin-left: 0px;
-    margin-top: -1px;
-}
-
-.gol-space {
-    flex-grow: 1 !important;
-    background: #fff !important;
-    
-}
-
-/* Linha de baixo: Pontilhados Centrais */
-.gol-dots {
-    flex-grow: 1 !important;
-    min-height: 8px !important;
-    background-image: linear-gradient(to bottom, #000 30%, rgba(255, 255, 255, 0) 0%) !important;
-    background-position: center !important;
-    background-size: 2px 6px !important;
-    background-repeat: repeat-y !important;
-    width: 100% !important;
-}
-
-/* Blocos Laterais (Faltas e Tempo - Rotacionados nativamente) */
-.rotated-v {
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-    display: flex;
-    gap: 5px;
-    width: 60px;
-}
-
-.stat-block {
-    border: 1px solid #000;
-}
-
-.faltas-block {
-    flex: 7;
-}
-
-.tempo-block {
-    flex: 6;
-}
-
-.black-header {
-    background: #000;
-    color: #fff;
-    font-size: 8px;
-    font-weight: bold;
-    text-align: center;
-    padding: 3px;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 14px;
-}
-
-.stat-rows {
-    display: flex;
-    flex-direction: row;
-    flex-grow: 1;
-}
-
-.stat-row {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    border-left: 1px solid #000;
-}
-
-.row-label {
-    font-size: 8px;
-    text-align: center;
-    padding: 2px;
-    border-top: 1px solid #000;
-}
-
-.grid-2x3 {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 3px;
-    flex-grow: 1;
-    padding: 2px;
-    border: 1px solid #000;
-}
-
-.grid-2x3 div {
-    border: 1px solid #000;
-    font-size: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.empty-flex {
-    flex-grow: 1;
-    border-top: 1px solid #000;
-}
-
-/* Coluna Direita - Topo */
-.top-info-table,
-.contagens-table {
-    width: 188px;
-    text-align: center;
-    border-collapse: collapse;
-    margin-bottom: 10px;
-}
-
-.top-info-table th,
-.top-info-table td,
-.contagens-table th,
-.contagens-table td {
-    border: 1px solid #000;
-    padding: 3px;
-    height: 22px;
-    font-size: 10px;
-}
-
-.black-bg th {
-    background: #000;
-    color: #fff;
-}
-
-.black-box-x {
-    background: #000;
-    color: #fff;
-    font-weight: bold;
-    width: 25px;
-}
-
-/* Identificação do Jogo e Arbitragem */
-.sidebar-bottom {
-    flex-grow: 1;
-    position: relative;
-    width: 100%;
-    min-height: 250px;
-}
-
-.rotated-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
-    display: grid;
-    flex-direction: row-reverse;
-    gap: 10px;
-}
-
-.true-rotated {
-    border-collapse: collapse;
-    table-layout: fixed;
-}
-
-.true-rotated th,
-.true-rotated td {
-    border: 1px solid #000;
-    font-size: 9px;
-    padding: 4px;
-}
-
-.th-black {
-    background: #000;
-    color: #fff;
-    text-align: center;
-    font-weight: bold;
-    width: 20px;
-}
-
-.id-table {
-    height: auto;
-}
-
-.arb-table {
-    flex: 1;
-}
-
-/* Controles de altura e quebras de célula */
-.h-30 {
-    height: 25%;
-}
-
-.h-35 {
-    height: 25.5%;
-}
-
-.h-85 {
-    height: 85%;
-}
-
-.h-15 {
-    height: 15%;
-}
-
-.split-cell {
-    padding: 0 !important;
-    flex-direction: column;
-}
-
-.split-bottom {
-    flex: 6;
-    display: flex;
-    align-items: center;
-    padding-left: 4px;
-    margin-top: 5px;
-}
-
-.split-top {
-    flex: 4;
-    display: flex;
-    align-items: center;
-    padding-left: 4px;
-}
-
-/* Impressão Base */
-@media print {
-    @page {
-        size: A4 landscape;
-        margin: 0;
-    }
-    body {
-        padding: 0;
-        background: none;
-    }
-    .a4-container {
-        border: none;
-        box-shadow: none;
-        width: 100%;
-        height: 100%;
-    }
-}
-
-.logo-box {
-    margin-right: 39px;
-}
-
-table.true-rotated.arb-table {
-    width: 100px;
-}
-
-tr.header-black th {
-    text-align: center !important;
-}
-
-/* Barra de divisoria das cédula "amarelo" e "vermelho" */
-td[colspan="3"].double-right {
-    position: relative !important;
-    text-align: center !important;
-}
-
-td[colspan="3"].double-right::before {
-    content: "|" !important;
-    position: absolute !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    color: #000 !important;
-    font-weight: normal !important;
-    font-size: 14px !important;
-    margin-top: -8px;
-}
-
-th.col-ama::before,
-th.col-ama::after,
-th.col-ver::before,
-th.col-ver::after {
-    content: none !important;
-}
-
-/* 4 divisores na célula de Início */
-td[colspan="2"].double-right {
-    position: relative !important;
-    background-image: linear-gradient(to right,
-            transparent 19%,
-            #000 19%, #000 20%,
-            transparent 20%,
-            transparent 39%,
-            #000 39%, #000 40%,
-            transparent 40%,
-            transparent 59%,
-            #000 59%, #000 60%,
-            transparent 60%,
-            transparent 79%,
-            #000 79%, #000 80%,
-            transparent 80%) !important;
-    background-size: 100% 100%;
-}
-
-th.col-ini {
-    background-image: none !important;
-}
-
-/* Ajustes condicionais para o corpo da tabela */
-tbody tr:not(:nth-last-child(-n+3)) td[colspan="3"].double-right::before {
-    content: "|" !important;
-    position: absolute !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    color: #000 !important;
-    font-weight: normal !important;
-    font-size: 10px !important;
-}
-
-tbody tr:not(:nth-last-child(-n+3)) td[colspan="2"].double-right {
-    position: relative !important;
-    background-image: linear-gradient(to right,
-            transparent 19%, #000 19%, #000 20%,
-            transparent 20%, transparent 39%, #000 39%, #000 40%,
-            transparent 40%, transparent 59%, #000 59%, #000 60%,
-            transparent 60%, transparent 79%, #000 79%, #000 80%,
-            transparent 80%) !important;
-    background-size: 100% 100%;
-}
-
-tbody tr:nth-last-child(-n+3) td {
-    background-image: none !important;
-}
-
-tbody tr:nth-last-child(-n+3) td::before {
-    content: none !important;
-}
-
-#faltas-1,
-#faltas-2 {
-    font-size: 10px;
-    font-weight: 400;
-}
-
-#faltas-div {
-    border: none !important;
-    height: 10px;
-}
-
-.stat-block {
-    width: 59px;
-}
-
-#faltas-2 {
-    margin-right: 6px;
-}
-
-#faltas-1 {
-    margin-right: 5px;
-}
-
-div#faltas-1,
-div#faltas-2 {
-    border-top: none;
-}
-
-/* Configuração de Impressão Blindada */
-@media print {
-    @page {
-        size: A4 landscape !important;
-        margin: 0 !important;
-    }
-
-    body {
-        padding: 0 !important;
-        background: none !important;
-    }
-
-    .a4-container {
-        border: none !important;
-        box-shadow: none !important;
-        width: 100% !important;
-        height: 100% !important;
-        padding: 5mm !important;
-        margin: 0 !important;
-    }
-}
-
-.a4-container {
-    background: #fff !important;
-    width: 297mm !important;
-    height: 210mm !important;
-    padding: 10mm !important;
-    border: 1px solid #999 !important;
-    display: flex !important;
-    flex-direction: column !important;
-    box-sizing: border-box !important;
-    overflow: hidden !important;
-}
-
-.team-table {
-    font-size: 9px !important;
-    width: 100% !important;
-}
-
-.team-table th,
-.team-table td {
-    height: 14px !important;
-}
-
-.black-header {
-    font-size: 9px !important;
-    padding: 2px 0 !important;
-    height: auto !important;
-}
-
-table.contagens-table td {
-    width: 139px;
-}
-
-h1,
-.header-title {
-    font-size: 16px !important;
-    margin: 2px 0 !important;
-}
-
-/*Titulo cabeçalho "SÚMULA DA PARTIDA"*/
-.center-title h1 {
-    margin-right: 184px !important;
-    font-weight: 500;
-    font-size: 29px !important;
-    margin-top: -10px !important;
-    margin-bottom: 5px;
-}
-
-/*Subindo tabela de contagens*/
-table.contagens-table {
-    margin-top: -20px;
-}
-
-/*Divisor do quadro de "faltas acumuladas"*/
-.divisor {
-    border: 1px solid #000;
-    margin-right: 0px;
-}
-
-/*Peso da fonte dos noes dos times*/
-strong {
-    font-weight: 600;
-}
-
-/*Fonte dos nomes dos jogadores*/
-
-.nome-jogador  {
-    font-weight: 200 !important;
-    font-size:12px;
-}
-
-
-
-.gol-item {
-        border-bottom: 1px solid #000;
-        height: 32px;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        padding: 0;
-        overflow: hidden;
-    }
-    .gol-top-row {
-        display: flex;
-        align-items: center;
-        background: #fff;
-        height: 11px;
-    }
-    .gol-num {
-        background: #000;
-        color: #fff;
-        width: 14px;
-        height: 14px;
-        text-align: center;
-        font-size: 9px;
-        font-weight: bold;
-        line-height: 14px;
-    }
-    .gol-player-n {
-        margin-left: 4px;
-        font-size: 11px;
-        font-weight: bold;
-        color: #000;
-    }
-    .gol-time-display {
-        font-size: 9px;
-        text-align: center;
-        height: 14px;
-        line-height: 14px;
-        color: #000;
-        background: #fff;
-        width: 100%;
-        /* Removemos o border-top para não poluir visualmente */
-    }
-    .gol-space {
-    font-size:8px;
-    margin-left: 2px;
-}
-
-.gol-top-row {
-    border-bottom: 1px solid #000;
-    
-}
-
-
-/*Ajustes no "X" das cédulas de cartões*/
-table.team-table {
-    margin-top: -6px;
-}
-
-.score-line {
-    margin-top:-2px
-}
-
-
-
-td.double-right strong {
-    font-size:11px;
-    font-weight:550
-}
-    </style>
 </head>
 <body>
 
@@ -1719,6 +984,739 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 
 
+    <style>
+        /* Global */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.a4-container {
+    background: #fff;
+    width: 297mm;
+    height: 280mm;
+    padding: 10mm;
+    border: 1px solid #999;
+    flex-direction: column;
+}
+
+/* Cabeçalho */
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 12px;
+}
+
+.spacer {
+    width: 65px;
+}
+
+.center-title {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.center-title h1 {
+    font-size: 29px;
+    font-weight: normal;
+    margin-bottom: 8px;
+    margin-left: -339px;
+}
+
+.score-line {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 22px;
+    margin-left: -66px;
+}
+
+.team-name-box {
+    border: 1px solid #000;
+    padding: 4px;
+    font-weight: bold;
+    font-size: 15px;
+    width: 319px;
+    text-align: center;
+}
+
+.score-box {
+    border: 1px solid #000;
+    width: 54px;
+    height: 27px;
+}
+
+.vs-text {
+    font-size: 14px;
+}
+
+/* Layout Principal */
+.main-layout {
+    display: flex;
+    gap: 35px;
+    flex-grow: 1;
+}
+
+.teams-column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.info-column {
+    width: 170px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-right: 127px;
+}
+
+/* Wrapper dos Times e Tabelas */
+.team-wrapper {
+    display: flex;
+    gap: 5px;
+    height: 336px;
+    width: 841px;
+}
+
+.team-table {
+    flex-grow: 1;
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.team-table th,
+.team-table td {
+    border: 1px solid #7c7979;
+    font-size: 12px;
+    padding: 0 4px;
+    height: 21px;
+}
+
+.header-white td {
+    height: 22px;
+}
+
+.header-black th {
+    background: #000;
+    color: #fff;
+    font-weight: normal;
+    text-align: center;
+}
+
+/* Colunas (Proporções exatas) */
+.col-jog {
+    width: 26%;
+    text-align: left !important;
+    padding-left: 4px !important;
+}
+
+.col-n {
+    width: 4%;
+    text-align: center;
+}
+
+.col-ini {
+    width: 15%;
+}
+
+.col-ama {
+    width: 12%;
+}
+
+.col-ver {
+    width: 12%;
+}
+
+.col-gol {
+    width: 20%;
+    background: #000 !important;
+    color: #fff !important;
+}
+
+/* Traços e Bordas Internas */
+.double-right {
+    border-right: 3px double #000 !important;
+}
+
+.dashed-right {
+    border-right: 1px dashed #000 !important;
+}
+
+/* Container da Célula de Gols */
+.gols-cell {
+    padding: 0 !important;
+    vertical-align: top !important;
+    border: 1px solid #000 !important;
+}
+
+.gols-wrapper {
+    display: flex !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.gols-col {
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    border-right: 1px solid #000 !important;
+}
+
+.gols-col:last-child {
+    border-right: none !important;
+}
+
+/* Item Individual de Gol */
+.gol-item {
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    border-bottom: 1px solid #000 !important;
+}
+
+.gol-item:last-child {
+    border-bottom: none !important;
+}
+
+/* Linha de cima: Quadrado Preto + Espaço Branco */
+.gol-top-row {
+    height: 10px !important;
+}
+
+.gol-num {
+    background: #000 !important;
+    color: #fff !important;
+    width: 15px !important;
+    height: 12px !important;
+    font-size: 8px !important;
+    text-align: center !important;
+    line-height: 12px !important;
+    font-weight: bold !important;
+    margin-left: 0px;
+    margin-top: -1px;
+}
+
+.gol-space {
+    flex-grow: 1 !important;
+    background: #fff !important;
+    
+}
+
+/* Linha de baixo: Pontilhados Centrais */
+.gol-dots {
+    flex-grow: 1 !important;
+    min-height: 8px !important;
+    background-image: linear-gradient(to bottom, #000 30%, rgba(255, 255, 255, 0) 0%) !important;
+    background-position: center !important;
+    background-size: 2px 6px !important;
+    background-repeat: repeat-y !important;
+    width: 100% !important;
+}
+
+/* Blocos Laterais (Faltas e Tempo - Rotacionados nativamente) */
+.rotated-v {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    display: flex;
+    gap: 5px;
+    width: 60px;
+}
+
+.stat-block {
+    border: 1px solid #000;
+}
+
+.faltas-block {
+    flex: 7;
+}
+
+.tempo-block {
+    flex: 6;
+}
+
+.black-header {
+    background: #000;
+    color: #fff;
+    font-size: 8px;
+    font-weight: bold;
+    text-align: center;
+    padding: 3px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 14px;
+}
+
+.stat-rows {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+}
+
+.stat-row {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid #000;
+}
+
+.row-label {
+    font-size: 8px;
+    text-align: center;
+    padding: 2px;
+    border-top: 1px solid #000;
+}
+
+.grid-2x3 {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 3px;
+    flex-grow: 1;
+    padding: 2px;
+    border: 1px solid #000;
+}
+
+.grid-2x3 div {
+    border: 1px solid #000;
+    font-size: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.empty-flex {
+    flex-grow: 1;
+    border-top: 1px solid #000;
+}
+
+/* Coluna Direita - Topo */
+.top-info-table,
+.contagens-table {
+    width: 188px;
+    text-align: center;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+.top-info-table th,
+.top-info-table td,
+.contagens-table th,
+.contagens-table td {
+    border: 1px solid #000;
+    padding: 3px;
+    height: 22px;
+    font-size: 10px;
+}
+
+.black-bg th {
+    background: #000;
+    color: #fff;
+}
+
+.black-box-x {
+    background: #000;
+    color: #fff;
+    font-weight: bold;
+    width: 25px;
+}
+
+/* Identificação do Jogo e Arbitragem */
+.sidebar-bottom {
+    flex-grow: 1;
+    position: relative;
+    width: 100%;
+    min-height: 250px;
+}
+
+.rotated-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    display: grid;
+    flex-direction: row-reverse;
+    gap: 10px;
+}
+
+.true-rotated {
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.true-rotated th,
+.true-rotated td {
+    border: 1px solid #000;
+    font-size: 9px;
+    padding: 4px;
+}
+
+.th-black {
+    background: #000;
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    width: 20px;
+}
+
+.id-table {
+    height: auto;
+}
+
+.arb-table {
+    flex: 1;
+}
+
+/* Controles de altura e quebras de célula */
+.h-30 {
+    height: 25%;
+}
+
+.h-35 {
+    height: 25.5%;
+}
+
+.h-85 {
+    height: 85%;
+}
+
+.h-15 {
+    height: 15%;
+}
+
+.split-cell {
+    padding: 0 !important;
+    flex-direction: column;
+}
+
+.split-bottom {
+    flex: 6;
+    display: flex;
+    align-items: center;
+    padding-left: 4px;
+    margin-top: 5px;
+}
+
+.split-top {
+    flex: 4;
+    display: flex;
+    align-items: center;
+    padding-left: 4px;
+}
+
+/* Impressão Base */
+@media print {
+    @page {
+        size: A4 landscape;
+        margin: 0;
+    }
+    body {
+        padding: 0;
+        background: none;
+    }
+    .a4-container {
+        border: none;
+        box-shadow: none;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.logo-box {
+    margin-right: 39px;
+}
+
+table.true-rotated.arb-table {
+    width: 100px;
+}
+
+tr.header-black th {
+    text-align: center !important;
+}
+
+/* Barra de divisoria das cédula "amarelo" e "vermelho" */
+td[colspan="3"].double-right {
+    position: relative !important;
+    text-align: center !important;
+}
+
+td[colspan="3"].double-right::before {
+    content: "|" !important;
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    color: #000 !important;
+    font-weight: normal !important;
+    font-size: 14px !important;
+    margin-top: -8px;
+}
+
+th.col-ama::before,
+th.col-ama::after,
+th.col-ver::before,
+th.col-ver::after {
+    content: none !important;
+}
+
+/* 4 divisores na célula de Início */
+td[colspan="2"].double-right {
+    position: relative !important;
+    background-image: linear-gradient(to right,
+            transparent 19%,
+            #000 19%, #000 20%,
+            transparent 20%,
+            transparent 39%,
+            #000 39%, #000 40%,
+            transparent 40%,
+            transparent 59%,
+            #000 59%, #000 60%,
+            transparent 60%,
+            transparent 79%,
+            #000 79%, #000 80%,
+            transparent 80%) !important;
+    background-size: 100% 100%;
+}
+
+th.col-ini {
+    background-image: none !important;
+}
+
+/* Ajustes condicionais para o corpo da tabela */
+tbody tr:not(:nth-last-child(-n+3)) td[colspan="3"].double-right::before {
+    content: "|" !important;
+    position: absolute !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    color: #000 !important;
+    font-weight: normal !important;
+    font-size: 10px !important;
+}
+
+tbody tr:not(:nth-last-child(-n+3)) td[colspan="2"].double-right {
+    position: relative !important;
+    background-image: linear-gradient(to right,
+            transparent 19%, #000 19%, #000 20%,
+            transparent 20%, transparent 39%, #000 39%, #000 40%,
+            transparent 40%, transparent 59%, #000 59%, #000 60%,
+            transparent 60%, transparent 79%, #000 79%, #000 80%,
+            transparent 80%) !important;
+    background-size: 100% 100%;
+}
+
+tbody tr:nth-last-child(-n+3) td {
+    background-image: none !important;
+}
+
+tbody tr:nth-last-child(-n+3) td::before {
+    content: none !important;
+}
+
+#faltas-1,
+#faltas-2 {
+    font-size: 10px;
+    font-weight: 400;
+}
+
+#faltas-div {
+    border: none !important;
+    height: 10px;
+}
+
+.stat-block {
+    width: 59px;
+}
+
+#faltas-2 {
+    margin-right: 6px;
+}
+
+#faltas-1 {
+    margin-right: 5px;
+}
+
+div#faltas-1,
+div#faltas-2 {
+    border-top: none;
+}
+
+/* Configuração de Impressão Blindada */
+@media print {
+    @page {
+        size: A4 landscape !important;
+        margin: 0 !important;
+    }
+
+    body {
+        padding: 0 !important;
+        background: none !important;
+    }
+
+    .a4-container {
+        border: none !important;
+        box-shadow: none !important;
+        width: 100% !important;
+        height: 100% !important;
+        padding: 5mm !important;
+        margin: 0 !important;
+    }
+}
+
+.a4-container {
+    background: #fff !important;
+    width: 297mm !important;
+    height: 210mm !important;
+    padding: 10mm !important;
+    border: 1px solid #999 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+}
+
+.team-table {
+    font-size: 9px !important;
+    width: 100% !important;
+}
+
+.team-table th,
+.team-table td {
+    height: 14px !important;
+}
+
+.black-header {
+    font-size: 9px !important;
+    padding: 2px 0 !important;
+    height: auto !important;
+}
+
+table.contagens-table td {
+    width: 139px;
+}
+
+h1,
+.header-title {
+    font-size: 16px !important;
+    margin: 2px 0 !important;
+}
+
+/*Titulo cabeçalho "SÚMULA DA PARTIDA"*/
+.center-title h1 {
+    margin-right: 184px !important;
+    font-weight: 500;
+    font-size: 29px !important;
+    margin-top: -10px !important;
+    margin-bottom: 5px;
+}
+
+/*Subindo tabela de contagens*/
+table.contagens-table {
+    margin-top: -20px;
+}
+
+/*Divisor do quadro de "faltas acumuladas"*/
+.divisor {
+    border: 1px solid #000;
+    margin-right: 0px;
+}
+
+/*Peso da fonte dos noes dos times*/
+strong {
+    font-weight: 600;
+}
+
+/*Fonte dos nomes dos jogadores*/
+
+.nome-jogador  {
+    font-weight: 200 !important;
+    font-size:12px;
+}
+
+
+
+.gol-item {
+        border-bottom: 1px solid #000;
+        height: 32px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 0;
+        overflow: hidden;
+    }
+    .gol-top-row {
+        display: flex;
+        align-items: center;
+        background: #fff;
+        height: 11px;
+    }
+    .gol-num {
+        background: #000;
+        color: #fff;
+        width: 14px;
+        height: 14px;
+        text-align: center;
+        font-size: 9px;
+        font-weight: bold;
+        line-height: 14px;
+    }
+    .gol-player-n {
+        margin-left: 4px;
+        font-size: 11px;
+        font-weight: bold;
+        color: #000;
+    }
+    .gol-time-display {
+        font-size: 9px;
+        text-align: center;
+        height: 14px;
+        line-height: 14px;
+        color: #000;
+        background: #fff;
+        width: 100%;
+        /* Removemos o border-top para não poluir visualmente */
+    }
+    .gol-space {
+    font-size:8px;
+    margin-left: 2px;
+}
+
+.gol-top-row {
+    border-bottom: 1px solid #000;
+    
+}
+
+
+/*Ajustes no "X" das cédulas de cartões*/
+table.team-table {
+    margin-top: -6px;
+}
+
+.score-line {
+    margin-top:-2px
+}
+
+
+
+td.double-right strong {
+    font-size:11px;
+    font-weight:550
+}
+    </style>
 
 </body>
 </html>
