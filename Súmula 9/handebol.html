@@ -4,163 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Súmula de Handebol</title>
-    <style>
-        * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-/* CONFIGURAÇÃO A4 RETRATO */
-@page {
-    size: A4 portrait;
-    margin: 10mm;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    font-size: 11px;
-    display: flex;
-    justify-content: center;
-    padding: 20px 0;
-}
-
-.sheet {
-    background-color: #fff;
-    width: 210mm;
-    min-height: 209mm;
-    padding: 15px 20px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    flex-direction: column;
-}
-
-@media print {
-    body { background-color: transparent; padding: 0; }
-    .sheet { box-shadow: none; width: 100%; height: 100%; padding: 0; }
-}
-
-/* UTILITÁRIOS GERAIS */
-.border-box { border: 2px solid #000; } /* Borda ligeiramente mais grossa para os blocos principais */
-.border-bottom { border-bottom: 1px solid #000; }
-.border-right { border-right: 1px solid #000; }
-.border-bottom-none { border-bottom: none !important; }
-
-.flex { display: flex; }
-.d-flex-center { display: flex; align-items: center; justify-content: center; }
-.text-center { text-align: center; }
-.text-left { text-align: left; }
-.font-bold { font-weight: bold; }
-.text-sm { font-size: 10px; }
-
-/* ESPAÇAMENTOS */
-.p-1 { padding: 4px 6px; }
-.p-half { padding: 2px 4px; }
-.mt-10 { margin-top: 10px; }
-.mb-none { margin-bottom: 0 !important; }
-
-/* LARGURAS PERCENTUAIS (FLEX/GRID) */
-.w-15 { width: 15%; }
-.w-20 { width: 20%; }
-.w-25 { width: 25%; }
-.w-30 { width: 30%; }
-.w-33 { width: 33.33%; }
-.w-40 { width: 40%; }
-.w-50 { width: 50%; }
-.w-60 { width: 60%; }
-.w-75 { width: 147%; }
-
-/* --- TÍTULO --- */
-.main-title {
-    text-align: center;
-    font-size: 26px;
-    font-weight: normal;
-    margin-bottom: 15px;
-    font-family: "Arial", sans-serif;
-}
-
-span.coluna {
-    margin-top: -20px;
-    border-bottom: 1px solid;
-    width:100%;
-    text-align:center;
-    
-}
-
-/* --- CABEÇALHO --- */
-.score-row {
-    height: 35px;
-}
-
-/* --- MEIO: EQUIPES --- */
-.teams-container {
-    display: flex;
-    gap: 5px; /* Espaço exato entre as tabelas das duas equipes */
-    margin-top: 10px;
-    flex-grow: 1;
-}
-
-.team-half {
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-}
-
-/* TABELA DE JOGADORES */
-.player-table {
-    width: 100%;
-    border-collapse: collapse;
-    border: 2px solid #000; /* Moldura envolta da tabela */
-}
-
-.player-table th, .player-table td {
-    border: 1px solid #000;
-}
-
-/* Aqui garantimos que as células menores tenham sempre a mesma largura (7%) e fiquem uniformes */
-.player-table .stat-col {
-    width: 7%;
-    text-align: center;
-    font-size: 10px;
-    padding: 0;
-}
-
-.player-table .num-col {
-    width: 7%;
-    text-align: center;
-    font-size: 10px;
-}
-
-.player-table .name-col {
-    width: 58%;
-    text-align: left;
-    padding-left: 5px;
-    font-size: 10px;
-}
-
-.player-table tbody tr {
-    height: 19px; /* Altura controlada para caber as 17 linhas sem esticar muito */
-}
-
-/* --- ARBITRAGEM --- */
-.referee-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.referee-table td {
-    border-top: 1px solid #000;
-    height: 18px;
-}
-.w-5 { width: 5%; }
-
-strong#team_1_name {
-    text-transform: uppercase;
-}
-
-strong#team_2_name {
-    text-transform: uppercase;
-}
-    </style>
 </head>
 <body>
     <div class="sheet">
@@ -1007,5 +850,162 @@ document.addEventListener("DOMContentLoaded", function() {
     // Cria o layout antes de preencher os nomes
     createRosterRows(13);
 </script>
+    <style>
+        * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* CONFIGURAÇÃO A4 RETRATO */
+@page {
+    size: A4 portrait;
+    margin: 10mm;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.sheet {
+    background-color: #fff;
+    width: 210mm;
+    min-height: 209mm;
+    padding: 15px 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    flex-direction: column;
+}
+
+@media print {
+    body { background-color: transparent; padding: 0; }
+    .sheet { box-shadow: none; width: 100%; height: 100%; padding: 0; }
+}
+
+/* UTILITÁRIOS GERAIS */
+.border-box { border: 2px solid #000; } /* Borda ligeiramente mais grossa para os blocos principais */
+.border-bottom { border-bottom: 1px solid #000; }
+.border-right { border-right: 1px solid #000; }
+.border-bottom-none { border-bottom: none !important; }
+
+.flex { display: flex; }
+.d-flex-center { display: flex; align-items: center; justify-content: center; }
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.font-bold { font-weight: bold; }
+.text-sm { font-size: 10px; }
+
+/* ESPAÇAMENTOS */
+.p-1 { padding: 4px 6px; }
+.p-half { padding: 2px 4px; }
+.mt-10 { margin-top: 10px; }
+.mb-none { margin-bottom: 0 !important; }
+
+/* LARGURAS PERCENTUAIS (FLEX/GRID) */
+.w-15 { width: 15%; }
+.w-20 { width: 20%; }
+.w-25 { width: 25%; }
+.w-30 { width: 30%; }
+.w-33 { width: 33.33%; }
+.w-40 { width: 40%; }
+.w-50 { width: 50%; }
+.w-60 { width: 60%; }
+.w-75 { width: 147%; }
+
+/* --- TÍTULO --- */
+.main-title {
+    text-align: center;
+    font-size: 26px;
+    font-weight: normal;
+    margin-bottom: 15px;
+    font-family: "Arial", sans-serif;
+}
+
+span.coluna {
+    margin-top: -20px;
+    border-bottom: 1px solid;
+    width:100%;
+    text-align:center;
+    
+}
+
+/* --- CABEÇALHO --- */
+.score-row {
+    height: 35px;
+}
+
+/* --- MEIO: EQUIPES --- */
+.teams-container {
+    display: flex;
+    gap: 5px; /* Espaço exato entre as tabelas das duas equipes */
+    margin-top: 10px;
+    flex-grow: 1;
+}
+
+.team-half {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* TABELA DE JOGADORES */
+.player-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid #000; /* Moldura envolta da tabela */
+}
+
+.player-table th, .player-table td {
+    border: 1px solid #000;
+}
+
+/* Aqui garantimos que as células menores tenham sempre a mesma largura (7%) e fiquem uniformes */
+.player-table .stat-col {
+    width: 7%;
+    text-align: center;
+    font-size: 10px;
+    padding: 0;
+}
+
+.player-table .num-col {
+    width: 7%;
+    text-align: center;
+    font-size: 10px;
+}
+
+.player-table .name-col {
+    width: 58%;
+    text-align: left;
+    padding-left: 5px;
+    font-size: 10px;
+}
+
+.player-table tbody tr {
+    height: 19px; /* Altura controlada para caber as 17 linhas sem esticar muito */
+}
+
+/* --- ARBITRAGEM --- */
+.referee-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.referee-table td {
+    border-top: 1px solid #000;
+    height: 18px;
+}
+.w-5 { width: 5%; }
+
+strong#team_1_name {
+    text-transform: uppercase;
+}
+
+strong#team_2_name {
+    text-transform: uppercase;
+}
+    </style>
 </body>
 </html>
