@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Súmula 3</title>
+    <link rel="stylesheet" href="style tabela 3.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="score-header">
+        <div class="team-box1"><strong id="team_1_name"></strong></div>
+        <div id="placar1" class="vs-box"></div>
+        <div class="vs-box">X</div>
+        <div id="placar2" class="vs-box"></div>
+        <div  class="team-box2"><strong id="team_2_name"></strong></div>
+    </div>
+
+    <div class="header-main">
+        <div class="info-section">
+            <div style="display: grid; grid-template-columns: 3fr 1fr;">
+                <div class="cell"><span class="label">COMPETIÇÃO</span> <span class="val"><strong class="subtitulo" id="general_title"></strong></span></div>
+                <div class="cell" style="border-right:1px solid; margin-right: 5px;"><span class="label">DATA</span> <span class="val">&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;/</span></div>
+            </div>
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr;">
+                <div class="cell"><span class="label">CATEGORIA</span></div>
+                <div class="cell"><span class="label">FASE</span> <span class="val"><strong class="subtitulo" id="general_stage"></strong></span></div>
+                <div class="cell" style="border-right:1px solid; margin-right: 5px;"><span class="label">RODADA</span> <span class="val"> <strong class="subtitulo" id="general_round"></strong></span></div>
+            </div>
+            <div style="display: grid; grid-template-columns: 3fr 1fr;">
+                <div class="cell"><span class="label">LOCAL</span> <span class="val"><strong class="subtitulo" id="general_place"></strong></span></div>
+                <div class="cell" style="border-right:1px solid; margin-right: 5px;"><span class="label">JOGO Nº</span></div>
+            </div>
+
+            <div class="arbitragem-container">
+                <div class="arbitragem-label">ARBITRAGEM</div>
+                <div class="arbitragem-fields">
+                    <div class="arb-row"><div id="col-1" class="arb-col"></div><div class="arb-col"></div><div></div></div>
+                    <div class="arb-row"><div id="col-1" class="arb-col"></div><div class="arb-col"></div><div></div></div>
+                    <div class="arb-row"><div id="col-1" class="arb-col"></div><div class="arb-col"></div><div></div></div>
+                    <div class="arb-row" style="border-bottom:0;"><div id="col-1" class="arb-col"></div><div  class="arb-col"></div><div id="col-1"></div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="side-tables">
+            <table class="mini-table">
+                <tr><th>HORÁRIO</th><th>INÍCIO</th><th style="border-right:0;">TÉRMINO</th></tr>
+                <tr><td class="txt-left">1. PER</td><td></td><td style="border-right:0;"></td></tr>
+                <tr><td class="txt-left">2. PER</td><td></td><td style="border-right:0;"></td></tr>
+                <tr><td class="txt-left">3. PER</td><td></td><td style="border-right:0;"></td></tr>
+                <tr><td class="txt-left">PRORROG</td><td></td><td style="border-right:0;"></td></tr>
+            </table>
+            <table class="mini-table">
+                <tr><th colspan="3" style="border-right:0;">CONTAGEM</th></tr>
+                <tr><td class="txt-left" >1. PER</td><td></td><td  style="border-right:1px solid;">X</td><td style="border-top:1px solid;"></td></tr>
+                <tr><td class="txt-left" >2. PER</td><td></td><td style="border-right:0;">X</td><td  style="border-left:1px solid;"></td></tr>
+                <tr><td class="txt-left" >3. PER</td><td></td><td style="border-right:0;">X</td><td  style="border-left:1px solid;"></td></tr>
+                <tr><td class="txt-left" >TÉRMINO</td><td></td><td style="border-right:0;">X</td><td  style="border-left:1px solid;"></td></tr>
+                <tr><td class="txt-left" >PRORROG</td><td></td><td style="border-right:0;">X</td><td  style="border-left:1px solid;"></td></tr>
+                <tr><td class="txt-left" >PENALTY</td><td></td><td style="border-right:0;">X</td><td  style="border-left:1px solid;"></td></tr>
+            </table>
+        </div>
+    </div>
+
+   <div id="team-a" class="team-section">
+    <div class="team-header-name">
+        EQUIPE 'A' Equipe 4
+    </div>
+
+    <table class="main-table">
+    <thead>
+        <tr>
+            <th class="col-doc">DOCUMENTO</th>
+            <th class="col-jog">JOGADORES</th>
+            <th class="col-n">Nº</th>
+            <th colspan="2" class="col-ama">AMARELOS</th>
+            <th colspan="2" class="col-ver">VERMELHOS</th>
+            <th class="col-sub">SUBSTITUIÇÕES</th>
+            <th colspan="10" class="col-faltas-header">FALTAS</th>
+        </tr>
+    </thead>
+    <tbody>
+        <script>
+            // Prefixo definido como team_1 para esta tabela
+            const prefixo_t1 = "team_1"; 
+            
+            for (let i = 1; i <= 15; i++) {
+                document.write(`
+                <tr>
+                    <td class="doc">111.111.111-11</td>
+                    <td><strong id="${prefixo_t1}_player_${i}" class="nome-jogador"></strong></td>
+                    <td id="${prefixo_t1}_n_${i}"></td>
+                    
+                    <td id="${prefixo_t1}_yellow1_${i}" class="border-mid"></td>
+                    <td id="${prefixo_t1}_yellow2_${i}"></td>
+                    <td id="${prefixo_t1}_red1_${i}" class="border-mid"></td>
+                    <td id="${prefixo_t1}_red2_${i}"></td>
+                    
+                    <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
+                    
+                    ${i === 1 || i === 2 ? 
+                        '<td colspan="2" class="f-num">1</td><td colspan="2" class="f-num">2</td><td colspan="2" class="f-num">3</td><td colspan="2" class="f-num">4</td><td colspan="2" class="f-num">5</td>' : 
+                      i === 3 ? 
+                        '<td colspan="10" class="time-title">PEDIDOS DE TEMPO</td>' :
+                      i === 4 ?
+                        '<td colspan="10" class="time-periods"><div class="flex-periods"><span>1. PER</span><span>2. PER</span></div></td>' :
+                      i === 5 ?
+                        '<td colspan="5"></td><td colspan="5"></td>' :
+                      i === 6 ?
+                        '<td colspan="5" rowspan="16" class="col-sig">Capitão</td><td colspan="5" rowspan="16" class="col-sig">Técnico</td>' : 
+                        '' 
+                    }
+                </tr>
+                `);
+            }
+        </script>
+        <tr>
+            <td></td>
+            <td colspan="3" class="tecnico-row"><strong>TÉCNICO:</strong></td>
+            <td colspan="2" id="team_1_tech_yellow"></td>
+            <td colspan="2" id="team_1_tech_red"></td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td colspan="3" class="tecnico-row"><strong></strong></td>
+            <td colspan="2" id="team_1_tech_yellow"></td>
+            <td colspan="2" id="team_1_tech_red"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan="3" class="tecnico-row"><strong></strong></td>
+            <td colspan="2" id="team_1_tech_yellow"></td>
+            <td colspan="2" id="team_1_tech_red"></td>
+        </tr>
+        
+    </tbody>
+</table>
+
+    
+    <table class="grid-footer">
+    <tr class="row-numbers">
+        <script>
+            for(let i=0; i<20; i++) {
+                // O número do golo fica em cinza, o ID do jogador fica na aba branca
+                document.write(`<td class="cell-num">${i + 1}</td><td id="team_1_gol_n_${i}" class="cell-player"></td>`);
+            }
+        </script>
+    </tr>
+    <tr class="row-empty">
+        <script>
+            for(let i=0; i<20; i++) {
+                // O tempo (minutos:segundos) fica no quadrado largo de baixo
+                document.write(`<td id="team_1_gol_time_${i}" colspan="2" class="cell-time"></td>`);
+            }
+        </script>
+    </tr>
+</table>
+</div>
+
+<div id="team-b" class="team-section">
+    <div class="team-header-name">
+        EQUIPE 'B' Equipe 9
+    </div>
+
+    <table class="main-table">
+    <thead>
+        <tr>
+            <th class="col-doc">DOCUMENTO</th>
+            <th class="col-jog">JOGADORES</th>
+            <th class="col-n">Nº</th>
+            <th colspan="2" class="col-ama">AMARELOS</th> <th colspan="2" class="col-ver">VERMELHOS</th> <th class="col-sub">SUBSTITUIÇÕES</th>
+            <th colspan="10" class="col-faltas-header">FALTAS</th>
+        </tr>
+    </thead>
+    <tbody>
+        <script>
+            // Vamos gerar as 15 linhas via Script para garantir que todos os IDs fiquem perfeitos
+            // O prefixo 'team_2' deve ser trocado para 'team_1' na tabela do outro time
+            const prefixo = "team_2"; 
+            
+            for (let i = 1; i <= 15; i++) {
+                document.write(`
+                <tr>
+                    <td class="doc" id="${prefixo}_doc_${i}">111.111.111-11</td>
+                    <td id="nome-jogador"><strong id="${prefixo}_player_${i}" class="nome-jogador"></strong></td>
+                    <td class="nome-jogador" id="${prefixo}_n_${i}"></td>
+                    
+                    <td id="${prefixo}_yellow1_${i}" class="border-mid"></td>
+                    <td id="${prefixo}_yellow2_${i}"></td>
+                    <td id="${prefixo}_red1_${i}" class="border-mid"></td>
+                    <td id="${prefixo}_red2_${i}"></td>
+                    
+                    <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
+                    
+                    ${i === 1 || i === 2 ? 
+                        '<td colspan="2" class="f-num">1</td><td colspan="2" class="f-num">2</td><td colspan="2" class="f-num">3</td><td colspan="2" class="f-num">4</td><td colspan="2" class="f-num">5</td>' : 
+                      i === 3 ? 
+                        '<td colspan="10" class="time-title">PEDIDOS DE TEMPO</td>' :
+                      i === 4 ?
+                        '<td colspan="10" class="time-periods"><div class="flex-periods"><span>1. PER</span><span>2. PER</span></div></td>' :
+                      i === 5 ?
+                        '<td colspan="5"></td><td colspan="5"></td>' :
+                      i === 6 ?
+                        '<td colspan="5" rowspan="16" class="col-sig">Capitão</td><td colspan="5" rowspan="16" class="col-sig">Técnico</td>' : 
+                        '' 
+                    }
+                </tr>
+                `);
+            }
+        </script>
+        <tr>
+            <td></td>
+            <td colspan="3" class="tecnico-row"><strong>TÉCNICO:</strong></td>
+            <td colspan="2" id="team_2_tech_yellow"></td>
+            <td colspan="2" id="team_2_tech_red"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan="3" class="tecnico-row"><strong></strong></td>
+            <td colspan="2" id="team_1_tech_yellow"></td>
+            <td colspan="2" id="team_1_tech_red"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan="3" class="tecnico-row"><strong></strong></td>
+            <td colspan="2" id="team_1_tech_yellow"></td>
+            <td colspan="2" id="team_1_tech_red"></td>
+        </tr>
+    </tbody>
+</table>
+
+    <table class="grid-footer">
+    <tr class="row-numbers">
+        <script>
+            for(let i=0; i<20; i++) {
+                // O número do golo fica em cinza, o ID do jogador fica na aba branca
+                document.write(`<td class="cell-num">${i + 1}</td><td id="team_2_gol_n_${i}" class="cell-player"></td>`);
+            }
+        </script>
+    </tr>
+    <tr class="row-empty">
+        <script>
+            for(let i=0; i<20; i++) {
+                // O tempo (minutos:segundos) fica no quadrado largo de baixo
+                document.write(`<td id="team_2_gol_time_${i}" colspan="2" class="cell-time"></td>`);
+            }
+        </script>
+    </tr>
+</table>
+</div>
+
+
+</div>
+
+
+<script>
+        window.__DADOS_SUMULA__ = {
+    "general": {
+        "title": "GRUPO CONTRA TODOS",
+        "sub_title": "4° PARAZÃO DO FUTSAL",
+        "stage": "1º Fase",
+        "round": "2º Rodada",
+        "place": "GINASIO UEPA"
+    },
+    "config":{
+        "player_length": 15
+    },
+    "team_1": {
+        "name": "Equipe 4",
+        "player": [
+            {
+                "supend":true,
+                "name": "MAURO GONÇALVES LIRA",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 2,
+                "red_card": 1,
+                "blue_card": 0,
+                "goals": 2
+            },
+            {   "supend":false,
+                "name": "ISAIAS PINTO LIMA",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 1,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+            {   "supend":false,
+                "name": "JOSE  AUGUSTO",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+            {   "supend":false,
+                "name": "JEFFERSON BRUNO",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 6
+            },
+            {   "supend":true,
+                "name": "JUAN ADRIAN",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 1,
+                "blue_card": 0,
+                "goals": 0
+            },
+            {   "supend":false,
+                "name": "GILBERT ROMARIO",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+            {   "supend":false,
+                "name": "JHON RENATO",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+            {   "supend":false,
+                "name": "JEFFERSON BRENO",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+            {   "supend":false,
+                "name": "CRISTIAN NASCIMENTO COUTO",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 4
+            },
+            {   "supend":false,
+                "name": "LUCAS ARAUJO DE OLIVEIRA",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 2
+            },  
+            {   "supend":false,
+                "name": "ELIDELSON FERREIRA",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+            {   "supend":false,
+                "name": "ANDERSON MACHADO",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+                
+            {   "supend":false,
+                "name": "THALISON ALVES MEDEIROS",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+             {  "supend":false,
+                "name": "HÉRIC PEIXOTO",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+             {  
+                "supend":false,
+                "name": "TESTE 1",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            }, { 
+                "supend":false,   
+                "name": "TESTE 2",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            }, {
+                "supend":false,
+                "name": "TESTE 3",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            }, {
+                "supend":false,
+                "name": "TESTE 4",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            }, {
+                "supend":false,
+                "name": "TESTE 5",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            }, {
+                "supend":false,
+                "name": "TESTE 6",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+        ],
+        "goals": [
+            {
+                "n": "10",
+                "minutes": 7,
+                "seconds": 45,
+                "period": 1
+            },
+            {
+                "n": "11",
+                "minutes": 1,
+                "seconds": 0,
+                "period": 1
+            },
+            {
+                "n": "12",
+                "minutes": 13,
+                "seconds": 0,
+                "period": 1
+            },
+            {
+                "n": "",
+                "minutes": 16,
+                "seconds": 0,
+                "period": 1
+            },
+            {
+                "n": "",
+                "minutes": 3,
+                "seconds": 0,
+                "period": 2
+            },
+            {
+                "n": "",
+                "minutes": 14,
+                "seconds": 0,
+                "period": 2
+            },
+            {
+                "n": "",
+                "minutes": 17,
+                "seconds": 0,
+                "period": 2
+            },
+            {
+                "n": "",
+                "minutes": 7,
+                "seconds": 0,
+                "period": 1
+            },
+            {
+                "n": "",
+                "minutes": 1,
+                "seconds": 0,
+                "period": 1
+            },
+            {
+                "n": "",
+                "minutes": 13,
+                "seconds": 0,
+                "period": 1
+            },
+            {
+                "n": "",
+                "minutes": 16,
+                "seconds": 0,
+                "period": 1
+            },
+            {
+                "n": "",
+                "minutes": 3,
+                "seconds": 0,
+                "period": 2
+            },
+            {
+                "n": "",
+                "minutes": 14,
+                "seconds": 0,
+                "period": 2
+            },
+            {
+                "n": "",
+                "minutes": 17,
+                "seconds": 0,
+                "period": 2
+            }
+        ]
+    },
+    "team_2": {
+        "name": "Equipe 9",
+        "player": [
+            {   "supend":false,
+                "name": "LUCAS SOARES BARATA",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 2
+            },
+            {   "supend":false,
+                "name": "THIAGO ALMEIDA FERREIRA",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+            {   "supend":false,
+                "name": "ALLEX SANDER MACHADO DE SOUZA",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+            {   "supend":false,
+                "name": "YAGO PIETRO BARROS SANTIAGO",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 2
+            },
+            {   "supend":false,
+                "name": "RENAN LUIS BATISTA MARQUES",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+            {   "supend":false,
+                "name": "DAVI LUCAS DIAS RODRIGUES",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+            {   "supend":false,
+                "name": "IVISON CARNEIRO DINIZ",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+            {   "supend":false,
+                "name": "CLAUDIO CALEBE BRASIL FARIAS",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+            {   "supend":false,
+                "name": "THALES GABRIEL LIMA FERAO DA SILVA",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+            {   "supend":false,
+                "name": "RONALD HILBERT",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+            {   "supend":false,
+                "name": "FABIO FURTADO DUARTE",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+            {   "supend":false,
+                "name": "FABIO ATAIDE DOS SANTOS JUNIOR",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+            {   "supend":true,
+                "name": "JOSE CAUA MACHADO RESENDE",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 2,
+                "red_card": 1,
+                "blue_card": 0,
+                "goals": 0
+            },
+            {   "supend":false,
+                "name": "ATILA LOBATO LEAL LEAL",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+            {   "supend":false,
+                "name": "ARTHUR MOREIRA DE SOUSA DA SILVA",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+            {   "supend":false,
+                "name": "MAURICIO KAUA DA PAIXAO BRITO",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+            {   "supend":false,
+                "name": "ARTHUR CARLOS NUNES ANDRADE",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+            {   "supend":false,
+                "name": "THIAGO VIANA PEREIRA ",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+            {   "supend":false,
+                "name": "ANTONIO EDUARDO DA SILVA QUEIROZ",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+            {   "supend":false,
+                "name": "PAULO ENZO FERREIRA FERREIRA",
+                "nickname": "",
+                "n": "",
+                "yellow_card": 0,
+                "red_card": 0,
+                "blue_card": 0,
+                "goals": 0
+            },
+        ],
+        "goals": [
+            {
+                "n": "15",
+                "minutes": 10,
+                "seconds": 35,
+                "period": 2
+            },
+            {
+                "n": "55",
+                "minutes": 13,
+                "seconds": 0,
+                "period": 2
+            },
+            {
+                "n": "",
+                "minutes": 10,
+                "seconds": 0,
+                "period": 2
+            },
+            {
+                "n": "",
+                "minutes": 13,
+                "seconds": 0,
+                "period": 2
+            },
+            {
+                "n": "",
+                "minutes": 20,
+                "seconds": 0,
+                "period": 2
+            }
+        ]
+    }
+};
+    </script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const d = window.__DADOS_SUMULA__;
+    if (!d) return;
+
+    const playerLimit = (d.config && d.config.player_length) ? Math.min(parseInt(d.config.player_length), 15) : 15;
+
+    const set = (id, val) => {
+        const el = document.getElementById(id);
+        if (el) el.innerText = val || "";
+    };
+
+    // 1. DADOS GERAIS
+    if (d.general) {
+        set('general_title', d.general.title);
+        set('general_sub_title', d.general.sub_title);
+        set('general_stage', d.general.stage);
+        set('general_round', d.general.round);
+        set('general_place', d.general.place);
+        set('general_date', d.general.date);
+    }
+
+    // 2. NOMES DOS TIMES
+    if (d.team_1) set('team_1_name', d.team_1.name);
+    if (d.team_2) set('team_2_name', d.team_2.name);
+
+    // 3. JOGADORES E CARTÕES
+    function preencherTimeManual(timeData, prefixo) {
+        for (let i = 1; i <= 15; i++) {
+            const nomeEl = document.getElementById(`${prefixo}_player_${i}`);
+            const linhaTr = nomeEl ? nomeEl.closest('tr') : null;
+
+            if (linhaTr) {
+                if (i > playerLimit) {
+                    linhaTr.style.display = "none";
+                } else {
+                    linhaTr.style.display = "table-row";
+                    const p = (timeData && timeData.player) ? timeData.player[i-1] : null;
+
+                    if (p) {
+                        nomeEl.innerText = p.name || "";
+                        // Lógica de Suspensão
+                        if (p.supend) {
+                            nomeEl.style.textDecoration = "line-through";
+                            nomeEl.style.color = "red";
+                        } else {
+                            nomeEl.style.textDecoration = "none";
+                            nomeEl.style.color = "inherit";
+                        }
+
+                        set(`${prefixo}_n_${i}`, p.n);
+
+                        // Amarelos
+                        const y1 = document.getElementById(`${prefixo}_yellow1_${i}`);
+                        const y2 = document.getElementById(`${prefixo}_yellow2_${i}`);
+                        if (y1) y1.innerText = (p.yellow_card >= 1) ? "X" : "";
+                        if (y2) y2.innerText = (p.yellow_card >= 2) ? "X" : "";
+
+                        // Vermelhos
+                        const r1 = document.getElementById(`${prefixo}_red1_${i}`);
+                        const r2 = document.getElementById(`${prefixo}_red2_${i}`);
+                        const v = parseInt(p.red_card || p.red || 0);
+                        if (r1) r1.innerText = (v >= 1) ? "X" : "";
+                        if (r2) r2.innerText = (v >= 2) ? "X" : "";
+
+                        // Azul
+                        const blueEl = document.getElementById(`${prefixo}_blue_${i}`);
+                        if (blueEl) blueEl.innerText = (p.blue_card > 0) ? "X" : "";
+                    } else {
+                        nomeEl.innerText = "";
+                        set(`${prefixo}_n_${i}`, "");
+                    }
+                }
+            }
+        }
+    }
+
+    // 4. GOLS
+    function preencherGolsManual(timeData, prefixo) {
+        if (!timeData || !timeData.goals) return;
+        timeData.goals.forEach((gol, i) => {
+            const nEl = document.getElementById(`${prefixo}_gol_n_${i}`);
+            const timeEl = document.getElementById(`${prefixo}_gol_time_${i}`);
+            
+            if (nEl) nEl.innerText = gol.n || "";
+            if (timeEl) {
+                if (gol.minutes !== undefined) {
+                    const min = String(gol.minutes).padStart(2, '0');
+                    const seg = String(gol.seconds || 0).padStart(2, '0');
+                    timeEl.innerText = `${min}:${seg}`;
+                } else {
+                    timeEl.innerText = ""; 
+                }
+            }
+        });
+    }
+
+    // --- EXECUÇÃO ---
+    preencherTimeManual(d.team_1, 'team_1');
+    preencherTimeManual(d.team_2, 'team_2');
+    preencherGolsManual(d.team_1, 'team_1'); // Ajustado para bater com os IDs HTML
+    preencherGolsManual(d.team_2, 'team_2'); // Ajustado para bater com os IDs HTML
+});
+</script>
+
+
+</body>
+</html>
