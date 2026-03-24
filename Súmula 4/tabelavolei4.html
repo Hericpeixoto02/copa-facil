@@ -3,694 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Súmula de Voleibol</title>
-    <style>
-        /* style.css */
-@page {
-    size: A4 landscape;
-    margin: 5mm;
-}
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-body {
-    /* Fundo escuro para destacar a folha branca no navegador */
-    background-color: #fff; 
-    display: flex;
-    justify-content: center;
-    padding: 10px;
-}
-
-.sumula-a4 {
-    width: 297mm;
-    height: 210mm;
-    background-color: #fff;
-    padding: 5mm;
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-}
-
-/* Utilitários de Borda e Texto */
-.border-thick { border: 1px solid #000; }
-.border-thin { border: 1px solid #000; }
-.text-center { text-align: center; }
-.text-bold { font-weight: bold; }
-
-/* Ajuste do Texto Vertical para não vazar */
-.text-vertical { 
-    writing-mode: vertical-lr; 
-    transform: rotate(180deg); 
-    text-align: center; 
-    vertical-align: middle;
-    font-size: 6px; /* Reduzido levemente para caber melhor */
-    padding: 1px;
-    white-space: nowrap; /* Impede que a palavra quebre no meio */
-}
-
-/* Tabela Global para reset */
-table {
-    width: 100.3%;
-    border-collapse: collapse;
-    font-size: 8px;
-    table-layout: fixed; /* Ajuda a manter as larguras exatas */
-}
-th, td {
-    border: 1px solid #000;
-    padding: 1px 2px;
-}
-
-/* --- CABEÇALHO --- */
-.header-table { margin-bottom: 2px; }
-.header-table td { padding: 3px; vertical-align: middle; }
-.title-cell { font-size: 14px; font-weight: bold; text-align: center; width: 15%; }
-
-/* --- LAYOUT PRINCIPAL --- */
-.main-layout { display: flex; gap: 4px; flex: 1; }
-.left-panel { flex: 0 0 74%; display: flex; flex-direction: column; gap: 2px; }
-.right-panel { flex: 0 0 26%; display: flex; flex-direction: column; gap: 2px; }
-
-/* --- SETS --- */
-.set-wrapper { 
-    border: 1px solid #000; 
-    
-    display: flex;
-    flex-direction: column;
-}
-.set-header {
-    display: flex;
-    border-bottom: 1px solid #000;
-    font-size: 8px;
-    font-weight: bold;
-}
-.set-header > div {
-    border-right: 1px solid #000;
-    padding: 2px 4px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.set-header > div:last-child { border-right: none; }
-.sh-1 { width: 5%; }
-.sh-2 { width: 131.5px; justify-content: flex-start !important; }
-.sh-3 { width: 109px; }
-.sh-sr { width: 3%; text-align: center; font-size: 7px; line-height: 1; }
-.sh-pts { width: 95.8px; }
-
-.set-body { 
-    display: flex; 
-    flex: 1; /* Ocupa o restante do espaço interno do set */
-}
-
-/* Distribuição dos blocos */
-.equipe-block { flex: 1; }
-.equipe-table { height: 100%; border: none; }
-.equipe-table td { 
-    border-top: none; 
-    border-bottom: 1px solid #000; 
-    border-left: none; 
-    border-right: 1px solid #000; 
-    text-align: center; 
-    vertical-align: middle;
-    height: 18px; /* Aumentado de 12px para o texto Substituições caber tranquilamente */
-}
-.equipe-table tr:last-child td { border-bottom: none; }
-.equipe-table td:last-child { border-right: none; }
-
-/* Colunas de Labels e Numerais Romanos */
-.col-num { width: 10%; text-align: right; padding-right: 3px; }
-.col-roman { width: 12.5%; }
-
-/* Célula do Placar */
-.placar-cell {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    height: 100%;
-}
-
-/* Grid interna para os 4 quadradinhos do saque */
-.saque-cell { padding: 0 !important; height: 22px !important; } /* Aumentado proporcionalmente ao restante */
-.saque-grid {
-    display: grid;
-    grid-template-columns: repeat(2 , 1fr);
-    height: 100%;
-    width: 100%;
-}
-.saque-grid div {
-    
-    font-size: 5px; 
-    display: flex;
-    align-items: flex-start;
-    padding-top: 7px;
-    padding-left: 2px;
-    color: #444;
-}
-.saque-grid div:last-child { border-right: none; }
-
-/* Bloco de Pontos Central */
-.pontos-block {
-    width: 12%;
-    border-left: 1px solid #000;
-    border-right: 1px solid #000;
-    display: flex;
-    flex-direction: column;
-}
-.pontos-block.no-right { border-right: none; }
-
-.pontos-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    text-align: center;
-    font-size: 7px;
-    flex: 1;
-    padding: 2px 0;
-    align-items: center; 
-}
-
-/* Adiciona as linhas verticais entre as colunas de pontos */
-.pontos-grid > div:nth-child(1),
-.pontos-grid > div:nth-child(2) {
-    border-right: 1px solid #000;
-}
-
-.pontos-grid div { 
-    line-height: 1.15; 
-}
-
-/* Tempo */
-.tempo-box {
-    border-top: 1px solid #000;
-    text-align: center;
-    font-size: 8px;
-    padding: 1px;
-}
-.tempo-inputs {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    height: 20px;
-}
-.tempo-inputs div { 
-    border-right: 1px solid #000; 
-    border-top: 1px solid #000; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center;
-}
-.tempo-inputs div:last-child { border-right: none; }
-
-/* --- PAINÉIS INFERIORES ESQUERDOS --- */
-.bottom-left-panel { display: flex; gap: 0px; height: 122px; }
-.penalidades { flex: 0 0 35%; }
-.observacoes { flex: 0 0 30%; border: 2px solid #000; display: flex; flex-direction: column; padding: 2px; font-size: 8px;}
-.aprovacoes { flex: 0 0 35%; }
-
-/* --- PAINEL DIREITO --- */
-.roster-header-table td { text-align: center; font-weight: bold; background: #fff;}
-.roster-table td { height: 11px; }
-.roster-table td:nth-child(1), .roster-table td:nth-child(3) { width: 12px; text-align: center; font-size: 7px;}
-
-.section-title {
-    border: 1px solid #000;
-    border-bottom: none;
-    text-align: center;
-    font-weight: bold;
-    font-size: 9px;
-    padding: 2px;
-}
-.staff-table td { height: 17px; }
-
-/* Troca de Quadra Set 3 */
-.set3-side { display: flex;  }
-.set3-side-table td { text-align: center; }
-.set3-side-points {
-    width: 82px;
-    
-    font-size: 6px;
-    text-align: center;
-    line-height: 1.1;
-    padding-top: 2px;
-}
-
-/* Resultados Finais */
-.resultados-table { border: 1px solid #000; }
-.resultados-table th, .resultados-table td { text-align: center; }
-.resultados-table td { height: 10px; }
-.res-footer td { text-align: left; padding: 2px 4px; }
-
-
-/* Container para a 2ª página */
-.pagina-fichas {
-    width: 297mm;
-    height: 210mm;
-    padding: 15mm;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 colunas */
-    grid-template-rows: repeat(2, 1fr);    /* 2 linhas */
-    gap: 15px;
-    background-color: white;
-}
-
-.ficha-posicao-v2 {
-    border: 1px solid #000;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-}
-
-/* Cabeçalho do Bloco */
-.ficha-v2-header {
-    text-align: center;
-    font-weight: bold;
-    font-size: 11px;
-    border-bottom: 1px solid #000;
-    padding: 3px;
-}
-
-.ficha-v2-sub {
-    font-size: 7px;
-    border-bottom: 1px solid #000;
-    padding: 2px;
-}
-
-.ficha-v2-equipe {
-    font-size: 8px;
-    border-bottom: 1px solid #000;
-    padding: 4px 2px;
-}
-
-/* Grid de Posições (O segredo está na altura aqui) */
-.ficha-v2-grid {
-    flex: 1; /* Faz a grid ocupar todo o resto do espaço vertical */
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-}
-
-.ficha-v2-grid div {
-    border-right: 1px solid #000;
-    border-bottom: 1px solid #000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-    font-weight: bold;
-    position: relative;
-}
-
-/* Ajustes de bordas internas */
-.ficha-v2-grid div:nth-child(3n) { border-right: none; }
-.ficha-v2-grid div:nth-child(n+4) { border-bottom: none; }
-
-/* Legenda (Saque) no canto inferior direito da posição I */
-.legenda-saque {
-    position: absolute;
-    bottom: 2px;
-    right: 2px;
-    font-size: 5px;
-    font-weight: normal;
-}
-
- .page {
-      width: 1115px;
-      margin: 0 auto;
-      padding: 24px 4px 28px;
-     
-    }
-
-    .grid {
-      margin-top:71px;
-      display: grid;
-      grid-template-columns: repeat(4, 257px);
-      column-gap: 19px;
-      row-gap: 9px;
-      justify-content: start;
-    }
-
-    .set-card {
-      width: 257px;
-      height: 156px;
-      border: 2px solid #222;
-      background: transparent;
-    }
-
-    .row {
-      border-bottom: 2px solid #222;
-      display: flex;
-      align-items: center;
-      width: 100%;
-    }
-
-    .row:last-child {
-      border-bottom: none;
-    }
-
-    .title-row {
-      height: 20px;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 18px;
-      letter-spacing: 0;
-      color: #111;
-    }
-
-    .sub-row {
-      height: 18px;
-      padding: 0 4px;
-      font-size: 8px;
-      color: #222;
-      justify-content: flex-start;
-    }
-
-    .team-row {
-      height: 24px;
-      padding: 0 4px;
-      font-size: 9px;
-      color: #222;
-      justify-content: flex-start;
-    }
-
-    .positions-row {
-      height: 18px;
-      display: grid;
-      grid-template-columns: 96px 62px 95px;
-      padding: 0;
-    }
-
-    .positions-row > div,
-    .blank-row > div,
-    .bottom-row > div,
-    .footer-row > div {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 9px;
-      color: #222;
-      border-right: 2px solid #222;
-      height: 100%;
-    }
-
-    .positions-row > div:last-child,
-    .blank-row > div:last-child,
-    .bottom-row > div:last-child,
-    .footer-row > div:last-child {
-      border-right: none;
-    }
-
-    .blank-row {
-      height: 28px;
-      display: grid;
-      grid-template-columns: 96px 62px 95px;
-    }
-
-    .bottom-row {
-      height: 18px;
-      display: grid;
-      grid-template-columns: 96px 62px 95px;
-    }
-
-    .footer-row {
-      height: 28px;
-      display: grid;
-      grid-template-columns: 96px 62px 95px;
-      position: relative;
-    }
-
-    .footer-row .saque {
-      justify-content: flex-end;
-      padding-right: 4px;
-      font-size: 6px;
-      color: #444;
-    }
-
-    .blue {
-      color: #3b5ea7 !important;
-      font-weight: 600;
-    }
-
-    .red {
-      color: #8f3d38 !important;
-      font-weight: 600;
-    }
-
-    .orange {
-      color: #b57a46 !important;
-      font-weight: 600;
-    }
-
-    .roster-main-table {
-    width: 100%;
-    border-collapse: collapse;
-    border: 1px solid #000;
-    font-family: Arial, sans-serif;
-    table-layout: fixed;
-}
-
-.roster-main-table th,
-.roster-main-table td {
-    border: 1px solid #000;
-    height: 17.5px;
-    padding: 2px 4px;
-    font-size: 8px;
-    text-transform: uppercase;
-    vertical-align: middle;
-    box-sizing: border-box;
-}
-
-.header-row th {
-    height: 12px;
-    font-weight: bold;
-    text-align: center;
-}
-
-.sub-header-row th {
-    height: 24px;
-    font-weight: normal;
-    text-align: center;
-    background: #fff;
-}
-
-.number-col {
-    width: 34px;
-    text-align: center;
-}
-
-.team-col {
-    width: calc(50% - 49px);
-}
-
-.divider-x {
-    width: 48px;
-    text-align: center;
-    font-weight: bold;
-    font-size: 18px;
-    border-left: 2px solid #000 !important;
-    border-right: 2px solid #000 !important;
-}
-
-.divider-middle {
-    width: 48px;
-    border-left: 2px solid #000 !important;
-    border-right: 2px solid #000 !important;
-    background: #fff;
-}
-
-.divider-line {
-    border-left: 2px solid #000 !important;
-    border-right: 2px solid #000 !important;
-    background: #fff;
-}
-
-.text-center {
-    text-align: center;
-}
-
-.player-cell {
-    text-align: left;
-    font-weight: bold;
-    padding-left: 6px !important;
-}
-
-.player-cell strong {
-    display: block;
-    width: 100%;
-    font-size: 8px;
-    text-transform: lowercase;
-    min-height: 3px;
-    line-height: 0px;
-    font-weight: 500;
-}
-
-/*Ajustes altura do gol*/
-th {
-    height:15px
-}
-
-td#rodada-saque {
-    transform: none;
-    writing-mode: horizontal-tb;
-    font-size:5px
-}
-
-td.saque-cell {
-    height: 1px !important;
-}
-
-td.tempo-baixo {
-    height: 3px;
-}
-
-tr.tr-4 {
-    height:8px;
-}
-
-table.set3-side-table {
-    height:141px;
-}
-
-.set3-side-points {
-    height: 141px;
-}
-
-
-th#times22 {
-    font-size:5px;
-    text-align:start;
-    font-weight:200;
-    
-}
-
-
-td.saque-cell {
-    position: relative; /* Necessário para a linha ter uma referência de onde ficar */
-    text-align: center; 
-}
-
-td.saque-cell::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    border-left: 1px solid #000; /* Define a cor e a espessura da linha (pode colocar 2px se quiser mais grossa) */
-    transform: translateX(-50%); /* Garante que a linha fique milimetricamente no centro */
-}
-
-/* Estilização Geral da Tabela do Set */
-.set-table {
-    width: 100%;
-    border-collapse: collapse;
-    border: 2px solid #000;
-    font-size: 10px; /* Ajuste conforme sua necessidade */
-}
-
-.set-table th, .set-table td {
-    border: 1px solid #000;
-    height: 30px; /* Altura de cada linha */
-    vertical-align: middle;
-}
-
-.set-table th {
-    background-color: #f2f2f2;
-    font-weight: bold;
-    text-transform: uppercase;
-    padding: 2px;
-}
-
-/* Larguras das Colunas */
-.col-ordem { width: 50px; text-align: center; }
-.col-jogadores { width: 80px; }
-.col-subst { width: 100px; }
-.sub-header { font-size: 8px; text-align: center; }
-
-/* A Mágica da Linha Central na Rodada de Saque */
-.saque-cell {
-    position: relative;
-    width: 45px; /* Largura de cada quadradinho de saque */
-    min-width: 45px;
-}
-
-.saque-cell::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    
-    background-color: #000;
-    transform: translateX(-50%);
-}
-
-/* Utilitários */
-.text-center { text-align: center; }
-
-
-.col-3 {
-  display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    height: 56%;
-    width: 100%;
-    margin-top: 5px;
-}
-
-.border {
-    border-right:1px solid #000;
-}
-
-.titulo-pontos {
-    border-bottom:1px solid #000;
-    padding:8px;
-    border: 1px solid;
-}
-
-td#team_2_n_1, td#team_2_n_2, td#team_2_n_3,td#team_2_n_4, td#team_2_n_5,td#team_2_n_6,td#team_2_n_7, td#team_2_n_8, td#team_2_n_9, td#team_2_n_10, td#team_2_n_11, td#team_2_n_12{
-    display: none;
-}
-
-.equipe-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 0 auto;
-}
-
-
-
-.pontos-grid > div:nth-child(1), .pontos-grid > div:nth-child(2){
-    line-height: 1.4
-}
-
-.pontos-grid div {
-    line-height: 1.4
-}
-
-
-.border {
-    line-height: 1.6;
-    margin-top:-17px;
-}
-
-
-.aprovacoes td {
-    height:12px;
-}
-
-div#pontos-b {
-    margin-left: 55px;
-    width: 0px !important;
-}
-
-table.resultados-table
-
- {
-    margin-top: -1px !important;
-
- }
-    </style>
 </head>
 <body>
 
@@ -2210,5 +1522,694 @@ document.addEventListener("DOMContentLoaded", function() {
     // Cria o layout antes de preencher os nomes
     createRosterRows(13);
 </script>
+
+    <style>
+        /* style.css */
+@page {
+    size: A4 landscape;
+    margin: 5mm;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    /* Fundo escuro para destacar a folha branca no navegador */
+    background-color: #fff; 
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.sumula-a4 {
+    width: 297mm;
+    height: 210mm;
+    background-color: #fff;
+    padding: 5mm;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+/* Utilitários de Borda e Texto */
+.border-thick { border: 1px solid #000; }
+.border-thin { border: 1px solid #000; }
+.text-center { text-align: center; }
+.text-bold { font-weight: bold; }
+
+/* Ajuste do Texto Vertical para não vazar */
+.text-vertical { 
+    writing-mode: vertical-lr; 
+    transform: rotate(180deg); 
+    text-align: center; 
+    vertical-align: middle;
+    font-size: 6px; /* Reduzido levemente para caber melhor */
+    padding: 1px;
+    white-space: nowrap; /* Impede que a palavra quebre no meio */
+}
+
+/* Tabela Global para reset */
+table {
+    width: 100.3%;
+    border-collapse: collapse;
+    font-size: 8px;
+    table-layout: fixed; /* Ajuda a manter as larguras exatas */
+}
+th, td {
+    border: 1px solid #000;
+    padding: 1px 2px;
+}
+
+/* --- CABEÇALHO --- */
+.header-table { margin-bottom: 2px; }
+.header-table td { padding: 3px; vertical-align: middle; }
+.title-cell { font-size: 14px; font-weight: bold; text-align: center; width: 15%; }
+
+/* --- LAYOUT PRINCIPAL --- */
+.main-layout { display: flex; gap: 4px; flex: 1; }
+.left-panel { flex: 0 0 74%; display: flex; flex-direction: column; gap: 2px; }
+.right-panel { flex: 0 0 26%; display: flex; flex-direction: column; gap: 2px; }
+
+/* --- SETS --- */
+.set-wrapper { 
+    border: 1px solid #000; 
+    
+    display: flex;
+    flex-direction: column;
+}
+.set-header {
+    display: flex;
+    border-bottom: 1px solid #000;
+    font-size: 8px;
+    font-weight: bold;
+}
+.set-header > div {
+    border-right: 1px solid #000;
+    padding: 2px 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.set-header > div:last-child { border-right: none; }
+.sh-1 { width: 5%; }
+.sh-2 { width: 131.5px; justify-content: flex-start !important; }
+.sh-3 { width: 109px; }
+.sh-sr { width: 3%; text-align: center; font-size: 7px; line-height: 1; }
+.sh-pts { width: 95.8px; }
+
+.set-body { 
+    display: flex; 
+    flex: 1; /* Ocupa o restante do espaço interno do set */
+}
+
+/* Distribuição dos blocos */
+.equipe-block { flex: 1; }
+.equipe-table { height: 100%; border: none; }
+.equipe-table td { 
+    border-top: none; 
+    border-bottom: 1px solid #000; 
+    border-left: none; 
+    border-right: 1px solid #000; 
+    text-align: center; 
+    vertical-align: middle;
+    height: 18px; /* Aumentado de 12px para o texto Substituições caber tranquilamente */
+}
+.equipe-table tr:last-child td { border-bottom: none; }
+.equipe-table td:last-child { border-right: none; }
+
+/* Colunas de Labels e Numerais Romanos */
+.col-num { width: 10%; text-align: right; padding-right: 3px; }
+.col-roman { width: 12.5%; }
+
+/* Célula do Placar */
+.placar-cell {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+}
+
+/* Grid interna para os 4 quadradinhos do saque */
+.saque-cell { padding: 0 !important; height: 22px !important; } /* Aumentado proporcionalmente ao restante */
+.saque-grid {
+    display: grid;
+    grid-template-columns: repeat(2 , 1fr);
+    height: 100%;
+    width: 100%;
+}
+.saque-grid div {
+    
+    font-size: 5px; 
+    display: flex;
+    align-items: flex-start;
+    padding-top: 7px;
+    padding-left: 2px;
+    color: #444;
+}
+.saque-grid div:last-child { border-right: none; }
+
+/* Bloco de Pontos Central */
+.pontos-block {
+    width: 12%;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+}
+.pontos-block.no-right { border-right: none; }
+
+.pontos-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    text-align: center;
+    font-size: 7px;
+    flex: 1;
+    padding: 2px 0;
+    align-items: center; 
+}
+
+/* Adiciona as linhas verticais entre as colunas de pontos */
+.pontos-grid > div:nth-child(1),
+.pontos-grid > div:nth-child(2) {
+    border-right: 1px solid #000;
+}
+
+.pontos-grid div { 
+    line-height: 1.15; 
+}
+
+/* Tempo */
+.tempo-box {
+    border-top: 1px solid #000;
+    text-align: center;
+    font-size: 8px;
+    padding: 1px;
+}
+.tempo-inputs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 20px;
+}
+.tempo-inputs div { 
+    border-right: 1px solid #000; 
+    border-top: 1px solid #000; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+}
+.tempo-inputs div:last-child { border-right: none; }
+
+/* --- PAINÉIS INFERIORES ESQUERDOS --- */
+.bottom-left-panel { display: flex; gap: 0px; height: 122px; }
+.penalidades { flex: 0 0 35%; }
+.observacoes { flex: 0 0 30%; border: 2px solid #000; display: flex; flex-direction: column; padding: 2px; font-size: 8px;}
+.aprovacoes { flex: 0 0 35%; }
+
+/* --- PAINEL DIREITO --- */
+.roster-header-table td { text-align: center; font-weight: bold; background: #fff;}
+.roster-table td { height: 11px; }
+.roster-table td:nth-child(1), .roster-table td:nth-child(3) { width: 12px; text-align: center; font-size: 7px;}
+
+.section-title {
+    border: 1px solid #000;
+    border-bottom: none;
+    text-align: center;
+    font-weight: bold;
+    font-size: 9px;
+    padding: 2px;
+}
+.staff-table td { height: 17px; }
+
+/* Troca de Quadra Set 3 */
+.set3-side { display: flex;  }
+.set3-side-table td { text-align: center; }
+.set3-side-points {
+    width: 82px;
+    
+    font-size: 6px;
+    text-align: center;
+    line-height: 1.1;
+    padding-top: 2px;
+}
+
+/* Resultados Finais */
+.resultados-table { border: 1px solid #000; }
+.resultados-table th, .resultados-table td { text-align: center; }
+.resultados-table td { height: 10px; }
+.res-footer td { text-align: left; padding: 2px 4px; }
+
+
+/* Container para a 2ª página */
+.pagina-fichas {
+    width: 297mm;
+    height: 210mm;
+    padding: 15mm;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 colunas */
+    grid-template-rows: repeat(2, 1fr);    /* 2 linhas */
+    gap: 15px;
+    background-color: white;
+}
+
+.ficha-posicao-v2 {
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+/* Cabeçalho do Bloco */
+.ficha-v2-header {
+    text-align: center;
+    font-weight: bold;
+    font-size: 11px;
+    border-bottom: 1px solid #000;
+    padding: 3px;
+}
+
+.ficha-v2-sub {
+    font-size: 7px;
+    border-bottom: 1px solid #000;
+    padding: 2px;
+}
+
+.ficha-v2-equipe {
+    font-size: 8px;
+    border-bottom: 1px solid #000;
+    padding: 4px 2px;
+}
+
+/* Grid de Posições (O segredo está na altura aqui) */
+.ficha-v2-grid {
+    flex: 1; /* Faz a grid ocupar todo o resto do espaço vertical */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.ficha-v2-grid div {
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    position: relative;
+}
+
+/* Ajustes de bordas internas */
+.ficha-v2-grid div:nth-child(3n) { border-right: none; }
+.ficha-v2-grid div:nth-child(n+4) { border-bottom: none; }
+
+/* Legenda (Saque) no canto inferior direito da posição I */
+.legenda-saque {
+    position: absolute;
+    bottom: 2px;
+    right: 2px;
+    font-size: 5px;
+    font-weight: normal;
+}
+
+ .page {
+      width: 1115px;
+      margin: 0 auto;
+      padding: 24px 4px 28px;
+     
+    }
+
+    .grid {
+      margin-top:71px;
+      display: grid;
+      grid-template-columns: repeat(4, 257px);
+      column-gap: 19px;
+      row-gap: 9px;
+      justify-content: start;
+    }
+
+    .set-card {
+      width: 257px;
+      height: 156px;
+      border: 2px solid #222;
+      background: transparent;
+    }
+
+    .row {
+      border-bottom: 2px solid #222;
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+
+    .row:last-child {
+      border-bottom: none;
+    }
+
+    .title-row {
+      height: 20px;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 18px;
+      letter-spacing: 0;
+      color: #111;
+    }
+
+    .sub-row {
+      height: 18px;
+      padding: 0 4px;
+      font-size: 8px;
+      color: #222;
+      justify-content: flex-start;
+    }
+
+    .team-row {
+      height: 24px;
+      padding: 0 4px;
+      font-size: 9px;
+      color: #222;
+      justify-content: flex-start;
+    }
+
+    .positions-row {
+      height: 18px;
+      display: grid;
+      grid-template-columns: 96px 62px 95px;
+      padding: 0;
+    }
+
+    .positions-row > div,
+    .blank-row > div,
+    .bottom-row > div,
+    .footer-row > div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9px;
+      color: #222;
+      border-right: 2px solid #222;
+      height: 100%;
+    }
+
+    .positions-row > div:last-child,
+    .blank-row > div:last-child,
+    .bottom-row > div:last-child,
+    .footer-row > div:last-child {
+      border-right: none;
+    }
+
+    .blank-row {
+      height: 28px;
+      display: grid;
+      grid-template-columns: 96px 62px 95px;
+    }
+
+    .bottom-row {
+      height: 18px;
+      display: grid;
+      grid-template-columns: 96px 62px 95px;
+    }
+
+    .footer-row {
+      height: 28px;
+      display: grid;
+      grid-template-columns: 96px 62px 95px;
+      position: relative;
+    }
+
+    .footer-row .saque {
+      justify-content: flex-end;
+      padding-right: 4px;
+      font-size: 6px;
+      color: #444;
+    }
+
+    .blue {
+      color: #3b5ea7 !important;
+      font-weight: 600;
+    }
+
+    .red {
+      color: #8f3d38 !important;
+      font-weight: 600;
+    }
+
+    .orange {
+      color: #b57a46 !important;
+      font-weight: 600;
+    }
+
+    .roster-main-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #000;
+    font-family: Arial, sans-serif;
+    table-layout: fixed;
+}
+
+.roster-main-table th,
+.roster-main-table td {
+    border: 1px solid #000;
+    height: 17.5px;
+    padding: 2px 4px;
+    font-size: 8px;
+    text-transform: uppercase;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+
+.header-row th {
+    height: 12px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.sub-header-row th {
+    height: 24px;
+    font-weight: normal;
+    text-align: center;
+    background: #fff;
+}
+
+.number-col {
+    width: 34px;
+    text-align: center;
+}
+
+.team-col {
+    width: calc(50% - 49px);
+}
+
+.divider-x {
+    width: 48px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    border-left: 2px solid #000 !important;
+    border-right: 2px solid #000 !important;
+}
+
+.divider-middle {
+    width: 48px;
+    border-left: 2px solid #000 !important;
+    border-right: 2px solid #000 !important;
+    background: #fff;
+}
+
+.divider-line {
+    border-left: 2px solid #000 !important;
+    border-right: 2px solid #000 !important;
+    background: #fff;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.player-cell {
+    text-align: left;
+    font-weight: bold;
+    padding-left: 6px !important;
+}
+
+.player-cell strong {
+    display: block;
+    width: 100%;
+    font-size: 8px;
+    text-transform: lowercase;
+    min-height: 3px;
+    line-height: 0px;
+    font-weight: 500;
+}
+
+/*Ajustes altura do gol*/
+th {
+    height:15px
+}
+
+td#rodada-saque {
+    transform: none;
+    writing-mode: horizontal-tb;
+    font-size:5px
+}
+
+td.saque-cell {
+    height: 1px !important;
+}
+
+td.tempo-baixo {
+    height: 3px;
+}
+
+tr.tr-4 {
+    height:8px;
+}
+
+table.set3-side-table {
+    height:141px;
+}
+
+.set3-side-points {
+    height: 141px;
+}
+
+
+th#times22 {
+    font-size:5px;
+    text-align:start;
+    font-weight:200;
+    
+}
+
+
+td.saque-cell {
+    position: relative; /* Necessário para a linha ter uma referência de onde ficar */
+    text-align: center; 
+}
+
+td.saque-cell::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    border-left: 1px solid #000; /* Define a cor e a espessura da linha (pode colocar 2px se quiser mais grossa) */
+    transform: translateX(-50%); /* Garante que a linha fique milimetricamente no centro */
+}
+
+/* Estilização Geral da Tabela do Set */
+.set-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid #000;
+    font-size: 10px; /* Ajuste conforme sua necessidade */
+}
+
+.set-table th, .set-table td {
+    border: 1px solid #000;
+    height: 30px; /* Altura de cada linha */
+    vertical-align: middle;
+}
+
+.set-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 2px;
+}
+
+/* Larguras das Colunas */
+.col-ordem { width: 50px; text-align: center; }
+.col-jogadores { width: 80px; }
+.col-subst { width: 100px; }
+.sub-header { font-size: 8px; text-align: center; }
+
+/* A Mágica da Linha Central na Rodada de Saque */
+.saque-cell {
+    position: relative;
+    width: 45px; /* Largura de cada quadradinho de saque */
+    min-width: 45px;
+}
+
+.saque-cell::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    
+    background-color: #000;
+    transform: translateX(-50%);
+}
+
+/* Utilitários */
+.text-center { text-align: center; }
+
+
+.col-3 {
+  display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 56%;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.border {
+    border-right:1px solid #000;
+}
+
+.titulo-pontos {
+    border-bottom:1px solid #000;
+    padding:8px;
+    border: 1px solid;
+}
+
+td#team_2_n_1, td#team_2_n_2, td#team_2_n_3,td#team_2_n_4, td#team_2_n_5,td#team_2_n_6,td#team_2_n_7, td#team_2_n_8, td#team_2_n_9, td#team_2_n_10, td#team_2_n_11, td#team_2_n_12{
+    display: none;
+}
+
+.equipe-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+
+
+.pontos-grid > div:nth-child(1), .pontos-grid > div:nth-child(2){
+    line-height: 1.4
+}
+
+.pontos-grid div {
+    line-height: 1.4
+}
+
+
+.border {
+    line-height: 1.6;
+    margin-top:-17px;
+}
+
+
+.aprovacoes td {
+    height:12px;
+}
+
+div#pontos-b {
+    margin-left: 55px;
+    width: 0px !important;
+}
+
+table.resultados-table
+
+ {
+    margin-top: -1px !important;
+
+ }
+    </style>
 </body>
 </html>
