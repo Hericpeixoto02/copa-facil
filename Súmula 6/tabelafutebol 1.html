@@ -4,7 +4,245 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Súmula de Futebol</title>
-    <link rel="stylesheet" href="style6.css">
+    <style>
+        * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* FORMATO A4 PAISAGEM (LANDSCAPE) */
+@page {
+    size: A4 landscape;
+    margin: 10mm;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 10px; /* Fonte base reduzida para caber os detalhes */
+    background-color: #525252;
+    display: flex;
+    justify-content: center;
+}
+
+.sheet {
+    background-color: #fff;
+    width: 297mm; /* Largura do A4 deitado */
+    height: 650px; /* Altura do A4 deitado */
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+
+table.roster-table {
+    margin-top:25px;
+}
+
+@media print {
+    body { background-color: transparent; }
+    .sheet {
+        box-shadow: none;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+    }
+}
+
+/* CORES PADRÕES DA SÚMULA */
+.bg-blue { background-color: #7fa0ce !important; color: #fff; font-weight: normal; }
+.bg-pink { background-color: #e5b8c7 !important; color: #000; font-weight: normal; }
+.bg-orange { background-color: #f2cc8f !important; color: #000; font-weight: normal; }
+.bg-green { background-color: #9caf8e !important; color: #fff; font-weight: normal; }
+.bg-white { background-color: #fff !important; color: #000; font-weight: normal; }
+
+/* UTILITÁRIOS */
+.text-left { text-align: left !important; padding-left: 3px !important; }
+.border-box { border: 1px solid #000; }
+.flex-grow { flex-grow: 1; }
+
+/* --- CABEÇALHO --- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    height: 12%;
+}
+
+.header-left h1 {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 22px;
+    margin-top: 10px;
+}
+
+.header-center {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    width: 70%;
+}
+
+.team-header {
+    width: 40%;
+    text-align: center;
+}
+
+.team-header h2 {
+    font-size: 14px;
+    font-family: "Times New Roman", Times, serif;
+    margin-bottom: 5px;
+    font-weight: normal;
+}
+
+/* Placar */
+.score-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 5px;
+}
+.main-score, .sub-score {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.main-score { margin-bottom: 5px; }
+.score-box {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+.score-x { font-size: 20px; font-weight: bold; }
+.sub-score-box {
+    width: 25px;
+    height: 25px;
+    border: 1px solid #000;
+}
+.sub-score-x { font-size: 14px; font-weight: bold; }
+
+.header-right {
+    width: 15%;
+    font-size: 11px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-weight: bold;
+    padding-top: 5px;
+}
+
+/* Tabelas Genéricas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid #000;
+    text-align: center;
+}
+
+/* Tabela Equipe Técnica */
+.tech-table th { font-size: 9px; padding: 2px 0; }
+.tech-table td { height: 12px; }
+
+/* --- CORPO (ROSTERS) --- */
+.rosters {
+    display: flex;
+    gap: 15px;
+    flex-grow: 1; /* Ocupa o centro da folha */
+}
+.team-roster {
+    width: 50%;
+}
+.roster-table th {
+    font-size: 9px;
+    padding: 2px 0;
+}
+.roster-table td {
+    height: 13.5px; /* Altura calculada para caber 25 linhas */
+}
+
+/* --- ESTATÍSTICAS INFERIORES --- */
+.bottom-stats {
+    display: flex;
+    gap: 15px;
+    margin-top: 5px;
+}
+.team-stats-box {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.stats-row-1, .stats-row-2 {
+    display: flex;
+    gap: 5px;
+}
+
+.stat-table th, .sub-table th, .tempo-table th {
+    font-size: 9px;
+    padding: 1px 0;
+}
+.stat-table td, .sub-table td, .tempo-table td {
+    height: 12px;
+    width: 16px; /* Para as caixinhas ficarem quadradas */
+}
+.sub-table td:first-child, .tempo-table td:first-child {
+    width: auto;
+    padding: 0 4px;
+    text-align: left;
+    font-size: 9px;
+}
+
+/* --- RODAPÉ FINAL --- */
+.footer-section {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+    height: 60px;
+}
+
+.arbitragem-box {
+    width: 35%;
+}
+.arbitragem-table th { font-size: 10px; padding: 2px 0; }
+.arbitragem-table td { height: 13px; }
+
+.obs-box {
+    width: 35%;
+    height: 100%;
+}
+
+.timing-box {
+    width: 30%;
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.timing-row {
+    display: flex;
+    justify-content: space-between;
+}
+.line {
+    display: inline-block;
+    border-bottom: 1px solid #000;
+    width: 40px;
+}
+.line-long {
+    display: inline-block;
+    border-bottom: 1px solid #000;
+    width: 60px;
+}
+    </style>
 </head>
 <body>
     <div class="sheet">
