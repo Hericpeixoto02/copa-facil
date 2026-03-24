@@ -4,7 +4,154 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Súmula de Futebol - 2 Páginas</title>
-    <link rel="stylesheet" href="style7.css">
+    
+    <style>
+        * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* FORMATO A4 RETRATO */
+@page {
+    size: A4 portrait;
+    margin: 10mm;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    background-color: #525252;
+    display: flex;
+    flex-direction: column; /* Empilha as páginas na tela */
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.sheet {
+    background-color: #fff;
+    width: 210mm; 
+    height: 297mm; 
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Espaço entre as tabelas */
+    overflow: hidden;
+}
+
+/* --- REGRAS PARA IMPRESSÃO --- */
+@media print {
+    body { 
+        background-color: transparent; 
+        padding: 0;
+        gap: 0;
+    }
+    .sheet {
+        box-shadow: none;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        page-break-after: always; /* Garante que cada .sheet ocupe uma folha */
+    }
+    .sheet:last-child {
+        page-break-after: auto;
+    }
+    /* Força a impressora a imprimir o fundo cinza das tabelas */
+    .bg-gray {
+        background-color: #e0e0e0 !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}
+
+/* --- TABELAS PADRÃO --- */
+.main-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.main-table th, .main-table td {
+    border: 2px solid #000;
+    padding: 3px 5px;
+}
+
+.bg-gray {
+    background-color: #e0e0e0;
+}
+
+.title-row {
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    padding: 4px 0 !important;
+}
+
+.subtitle-row {
+    font-size: 11px;
+    font-weight: bold;
+    text-align: center;
+    padding: 3px 0 !important;
+}
+
+.col-header-row th {
+    font-size: 10px;
+    text-align: center;
+    font-weight: bold;
+    padding: 2px !important;
+}
+
+/* Utilitários de Texto */
+.text-left { text-align: left !important; }
+.text-center { text-align: center !important; }
+.fw-bold { font-weight: bold !important; }
+.py-small { padding-top: 5px !important; padding-bottom: 5px !important; }
+
+/* --- TAMANHOS DE LINHAS --- */
+.empty-row-md td { height: 22px; }
+.empty-row-sm td { height: 18px; }
+
+/* --- CRONOLOGIA --- */
+.chrono-row td { height: 18px; }
+.chrono-label {
+    width: 18%;
+    font-size: 10px;
+}
+.chrono-input {
+    width: 7%;
+}
+
+/* --- JOGADORES (Página 1) --- */
+.flex-grow-table {
+    /* Faz a tabela de jogadores esticar até o fim da primeira folha se precisar */
+    flex-grow: 1; 
+}
+.player-row td {
+    height: 16px; /* Altura controlada para caber as 27 linhas */
+    padding: 1px 5px !important;
+}
+
+
+/* --- OBSERVAÇÕES (Página 2) --- */
+.obs-table {
+    flex-grow: 1; /* Faz a tabela inteira esticar para ocupar o resto da página 2 */
+    width: 100%;
+}
+.obs-table th {
+    width: 100%;
+}
+.obs-content {
+    height: 150px; /* Faz a célula vazia preencher todo o espaço vertical disponível */
+    border-top: none !important; /* Para não ficar linha grossa abaixo do título */
+}
+
+/*Bordas nos titulos do header*/
+.border {
+    border-right:2px solid #000;
+    padding: 3px;
+}
+    </style>
 </head>
 <body>
 
