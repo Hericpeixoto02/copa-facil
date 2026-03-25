@@ -9,14 +9,14 @@
     <div id="app" class="folha-a4">
         <div class="header-section">
             <div id="row" class="informacoes">
-                <span><strong class="titulo" >Competição:</strong> <strong class="subtitulo" id="general_title"></strong></span>
-                <span><strong class="titulo-jogo">Jogo Nº:</strong> <strong class="subtitulo"></strong></span>
+                <span><strong class="titulo" id="general_title_name"></strong> <strong class="subtitulo" id="general_title_value"></strong></span>
+                <span><strong class="titulo-jogo" id="general_n_name"></strong> <strong class="subtitulo" id="general_n_value"></strong></span>
             </div>
 
             <div id="row" class="informacoes">
-                <span><strong class="titulo">Categoria: </strong> <strong class="subtitulo"></strong></span>
-                <span><strong class="titulo-fase">Fase:</strong> <strong class="subtitulo" id="general_stage"></strong></span>
-                <span><strong class="titulo-fase">Rodada:</strong> <strong class="subtitulo" id="general_round"></strong></span>
+                <span><strong class="titulo" id="general_sub_title_name"></strong> <strong class="subtitulo" id="general_sub_title_value"></strong></span>
+                <span><strong class="titulo-fase" id="general_fs_name"></strong> <strong class="subtitulo" id="general_fs_value"></strong></span>
+                <span><strong class="titulo-fase" id="general_m_set_name"></strong> <strong class="subtitulo" id="general_m_set_value"></strong></span>
             </div>
 
             <div id="row"  class="informacoes">
@@ -28,7 +28,7 @@
        <div class="secao-intermediaria">
     <div class="coluna-campos">
         <div class="campo-box">
-            <span><strong>Local:</strong> <strong class="subtitulo" id="general_place"></strong></span>
+            <span><strong id="general_l_name"></strong> <strong class="subtitulo" id="general_l_value"></strong></span>
             <span style="margin-left: auto;">
                 <strong class="data-jogo">
                     Data: <span class="espaco-data"></span> / <span class="espaco-data"></span> / <span class="espaco-data"></span>
@@ -38,7 +38,7 @@
         
          
             <div class="campo-box padding-grande">
-            <span><strong>Arbitragem:</strong></span>
+            <span><strong id="general_arbi_name"></strong> <strong class="subtitulo" id="general_arbi_value"></strong></span>
         </div>
     </div>
 
@@ -46,28 +46,29 @@
         <thead>
             <tr>
                 <th class="bg-cinza"></th>
-                <th class="bg-cinza">Início</th>
-                <th class="bg-cinza">Fim</th>
+                <th class="bg-cinza"><strong id="words_inicio"></strong></th>
+                <th class="bg-cinza"><strong id="words_fim"></strong></th>
             </tr>
         </thead>
         <tbody>
-            <tr><td class="bg-cinza">Período 1</td><td></td><td></td></tr>
-            <tr><td class="bg-cinza">Período 2</td><td></td><td></td></tr>
-            <tr><td class="bg-cinza">Período Extra</td><td></td><td></td></tr>
+            <tr><td class="bg-cinza"><strong id="words_periodo1"></strong></td><td></td><td></td></tr>
+            <tr><td class="bg-cinza"><strong id="words_periodo2"></strong></td><td></td><td></td></tr>
+            <tr><td class="bg-cinza"><strong id="words_periodo_extra"></strong></td><td></td><td></td></tr>
         </tbody>
     </table>      
 </div>
             
 <div class="equipe-container">
     <div class="lista-jogadores">
-        <div class="nome-time-header"><h2>Corinthians Alagoano 1</h2></div>
+        <div class="nome-time-header"><strong class="team_1_name"></strong></div>
         <table>
             <thead>
                 <tr class="topo-cinza">
-                    <th class="col-nome">Jogadores</th>
-                    <th class="col-num">Nº</th>
-                    <th class="col-card">Ama</th>
-                    <th class="col-card">Ver</th>
+                    <th class="col-nome"><strong class="words_jogadores"></strong></th>
+                    <th class="col-doc"><strong class="words_doc_name"></strong></th>
+                    <th class="col-n"><strong class="words_n"></strong></th>
+                    <th class="col-card"><strong class="words_amarelo"></strong></th>
+                    <th class="col-card"><strong class="words_vermelho"></strong></th>
                 </tr>
             </thead>
 
@@ -76,12 +77,243 @@
     </tr>
     </tbody>
   <tbody id="tabela-time-1">
-    </tbody>
+    <tr>
+        <td>
+            <span class="numero-jogador" style="border-right: 1px solid #000; padding-right: 5px; margin-right: 5px; display: inline-block; width: 22px; text-align: center;">1</span>
+            <strong id="t1_p0_name_30" class="nome-atleta"></strong>
+        </td>
+        <td id="t1_p0_doc" style="text-align: center;"></td>
+        <td id="t1_p0_n" style="text-align: center;"></td>
+        <td id="t1_p0_yc" style="text-align: center;"></td>
+        <td id="t1_p0_rc" style="text-align: center;"></td>
+    </tr>
+
+    <tr>
+        <td>
+            <span class="numero-jogador" style="border-right: 1px solid #000; padding-right: 5px; margin-right: 5px; display: inline-block; width: 22px; text-align: center;">2</span>
+            <strong id="t1_p1_name" class="nome-atleta"></strong>
+        </td>
+        
+        <td id="t1_p1_doc" style="text-align: center;"></td>
+        <td id="t1_p1_n" style="text-align: center;"></td>
+        <td id="t1_p1_yc" style="text-align: center;"></td>
+        <td id="t1_p1_rc" style="text-align: center;"></td>
+    </tr>
+
+    <tr>
+        <td>
+            <span class="numero-jogador" style="border-right: 1px solid #000; padding-right: 5px; margin-right: 5px; display: inline-block; width: 22px; text-align: center;">3</span>
+            <strong id="t1_p2_name_30" class="nome-atleta"></strong>
+        </td>
+         <td id="t1_p2_doc" style="text-align: center;"></td>
+       <td id="t1_p2_n" style="text-align: center;"></td>
+       
+        <td id="t1_p2_yc" style="text-align: center;"></td>
+        <td id="t1_p2_rc" style="text-align: center;"></td>
+    </tr>
+
+    <tr>
+        <td>
+            <span class="numero-jogador" style="border-right: 1px solid #000; padding-right: 5px; margin-right: 5px; display: inline-block; width: 22px; text-align: center;">4</span>
+            <strong id="t1_p3_name" class="nome-atleta"></strong>
+        </td>
+        <td id="t1_p3_doc" style="text-align: center;"></td>
+       <td id="t1_p3_n" style="text-align: center;"></td>
+        <td id="t1_p3_yc" style="text-align: center;"></td>
+        <td id="t1_p3_rc" style="text-align: center;"></td>
+    </tr>
+
+    <tr>
+        <td>
+            <span class="numero-jogador" style="border-right: 1px solid #000; padding-right: 5px; margin-right: 5px; display: inline-block; width: 22px; text-align: center;">5</span>
+            <strong id="t1_p4_name" class="nome-atleta"></strong>
+        </td>
+        <td id="t1_p4_doc" style="text-align: center;"></td>
+       <td id="t1_p4_n" style="text-align: center;"></td>
+        <td id="t1_p4_yc" style="text-align: center;"></td>
+        <td id="t1_p4_rc" style="text-align: center;"></td>
+    </tr>
+
+    <tr>
+        <td>
+            <span class="numero-jogador" style="border-right: 1px solid #000; padding-right: 5px; margin-right: 5px; display: inline-block; width: 22px; text-align: center;">6</span>
+            <strong id="t1_p5_name" class="nome-atleta"></strong>
+        </td>
+        <td id="t1_p5_doc" style="text-align: center;"></td>
+        <td id="t1_p5_n" style="text-align: center;"></td>
+        <td id="t1_p5_yc" style="text-align: center;"></td>
+        <td id="t1_p5_rc" style="text-align: center;"></td>
+    </tr>
+
+    <tr>
+        <td>
+            <span class="numero-jogador" style="border-right: 1px solid #000; padding-right: 5px; margin-right: 5px; display: inline-block; width: 22px; text-align: center;">7</span>
+            <strong id="t1_p6_name" class="nome-atleta"></strong>
+        </td>
+        <td id="t1_p6_doc" style="text-align: center;"></td>
+        <td id="t1_p6_n" style="text-align: center;"></td>
+        <td id="t1_p6_yc" style="text-align: center;"></td>
+        <td id="t1_p6_rc" style="text-align: center;"></td>
+    </tr>
+
+    <tr>
+        <td>
+            <span class="numero-jogador" style="border-right: 1px solid #000; padding-right: 5px; margin-right: 5px; display: inline-block; width: 22px; text-align: center;">8</span>
+            <strong id="t1_p7_name" class="nome-atleta"></strong>
+        </td>
+        <td id="t1_p7_doc" style="text-align: center;"></td>
+        <td id="t1_p7_n" style="text-align: center;"></td>
+        <td id="t1_p7_yc" style="text-align: center;"></td>
+        <td id="t1_p7_rc" style="text-align: center;"></td>
+    </tr>
+
+    <tr>
+        <td>
+            <span class="numero-jogador" style="border-right: 1px solid #000; padding-right: 5px; margin-right: 5px; display: inline-block; width: 22px; text-align: center;">9</span>
+            <strong id="t1_p8_name" class="nome-atleta"></strong>
+        </td>
+        <td id="t1_p8_doc" style="text-align: center;"></td>
+        <td id="t1_p8_n" style="text-align: center;"></td>
+        <td id="t1_p8_yc" style="text-align: center;"></td>
+        <td id="t1_p8_rc" style="text-align: center;"></td>
+    </tr>
+
+    <tr>
+        <td>
+            <span class="numero-jogador" style="border-right: 1px solid #000; padding-right: 5px; margin-right: 5px; display: inline-block; width: 22px; text-align: center;">10</span>
+            <strong id="t1_p9_name" class="nome-atleta"></strong>
+        </td>
+        <td id="t1_p9_doc" style="text-align: center;"></td>
+        <td id="t1_p9_n" style="text-align: center;"></td>
+        <td id="t1_p9_yc" style="text-align: center;"></td>
+        <td id="t1_p9_rc" style="text-align: center;"></td>
+    </tr>
+
+    <tr>
+        <td>
+            <span class="numero-jogador" style="border-right: 1px solid #000; padding-right: 5px; margin-right: 5px; display: inline-block; width: 22px; text-align: center;">11</span>
+            <strong id="t1_p10_name" class="nome-atleta"></strong>
+        </td>
+        <td id="t1_p10_doc" style="text-align: center;"></td>
+       <td id="t1_p10_n" style="text-align: center;"></td>
+        
+        <td id="t1_p10_yc" style="text-align: center;"></td>
+        <td id="t1_p10_rc" style="text-align: center;"></td>
+    </tr>
+
+    <tr>
+        <td>
+            <span class="numero-jogador" style="border-right: 1px solid #000; padding-right: 5px; margin-right: 5px; display: inline-block; width: 22px; text-align: center;">12</span>
+            <strong id="t1_p11_name" class="nome-atleta"></strong>
+        </td>
+        <td id="t1_p11_doc" style="text-align: center;"></td>
+        <td id="t1_p11_n" style="text-align: center;"></td>
+        
+        <td id="t1_p11_yc" style="text-align: center;"></td>
+        <td id="t1_p11_rc" style="text-align: center;"></td>
+    </tr>
+
+    <tr>
+        <td>
+            <span class="numero-jogador" style="border-right: 1px solid #000; padding-right: 5px; margin-right: 5px; display: inline-block; width: 22px; text-align: center;">13</span>
+            <strong id="t1_p12_name" class="nome-atleta"></strong>
+        </td>
+        <td id="t1_p12_doc" style="text-align: center;"></td>
+        <td id="t1_p12_n" style="text-align: center;"></td>
+        
+        <td id="t1_p12_yc" style="text-align: center;"></td>
+        <td id="t1_p12_rc" style="text-align: center;"></td>
+    </tr>
+
+    <tr>
+        <td>
+            <span class="numero-jogador" style="border-right: 1px solid #000; padding-right: 5px; margin-right: 5px; display: inline-block; width: 22px; text-align: center;">14</span>
+            <strong id="t1_p13_name" class="nome-atleta"></strong>
+        </td>
+        <td id="t1_p13_doc" style="text-align: center;"></td>
+        <td id="t1_p13_n" style="text-align: center;"></td>
+        
+        <td id="t1_p13_yc" style="text-align: center;"></td>
+        <td id="t1_p13_rc" style="text-align: center;"></td>
+    </tr>
+
+    <tr>
+        <td>
+            <span class="numero-jogador" style="border-right: 1px solid #000; padding-right: 5px; margin-right: 5px; display: inline-block; width: 22px; text-align: center;">15</span>
+            <strong id="t1_p14_name" class="nome-atleta"></strong>
+        </td>
+        <td id="t1_p14_doc" style="text-align: center;"></td>
+        <td id="t1_p14_n" style="text-align: center;"></td>
+        
+        <td id="t1_p14_yc" style="text-align: center;"></td>
+        <td id="t1_p14_rc" style="text-align: center;"></td>
+    </tr>
+
+    <tr>
+        <td>
+            <span class="numero-jogador" style="border-right: 1px solid #000; padding-right: 5px; margin-right: 5px; display: inline-block; width: 22px; text-align: center;">16</span>
+            <strong id="t1_p15_name" class="nome-atleta"></strong>
+        </td>
+        <td id="t1_p15_doc" style="text-align: center;"></td>
+      <td id="t1_p15_n" style="text-align: center;"></td>
+        
+        <td id="t1_p15_yc" style="text-align: center;"></td>
+        <td id="t1_p15_rc" style="text-align: center;"></td>
+    </tr>
+
+    <tr>
+        <td>
+            <span class="numero-jogador" style="border-right: 1px solid #000; padding-right: 5px; margin-right: 5px; display: inline-block; width: 22px; text-align: center;">17</span>
+            <strong id="t1_p16_name" class="nome-atleta"></strong>
+        </td>
+        <td id="t1_p16_doc" style="text-align: center;"></td>
+        <td id="t1_p16_n" style="text-align: center;"></td>
+        
+        <td id="t1_p16_yc" style="text-align: center;"></td>
+        <td id="t1_p16_rc" style="text-align: center;"></td>
+    </tr>
+
+    <tr>
+        <td>
+            <span class="numero-jogador" style="border-right: 1px solid #000; padding-right: 5px; margin-right: 5px; display: inline-block; width: 22px; text-align: center;">18</span>
+            <strong id="t1_p17_name" class="nome-atleta"></strong>
+        </td>
+        <td id="t1_p17_doc" style="text-align: center;"></td>
+        <td id="t1_p17_n" style="text-align: center;"></td>
+        
+        <td id="t1_p17_yc" style="text-align: center;"></td>
+        <td id="t1_p17_rc" style="text-align: center;"></td>
+    </tr>
+
+    <tr>
+        <td>
+            <span class="numero-jogador" style="border-right: 1px solid #000; padding-right: 5px; margin-right: 5px; display: inline-block; width: 22px; text-align: center;">19</span>
+            <strong id="t1_p18_name" class="nome-atleta"></strong>
+        </td>
+        <td id="t1_p18_doc" style="text-align: center;"></td>
+        <td id="t1_p18_n" style="text-align: center;"></td>
+        
+        <td id="t1_p18_yc" style="text-align: center;"></td>
+        <td id="t1_p18_rc" style="text-align: center;"></td>
+    </tr>
+
+    <tr>
+        <td>
+            <span class="numero-jogador" style="border-right: 1px solid #000; padding-right: 5px; margin-right: 5px; display: inline-block; width: 22px; text-align: center;">20</span>
+            <strong id="t1_p19_name" class="nome-atleta"></strong>
+        </td>
+        <td id="t1_p19_doc" style="text-align: center;"></td>
+        <td id="t1_p19_n" style="text-align: center;"></td>
+        
+        <td id="t1_p19_yc" style="text-align: center;"></td>
+        <td id="t1_p19_rc" style="text-align: center;"></td>
+    </tr>
+</tbody>
         </table>
         
    <table class="tabela-tecnico">
     <tr>
-        <td colspan="3" class="col-texto-largo">Técnico:</td>
+        <td colspan="3" class="col-texto-largo"><strong class="words_tecnico"></strong></td>
         <td class="col-4"></td>
         <td class="col-5"></td>
     </tr>
@@ -123,12 +355,12 @@
        <table class="tabela-faltas-ajustada">
     <thead>
         <tr>
-            <th colspan="12" class="faltas-topo">Faltas acumuladas</th>
+            <th colspan="12" class="faltas-topo"><strong id="words_faltas_acumuladas"></strong></th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td colspan="5" class="faltas-label">Período 1</td>
+            <td colspan="5" class="faltas-label"><strong id="words_peri1_f"></strong></td>
             <td class="faltas-check"></td>
             <td class="faltas-check"></td>
             <td class="faltas-check"></td>
@@ -138,7 +370,7 @@
             <td class="faltas-check"></td>
         </tr>
         <tr>
-            <td colspan="5" class="faltas-label">Período 2</td>
+            <td colspan="5" class="faltas-label"><strong id="words_peri2_f"></strong></td>
             <td class="faltas-check"></td>
             <td class="faltas-check"></td>
             <td class="faltas-check"></td>
@@ -155,11 +387,11 @@
     <table class="tabela-pedidos">
         <thead>
             <tr>
-                <th colspan="2" class="titulo-principal">Pedidos de tempo</th>
+                <th colspan="2" class="titulo-principal"><strong id="words_pedidos_de_tempo"></strong></th>
             </tr>
             <tr>
-                <th class="subtitulo">Período 1</th>
-                <th class="subtitulo">Período 2</th>
+                <th class="subtitulo"><strong class="words_periodo1"></strong></th>
+                <th class="subtitulo"><strong class="words_periodo2"></strong></th>
             </tr>
         </thead>
         <tbody>
@@ -172,7 +404,7 @@
 </div>
 
         <div class="bloco-estatistica">
-            <div class="label-cinza">GOLS</div>
+            <div class="label-cinza"><strong id="words_gols"></strong></div>
             <div class="grade-gols">
                 <div class="gol"><b>1<span id="t1_gol_n_0"></span></b><br><span><strong id="t1_gol_min_0"></strong>:<strong id="t1_gol_seg_0"></strong></span></div>
                 <div class="gol"><b>2<span id="t1_gol_n_1"></span></b><br><span><strong id="t1_gol_min_1"></strong>:<strong id="t1_gol_seg_1"></strong></span></div>
@@ -206,7 +438,7 @@
         </div>
         
         <div class="bloco-estatistica">
-            <div class="label-cinza">Substituições</div>
+            <div class="label-cinza"><strong id="words_substituicoes"></strong></div>
             <table class="tabela-subs">
     <tr class="bg-cinza">
         <td></td> <td>1</td>
@@ -220,11 +452,11 @@
         <td>9</td>
     </tr>
     <tr>
-        <td class="bg-cinza">Entrou</td>
+        <td class="bg-cinza"><strong class="words_entrou"></strong></td>
         <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
     </tr>
     <tr>
-        <td class="bg-cinza">Saiu</td>
+        <td class="bg-cinza"><strong class="words_saiu"></strong></td>
         <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
     </tr>
 </table>
@@ -232,11 +464,11 @@
         <div class="bloco-assinaturas-equipe">
     <table class="tabela-assinaturas">
     <tr>
-        <td class="assinatura-label">Técnico:</td>
+        <td class="assinatura-label"><strong class="words_tecnico"></strong></td>
         <td class="assinatura-campo"></td>
     </tr>
     <tr>
-        <td class="assinatura-label">Capitão:</td>
+        <td  class="assinatura-label"><strong class="words_capitao"></strong></td>
         <td class="assinatura-campo"></td>
     </tr>
 </table> 
@@ -251,23 +483,244 @@
    
     <div id="equipe-2" class="equipe-container">
     <div class="lista-jogadores">
-        <div class="nome-time-header"><h2>Flamengo de Piracicaba</h2></div>
+        <div class="nome-time-header"><strong class="team_2_name"></strong></div>
         <table>
             <thead>
                 <tr class="topo-cinza">
-                    <th class="col-nome">Jogadores</th>
-                    <th class="col-num">Nº</th>
-                    <th class="col-card">Ama</th>
-                    <th class="col-card">Ver</th>
+                    <th class="col-nome"><strong class="words_jogadores"></strong></th>
+                    <th class="col-doc"><strong class="words_doc"></strong></th>
+                    <th class="col-num"><strong class="words_n"></strong></th>
+                    <th class="col-card"><strong class="words_amarelo"></strong></th>
+                    <th class="col-card"><strong class="words_vermelho"></strong></th>
                 </tr>
             </thead>
-            <tbody id="tabela-time-2">
-                
-            </tbody>
+           <tbody id="tabela-time-2">
+    <tr>
+        <td>
+            <span class="numero-jogador" style="border-right: 1px solid #000; padding-right: 5px; margin-right: 5px; display: inline-block; width: 22px; text-align: center;">1</span>
+            <strong id="t2_p0_name" class="nome-atleta"></strong>
+        </td>
+        <td id="t2_p0_doc" style="text-align: center;"></td>
+         <td id="t2_p0_n" style="text-align: center;"></td>
+        
+        <td id="t2_p0_yc" style="text-align: center;"></td>
+        <td id="t2_p0_rc" style="text-align: center;"></td>
+    </tr>
+
+    <tr>
+        <td>
+            <span class="numero-jogador" style="border-right: 1px solid #000; padding-right: 5px; margin-right: 5px; display: inline-block; width: 22px; text-align: center;">2</span>
+            <strong id="t2_p1_name" class="nome-atleta"></strong>
+        </td>
+        <td id="t2_p1_doc" style="text-align: center;"></td>
+         <td id="t2_p1_n" style="text-align: center;"></td>
+        
+        <td id="t2_p1_yc" style="text-align: center;"></td>
+        <td id="t2_p1_rc" style="text-align: center;"></td>
+    </tr>
+
+    <tr>
+        <td>
+            <span class="numero-jogador" style="border-right: 1px solid #000; padding-right: 5px; margin-right: 5px; display: inline-block; width: 22px; text-align: center;">3</span>
+            <strong id="t2_p2_name" class="nome-atleta"></strong>
+        </td>
+         <td id="t2_p2_n" style="text-align: center;"></td>
+        <td id="t2_p2_doc" style="text-align: center;"></td>
+        <td id="t2_p2_yc" style="text-align: center;"></td>
+        <td id="t2_p2_rc" style="text-align: center;"></td>
+    </tr>
+
+    <tr>
+        <td>
+            <span class="numero-jogador" style="border-right: 1px solid #000; padding-right: 5px; margin-right: 5px; display: inline-block; width: 22px; text-align: center;">4</span>
+            <strong id="t2_p3_name" class="nome-atleta"></strong>
+        </td>
+         <td id="t2_p3_n" style="text-align: center;"></td>
+        <td id="t2_p3_doc" style="text-align: center;"></td>
+        <td id="t2_p3_yc" style="text-align: center;"></td>
+        <td id="t2_p3_rc" style="text-align: center;"></td>
+    </tr>
+
+    <tr>
+        <td>
+            <span class="numero-jogador" style="border-right: 1px solid #000; padding-right: 5px; margin-right: 5px; display: inline-block; width: 22px; text-align: center;">5</span>
+            <strong id="t2_p4_name" class="nome-atleta"></strong>
+        </td>
+         <td id="t2_p4_n" style="text-align: center;"></td>
+        <td id="t2_p4_doc" style="text-align: center;"></td>
+        <td id="t2_p4_yc" style="text-align: center;"></td>
+        <td id="t2_p4_rc" style="text-align: center;"></td>
+    </tr>
+
+    <tr>
+        <td>
+            <span class="numero-jogador" style="border-right: 1px solid #000; padding-right: 5px; margin-right: 5px; display: inline-block; width: 22px; text-align: center;">6</span>
+            <strong id="t2_p5_name" class="nome-atleta"></strong>
+        </td>
+         <td id="t2_p5_n" style="text-align: center;"></td>
+        <td id="t2_p5_doc" style="text-align: center;"></td>
+        <td id="t2_p5_yc" style="text-align: center;"></td>
+        <td id="t2_p5_rc" style="text-align: center;"></td>
+    </tr>
+
+    <tr>
+        <td>
+            <span class="numero-jogador" style="border-right: 1px solid #000; padding-right: 5px; margin-right: 5px; display: inline-block; width: 22px; text-align: center;">7</span>
+            <strong id="t2_p6_name" class="nome-atleta"></strong>
+        </td>
+        <td id="t2_p6_n" style="text-align: center;"></td>
+        <td id="t2_p6_doc" style="text-align: center;"></td>
+        <td id="t2_p6_yc" style="text-align: center;"></td>
+        <td id="t2_p6_rc" style="text-align: center;"></td>
+    </tr>
+
+    <tr>
+        <td>
+            <span class="numero-jogador" style="border-right: 1px solid #000; padding-right: 5px; margin-right: 5px; display: inline-block; width: 22px; text-align: center;">8</span>
+            <strong id="t2_p7_name" class="nome-atleta"></strong>
+        </td>
+         <td id="t2_p7_n" style="text-align: center;"></td>
+        <td id="t2_p7_doc" style="text-align: center;"></td>
+        <td id="t2_p7_yc" style="text-align: center;"></td>
+        <td id="t2_p7_rc" style="text-align: center;"></td>
+    </tr>
+
+    <tr>
+        <td>
+            <span class="numero-jogador" style="border-right: 1px solid #000; padding-right: 5px; margin-right: 5px; display: inline-block; width: 22px; text-align: center;">9</span>
+            <strong id="t2_p8_name" class="nome-atleta"></strong>
+        </td>
+         <td id="t2_p8_n" style="text-align: center;"></td>
+        <td id="t2_p8_doc" style="text-align: center;"></td>
+        <td id="t2_p8_yc" style="text-align: center;"></td>
+        <td id="t2_p8_rc" style="text-align: center;"></td>
+    </tr>
+
+    <tr>
+        <td>
+            <span class="numero-jogador" style="border-right: 1px solid #000; padding-right: 5px; margin-right: 5px; display: inline-block; width: 22px; text-align: center;">10</span>
+            <strong id="t2_p9_name" class="nome-atleta"></strong>
+        </td>
+         <td id="t2_p9_n" style="text-align: center;"></td>
+        <td id="t2_p9_doc" style="text-align: center;"></td>
+        <td id="t2_p9_yc" style="text-align: center;"></td>
+        <td id="t2_p9_rc" style="text-align: center;"></td>
+    </tr>
+
+    <tr>
+        <td>
+            <span class="numero-jogador" style="border-right: 1px solid #000; padding-right: 5px; margin-right: 5px; display: inline-block; width: 22px; text-align: center;">11</span>
+            <strong id="t2_p10_name" class="nome-atleta"></strong>
+        </td>
+        <td id="t2_p10_n" style="text-align: center;"></td>
+        <td id="t2_p10_doc" style="text-align: center;"></td>
+        <td id="t2_p10_yc" style="text-align: center;"></td>
+        <td id="t2_p10_rc" style="text-align: center;"></td>
+    </tr>
+
+    <tr>
+        <td>
+            <span class="numero-jogador" style="border-right: 1px solid #000; padding-right: 5px; margin-right: 5px; display: inline-block; width: 22px; text-align: center;">12</span>
+            <strong id="t2_p11_name" class="nome-atleta"></strong>
+        </td>
+         <td id="t2_p11_n" style="text-align: center;"></td>
+        <td id="t2_p11_doc" style="text-align: center;"></td>
+        <td id="t2_p11_yc" style="text-align: center;"></td>
+        <td id="t2_p11_rc" style="text-align: center;"></td>
+    </tr>
+
+    <tr>
+        <td>
+            <span class="numero-jogador" style="border-right: 1px solid #000; padding-right: 5px; margin-right: 5px; display: inline-block; width: 22px; text-align: center;">13</span>
+            <strong id="t2_p12_name" class="nome-atleta"></strong>
+        </td>
+       <td id="t2_p12_n" style="text-align: center;"></td>
+        <td id="t2_p12_doc" style="text-align: center;"></td>
+        <td id="t2_p12_yc" style="text-align: center;"></td>
+        <td id="t2_p12_rc" style="text-align: center;"></td>
+    </tr>
+
+    <tr>
+        <td>
+            <span class="numero-jogador" style="border-right: 1px solid #000; padding-right: 5px; margin-right: 5px; display: inline-block; width: 22px; text-align: center;">14</span>
+            <strong id="t2_p13_name" class="nome-atleta"></strong>
+        </td>
+         <td id="t2_p13_n" style="text-align: center;"></td>
+        <td id="t2_p13_doc" style="text-align: center;"></td>
+        <td id="t2_p13_yc" style="text-align: center;"></td>
+        <td id="t2_p13_rc" style="text-align: center;"></td>
+    </tr>
+
+    <tr>
+        <td>
+            <span class="numero-jogador" style="border-right: 1px solid #000; padding-right: 5px; margin-right: 5px; display: inline-block; width: 22px; text-align: center;">15</span>
+            <strong id="t2_p14_name" class="nome-atleta"></strong>
+        </td>
+         <td id="t2_p14_n" style="text-align: center;"></td>
+        <td id="t2_p14_doc" style="text-align: center;"></td>
+        <td id="t2_p14_yc" style="text-align: center;"></td>
+        <td id="t2_p14_rc" style="text-align: center;"></td>
+    </tr>
+
+    <tr>
+        <td>
+            <span class="numero-jogador" style="border-right: 1px solid #000; padding-right: 5px; margin-right: 5px; display: inline-block; width: 22px; text-align: center;">16</span>
+            <strong id="t2_p15_name" class="nome-atleta"></strong>
+        </td>
+         <td id="t2_p15_n" style="text-align: center;"></td>
+        <td id="t2_p15_doc" style="text-align: center;"></td>
+        <td id="t2_p15_yc" style="text-align: center;"></td>
+        <td id="t2_p15_rc" style="text-align: center;"></td>
+    </tr>
+
+    <tr>
+        <td>
+            <span class="numero-jogador" style="border-right: 1px solid #000; padding-right: 5px; margin-right: 5px; display: inline-block; width: 22px; text-align: center;">17</span>
+            <strong id="t2_p16_name" class="nome-atleta"></strong>
+        </td>
+         <td id="t2_p16_n" style="text-align: center;"></td>
+        <td id="t2_p16_doc" style="text-align: center;"></td>
+        <td id="t2_p16_yc" style="text-align: center;"></td>
+        <td id="t2_p16_rc" style="text-align: center;"></td>
+    </tr>
+
+    <tr>
+        <td>
+            <span class="numero-jogador" style="border-right: 1px solid #000; padding-right: 5px; margin-right: 5px; display: inline-block; width: 22px; text-align: center;">18</span>
+            <strong id="t2_p17_name" class="nome-atleta"></strong>
+        </td>
+         <td id="t2_p17_n" style="text-align: center;"></td>
+        <td id="t2_p17_doc" style="text-align: center;"></td>
+        <td id="t2_p17_yc" style="text-align: center;"></td>
+        <td id="t2_p17_rc" style="text-align: center;"></td>
+    </tr>
+
+    <tr>
+        <td>
+            <span class="numero-jogador" style="border-right: 1px solid #000; padding-right: 5px; margin-right: 5px; display: inline-block; width: 22px; text-align: center;">19</span>
+            <strong id="t2_p18_name" class="nome-atleta"></strong>
+        </td>
+         <td id="t2_p18_n" style="text-align: center;"></td>
+        <td id="t2_p18_doc" style="text-align: center;"></td>
+        <td id="t2_p18_yc" style="text-align: center;"></td>
+        <td id="t2_p18_rc" style="text-align: center;"></td>
+    </tr>
+
+    <tr>
+        <td>
+            <span class="numero-jogador" style="border-right: 1px solid #000; padding-right: 5px; margin-right: 5px; display: inline-block; width: 22px; text-align: center;">20</span>
+            <strong id="t2_p19_name" class="nome-atleta"></strong>
+        </td>
+         <td id="t2_p19_n" style="text-align: center;"></td>
+        <td id="t2_p19_doc" style="text-align: center;"></td>
+        <td id="t2_p19_yc" style="text-align: center;"></td>
+        <td id="t2_p19_rc" style="text-align: center;"></td>
+    </tr>
+</tbody>
         </table>
        <table class="tabela-tecnico">
     <tr>
-        <td colspan="3" class="col-texto-largo">Técnico:</td>
+        <td colspan="3" class="col-texto-largo"><strong class="words_tecnico"></strong></td>
         <td class="col-4"></td>
         <td class="col-5"></td>
     </tr>
@@ -309,12 +762,12 @@
            <table class="tabela-faltas-ajustada">
     <thead>
         <tr>
-            <th colspan="12" class="faltas-topo">Faltas acumuladas</th>
+            <th colspan="12" class="faltas-topo"><strong class="words_faltas_acumuladas"></strong></th>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td colspan="5" class="faltas-label">Período 1</td>
+            <td colspan="5" class="faltas-label"><strong class="words_periodo1"></strong></td>
             <td class="faltas-check"></td>
             <td class="faltas-check"></td>
             <td class="faltas-check"></td>
@@ -324,7 +777,7 @@
             <td class="faltas-check"></td>
         </tr>
         <tr>
-            <td colspan="5" class="faltas-label">Período 2</td>
+            <td colspan="5" class="faltas-label"><strong class="words_periodo2"></strong></td>
             <td class="faltas-check"></td>
             <td class="faltas-check"></td>
             <td class="faltas-check"></td>
@@ -340,11 +793,11 @@
     <table class="tabela-pedidos">
         <thead>
             <tr>
-                <th colspan="2" class="titulo-principal">Pedidos de tempo</th>
+                <th colspan="2" class="titulo-principal"><strong class="words_pedidos_de_tempo"></strong></th>
             </tr>
             <tr>
-                <th class="subtitulo">Período 1</th>
-                <th class="subtitulo">Período 2</th>
+                <th class="subtitulo"><strong class="words_periodo1"></strong></th>
+                <th class="subtitulo"><strong class="words_periodo2"></strong></th>
             </tr>
         </thead>
         <tbody>
@@ -391,7 +844,7 @@
                 </div>
         
              <div class="bloco-estatistica">
-                <div class="label-cinza">Substituições</div>
+                <div id="subs2" class="label-cinza"><strong class="words_substituicoes"></strong></div>
                     <table class="tabela-subs">
     <tr class="bg-cinza">
         <td></td> <td>1</td>
@@ -405,11 +858,11 @@
         <td>9</td>
     </tr>
     <tr>
-        <td class="bg-cinza">Entrou</td>
+        <td class="bg-cinza"><strong class="words_entrou"></strong></td>
         <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
     </tr>
     <tr>
-        <td class="bg-cinza">Saiu</td>
+        <td class="bg-cinza"><strong class="words_saiu"></strong></td>
         <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
     </tr>
 </table>
@@ -419,12 +872,12 @@
                     <div class="bloco-assinaturas-equipe">
    <table class="tabela-assinaturas">
     <tr>
-        <td class="assinatura-label">Técnico:</td>
-        <td class="assinatura-campo"></td>
+        <td id="tecnicoasssi2" class="assinatura-label"><strong class="words_tecnico"></strong></td>
+        <td id="tecnicoasssi2" class="assinatura-campo"></td>
     </tr>
     <tr>
-        <td class="assinatura-label">Capitão:</td>
-        <td class="assinatura-campo"></td>
+        <td id="tecnicoasssi2"class="assinatura-label"><strong class="words_capitao"></strong></td>
+        <td id="tecnicoasssi2" class="assinatura-campo"></td>
     </tr>
 </table>
 
@@ -434,592 +887,214 @@
   </div>
 </div>
 
-    <script>
-        window.__DADOS_SUMULA__ = {
-    "general": {
-        "title": "COMPETIÇÕES LIGA BELÉM",
-        "sub_title": "4° PARAZÃO DO FUTSAL",
-        "stage": "1º Fase",
-        "round": "1º Rodada",
-        "place": "GINASIO UEPA"
-    },
-    "config":{
-        "player_length": 20
-    },
-    "team_1": {
-        "name": "RESENHA ",
-        "player": [
-            {
-                "supend":false,
-                "name": "MAURO GONÇALVES LIRA",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 2,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 2
-            },
-            {   "supend":false,
-                "name": "ISAIAS PINTO LIMA",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "JOSE  AUGUSTO CARVALHO DO ROSARIO ",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "JEFFERSON BRUNO DE JESUS NASCIMENTO ",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 6
-            },
-            {   "supend":true,
-                "name": "JUAN ADRIAN SALAZAR DE SOUZA",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 2,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "GILBERT ROMARIO GONÇALVES MARTINS",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "JHON RENATO DAS CHAGAS MAGNO",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "JEFFERSON BRENO DE JESUS NASCIMENTO ",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "CRISTIAN NASCIMENTO COUTO",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 4
-            },
-            {   "supend":false,
-                "name": "LUCAS ARAUJO DE OLIVEIRA",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 2
-            },  
-            {   "supend":false,
-                "name": "ELIDELSON FERREIRA DOS SANTOS",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "ANDERSON MACHADO DE SOUZA",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
+ <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        
+        // Busca o arquivo JSON com todos os dados da partida
+        fetch('referencia.json')
+            .then(response => {
+                if (!response.ok) throw new Error("Erro ao carregar o JSON");
+                return response.json();
+            })
+            .then(d => {
                 
-            {   "supend":false,
-                "name": "THALISON ALVES MEDEIROS",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-             {  "supend":false,
-                "name": "HÉRIC PEIXOTO",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-             {  
-                "supend":false,
-                "name": "TESTE 1",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            }, { 
-                "supend":false,   
-                "name": "TESTE 2",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            }, {
-                "supend":false,
-                "name": "TESTE 3",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            }, {
-                "supend":false,
-                "name": "TESTE 4",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            }, {
-                "supend":false,
-                "name": "TESTE 5",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            }, {
-                "supend":false,
-                "name": "TESTE 6",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-        ],
-        "goals": [
-            {
-                "n": "10",
-                "minutes": 7,
-                "seconds": 45,
-                "period": 1
-            },
-            {
-                "n": "11",
-                "minutes": 1,
-                "seconds": 0,
-                "period": 1
-            },
-            {
-                "n": "12",
-                "minutes": 13,
-                "seconds": 0,
-                "period": 1
-            },
-            {
-                "n": "",
-                "minutes": 16,
-                "seconds": 0,
-                "period": 1
-            },
-            {
-                "n": "",
-                "minutes": 3,
-                "seconds": 0,
-                "period": 2
-            },
-            {
-                "n": "",
-                "minutes": 14,
-                "seconds": 0,
-                "period": 2
-            },
-            {
-                "n": "",
-                "minutes": 17,
-                "seconds": 0,
-                "period": 2
-            },
-            {
-                "n": "",
-                "minutes": 7,
-                "seconds": 0,
-                "period": 1
-            },
-            {
-                "n": "",
-                "minutes": 1,
-                "seconds": 0,
-                "period": 1
-            },
-            {
-                "n": "",
-                "minutes": 13,
-                "seconds": 0,
-                "period": 1
-            },
-            {
-                "n": "",
-                "minutes": 16,
-                "seconds": 0,
-                "period": 1
-            },
-            {
-                "n": "",
-                "minutes": 3,
-                "seconds": 0,
-                "period": 2
-            },
-            {
-                "n": "",
-                "minutes": 14,
-                "seconds": 0,
-                "period": 2
-            },
-            {
-                "n": "",
-                "minutes": 17,
-                "seconds": 0,
-                "period": 2
-            }
-        ]
-    },
-    "team_2": {
-        "name": "LEON",
-        "player": [
-            {   "supend":true,
-                "name": "LUCAS SOARES BARATA",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 1,
-                "blue_card": 0,
-                "goals": 2
-            },
-            {   "supend":false,
-                "name": "THIAGO ALMEIDA FERREIRA",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "ALLEX SANDER MACHADO DE SOUZA",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "YAGO PIETRO BARROS SANTIAGO",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 2
-            },
-            {   "supend":false,
-                "name": "RENAN LUIS BATISTA MARQUES",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "DAVI LUCAS DIAS RODRIGUES",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "IVISON CARNEIRO DINIZ",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "CLAUDIO CALEBE BRASIL FARIAS",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "THALES GABRIEL LIMA FERAO DA SILVA",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "RONALD HILBERT NASCIMENTO VITORIO",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "FABIO FURTADO DUARTE",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "FABIO ATAIDE DOS SANTOS JUNIOR",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "JOSE CAUA MACHADO RESENDE",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "ATILA LOBATO LEAL LEAL",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "ARTHUR MOREIRA DE SOUSA DA SILVA",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "MAURICIO KAUA DA PAIXAO BRITO",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "ARTHUR CARLOS NUNES ANDRADE",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "THIAGO VIANA PEREIRA ",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "ANTONIO EDUARDO DA SILVA QUEIROZ",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "PAULO ENZO FERREIRA FERREIRA",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-        ],
-        "goals": [
-            {
-                "n": "",
-                "minutes": 10,
-                "seconds": 0,
-                "period": 2
-            },
-            {
-                "n": "",
-                "minutes": 13,
-                "seconds": 0,
-                "period": 2
-            },
-            {
-                "n": "",
-                "minutes": 10,
-                "seconds": 0,
-                "period": 2
-            },
-            {
-                "n": "",
-                "minutes": 13,
-                "seconds": 0,
-                "period": 2
-            }
-        ]
-    }
-};
-    </script>
+                // ---------------------------------------------------------
+                // FUNÇÃO ATUALIZADA: Agora preenche ID (único) e CLASS (vários)
+                // ---------------------------------------------------------
+                const set = (identificador, val) => {
+                    // 1. Tenta preencher caso você tenha usado ID (id="...")
+                    const elId = document.getElementById(identificador);
+                    if (elId) elId.innerText = val || "";
 
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    const d = window.__DADOS_SUMULA__;
-    if (!d) return;
+                    // 2. Tenta preencher TODOS os lugares onde você usou CLASSE (class="...")
+                    const elementosClass = document.querySelectorAll('.' + identificador);
+                    elementosClass.forEach(el => {
+                        el.innerText = val || "";
+                    });
+                };
+                // ---------------------------------------------------------
 
-    // Função auxiliar para preencher texto por ID
-    const set = (id, val) => {
-        const el = document.getElementById(id);
-        if (el) el.innerText = val || "";
-    };
+                // 1. PREENCHENDO O CABEÇALHO (Títulos dinâmicos e Valores)
+                if (d.general) {
+                    // Competição
+                    set('general_title_name', d.general.title?.name);
+                    set('general_title_value', d.general.title?.value); 
+                    
+                    // Categoria
+                    set('general_sub_title_name', d.general.sub_title?.name);
+                    set('general_sub_title_value', d.general.sub_title?.value); 
+                    
+                    // Fase
+                    set('general_fs_name', d.general.fs?.name);
+                    set('general_fs_value', d.general.fs?.value); 
+                    
+                    // Rodada
+                    set('general_m_set_name', d.general.m_set?.name);
+                    set('general_m_set_value', d.general.m_set?.value); 
+                    
+                    // Jogo Nº
+                    set('general_n_name', d.general.n?.name);
+                    set('general_n_value', d.general.n?.value); 
 
-    // 1. DADOS GERAIS (CABEÇALHO)
-    if (d.general) {
-        set('general_title', d.general.title);
-        set('general_sub_title', d.general.sub_title);
-        set('general_stage', d.general.stage);
-        set('general_round', d.general.round);
-        set('general_place', d.general.place);
-        set('general_date', d.general.date);
-    }
+                    // Arbitragem
+                    set('general_arbi_name', d.general.arbi?.name);
+                    set('general_arbi_value', d.general.arbi?.value); 
+                    
+                    // Local e Horário
+                    set('general_l_name', d.general.l?.name);
+                    set('general_l_value', d.general.l?.value); 
+                    
+                    set('general_hour', d.general.hour?.value);
+                    
+                    // Separa a data para encaixar nos espaços _ / _ / _
+                    const dateStr = d.general.date?.value;
+                    if (dateStr && dateStr.includes('/')) {
+                        const parts = dateStr.split('/');
+                        const espacos = document.querySelectorAll('.espaco-data');
+                        if (espacos.length >= 3) {
+                            espacos[0].innerText = parts[0];
+                            espacos[1].innerText = parts[1];
+                            espacos[2].innerText = parts[2];
+                        }
+                    }
+                }
 
-    // 2. TRAVA ABSOLUTA DE LINHAS
-    let limiteExibicao = (d.config && d.config.player_length) ? parseInt(d.config.player_length) : 15;
-    if (limiteExibicao > 20) limiteExibicao = 20; // Segurança A4
+                // --- CONFIGURANDO O TAMANHO E O NOME DAS COLUNAS (players-column) ---
+                if (d["players-column"]) {
+                    d["players-column"].forEach(col => {
+                        // Monta o nome da classe (ex: .col-doc, .col-n, .col-assi)
+                        const classeColuna = `.col-${col.player_key}`;
+                        
+                        // Procura os cabeçalhos <th> que têm essa classe
+                        const elementosTh = document.querySelectorAll(classeColuna);
+                        
+                        // Multiplica o size por 5 para virar porcentagem
+                        const larguraEmPorcentagem = col.size * 5; 
 
-    // 3. FUNÇÃO PARA MONTAR AS TABELAS
-    function montarTabela(timeData, idTbody) {
-        const tbody = document.getElementById(idTbody);
-        if (!tbody) return;
-        tbody.innerHTML = ''; 
+                        // Aplica a largura e escreve o nome
+                        elementosTh.forEach(th => {
+                            // Ajusta o tamanho da coluna
+                            th.style.width = `${larguraEmPorcentagem}%`;
+                            
+                            // Procura a tag <strong> dentro do <th> para manter o texto em negrito
+                            const tagStrong = th.querySelector('strong');
+                            if (tagStrong) {
+                                tagStrong.innerText = col.name; // Injeta "Documento", "Nº", "Assinatura"...
+                            } else {
+                                th.innerText = col.name;
+                            }
+                        });
+                    });
+                }
 
-        const tabela = tbody.closest('table');
-        if (limiteExibicao > 15) {
-            tabela.classList.add('tabela-compacta');
-        } else {
-            tabela.classList.remove('tabela-compacta');
-        }
+                // Define o limite de jogadores baseado no JSON (Máximo 20)
+                let limiteExibicao = d.qtd_players ? parseInt(d.qtd_players) : 15;
+                if (limiteExibicao > 20) limiteExibicao = 20;
 
-        for (let i = 0; i < limiteExibicao; i++) {
-            const p = (timeData.player && timeData.player[i]) ? timeData.player[i] : null;
+                // 2. FUNÇÃO PRINCIPAL: MONTAR AS TABELAS DE JOGADORES
+                function montarTabela(timeData, prefixo) {
+                    if (!timeData) return;
+
+                    for (let i = 0; i < limiteExibicao; i++) {
+                        const p = (timeData.player && timeData.player[i]) ? timeData.player[i] : null;
+                        
+                        // Verifica se o jogador está suspenso
+                        const isSuspenso = p && (p.supend === true || p.red_card > 0);
+                        
+                        // ---- LÓGICA DE DETECÇÃO DE CARACTERES PELO ID DO HTML ----
+                        let elName = null;
+                        let propriedadeNome = "name"; // Padrão se não achar sufixo
+                        const sufixosPossiveis = ["_25", "_30", "_40", ""]; 
+                        
+                        for (let sufixo of sufixosPossiveis) {
+                            // Tenta achar o ID no HTML (ex: t1_p0_name_40)
+                            const tempEl = document.getElementById(`${prefixo}_p${i}_name${sufixo}`);
+                            if (tempEl) {
+                                elName = tempEl;
+                                propriedadeNome = sufixo === "" ? "name" : `name${sufixo}`;
+                                break;
+                            }
+                            const elDoc = document.getElementById(`${prefixo}_p${i}_doc`); // Captura o ID do documento
+if (elDoc) elDoc.innerText = p && p.doc ? p.doc : '';         // Escreve o documento na tela
+                        }
+
+                        
+
+                        // Puxa a versão correta do nome do JSON
+                        let nomeExibir = "";
+                        if (p) {
+                            nomeExibir = p[propriedadeNome] || p.name || "";
+                        }
+                        // ----------------------------------------------------------
+
+                        // Captura os outros campos
+                        const elN = document.getElementById(`${prefixo}_p${i}_n`);
+                        const elYc = document.getElementById(`${prefixo}_p${i}_yc`);
+                        const elRc = document.getElementById(`${prefixo}_p${i}_rc`);
+
+                        // Escreve o nome e aplica o risco de suspensão, se necessário
+                        if (elName) {
+                            elName.innerText = nomeExibir;
+                            if (isSuspenso) {
+                                elName.style.textDecoration = 'line-through';
+                                elName.style.color = '#777';
+                            } else {
+                                elName.style.textDecoration = 'none';
+                                elName.style.color = 'inherit';
+                            }
+                        }
+
+                        // Preenche Número e Cartões
+                        if (elN) elN.innerText = p && p.n ? p.n : '';
+                        
+                        if (elYc) {
+                            elYc.innerHTML = `<span>${p && p.yellow_card >= 1 ? 'X' : ''}</span> | <span>${p && p.yellow_card >= 2 ? 'X' : ''}</span>`;
+                        }
+                        
+                        if (elRc) elRc.innerText = p && p.red_card > 0 ? 'X' : '';
+                    }
+                }
+
+                 // --- PREENCHENDO AS PALAVRAS DINÂMICAS (WORDS) ---
+                if (d.words) {
+                    // O Object.keys pega todas as palavras do json (doc, gols, tecnico, etc)
+                    Object.keys(d.words).forEach(chave => {
+                        // Ele usa a nova função set, que vai achar tanto ID quanto CLASS
+                        set(`words_${chave}`, d.words[chave]);
+                    });
+                }
+
+                // 3. FUNÇÃO PARA PREENCHER O QUADRO DE GOLS
+                function preencherGols(timeData, prefixo) {
+                    if (!timeData || !timeData.goals) return;
+                    timeData.goals.forEach((gol, i) => {
+                        set(`${prefixo}_gol_n_${i}`, ` ${gol.n || ''}`);
+                        set(`${prefixo}_gol_min_${i}`, String(gol.minutes || 0).padStart(2, '0'));
+                        set(`${prefixo}_gol_seg_${i}`, String(gol.seconds || 0).padStart(2, '0'));
+                    });
+                }
+
+                // --- 4. EXECUÇÃO DE TUDO ---
+                // Preenche o nome dos times no meio da súmula
+                set('team_1_name', d.team_1?.name);
+                set('team_2_name', d.team_2?.name);
+
+                // Monta as linhas dos jogadores
+                montarTabela(d.team_1, 't1');
+                montarTabela(d.team_2, 't2');
+                
+                // Monta os minutos e segundos dos gols
+                preencherGols(d.team_1, 't1');
+                preencherGols(d.team_2, 't2');
+                
+            })
+            .catch(error => {
+                console.error("Erro ao carregar os dados:", error);
+                alert("Erro ao ler o referencia.json. Certifique-se de estar usando um Servidor Local (Live Server).");
+            });
+
             
-            // Riscado se suspenso
-            const suspenso = (p && p.supend === true) ? 'style="text-decoration: line-through; color: #777;"' : '';
-            const nomeExibir = (p && p.name) ? p.name : "";
-
-            const tr = document.createElement('tr');
-            tr.innerHTML = `
-                <td>
-                    <span class="numero-jogador" style="border-right: 1px solid #000; padding-right: 5px; margin-right: 5px; display: inline-block; width: 22px; text-align: center;">${i + 1}</span>
-                    <strong ${suspenso} class="nome-atleta">${nomeExibir}</strong>
-                </td>
-                <td></td>
-                <td style="text-align: center;">
-                    <span>${p && p.yellow_card >= 1 ? 'X' : ''}</span> | <span>${p && p.yellow_card >= 2 ? 'X' : ''}</span>
-                </td>
-                <td style="text-align: center;">
-                    ${p && p.red_card > 0 ? 'X' : ''}
-                </td>
-            `;
-            tbody.appendChild(tr);
-        }
-    }
-
-    // 4. FUNÇÃO PARA PREENCHER OS GOLS
-    function preencherGols(timeData, prefixo) {
-        if (!timeData.goals) return;
-        timeData.goals.forEach((gol, i) => {
-            set(`${prefixo}_gol_n_${i}`, ` ${gol.n || ''}`);
-            set(`${prefixo}_gol_min_${i}`, String(gol.minutes || 0).padStart(2, '0'));
-            set(`${prefixo}_gol_seg_${i}`, String(gol.seconds || 0).padStart(2, '0'));
-        });
-    }
-
-    // --- EXECUÇÃO FINAL ---
-    set('team_1_name', d.team_1.name);
-    set('team_2_name', d.team_2.name);
-    set('team_1_coach', d.team_1.coach);
-    set('team_1_captain', d.team_1.captain);
-    set('team_2_coach', d.team_2.coach);
-    set('team_2_captain', d.team_2.captain);
-
-    montarTabela(d.team_1, 'tabela-time-1');
-    montarTabela(d.team_2, 'tabela-time-2');
-    preencherGols(d.team_1, 't1');
-    preencherGols(d.team_2, 't2');
-});
+    });
 </script>
 
 
@@ -1033,18 +1108,25 @@ document.addEventListener("DOMContentLoaded", function() {
     box-sizing: none !important;
 }
 
+strong#words_faltas_acumuladas, strong.words_faltas_acumuladas {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:14px !important;
+    font-weight:700;
+}
+
+
 /*Estitulo de titulo para "número do jogo"*/
 .titulo-jogo{
     margin-right: 55px !important;
     border-left: 1px solid #000;
-    padding: 7px;
+    padding: 4.9px;
 }
 
 /*Css para dicionar divisorias do placar dos times*/
 .placar {
     border-right: 1px solid #000;
     border-left: 1px solid #000;
-    padding: 6px;
+    padding: 3px;
     padding-left:20px;
     padding-right: 20px;
     
@@ -1055,13 +1137,13 @@ document.addEventListener("DOMContentLoaded", function() {
 .time1 {
     margin-left: 115px;
     border-right: 1px solid #000;
-    padding: 6px;
+    padding: 3px;
 }
 
 .time2 {
     margin-right: 115px;
     border-left: 1px solid #000;
-    padding: 6px;
+    padding: 3px;
 }
 
 
@@ -1069,7 +1151,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 .espaco-data {
   display: inline-block;
-  width: 7px; /* Ajuste aqui a largura do espaço */
+  width: auto; /* Ajuste aqui a largura do espaço */
   border-bottom: 1px solid #ccc; /* Opcional: cria uma linha de preenchimento */
   margin: 0 5px;
   
@@ -1085,7 +1167,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 .data-jogo {
     border-left: 1px solid #000;
-    padding: 6px
+    padding: 6px;
+    margin-right: 14px;
 }
 
 /*Peso da fonte dos subtitulos*/
@@ -1096,7 +1179,7 @@ document.addEventListener("DOMContentLoaded", function() {
 /*Barra lateral depois do nome "fase"*/
 .titulo-fase {
     border-left: 1px solid #000;
-    padding:5px
+    padding:4px;
 }
 
 /* 1. Reset Global para garantir que bordas/paddings não somem à largura */
@@ -1155,7 +1238,7 @@ document.addEventListener("DOMContentLoaded", function() {
     border-right: 1px solid #000;
     display: flex; 
     justify-content: space-between; 
-    padding: 5px 5px; 
+    padding: 2px 5px; 
    
 }
 
@@ -1244,7 +1327,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 /* Definição das Larguras das Colunas */
 .col-nome { width: 70%; }
-.col-num  { width: 10%; }
+.col-num  { width: 5%; }
+.col-doc { width: 15%; }
 .col-card { width: 10%; }
 
 /* Ajuste de Altura e Estilo das Células */
@@ -1254,7 +1338,7 @@ document.addEventListener("DOMContentLoaded", function() {
     font-size: 12px;
     
     /* ALTURA FIXA AQUI */
-    height: 18px;       /* Define a altura exata de cada linha */
+    height: 17px;       /* Define a altura exata de cada linha */
     max-height: 18px;
     
     padding: 1px 4px;
@@ -1439,7 +1523,7 @@ table {
 
 
 /* Estilo para adicionar o "|" apenas na terceira coluna da tabela específica */
-.equipe-container td:nth-child(3) {
+.equipe-container td:nth-child(4) {
     position: relative;
     text-align: center;
     vertical-align: middle;
@@ -1451,7 +1535,7 @@ table {
 
 /* Ajuste de impressão seguindo a mesma regra */
 @media print {
-    .equipe-container table:not(.tabela-subs) td:nth-child(3)::before {
+    .equipe-container table:not(.tabela-subs) td:nth-child(4)::before {
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
@@ -1554,7 +1638,7 @@ td.checkbox-cell {
 .tabela-tecnico td {
     border: 1px solid #000;
     /* Diminuímos a altura para alinhar com o bloco lateral */
-    height: 17px; 
+    height: 13px; 
     /* Padding mínimo para o texto não encostar nas bordas */
     padding: 0 5px; 
     /* Garante que o texto fique centralizado verticalmente na linha menor */
@@ -1589,11 +1673,11 @@ td.checkbox-cell {
 
 /* COLUNAS DE VISTO (As que sobraram) */
 .col-4 {
-    width: 9.4%; /* Alinha com Ama */
+    width: 8.0%; /* Alinha com Ama */
 }
 
 .col-5 {
-    width: 9.6%; /* Alinha com Ver */
+    width: 8.0%; /* Alinha com Ver */
 }
 
 
@@ -1709,7 +1793,7 @@ td.faltas-check:before {
 
 }
 .gol {
-    height: 31px;
+    height: 34px;
 }
 
 .campo-box.padding-grande {
@@ -1727,7 +1811,7 @@ td.faltas-check:before {
 
 .tabela-assinaturas td {
     border: 1px solid #000 !important;
-    height: 19px; /* Altura idêntica ao seu print */
+    height: 23.5px; /* Altura idêntica ao seu print */
     vertical-align: middle;
 }
 
@@ -1802,9 +1886,6 @@ div#equipe-2 .tabela-assinaturas {
     margin-top:20px;
 }
 
-div#equipe-2 table.tabela-subs {
-    margin-top:8px;
-}   
 
 /*tirando os nomes dos times da borda*/
 
@@ -2023,6 +2104,59 @@ td {
     color: #777; /* Deixa o nome um pouco mais claro para dar destaque ao risco */
     font-style: italic;
 }
-    </style>
+
+strong#words_inicio, strong#words_fim {
+    font-size:12px;
+    font-weight:500;
+    font-family: arial,helvetica,sans-serif;
+}
+
+
+
+strong#words_substituicoes, strong#words_pedidos_de_tempo, strong#words_gols, strong.words_pedidos_de_tempo   {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+}
+strong.team_1_name, strong.team_2_name {
+    margin-left: 10px;
+    font-weight: 700;
+}
+strong#words_periodo_extra, strong#words_periodo1, strong#words_periodo2, strong.words_periodo1, strong.words_periodo2 {
+    font-size: 10px;
+    font-weight: 500;
+}
+
+
+strong.words_entrou, strong.words_saiu {
+    font-family: arial, helvetica, sans-serif;
+    font-size:12px;
+    font-weight:500;
+} 
+
+strong.words_tecnico, strong.words_capitao {
+    font-weight:500;
+    font-size: 12px;
+}
+
+strong#words_peri1_f, strong#words_peri2_f {
+    font-weight: 500;
+}
+
+strong.words_substituicoes  {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+div#subs2 {
+    margin-top: 7.5px;
+}
+
+td#tecnicoasssi2 {
+    height:19px;
+}
+
+</style>
 </body>
 </html>
