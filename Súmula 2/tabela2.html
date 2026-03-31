@@ -34,20 +34,21 @@
                 <table class="team-table">
                     <caption style="caption-side: top;">
                         <div class="caption-content">
-                            <div class="cap-name"><strong id="team_1_name_header">Corinthias Alagoano</strong>&nbsp;1 ( )</div>
+                            <div class="cap-name"><strong id="team_1_name_header"></strong>&nbsp;1 ( )</div>
                             <div class="cap-tec">Técnico:</div>
                             <div class="cap-cap">Capitão:</div>
                         </div>
                     </caption>
                     <thead>
                         <tr class="header-black">
-                            <th colspan="5" class="col-jog">Jogadores</th>
-                            <th colspan="1" class="col-n double-right">Nº</th>
+                            <th colspan="5" class="col-jog double-right">Jogadores</th>
                             
                             <th class="col-dinamica-1 double-right" style="display: none;"><strong></strong></th>
                             <th class="col-dinamica-2 double-right" style="display: none;"><strong></strong></th>
                             <th class="col-dinamica-3 double-right" style="display: none;"><strong></strong></th>
                             <th class="col-dinamica-4 double-right" style="display: none;"><strong></strong></th>
+                            <th class="col-dinamica-5 double-right" style="display: none;"><strong></strong></th>
+                            <th class="col-dinamica-6 double-right" style="display: none;"><strong></strong></th>
                             
                             <th colspan="2" class="col-ini">Início</th>
                             <th colspan="3" class="col-ama">Amarelos</th>
@@ -56,24 +57,28 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td colspan="5"><strong id="t1_p0_name" class="nome-jogador"></strong></td>
-                            <td class="double-right" colspan="1" id="t1_p0_n" style="text-align: center;"></td>
+                        <tr class="player-row" id="t1_row_0">
+                            <td colspan="5" class="double-right"><strong id="t1_p0_name" class="nome-jogador"></strong></td>
                             <td class="double-right col-dinamica-1" id="t1_p0_dinamica_1" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-2" id="t1_p0_dinamica_2" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-3" id="t1_p0_dinamica_3" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-4" id="t1_p0_dinamica_4" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-5" id="t1_p0_dinamica_5" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-6" id="t1_p0_dinamica_6" style="display:none; text-align:center;"></td>
                             <td class="double-right col-ini-cell" colspan="2"></td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t1_p0_yc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t1_p0_yc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t1_p0_yc1" class="cartao-text"></strong>
+                                    <strong id="t1_p0_yc2" class="cartao-text"></strong>
+                                </div>
                             </td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t1_p0_rc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t1_p0_rc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t1_p0_rc1" class="cartao-text"></strong>
+                                    <strong id="t1_p0_rc2" class="cartao-text"></strong>
+                                </div>
                             </td>
-                            
-                            <td colspan="2" rowspan="16" class="gols-cell">
+                            <td colspan="2" rowspan="16" class="gols-cell" id="t1_gols_cell">
                                 <div class="gols-wrapper">
                                     <div class="gols-col">
                                         <div class="gol-item"><div class="gol-top-row"><div class="gol-num">1</div><div class="gol-space" id="t1_gol_n_0"></div></div><div class="gol-time-display" id="t1_gol_time_0"></div></div>
@@ -115,273 +120,459 @@
                             </td>
                         </tr>
 
-                        <tr>
-                            <td colspan="5"><strong id="t1_p1_name" class="nome-jogador"></strong></td>
-                            <td class="double-right" colspan="1" id="t1_p1_n" style="text-align: center;"></td>
+                        <tr class="player-row" id="t1_row_1">
+                            <td colspan="5" class="double-right"><strong id="t1_p1_name" class="nome-jogador"></strong></td>
                             <td class="double-right col-dinamica-1" id="t1_p1_dinamica_1" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-2" id="t1_p1_dinamica_2" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-3" id="t1_p1_dinamica_3" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-4" id="t1_p1_dinamica_4" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-5" id="t1_p1_dinamica_5" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-6" id="t1_p1_dinamica_6" style="display:none; text-align:center;"></td>
                             <td class="double-right col-ini-cell" colspan="2"></td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t1_p1_yc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t1_p1_yc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t1_p1_yc1" class="cartao-text"></strong>
+                                    <strong id="t1_p1_yc2" class="cartao-text"></strong>
+                                </div>
                             </td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t1_p1_rc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t1_p1_rc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t1_p1_rc1" class="cartao-text"></strong>
+                                    <strong id="t1_p1_rc2" class="cartao-text"></strong>
+                                </div>
                             </td>
                         </tr>
-                    
-                        <tr>
-                            <td colspan="5"><strong id="t1_p2_name" class="nome-jogador"></strong></td>
-                            <td class="double-right" colspan="1" id="t1_p2_n" style="text-align: center;"></td>
+
+                        <tr class="player-row" id="t1_row_2">
+                            <td colspan="5" class="double-right"><strong id="t1_p2_name" class="nome-jogador"></strong></td>
                             <td class="double-right col-dinamica-1" id="t1_p2_dinamica_1" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-2" id="t1_p2_dinamica_2" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-3" id="t1_p2_dinamica_3" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-4" id="t1_p2_dinamica_4" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-5" id="t1_p2_dinamica_5" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-6" id="t1_p2_dinamica_6" style="display:none; text-align:center;"></td>
                             <td class="double-right col-ini-cell" colspan="2"></td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t1_p2_yc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t1_p2_yc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t1_p2_yc1" class="cartao-text"></strong>
+                                    <strong id="t1_p2_yc2" class="cartao-text"></strong>
+                                </div>
                             </td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t1_p2_rc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t1_p2_rc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t1_p2_rc1" class="cartao-text"></strong>
+                                    <strong id="t1_p2_rc2" class="cartao-text"></strong>
+                                </div>
                             </td>
                         </tr>
-                    
-                        <tr>
-                            <td colspan="5"><strong id="t1_p3_name" class="nome-jogador"></strong></td>
-                            <td class="double-right" colspan="1" id="t1_p3_n" style="text-align: center;"></td>
+
+                        <tr class="player-row" id="t1_row_3">
+                            <td colspan="5" class="double-right"><strong id="t1_p3_name" class="nome-jogador"></strong></td>
                             <td class="double-right col-dinamica-1" id="t1_p3_dinamica_1" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-2" id="t1_p3_dinamica_2" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-3" id="t1_p3_dinamica_3" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-4" id="t1_p3_dinamica_4" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-5" id="t1_p3_dinamica_5" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-6" id="t1_p3_dinamica_6" style="display:none; text-align:center;"></td>
                             <td class="double-right col-ini-cell" colspan="2"></td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t1_p3_yc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t1_p3_yc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t1_p3_yc1" class="cartao-text"></strong>
+                                    <strong id="t1_p3_yc2" class="cartao-text"></strong>
+                                </div>
                             </td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t1_p3_rc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t1_p3_rc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t1_p3_rc1" class="cartao-text"></strong>
+                                    <strong id="t1_p3_rc2" class="cartao-text"></strong>
+                                </div>
                             </td>
                         </tr>
-                    
-                        <tr>
-                            <td colspan="5"><strong id="t1_p4_name" class="nome-jogador"></strong></td>
-                            <td class="double-right" colspan="1" id="t1_p4_n" style="text-align: center;"></td>
+
+                        <tr class="player-row" id="t1_row_4">
+                            <td colspan="5" class="double-right"><strong id="t1_p4_name" class="nome-jogador"></strong></td>
                             <td class="double-right col-dinamica-1" id="t1_p4_dinamica_1" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-2" id="t1_p4_dinamica_2" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-3" id="t1_p4_dinamica_3" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-4" id="t1_p4_dinamica_4" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-5" id="t1_p4_dinamica_5" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-6" id="t1_p4_dinamica_6" style="display:none; text-align:center;"></td>
                             <td class="double-right col-ini-cell" colspan="2"></td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t1_p4_yc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t1_p4_yc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t1_p4_yc1" class="cartao-text"></strong>
+                                    <strong id="t1_p4_yc2" class="cartao-text"></strong>
+                                </div>
                             </td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t1_p4_rc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t1_p4_rc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t1_p4_rc1" class="cartao-text"></strong>
+                                    <strong id="t1_p4_rc2" class="cartao-text"></strong>
+                                </div>
                             </td>
                         </tr>
-                    
-                        <tr>
-                            <td colspan="5"><strong id="t1_p5_name" class="nome-jogador"></strong></td>
-                            <td class="double-right" colspan="1" id="t1_p5_n" style="text-align: center;"></td>
+
+                        <tr class="player-row" id="t1_row_5">
+                            <td colspan="5" class="double-right"><strong id="t1_p5_name" class="nome-jogador"></strong></td>
                             <td class="double-right col-dinamica-1" id="t1_p5_dinamica_1" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-2" id="t1_p5_dinamica_2" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-3" id="t1_p5_dinamica_3" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-4" id="t1_p5_dinamica_4" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-5" id="t1_p5_dinamica_5" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-6" id="t1_p5_dinamica_6" style="display:none; text-align:center;"></td>
                             <td class="double-right col-ini-cell" colspan="2"></td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t1_p5_yc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t1_p5_yc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t1_p5_yc1" class="cartao-text"></strong>
+                                    <strong id="t1_p5_yc2" class="cartao-text"></strong>
+                                </div>
                             </td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t1_p5_rc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t1_p5_rc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t1_p5_rc1" class="cartao-text"></strong>
+                                    <strong id="t1_p5_rc2" class="cartao-text"></strong>
+                                </div>
                             </td>
                         </tr>
-                    
-                        <tr>
-                            <td colspan="5"><strong id="t1_p6_name" class="nome-jogador"></strong></td>
-                            <td class="double-right" colspan="1" id="t1_p6_n" style="text-align: center;"></td>
+
+                        <tr class="player-row" id="t1_row_6">
+                            <td colspan="5" class="double-right"><strong id="t1_p6_name" class="nome-jogador"></strong></td>
                             <td class="double-right col-dinamica-1" id="t1_p6_dinamica_1" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-2" id="t1_p6_dinamica_2" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-3" id="t1_p6_dinamica_3" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-4" id="t1_p6_dinamica_4" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-5" id="t1_p6_dinamica_5" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-6" id="t1_p6_dinamica_6" style="display:none; text-align:center;"></td>
                             <td class="double-right col-ini-cell" colspan="2"></td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t1_p6_yc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t1_p6_yc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t1_p6_yc1" class="cartao-text"></strong>
+                                    <strong id="t1_p6_yc2" class="cartao-text"></strong>
+                                </div>
                             </td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t1_p6_rc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t1_p6_rc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t1_p6_rc1" class="cartao-text"></strong>
+                                    <strong id="t1_p6_rc2" class="cartao-text"></strong>
+                                </div>
                             </td>
                         </tr>
-                    
-                        <tr>
-                            <td colspan="5"><strong id="t1_p7_name" class="nome-jogador"></strong></td>
-                            <td class="double-right" colspan="1" id="t1_p7_n" style="text-align: center;"></td>
+
+                        <tr class="player-row" id="t1_row_7">
+                            <td colspan="5" class="double-right"><strong id="t1_p7_name" class="nome-jogador"></strong></td>
                             <td class="double-right col-dinamica-1" id="t1_p7_dinamica_1" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-2" id="t1_p7_dinamica_2" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-3" id="t1_p7_dinamica_3" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-4" id="t1_p7_dinamica_4" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-5" id="t1_p7_dinamica_5" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-6" id="t1_p7_dinamica_6" style="display:none; text-align:center;"></td>
                             <td class="double-right col-ini-cell" colspan="2"></td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t1_p7_yc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t1_p7_yc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t1_p7_yc1" class="cartao-text"></strong>
+                                    <strong id="t1_p7_yc2" class="cartao-text"></strong>
+                                </div>
                             </td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t1_p7_rc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t1_p7_rc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t1_p7_rc1" class="cartao-text"></strong>
+                                    <strong id="t1_p7_rc2" class="cartao-text"></strong>
+                                </div>
                             </td>
                         </tr>
-                    
-                        <tr>
-                            <td colspan="5"><strong id="t1_p8_name" class="nome-jogador"></strong></td>
-                            <td class="double-right" colspan="1" id="t1_p8_n" style="text-align: center;"></td>
+
+                        <tr class="player-row" id="t1_row_8">
+                            <td colspan="5" class="double-right"><strong id="t1_p8_name" class="nome-jogador"></strong></td>
                             <td class="double-right col-dinamica-1" id="t1_p8_dinamica_1" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-2" id="t1_p8_dinamica_2" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-3" id="t1_p8_dinamica_3" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-4" id="t1_p8_dinamica_4" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-5" id="t1_p8_dinamica_5" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-6" id="t1_p8_dinamica_6" style="display:none; text-align:center;"></td>
                             <td class="double-right col-ini-cell" colspan="2"></td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t1_p8_yc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t1_p8_yc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t1_p8_yc1" class="cartao-text"></strong>
+                                    <strong id="t1_p8_yc2" class="cartao-text"></strong>
+                                </div>
                             </td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t1_p8_rc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t1_p8_rc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t1_p8_rc1" class="cartao-text"></strong>
+                                    <strong id="t1_p8_rc2" class="cartao-text"></strong>
+                                </div>
                             </td>
                         </tr>
-                    
-                        <tr>
-                            <td colspan="5"><strong id="t1_p9_name" class="nome-jogador"></strong></td>
-                            <td class="double-right" colspan="1" id="t1_p9_n" style="text-align: center;"></td>
+
+                        <tr class="player-row" id="t1_row_9">
+                            <td colspan="5" class="double-right"><strong id="t1_p9_name" class="nome-jogador"></strong></td>
                             <td class="double-right col-dinamica-1" id="t1_p9_dinamica_1" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-2" id="t1_p9_dinamica_2" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-3" id="t1_p9_dinamica_3" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-4" id="t1_p9_dinamica_4" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-5" id="t1_p9_dinamica_5" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-6" id="t1_p9_dinamica_6" style="display:none; text-align:center;"></td>
                             <td class="double-right col-ini-cell" colspan="2"></td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t1_p9_yc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t1_p9_yc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t1_p9_yc1" class="cartao-text"></strong>
+                                    <strong id="t1_p9_yc2" class="cartao-text"></strong>
+                                </div>
                             </td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t1_p9_rc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t1_p9_rc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t1_p9_rc1" class="cartao-text"></strong>
+                                    <strong id="t1_p9_rc2" class="cartao-text"></strong>
+                                </div>
                             </td>
                         </tr>
-                    
-                        <tr>
-                            <td colspan="5"><strong id="t1_p10_name" class="nome-jogador"></strong></td>
-                            <td class="double-right" colspan="1" id="t1_p10_n" style="text-align: center;"></td>
+
+                        <tr class="player-row" id="t1_row_10">
+                            <td colspan="5" class="double-right"><strong id="t1_p10_name" class="nome-jogador"></strong></td>
                             <td class="double-right col-dinamica-1" id="t1_p10_dinamica_1" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-2" id="t1_p10_dinamica_2" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-3" id="t1_p10_dinamica_3" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-4" id="t1_p10_dinamica_4" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-5" id="t1_p10_dinamica_5" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-6" id="t1_p10_dinamica_6" style="display:none; text-align:center;"></td>
                             <td class="double-right col-ini-cell" colspan="2"></td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t1_p10_yc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t1_p10_yc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t1_p10_yc1" class="cartao-text"></strong>
+                                    <strong id="t1_p10_yc2" class="cartao-text"></strong>
+                                </div>
                             </td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t1_p10_rc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t1_p10_rc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t1_p10_rc1" class="cartao-text"></strong>
+                                    <strong id="t1_p10_rc2" class="cartao-text"></strong>
+                                </div>
                             </td>
                         </tr>
-                    
-                        <tr>
-                            <td colspan="5"><strong id="t1_p11_name" class="nome-jogador"></strong></td>
-                            <td class="double-right" colspan="1" id="t1_p11_n" style="text-align: center;"></td>
+
+                        <tr class="player-row" id="t1_row_11">
+                            <td colspan="5" class="double-right"><strong id="t1_p11_name" class="nome-jogador"></strong></td>
                             <td class="double-right col-dinamica-1" id="t1_p11_dinamica_1" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-2" id="t1_p11_dinamica_2" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-3" id="t1_p11_dinamica_3" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-4" id="t1_p11_dinamica_4" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-5" id="t1_p11_dinamica_5" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-6" id="t1_p11_dinamica_6" style="display:none; text-align:center;"></td>
                             <td class="double-right col-ini-cell" colspan="2"></td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t1_p11_yc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t1_p11_yc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t1_p11_yc1" class="cartao-text"></strong>
+                                    <strong id="t1_p11_yc2" class="cartao-text"></strong>
+                                </div>
                             </td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t1_p11_rc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t1_p11_rc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t1_p11_rc1" class="cartao-text"></strong>
+                                    <strong id="t1_p11_rc2" class="cartao-text"></strong>
+                                </div>
                             </td>
                         </tr>
-                    
-                        <tr>
-                            <td colspan="5"><strong id="t1_p12_name" class="nome-jogador"></strong></td>
-                            <td class="double-right" colspan="1" id="t1_p12_n" style="text-align: center;"></td>
+
+                        <tr class="player-row" id="t1_row_12">
+                            <td colspan="5" class="double-right"><strong id="t1_p12_name" class="nome-jogador"></strong></td>
                             <td class="double-right col-dinamica-1" id="t1_p12_dinamica_1" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-2" id="t1_p12_dinamica_2" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-3" id="t1_p12_dinamica_3" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-4" id="t1_p12_dinamica_4" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-5" id="t1_p12_dinamica_5" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-6" id="t1_p12_dinamica_6" style="display:none; text-align:center;"></td>
                             <td class="double-right col-ini-cell" colspan="2"></td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t1_p12_yc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t1_p12_yc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t1_p12_yc1" class="cartao-text"></strong>
+                                    <strong id="t1_p12_yc2" class="cartao-text"></strong>
+                                </div>
                             </td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t1_p12_rc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t1_p12_rc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t1_p12_rc1" class="cartao-text"></strong>
+                                    <strong id="t1_p12_rc2" class="cartao-text"></strong>
+                                </div>
                             </td>
                         </tr>
-                    
-                        <tr>
-                            <td colspan="5"><strong id="t1_p13_name" class="nome-jogador"></strong></td>
-                            <td class="double-right" colspan="1" id="t1_p13_n" style="text-align: center;"></td>
+
+                        <tr class="player-row" id="t1_row_13">
+                            <td colspan="5" class="double-right"><strong id="t1_p13_name" class="nome-jogador"></strong></td>
                             <td class="double-right col-dinamica-1" id="t1_p13_dinamica_1" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-2" id="t1_p13_dinamica_2" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-3" id="t1_p13_dinamica_3" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-4" id="t1_p13_dinamica_4" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-5" id="t1_p13_dinamica_5" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-6" id="t1_p13_dinamica_6" style="display:none; text-align:center;"></td>
                             <td class="double-right col-ini-cell" colspan="2"></td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t1_p13_yc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t1_p13_yc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t1_p13_yc1" class="cartao-text"></strong>
+                                    <strong id="t1_p13_yc2" class="cartao-text"></strong>
+                                </div>
                             </td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t1_p13_rc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t1_p13_rc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t1_p13_rc1" class="cartao-text"></strong>
+                                    <strong id="t1_p13_rc2" class="cartao-text"></strong>
+                                </div>
                             </td>
                         </tr>
-                    
-                        <tr>
-                            <td colspan="5"><strong id="t1_p14_name" class="nome-jogador"></strong></td>
-                            <td class="double-right" colspan="1" id="t1_p14_n" style="text-align: center;"></td>
+
+                        <tr class="player-row" id="t1_row_14">
+                            <td colspan="5" class="double-right"><strong id="t1_p14_name" class="nome-jogador"></strong></td>
                             <td class="double-right col-dinamica-1" id="t1_p14_dinamica_1" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-2" id="t1_p14_dinamica_2" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-3" id="t1_p14_dinamica_3" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-4" id="t1_p14_dinamica_4" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-5" id="t1_p14_dinamica_5" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-6" id="t1_p14_dinamica_6" style="display:none; text-align:center;"></td>
                             <td class="double-right col-ini-cell" colspan="2"></td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t1_p14_yc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t1_p14_yc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t1_p14_yc1" class="cartao-text"></strong>
+                                    <strong id="t1_p14_yc2" class="cartao-text"></strong>
+                                </div>
                             </td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t1_p14_rc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t1_p14_rc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t1_p14_rc1" class="cartao-text"></strong>
+                                    <strong id="t1_p14_rc2" class="cartao-text"></strong>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="player-row" id="t1_row_15">
+                            <td colspan="5" class="double-right"><strong id="t1_p15_name" class="nome-jogador"></strong></td>
+                            <td class="double-right col-dinamica-1" id="t1_p15_dinamica_1" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-2" id="t1_p15_dinamica_2" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-3" id="t1_p15_dinamica_3" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-4" id="t1_p15_dinamica_4" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-5" id="t1_p15_dinamica_5" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-6" id="t1_p15_dinamica_6" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-ini-cell" colspan="2"></td>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t1_p15_yc1" class="cartao-text"></strong>
+                                    <strong id="t1_p15_yc2" class="cartao-text"></strong>
+                                </div>
+                            </td>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t1_p15_rc1" class="cartao-text"></strong>
+                                    <strong id="t1_p15_rc2" class="cartao-text"></strong>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="player-row" id="t1_row_16">
+                            <td colspan="5" class="double-right"><strong id="t1_p16_name" class="nome-jogador"></strong></td>
+                            <td class="double-right col-dinamica-1" id="t1_p16_dinamica_1" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-2" id="t1_p16_dinamica_2" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-3" id="t1_p16_dinamica_3" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-4" id="t1_p16_dinamica_4" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-5" id="t1_p16_dinamica_5" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-6" id="t1_p16_dinamica_6" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-ini-cell" colspan="2"></td>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t1_p16_yc1" class="cartao-text"></strong>
+                                    <strong id="t1_p16_yc2" class="cartao-text"></strong>
+                                </div>
+                            </td>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t1_p16_rc1" class="cartao-text"></strong>
+                                    <strong id="t1_p16_rc2" class="cartao-text"></strong>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="player-row" id="t1_row_17">
+                            <td colspan="5" class="double-right"><strong id="t1_p17_name" class="nome-jogador"></strong></td>
+                            <td class="double-right col-dinamica-1" id="t1_p17_dinamica_1" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-2" id="t1_p17_dinamica_2" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-3" id="t1_p17_dinamica_3" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-4" id="t1_p17_dinamica_4" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-5" id="t1_p17_dinamica_5" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-6" id="t1_p17_dinamica_6" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-ini-cell" colspan="2"></td>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t1_p17_yc1" class="cartao-text"></strong>
+                                    <strong id="t1_p17_yc2" class="cartao-text"></strong>
+                                </div>
+                            </td>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t1_p17_rc1" class="cartao-text"></strong>
+                                    <strong id="t1_p17_rc2" class="cartao-text"></strong>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="player-row" id="t1_row_18">
+                            <td colspan="5" class="double-right"><strong id="t1_p18_name" class="nome-jogador"></strong></td>
+                            <td class="double-right col-dinamica-1" id="t1_p18_dinamica_1" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-2" id="t1_p18_dinamica_2" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-3" id="t1_p18_dinamica_3" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-4" id="t1_p18_dinamica_4" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-5" id="t1_p18_dinamica_5" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-6" id="t1_p18_dinamica_6" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-ini-cell" colspan="2"></td>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t1_p18_yc1" class="cartao-text"></strong>
+                                    <strong id="t1_p18_yc2" class="cartao-text"></strong>
+                                </div>
+                            </td>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t1_p18_rc1" class="cartao-text"></strong>
+                                    <strong id="t1_p18_rc2" class="cartao-text"></strong>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="player-row" id="t1_row_19">
+                            <td colspan="5" class="double-right"><strong id="t1_p19_name" class="nome-jogador"></strong></td>
+                            <td class="double-right col-dinamica-1" id="t1_p19_dinamica_1" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-2" id="t1_p19_dinamica_2" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-3" id="t1_p19_dinamica_3" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-4" id="t1_p19_dinamica_4" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-5" id="t1_p19_dinamica_5" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-6" id="t1_p19_dinamica_6" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-ini-cell" colspan="2"></td>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t1_p19_yc1" class="cartao-text"></strong>
+                                    <strong id="t1_p19_yc2" class="cartao-text"></strong>
+                                </div>
+                            </td>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t1_p19_rc1" class="cartao-text"></strong>
+                                    <strong id="t1_p19_rc2" class="cartao-text"></strong>
+                                </div>
                             </td>
                         </tr>
                     
-                        <tr>
+                        <tr id="t1_row_coach">
                             <td colspan="5" style="text-align: left; padding-left: 5px;">Técnico:</td>
-                            <td class="double-right" colspan="1"></td>
                             <td class="double-right col-dinamica-1" id="t1_p_din_1" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-2" id="t1_p_din_2" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-3" id="t1_p_din_3" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-4" id="t1_p_din_4" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-5" id="t1_p_din_5" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-6" id="t1_p_din_6" style="display:none; text-align:center;"></td>
                             <td class="double-right col-ini-cell" colspan="2"></td>
                             <td class="double-right" colspan="3"></td>
                             <td class="double-right" colspan="3"></td>
                         </tr>
+                        <tr><td colspan="17"></td></tr>
+                        <tr><td colspan="17"></td></tr>
+                        <tr><td colspan="17"></td></tr>
                         
-                        <tr><td colspan="16"></td></tr>
-                        <tr><td colspan="16"></td></tr>
-                        <tr><td colspan="16"></td></tr>
                     </tbody>
                 </table>
                 <div class="side-stats rotated-v">
@@ -414,20 +605,21 @@
                 <table class="team-table">
                     <caption style="caption-side: top;">
                         <div class="caption-content">
-                            <div class="cap-name"><strong id="team_2_name_header">Flamengo</strong> ( )</div>
+                            <div class="cap-name"><strong id="team_2_name_header"></strong> ( )</div>
                             <div class="cap-tec">Técnico:</div>
                             <div class="cap-cap">Capitão:</div>
                         </div>
                     </caption>
                     <thead>
                         <tr class="header-black">
-                            <th colspan="5" class="col-jog">Jogadores</th>
-                            <th colspan="1" class="col-n double-right">Nº</th>
+                            <th colspan="5" class="col-jog double-right">Jogadores</th>
                             
                             <th class="col-dinamica-1 double-right" style="display: none;"><strong></strong></th>
                             <th class="col-dinamica-2 double-right" style="display: none;"><strong></strong></th>
                             <th class="col-dinamica-3 double-right" style="display: none;"><strong></strong></th>
                             <th class="col-dinamica-4 double-right" style="display: none;"><strong></strong></th>
+                            <th class="col-dinamica-5 double-right" style="display: none;"><strong></strong></th>
+                            <th class="col-dinamica-6 double-right" style="display: none;"><strong></strong></th>
 
                             <th colspan="2" class="col-ini">Início</th>
                             <th colspan="3" class="col-ama">Amarelos</th>
@@ -436,24 +628,28 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td colspan="5"><strong id="t2_p0_name" class="nome-jogador"></strong></td>
-                            <td class="double-right" colspan="1" id="t2_p0_n" style="text-align: center;"></td>
+                        <tr class="player-row" id="t2_row_0">
+                            <td colspan="5" class="double-right"><strong id="t2_p0_name" class="nome-jogador"></strong></td>
                             <td class="double-right col-dinamica-1" id="t2_p0_dinamica_1" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-2" id="t2_p0_dinamica_2" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-3" id="t2_p0_dinamica_3" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-4" id="t2_p0_dinamica_4" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-5" id="t2_p0_dinamica_5" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-6" id="t2_p0_dinamica_6" style="display:none; text-align:center;"></td>
                             <td class="double-right col-ini-cell" colspan="2"></td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t2_p0_yc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t2_p0_yc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t2_p0_yc1" class="cartao-text"></strong>
+                                    <strong id="t2_p0_yc2" class="cartao-text"></strong>
+                                </div>
                             </td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t2_p0_rc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t2_p0_rc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t2_p0_rc1" class="cartao-text"></strong>
+                                    <strong id="t2_p0_rc2" class="cartao-text"></strong>
+                                </div>
                             </td>
-                            
-                            <td colspan="2" rowspan="16" class="gols-cell">
+                            <td colspan="2" rowspan="16" class="gols-cell" id="t2_gols_cell">
                                 <div class="gols-wrapper">
                                     <div class="gols-col">
                                         <div class="gol-item"><div class="gol-top-row"><div class="gol-num">1</div><div class="gol-space" id="t2_gol_n_0"></div></div><div class="gol-time-display" id="t2_gol_time_0"></div></div>
@@ -494,274 +690,459 @@
                                 </div>
                             </td>
                         </tr>
-                    
-                        <tr>
-                            <td colspan="5"><strong id="t2_p1_name" class="nome-jogador"></strong></td>
-                            <td class="double-right" colspan="1" id="t2_p1_n" style="text-align: center;"></td>
+
+                        <tr class="player-row" id="t2_row_1">
+                            <td colspan="5" class="double-right"><strong id="t2_p1_name" class="nome-jogador"></strong></td>
                             <td class="double-right col-dinamica-1" id="t2_p1_dinamica_1" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-2" id="t2_p1_dinamica_2" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-3" id="t2_p1_dinamica_3" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-4" id="t2_p1_dinamica_4" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-5" id="t2_p1_dinamica_5" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-6" id="t2_p1_dinamica_6" style="display:none; text-align:center;"></td>
                             <td class="double-right col-ini-cell" colspan="2"></td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t2_p1_yc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t2_p1_yc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t2_p1_yc1" class="cartao-text"></strong>
+                                    <strong id="t2_p1_yc2" class="cartao-text"></strong>
+                                </div>
                             </td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t2_p1_rc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t2_p1_rc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t2_p1_rc1" class="cartao-text"></strong>
+                                    <strong id="t2_p1_rc2" class="cartao-text"></strong>
+                                </div>
                             </td>
                         </tr>
-                    
-                        <tr>
-                            <td colspan="5"><strong id="t2_p2_name" class="nome-jogador"></strong></td>
-                            <td class="double-right" colspan="1" id="t2_p2_n" style="text-align: center;"></td>
+
+                        <tr class="player-row" id="t2_row_2">
+                            <td colspan="5" class="double-right"><strong id="t2_p2_name" class="nome-jogador"></strong></td>
                             <td class="double-right col-dinamica-1" id="t2_p2_dinamica_1" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-2" id="t2_p2_dinamica_2" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-3" id="t2_p2_dinamica_3" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-4" id="t2_p2_dinamica_4" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-5" id="t2_p2_dinamica_5" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-6" id="t2_p2_dinamica_6" style="display:none; text-align:center;"></td>
                             <td class="double-right col-ini-cell" colspan="2"></td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t2_p2_yc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t2_p2_yc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t2_p2_yc1" class="cartao-text"></strong>
+                                    <strong id="t2_p2_yc2" class="cartao-text"></strong>
+                                </div>
                             </td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t2_p2_rc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t2_p2_rc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t2_p2_rc1" class="cartao-text"></strong>
+                                    <strong id="t2_p2_rc2" class="cartao-text"></strong>
+                                </div>
                             </td>
                         </tr>
-                    
-                        <tr>
-                            <td colspan="5"><strong id="t2_p3_name" class="nome-jogador"></strong></td>
-                            <td class="double-right" colspan="1" id="t2_p3_n" style="text-align: center;"></td>
+
+                        <tr class="player-row" id="t2_row_3">
+                            <td colspan="5" class="double-right"><strong id="t2_p3_name" class="nome-jogador"></strong></td>
                             <td class="double-right col-dinamica-1" id="t2_p3_dinamica_1" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-2" id="t2_p3_dinamica_2" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-3" id="t2_p3_dinamica_3" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-4" id="t2_p3_dinamica_4" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-5" id="t2_p3_dinamica_5" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-6" id="t2_p3_dinamica_6" style="display:none; text-align:center;"></td>
                             <td class="double-right col-ini-cell" colspan="2"></td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t2_p3_yc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t2_p3_yc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t2_p3_yc1" class="cartao-text"></strong>
+                                    <strong id="t2_p3_yc2" class="cartao-text"></strong>
+                                </div>
                             </td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t2_p3_rc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t2_p3_rc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t2_p3_rc1" class="cartao-text"></strong>
+                                    <strong id="t2_p3_rc2" class="cartao-text"></strong>
+                                </div>
                             </td>
                         </tr>
-                    
-                        <tr>
-                            <td colspan="5"><strong id="t2_p4_name" class="nome-jogador"></strong></td>
-                            <td class="double-right" colspan="1" id="t2_p4_n" style="text-align: center;"></td>
+
+                        <tr class="player-row" id="t2_row_4">
+                            <td colspan="5" class="double-right"><strong id="t2_p4_name" class="nome-jogador"></strong></td>
                             <td class="double-right col-dinamica-1" id="t2_p4_dinamica_1" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-2" id="t2_p4_dinamica_2" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-3" id="t2_p4_dinamica_3" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-4" id="t2_p4_dinamica_4" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-5" id="t2_p4_dinamica_5" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-6" id="t2_p4_dinamica_6" style="display:none; text-align:center;"></td>
                             <td class="double-right col-ini-cell" colspan="2"></td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t2_p4_yc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t2_p4_yc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t2_p4_yc1" class="cartao-text"></strong>
+                                    <strong id="t2_p4_yc2" class="cartao-text"></strong>
+                                </div>
                             </td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t2_p4_rc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t2_p4_rc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t2_p4_rc1" class="cartao-text"></strong>
+                                    <strong id="t2_p4_rc2" class="cartao-text"></strong>
+                                </div>
                             </td>
                         </tr>
-                    
-                        <tr>
-                            <td colspan="5"><strong id="t2_p5_name" class="nome-jogador"></strong></td>
-                            <td class="double-right" colspan="1" id="t2_p5_n" style="text-align: center;"></td>
+
+                        <tr class="player-row" id="t2_row_5">
+                            <td colspan="5" class="double-right"><strong id="t2_p5_name" class="nome-jogador"></strong></td>
                             <td class="double-right col-dinamica-1" id="t2_p5_dinamica_1" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-2" id="t2_p5_dinamica_2" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-3" id="t2_p5_dinamica_3" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-4" id="t2_p5_dinamica_4" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-5" id="t2_p5_dinamica_5" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-6" id="t2_p5_dinamica_6" style="display:none; text-align:center;"></td>
                             <td class="double-right col-ini-cell" colspan="2"></td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t2_p5_yc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t2_p5_yc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t2_p5_yc1" class="cartao-text"></strong>
+                                    <strong id="t2_p5_yc2" class="cartao-text"></strong>
+                                </div>
                             </td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t2_p5_rc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t2_p5_rc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t2_p5_rc1" class="cartao-text"></strong>
+                                    <strong id="t2_p5_rc2" class="cartao-text"></strong>
+                                </div>
                             </td>
                         </tr>
-                    
-                        <tr>
-                            <td colspan="5"><strong id="t2_p6_name" class="nome-jogador"></strong></td>
-                            <td class="double-right" colspan="1" id="t2_p6_n" style="text-align: center;"></td>
+
+                        <tr class="player-row" id="t2_row_6">
+                            <td colspan="5" class="double-right"><strong id="t2_p6_name" class="nome-jogador"></strong></td>
                             <td class="double-right col-dinamica-1" id="t2_p6_dinamica_1" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-2" id="t2_p6_dinamica_2" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-3" id="t2_p6_dinamica_3" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-4" id="t2_p6_dinamica_4" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-5" id="t2_p6_dinamica_5" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-6" id="t2_p6_dinamica_6" style="display:none; text-align:center;"></td>
                             <td class="double-right col-ini-cell" colspan="2"></td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t2_p6_yc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t2_p6_yc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t2_p6_yc1" class="cartao-text"></strong>
+                                    <strong id="t2_p6_yc2" class="cartao-text"></strong>
+                                </div>
                             </td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t2_p6_rc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t2_p6_rc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t2_p6_rc1" class="cartao-text"></strong>
+                                    <strong id="t2_p6_rc2" class="cartao-text"></strong>
+                                </div>
                             </td>
                         </tr>
-                    
-                        <tr>
-                            <td colspan="5"><strong id="t2_p7_name" class="nome-jogador"></strong></td>
-                            <td class="double-right" colspan="1" id="t2_p7_n" style="text-align: center;"></td>
+
+                        <tr class="player-row" id="t2_row_7">
+                            <td colspan="5" class="double-right"><strong id="t2_p7_name" class="nome-jogador"></strong></td>
                             <td class="double-right col-dinamica-1" id="t2_p7_dinamica_1" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-2" id="t2_p7_dinamica_2" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-3" id="t2_p7_dinamica_3" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-4" id="t2_p7_dinamica_4" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-5" id="t2_p7_dinamica_5" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-6" id="t2_p7_dinamica_6" style="display:none; text-align:center;"></td>
                             <td class="double-right col-ini-cell" colspan="2"></td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t2_p7_yc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t2_p7_yc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t2_p7_yc1" class="cartao-text"></strong>
+                                    <strong id="t2_p7_yc2" class="cartao-text"></strong>
+                                </div>
                             </td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t2_p7_rc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t2_p7_rc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t2_p7_rc1" class="cartao-text"></strong>
+                                    <strong id="t2_p7_rc2" class="cartao-text"></strong>
+                                </div>
                             </td>
                         </tr>
-                    
-                        <tr>
-                            <td colspan="5"><strong id="t2_p8_name" class="nome-jogador"></strong></td>
-                            <td class="double-right" colspan="1" id="t2_p8_n" style="text-align: center;"></td>
+
+                        <tr class="player-row" id="t2_row_8">
+                            <td colspan="5" class="double-right"><strong id="t2_p8_name" class="nome-jogador"></strong></td>
                             <td class="double-right col-dinamica-1" id="t2_p8_dinamica_1" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-2" id="t2_p8_dinamica_2" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-3" id="t2_p8_dinamica_3" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-4" id="t2_p8_dinamica_4" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-5" id="t2_p8_dinamica_5" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-6" id="t2_p8_dinamica_6" style="display:none; text-align:center;"></td>
                             <td class="double-right col-ini-cell" colspan="2"></td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t2_p8_yc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t2_p8_yc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t2_p8_yc1" class="cartao-text"></strong>
+                                    <strong id="t2_p8_yc2" class="cartao-text"></strong>
+                                </div>
                             </td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t2_p8_rc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t2_p8_rc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t2_p8_rc1" class="cartao-text"></strong>
+                                    <strong id="t2_p8_rc2" class="cartao-text"></strong>
+                                </div>
                             </td>
                         </tr>
-                    
-                        <tr>
-                            <td colspan="5"><strong id="t2_p9_name" class="nome-jogador"></strong></td>
-                            <td class="double-right" colspan="1" id="t2_p9_n" style="text-align: center;"></td>
+
+                        <tr class="player-row" id="t2_row_9">
+                            <td colspan="5" class="double-right"><strong id="t2_p9_name" class="nome-jogador"></strong></td>
                             <td class="double-right col-dinamica-1" id="t2_p9_dinamica_1" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-2" id="t2_p9_dinamica_2" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-3" id="t2_p9_dinamica_3" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-4" id="t2_p9_dinamica_4" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-5" id="t2_p9_dinamica_5" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-6" id="t2_p9_dinamica_6" style="display:none; text-align:center;"></td>
                             <td class="double-right col-ini-cell" colspan="2"></td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t2_p9_yc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t2_p9_yc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t2_p9_yc1" class="cartao-text"></strong>
+                                    <strong id="t2_p9_yc2" class="cartao-text"></strong>
+                                </div>
                             </td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t2_p9_rc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t2_p9_rc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t2_p9_rc1" class="cartao-text"></strong>
+                                    <strong id="t2_p9_rc2" class="cartao-text"></strong>
+                                </div>
                             </td>
                         </tr>
-                    
-                        <tr>
-                            <td colspan="5"><strong id="t2_p10_name" class="nome-jogador"></strong></td>
-                            <td class="double-right" colspan="1" id="t2_p10_n" style="text-align: center;"></td>
+
+                        <tr class="player-row" id="t2_row_10">
+                            <td colspan="5" class="double-right"><strong id="t2_p10_name" class="nome-jogador"></strong></td>
                             <td class="double-right col-dinamica-1" id="t2_p10_dinamica_1" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-2" id="t2_p10_dinamica_2" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-3" id="t2_p10_dinamica_3" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-4" id="t2_p10_dinamica_4" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-5" id="t2_p10_dinamica_5" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-6" id="t2_p10_dinamica_6" style="display:none; text-align:center;"></td>
                             <td class="double-right col-ini-cell" colspan="2"></td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t2_p10_yc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t2_p10_yc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t2_p10_yc1" class="cartao-text"></strong>
+                                    <strong id="t2_p10_yc2" class="cartao-text"></strong>
+                                </div>
                             </td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t2_p10_rc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t2_p10_rc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t2_p10_rc1" class="cartao-text"></strong>
+                                    <strong id="t2_p10_rc2" class="cartao-text"></strong>
+                                </div>
                             </td>
                         </tr>
-                    
-                        <tr>
-                            <td colspan="5"><strong id="t2_p11_name" class="nome-jogador"></strong></td>
-                            <td class="double-right" colspan="1" id="t2_p11_n" style="text-align: center;"></td>
+
+                        <tr class="player-row" id="t2_row_11">
+                            <td colspan="5" class="double-right"><strong id="t2_p11_name" class="nome-jogador"></strong></td>
                             <td class="double-right col-dinamica-1" id="t2_p11_dinamica_1" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-2" id="t2_p11_dinamica_2" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-3" id="t2_p11_dinamica_3" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-4" id="t2_p11_dinamica_4" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-5" id="t2_p11_dinamica_5" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-6" id="t2_p11_dinamica_6" style="display:none; text-align:center;"></td>
                             <td class="double-right col-ini-cell" colspan="2"></td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t2_p11_yc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t2_p11_yc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t2_p11_yc1" class="cartao-text"></strong>
+                                    <strong id="t2_p11_yc2" class="cartao-text"></strong>
+                                </div>
                             </td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t2_p11_rc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t2_p11_rc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t2_p11_rc1" class="cartao-text"></strong>
+                                    <strong id="t2_p11_rc2" class="cartao-text"></strong>
+                                </div>
                             </td>
                         </tr>
-                    
-                        <tr>
-                            <td colspan="5"><strong id="t2_p12_name" class="nome-jogador"></strong></td>
-                            <td class="double-right" colspan="1" id="t2_p12_n" style="text-align: center;"></td>
+
+                        <tr class="player-row" id="t2_row_12">
+                            <td colspan="5" class="double-right"><strong id="t2_p12_name" class="nome-jogador"></strong></td>
                             <td class="double-right col-dinamica-1" id="t2_p12_dinamica_1" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-2" id="t2_p12_dinamica_2" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-3" id="t2_p12_dinamica_3" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-4" id="t2_p12_dinamica_4" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-5" id="t2_p12_dinamica_5" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-6" id="t2_p12_dinamica_6" style="display:none; text-align:center;"></td>
                             <td class="double-right col-ini-cell" colspan="2"></td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t2_p12_yc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t2_p12_yc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t2_p12_yc1" class="cartao-text"></strong>
+                                    <strong id="t2_p12_yc2" class="cartao-text"></strong>
+                                </div>
                             </td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t2_p12_rc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t2_p12_rc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t2_p12_rc1" class="cartao-text"></strong>
+                                    <strong id="t2_p12_rc2" class="cartao-text"></strong>
+                                </div>
                             </td>
                         </tr>
-                    
-                        <tr>
-                            <td colspan="5"><strong id="t2_p13_name" class="nome-jogador"></strong></td>
-                            <td class="double-right" colspan="1" id="t2_p13_n" style="text-align: center;"></td>
+
+                        <tr class="player-row" id="t2_row_13">
+                            <td colspan="5" class="double-right"><strong id="t2_p13_name" class="nome-jogador"></strong></td>
                             <td class="double-right col-dinamica-1" id="t2_p13_dinamica_1" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-2" id="t2_p13_dinamica_2" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-3" id="t2_p13_dinamica_3" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-4" id="t2_p13_dinamica_4" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-5" id="t2_p13_dinamica_5" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-6" id="t2_p13_dinamica_6" style="display:none; text-align:center;"></td>
                             <td class="double-right col-ini-cell" colspan="2"></td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t2_p13_yc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t2_p13_yc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t2_p13_yc1" class="cartao-text"></strong>
+                                    <strong id="t2_p13_yc2" class="cartao-text"></strong>
+                                </div>
                             </td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t2_p13_rc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t2_p13_rc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t2_p13_rc1" class="cartao-text"></strong>
+                                    <strong id="t2_p13_rc2" class="cartao-text"></strong>
+                                </div>
                             </td>
                         </tr>
-                    
-                        <tr>
-                            <td colspan="5"><strong id="t2_p14_name" class="nome-jogador"></strong></td>
-                            <td class="double-right" colspan="1" id="t2_p14_n" style="text-align: center;"></td>
+
+                        <tr class="player-row" id="t2_row_14">
+                            <td colspan="5" class="double-right"><strong id="t2_p14_name" class="nome-jogador"></strong></td>
                             <td class="double-right col-dinamica-1" id="t2_p14_dinamica_1" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-2" id="t2_p14_dinamica_2" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-3" id="t2_p14_dinamica_3" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-4" id="t2_p14_dinamica_4" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-5" id="t2_p14_dinamica_5" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-6" id="t2_p14_dinamica_6" style="display:none; text-align:center;"></td>
                             <td class="double-right col-ini-cell" colspan="2"></td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t2_p14_yc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t2_p14_yc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t2_p14_yc1" class="cartao-text"></strong>
+                                    <strong id="t2_p14_yc2" class="cartao-text"></strong>
+                                </div>
                             </td>
-                            <td class="double-right" colspan="3" style="text-align: center; white-space: nowrap;">
-                                <strong id="t2_p14_rc1" style="display: inline-block; width: 15px; text-align: center;"></strong> | 
-                                <strong id="t2_p14_rc2" style="display: inline-block; width: 15px; text-align: center;"></strong>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t2_p14_rc1" class="cartao-text"></strong>
+                                    <strong id="t2_p14_rc2" class="cartao-text"></strong>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="player-row" id="t2_row_15">
+                            <td colspan="5" class="double-right"><strong id="t2_p15_name" class="nome-jogador"></strong></td>
+                            <td class="double-right col-dinamica-1" id="t2_p15_dinamica_1" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-2" id="t2_p15_dinamica_2" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-3" id="t2_p15_dinamica_3" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-4" id="t2_p15_dinamica_4" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-5" id="t2_p15_dinamica_5" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-6" id="t2_p15_dinamica_6" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-ini-cell" colspan="2"></td>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t2_p15_yc1" class="cartao-text"></strong>
+                                    <strong id="t2_p15_yc2" class="cartao-text"></strong>
+                                </div>
+                            </td>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t2_p15_rc1" class="cartao-text"></strong>
+                                    <strong id="t2_p15_rc2" class="cartao-text"></strong>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="player-row" id="t2_row_16">
+                            <td colspan="5" class="double-right"><strong id="t2_p16_name" class="nome-jogador"></strong></td>
+                            <td class="double-right col-dinamica-1" id="t2_p16_dinamica_1" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-2" id="t2_p16_dinamica_2" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-3" id="t2_p16_dinamica_3" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-4" id="t2_p16_dinamica_4" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-5" id="t2_p16_dinamica_5" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-6" id="t2_p16_dinamica_6" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-ini-cell" colspan="2"></td>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t2_p16_yc1" class="cartao-text"></strong>
+                                    <strong id="t2_p16_yc2" class="cartao-text"></strong>
+                                </div>
+                            </td>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t2_p16_rc1" class="cartao-text"></strong>
+                                    <strong id="t2_p16_rc2" class="cartao-text"></strong>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="player-row" id="t2_row_17">
+                            <td colspan="5" class="double-right"><strong id="t2_p17_name" class="nome-jogador"></strong></td>
+                            <td class="double-right col-dinamica-1" id="t2_p17_dinamica_1" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-2" id="t2_p17_dinamica_2" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-3" id="t2_p17_dinamica_3" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-4" id="t2_p17_dinamica_4" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-5" id="t2_p17_dinamica_5" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-6" id="t2_p17_dinamica_6" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-ini-cell" colspan="2"></td>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t2_p17_yc1" class="cartao-text"></strong>
+                                    <strong id="t2_p17_yc2" class="cartao-text"></strong>
+                                </div>
+                            </td>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t2_p17_rc1" class="cartao-text"></strong>
+                                    <strong id="t2_p17_rc2" class="cartao-text"></strong>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="player-row" id="t2_row_18">
+                            <td colspan="5" class="double-right"><strong id="t2_p18_name" class="nome-jogador"></strong></td>
+                            <td class="double-right col-dinamica-1" id="t2_p18_dinamica_1" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-2" id="t2_p18_dinamica_2" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-3" id="t2_p18_dinamica_3" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-4" id="t2_p18_dinamica_4" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-5" id="t2_p18_dinamica_5" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-6" id="t2_p18_dinamica_6" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-ini-cell" colspan="2"></td>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t2_p18_yc1" class="cartao-text"></strong>
+                                    <strong id="t2_p18_yc2" class="cartao-text"></strong>
+                                </div>
+                            </td>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t2_p18_rc1" class="cartao-text"></strong>
+                                    <strong id="t2_p18_rc2" class="cartao-text"></strong>
+                                </div>
+                            </td>
+                        </tr>
+
+                        <tr class="player-row" id="t2_row_19">
+                            <td colspan="5" class="double-right"><strong id="t2_p19_name" class="nome-jogador"></strong></td>
+                            <td class="double-right col-dinamica-1" id="t2_p19_dinamica_1" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-2" id="t2_p19_dinamica_2" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-3" id="t2_p19_dinamica_3" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-4" id="t2_p19_dinamica_4" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-5" id="t2_p19_dinamica_5" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-6" id="t2_p19_dinamica_6" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-ini-cell" colspan="2"></td>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t2_p19_yc1" class="cartao-text"></strong>
+                                    <strong id="t2_p19_yc2" class="cartao-text"></strong>
+                                </div>
+                            </td>
+                            <td class="double-right p-0" colspan="3">
+                                <div class="cartao-flex">
+                                    <strong id="t2_p19_rc1" class="cartao-text"></strong>
+                                    <strong id="t2_p19_rc2" class="cartao-text"></strong>
+                                </div>
                             </td>
                         </tr>
                     
-                        <tr>
+                        <tr id="t2_row_coach">
                             <td colspan="5" style="text-align: left; padding-left: 5px;">Técnico:</td>
-                            <td class="double-right" colspan="1"></td>
                             <td class="double-right col-dinamica-1" id="t2_p_din_1" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-2" id="t2_p_din_2" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-3" id="t2_p_din_3" style="display:none; text-align:center;"></td>
                             <td class="double-right col-dinamica-4" id="t2_p_din_4" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-5" id="t2_p_din_5" style="display:none; text-align:center;"></td>
+                            <td class="double-right col-dinamica-6" id="t2_p_din_6" style="display:none; text-align:center;"></td>
                             <td class="double-right col-ini-cell" colspan="2"></td>
                             <td class="double-right" colspan="3"></td>
                             <td class="double-right" colspan="3"></td>
                         </tr>
-                        
-                        <tr><td colspan="16"></td></tr>
-                        <tr><td colspan="16"></td></tr>
-                        <tr><td colspan="16"></td></tr>
+                        <tr><td colspan="17"></td></tr>
+                        <tr><td colspan="17"></td></tr>
+                        <tr><td colspan="17"></td></tr>
                     </tbody>
                 </table>
                 <div class="side-stats rotated-v">
@@ -855,7 +1236,7 @@
                     elementosClass.forEach(el => el.innerText = val || "");
                 };
 
-                // --- 1. CABEÇALHO GERAL ---
+                // --- CABEÇALHO GERAL ---
                 if (d.general) {
                     set('general_title_name', d.general.title?.name);
                     set('general_title_value', d.general.title?.value); 
@@ -887,7 +1268,9 @@
                     }
                 }
 
-                // --- 1.5. LÓGICA DO "STARTER" (INÍCIO) ---
+                // ==========================================
+                // BLINDAGEM MATEMÁTICA E LÓGICA DE LINHAS
+                // ==========================================
                 let hasInicio = d.starter !== false;
                 if (!hasInicio) {
                     document.querySelectorAll('.col-ini, .col-ini-cell').forEach(el => {
@@ -895,43 +1278,66 @@
                     });
                 }
 
+                // Puxa o limite exato definido no JSON
                 let limiteExibicao = d.qtd_players ? parseInt(d.qtd_players) : 15;
-                if (limiteExibicao > 15) limiteExibicao = 15;
 
-                // --- 2. PREPARANDO OS SLOTS DINÂMICOS E LARGURAS ---
+                // 1. Somamos as larguras das colunas fixas
+                let larguraFixa = 39; // Amarelos(12) + Vermelhos(12) + Gols(15)
+                if (hasInicio) larguraFixa += 12; // Início(12)
+                
+                // 2. Criamos as dinâmicas e somamos a largura
                 const colunasDinamicas = d["players-column"] || [];
                 let totalPorcentagemDinamica = 0;
+                let totalSizeColunas = 0;
 
-                // Escreve o texto do JSON APENAS no cabeçalho (TH) e injeta largura
+                colunasDinamicas.forEach((col, index) => {
+                    if (index < 6) totalSizeColunas += (col.size || 0); // tabela2 suporta até 6 slots
+                });
+
+                // Blindagem de largura (Escalonamento Seguro)
+                let espacoRestante = 100 - larguraFixa;
+                let limiteMaximoDinamico = espacoRestante - 15; // Deixa 15% reservado e blindado para o Nome do Jogador
+                if(limiteMaximoDinamico < 15) limiteMaximoDinamico = 15; // Check de sanidade
+                
+                let fatorMultiplicacao = 4; // Multiplicador padrão
+
+                // Se o tamanho total das colunas extras for estourar o limite, ele achata a multiplicação
+                if (totalSizeColunas > 0 && (totalSizeColunas * fatorMultiplicacao > limiteMaximoDinamico)) {
+                    fatorMultiplicacao = limiteMaximoDinamico / totalSizeColunas;
+                }
+
                 colunasDinamicas.forEach((col, index) => {
                     const slotNumero = index + 1;
-                    if (slotNumero > 4) return;
+                    if (slotNumero > 6) return; 
 
-                    const largura = col.size * 5; 
+                    let largura = (col.size || 0) * fatorMultiplicacao; 
+                    if (col.size > 0 && largura < 1.5) largura = 1.5;
+
                     totalPorcentagemDinamica += largura;
 
                     document.querySelectorAll(`.col-dinamica-${slotNumero}`).forEach(el => {
-                        el.style.display = "table-cell";
-                        
-                        if(el.tagName.toLowerCase() === 'th') {
-                            el.style.setProperty('width', `${largura}%`, 'important');
-                            el.style.setProperty('min-width', `${largura}%`, 'important');
-                            el.style.setProperty('max-width', `${largura}%`, 'important');
-                            const tagStrong = el.querySelector('strong');
-                            if (tagStrong) {
-                                tagStrong.innerText = col.name;
-                            } else {
-                                el.innerText = col.name;
+                        if (col.size === 0) {
+                            el.style.display = "none";
+                        } else {
+                            el.style.display = "table-cell";
+                            if(el.tagName.toLowerCase() === 'th') {
+                                el.style.setProperty('width', `${largura}%`, 'important');
+                                el.style.setProperty('min-width', `${largura}%`, 'important');
+                                el.style.setProperty('max-width', `${largura}%`, 'important');
+                                const tagStrong = el.querySelector('strong');
+                                if (tagStrong) {
+                                    tagStrong.innerText = col.name;
+                                } else {
+                                    el.innerText = col.name;
+                                }
                             }
                         }
                     });
                 });
 
-                // A matemática de largura protege a coluna de gols perfeitamente
-                let larguraNome = 32; // Base original blindada
-                if (!hasInicio) larguraNome += 12; // Se Início sumir, o Nome absorve os 12% dele
-                larguraNome -= totalPorcentagemDinamica; // Desconta apenas o espaço das colunas dinâmicas ativadas
-                if (larguraNome < 10) larguraNome = 10; // Trava de segurança
+                // 3. A Coluna do Nome do Jogador recebe o resto
+                let larguraNome = 100 - larguraFixa - totalPorcentagemDinamica; 
+                if (larguraNome < 10) larguraNome = 10; 
                 
                 document.querySelectorAll('.col-jog').forEach(el => {
                     el.style.setProperty('width', `${larguraNome}%`, 'important');
@@ -939,82 +1345,92 @@
                     el.style.setProperty('max-width', `${larguraNome}%`, 'important');
                 });
 
-                // --- 3. MONTAR TABELA DE JOGADORES ---
+
+                // --- LÓGICA DE ABREVIAÇÃO DO NOME ---
+                
+                let sufixo = '';
+                if (hasInicio) {
+                    // Tabela mais apertada (12% a menos porque a coluna "Início" está visível)
+                    if (totalSizeColunas >= 6) sufixo = '_25';
+                    else if (totalSizeColunas >= 5) sufixo = '_30';
+                    else if (totalSizeColunas >= 4) sufixo = '_40';
+                } else {
+                    // Tabela mais folgada (Sem coluna "Início")
+                     if (totalSizeColunas >= 10) sufixo = '_25';
+                    else if (totalSizeColunas >= 7) sufixo = '_30';
+                    else if (totalSizeColunas >= 2) sufixo = '_40';
+                }
+                
+                let propriedadeNome = sufixo === '' ? 'name' : `name${sufixo}`;
+
+
+                // --- MONTAR TABELA DE JOGADORES ---
                 function montarTabela(timeData, prefixo) {
                     if (!timeData) return;
 
                     const qtdColunasExtras = colunasDinamicas.length;
-                    let totalSizeColunas = 0;
-                    if (colunasDinamicas) {
-                        colunasDinamicas.forEach(col => {
-                            totalSizeColunas += (col.size || 0); 
-                        });
-                    }
 
-                    for (let i = 0; i < limiteExibicao; i++) {
+                    // Percorre até 20 (as linhas pré-montadas no HTML)
+                    for (let i = 0; i < 20; i++) {
+                        const tr = document.getElementById(`${prefixo}_row_${i}`);
+                        
+                        // Oculta linhas que sobram do qtd_players
+                        if (i >= limiteExibicao) {
+                            if (tr) tr.style.display = 'none';
+                            continue; 
+                        } else {
+                            if (tr) tr.style.display = '';
+                        }
+
                         const p = (timeData.player && timeData.player[i]) ? timeData.player[i] : null;
                         const isSuspenso = p && (p.supend === true || p.red_card > 0);
                         
                         const elName = document.getElementById(`${prefixo}_p${i}_name`);
-                        const elN = document.getElementById(`${prefixo}_p${i}_n`);
                         
-                        let sufixo = '';
-                        if (totalSizeColunas >= 12) { 
-                            sufixo = '_6';
-                        } else if (totalSizeColunas >= 11) { 
-                            sufixo = '_25';
-                        } else if (totalSizeColunas >= 6) { 
-                            sufixo = '_30';
-                        } else if (totalSizeColunas >= 2) {  
-                            sufixo = '_40'; 
-                        } else {
-                            sufixo = ''; 
-                        } 
-                        
-                        let propriedadeNome = sufixo === '' ? 'name' : `name${sufixo}`;
-                        let nomeExibir = p ? (p[propriedadeNome] || p.name || "") : "";
-
                         const elYc1 = document.getElementById(`${prefixo}_p${i}_yc1`);
                         const elYc2 = document.getElementById(`${prefixo}_p${i}_yc2`);
                         const elRc1 = document.getElementById(`${prefixo}_p${i}_rc1`);
                         const elRc2 = document.getElementById(`${prefixo}_p${i}_rc2`);
 
                         if (elName) {
+                            // Tenta a chave encurtada. Se vier vazio, tenta a name_40, se vier vazio, puxa a name original
+                            let nomeExibir = p ? (p[propriedadeNome] || p.name_40 || p.name || "") : "";
                             elName.innerText = nomeExibir;
 
+                            // Ajuste cosmético da fonte baseado no sufixo escolhido
                             if (sufixo === '_6') {
-                                elName.style.setProperty('font-size', '10px', 'important');
+                                elName.style.setProperty('font-size', '12px', 'important');
                             } else if (sufixo === '_25') {
-                                elName.style.setProperty('font-size', '8px', 'important');
+                                elName.style.setProperty('font-size', '12px', 'important');
                             } else {
                                 elName.style.removeProperty('font-size'); 
                             }
 
                             if (isSuspenso) {
                                 elName.style.textDecoration = 'line-through';
-                                elName.style.color = '#777';
+                                elName.style.color = 'red';
                             } else {
                                 elName.style.textDecoration = 'none';
                                 elName.style.color = 'inherit';
                             }
                         }
 
-                        if (elN) elN.innerText = p && p.n ? p.n : '';
-
-                        // Preenche Slots Dinâmicos e garante que a linha do Técnico fica limpa!
-                        for (let k = 1; k <= 4; k++) {
+                        for (let k = 1; k <= 6; k++) {
                             const elTd = document.getElementById(`${prefixo}_p${i}_dinamica_${k}`);
-                            const elTdTec = document.getElementById(`${prefixo}_p_din_${k}`); // Slot na linha do Técnico
+                            const elTdTec = document.getElementById(`${prefixo}_p_din_${k}`);
                             
                             if (elTd) {
                                 if (k <= qtdColunasExtras) {
                                     const colConfig = colunasDinamicas[k - 1]; 
                                     const chaveDinamica = colConfig.player_key; 
-                                    elTd.style.display = "table-cell";
-                                    elTd.innerText = p && p[chaveDinamica] ? p[chaveDinamica] : '';
-                                    if(elTdTec) {
-                                        elTdTec.style.display = "table-cell";
-                                        elTdTec.innerText = ''; // Não escreve NADA no Técnico!
+                                    
+                                    if(colConfig.size !== 0){
+                                        elTd.style.display = "table-cell";
+                                        elTd.innerText = p && p[chaveDinamica] ? p[chaveDinamica] : '';
+                                        if(elTdTec) {
+                                            elTdTec.style.display = "table-cell";
+                                            elTdTec.innerText = ''; 
+                                        }
                                     }
                                 } else {
                                     elTd.style.display = "none";
@@ -1023,15 +1439,19 @@
                             }
                         }
 
-                        // Cartões
-                        if (elYc1) elYc1.innerText = p && p.yellow_card >= 1 ? 'X' : '';
-                        if (elYc2) elYc2.innerText = p && p.yellow_card >= 2 ? 'X' : '';
-                        if (elRc1) elRc1.innerText = p && p.red_card >= 1 ? 'X' : '';
-                        if (elRc2) elRc2.innerText = p && p.red_card >= 2 ? 'X' : '';
+                        if (elYc1) elYc1.innerText = (p && p.yellow_card >= 1) ? (p.yellow_card_time_1 || 'X') : '';
+                        if (elYc2) elYc2.innerText = (p && p.yellow_card >= 2) ? (p.yellow_card_time_2 || 'X') : '';
+                        if (elRc1) elRc1.innerText = (p && p.red_card >= 1) ? (p.red_card_time_1 || 'X') : '';
+                        if (elRc2) elRc2.innerText = (p && p.red_card >= 2) ? (p.red_card_time_2 || 'X') : '';
+                    }
+
+                    // A célula de GOLS ajusta o tamanho dela dependendo de quantos jogadores apareceram
+                    const golsCell = document.getElementById(`${prefixo}_gols_cell`);
+                    if (golsCell) {
+                        golsCell.rowSpan = limiteExibicao + 1; // Soma 1 da linha do Técnico
                     }
                 }
 
-                // --- 4. PREENCHER PALAVRAS E GOLS ---
                 if (d.words) {
                     Object.keys(d.words).forEach(chave => set(`words_${chave}`, d.words[chave]));
                 }
@@ -1040,14 +1460,12 @@
                     if (!timeData || !timeData.goals) return;
                     timeData.goals.forEach((gol, i) => {
                         set(`${prefixo}_gol_n_${i}`, gol.n || '');
-                        
                         const min = String(gol.minutes || 0).padStart(2, '0');
                         const seg = String(gol.seconds || 0).padStart(2, '0');
                         set(`${prefixo}_gol_time_${i}`, `${min}:${seg}`);
                     });
                 }
 
-                // --- EXECUÇÃO FINAL ---
                 set('team_1_name_header', d.team_1?.name);
                 set('team_2_name_header', d.team_2?.name);
                 set('team_1_name', d.team_1?.name);
@@ -1069,12 +1487,12 @@
 <style>
 /* Global */
 * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif; }
-body { background: #e0e0e0; display: flex; justify-content: center; padding: 20px; }
+body { background: #e0e0e0;  justify-self: center; padding: 20px; }
 
 .a4-container { 
     background: #fff; 
     width: 297mm; 
-    height: 210mm; /* A4 Exato */
+    height: 210mm; 
     padding: 8mm; 
     border: 1px solid #999; 
     display: flex; 
@@ -1084,7 +1502,7 @@ body { background: #e0e0e0; display: flex; justify-content: center; padding: 20p
 
 /* Cabeçalho Limpo e Centralizado */
 .top-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
-.spacer { width: 65px; } /* Equilibra o tamanho da logo para centralizar o título */
+.spacer { width: 65px; } 
 .center-title { display: flex; flex-direction: column; align-items: center; flex-grow: 1; }
 .center-title h1 { font-size: 26px; font-weight: normal; margin-bottom: 5px; }
 .score-line { display: flex; justify-content: center; align-items: center; gap: 15px; }
@@ -1104,14 +1522,13 @@ body { background: #e0e0e0; display: flex; justify-content: center; padding: 20p
 .team-table { 
     flex-grow: 1; 
     border-collapse: collapse; 
-    table-layout: fixed; 
+    table-layout: fixed !important; /* CRUCIAL para respeitar as larguras do JS */
     font-size: 9px !important; 
     width: 100% !important;
 }
 .team-table th, .team-table td { border: 1px solid #7c7979; font-size: 12px; padding: 0 4px; height: 13px !important; }
 .header-black th { background: #000; color: #fff; font-weight: normal; text-align: center; }
 
-/* A MÁGICA: Caption que simula a linha antiga perfeitamente, sem bugar a largura */
 caption { padding: 0; margin: 0; caption-side: top; }
 .caption-content {
     display: flex;
@@ -1125,26 +1542,21 @@ caption { padding: 0; margin: 0; caption-side: top; }
 .cap-tec { flex: 4; text-align: left; padding-left: 4px; border-right: 1px solid #7c7979; font-size: 12px; height: 22px; display: flex; align-items: center; color: #000;}
 .cap-cap { flex: 4; text-align: left; padding-left: 4px; font-size: 12px; height: 22px; display: flex; align-items: center; color: #000;}
 
-
 /* Colunas Base com as Larguras ABSOLUTAS E BLINDADAS */
-.col-jog { width: 32% !important; min-width: 32% !important; max-width: 32% !important; text-align: left !important; padding-left: 4px !important; }
-.col-n { width: 4% !important; min-width: 4% !important; max-width: 4% !important; text-align: center; }
+.col-jog { text-align: left !important; padding-left: 4px !important; }
 .col-ini { width: 12% !important; min-width: 12% !important; max-width: 12% !important; }
 .col-ama { width: 12% !important; min-width: 12% !important; max-width: 12% !important; }
 .col-ver { width: 12% !important; min-width: 12% !important; max-width: 12% !important; }
-/* MURALHA DA COLUNA DE GOLS: Intocável a 28% */
-.col-gol { width: 15% !important; min-width: 28% !important; max-width: 28% !important; background: #000 !important; color: #fff !important; }
+.col-gol { width: 15% !important; min-width: 15% !important; max-width: 15% !important; background: #000 !important; color: #fff !important; }
 
 /* Traços e Bordas Internas */
 .double-right { border-right: 3px double #000 !important; }
 
-/* Container da Célula de Gols */
+/* Gols */
 .gols-cell { padding: 0 !important; vertical-align: top !important; border: 1px solid #000 !important; }
 .gols-wrapper { display: flex !important; width: 100% !important; height: 100% !important; }
 .gols-col { flex: 1 !important; display: flex !important; flex-direction: column !important; border-right: 1px solid #000 !important; }
 .gols-col:last-child { border-right: none !important; }
-
-/* Item Individual de Gol */
 .gol-item { flex: 1 !important; display: flex !important; flex-direction: column !important; border-bottom: 1px solid #000 !important; justify-content: flex-start; padding: 0; overflow: hidden; }
 .gol-item:last-child { border-bottom: none !important; }
 .gol-top-row { height: 11px !important; display: flex; align-items: center; background: #fff; border-bottom: 1px solid #000; }
@@ -1181,12 +1593,52 @@ caption { padding: 0; margin: 0; caption-side: top; }
 .arb-table { flex: 1; }
 table.true-rotated.arb-table { width: 100px; }
 
-/* Efeitos Visuais Tabela */
-td[colspan="3"].double-right { position: relative !important; text-align: center !important; }
-td[colspan="3"].double-right::before { content: "|" !important; position: absolute !important; left: 50% !important; transform: translateX(-50%) !important; color: #000 !important; font-weight: normal !important; font-size: 14px !important; margin-top: -8px; }
+
+/* ========================================================================= */
+/* BLINDAGEM DE LARGURA - IMPEDE QUE TEXTOS GRANDES QUEBREM A TABELA         */
+/* ========================================================================= */
+th[class*="col-dinamica-"], td[class*="col-dinamica-"] {
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: clip !important;
+    max-width: 0 !important; /* CRUCIAL: Força a tabela a respeitar a largura do JS e cortar a palavra grande */
+}
+
+
+/* Efeitos Visuais Tabela - Cartões */
+td[colspan="3"].double-right { position: relative !important; text-align: center !important; font-size: 0 !important;}
 th.col-ama::before, th.col-ama::after, th.col-ver::before, th.col-ver::after { content: none !important; }
 
-/* OS 5 QUADRADINHOS DO INÍCIO (4 Linhas Frias de 1px) */
+/* Linha central dos cartões feita 100% no CSS (VOLTADO PARA O 50% EXATO) */
+tbody tr.player-row td[colspan="3"].double-right::before { 
+    content: "|" !important; 
+    position: absolute !important; 
+    left: 50% !important; 
+    top: 50% !important; 
+    transform: translate(-50%, -50%) !important; 
+    color: #000 !important; 
+    font-weight: normal !important; 
+    font-size: 17px !important; 
+}
+
+/* Flexbox para dividir o conteúdo dos cartões em 50% exatos */
+.p-0 { padding: 0 !important; font-size: 0 !important; }
+.cartao-flex {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+}
+.cartao-text {
+    display: inline-block;
+    width: 49%; /* Pega exatamente 50% da célula */
+    min-width: 0 !important; /* DESTRAVA O ZOOM */
+    text-align: center;
+    font-size: 11px !important;
+    font-weight: 300 !important;
+}
+
+/* OS 5 QUADRADINHOS DO INÍCIO */
 td.col-ini-cell { 
     position: relative !important; 
     background-image: linear-gradient(to right,
@@ -1198,8 +1650,6 @@ td.col-ini-cell {
     background-size: 100% 100%; 
 }
 th.col-ini { background-image: none !important; }
-
-tbody tr:not(:nth-last-child(1)) td[colspan="3"].double-right::before { content: "|" !important; position: absolute !important; left: 50% !important; transform: translateX(-50%) !important; color: #000 !important; font-weight: normal !important; font-size: 10px !important; }
 
 /* Configuração de Impressão */
 @media print {
@@ -1215,11 +1665,11 @@ tbody tr:not(:nth-last-child(1)) td[colspan="3"].double-right::before { content:
 
 /* --- TRAVA DE QUEBRA DE LINHA PARA OS NOMES --- */
 .team-table tbody td[colspan="5"] {
-    white-space: nowrap !important;     /* Proíbe o texto de pular para a linha de baixo */
-    overflow: hidden !important;        /* Esconde qualquer letra que passar do tamanho da coluna */
-    text-overflow: clip !important;     /* Coloca "..." no final caso o nome não caiba todo */
-    max-width: 0;                       /* Truque obrigatório para o corte funcionar em tabelas */
-    padding-left: 6px !important;       /* Dá aquele respiro/margem do lado esquerdo */
+    white-space: nowrap !important;
+    overflow: hidden !important;        
+    text-overflow: clip !important;     
+    max-width: 0;                       
+    padding-left: 6px !important;       
 }
 
 strong { font-weight: 600; }
