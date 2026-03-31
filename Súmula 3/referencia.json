@@ -1,23 +1,30 @@
 
 {
-    "qtd_players": 20,
-    "starter":true,
+    "qtd_players": 15,
+    "starter":false,
     "players-column": [
 
-              
-       {
-            "player_key": "ass",
-            "name": "Assinatura",
+           {
+            "player_key": "n",
+            "name": "Nº",
             "size":3
         },
+              
+       {
+            "player_key": "doc",
+            "name": "DOCUMENTO",
+            "size":3
+        },
+
+      
         {
-            "player_key": "ass",
-            "name": "Assinatura",
+            "player_key": "age",
+            "name": "IDADE",
             "size":3
         },
           {
             "player_key": "ass",
-            "name": "Assinatura",
+            "name": "ASSINATURA",
             "size":3
         }
           
@@ -412,6 +419,10 @@
                 "doc": "551662",
                 "age": "",
                 "titular": "",
+                 "yellow_card_time_1":"1:10",
+                "yellow_card_time_2":"10:10",
+                "red_card_time_1":"12:10",
+                "red_card_time_2":"12:10",
                 "yellow_card": 2,
                 "red_card": 1,
                 "blue_card": 0,
