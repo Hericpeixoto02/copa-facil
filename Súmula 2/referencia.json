@@ -1,25 +1,27 @@
 
 {
-    "qtd_players": 20,
+    "qtd_players": 15 ,
     "starter":true,
     "players-column": [
 
-              
-       {
-            "player_key": "ass",
-            "name": "Assinatura",
-            "size":4
-        },
+
+        {
+        "player_key": "n",
+        "name": "Nº",
+        "size": 1      
+    },
+
+     {
+        "player_key": "age",
+        "name": "Idade",
+        "size": 3
+    },   
         {
             "player_key": "ass",
             "name": "Assinatura",
-            "size":4
-        },
-          {
-            "player_key": "ass",
-            "name": "Assinatura",
-            "size":4
+            "size": 1
         }
+       
           
      
     ],
@@ -103,14 +105,14 @@
                 "name_6": "MAURO G.",
                 "name_25": "MAURO G. LIRA",
                 "name_30": "MAURO GONÇALVES LIRA",
-                "name_40": "MAURO GONÇALVES",
+                "name_40": "MAURO GONÇALVES DE LIRA ",
                 "nickname": "",
                 "n": "11",
                 "doc": "551663",
                 "age": "15",
                 "titular": "",
                 "yellow_card": 2,
-                "yellow_card_time_1":"12:10",
+                "yellow_card_time_1":"11:10",
                 "yellow_card_time_2":"12:10",
                 "red_card_time_1":"12:10",
                 "red_card_time_2":"12:10",
@@ -138,7 +140,7 @@
                 "name": "JOSE  AUGUSTO CARVALHO DO ROSARIO ",
                 "name_6": "JOSE A.",
                 "name_25": "JOSE A. C. ROSARIO",
-                "name_30": "JOSE A. C. ROSARIO",
+                "name_30": "JOSE AUGUSTO C. ROSARIO",
                 "name_40": "JOSE AUGUSTO CARVALHO DO ROSARIO",
                 "nickname": "",
                 "n": "15",
@@ -412,6 +414,10 @@
                 "doc": "551662",
                 "age": "",
                 "titular": "",
+                "yellow_card_time_1":"09:05",
+                "yellow_card_time_2":"05:10",
+                "red_card_time_1":"11:20",
+                "red_card_time_2":"12:50",
                 "yellow_card": 2,
                 "red_card": 1,
                 "blue_card": 0,
