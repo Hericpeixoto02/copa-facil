@@ -70,9 +70,11 @@
     <table class="main-table">
         <thead>
             <tr>
-                <th class="col-doc">DOCUMENTO</th>
+                <th class="col-dinamica-1" style="display: none;"><strong></strong></th>
                 <th class="col-jog">JOGADORES</th>
-                <th class="col-n">Nº</th>
+                <th class="col-dinamica-2" style="display: none;"><strong></strong></th>
+                <th class="col-dinamica-3" style="display: none;"><strong></strong></th>
+                <th class="col-dinamica-4" style="display: none;"><strong></strong></th>
                 <th colspan="2" class="col-ama">AMARELOS</th>
                 <th colspan="2" class="col-ver">VERMELHOS</th>
                 <th class="col-sub">SUBSTITUIÇÕES</th>
@@ -80,148 +82,237 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td class="doc" id="team_1_doc_1"></td>
-                <td><strong id="team_1_player_1" class="nome-jogador"></strong></td>
-                <td id="team_1_n_1"></td>
-                <td id="team_1_yellow1_1" class="border-mid"></td><td id="team_1_yellow2_1"></td>
-                <td id="team_1_red1_1" class="border-mid"></td><td id="team_1_red2_1"></td>
+            <tr id="team_1_row_0">
+                <td class="col-dinamica-1" id="team_1_p0_dinamica_1" style="display:none; text-align:center;"></td>
+                <td class="nome-jogador"><strong id="team_1_player_1"></strong></td>
+                <td class="col-dinamica-2" id="team_1_p0_dinamica_2" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-3" id="team_1_p0_dinamica_3" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-4" id="team_1_p0_dinamica_4" style="display:none; text-align:center;"></td>
+                <td id="team_1_yellow1_1" class="border-mid cartao-text"></td><td id="team_1_yellow2_1" class="cartao-text"></td>
+                <td id="team_1_red1_1" class="border-mid cartao-text"></td><td id="team_1_red2_1" class="cartao-text"></td>
                 <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
                 <td colspan="2" class="f-num">1</td><td colspan="2" class="f-num">2</td><td colspan="2" class="f-num">3</td><td colspan="2" class="f-num">4</td><td colspan="2" class="f-num">5</td>
             </tr>
-            <tr>
-                <td class="doc" id="team_1_doc_2"></td>
-                <td><strong id="team_1_player_2" class="nome-jogador"></strong></td>
-                <td id="team_1_n_2"></td>
-                <td id="team_1_yellow1_2" class="border-mid"></td><td id="team_1_yellow2_2"></td>
-                <td id="team_1_red1_2" class="border-mid"></td><td id="team_1_red2_2"></td>
+            <tr id="team_1_row_1">
+                <td class="col-dinamica-1" id="team_1_p1_dinamica_1" style="display:none; text-align:center;"></td>
+                <td class="nome-jogador"><strong id="team_1_player_2"></strong></td>
+                <td class="col-dinamica-2" id="team_1_p1_dinamica_2" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-3" id="team_1_p1_dinamica_3" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-4" id="team_1_p1_dinamica_4" style="display:none; text-align:center;"></td>
+                <td id="team_1_yellow1_2" class="border-mid cartao-text"></td><td id="team_1_yellow2_2" class="cartao-text"></td>
+                <td id="team_1_red1_2" class="border-mid cartao-text"></td><td id="team_1_red2_2" class="cartao-text"></td>
                 <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
                 <td colspan="2" class="f-num">1</td><td colspan="2" class="f-num">2</td><td colspan="2" class="f-num">3</td><td colspan="2" class="f-num">4</td><td colspan="2" class="f-num">5</td>
             </tr>
-            <tr>
-                <td class="doc" id="team_1_doc_3"></td>
-                <td><strong id="team_1_player_3" class="nome-jogador"></strong></td>
-                <td id="team_1_n_3"></td>
-                <td id="team_1_yellow1_3" class="border-mid"></td><td id="team_1_yellow2_3"></td>
-                <td id="team_1_red1_3" class="border-mid"></td><td id="team_1_red2_3"></td>
+            <tr id="team_1_row_2">
+                <td class="col-dinamica-1" id="team_1_p2_dinamica_1" style="display:none; text-align:center;"></td>
+                <td class="nome-jogador"><strong id="team_1_player_3"></strong></td>
+                <td class="col-dinamica-2" id="team_1_p2_dinamica_2" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-3" id="team_1_p2_dinamica_3" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-4" id="team_1_p2_dinamica_4" style="display:none; text-align:center;"></td>
+                <td id="team_1_yellow1_3" class="border-mid cartao-text"></td><td id="team_1_yellow2_3" class="cartao-text"></td>
+                <td id="team_1_red1_3" class="border-mid cartao-text"></td><td id="team_1_red2_3" class="cartao-text"></td>
                 <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
                 <td colspan="10" class="time-title">PEDIDOS DE TEMPO</td>
             </tr>
-            <tr>
-                <td class="doc" id="team_1_doc_4"></td>
-                <td><strong id="team_1_player_4" class="nome-jogador"></strong></td>
-                <td id="team_1_n_4"></td>
-                <td id="team_1_yellow1_4" class="border-mid"></td><td id="team_1_yellow2_4"></td>
-                <td id="team_1_red1_4" class="border-mid"></td><td id="team_1_red2_4"></td>
+            <tr id="team_1_row_3">
+                <td class="col-dinamica-1" id="team_1_p3_dinamica_1" style="display:none; text-align:center;"></td>
+                <td class="nome-jogador"><strong id="team_1_player_4"></strong></td>
+                <td class="col-dinamica-2" id="team_1_p3_dinamica_2" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-3" id="team_1_p3_dinamica_3" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-4" id="team_1_p3_dinamica_4" style="display:none; text-align:center;"></td>
+                <td id="team_1_yellow1_4" class="border-mid cartao-text"></td><td id="team_1_yellow2_4" class="cartao-text"></td>
+                <td id="team_1_red1_4" class="border-mid cartao-text"></td><td id="team_1_red2_4" class="cartao-text"></td>
                 <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
                 <td colspan="10" class="time-periods"><div class="flex-periods"><span>1. PER</span><span>2. PER</span></div></td>
             </tr>
-            <tr>
-                <td class="doc" id="team_1_doc_5"></td>
-                <td><strong id="team_1_player_5" class="nome-jogador"></strong></td>
-                <td id="team_1_n_5"></td>
-                <td id="team_1_yellow1_5" class="border-mid"></td><td id="team_1_yellow2_5"></td>
-                <td id="team_1_red1_5" class="border-mid"></td><td id="team_1_red2_5"></td>
+            <tr id="team_1_row_4">
+                <td class="col-dinamica-1" id="team_1_p4_dinamica_1" style="display:none; text-align:center;"></td>
+                <td class="nome-jogador"><strong id="team_1_player_5"></strong></td>
+                <td class="col-dinamica-2" id="team_1_p4_dinamica_2" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-3" id="team_1_p4_dinamica_3" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-4" id="team_1_p4_dinamica_4" style="display:none; text-align:center;"></td>
+                <td id="team_1_yellow1_5" class="border-mid cartao-text"></td><td id="team_1_yellow2_5" class="cartao-text"></td>
+                <td id="team_1_red1_5" class="border-mid cartao-text"></td><td id="team_1_red2_5" class="cartao-text"></td>
                 <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
                 <td colspan="5"></td><td colspan="5"></td>
             </tr>
-            <tr>
-                <td class="doc" id="team_1_doc_6"></td>
-                <td><strong id="team_1_player_6" class="nome-jogador"></strong></td>
-                <td id="team_1_n_6"></td>
-                <td id="team_1_yellow1_6" class="border-mid"></td><td id="team_1_yellow2_6"></td>
-                <td id="team_1_red1_6" class="border-mid"></td><td id="team_1_red2_6"></td>
+            <tr id="team_1_row_5">
+                <td class="col-dinamica-1" id="team_1_p5_dinamica_1" style="display:none; text-align:center;"></td>
+                <td class="nome-jogador"><strong id="team_1_player_6"></strong></td>
+                <td class="col-dinamica-2" id="team_1_p5_dinamica_2" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-3" id="team_1_p5_dinamica_3" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-4" id="team_1_p5_dinamica_4" style="display:none; text-align:center;"></td>
+                <td id="team_1_yellow1_6" class="border-mid cartao-text"></td><td id="team_1_yellow2_6" class="cartao-text"></td>
+                <td id="team_1_red1_6" class="border-mid cartao-text"></td><td id="team_1_red2_6" class="cartao-text"></td>
                 <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
-                <td colspan="5" rowspan="16" class="col-sig">Capitão</td><td colspan="5" rowspan="16" class="col-sig">Técnico</td>
+                <td colspan="5" rowspan="15" class="col-sig" id="team_1_cap_cell">Capitão</td><td colspan="5" rowspan="15" class="col-sig" id="team_1_tec_cell">Técnico</td>
             </tr>
-            <tr>
-                <td class="doc" id="team_1_doc_7"></td>
-                <td><strong id="team_1_player_7" class="nome-jogador"></strong></td>
-                <td id="team_1_n_7"></td>
-                <td id="team_1_yellow1_7" class="border-mid"></td><td id="team_1_yellow2_7"></td>
-                <td id="team_1_red1_7" class="border-mid"></td><td id="team_1_red2_7"></td>
-                <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
-            </tr>
-            <tr>
-                <td class="doc" id="team_1_doc_8"></td>
-                <td><strong id="team_1_player_8" class="nome-jogador"></strong></td>
-                <td id="team_1_n_8"></td>
-                <td id="team_1_yellow1_8" class="border-mid"></td><td id="team_1_yellow2_8"></td>
-                <td id="team_1_red1_8" class="border-mid"></td><td id="team_1_red2_8"></td>
+            <tr id="team_1_row_6">
+                <td class="col-dinamica-1" id="team_1_p6_dinamica_1" style="display:none; text-align:center;"></td>
+                <td class="nome-jogador"><strong id="team_1_player_7"></strong></td>
+                <td class="col-dinamica-2" id="team_1_p6_dinamica_2" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-3" id="team_1_p6_dinamica_3" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-4" id="team_1_p6_dinamica_4" style="display:none; text-align:center;"></td>
+                <td id="team_1_yellow1_7" class="border-mid cartao-text"></td><td id="team_1_yellow2_7" class="cartao-text"></td>
+                <td id="team_1_red1_7" class="border-mid cartao-text"></td><td id="team_1_red2_7" class="cartao-text"></td>
                 <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
             </tr>
-            <tr>
-                <td class="doc" id="team_1_doc_9"></td>
-                <td><strong id="team_1_player_9" class="nome-jogador"></strong></td>
-                <td id="team_1_n_9"></td>
-                <td id="team_1_yellow1_9" class="border-mid"></td><td id="team_1_yellow2_9"></td>
-                <td id="team_1_red1_9" class="border-mid"></td><td id="team_1_red2_9"></td>
+            <tr id="team_1_row_7">
+                <td class="col-dinamica-1" id="team_1_p7_dinamica_1" style="display:none; text-align:center;"></td>
+                <td class="nome-jogador"><strong id="team_1_player_8"></strong></td>
+                <td class="col-dinamica-2" id="team_1_p7_dinamica_2" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-3" id="team_1_p7_dinamica_3" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-4" id="team_1_p7_dinamica_4" style="display:none; text-align:center;"></td>
+                <td id="team_1_yellow1_8" class="border-mid cartao-text"></td><td id="team_1_yellow2_8" class="cartao-text"></td>
+                <td id="team_1_red1_8" class="border-mid cartao-text"></td><td id="team_1_red2_8" class="cartao-text"></td>
                 <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
             </tr>
-            <tr>
-                <td class="doc" id="team_1_doc_10"></td>
-                <td><strong id="team_1_player_10" class="nome-jogador"></strong></td>
-                <td id="team_1_n_10"></td>
-                <td id="team_1_yellow1_10" class="border-mid"></td><td id="team_1_yellow2_10"></td>
-                <td id="team_1_red1_10" class="border-mid"></td><td id="team_1_red2_10"></td>
+            <tr id="team_1_row_8">
+                <td class="col-dinamica-1" id="team_1_p8_dinamica_1" style="display:none; text-align:center;"></td>
+                <td class="nome-jogador"><strong id="team_1_player_9"></strong></td>
+                <td class="col-dinamica-2" id="team_1_p8_dinamica_2" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-3" id="team_1_p8_dinamica_3" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-4" id="team_1_p8_dinamica_4" style="display:none; text-align:center;"></td>
+                <td id="team_1_yellow1_9" class="border-mid cartao-text"></td><td id="team_1_yellow2_9" class="cartao-text"></td>
+                <td id="team_1_red1_9" class="border-mid cartao-text"></td><td id="team_1_red2_9" class="cartao-text"></td>
                 <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
             </tr>
-            <tr>
-                <td class="doc" id="team_1_doc_11"></td>
-                <td><strong id="team_1_player_11" class="nome-jogador"></strong></td>
-                <td id="team_1_n_11"></td>
-                <td id="team_1_yellow1_11" class="border-mid"></td><td id="team_1_yellow2_11"></td>
-                <td id="team_1_red1_11" class="border-mid"></td><td id="team_1_red2_11"></td>
+            <tr id="team_1_row_9">
+                <td class="col-dinamica-1" id="team_1_p9_dinamica_1" style="display:none; text-align:center;"></td>
+                <td class="nome-jogador"><strong id="team_1_player_10"></strong></td>
+                <td class="col-dinamica-2" id="team_1_p9_dinamica_2" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-3" id="team_1_p9_dinamica_3" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-4" id="team_1_p9_dinamica_4" style="display:none; text-align:center;"></td>
+                <td id="team_1_yellow1_10" class="border-mid cartao-text"></td><td id="team_1_yellow2_10" class="cartao-text"></td>
+                <td id="team_1_red1_10" class="border-mid cartao-text"></td><td id="team_1_red2_10" class="cartao-text"></td>
                 <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
             </tr>
-            <tr>
-                <td class="doc" id="team_1_doc_12"></td>
-                <td><strong id="team_1_player_12" class="nome-jogador"></strong></td>
-                <td id="team_1_n_12"></td>
-                <td id="team_1_yellow1_12" class="border-mid"></td><td id="team_1_yellow2_12"></td>
-                <td id="team_1_red1_12" class="border-mid"></td><td id="team_1_red2_12"></td>
+            <tr id="team_1_row_10">
+                <td class="col-dinamica-1" id="team_1_p10_dinamica_1" style="display:none; text-align:center;"></td>
+                <td class="nome-jogador"><strong id="team_1_player_11"></strong></td>
+                <td class="col-dinamica-2" id="team_1_p10_dinamica_2" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-3" id="team_1_p10_dinamica_3" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-4" id="team_1_p10_dinamica_4" style="display:none; text-align:center;"></td>
+                <td id="team_1_yellow1_11" class="border-mid cartao-text"></td><td id="team_1_yellow2_11" class="cartao-text"></td>
+                <td id="team_1_red1_11" class="border-mid cartao-text"></td><td id="team_1_red2_11" class="cartao-text"></td>
                 <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
             </tr>
-            <tr>
-                <td class="doc" id="team_1_doc_13"></td>
-                <td><strong id="team_1_player_13" class="nome-jogador"></strong></td>
-                <td id="team_1_n_13"></td>
-                <td id="team_1_yellow1_13" class="border-mid"></td><td id="team_1_yellow2_13"></td>
-                <td id="team_1_red1_13" class="border-mid"></td><td id="team_1_red2_13"></td>
+            <tr id="team_1_row_11">
+                <td class="col-dinamica-1" id="team_1_p11_dinamica_1" style="display:none; text-align:center;"></td>
+                <td class="nome-jogador"><strong id="team_1_player_12"></strong></td>
+                <td class="col-dinamica-2" id="team_1_p11_dinamica_2" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-3" id="team_1_p11_dinamica_3" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-4" id="team_1_p11_dinamica_4" style="display:none; text-align:center;"></td>
+                <td id="team_1_yellow1_12" class="border-mid cartao-text"></td><td id="team_1_yellow2_12" class="cartao-text"></td>
+                <td id="team_1_red1_12" class="border-mid cartao-text"></td><td id="team_1_red2_12" class="cartao-text"></td>
                 <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
             </tr>
-            <tr>
-                <td class="doc" id="team_1_doc_14"></td>
-                <td><strong id="team_1_player_14" class="nome-jogador"></strong></td>
-                <td id="team_1_n_14"></td>
-                <td id="team_1_yellow1_14" class="border-mid"></td><td id="team_1_yellow2_14"></td>
-                <td id="team_1_red1_14" class="border-mid"></td><td id="team_1_red2_14"></td>
+            <tr id="team_1_row_12">
+                <td class="col-dinamica-1" id="team_1_p12_dinamica_1" style="display:none; text-align:center;"></td>
+                <td class="nome-jogador"><strong id="team_1_player_13"></strong></td>
+                <td class="col-dinamica-2" id="team_1_p12_dinamica_2" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-3" id="team_1_p12_dinamica_3" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-4" id="team_1_p12_dinamica_4" style="display:none; text-align:center;"></td>
+                <td id="team_1_yellow1_13" class="border-mid cartao-text"></td><td id="team_1_yellow2_13" class="cartao-text"></td>
+                <td id="team_1_red1_13" class="border-mid cartao-text"></td><td id="team_1_red2_13" class="cartao-text"></td>
                 <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
             </tr>
-            <tr>
-                <td class="doc" id="team_1_doc_15"></td>
-                <td><strong id="team_1_player_15" class="nome-jogador"></strong></td>
-                <td id="team_1_n_15"></td>
-                <td id="team_1_yellow1_15" class="border-mid"></td><td id="team_1_yellow2_15"></td>
-                <td id="team_1_red1_15" class="border-mid"></td><td id="team_1_red2_15"></td>
+            <tr id="team_1_row_13">
+                <td class="col-dinamica-1" id="team_1_p13_dinamica_1" style="display:none; text-align:center;"></td>
+                <td class="nome-jogador"><strong id="team_1_player_14"></strong></td>
+                <td class="col-dinamica-2" id="team_1_p13_dinamica_2" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-3" id="team_1_p13_dinamica_3" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-4" id="team_1_p13_dinamica_4" style="display:none; text-align:center;"></td>
+                <td id="team_1_yellow1_14" class="border-mid cartao-text"></td><td id="team_1_yellow2_14" class="cartao-text"></td>
+                <td id="team_1_red1_14" class="border-mid cartao-text"></td><td id="team_1_red2_14" class="cartao-text"></td>
+                <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
+            </tr>
+            <tr id="team_1_row_14">
+                <td class="col-dinamica-1" id="team_1_p14_dinamica_1" style="display:none; text-align:center;"></td>
+                <td class="nome-jogador"><strong id="team_1_player_15"></strong></td>
+                <td class="col-dinamica-2" id="team_1_p14_dinamica_2" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-3" id="team_1_p14_dinamica_3" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-4" id="team_1_p14_dinamica_4" style="display:none; text-align:center;"></td>
+                <td id="team_1_yellow1_15" class="border-mid cartao-text"></td><td id="team_1_yellow2_15" class="cartao-text"></td>
+                <td id="team_1_red1_15" class="border-mid cartao-text"></td><td id="team_1_red2_15" class="cartao-text"></td>
+                <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
+            </tr>
+            <tr id="team_1_row_15">
+                <td class="col-dinamica-1" id="team_1_p15_dinamica_1" style="display:none; text-align:center;"></td>
+                <td class="nome-jogador"><strong id="team_1_player_16"></strong></td>
+                <td class="col-dinamica-2" id="team_1_p15_dinamica_2" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-3" id="team_1_p15_dinamica_3" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-4" id="team_1_p15_dinamica_4" style="display:none; text-align:center;"></td>
+                <td id="team_1_yellow1_16" class="border-mid cartao-text"></td><td id="team_1_yellow2_16" class="cartao-text"></td>
+                <td id="team_1_red1_16" class="border-mid cartao-text"></td><td id="team_1_red2_16" class="cartao-text"></td>
+                <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
+            </tr>
+            <tr id="team_1_row_16">
+                <td class="col-dinamica-1" id="team_1_p16_dinamica_1" style="display:none; text-align:center;"></td>
+                <td class="nome-jogador"><strong id="team_1_player_17"></strong></td>
+                <td class="col-dinamica-2" id="team_1_p16_dinamica_2" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-3" id="team_1_p16_dinamica_3" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-4" id="team_1_p16_dinamica_4" style="display:none; text-align:center;"></td>
+                <td id="team_1_yellow1_17" class="border-mid cartao-text"></td><td id="team_1_yellow2_17" class="cartao-text"></td>
+                <td id="team_1_red1_17" class="border-mid cartao-text"></td><td id="team_1_red2_17" class="cartao-text"></td>
+                <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
+            </tr>
+            <tr id="team_1_row_17">
+                <td class="col-dinamica-1" id="team_1_p17_dinamica_1" style="display:none; text-align:center;"></td>
+                <td class="nome-jogador"><strong id="team_1_player_18"></strong></td>
+                <td class="col-dinamica-2" id="team_1_p17_dinamica_2" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-3" id="team_1_p17_dinamica_3" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-4" id="team_1_p17_dinamica_4" style="display:none; text-align:center;"></td>
+                <td id="team_1_yellow1_18" class="border-mid cartao-text"></td><td id="team_1_yellow2_18" class="cartao-text"></td>
+                <td id="team_1_red1_18" class="border-mid cartao-text"></td><td id="team_1_red2_18" class="cartao-text"></td>
+                <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
+            </tr>
+            <tr id="team_1_row_18">
+                <td class="col-dinamica-1" id="team_1_p18_dinamica_1" style="display:none; text-align:center;"></td>
+                <td class="nome-jogador"><strong id="team_1_player_19"></strong></td>
+                <td class="col-dinamica-2" id="team_1_p18_dinamica_2" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-3" id="team_1_p18_dinamica_3" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-4" id="team_1_p18_dinamica_4" style="display:none; text-align:center;"></td>
+                <td id="team_1_yellow1_19" class="border-mid cartao-text"></td><td id="team_1_yellow2_19" class="cartao-text"></td>
+                <td id="team_1_red1_19" class="border-mid cartao-text"></td><td id="team_1_red2_19" class="cartao-text"></td>
+                <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
+            </tr>
+            <tr id="team_1_row_19">
+                <td class="col-dinamica-1" id="team_1_p19_dinamica_1" style="display:none; text-align:center;"></td>
+                <td class="nome-jogador"><strong id="team_1_player_20"></strong></td>
+                <td class="col-dinamica-2" id="team_1_p19_dinamica_2" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-3" id="team_1_p19_dinamica_3" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-4" id="team_1_p19_dinamica_4" style="display:none; text-align:center;"></td>
+                <td id="team_1_yellow1_20" class="border-mid cartao-text"></td><td id="team_1_yellow2_20" class="cartao-text"></td>
+                <td id="team_1_red1_20" class="border-mid cartao-text"></td><td id="team_1_red2_20" class="cartao-text"></td>
                 <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
             </tr>
 
             <tr>
-                <td></td>
-                <td colspan="3" class="tecnico-row"><strong>TÉCNICO:</strong></td>
+                <td class="col-dinamica-1" style="display:none;"></td>
+                <td class="tecnico-row"><strong>TÉCNICO:</strong></td>
+                <td class="col-dinamica-2" style="display:none;"></td>
+                <td class="col-dinamica-3" style="display:none;"></td>
+                <td class="col-dinamica-4" style="display:none;"></td>
                 <td colspan="2" id="team_1_tech_yellow"></td>
                 <td colspan="2" id="team_1_tech_red"></td>
             </tr>
             <tr>
-                <td></td>
-                <td colspan="3" class="tecnico-row"><strong></strong></td>
+                <td class="col-dinamica-1" style="display:none;"></td>
+                <td class="tecnico-row"><strong></strong></td>
+                <td class="col-dinamica-2" style="display:none;"></td>
+                <td class="col-dinamica-3" style="display:none;"></td>
+                <td class="col-dinamica-4" style="display:none;"></td>
                 <td colspan="2"></td>
                 <td colspan="2"></td>
             </tr>
             <tr>
-                <td></td>
-                <td colspan="3" class="tecnico-row"><strong></strong></td>
+                <td class="col-dinamica-1" style="display:none;"></td>
+                <td class="tecnico-row"><strong></strong></td>
+                <td class="col-dinamica-2" style="display:none;"></td>
+                <td class="col-dinamica-3" style="display:none;"></td>
+                <td class="col-dinamica-4" style="display:none;"></td>
                 <td colspan="2"></td>
                 <td colspan="2"></td>
             </tr>
@@ -284,9 +375,11 @@
     <table class="main-table">
         <thead>
             <tr>
-                <th class="col-doc">DOCUMENTO</th>
+                <th class="col-dinamica-1" style="display: none;"><strong></strong></th>
                 <th class="col-jog">JOGADORES</th>
-                <th class="col-n">Nº</th>
+                <th class="col-dinamica-2" style="display: none;"><strong></strong></th>
+                <th class="col-dinamica-3" style="display: none;"><strong></strong></th>
+                <th class="col-dinamica-4" style="display: none;"><strong></strong></th>
                 <th colspan="2" class="col-ama">AMARELOS</th> 
                 <th colspan="2" class="col-ver">VERMELHOS</th> 
                 <th class="col-sub">SUBSTITUIÇÕES</th>
@@ -294,148 +387,237 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td class="doc" id="team_2_doc_1"></td>
-                <td><strong id="team_2_player_1" class="nome-jogador"></strong></td>
-                <td id="team_2_n_1"></td>
-                <td id="team_2_yellow1_1" class="border-mid"></td><td id="team_2_yellow2_1"></td>
-                <td id="team_2_red1_1" class="border-mid"></td><td id="team_2_red2_1"></td>
+            <tr id="team_2_row_0">
+                <td class="col-dinamica-1" id="team_2_p0_dinamica_1" style="display:none; text-align:center;"></td>
+                <td class="nome-jogador"><strong id="team_2_player_1"></strong></td>
+                <td class="col-dinamica-2" id="team_2_p0_dinamica_2" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-3" id="team_2_p0_dinamica_3" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-4" id="team_2_p0_dinamica_4" style="display:none; text-align:center;"></td>
+                <td id="team_2_yellow1_1" class="border-mid cartao-text"></td><td id="team_2_yellow2_1" class="cartao-text"></td>
+                <td id="team_2_red1_1" class="border-mid cartao-text"></td><td id="team_2_red2_1" class="cartao-text"></td>
                 <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
                 <td colspan="2" class="f-num">1</td><td colspan="2" class="f-num">2</td><td colspan="2" class="f-num">3</td><td colspan="2" class="f-num">4</td><td colspan="2" class="f-num">5</td>
             </tr>
-            <tr>
-                <td class="doc" id="team_2_doc_2"></td>
-                <td><strong id="team_2_player_2" class="nome-jogador"></strong></td>
-                <td id="team_2_n_2"></td>
-                <td id="team_2_yellow1_2" class="border-mid"></td><td id="team_2_yellow2_2"></td>
-                <td id="team_2_red1_2" class="border-mid"></td><td id="team_2_red2_2"></td>
+            <tr id="team_2_row_1">
+                <td class="col-dinamica-1" id="team_2_p1_dinamica_1" style="display:none; text-align:center;"></td>
+                <td class="nome-jogador"><strong id="team_2_player_2"></strong></td>
+                <td class="col-dinamica-2" id="team_2_p1_dinamica_2" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-3" id="team_2_p1_dinamica_3" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-4" id="team_2_p1_dinamica_4" style="display:none; text-align:center;"></td>
+                <td id="team_2_yellow1_2" class="border-mid cartao-text"></td><td id="team_2_yellow2_2" class="cartao-text"></td>
+                <td id="team_2_red1_2" class="border-mid cartao-text"></td><td id="team_2_red2_2" class="cartao-text"></td>
                 <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
                 <td colspan="2" class="f-num">1</td><td colspan="2" class="f-num">2</td><td colspan="2" class="f-num">3</td><td colspan="2" class="f-num">4</td><td colspan="2" class="f-num">5</td>
             </tr>
-            <tr>
-                <td class="doc" id="team_2_doc_3"></td>
-                <td><strong id="team_2_player_3" class="nome-jogador"></strong></td>
-                <td id="team_2_n_3"></td>
-                <td id="team_2_yellow1_3" class="border-mid"></td><td id="team_2_yellow2_3"></td>
-                <td id="team_2_red1_3" class="border-mid"></td><td id="team_2_red2_3"></td>
+            <tr id="team_2_row_2">
+                <td class="col-dinamica-1" id="team_2_p2_dinamica_1" style="display:none; text-align:center;"></td>
+                <td class="nome-jogador"><strong id="team_2_player_3"></strong></td>
+                <td class="col-dinamica-2" id="team_2_p2_dinamica_2" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-3" id="team_2_p2_dinamica_3" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-4" id="team_2_p2_dinamica_4" style="display:none; text-align:center;"></td>
+                <td id="team_2_yellow1_3" class="border-mid cartao-text"></td><td id="team_2_yellow2_3" class="cartao-text"></td>
+                <td id="team_2_red1_3" class="border-mid cartao-text"></td><td id="team_2_red2_3" class="cartao-text"></td>
                 <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
                 <td colspan="10" class="time-title">PEDIDOS DE TEMPO</td>
             </tr>
-            <tr>
-                <td class="doc" id="team_2_doc_4"></td>
-                <td><strong id="team_2_player_4" class="nome-jogador"></strong></td>
-                <td id="team_2_n_4"></td>
-                <td id="team_2_yellow1_4" class="border-mid"></td><td id="team_2_yellow2_4"></td>
-                <td id="team_2_red1_4" class="border-mid"></td><td id="team_2_red2_4"></td>
+            <tr id="team_2_row_3">
+                <td class="col-dinamica-1" id="team_2_p3_dinamica_1" style="display:none; text-align:center;"></td>
+                <td class="nome-jogador"><strong id="team_2_player_4"></strong></td>
+                <td class="col-dinamica-2" id="team_2_p3_dinamica_2" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-3" id="team_2_p3_dinamica_3" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-4" id="team_2_p3_dinamica_4" style="display:none; text-align:center;"></td>
+                <td id="team_2_yellow1_4" class="border-mid cartao-text"></td><td id="team_2_yellow2_4" class="cartao-text"></td>
+                <td id="team_2_red1_4" class="border-mid cartao-text"></td><td id="team_2_red2_4" class="cartao-text"></td>
                 <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
                 <td colspan="10" class="time-periods"><div class="flex-periods"><span>1. PER</span><span>2. PER</span></div></td>
             </tr>
-            <tr>
-                <td class="doc" id="team_2_doc_5"></td>
-                <td><strong id="team_2_player_5" class="nome-jogador"></strong></td>
-                <td id="team_2_n_5"></td>
-                <td id="team_2_yellow1_5" class="border-mid"></td><td id="team_2_yellow2_5"></td>
-                <td id="team_2_red1_5" class="border-mid"></td><td id="team_2_red2_5"></td>
+            <tr id="team_2_row_4">
+                <td class="col-dinamica-1" id="team_2_p4_dinamica_1" style="display:none; text-align:center;"></td>
+                <td class="nome-jogador"><strong id="team_2_player_5"></strong></td>
+                <td class="col-dinamica-2" id="team_2_p4_dinamica_2" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-3" id="team_2_p4_dinamica_3" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-4" id="team_2_p4_dinamica_4" style="display:none; text-align:center;"></td>
+                <td id="team_2_yellow1_5" class="border-mid cartao-text"></td><td id="team_2_yellow2_5" class="cartao-text"></td>
+                <td id="team_2_red1_5" class="border-mid cartao-text"></td><td id="team_2_red2_5" class="cartao-text"></td>
                 <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
                 <td colspan="5"></td><td colspan="5"></td>
             </tr>
-            <tr>
-                <td class="doc" id="team_2_doc_6"></td>
-                <td><strong id="team_2_player_6" class="nome-jogador"></strong></td>
-                <td id="team_2_n_6"></td>
-                <td id="team_2_yellow1_6" class="border-mid"></td><td id="team_2_yellow2_6"></td>
-                <td id="team_2_red1_6" class="border-mid"></td><td id="team_2_red2_6"></td>
+            <tr id="team_2_row_5">
+                <td class="col-dinamica-1" id="team_2_p5_dinamica_1" style="display:none; text-align:center;"></td>
+                <td class="nome-jogador"><strong id="team_2_player_6"></strong></td>
+                <td class="col-dinamica-2" id="team_2_p5_dinamica_2" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-3" id="team_2_p5_dinamica_3" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-4" id="team_2_p5_dinamica_4" style="display:none; text-align:center;"></td>
+                <td id="team_2_yellow1_6" class="border-mid cartao-text"></td><td id="team_2_yellow2_6" class="cartao-text"></td>
+                <td id="team_2_red1_6" class="border-mid cartao-text"></td><td id="team_2_red2_6" class="cartao-text"></td>
                 <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
-                <td colspan="5" rowspan="16" class="col-sig">Capitão</td><td colspan="5" rowspan="16" class="col-sig">Técnico</td>
+                <td colspan="5" rowspan="15" class="col-sig" id="team_2_cap_cell">Capitão</td><td colspan="5" rowspan="15" class="col-sig" id="team_2_tec_cell">Técnico</td>
             </tr>
-            <tr>
-                <td class="doc" id="team_2_doc_7"></td>
-                <td><strong id="team_2_player_7" class="nome-jogador"></strong></td>
-                <td id="team_2_n_7"></td>
-                <td id="team_2_yellow1_7" class="border-mid"></td><td id="team_2_yellow2_7"></td>
-                <td id="team_2_red1_7" class="border-mid"></td><td id="team_2_red2_7"></td>
-                <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
-            </tr>
-            <tr>
-                <td class="doc" id="team_2_doc_8"></td>
-                <td><strong id="team_2_player_8" class="nome-jogador"></strong></td>
-                <td id="team_2_n_8"></td>
-                <td id="team_2_yellow1_8" class="border-mid"></td><td id="team_2_yellow2_8"></td>
-                <td id="team_2_red1_8" class="border-mid"></td><td id="team_2_red2_8"></td>
+            <tr id="team_2_row_6">
+                <td class="col-dinamica-1" id="team_2_p6_dinamica_1" style="display:none; text-align:center;"></td>
+                <td class="nome-jogador"><strong id="team_2_player_7"></strong></td>
+                <td class="col-dinamica-2" id="team_2_p6_dinamica_2" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-3" id="team_2_p6_dinamica_3" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-4" id="team_2_p6_dinamica_4" style="display:none; text-align:center;"></td>
+                <td id="team_2_yellow1_7" class="border-mid cartao-text"></td><td id="team_2_yellow2_7" class="cartao-text"></td>
+                <td id="team_2_red1_7" class="border-mid cartao-text"></td><td id="team_2_red2_7" class="cartao-text"></td>
                 <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
             </tr>
-            <tr>
-                <td class="doc" id="team_2_doc_9"></td>
-                <td><strong id="team_2_player_9" class="nome-jogador"></strong></td>
-                <td id="team_2_n_9"></td>
-                <td id="team_2_yellow1_9" class="border-mid"></td><td id="team_2_yellow2_9"></td>
-                <td id="team_2_red1_9" class="border-mid"></td><td id="team_2_red2_9"></td>
+            <tr id="team_2_row_7">
+                <td class="col-dinamica-1" id="team_2_p7_dinamica_1" style="display:none; text-align:center;"></td>
+                <td class="nome-jogador"><strong id="team_2_player_8"></strong></td>
+                <td class="col-dinamica-2" id="team_2_p7_dinamica_2" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-3" id="team_2_p7_dinamica_3" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-4" id="team_2_p7_dinamica_4" style="display:none; text-align:center;"></td>
+                <td id="team_2_yellow1_8" class="border-mid cartao-text"></td><td id="team_2_yellow2_8" class="cartao-text"></td>
+                <td id="team_2_red1_8" class="border-mid cartao-text"></td><td id="team_2_red2_8" class="cartao-text"></td>
                 <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
             </tr>
-            <tr>
-                <td class="doc" id="team_2_doc_10"></td>
-                <td><strong id="team_2_player_10" class="nome-jogador"></strong></td>
-                <td id="team_2_n_10"></td>
-                <td id="team_2_yellow1_10" class="border-mid"></td><td id="team_2_yellow2_10"></td>
-                <td id="team_2_red1_10" class="border-mid"></td><td id="team_2_red2_10"></td>
+            <tr id="team_2_row_8">
+                <td class="col-dinamica-1" id="team_2_p8_dinamica_1" style="display:none; text-align:center;"></td>
+                <td class="nome-jogador"><strong id="team_2_player_9"></strong></td>
+                <td class="col-dinamica-2" id="team_2_p8_dinamica_2" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-3" id="team_2_p8_dinamica_3" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-4" id="team_2_p8_dinamica_4" style="display:none; text-align:center;"></td>
+                <td id="team_2_yellow1_9" class="border-mid cartao-text"></td><td id="team_2_yellow2_9" class="cartao-text"></td>
+                <td id="team_2_red1_9" class="border-mid cartao-text"></td><td id="team_2_red2_9" class="cartao-text"></td>
                 <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
             </tr>
-            <tr>
-                <td class="doc" id="team_2_doc_11"></td>
-                <td><strong id="team_2_player_11" class="nome-jogador"></strong></td>
-                <td id="team_2_n_11"></td>
-                <td id="team_2_yellow1_11" class="border-mid"></td><td id="team_2_yellow2_11"></td>
-                <td id="team_2_red1_11" class="border-mid"></td><td id="team_2_red2_11"></td>
+            <tr id="team_2_row_9">
+                <td class="col-dinamica-1" id="team_2_p9_dinamica_1" style="display:none; text-align:center;"></td>
+                <td class="nome-jogador"><strong id="team_2_player_10"></strong></td>
+                <td class="col-dinamica-2" id="team_2_p9_dinamica_2" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-3" id="team_2_p9_dinamica_3" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-4" id="team_2_p9_dinamica_4" style="display:none; text-align:center;"></td>
+                <td id="team_2_yellow1_10" class="border-mid cartao-text"></td><td id="team_2_yellow2_10" class="cartao-text"></td>
+                <td id="team_2_red1_10" class="border-mid cartao-text"></td><td id="team_2_red2_10" class="cartao-text"></td>
                 <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
             </tr>
-            <tr>
-                <td class="doc" id="team_2_doc_12"></td>
-                <td><strong id="team_2_player_12" class="nome-jogador"></strong></td>
-                <td id="team_2_n_12"></td>
-                <td id="team_2_yellow1_12" class="border-mid"></td><td id="team_2_yellow2_12"></td>
-                <td id="team_2_red1_12" class="border-mid"></td><td id="team_2_red2_12"></td>
+            <tr id="team_2_row_10">
+                <td class="col-dinamica-1" id="team_2_p10_dinamica_1" style="display:none; text-align:center;"></td>
+                <td class="nome-jogador"><strong id="team_2_player_11"></strong></td>
+                <td class="col-dinamica-2" id="team_2_p10_dinamica_2" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-3" id="team_2_p10_dinamica_3" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-4" id="team_2_p10_dinamica_4" style="display:none; text-align:center;"></td>
+                <td id="team_2_yellow1_11" class="border-mid cartao-text"></td><td id="team_2_yellow2_11" class="cartao-text"></td>
+                <td id="team_2_red1_11" class="border-mid cartao-text"></td><td id="team_2_red2_11" class="cartao-text"></td>
                 <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
             </tr>
-            <tr>
-                <td class="doc" id="team_2_doc_13"></td>
-                <td><strong id="team_2_player_13" class="nome-jogador"></strong></td>
-                <td id="team_2_n_13"></td>
-                <td id="team_2_yellow1_13" class="border-mid"></td><td id="team_2_yellow2_13"></td>
-                <td id="team_2_red1_13" class="border-mid"></td><td id="team_2_red2_13"></td>
+            <tr id="team_2_row_11">
+                <td class="col-dinamica-1" id="team_2_p11_dinamica_1" style="display:none; text-align:center;"></td>
+                <td class="nome-jogador"><strong id="team_2_player_12"></strong></td>
+                <td class="col-dinamica-2" id="team_2_p11_dinamica_2" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-3" id="team_2_p11_dinamica_3" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-4" id="team_2_p11_dinamica_4" style="display:none; text-align:center;"></td>
+                <td id="team_2_yellow1_12" class="border-mid cartao-text"></td><td id="team_2_yellow2_12" class="cartao-text"></td>
+                <td id="team_2_red1_12" class="border-mid cartao-text"></td><td id="team_2_red2_12" class="cartao-text"></td>
                 <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
             </tr>
-            <tr>
-                <td class="doc" id="team_2_doc_14"></td>
-                <td><strong id="team_2_player_14" class="nome-jogador"></strong></td>
-                <td id="team_2_n_14"></td>
-                <td id="team_2_yellow1_14" class="border-mid"></td><td id="team_2_yellow2_14"></td>
-                <td id="team_2_red1_14" class="border-mid"></td><td id="team_2_red2_14"></td>
+            <tr id="team_2_row_12">
+                <td class="col-dinamica-1" id="team_2_p12_dinamica_1" style="display:none; text-align:center;"></td>
+                <td class="nome-jogador"><strong id="team_2_player_13"></strong></td>
+                <td class="col-dinamica-2" id="team_2_p12_dinamica_2" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-3" id="team_2_p12_dinamica_3" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-4" id="team_2_p12_dinamica_4" style="display:none; text-align:center;"></td>
+                <td id="team_2_yellow1_13" class="border-mid cartao-text"></td><td id="team_2_yellow2_13" class="cartao-text"></td>
+                <td id="team_2_red1_13" class="border-mid cartao-text"></td><td id="team_2_red2_13" class="cartao-text"></td>
                 <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
             </tr>
-            <tr>
-                <td class="doc" id="team_2_doc_15"></td>
-                <td><strong id="team_2_player_15" class="nome-jogador"></strong></td>
-                <td id="team_2_n_15"></td>
-                <td id="team_2_yellow1_15" class="border-mid"></td><td id="team_2_yellow2_15"></td>
-                <td id="team_2_red1_15" class="border-mid"></td><td id="team_2_red2_15"></td>
+            <tr id="team_2_row_13">
+                <td class="col-dinamica-1" id="team_2_p13_dinamica_1" style="display:none; text-align:center;"></td>
+                <td class="nome-jogador"><strong id="team_2_player_14"></strong></td>
+                <td class="col-dinamica-2" id="team_2_p13_dinamica_2" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-3" id="team_2_p13_dinamica_3" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-4" id="team_2_p13_dinamica_4" style="display:none; text-align:center;"></td>
+                <td id="team_2_yellow1_14" class="border-mid cartao-text"></td><td id="team_2_yellow2_14" class="cartao-text"></td>
+                <td id="team_2_red1_14" class="border-mid cartao-text"></td><td id="team_2_red2_14" class="cartao-text"></td>
+                <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
+            </tr>
+            <tr id="team_2_row_14">
+                <td class="col-dinamica-1" id="team_2_p14_dinamica_1" style="display:none; text-align:center;"></td>
+                <td class="nome-jogador"><strong id="team_2_player_15"></strong></td>
+                <td class="col-dinamica-2" id="team_2_p14_dinamica_2" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-3" id="team_2_p14_dinamica_3" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-4" id="team_2_p14_dinamica_4" style="display:none; text-align:center;"></td>
+                <td id="team_2_yellow1_15" class="border-mid cartao-text"></td><td id="team_2_yellow2_15" class="cartao-text"></td>
+                <td id="team_2_red1_15" class="border-mid cartao-text"></td><td id="team_2_red2_15" class="cartao-text"></td>
+                <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
+            </tr>
+            <tr id="team_2_row_15">
+                <td class="col-dinamica-1" id="team_2_p15_dinamica_1" style="display:none; text-align:center;"></td>
+                <td class="nome-jogador"><strong id="team_2_player_16"></strong></td>
+                <td class="col-dinamica-2" id="team_2_p15_dinamica_2" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-3" id="team_2_p15_dinamica_3" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-4" id="team_2_p15_dinamica_4" style="display:none; text-align:center;"></td>
+                <td id="team_2_yellow1_16" class="border-mid cartao-text"></td><td id="team_2_yellow2_16" class="cartao-text"></td>
+                <td id="team_2_red1_16" class="border-mid cartao-text"></td><td id="team_2_red2_16" class="cartao-text"></td>
+                <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
+            </tr>
+            <tr id="team_2_row_16">
+                <td class="col-dinamica-1" id="team_2_p16_dinamica_1" style="display:none; text-align:center;"></td>
+                <td class="nome-jogador"><strong id="team_2_player_17"></strong></td>
+                <td class="col-dinamica-2" id="team_2_p16_dinamica_2" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-3" id="team_2_p16_dinamica_3" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-4" id="team_2_p16_dinamica_4" style="display:none; text-align:center;"></td>
+                <td id="team_2_yellow1_17" class="border-mid cartao-text"></td><td id="team_2_yellow2_17" class="cartao-text"></td>
+                <td id="team_2_red1_17" class="border-mid cartao-text"></td><td id="team_2_red2_17" class="cartao-text"></td>
+                <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
+            </tr>
+            <tr id="team_2_row_17">
+                <td class="col-dinamica-1" id="team_2_p17_dinamica_1" style="display:none; text-align:center;"></td>
+                <td class="nome-jogador"><strong id="team_2_player_18"></strong></td>
+                <td class="col-dinamica-2" id="team_2_p17_dinamica_2" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-3" id="team_2_p17_dinamica_3" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-4" id="team_2_p17_dinamica_4" style="display:none; text-align:center;"></td>
+                <td id="team_2_yellow1_18" class="border-mid cartao-text"></td><td id="team_2_yellow2_18" class="cartao-text"></td>
+                <td id="team_2_red1_18" class="border-mid cartao-text"></td><td id="team_2_red2_18" class="cartao-text"></td>
+                <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
+            </tr>
+            <tr id="team_2_row_18">
+                <td class="col-dinamica-1" id="team_2_p18_dinamica_1" style="display:none; text-align:center;"></td>
+                <td class="nome-jogador"><strong id="team_2_player_19"></strong></td>
+                <td class="col-dinamica-2" id="team_2_p18_dinamica_2" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-3" id="team_2_p18_dinamica_3" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-4" id="team_2_p18_dinamica_4" style="display:none; text-align:center;"></td>
+                <td id="team_2_yellow1_19" class="border-mid cartao-text"></td><td id="team_2_yellow2_19" class="cartao-text"></td>
+                <td id="team_2_red1_19" class="border-mid cartao-text"></td><td id="team_2_red2_19" class="cartao-text"></td>
+                <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
+            </tr>
+            <tr id="team_2_row_19">
+                <td class="col-dinamica-1" id="team_2_p19_dinamica_1" style="display:none; text-align:center;"></td>
+                <td class="nome-jogador"><strong id="team_2_player_20"></strong></td>
+                <td class="col-dinamica-2" id="team_2_p19_dinamica_2" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-3" id="team_2_p19_dinamica_3" style="display:none; text-align:center;"></td>
+                <td class="col-dinamica-4" id="team_2_p19_dinamica_4" style="display:none; text-align:center;"></td>
+                <td id="team_2_yellow1_20" class="border-mid cartao-text"></td><td id="team_2_yellow2_20" class="cartao-text"></td>
+                <td id="team_2_red1_20" class="border-mid cartao-text"></td><td id="team_2_red2_20" class="cartao-text"></td>
                 <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
             </tr>
 
             <tr>
-                <td></td>
-                <td colspan="3" class="tecnico-row"><strong>TÉCNICO:</strong></td>
+                <td class="col-dinamica-1" style="display:none;"></td>
+                <td class="tecnico-row"><strong>TÉCNICO:</strong></td>
+                <td class="col-dinamica-2" style="display:none;"></td>
+                <td class="col-dinamica-3" style="display:none;"></td>
+                <td class="col-dinamica-4" style="display:none;"></td>
                 <td colspan="2" id="team_2_tech_yellow"></td>
                 <td colspan="2" id="team_2_tech_red"></td>
             </tr>
             <tr>
-                <td></td>
-                <td colspan="3" class="tecnico-row"><strong></strong></td>
+                <td class="col-dinamica-1" style="display:none;"></td>
+                <td class="tecnico-row"><strong></strong></td>
+                <td class="col-dinamica-2" style="display:none;"></td>
+                <td class="col-dinamica-3" style="display:none;"></td>
+                <td class="col-dinamica-4" style="display:none;"></td>
                 <td colspan="2"></td>
                 <td colspan="2"></td>
             </tr>
             <tr>
-                <td></td>
-                <td colspan="3" class="tecnico-row"><strong></strong></td>
+                <td class="col-dinamica-1" style="display:none;"></td>
+                <td class="tecnico-row"><strong></strong></td>
+                <td class="col-dinamica-2" style="display:none;"></td>
+                <td class="col-dinamica-3" style="display:none;"></td>
+                <td class="col-dinamica-4" style="display:none;"></td>
                 <td colspan="2"></td>
                 <td colspan="2"></td>
             </tr>
@@ -500,14 +682,18 @@ document.addEventListener("DOMContentLoaded", function() {
             return response.json();
         })
         .then(d => {
-            const playerLimit = 15;
+            
+            // Puxa o limite exato do JSON, limitando a 20 e NUNCA menor que 6 (para não quebrar as colunas do Capitão/Técnico)
+            let limiteExibicao = d.qtd_players ? parseInt(d.qtd_players) : 15;
+            if (limiteExibicao > 20) limiteExibicao = 20;
+            if (limiteExibicao < 6) limiteExibicao = 6; 
 
             const set = (id, val) => {
                 const el = document.getElementById(id);
                 if (el) el.innerText = val || "";
             };
 
-            // 1. DADOS GERAIS DO CABEÇALHO (Mapeados usando d.general.propriedade.value)
+            // 1. DADOS GERAIS DO CABEÇALHO
             if (d.general) {
                 set('general_title', d.general.title?.value);
                 set('general_sub_title', d.general.sub_title?.value); 
@@ -522,22 +708,114 @@ document.addEventListener("DOMContentLoaded", function() {
             if (d.team_1) set('team_1_name', d.team_1.name);
             if (d.team_2) set('team_2_name', d.team_2.name);
 
-            // 3. JOGADORES E CARTÕES
+
+            // ==========================================================
+            // 3. BLINDAGEM MATEMÁTICA E SLOTS DINÂMICOS
+            // ==========================================================
+            let larguraFixa = 41; // 41% das colunas fixas à direita
+            
+            const colunasDinamicas = d["players-column"] || [];
+            
+            // Calcula o "size" total que veio no JSON (considerando só as 4 primeiras)
+            let totalSizeDinamico = 0;
+            colunasDinamicas.forEach((col, index) => {
+                if (index < 4) totalSizeDinamico += (col.size || 0);
+            });
+
+            // LIMITE DE SEGURANÇA: As colunas dinâmicas podem ocupar NO MÁXIMO 45% da tabela
+            // Isso garante que o Nome do Jogador tenha pelo menos 14% de espaço vital (100% - 41% - 45% = 14%)
+            let limiteMaximoDinamico = 45; 
+            
+            // Define o multiplicador base (ex: size 1 = 3%)
+            let fatorMultiplicacao = 3; 
+
+            // Se a soma estourar o limite, achata o multiplicador proporcionalmente
+            if (totalSizeDinamico > 0 && (totalSizeDinamico * fatorMultiplicacao > limiteMaximoDinamico)) {
+                fatorMultiplicacao = limiteMaximoDinamico / totalSizeDinamico;
+            }
+
+            let totalPorcentagemDinamica = 0;
+
+            colunasDinamicas.forEach((col, index) => {
+                const slotNumero = index + 1; // Suporta até 4 slots (1 antes do nome, 3 depois)
+                if (slotNumero > 4) return;
+
+                let largura = (col.size || 0) * fatorMultiplicacao;
+                
+                // Evita que uma coluna ativada fique fina demais ao escalar
+                if (col.size > 0 && largura < 1.5) largura = 1.5; 
+
+                totalPorcentagemDinamica += largura;
+
+                document.querySelectorAll(`.col-dinamica-${slotNumero}`).forEach(el => {
+                    if (col.size === 0) {
+                        el.style.display = "none";
+                    } else {
+                        el.style.display = "table-cell";
+                        if(el.tagName.toLowerCase() === 'th') {
+                            el.style.setProperty('width', `${largura}%`, 'important');
+                            el.style.setProperty('min-width', `${largura}%`, 'important');
+                            el.style.setProperty('max-width', `${largura}%`, 'important');
+                            
+                            const tagStrong = el.querySelector('strong');
+                            if (tagStrong) {
+                                tagStrong.innerText = col.name;
+                            } else {
+                                el.innerText = col.name;
+                            }
+                        }
+                    }
+                });
+            });
+
+            // O Nome do Jogador recebe o restante exato do grid
+            let larguraNome = 100 - larguraFixa - totalPorcentagemDinamica; 
+            if (larguraNome < 12) larguraNome = 12; // Mínimo absoluto para não esmagar o nome
+            
+            document.querySelectorAll('.col-jog').forEach(el => {
+                el.style.setProperty('width', `${larguraNome}%`, 'important');
+                el.style.setProperty('min-width', `${larguraNome}%`, 'important');
+                el.style.setProperty('max-width', `${larguraNome}%`, 'important');
+            });
+
+
+            // ==========================================================
+            // 4. JOGADORES E CARTÕES
+            // ==========================================================
             function preencherTime(timeData, prefixo) {
                 if (!timeData || !timeData.player) return;
+                
+                const qtdColunasExtras = colunasDinamicas.length;
 
-                for (let i = 1; i <= playerLimit; i++) {
-                    const nomeEl = document.getElementById(`${prefixo}_player_${i}`);
-                    const p = timeData.player[i-1];
+                // Lógica dinâmica para decidir a chave do nome
+                let propriedadeNome = 'name';
+                if (totalSizeDinamico >= 7) { 
+                    propriedadeNome = 'name_25';
+                } else if (totalSizeDinamico >= 5) { 
+                    propriedadeNome = 'name_30';
+                } else if (totalSizeDinamico >= 2) { 
+                    propriedadeNome = 'name_40'; 
+                }
+
+                for (let i = 0; i < 20; i++) {
+                    const tr = document.getElementById(`${prefixo}_row_${i}`);
+                    
+                    if (i >= limiteExibicao) {
+                        if (tr) tr.style.display = 'none';
+                        continue;
+                    } else {
+                        if (tr) tr.style.display = '';
+                    }
+
+                    const nomeEl = document.getElementById(`${prefixo}_player_${i+1}`);
+                    const p = (timeData.player && timeData.player[i]) ? timeData.player[i] : null;
 
                     if (nomeEl) {
                         if (p) {
-                            nomeEl.innerText = p.name_40 || p.name || "";
-                            
-                            const docEl = document.getElementById(`${prefixo}_doc_${i}`);
-                            if (docEl) docEl.innerText = p.doc || "";
+                            // Puxa a chave correta, se estiver vazia cai pro nome normal
+                            nomeEl.innerText = p[propriedadeNome] || p.name || "";
 
-                            const isSuspenso = (parseInt(p.red_card || 0) >= 1 || parseInt(p.yellow_card || 0) >= 2);
+                            const isSuspenso = p && (p.supend === true || parseInt(p.red_card || 0) >= 1 || parseInt(p.yellow_card || 0) >= 2);
                             if (isSuspenso) {
                                 nomeEl.style.textDecoration = "line-through";
                                 nomeEl.style.color = "red";
@@ -546,32 +824,62 @@ document.addEventListener("DOMContentLoaded", function() {
                                 nomeEl.style.color = "inherit";
                             }
 
-                            set(`${prefixo}_n_${i}`, p.n);
+                            // INJETANDO HORÁRIOS NOS CARTÕES!
+                            const y1 = document.getElementById(`${prefixo}_yellow1_${i+1}`);
+                            const y2 = document.getElementById(`${prefixo}_yellow2_${i+1}`);
+                            if (y1) y1.innerText = (p.yellow_card >= 1) ? (p.yellow_card_time_1 || "X") : "";
+                            if (y2) y2.innerText = (p.yellow_card >= 2) ? (p.yellow_card_time_2 || "X") : "";
 
-                            // Amarelos
-                            const y1 = document.getElementById(`${prefixo}_yellow1_${i}`);
-                            const y2 = document.getElementById(`${prefixo}_yellow2_${i}`);
-                            if (y1) y1.innerText = (p.yellow_card >= 1) ? "X" : "";
-                            if (y2) y2.innerText = (p.yellow_card >= 2) ? "X" : "";
-
-                            // Vermelhos
-                            const r1 = document.getElementById(`${prefixo}_red1_${i}`);
-                            const r2 = document.getElementById(`${prefixo}_red2_${i}`);
+                            const r1 = document.getElementById(`${prefixo}_red1_${i+1}`);
+                            const r2 = document.getElementById(`${prefixo}_red2_${i+1}`);
                             const v = parseInt(p.red_card || 0);
-                            if (r1) r1.innerText = (v >= 1) ? "X" : "";
-                            if (r2) r2.innerText = (v >= 2) ? "X" : "";
+                            if (r1) r1.innerText = (v >= 1) ? (p.red_card_time_1 || "X") : "";
+                            if (r2) r2.innerText = (v >= 2) ? (p.red_card_time_2 || "X") : "";
 
                         } else {
                             nomeEl.innerText = "";
-                            set(`${prefixo}_n_${i}`, "");
-                            const docEl = document.getElementById(`${prefixo}_doc_${i}`);
-                            if (docEl) docEl.innerText = "";
+                        }
+                    }
+
+                    // Preenchendo as 4 colunas dinâmicas daquela linha
+                    for (let k = 1; k <= 4; k++) {
+                        const elTd = document.getElementById(`${prefixo}_p${i}_dinamica_${k}`);
+                        if (elTd) {
+                            if (k <= qtdColunasExtras) {
+                                const colConfig = colunasDinamicas[k - 1]; 
+                                
+                                if(colConfig.size !== 0){
+                                    elTd.style.display = "table-cell";
+                                    elTd.innerText = p && p[colConfig.player_key] ? p[colConfig.player_key] : '';
+                                    
+                                    // APLICANDO A FONTE 12PX APENAS NA COLUNA NÚMERO "N"
+                                    if (colConfig.player_key === 'n') {
+                                        elTd.style.fontSize = '12px';
+                                        elTd.style.fontWeight = 'bold';
+                                    } else {
+                                        elTd.style.fontSize = '11px';
+                                        elTd.style.fontWeight = 'normal';
+                                    }
+                                } else {
+                                    elTd.style.display = "none";
+                                }
+                            } else {
+                                elTd.style.display = "none";
+                            }
                         }
                     }
                 }
+
+                // Ajusta o tamanho da célula lateral do Técnico e Capitão
+                const capCell = document.getElementById(`${prefixo}_cap_cell`);
+                const tecCell = document.getElementById(`${prefixo}_tec_cell`);
+                
+                const linhasRestantes = (limiteExibicao - 5) + 3; // +3 pelas linhas fixas do Técnico embaixo
+                if (capCell) capCell.rowSpan = linhasRestantes;
+                if (tecCell) tecCell.rowSpan = linhasRestantes;
             }
 
-            // 4. GOLS
+            // 5. GOLS
             function preencherGols(timeData, prefixo) {
                 if (!timeData || !timeData.goals) return;
                 timeData.goals.forEach((gol, i) => {
@@ -591,7 +899,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 });
             }
 
-            // --- EXECUÇÃO ---
             preencherTime(d.team_1, 'team_1');
             preencherTime(d.team_2, 'team_2');
             preencherGols(d.team_1, 'team_1'); 
@@ -604,10 +911,10 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 
 <style>
-/* CSS OTMIZADO PARA FOLHA A4 ESTRITA */
+/* CSS OTIMIZADO PARA FOLHA A4 ESTRITA */
 @page {
     size: A4 portrait;
-    margin: 0; /* Remove as margens brutas de impressão do navegador */
+    margin: 0; 
 }
 
 body {
@@ -622,19 +929,18 @@ body {
 
 .container {
     width: 210mm;
-    height: 297mm; /* Altura EXATA de uma folha A4 */
+    height: 297mm; 
     background: #fff;
     padding: 5mm 10mm;
-    box-sizing: border-box; /* Garante que o padding não aumente o tamanho final da div */
+    box-sizing: border-box; 
     margin: 0 auto;
-    overflow: hidden; /* Corta qualquer coisa que tente escapar do A4 */
+    overflow: hidden; 
 }
 
-/* Redução sutil de alturas para garantir o encaixe perfeito */
 .score-header {
     display: flex;
     width: 80%;
-    height: 22px; /* Reduzido de 25px */
+    height: 22px; 
     justify-self: center;
     align-items: stretch;
     border: 1px solid #000;
@@ -658,11 +964,11 @@ body {
 }
 
 .label { font-weight: bold; font-size: 9px; margin-right: 5px; }
-.val { font-size: 11px; }
+.val { font-size: 12px; }
 
 .arbitragem-container {
     display: flex;
-    height: 80px; /* Reduzido de 100px */
+    height: 80px; 
     border: 1px solid #000;
     margin-top: 2px;
     margin-right: 5px;
@@ -687,7 +993,7 @@ body {
 .side-tables { display: flex; flex-direction: column; }
 
 .mini-table { width: 100%; font-size: 8px; border-collapse: collapse; height: auto; border: 1px solid; margin-top: 2px; }
-.mini-table th, .mini-table td { height: 13px; /* Reduzido de 14px */ text-align: center; border-bottom: 1px solid #000; border-right: 1px solid; }
+.mini-table th, .mini-table td { height: 13px; text-align: center; border-bottom: 1px solid #000; border-right: 1px solid; }
 .mini-table th { font-weight: bold; background: #fff; }
 .txt-left { text-align: left !important; padding-left: 3px; font-weight: bold; width: 5px; }
 
@@ -697,7 +1003,7 @@ div#placar2 { border-left: none; width: 40px; }
 .team-section { width: 190mm; margin-top: 2px; }
 
 .team-header-name {
-    width: 502.3px;
+    width: 541.3px;
     padding: 2px 8px;
     font-size: 10px;
     font-weight: bold;
@@ -705,23 +1011,44 @@ div#placar2 { border-left: none; width: 40px; }
     border-bottom: none;
 }
 
-.main-table { width: 100%; table-layout: fixed; border-collapse: collapse; }
+/* ========================================================================= */
+/* BLINDAGEM DE LARGURA E ZOOM DA TABELA PRINCIPAL                           */
+/* ========================================================================= */
+.main-table { 
+    width: 100%; 
+    table-layout: fixed !important; /* CRUCIAL: Bloqueia as larguras para o Zoom */
+    border-collapse: collapse; 
+}
 
 .main-table th, .main-table td {
-    height: 15px; /* Reduzido de 18px - CHAVE PARA CABER NO A4 */
+    height: 15px; 
     padding: 0;
     font-size: 9px;
     text-align: center;
     border: 1px solid #000;
 }
 
-.col-doc { width: 12%; }
-.col-jog { width: 30%; }
-.col-n { width: 6%; }
-.col-ama { width: 12%; }
-.col-ver { width: 12%; }
-.col-sub { width: 13%; }
-.col-faltas-header { font-size: 8px; font-weight: bold; }
+/* BLINDAGEM DOS TEXTOS PARA NÃO ESMAGAREM AS OUTRAS COLUNAS */
+th[class*="col-dinamica-"], td[class*="col-dinamica-"], td.nome-jogador {
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: clip !important;
+    max-width: 0 !important;
+}
+
+/* Larguras Base das Colunas Fixas (Soma 41%) */
+.col-ama { width: 11%; }
+.col-ver { width: 11%; }
+.col-sub { width: 11%; }
+.col-faltas-header { width: 12%; font-size: 8px; font-weight: bold; }
+
+/* CENTRALIZANDO HORÁRIO NOS CARTÕES */
+.cartao-text {
+    font-size: 12px !important;
+    font-weight: 300 !important;
+    text-align: center !important;
+    padding: 0 !important;
+}
 
 .f-num { font-size: 8px; }
 .time-title { font-size: 8px; font-weight: bold; height: 14px; }
@@ -735,33 +1062,50 @@ div#placar2 { border-left: none; width: 40px; }
     writing-mode: vertical-rl;
     transform: rotate(180deg);
     text-align: left;
-    padding-top: 15px !important; /* Reduzido de 35px */
+    padding-top: 15px !important; 
     background: #fff;
 }
 
-.tecnico-row { text-align: left; padding-left: 10px !important; }
+.tecnico-row { text-align: left; padding-left: 5px !important; }
 
 .grid-footer { width: 100%; border-collapse: collapse; table-layout: fixed; margin-top: 3px; }
-.grid-footer td { border: 1px solid #000; text-align: center; padding: 0; height: 12px; /* Reduzido de 13px */ font-size: 9px; font-weight: bold; }
+.grid-footer td { border: 1px solid #000; text-align: center; padding: 0; height: 12px;  font-size: 9px; font-weight: bold; }
 
-div#team-a { margin-top: 0px; } /* Ajustado */
+div#team-a { margin-top: 0px; } 
 
-td.nome-jogador { font-size: 11px; white-space: nowrap; overflow: hidden; } /* Evita quebra de linha acidental */
-.nome-jogador { font-weight: 400; text-align: left; }
+.nome-jogador { font-weight: 400; text-align: left; font-size: 12px; padding-left: 5px !important;}
+.main-table td:nth-child(2) { text-align: left !important; padding-left: 5px; }
 
 strong#team_1_name, strong#team_2_name, strong#general_place { font-weight: 600 !important; }
-
-td.doc { font-size: 11px; }
 
 div#col-1 { width: 150px; }
 
 .row-numbers td { border-bottom: none !important; }
-.cell-num { font-weight: bold; border-right: 1px solid #000 !important; width: 8px; }
+.cell-num { font-weight: bold; border-right: 1px solid #000 !important; width: 14px; }
 .cell-empty { border-right: 1px solid #000 !important; }
-.row-empty td { border-top: none !important; height: 14px; /* Reduzido de 15px */ }
+.row-empty td { border-top: none !important; height: 14px; }
 tr.row-numbers { border-bottom: 1px solid; }
+.info-section strong {font-weight:300; text-transform: lowercase;}
+td.nome-jogador {
+    font-size: 12px !important;
+    font-weight:300;
+}
 
-.main-table td:nth-child(2) { text-align: left !important; padding-left: 5px; }
+th.col-dinamica-1 {
+    font-weight:400;
+}
+
+th.col-dinamica-2 {
+    font-weight:400;
+}
+
+th.col-dinamica-3 {
+    font-weight:400;
+}
+
+th.col-dinamica-4 {
+    font-weight:400;
+}
 
 /* Regras específicas para impressão */
 @media print {
