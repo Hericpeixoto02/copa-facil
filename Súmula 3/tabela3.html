@@ -12,23 +12,23 @@
         <div id="placar1" class="vs-box"></div>
         <div class="vs-box">X</div>
         <div id="placar2" class="vs-box"></div>
-        <div  class="team-box2"><strong id="team_2_name"></strong></div>
+        <div class="team-box2"><strong id="team_2_name"></strong></div>
     </div>
 
     <div class="header-main">
         <div class="info-section">
             <div style="display: grid; grid-template-columns: 3fr 1fr;">
                 <div class="cell"><span class="label">COMPETIÇÃO</span> <span class="val"><strong class="subtitulo" id="general_title"></strong></span></div>
-                <div class="cell" style="border-right:1px solid; margin-right: 5px;"><span class="label">DATA</span> <span class="val">&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;/</span></div>
+                <div class="cell" style="border-right:1px solid; margin-right: 5px;"><span class="label">DATA</span> <span class="val"><strong id="general_date"></strong></span></div>
             </div>
             <div style="display: grid; grid-template-columns: 1fr 1fr 1fr;">
-                <div class="cell"><span class="label">CATEGORIA</span></div>
+                <div class="cell"><span class="label">CATEGORIA</span> <span class="val"><strong class="subtitulo" id="general_sub_title"></strong></span></div>
                 <div class="cell"><span class="label">FASE</span> <span class="val"><strong class="subtitulo" id="general_stage"></strong></span></div>
-                <div class="cell" style="border-right:1px solid; margin-right: 5px;"><span class="label">RODADA</span> <span class="val"> <strong class="subtitulo" id="general_round"></strong></span></div>
+                <div class="cell" style="border-right:1px solid; margin-right: 5px;"><span class="label">RODADA</span> <span class="val"><strong class="subtitulo" id="general_round"></strong></span></div>
             </div>
             <div style="display: grid; grid-template-columns: 3fr 1fr;">
                 <div class="cell"><span class="label">LOCAL</span> <span class="val"><strong class="subtitulo" id="general_place"></strong></span></div>
-                <div class="cell" style="border-right:1px solid; margin-right: 5px;"><span class="label">JOGO Nº</span></div>
+                <div class="cell" style="border-right:1px solid; margin-right: 5px;"><span class="label">JOGO Nº</span> <span class="val"><strong id="general_n"></strong></span></div>
             </div>
 
             <div class="arbitragem-container">
@@ -64,914 +64,608 @@
 
    <div id="team-a" class="team-section">
     <div class="team-header-name">
-        EQUIPE 'A' Equipe 4
+        EQUIPE 'A'
     </div>
 
     <table class="main-table">
-    <thead>
-        <tr>
-            <th class="col-doc">DOCUMENTO</th>
-            <th class="col-jog">JOGADORES</th>
-            <th class="col-n">Nº</th>
-            <th colspan="2" class="col-ama">AMARELOS</th>
-            <th colspan="2" class="col-ver">VERMELHOS</th>
-            <th class="col-sub">SUBSTITUIÇÕES</th>
-            <th colspan="10" class="col-faltas-header">FALTAS</th>
-        </tr>
-    </thead>
-    <tbody>
-        <script>
-            // Prefixo definido como team_1 para esta tabela
-            const prefixo_t1 = "team_1"; 
-            
-            for (let i = 1; i <= 15; i++) {
-                document.write(`
-                <tr>
-                    <td class="doc">111.111.111-11</td>
-                    <td><strong id="${prefixo_t1}_player_${i}" class="nome-jogador"></strong></td>
-                    <td id="${prefixo_t1}_n_${i}"></td>
-                    
-                    <td id="${prefixo_t1}_yellow1_${i}" class="border-mid"></td>
-                    <td id="${prefixo_t1}_yellow2_${i}"></td>
-                    <td id="${prefixo_t1}_red1_${i}" class="border-mid"></td>
-                    <td id="${prefixo_t1}_red2_${i}"></td>
-                    
-                    <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
-                    
-                    ${i === 1 || i === 2 ? 
-                        '<td colspan="2" class="f-num">1</td><td colspan="2" class="f-num">2</td><td colspan="2" class="f-num">3</td><td colspan="2" class="f-num">4</td><td colspan="2" class="f-num">5</td>' : 
-                      i === 3 ? 
-                        '<td colspan="10" class="time-title">PEDIDOS DE TEMPO</td>' :
-                      i === 4 ?
-                        '<td colspan="10" class="time-periods"><div class="flex-periods"><span>1. PER</span><span>2. PER</span></div></td>' :
-                      i === 5 ?
-                        '<td colspan="5"></td><td colspan="5"></td>' :
-                      i === 6 ?
-                        '<td colspan="5" rowspan="16" class="col-sig">Capitão</td><td colspan="5" rowspan="16" class="col-sig">Técnico</td>' : 
-                        '' 
-                    }
-                </tr>
-                `);
-            }
-        </script>
-        <tr>
-            <td></td>
-            <td colspan="3" class="tecnico-row"><strong>TÉCNICO:</strong></td>
-            <td colspan="2" id="team_1_tech_yellow"></td>
-            <td colspan="2" id="team_1_tech_red"></td>
-        </tr>
+        <thead>
+            <tr>
+                <th class="col-doc">DOCUMENTO</th>
+                <th class="col-jog">JOGADORES</th>
+                <th class="col-n">Nº</th>
+                <th colspan="2" class="col-ama">AMARELOS</th>
+                <th colspan="2" class="col-ver">VERMELHOS</th>
+                <th class="col-sub">SUBSTITUIÇÕES</th>
+                <th colspan="10" class="col-faltas-header">FALTAS</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="doc" id="team_1_doc_1"></td>
+                <td><strong id="team_1_player_1" class="nome-jogador"></strong></td>
+                <td id="team_1_n_1"></td>
+                <td id="team_1_yellow1_1" class="border-mid"></td><td id="team_1_yellow2_1"></td>
+                <td id="team_1_red1_1" class="border-mid"></td><td id="team_1_red2_1"></td>
+                <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
+                <td colspan="2" class="f-num">1</td><td colspan="2" class="f-num">2</td><td colspan="2" class="f-num">3</td><td colspan="2" class="f-num">4</td><td colspan="2" class="f-num">5</td>
+            </tr>
+            <tr>
+                <td class="doc" id="team_1_doc_2"></td>
+                <td><strong id="team_1_player_2" class="nome-jogador"></strong></td>
+                <td id="team_1_n_2"></td>
+                <td id="team_1_yellow1_2" class="border-mid"></td><td id="team_1_yellow2_2"></td>
+                <td id="team_1_red1_2" class="border-mid"></td><td id="team_1_red2_2"></td>
+                <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
+                <td colspan="2" class="f-num">1</td><td colspan="2" class="f-num">2</td><td colspan="2" class="f-num">3</td><td colspan="2" class="f-num">4</td><td colspan="2" class="f-num">5</td>
+            </tr>
+            <tr>
+                <td class="doc" id="team_1_doc_3"></td>
+                <td><strong id="team_1_player_3" class="nome-jogador"></strong></td>
+                <td id="team_1_n_3"></td>
+                <td id="team_1_yellow1_3" class="border-mid"></td><td id="team_1_yellow2_3"></td>
+                <td id="team_1_red1_3" class="border-mid"></td><td id="team_1_red2_3"></td>
+                <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
+                <td colspan="10" class="time-title">PEDIDOS DE TEMPO</td>
+            </tr>
+            <tr>
+                <td class="doc" id="team_1_doc_4"></td>
+                <td><strong id="team_1_player_4" class="nome-jogador"></strong></td>
+                <td id="team_1_n_4"></td>
+                <td id="team_1_yellow1_4" class="border-mid"></td><td id="team_1_yellow2_4"></td>
+                <td id="team_1_red1_4" class="border-mid"></td><td id="team_1_red2_4"></td>
+                <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
+                <td colspan="10" class="time-periods"><div class="flex-periods"><span>1. PER</span><span>2. PER</span></div></td>
+            </tr>
+            <tr>
+                <td class="doc" id="team_1_doc_5"></td>
+                <td><strong id="team_1_player_5" class="nome-jogador"></strong></td>
+                <td id="team_1_n_5"></td>
+                <td id="team_1_yellow1_5" class="border-mid"></td><td id="team_1_yellow2_5"></td>
+                <td id="team_1_red1_5" class="border-mid"></td><td id="team_1_red2_5"></td>
+                <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
+                <td colspan="5"></td><td colspan="5"></td>
+            </tr>
+            <tr>
+                <td class="doc" id="team_1_doc_6"></td>
+                <td><strong id="team_1_player_6" class="nome-jogador"></strong></td>
+                <td id="team_1_n_6"></td>
+                <td id="team_1_yellow1_6" class="border-mid"></td><td id="team_1_yellow2_6"></td>
+                <td id="team_1_red1_6" class="border-mid"></td><td id="team_1_red2_6"></td>
+                <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
+                <td colspan="5" rowspan="16" class="col-sig">Capitão</td><td colspan="5" rowspan="16" class="col-sig">Técnico</td>
+            </tr>
+            <tr>
+                <td class="doc" id="team_1_doc_7"></td>
+                <td><strong id="team_1_player_7" class="nome-jogador"></strong></td>
+                <td id="team_1_n_7"></td>
+                <td id="team_1_yellow1_7" class="border-mid"></td><td id="team_1_yellow2_7"></td>
+                <td id="team_1_red1_7" class="border-mid"></td><td id="team_1_red2_7"></td>
+                <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
+            </tr>
+            <tr>
+                <td class="doc" id="team_1_doc_8"></td>
+                <td><strong id="team_1_player_8" class="nome-jogador"></strong></td>
+                <td id="team_1_n_8"></td>
+                <td id="team_1_yellow1_8" class="border-mid"></td><td id="team_1_yellow2_8"></td>
+                <td id="team_1_red1_8" class="border-mid"></td><td id="team_1_red2_8"></td>
+                <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
+            </tr>
+            <tr>
+                <td class="doc" id="team_1_doc_9"></td>
+                <td><strong id="team_1_player_9" class="nome-jogador"></strong></td>
+                <td id="team_1_n_9"></td>
+                <td id="team_1_yellow1_9" class="border-mid"></td><td id="team_1_yellow2_9"></td>
+                <td id="team_1_red1_9" class="border-mid"></td><td id="team_1_red2_9"></td>
+                <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
+            </tr>
+            <tr>
+                <td class="doc" id="team_1_doc_10"></td>
+                <td><strong id="team_1_player_10" class="nome-jogador"></strong></td>
+                <td id="team_1_n_10"></td>
+                <td id="team_1_yellow1_10" class="border-mid"></td><td id="team_1_yellow2_10"></td>
+                <td id="team_1_red1_10" class="border-mid"></td><td id="team_1_red2_10"></td>
+                <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
+            </tr>
+            <tr>
+                <td class="doc" id="team_1_doc_11"></td>
+                <td><strong id="team_1_player_11" class="nome-jogador"></strong></td>
+                <td id="team_1_n_11"></td>
+                <td id="team_1_yellow1_11" class="border-mid"></td><td id="team_1_yellow2_11"></td>
+                <td id="team_1_red1_11" class="border-mid"></td><td id="team_1_red2_11"></td>
+                <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
+            </tr>
+            <tr>
+                <td class="doc" id="team_1_doc_12"></td>
+                <td><strong id="team_1_player_12" class="nome-jogador"></strong></td>
+                <td id="team_1_n_12"></td>
+                <td id="team_1_yellow1_12" class="border-mid"></td><td id="team_1_yellow2_12"></td>
+                <td id="team_1_red1_12" class="border-mid"></td><td id="team_1_red2_12"></td>
+                <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
+            </tr>
+            <tr>
+                <td class="doc" id="team_1_doc_13"></td>
+                <td><strong id="team_1_player_13" class="nome-jogador"></strong></td>
+                <td id="team_1_n_13"></td>
+                <td id="team_1_yellow1_13" class="border-mid"></td><td id="team_1_yellow2_13"></td>
+                <td id="team_1_red1_13" class="border-mid"></td><td id="team_1_red2_13"></td>
+                <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
+            </tr>
+            <tr>
+                <td class="doc" id="team_1_doc_14"></td>
+                <td><strong id="team_1_player_14" class="nome-jogador"></strong></td>
+                <td id="team_1_n_14"></td>
+                <td id="team_1_yellow1_14" class="border-mid"></td><td id="team_1_yellow2_14"></td>
+                <td id="team_1_red1_14" class="border-mid"></td><td id="team_1_red2_14"></td>
+                <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
+            </tr>
+            <tr>
+                <td class="doc" id="team_1_doc_15"></td>
+                <td><strong id="team_1_player_15" class="nome-jogador"></strong></td>
+                <td id="team_1_n_15"></td>
+                <td id="team_1_yellow1_15" class="border-mid"></td><td id="team_1_yellow2_15"></td>
+                <td id="team_1_red1_15" class="border-mid"></td><td id="team_1_red2_15"></td>
+                <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
+            </tr>
 
-        <tr>
-            <td></td>
-            <td colspan="3" class="tecnico-row"><strong></strong></td>
-            <td colspan="2" id="team_1_tech_yellow"></td>
-            <td colspan="2" id="team_1_tech_red"></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td colspan="3" class="tecnico-row"><strong></strong></td>
-            <td colspan="2" id="team_1_tech_yellow"></td>
-            <td colspan="2" id="team_1_tech_red"></td>
-        </tr>
-        
-    </tbody>
-</table>
+            <tr>
+                <td></td>
+                <td colspan="3" class="tecnico-row"><strong>TÉCNICO:</strong></td>
+                <td colspan="2" id="team_1_tech_yellow"></td>
+                <td colspan="2" id="team_1_tech_red"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="3" class="tecnico-row"><strong></strong></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="3" class="tecnico-row"><strong></strong></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+            </tr>
+        </tbody>
+    </table>
 
-    
     <table class="grid-footer">
-    <tr class="row-numbers">
-        <script>
-            for(let i=0; i<20; i++) {
-                // O número do golo fica em cinza, o ID do jogador fica na aba branca
-                document.write(`<td class="cell-num">${i + 1}</td><td id="team_1_gol_n_${i}" class="cell-player"></td>`);
-            }
-        </script>
-    </tr>
-    <tr class="row-empty">
-        <script>
-            for(let i=0; i<20; i++) {
-                // O tempo (minutos:segundos) fica no quadrado largo de baixo
-                document.write(`<td id="team_1_gol_time_${i}" colspan="2" class="cell-time"></td>`);
-            }
-        </script>
-    </tr>
-</table>
+        <tr class="row-numbers">
+            <td class="cell-num">1</td><td id="team_1_gol_n_0" class="cell-player"></td>
+            <td class="cell-num">2</td><td id="team_1_gol_n_1" class="cell-player"></td>
+            <td class="cell-num">3</td><td id="team_1_gol_n_2" class="cell-player"></td>
+            <td class="cell-num">4</td><td id="team_1_gol_n_3" class="cell-player"></td>
+            <td class="cell-num">5</td><td id="team_1_gol_n_4" class="cell-player"></td>
+            <td class="cell-num">6</td><td id="team_1_gol_n_5" class="cell-player"></td>
+            <td class="cell-num">7</td><td id="team_1_gol_n_6" class="cell-player"></td>
+            <td class="cell-num">8</td><td id="team_1_gol_n_7" class="cell-player"></td>
+            <td class="cell-num">9</td><td id="team_1_gol_n_8" class="cell-player"></td>
+            <td class="cell-num">10</td><td id="team_1_gol_n_9" class="cell-player"></td>
+            <td class="cell-num">11</td><td id="team_1_gol_n_10" class="cell-player"></td>
+            <td class="cell-num">12</td><td id="team_1_gol_n_11" class="cell-player"></td>
+            <td class="cell-num">13</td><td id="team_1_gol_n_12" class="cell-player"></td>
+            <td class="cell-num">14</td><td id="team_1_gol_n_13" class="cell-player"></td>
+            <td class="cell-num">15</td><td id="team_1_gol_n_14" class="cell-player"></td>
+            <td class="cell-num">16</td><td id="team_1_gol_n_15" class="cell-player"></td>
+            <td class="cell-num">17</td><td id="team_1_gol_n_16" class="cell-player"></td>
+            <td class="cell-num">18</td><td id="team_1_gol_n_17" class="cell-player"></td>
+            <td class="cell-num">19</td><td id="team_1_gol_n_18" class="cell-player"></td>
+            <td class="cell-num">20</td><td id="team_1_gol_n_19" class="cell-player"></td>
+        </tr>
+        <tr class="row-empty">
+            <td id="team_1_gol_time_0" colspan="2" class="cell-time"></td>
+            <td id="team_1_gol_time_1" colspan="2" class="cell-time"></td>
+            <td id="team_1_gol_time_2" colspan="2" class="cell-time"></td>
+            <td id="team_1_gol_time_3" colspan="2" class="cell-time"></td>
+            <td id="team_1_gol_time_4" colspan="2" class="cell-time"></td>
+            <td id="team_1_gol_time_5" colspan="2" class="cell-time"></td>
+            <td id="team_1_gol_time_6" colspan="2" class="cell-time"></td>
+            <td id="team_1_gol_time_7" colspan="2" class="cell-time"></td>
+            <td id="team_1_gol_time_8" colspan="2" class="cell-time"></td>
+            <td id="team_1_gol_time_9" colspan="2" class="cell-time"></td>
+            <td id="team_1_gol_time_10" colspan="2" class="cell-time"></td>
+            <td id="team_1_gol_time_11" colspan="2" class="cell-time"></td>
+            <td id="team_1_gol_time_12" colspan="2" class="cell-time"></td>
+            <td id="team_1_gol_time_13" colspan="2" class="cell-time"></td>
+            <td id="team_1_gol_time_14" colspan="2" class="cell-time"></td>
+            <td id="team_1_gol_time_15" colspan="2" class="cell-time"></td>
+            <td id="team_1_gol_time_16" colspan="2" class="cell-time"></td>
+            <td id="team_1_gol_time_17" colspan="2" class="cell-time"></td>
+            <td id="team_1_gol_time_18" colspan="2" class="cell-time"></td>
+            <td id="team_1_gol_time_19" colspan="2" class="cell-time"></td>
+        </tr>
+    </table>
 </div>
 
 <div id="team-b" class="team-section">
     <div class="team-header-name">
-        EQUIPE 'B' Equipe 9
+        EQUIPE 'B'
     </div>
 
     <table class="main-table">
-    <thead>
-        <tr>
-            <th class="col-doc">DOCUMENTO</th>
-            <th class="col-jog">JOGADORES</th>
-            <th class="col-n">Nº</th>
-            <th colspan="2" class="col-ama">AMARELOS</th> <th colspan="2" class="col-ver">VERMELHOS</th> <th class="col-sub">SUBSTITUIÇÕES</th>
-            <th colspan="10" class="col-faltas-header">FALTAS</th>
-        </tr>
-    </thead>
-    <tbody>
-        <script>
-            // Vamos gerar as 15 linhas via Script para garantir que todos os IDs fiquem perfeitos
-            // O prefixo 'team_2' deve ser trocado para 'team_1' na tabela do outro time
-            const prefixo = "team_2"; 
-            
-            for (let i = 1; i <= 15; i++) {
-                document.write(`
-                <tr>
-                    <td class="doc" id="${prefixo}_doc_${i}">111.111.111-11</td>
-                    <td id="nome-jogador"><strong id="${prefixo}_player_${i}" class="nome-jogador"></strong></td>
-                    <td class="nome-jogador" id="${prefixo}_n_${i}"></td>
-                    
-                    <td id="${prefixo}_yellow1_${i}" class="border-mid"></td>
-                    <td id="${prefixo}_yellow2_${i}"></td>
-                    <td id="${prefixo}_red1_${i}" class="border-mid"></td>
-                    <td id="${prefixo}_red2_${i}"></td>
-                    
-                    <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
-                    
-                    ${i === 1 || i === 2 ? 
-                        '<td colspan="2" class="f-num">1</td><td colspan="2" class="f-num">2</td><td colspan="2" class="f-num">3</td><td colspan="2" class="f-num">4</td><td colspan="2" class="f-num">5</td>' : 
-                      i === 3 ? 
-                        '<td colspan="10" class="time-title">PEDIDOS DE TEMPO</td>' :
-                      i === 4 ?
-                        '<td colspan="10" class="time-periods"><div class="flex-periods"><span>1. PER</span><span>2. PER</span></div></td>' :
-                      i === 5 ?
-                        '<td colspan="5"></td><td colspan="5"></td>' :
-                      i === 6 ?
-                        '<td colspan="5" rowspan="16" class="col-sig">Capitão</td><td colspan="5" rowspan="16" class="col-sig">Técnico</td>' : 
-                        '' 
-                    }
-                </tr>
-                `);
-            }
-        </script>
-        <tr>
-            <td></td>
-            <td colspan="3" class="tecnico-row"><strong>TÉCNICO:</strong></td>
-            <td colspan="2" id="team_2_tech_yellow"></td>
-            <td colspan="2" id="team_2_tech_red"></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td colspan="3" class="tecnico-row"><strong></strong></td>
-            <td colspan="2" id="team_1_tech_yellow"></td>
-            <td colspan="2" id="team_1_tech_red"></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td colspan="3" class="tecnico-row"><strong></strong></td>
-            <td colspan="2" id="team_1_tech_yellow"></td>
-            <td colspan="2" id="team_1_tech_red"></td>
-        </tr>
-    </tbody>
-</table>
+        <thead>
+            <tr>
+                <th class="col-doc">DOCUMENTO</th>
+                <th class="col-jog">JOGADORES</th>
+                <th class="col-n">Nº</th>
+                <th colspan="2" class="col-ama">AMARELOS</th> 
+                <th colspan="2" class="col-ver">VERMELHOS</th> 
+                <th class="col-sub">SUBSTITUIÇÕES</th>
+                <th colspan="10" class="col-faltas-header">FALTAS</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="doc" id="team_2_doc_1"></td>
+                <td><strong id="team_2_player_1" class="nome-jogador"></strong></td>
+                <td id="team_2_n_1"></td>
+                <td id="team_2_yellow1_1" class="border-mid"></td><td id="team_2_yellow2_1"></td>
+                <td id="team_2_red1_1" class="border-mid"></td><td id="team_2_red2_1"></td>
+                <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
+                <td colspan="2" class="f-num">1</td><td colspan="2" class="f-num">2</td><td colspan="2" class="f-num">3</td><td colspan="2" class="f-num">4</td><td colspan="2" class="f-num">5</td>
+            </tr>
+            <tr>
+                <td class="doc" id="team_2_doc_2"></td>
+                <td><strong id="team_2_player_2" class="nome-jogador"></strong></td>
+                <td id="team_2_n_2"></td>
+                <td id="team_2_yellow1_2" class="border-mid"></td><td id="team_2_yellow2_2"></td>
+                <td id="team_2_red1_2" class="border-mid"></td><td id="team_2_red2_2"></td>
+                <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
+                <td colspan="2" class="f-num">1</td><td colspan="2" class="f-num">2</td><td colspan="2" class="f-num">3</td><td colspan="2" class="f-num">4</td><td colspan="2" class="f-num">5</td>
+            </tr>
+            <tr>
+                <td class="doc" id="team_2_doc_3"></td>
+                <td><strong id="team_2_player_3" class="nome-jogador"></strong></td>
+                <td id="team_2_n_3"></td>
+                <td id="team_2_yellow1_3" class="border-mid"></td><td id="team_2_yellow2_3"></td>
+                <td id="team_2_red1_3" class="border-mid"></td><td id="team_2_red2_3"></td>
+                <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
+                <td colspan="10" class="time-title">PEDIDOS DE TEMPO</td>
+            </tr>
+            <tr>
+                <td class="doc" id="team_2_doc_4"></td>
+                <td><strong id="team_2_player_4" class="nome-jogador"></strong></td>
+                <td id="team_2_n_4"></td>
+                <td id="team_2_yellow1_4" class="border-mid"></td><td id="team_2_yellow2_4"></td>
+                <td id="team_2_red1_4" class="border-mid"></td><td id="team_2_red2_4"></td>
+                <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
+                <td colspan="10" class="time-periods"><div class="flex-periods"><span>1. PER</span><span>2. PER</span></div></td>
+            </tr>
+            <tr>
+                <td class="doc" id="team_2_doc_5"></td>
+                <td><strong id="team_2_player_5" class="nome-jogador"></strong></td>
+                <td id="team_2_n_5"></td>
+                <td id="team_2_yellow1_5" class="border-mid"></td><td id="team_2_yellow2_5"></td>
+                <td id="team_2_red1_5" class="border-mid"></td><td id="team_2_red2_5"></td>
+                <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
+                <td colspan="5"></td><td colspan="5"></td>
+            </tr>
+            <tr>
+                <td class="doc" id="team_2_doc_6"></td>
+                <td><strong id="team_2_player_6" class="nome-jogador"></strong></td>
+                <td id="team_2_n_6"></td>
+                <td id="team_2_yellow1_6" class="border-mid"></td><td id="team_2_yellow2_6"></td>
+                <td id="team_2_red1_6" class="border-mid"></td><td id="team_2_red2_6"></td>
+                <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
+                <td colspan="5" rowspan="16" class="col-sig">Capitão</td><td colspan="5" rowspan="16" class="col-sig">Técnico</td>
+            </tr>
+            <tr>
+                <td class="doc" id="team_2_doc_7"></td>
+                <td><strong id="team_2_player_7" class="nome-jogador"></strong></td>
+                <td id="team_2_n_7"></td>
+                <td id="team_2_yellow1_7" class="border-mid"></td><td id="team_2_yellow2_7"></td>
+                <td id="team_2_red1_7" class="border-mid"></td><td id="team_2_red2_7"></td>
+                <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
+            </tr>
+            <tr>
+                <td class="doc" id="team_2_doc_8"></td>
+                <td><strong id="team_2_player_8" class="nome-jogador"></strong></td>
+                <td id="team_2_n_8"></td>
+                <td id="team_2_yellow1_8" class="border-mid"></td><td id="team_2_yellow2_8"></td>
+                <td id="team_2_red1_8" class="border-mid"></td><td id="team_2_red2_8"></td>
+                <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
+            </tr>
+            <tr>
+                <td class="doc" id="team_2_doc_9"></td>
+                <td><strong id="team_2_player_9" class="nome-jogador"></strong></td>
+                <td id="team_2_n_9"></td>
+                <td id="team_2_yellow1_9" class="border-mid"></td><td id="team_2_yellow2_9"></td>
+                <td id="team_2_red1_9" class="border-mid"></td><td id="team_2_red2_9"></td>
+                <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
+            </tr>
+            <tr>
+                <td class="doc" id="team_2_doc_10"></td>
+                <td><strong id="team_2_player_10" class="nome-jogador"></strong></td>
+                <td id="team_2_n_10"></td>
+                <td id="team_2_yellow1_10" class="border-mid"></td><td id="team_2_yellow2_10"></td>
+                <td id="team_2_red1_10" class="border-mid"></td><td id="team_2_red2_10"></td>
+                <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
+            </tr>
+            <tr>
+                <td class="doc" id="team_2_doc_11"></td>
+                <td><strong id="team_2_player_11" class="nome-jogador"></strong></td>
+                <td id="team_2_n_11"></td>
+                <td id="team_2_yellow1_11" class="border-mid"></td><td id="team_2_yellow2_11"></td>
+                <td id="team_2_red1_11" class="border-mid"></td><td id="team_2_red2_11"></td>
+                <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
+            </tr>
+            <tr>
+                <td class="doc" id="team_2_doc_12"></td>
+                <td><strong id="team_2_player_12" class="nome-jogador"></strong></td>
+                <td id="team_2_n_12"></td>
+                <td id="team_2_yellow1_12" class="border-mid"></td><td id="team_2_yellow2_12"></td>
+                <td id="team_2_red1_12" class="border-mid"></td><td id="team_2_red2_12"></td>
+                <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
+            </tr>
+            <tr>
+                <td class="doc" id="team_2_doc_13"></td>
+                <td><strong id="team_2_player_13" class="nome-jogador"></strong></td>
+                <td id="team_2_n_13"></td>
+                <td id="team_2_yellow1_13" class="border-mid"></td><td id="team_2_yellow2_13"></td>
+                <td id="team_2_red1_13" class="border-mid"></td><td id="team_2_red2_13"></td>
+                <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
+            </tr>
+            <tr>
+                <td class="doc" id="team_2_doc_14"></td>
+                <td><strong id="team_2_player_14" class="nome-jogador"></strong></td>
+                <td id="team_2_n_14"></td>
+                <td id="team_2_yellow1_14" class="border-mid"></td><td id="team_2_yellow2_14"></td>
+                <td id="team_2_red1_14" class="border-mid"></td><td id="team_2_red2_14"></td>
+                <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
+            </tr>
+            <tr>
+                <td class="doc" id="team_2_doc_15"></td>
+                <td><strong id="team_2_player_15" class="nome-jogador"></strong></td>
+                <td id="team_2_n_15"></td>
+                <td id="team_2_yellow1_15" class="border-mid"></td><td id="team_2_yellow2_15"></td>
+                <td id="team_2_red1_15" class="border-mid"></td><td id="team_2_red2_15"></td>
+                <td class="sub-marks">| &nbsp; | &nbsp; | &nbsp; |</td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td colspan="3" class="tecnico-row"><strong>TÉCNICO:</strong></td>
+                <td colspan="2" id="team_2_tech_yellow"></td>
+                <td colspan="2" id="team_2_tech_red"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="3" class="tecnico-row"><strong></strong></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td colspan="3" class="tecnico-row"><strong></strong></td>
+                <td colspan="2"></td>
+                <td colspan="2"></td>
+            </tr>
+        </tbody>
+    </table>
 
     <table class="grid-footer">
-    <tr class="row-numbers">
-        <script>
-            for(let i=0; i<20; i++) {
-                // O número do golo fica em cinza, o ID do jogador fica na aba branca
-                document.write(`<td class="cell-num">${i + 1}</td><td id="team_2_gol_n_${i}" class="cell-player"></td>`);
-            }
-        </script>
-    </tr>
-    <tr class="row-empty">
-        <script>
-            for(let i=0; i<20; i++) {
-                // O tempo (minutos:segundos) fica no quadrado largo de baixo
-                document.write(`<td id="team_2_gol_time_${i}" colspan="2" class="cell-time"></td>`);
-            }
-        </script>
-    </tr>
-</table>
+        <tr class="row-numbers">
+            <td class="cell-num">1</td><td id="team_2_gol_n_0" class="cell-player"></td>
+            <td class="cell-num">2</td><td id="team_2_gol_n_1" class="cell-player"></td>
+            <td class="cell-num">3</td><td id="team_2_gol_n_2" class="cell-player"></td>
+            <td class="cell-num">4</td><td id="team_2_gol_n_3" class="cell-player"></td>
+            <td class="cell-num">5</td><td id="team_2_gol_n_4" class="cell-player"></td>
+            <td class="cell-num">6</td><td id="team_2_gol_n_5" class="cell-player"></td>
+            <td class="cell-num">7</td><td id="team_2_gol_n_6" class="cell-player"></td>
+            <td class="cell-num">8</td><td id="team_2_gol_n_7" class="cell-player"></td>
+            <td class="cell-num">9</td><td id="team_2_gol_n_8" class="cell-player"></td>
+            <td class="cell-num">10</td><td id="team_2_gol_n_9" class="cell-player"></td>
+            <td class="cell-num">11</td><td id="team_2_gol_n_10" class="cell-player"></td>
+            <td class="cell-num">12</td><td id="team_2_gol_n_11" class="cell-player"></td>
+            <td class="cell-num">13</td><td id="team_2_gol_n_12" class="cell-player"></td>
+            <td class="cell-num">14</td><td id="team_2_gol_n_13" class="cell-player"></td>
+            <td class="cell-num">15</td><td id="team_2_gol_n_14" class="cell-player"></td>
+            <td class="cell-num">16</td><td id="team_2_gol_n_15" class="cell-player"></td>
+            <td class="cell-num">17</td><td id="team_2_gol_n_16" class="cell-player"></td>
+            <td class="cell-num">18</td><td id="team_2_gol_n_17" class="cell-player"></td>
+            <td class="cell-num">19</td><td id="team_2_gol_n_18" class="cell-player"></td>
+            <td class="cell-num">20</td><td id="team_2_gol_n_19" class="cell-player"></td>
+        </tr>
+        <tr class="row-empty">
+            <td id="team_2_gol_time_0" colspan="2" class="cell-time"></td>
+            <td id="team_2_gol_time_1" colspan="2" class="cell-time"></td>
+            <td id="team_2_gol_time_2" colspan="2" class="cell-time"></td>
+            <td id="team_2_gol_time_3" colspan="2" class="cell-time"></td>
+            <td id="team_2_gol_time_4" colspan="2" class="cell-time"></td>
+            <td id="team_2_gol_time_5" colspan="2" class="cell-time"></td>
+            <td id="team_2_gol_time_6" colspan="2" class="cell-time"></td>
+            <td id="team_2_gol_time_7" colspan="2" class="cell-time"></td>
+            <td id="team_2_gol_time_8" colspan="2" class="cell-time"></td>
+            <td id="team_2_gol_time_9" colspan="2" class="cell-time"></td>
+            <td id="team_2_gol_time_10" colspan="2" class="cell-time"></td>
+            <td id="team_2_gol_time_11" colspan="2" class="cell-time"></td>
+            <td id="team_2_gol_time_12" colspan="2" class="cell-time"></td>
+            <td id="team_2_gol_time_13" colspan="2" class="cell-time"></td>
+            <td id="team_2_gol_time_14" colspan="2" class="cell-time"></td>
+            <td id="team_2_gol_time_15" colspan="2" class="cell-time"></td>
+            <td id="team_2_gol_time_16" colspan="2" class="cell-time"></td>
+            <td id="team_2_gol_time_17" colspan="2" class="cell-time"></td>
+            <td id="team_2_gol_time_18" colspan="2" class="cell-time"></td>
+            <td id="team_2_gol_time_19" colspan="2" class="cell-time"></td>
+        </tr>
+    </table>
 </div>
 
-
 </div>
-
-
-<script>
-        window.__DADOS_SUMULA__ = {
-    "general": {
-        "title": "GRUPO CONTRA TODOS",
-        "sub_title": "4° PARAZÃO DO FUTSAL",
-        "stage": "1º Fase",
-        "round": "2º Rodada",
-        "place": "GINASIO UEPA"
-    },
-    "config":{
-        "player_length": 15
-    },
-    "team_1": {
-        "name": "Equipe 4",
-        "player": [
-            {
-                "supend":true,
-                "name": "MAURO GONÇALVES LIRA",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 2,
-                "red_card": 1,
-                "blue_card": 0,
-                "goals": 2
-            },
-            {   "supend":false,
-                "name": "ISAIAS PINTO LIMA",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 1,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "JOSE  AUGUSTO",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "JEFFERSON BRUNO",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 6
-            },
-            {   "supend":true,
-                "name": "JUAN ADRIAN",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 1,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "GILBERT ROMARIO",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "JHON RENATO",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "JEFFERSON BRENO",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "CRISTIAN NASCIMENTO COUTO",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 4
-            },
-            {   "supend":false,
-                "name": "LUCAS ARAUJO DE OLIVEIRA",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 2
-            },  
-            {   "supend":false,
-                "name": "ELIDELSON FERREIRA",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "ANDERSON MACHADO",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-                
-            {   "supend":false,
-                "name": "THALISON ALVES MEDEIROS",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-             {  "supend":false,
-                "name": "HÉRIC PEIXOTO",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-             {  
-                "supend":false,
-                "name": "TESTE 1",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            }, { 
-                "supend":false,   
-                "name": "TESTE 2",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            }, {
-                "supend":false,
-                "name": "TESTE 3",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            }, {
-                "supend":false,
-                "name": "TESTE 4",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            }, {
-                "supend":false,
-                "name": "TESTE 5",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            }, {
-                "supend":false,
-                "name": "TESTE 6",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-        ],
-        "goals": [
-            {
-                "n": "10",
-                "minutes": 7,
-                "seconds": 45,
-                "period": 1
-            },
-            {
-                "n": "11",
-                "minutes": 1,
-                "seconds": 0,
-                "period": 1
-            },
-            {
-                "n": "12",
-                "minutes": 13,
-                "seconds": 0,
-                "period": 1
-            },
-            {
-                "n": "",
-                "minutes": 16,
-                "seconds": 0,
-                "period": 1
-            },
-            {
-                "n": "",
-                "minutes": 3,
-                "seconds": 0,
-                "period": 2
-            },
-            {
-                "n": "",
-                "minutes": 14,
-                "seconds": 0,
-                "period": 2
-            },
-            {
-                "n": "",
-                "minutes": 17,
-                "seconds": 0,
-                "period": 2
-            },
-            {
-                "n": "",
-                "minutes": 7,
-                "seconds": 0,
-                "period": 1
-            },
-            {
-                "n": "",
-                "minutes": 1,
-                "seconds": 0,
-                "period": 1
-            },
-            {
-                "n": "",
-                "minutes": 13,
-                "seconds": 0,
-                "period": 1
-            },
-            {
-                "n": "",
-                "minutes": 16,
-                "seconds": 0,
-                "period": 1
-            },
-            {
-                "n": "",
-                "minutes": 3,
-                "seconds": 0,
-                "period": 2
-            },
-            {
-                "n": "",
-                "minutes": 14,
-                "seconds": 0,
-                "period": 2
-            },
-            {
-                "n": "",
-                "minutes": 17,
-                "seconds": 0,
-                "period": 2
-            }
-        ]
-    },
-    "team_2": {
-        "name": "Equipe 9",
-        "player": [
-            {   "supend":false,
-                "name": "LUCAS SOARES BARATA",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 2
-            },
-            {   "supend":false,
-                "name": "THIAGO ALMEIDA FERREIRA",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "ALLEX SANDER MACHADO DE SOUZA",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "YAGO PIETRO BARROS SANTIAGO",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 2
-            },
-            {   "supend":false,
-                "name": "RENAN LUIS BATISTA MARQUES",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "DAVI LUCAS DIAS RODRIGUES",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "IVISON CARNEIRO DINIZ",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "CLAUDIO CALEBE BRASIL FARIAS",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "THALES GABRIEL LIMA FERAO DA SILVA",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "RONALD HILBERT",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "FABIO FURTADO DUARTE",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "FABIO ATAIDE DOS SANTOS JUNIOR",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":true,
-                "name": "JOSE CAUA MACHADO RESENDE",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 2,
-                "red_card": 1,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "ATILA LOBATO LEAL LEAL",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "ARTHUR MOREIRA DE SOUSA DA SILVA",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "MAURICIO KAUA DA PAIXAO BRITO",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "ARTHUR CARLOS NUNES ANDRADE",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "THIAGO VIANA PEREIRA ",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "ANTONIO EDUARDO DA SILVA QUEIROZ",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "PAULO ENZO FERREIRA FERREIRA",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-        ],
-        "goals": [
-            {
-                "n": "15",
-                "minutes": 10,
-                "seconds": 35,
-                "period": 2
-            },
-            {
-                "n": "55",
-                "minutes": 13,
-                "seconds": 0,
-                "period": 2
-            },
-            {
-                "n": "",
-                "minutes": 10,
-                "seconds": 0,
-                "period": 2
-            },
-            {
-                "n": "",
-                "minutes": 13,
-                "seconds": 0,
-                "period": 2
-            },
-            {
-                "n": "",
-                "minutes": 20,
-                "seconds": 0,
-                "period": 2
-            }
-        ]
-    }
-};
-    </script>
 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
-    const d = window.__DADOS_SUMULA__;
-    if (!d) return;
+    fetch('referencia.json')
+        .then(response => {
+            if (!response.ok) throw new Error("Erro ao carregar o JSON");
+            return response.json();
+        })
+        .then(d => {
+            const playerLimit = 15;
 
-    const playerLimit = (d.config && d.config.player_length) ? Math.min(parseInt(d.config.player_length), 15) : 15;
+            const set = (id, val) => {
+                const el = document.getElementById(id);
+                if (el) el.innerText = val || "";
+            };
 
-    const set = (id, val) => {
-        const el = document.getElementById(id);
-        if (el) el.innerText = val || "";
-    };
+            // 1. DADOS GERAIS DO CABEÇALHO (Mapeados usando d.general.propriedade.value)
+            if (d.general) {
+                set('general_title', d.general.title?.value);
+                set('general_sub_title', d.general.sub_title?.value); 
+                set('general_stage', d.general.fs?.value); 
+                set('general_round', d.general.m_set?.value); 
+                set('general_place', d.general.l?.value); 
+                set('general_n', d.general.n?.value); 
+                set('general_date', d.general.date?.value); 
+            }
 
-    // 1. DADOS GERAIS
-    if (d.general) {
-        set('general_title', d.general.title);
-        set('general_sub_title', d.general.sub_title);
-        set('general_stage', d.general.stage);
-        set('general_round', d.general.round);
-        set('general_place', d.general.place);
-        set('general_date', d.general.date);
-    }
+            // 2. NOMES DOS TIMES
+            if (d.team_1) set('team_1_name', d.team_1.name);
+            if (d.team_2) set('team_2_name', d.team_2.name);
 
-    // 2. NOMES DOS TIMES
-    if (d.team_1) set('team_1_name', d.team_1.name);
-    if (d.team_2) set('team_2_name', d.team_2.name);
+            // 3. JOGADORES E CARTÕES
+            function preencherTime(timeData, prefixo) {
+                if (!timeData || !timeData.player) return;
 
-    // 3. JOGADORES E CARTÕES
-    function preencherTimeManual(timeData, prefixo) {
-        for (let i = 1; i <= 15; i++) {
-            const nomeEl = document.getElementById(`${prefixo}_player_${i}`);
-            const linhaTr = nomeEl ? nomeEl.closest('tr') : null;
+                for (let i = 1; i <= playerLimit; i++) {
+                    const nomeEl = document.getElementById(`${prefixo}_player_${i}`);
+                    const p = timeData.player[i-1];
 
-            if (linhaTr) {
-                if (i > playerLimit) {
-                    linhaTr.style.display = "none";
-                } else {
-                    linhaTr.style.display = "table-row";
-                    const p = (timeData && timeData.player) ? timeData.player[i-1] : null;
+                    if (nomeEl) {
+                        if (p) {
+                            nomeEl.innerText = p.name_40 || p.name || "";
+                            
+                            const docEl = document.getElementById(`${prefixo}_doc_${i}`);
+                            if (docEl) docEl.innerText = p.doc || "";
 
-                    if (p) {
-                        nomeEl.innerText = p.name || "";
-                        // Lógica de Suspensão
-                        if (p.supend) {
-                            nomeEl.style.textDecoration = "line-through";
-                            nomeEl.style.color = "red";
+                            const isSuspenso = (parseInt(p.red_card || 0) >= 1 || parseInt(p.yellow_card || 0) >= 2);
+                            if (isSuspenso) {
+                                nomeEl.style.textDecoration = "line-through";
+                                nomeEl.style.color = "red";
+                            } else {
+                                nomeEl.style.textDecoration = "none";
+                                nomeEl.style.color = "inherit";
+                            }
+
+                            set(`${prefixo}_n_${i}`, p.n);
+
+                            // Amarelos
+                            const y1 = document.getElementById(`${prefixo}_yellow1_${i}`);
+                            const y2 = document.getElementById(`${prefixo}_yellow2_${i}`);
+                            if (y1) y1.innerText = (p.yellow_card >= 1) ? "X" : "";
+                            if (y2) y2.innerText = (p.yellow_card >= 2) ? "X" : "";
+
+                            // Vermelhos
+                            const r1 = document.getElementById(`${prefixo}_red1_${i}`);
+                            const r2 = document.getElementById(`${prefixo}_red2_${i}`);
+                            const v = parseInt(p.red_card || 0);
+                            if (r1) r1.innerText = (v >= 1) ? "X" : "";
+                            if (r2) r2.innerText = (v >= 2) ? "X" : "";
+
                         } else {
-                            nomeEl.style.textDecoration = "none";
-                            nomeEl.style.color = "inherit";
+                            nomeEl.innerText = "";
+                            set(`${prefixo}_n_${i}`, "");
+                            const docEl = document.getElementById(`${prefixo}_doc_${i}`);
+                            if (docEl) docEl.innerText = "";
                         }
-
-                        set(`${prefixo}_n_${i}`, p.n);
-
-                        // Amarelos
-                        const y1 = document.getElementById(`${prefixo}_yellow1_${i}`);
-                        const y2 = document.getElementById(`${prefixo}_yellow2_${i}`);
-                        if (y1) y1.innerText = (p.yellow_card >= 1) ? "X" : "";
-                        if (y2) y2.innerText = (p.yellow_card >= 2) ? "X" : "";
-
-                        // Vermelhos
-                        const r1 = document.getElementById(`${prefixo}_red1_${i}`);
-                        const r2 = document.getElementById(`${prefixo}_red2_${i}`);
-                        const v = parseInt(p.red_card || p.red || 0);
-                        if (r1) r1.innerText = (v >= 1) ? "X" : "";
-                        if (r2) r2.innerText = (v >= 2) ? "X" : "";
-
-                        // Azul
-                        const blueEl = document.getElementById(`${prefixo}_blue_${i}`);
-                        if (blueEl) blueEl.innerText = (p.blue_card > 0) ? "X" : "";
-                    } else {
-                        nomeEl.innerText = "";
-                        set(`${prefixo}_n_${i}`, "");
                     }
                 }
             }
-        }
-    }
 
-    // 4. GOLS
-    function preencherGolsManual(timeData, prefixo) {
-        if (!timeData || !timeData.goals) return;
-        timeData.goals.forEach((gol, i) => {
-            const nEl = document.getElementById(`${prefixo}_gol_n_${i}`);
-            const timeEl = document.getElementById(`${prefixo}_gol_time_${i}`);
-            
-            if (nEl) nEl.innerText = gol.n || "";
-            if (timeEl) {
-                if (gol.minutes !== undefined) {
-                    const min = String(gol.minutes).padStart(2, '0');
-                    const seg = String(gol.seconds || 0).padStart(2, '0');
-                    timeEl.innerText = `${min}:${seg}`;
-                } else {
-                    timeEl.innerText = ""; 
-                }
+            // 4. GOLS
+            function preencherGols(timeData, prefixo) {
+                if (!timeData || !timeData.goals) return;
+                timeData.goals.forEach((gol, i) => {
+                    const nEl = document.getElementById(`${prefixo}_gol_n_${i}`);
+                    const timeEl = document.getElementById(`${prefixo}_gol_time_${i}`);
+                    
+                    if (nEl) nEl.innerText = gol.n || "";
+                    if (timeEl) {
+                        if (gol.minutes !== undefined && gol.minutes !== "") {
+                            const min = String(gol.minutes).padStart(2, '0');
+                            const seg = String(gol.seconds || 0).padStart(2, '0');
+                            timeEl.innerText = `${min}:${seg}`;
+                        } else {
+                            timeEl.innerText = ""; 
+                        }
+                    }
+                });
             }
-        });
-    }
 
-    // --- EXECUÇÃO ---
-    preencherTimeManual(d.team_1, 'team_1');
-    preencherTimeManual(d.team_2, 'team_2');
-    preencherGolsManual(d.team_1, 'team_1'); // Ajustado para bater com os IDs HTML
-    preencherGolsManual(d.team_2, 'team_2'); // Ajustado para bater com os IDs HTML
+            // --- EXECUÇÃO ---
+            preencherTime(d.team_1, 'team_1');
+            preencherTime(d.team_2, 'team_2');
+            preencherGols(d.team_1, 'team_1'); 
+            preencherGols(d.team_2, 'team_2'); 
+        })
+        .catch(error => {
+            console.error("Erro ao carregar o JSON:", error);
+        });
 });
 </script>
+
 <style>
-         /* Configurações de Impressão e Página */
-        @page {
-            size: A4;
-            margin: 5mm 10mm;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: #000;
-            
-        }
-
-        .folha-a4 {
-            width: 190mm;
-            margin: 0 auto;
-        }
+/* CSS OTMIZADO PARA FOLHA A4 ESTRITA */
+@page {
+    size: A4 portrait;
+    margin: 0; /* Remove as margens brutas de impressão do navegador */
+}
 
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
+    padding: 0;
     color: #000;
-    
+    background: #fff; 
+    display: flex;
+    justify-content: center;
 }
 
 .container {
-    width: 190mm;
+    width: 210mm;
+    height: 297mm; /* Altura EXATA de uma folha A4 */
+    background: #fff;
+    padding: 5mm 10mm;
+    box-sizing: border-box; /* Garante que o padding não aumente o tamanho final da div */
     margin: 0 auto;
+    overflow: hidden; /* Corta qualquer coisa que tente escapar do A4 */
 }
 
-/* Tabela Superior (Placar) */
+/* Redução sutil de alturas para garantir o encaixe perfeito */
 .score-header {
     display: flex;
     width: 80%;
-    height: 25px;
+    height: 22px; /* Reduzido de 25px */
     justify-self: center;
     align-items: stretch;
-    border-top: 1px solid #000;
+    border: 1px solid #000;
     border-bottom: 1.5px solid #000;
-    border-left: 1px solid #000;
-    border-right: 1px solid #000;
+    margin-bottom: 2px;
 }
 
-.team-box1 {
-    flex: 1;
-    padding: 5px;
-    text-align: right;
-    font-size: 14px;
-    font-weight: bold;
-}
+.team-box1 { flex: 1; padding: 3px 5px; text-align: right; font-size: 14px; font-weight: bold; }
+.team-box2 { flex: 1; padding: 3px 5px; text-align: left; font-size: 14px; font-weight: bold; }
+.vs-box { width: 30px; display: flex; align-items: center; justify-content: center; font-weight: bold; border-left: 1.5px solid #000; border-right: 1.5px solid #000; }
 
-.team-box2 {
-    flex: 1;
-    padding: 5px;
-    text-align: left;
-    font-size: 14px;
-    font-weight: bold;
-}
+.header-main { display: grid; grid-template-columns: 1fr 40mm; }
 
-.vs-box {
-    width: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    border-left: 1.5px solid #000;
-    border-right: 1.5px solid #000;
-}
-
-/* Layout em Duas Colunas (Informações vs Horários) */
-.header-main {
-    display: grid;
-    grid-template-columns: 1fr 40mm;
-}
-
-/* Estilos de Células e Labels */
 .cell {
     position: relative;
     height: 12px;
-    margin-top: 3px;
-    padding: 3px 5px;
+    margin-top: 2px;
+    padding: 2px 5px;
     font-size: 10px;
-    border-top: 1px solid #000;
-    border-bottom: 1px solid #000;
-    border-left: 1px solid #000;
-    border-right: 1px solid #000;
+    border: 1px solid #000;
 }
 
-.label {
-    font-weight: bold;
-    font-size: 9px;
-    margin-right: 5px;
-}
+.label { font-weight: bold; font-size: 9px; margin-right: 5px; }
+.val { font-size: 11px; }
 
-.val {
-    font-size: 11px;
-}
-
-/* Área de Arbitragem */
 .arbitragem-container {
     display: flex;
-    height: 100px;
-    border-right: 1px solid #000;
-    border: 1px solid;
-    margin-top:2px;
-    margin-right:5px;
+    height: 80px; /* Reduzido de 100px */
+    border: 1px solid #000;
+    margin-top: 2px;
+    margin-right: 5px;
 }
 
 .arbitragem-label {
@@ -983,92 +677,24 @@ body {
     writing-mode: vertical-rl;
     transform: rotate(180deg);
     border-right: 1px solid #000;
-}
-
-.arbitragem-fields {
-    flex: 1;
-    display: grid;
-    grid-template-rows: repeat(4, 1fr);
-}
-
-.arb-row {
-    display: grid;
-    grid-template-columns: 35px 35px 1fr;
-    border-bottom: 1px solid #000;
-}
-
-.arb-col {
-    border-right: 1px solid #000;
-}
-
-/* Tabelas Laterais (Horários e Contagem) */
-.side-tables {
-    display: flex;
-    flex-direction: column;
-}
-
-.mini-table {
-    width: 100%;
-    font-size: 8px;
-    border-collapse: collapse;
-}
-
-.mini-table th, 
-.mini-table td {
-    height: 14px;
-    text-align: center;
-    border-bottom: 1px solid #000;
-}
-
-.mini-table th {
-    font-weight: bold;
-    background: #fff;
-}
-
-.txt-left {
-    text-align: left !important;
-    padding-left: 3px;
-    font-weight: bold;
-}
-
-table.mini-table {
-    height: 72px;
-    border: 1px solid;
-    margin-top:2px;
-   
-    
-}
-.arbitragem-fields {
-    border-left:1px solid;
-}
-
-/*Alinhando o nome "arbitragem" no meio do quadrado*/
-
-.arbitragem-label {
     align-content: center;
 }
 
-.mini-table th, .mini-table td{
-    border-right: 1px solid;
-}
+.arbitragem-fields { flex: 1; display: grid; grid-template-rows: repeat(4, 1fr); border-left: 1px solid; }
+.arb-row { display: grid; grid-template-columns: 35px 35px 1fr; border-bottom: 1px solid #000; }
+.arb-col { border-right: 1px solid #000; }
 
-/*Caixinha de resultado de placar*/
+.side-tables { display: flex; flex-direction: column; }
 
-div#placar1 {
-    border-right: none;
-    width:40px;
-}
+.mini-table { width: 100%; font-size: 8px; border-collapse: collapse; height: auto; border: 1px solid; margin-top: 2px; }
+.mini-table th, .mini-table td { height: 13px; /* Reduzido de 14px */ text-align: center; border-bottom: 1px solid #000; border-right: 1px solid; }
+.mini-table th { font-weight: bold; background: #fff; }
+.txt-left { text-align: left !important; padding-left: 3px; font-weight: bold; width: 5px; }
 
-div#placar2 {
-    border-left: none;
-    width:40px;
-    
-}
+div#placar1 { border-right: none; width: 40px; }
+div#placar2 { border-left: none; width: 40px; }
 
-.team-section {
-    width: 190mm;
-    margin-top: 3px;
-}
+.team-section { width: 190mm; margin-top: 2px; }
 
 .team-header-name {
     width: 502.3px;
@@ -1079,209 +705,76 @@ div#placar2 {
     border-bottom: none;
 }
 
-.main-table {
-    width: 100%;
-    table-layout: fixed;
-    border-collapse: collapse;
-}
+.main-table { width: 100%; table-layout: fixed; border-collapse: collapse; }
 
-.main-table th, 
-.main-table td {
-    height: 18px;
+.main-table th, .main-table td {
+    height: 15px; /* Reduzido de 18px - CHAVE PARA CABER NO A4 */
     padding: 0;
     font-size: 9px;
     text-align: center;
     border: 1px solid #000;
 }
 
-/* Colunas Iniciais */
 .col-doc { width: 12%; }
 .col-jog { width: 30%; }
 .col-n { width: 6%; }
 .col-ama { width: 12%; }
 .col-ver { width: 12%; }
 .col-sub { width: 13%; }
+.col-faltas-header { font-size: 8px; font-weight: bold; }
 
-/* O espaço restante (~24%) fica naturalmente para as 10 colunas de faltas/assinaturas */
+.f-num { font-size: 8px; }
+.time-title { font-size: 8px; font-weight: bold; height: 14px; }
+.time-periods { font-size: 7px; font-weight: bold; }
+.flex-periods { display: flex; justify-content: space-around; }
 
-.col-faltas-header {
-    font-size: 8px;
-    font-weight: bold;
-}
+.sub-marks { font-weight: bold; letter-spacing: 2px; font-size: 8px; text-align: center; padding-left: 12px; white-space: nowrap; }
 
-.f-num {
-    font-size: 8px;
-}
-
-.time-title {
-    font-size: 8px;
-    font-weight: bold;
-    height: 14px;
-}
-
-.time-periods {
-    font-size: 7px;
-    font-weight: bold;
-}
-
-.flex-periods {
-    display: flex;
-    justify-content: space-around;
-}
-
-.sub-marks {
-    font-weight: bold;
-    letter-spacing: 2px;
-    font-size: 8px;
-}
-
-/* Assinaturas Lado a Lado */
 .col-sig {
     font-size: 9px;
     writing-mode: vertical-rl;
     transform: rotate(180deg);
-    text-align: center;
+    text-align: left;
+    padding-top: 15px !important; /* Reduzido de 35px */
     background: #fff;
 }
 
-.tecnico-row {
-    text-align: left;
-    padding-left: 10px !important;
+.tecnico-row { text-align: left; padding-left: 10px !important; }
+
+.grid-footer { width: 100%; border-collapse: collapse; table-layout: fixed; margin-top: 3px; }
+.grid-footer td { border: 1px solid #000; text-align: center; padding: 0; height: 12px; /* Reduzido de 13px */ font-size: 9px; font-weight: bold; }
+
+div#team-a { margin-top: 0px; } /* Ajustado */
+
+td.nome-jogador { font-size: 11px; white-space: nowrap; overflow: hidden; } /* Evita quebra de linha acidental */
+.nome-jogador { font-weight: 400; text-align: left; }
+
+strong#team_1_name, strong#team_2_name, strong#general_place { font-weight: 600 !important; }
+
+td.doc { font-size: 11px; }
+
+div#col-1 { width: 150px; }
+
+.row-numbers td { border-bottom: none !important; }
+.cell-num { font-weight: bold; border-right: 1px solid #000 !important; width: 8px; }
+.cell-empty { border-right: 1px solid #000 !important; }
+.row-empty td { border-top: none !important; height: 14px; /* Reduzido de 15px */ }
+tr.row-numbers { border-bottom: 1px solid; }
+
+.main-table td:nth-child(2) { text-align: left !important; padding-left: 5px; }
+
+/* Regras específicas para impressão */
+@media print {
+    body { background: none; }
+    .container {
+        margin: 0;
+        padding: 5mm 10mm;
+        width: 210mm;
+        height: 297mm;
+        box-shadow: none;
+        border: none;
+    }
 }
-
-/* Grade 1-20 */
-.grid-footer {
-    width: 100%;
-    margin-top: 2px;
-    border-collapse: collapse;
-    margin-top: 5px;
-}
-
-.grid-footer td {
-    width: 5%;
-    height: 16px;
-    font-size: 9px;
-    font-weight: bold;
-    text-align: center;
-    border: 1px solid #000;
-}
-
-div#team-a {
-    margin-top: -14px;
-}
-
-td.col-sig {
-    text-align: left;
-    padding-top:35px !important;
-}
-
-td.tecnico-row {
-    text-align: left;
-}
-
-/*Aumentando nome da fonte do jogador*/
-td.nome-jogador {
-    font-size:12px;
-}
-
-
-td.txt-left {
-    width:5px;
-}
-
-
-/*fonte do nome do atleta*/
-.nome-jogador {
-    font-weight: 400;
-    font-size: 12px;
-}
-
-/*Peso da fonte dos nomes dos times*/
-
-strong#team_1_name {
-    font-weight: 600 !important;
-}
-
-strong#team_2_name {
-    font-weight: 600 !important;
-}
-
-/*Peso da fonte nome do local*/
-strong#general_place {
-    font-weight:600;
-}
-
-.sub-marks {
-    letter-spacing: 2px; /* Aumente este valor para afastar mais as barras */
-    text-align: center;   /* Garante que o bloco de barras fique centralizado */
-    padding-left: 12px;   /* Compensa o espaço da última barra para centralizar perfeito */
-    white-space: nowrap;  /* Impede que as barras quebrem linha em telas menores */
-}
-
-/*aumentando fonte dos documentos*/
-td.doc {
-    font-size: 12px;
-}
-
-
-div#col-1 {
-    width:150px;
-}
-.grid-footer {
-    width: 100%;
-    border-collapse: collapse;
-    table-layout: fixed;
-}
-
-.grid-footer td {
-    border: 1px solid #000;
-    text-align: center;
-    padding: 0;
-    height: 13px;
-    font-size: 9px;
-}
-
-/* 1. Remove a borda de baixo dos números para "fundir" com a célula inferior */
-.row-numbers td {
-    border-bottom: none !important;
-}
-
-/* 2. Célula do número: Garante a borda na esquerda e na direita (|) */
-.cell-num {
-    font-weight: bold;
-    border-right: 1px solid #000 !important; 
-    width: 8px; /* Ajuste para o número não ficar apertado */
-}
-
-/* 3. Aba vazia ao lado do número: Removemos a borda direita dela para não ficar duplo */
-/* Mas mantemos a borda esquerda (que é a do número) */
-.cell-empty {
-    border-right: 1px solid #000 !important;
-}
-
-/* 4. Linha de baixo: Remove a borda de cima para completar a fusão */
-.row-empty td {
-    border-top: none !important;
-    height: 15px; /* Espaço maior para marcar o X ou preencher */
-}
-
-tr.row-numbers {
-    border-bottom:1px solid;
-}
-
-/* Alinha o texto da célula à esquerda */
-.main-table td:nth-child(2) { 
-    text-align: left !important;
-    padding-left: 5px; /* Adiciona um pequeno respiro para o nome não colar na borda */
-}
-
-/* Garante que o strong se comporte como bloco ou herde o alinhamento */
-.nome-jogador {
-    
-    text-align: left;
-    
-}
-    </style>
-
+</style>
 </body>
 </html>
