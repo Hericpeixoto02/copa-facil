@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Súmula de Futebol - 2 Páginas</title>
+    
 </head>
 <body>
 
@@ -11,22 +12,62 @@
         
         <table class="main-table">
             <tr>
-                <td colspan="3"><strong class="border">Competição:</strong> Futebol</td>
-                <td colspan="1"><strong class="border">Rodada:</strong> 3º Rodada</td>
+                <td colspan="3">
+                    <strong class="border"><span id="general_title_name" class="general_title_name"></span></strong>
+                    <span id="general_title_value" class="general_title_value"></span>
+                </td>
+                <td colspan="1">
+                    <strong class="border"><span id="general_m_set_name" class="general_m_set_name"></span></strong>
+                    <span id="general_m_set_value" class="general_m_set_value"></span>
+                </td>
             </tr>
             <tr>
-                <td colspan="4"><strong class="border">Jogo Nº</strong> Corinthias Alagoano de maceio x Equipe 1</td>
+                <td colspan="2">
+                    <strong class="border"><span id="general_sub_title_name" class="general_sub_title_name"></span></strong>
+                    <span id="general_sub_title_value" class="general_sub_title_value"></span>
+                </td>
+                <td colspan="2">
+                    <strong class="border"><span id="general_fs_name" class="general_fs_name"></span></strong>
+                    <span id="general_fs_value" class="general_fs_value"></span>
+                </td>
             </tr>
             <tr>
-                <td style="width: 25%;"><strong class="border">Data:</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/</td>
-                <td style="width: 35%;"><strong class="border">Horário:</strong></td>
-                <td colspan="2" style="width: 40%;"><strong class="border">Local:</strong></td>
+                <td colspan="4">
+                    <strong class="border"><span id="general_n_name" class="general_n_name"></span></strong>
+                    <span id="general_n_value" class="general_n_value"></span>
+                    <span id="team_1_name_header"></span> x <span id="team_2_name_header"></span>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 25%;">
+                    <strong class="border"><span id="general_date_name" class="general_date_name"></span></strong>
+                    <span id="general_date_value" class="general_date_value"></span>
+                </td>
+                <td style="width: 35%;">
+                    <strong class="border"><span id="general_hour_name" class="general_hour_name"></span></strong>
+                    <span id="general_hour_value" class="general_hour_value"></span>
+                </td>
+                <td colspan="2" style="width: 40%;">
+                    <strong class="border"><span id="general_l_name" class="general_l_name"></span></strong>
+                    <span id="general_l_value" class="general_l_value"></span>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 25%;">
+                    <strong class="border"><span id="general_cida_name" class="general_cida_name"></span></strong>
+                    <span id="general_cida_value" class="general_cida_value"></span>
+                </td>
+                <td style="width: 35%;">
+                    <strong class="border"><span id="general_arbi_name" class="general_arbi_name"></span></strong>
+                    <span id="general_arbi_value" class="general_arbi_value"></span>
+                </td>
+                <td colspan="2"></td>
             </tr>
         </table>
 
         <table class="main-table">
             <thead>
-                <tr><th colspan="2" class="bg-gray title-row">ARBITRAGEM</th></tr>
+                <tr><th colspan="2" class="bg-gray title-row"><span id="general_arbi2_name"></span></th></tr>
             </thead>
             <tbody>
                 <tr class="empty-row-md"><td style="width: 30%;"></td><td style="width: 70%;"></td></tr>
@@ -70,55 +111,141 @@
                 </tr>
                 <tr>
                     <td colspan="4" class="text-left py-small">Resultado 1º Tempo: _________ X __________</td>
-                    <td colspan="4" class="text-left py-small">Resultado Final: &nbsp;&nbsp; <strong>1 X 0</strong></td>
+                    <td colspan="4" class="text-left py-small">Resultado Final: &nbsp;&nbsp; <strong>___ X ___</strong></td>
                 </tr>
             </tbody>
         </table>
 
         <table class="main-table flex-grow-table">
             <thead>
-                <tr><th colspan="6" class="bg-gray title-row">RELAÇÃO DE JOGADORES</th></tr>
+                <tr><th id="th_roster_span" colspan="10" class="bg-gray title-row">RELAÇÃO DE JOGADORES</th></tr>
                 <tr>
-                    <th colspan="3" class="subtitle-row" style="width: 50%;"><strong id="team_1_name"></strong></th>
-                    <th colspan="3" class="subtitle-row" style="width: 50%;"><strong id="team_2_name"></strong></th>
+                    <th id="th_team_1_span" colspan="5" class="subtitle-row" style="width: auto;"><strong id="team_1_name"></strong></th>
+                    <th id="th_team_2_span" colspan="5" class="subtitle-row" style="width: auto;"><strong id="team_2_name"></strong></th>
                 </tr>
                 <tr class="col-header-row">
-                    <th style="width: 5%;">Nº</th>
-                    <th style="width: 30%; text-align: left; padding-left: 5px;">Nome Completo</th>
-                    <th style="width: 15%;">Assinatura</th>
-                    <th style="width: 5%;">Nº</th>
-                    <th style="width: 30%; text-align: left; padding-left: 5px;">Nome Completo</th>
-                    <th style="width: 15%;">Assinatura</th>
+                    <th class="col-dinamica-1" style="display: none;"></th>
+                    <th class="col-jog text-left" style="padding-left: 5px;">Nome Completo</th>
+                    <th class="col-dinamica-2" style="display: none;"></th>
+                    <th class="col-dinamica-3" style="display: none;"></th>
+                    <th class="col-dinamica-4" style="display: none;"></th>
+                    
+                    <th class="col-dinamica-1" style="display: none;"></th>
+                    <th class="col-jog text-left" style="padding-left: 5px;">Nome Completo</th>
+                    <th class="col-dinamica-2" style="display: none;"></th>
+                    <th class="col-dinamica-3" style="display: none;"></th>
+                    <th class="col-dinamica-4" style="display: none;"></th>
                 </tr>
             </thead>
             <tbody>
-                <tr class="player-row"><td></td><td class="text-left" id="team_1_player_1"></td><td></td> <td></td><td class="text-left" id="team_2_player_1"></td><td></td></tr>
-                <tr class="player-row"><td></td><td class="text-left" id="team_1_player_2"></td><td></td> <td></td><td class="text-left" id="team_2_player_2"></td><td></td></tr>
-                <tr class="player-row"><td></td><td class="text-left" id="team_1_player_3"></td><td></td> <td></td><td class="text-left" id="team_2_player_3"></td><td></td></tr>
-                <tr class="player-row"><td></td><td class="text-left" id="team_1_player_4"></td><td></td> <td></td><td class="text-left" id="team_2_player_4"></td><td></td></tr>
-                <tr class="player-row"><td></td><td class="text-left" id="team_1_player_5"></td><td></td> <td></td><td class="text-left" id="team_2_player_5"></td><td></td></tr>
-                <tr class="player-row"><td></td><td class="text-left" id="team_1_player_6"></td><td></td><td></td><td  class="text-left" id="team_2_player_6"></td><td></td></tr>
-                <tr class="player-row"><td></td><td class="text-left" id="team_1_player_7"></td><td></td> <td></td><td class="text-left" id="team_2_player_7"></td><td></td></tr>
-                <tr class="player-row"><td></td><td class="text-left" id="team_1_player_8"></td><td></td> <td></td><td class="text-left" id="team_2_player_8"></td><td></td></tr>
-                <tr class="player-row"><td></td><td class="text-left" id="team_1_player_9"></td><td></td> <td></td><td class="text-left" id="team_2_player_9"></td><td></td></tr>
-                <tr class="player-row"><td></td><td class="text-left" id="team_1_player_10"></td><td></td> <td></td><td class="text-left" id="team_2_player_10"></td><td></td></tr>
-                <tr class="player-row"><td></td><td class="text-left" id="team_1_player_11"></td><td></td> <td></td><td class="text-left" id="team_2_player_11"></td><td></td></tr>
-                <tr class="player-row"><td></td><td class="text-left" id="team_1_player_12"></td><td></td> <td></td><td class="text-left" id="team_2_player_12"></td><td></td></tr>
-                <tr class="player-row"><td></td><td class="text-left" id="team_1_player_13"></td><td></td> <td></td><td class="text-left" id="team_2_player_13"></td><td></td></tr>
-                <tr class="player-row"><td></td><td></td><td></td> <td></td><td></td><td></td></tr>
-                <tr class="player-row"><td></td><td></td><td></td> <td></td><td></td><td></td></tr>
-                <tr class="player-row"><td></td><td></td><td></td> <td></td><td></td><td></td></tr>
-                <tr class="player-row"><td></td><td></td><td></td> <td></td><td></td><td></td></tr>
-                <tr class="player-row"><td></td><td></td><td></td> <td></td><td></td><td></td></tr>
-                <tr class="player-row"><td></td><td></td><td></td> <td></td><td></td><td></td></tr>
-                <tr class="player-row"><td></td><td></td><td></td> <td></td><td></td><td></td></tr>
-                <tr class="player-row"><td></td><td></td><td></td> <td></td><td></td><td></td></tr>
-                <tr class="player-row"><td></td><td></td><td></td> <td></td><td></td><td></td></tr>
-                <tr class="player-row"><td></td><td></td><td></td> <td></td><td></td><td></td></tr>
-                <tr class="player-row"><td></td><td></td><td></td> <td></td><td></td><td></td></tr>
-                <tr class="player-row"><td></td><td></td><td></td> <td></td><td></td><td></td></tr>
-                <tr class="player-row"><td></td><td></td><td></td> <td></td><td></td><td></td></tr>
-                <tr class="player-row"><td></td><td></td><td></td> <td></td><td></td><td></td></tr>
+                <tr class="player-row" id="row_0">
+                    <td class="col-dinamica-1 text-center" id="t1_p0_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t1_player_1">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t1_p0_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t1_p0_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t1_p0_dinamica_4" style="display:none;">&nbsp;</td>
+                    <td class="col-dinamica-1 text-center" id="t2_p0_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t2_player_1">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t2_p0_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t2_p0_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t2_p0_dinamica_4" style="display:none;">&nbsp;</td>
+                </tr>
+                <tr class="player-row" id="row_1">
+                    <td class="col-dinamica-1 text-center" id="t1_p1_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t1_player_2">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t1_p1_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t1_p1_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t1_p1_dinamica_4" style="display:none;">&nbsp;</td>
+                    <td class="col-dinamica-1 text-center" id="t2_p1_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t2_player_2">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t2_p1_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t2_p1_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t2_p1_dinamica_4" style="display:none;">&nbsp;</td>
+                </tr>
+                <tr class="player-row" id="row_2">
+                    <td class="col-dinamica-1 text-center" id="t1_p2_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t1_player_3">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t1_p2_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t1_p2_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t1_p2_dinamica_4" style="display:none;">&nbsp;</td>
+                    <td class="col-dinamica-1 text-center" id="t2_p2_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t2_player_3">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t2_p2_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t2_p2_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t2_p2_dinamica_4" style="display:none;">&nbsp;</td>
+                </tr>
+                <tr class="player-row" id="row_3">
+                    <td class="col-dinamica-1 text-center" id="t1_p3_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t1_player_4">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t1_p3_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t1_p3_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t1_p3_dinamica_4" style="display:none;">&nbsp;</td>
+                    <td class="col-dinamica-1 text-center" id="t2_p3_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t2_player_4">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t2_p3_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t2_p3_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t2_p3_dinamica_4" style="display:none;">&nbsp;</td>
+                </tr>
+                <tr class="player-row" id="row_4">
+                    <td class="col-dinamica-1 text-center" id="t1_p4_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t1_player_5">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t1_p4_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t1_p4_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t1_p4_dinamica_4" style="display:none;">&nbsp;</td>
+                    <td class="col-dinamica-1 text-center" id="t2_p4_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t2_player_5">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t2_p4_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t2_p4_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t2_p4_dinamica_4" style="display:none;">&nbsp;</td>
+                </tr>
+                <tr class="player-row" id="row_5">
+                    <td class="col-dinamica-1 text-center" id="t1_p5_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t1_player_6">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t1_p5_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t1_p5_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t1_p5_dinamica_4" style="display:none;">&nbsp;</td>
+                    <td class="col-dinamica-1 text-center" id="t2_p5_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t2_player_6">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t2_p5_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t2_p5_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t2_p5_dinamica_4" style="display:none;">&nbsp;</td>
+                </tr>
+                <tr class="player-row" id="row_6">
+                    <td class="col-dinamica-1 text-center" id="t1_p6_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t1_player_7">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t1_p6_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t1_p6_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t1_p6_dinamica_4" style="display:none;">&nbsp;</td>
+                    <td class="col-dinamica-1 text-center" id="t2_p6_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t2_player_7">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t2_p6_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t2_p6_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t2_p6_dinamica_4" style="display:none;">&nbsp;</td>
+                </tr>
+                <tr class="player-row" id="row_7">
+                    <td class="col-dinamica-1 text-center" id="t1_p7_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t1_player_8">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t1_p7_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t1_p7_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t1_p7_dinamica_4" style="display:none;">&nbsp;</td>
+                    <td class="col-dinamica-1 text-center" id="t2_p7_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t2_player_8">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t2_p7_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t2_p7_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t2_p7_dinamica_4" style="display:none;">&nbsp;</td>
+                </tr>
+                <tr class="player-row" id="row_8">
+                    <td class="col-dinamica-1 text-center" id="t1_p8_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t1_player_9">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t1_p8_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t1_p8_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t1_p8_dinamica_4" style="display:none;">&nbsp;</td>
+                    <td class="col-dinamica-1 text-center" id="t2_p8_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t2_player_9">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t2_p8_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t2_p8_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t2_p8_dinamica_4" style="display:none;">&nbsp;</td>
+                </tr>
+                <tr class="player-row" id="row_9">
+                    <td class="col-dinamica-1 text-center" id="t1_p9_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t1_player_10">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t1_p9_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t1_p9_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t1_p9_dinamica_4" style="display:none;">&nbsp;</td>
+                    <td class="col-dinamica-1 text-center" id="t2_p9_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t2_player_10">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t2_p9_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t2_p9_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t2_p9_dinamica_4" style="display:none;">&nbsp;</td>
+                </tr>
+                <tr class="player-row" id="row_10">
+                    <td class="col-dinamica-1 text-center" id="t1_p10_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t1_player_11">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t1_p10_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t1_p10_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t1_p10_dinamica_4" style="display:none;">&nbsp;</td>
+                    <td class="col-dinamica-1 text-center" id="t2_p10_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t2_player_11">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t2_p10_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t2_p10_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t2_p10_dinamica_4" style="display:none;">&nbsp;</td>
+                </tr>
+                <tr class="player-row" id="row_11">
+                    <td class="col-dinamica-1 text-center" id="t1_p11_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t1_player_12">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t1_p11_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t1_p11_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t1_p11_dinamica_4" style="display:none;">&nbsp;</td>
+                    <td class="col-dinamica-1 text-center" id="t2_p11_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t2_player_12">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t2_p11_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t2_p11_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t2_p11_dinamica_4" style="display:none;">&nbsp;</td>
+                </tr>
+                <tr class="player-row" id="row_12">
+                    <td class="col-dinamica-1 text-center" id="t1_p12_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t1_player_13">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t1_p12_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t1_p12_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t1_p12_dinamica_4" style="display:none;">&nbsp;</td>
+                    <td class="col-dinamica-1 text-center" id="t2_p12_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t2_player_13">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t2_p12_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t2_p12_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t2_p12_dinamica_4" style="display:none;">&nbsp;</td>
+                </tr>
+                <tr class="player-row" id="row_13">
+                    <td class="col-dinamica-1 text-center" id="t1_p13_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t1_player_14">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t1_p13_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t1_p13_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t1_p13_dinamica_4" style="display:none;">&nbsp;</td>
+                    <td class="col-dinamica-1 text-center" id="t2_p13_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t2_player_14">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t2_p13_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t2_p13_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t2_p13_dinamica_4" style="display:none;">&nbsp;</td>
+                </tr>
+                <tr class="player-row" id="row_14">
+                    <td class="col-dinamica-1 text-center" id="t1_p14_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t1_player_15">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t1_p14_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t1_p14_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t1_p14_dinamica_4" style="display:none;">&nbsp;</td>
+                    <td class="col-dinamica-1 text-center" id="t2_p14_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t2_player_15">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t2_p14_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t2_p14_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t2_p14_dinamica_4" style="display:none;">&nbsp;</td>
+                </tr>
+                <tr class="player-row" id="row_15">
+                    <td class="col-dinamica-1 text-center" id="t1_p15_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t1_player_16">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t1_p15_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t1_p15_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t1_p15_dinamica_4" style="display:none;">&nbsp;</td>
+                    <td class="col-dinamica-1 text-center" id="t2_p15_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t2_player_16">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t2_p15_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t2_p15_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t2_p15_dinamica_4" style="display:none;">&nbsp;</td>
+                </tr>
+                <tr class="player-row" id="row_16">
+                    <td class="col-dinamica-1 text-center" id="t1_p16_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t1_player_17">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t1_p16_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t1_p16_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t1_p16_dinamica_4" style="display:none;">&nbsp;</td>
+                    <td class="col-dinamica-1 text-center" id="t2_p16_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t2_player_17">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t2_p16_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t2_p16_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t2_p16_dinamica_4" style="display:none;">&nbsp;</td>
+                </tr>
+                <tr class="player-row" id="row_17">
+                    <td class="col-dinamica-1 text-center" id="t1_p17_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t1_player_18">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t1_p17_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t1_p17_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t1_p17_dinamica_4" style="display:none;">&nbsp;</td>
+                    <td class="col-dinamica-1 text-center" id="t2_p17_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t2_player_18">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t2_p17_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t2_p17_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t2_p17_dinamica_4" style="display:none;">&nbsp;</td>
+                </tr>
+                <tr class="player-row" id="row_18">
+                    <td class="col-dinamica-1 text-center" id="t1_p18_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t1_player_19">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t1_p18_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t1_p18_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t1_p18_dinamica_4" style="display:none;">&nbsp;</td>
+                    <td class="col-dinamica-1 text-center" id="t2_p18_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t2_player_19">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t2_p18_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t2_p18_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t2_p18_dinamica_4" style="display:none;">&nbsp;</td>
+                </tr>
+                <tr class="player-row" id="row_19">
+                    <td class="col-dinamica-1 text-center" id="t1_p19_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t1_player_20">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t1_p19_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t1_p19_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t1_p19_dinamica_4" style="display:none;">&nbsp;</td>
+                    <td class="col-dinamica-1 text-center" id="t2_p19_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t2_player_20">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t2_p19_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t2_p19_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t2_p19_dinamica_4" style="display:none;">&nbsp;</td>
+                </tr>
+                <tr class="player-row" id="row_20">
+                    <td class="col-dinamica-1 text-center" id="t1_p20_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t1_player_21">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t1_p20_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t1_p20_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t1_p20_dinamica_4" style="display:none;">&nbsp;</td>
+                    <td class="col-dinamica-1 text-center" id="t2_p20_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t2_player_21">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t2_p20_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t2_p20_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t2_p20_dinamica_4" style="display:none;">&nbsp;</td>
+                </tr>
+                <tr class="player-row" id="row_21">
+                    <td class="col-dinamica-1 text-center" id="t1_p21_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t1_player_22">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t1_p21_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t1_p21_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t1_p21_dinamica_4" style="display:none;">&nbsp;</td>
+                    <td class="col-dinamica-1 text-center" id="t2_p21_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t2_player_22">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t2_p21_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t2_p21_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t2_p21_dinamica_4" style="display:none;">&nbsp;</td>
+                </tr>
+                <tr class="player-row" id="row_22">
+                    <td class="col-dinamica-1 text-center" id="t1_p22_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t1_player_23">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t1_p22_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t1_p22_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t1_p22_dinamica_4" style="display:none;">&nbsp;</td>
+                    <td class="col-dinamica-1 text-center" id="t2_p22_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t2_player_23">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t2_p22_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t2_p22_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t2_p22_dinamica_4" style="display:none;">&nbsp;</td>
+                </tr>
+                <tr class="player-row" id="row_23">
+                    <td class="col-dinamica-1 text-center" id="t1_p23_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t1_player_24">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t1_p23_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t1_p23_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t1_p23_dinamica_4" style="display:none;">&nbsp;</td>
+                    <td class="col-dinamica-1 text-center" id="t2_p23_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t2_player_24">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t2_p23_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t2_p23_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t2_p23_dinamica_4" style="display:none;">&nbsp;</td>
+                </tr>
+                <tr class="player-row" id="row_24">
+                    <td class="col-dinamica-1 text-center" id="t1_p24_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t1_player_25">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t1_p24_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t1_p24_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t1_p24_dinamica_4" style="display:none;">&nbsp;</td>
+                    <td class="col-dinamica-1 text-center" id="t2_p24_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t2_player_25">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t2_p24_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t2_p24_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t2_p24_dinamica_4" style="display:none;">&nbsp;</td>
+                </tr>
+                <tr class="player-row" id="row_25">
+                    <td class="col-dinamica-1 text-center" id="t1_p25_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t1_player_26">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t1_p25_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t1_p25_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t1_p25_dinamica_4" style="display:none;">&nbsp;</td>
+                    <td class="col-dinamica-1 text-center" id="t2_p25_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t2_player_26">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t2_p25_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t2_p25_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t2_p25_dinamica_4" style="display:none;">&nbsp;</td>
+                </tr>
+                <tr class="player-row" id="row_26">
+                    <td class="col-dinamica-1 text-center" id="t1_p26_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t1_player_27">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t1_p26_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t1_p26_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t1_p26_dinamica_4" style="display:none;">&nbsp;</td>
+                    <td class="col-dinamica-1 text-center" id="t2_p26_dinamica_1" style="display:none;">&nbsp;</td><td class="text-left player-cell"><strong id="t2_player_27">&nbsp;</strong></td><td class="col-dinamica-2 text-center" id="t2_p26_dinamica_2" style="display:none;">&nbsp;</td><td class="col-dinamica-3 text-center" id="t2_p26_dinamica_3" style="display:none;">&nbsp;</td><td class="col-dinamica-4 text-center" id="t2_p26_dinamica_4" style="display:none;">&nbsp;</td>
+                </tr>
             </tbody>
         </table>
     </div>
@@ -129,8 +256,8 @@
             <thead>
                 <tr><th colspan="4" class="bg-gray title-row">EQUIPE TÉCNICA</th></tr>
                 <tr>
-                    <th colspan="2" class="subtitle-row" style="width: 50%;">CORINTHIAS ALAGOANO DE MACEIO</th>
-                    <th colspan="2" class="subtitle-row" style="width: 50%;">EQUIPE 1</th>
+                    <th colspan="2" class="subtitle-row" style="width: 50%;"><span id="team_1_name_tech"></span></th>
+                    <th colspan="2" class="subtitle-row" style="width: 50%;"><span id="team_2_name_tech"></span></th>
                 </tr>
             </thead>
             <tbody>
@@ -157,11 +284,9 @@
                 </tr>
             </thead>
             <tbody>
-                <tr class="empty-row-sm">
-                    <td></td><td></td><td></td><td>Normal</td>
-                    <td class="text-left">Davi Felipe Neves Costa de Boubom Melo</td>
-                    <td class="text-left">Corinthias Alagoano de maceio</td>
-                </tr>
+                <tr class="empty-row-sm"><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr class="empty-row-sm"><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr class="empty-row-sm"><td></td><td></td><td></td><td></td><td></td><td></td></tr>
                 <tr class="empty-row-sm"><td></td><td></td><td></td><td></td><td></td><td></td></tr>
             </tbody>
         </table>
@@ -179,6 +304,9 @@
             </thead>
             <tbody>
                 <tr class="empty-row-sm"><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr class="empty-row-sm"><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr class="empty-row-sm"><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr class="empty-row-sm"><td></td><td></td><td></td><td></td><td></td></tr>
             </tbody>
         </table>
 
@@ -194,6 +322,8 @@
                 </tr>
             </thead>
             <tbody>
+                <tr class="empty-row-sm"><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr class="empty-row-sm"><td></td><td></td><td></td><td></td><td></td></tr>
                 <tr class="empty-row-sm"><td></td><td></td><td></td><td></td><td></td></tr>
             </tbody>
         </table>
@@ -227,789 +357,388 @@
             </tbody>
         </table>
     </div>
-
-
-       <script>
-        window.__DADOS_SUMULA__ = {
-    "general": {
-        "title": "GRUPO CONTRA TODOS",
-        "sub_title": "4° PARAZÃO DO FUTSAL",
-        "stage": "1º Fase",
-        "round": "2º Rodada",
-        "place": "GINASIO UEPA"
-    },
-    "config":{
-        "player_length": 20
-    },
-    "team_1": {
-        "name": "Corinthias Alagoano de maceio",
-        "player": [
-            {
-                "supend":false,
-                "name": "MAURO",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 2,
-                "red_card": 1,
-                "blue_card": 0,
-                "goals": 2
-            },
-            {   "supend":false,
-                "name": "ISAIAS PINTO",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 1,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "JOSE  AUGUSTO",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "JEFFERSON BRUNO",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 6
-            },
-            {   "supend":false,
-                "name": "JUAN ADRIAN",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 1,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "GILBERT ROMARIO",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "JHON RENATO",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "JEFFERSON BRENO",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "CRISTIAN",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 4
-            },
-            {   "supend":false,
-                "name": "LUCAS ARAUJO",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 2
-            },  
-            {   "supend":false,
-                "name": "ELIDELSON",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "ANDERSON",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        fetch('referencia.json')
+            .then(response => {
+                if (!response.ok) throw new Error("Erro ao carregar o JSON");
+                return response.json();
+            })
+            .then(d => {
                 
-            {   "supend":false,
-                "name": "THALISON ALVES",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-             {  "supend":false,
-                "name": "HÉRIC PEIXOTO",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-             {  
-                "supend":false,
-                "name": "TESTE 1",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            }, { 
-                "supend":false,   
-                "name": "TESTE 2",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            }, {
-                "supend":false,
-                "name": "TESTE 3",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            }, {
-                "supend":false,
-                "name": "TESTE 4",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            }, {
-                "supend":false,
-                "name": "TESTE 5",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            }, {
-                "supend":false,
-                "name": "TESTE 6",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-        ],
-        "goals": [
-            {
-                "n": "10",
-                "minutes": 7,
-                "seconds": 45,
-                "period": 1
-            },
-            {
-                "n": "11",
-                "minutes": 1,
-                "seconds": 0,
-                "period": 1
-            },
-            {
-                "n": "12",
-                "minutes": 13,
-                "seconds": 0,
-                "period": 1
-            },
-            {
-                "n": "",
-                "minutes": 16,
-                "seconds": 0,
-                "period": 1
-            },
-            {
-                "n": "",
-                "minutes": 3,
-                "seconds": 0,
-                "period": 2
-            },
-            {
-                "n": "",
-                "minutes": 14,
-                "seconds": 0,
-                "period": 2
-            },
-            {
-                "n": "",
-                "minutes": 17,
-                "seconds": 0,
-                "period": 2
-            },
-            {
-                "n": "",
-                "minutes": 7,
-                "seconds": 0,
-                "period": 1
-            },
-            {
-                "n": "",
-                "minutes": 1,
-                "seconds": 0,
-                "period": 1
-            },
-            {
-                "n": "",
-                "minutes": 13,
-                "seconds": 0,
-                "period": 1
-            },
-            {
-                "n": "",
-                "minutes": 16,
-                "seconds": 0,
-                "period": 1
-            },
-            {
-                "n": "",
-                "minutes": 3,
-                "seconds": 0,
-                "period": 2
-            },
-            {
-                "n": "",
-                "minutes": 14,
-                "seconds": 0,
-                "period": 2
-            },
-            {
-                "n": "",
-                "minutes": 17,
-                "seconds": 0,
-                "period": 2
-            }
-        ]
-    },
-    "team_2": {
-        "name": "Equipe 1",
-        "player": [
-            {   "supend":false,
-                "name": "LUCAS SOARES",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 2
-            },
-            {   "supend":false,
-                "name": "THIAGO ALMEIDA",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "ALLEX SANDER",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "YAGO PIETRO",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 2
-            },
-            {   "supend":false,
-                "name": "RENAN LUIS",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "DAVI LUCAS",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "IVISON CARNEIRO",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "CLAUDIO CALEBE",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "THALES GABRIEL",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "RONALD HILBERT",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "FABIO FURTADO",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "FABIO ATAIDE",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "JOSE CAUA",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 2,
-                "red_card": 1,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "ATILA LOBATO",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "ARTHUR MOREIRA",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "MAURICIO KAUA",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "ARTHUR CARLOS",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "THIAGO VIANA",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "ANTONIO EDUARDO",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-            {   "supend":false,
-                "name": "PAULO ENZO",
-                "nickname": "",
-                "n": "",
-                "yellow_card": 0,
-                "red_card": 0,
-                "blue_card": 0,
-                "goals": 0
-            },
-        ],
-        "goals": [
-            {
-                "n": "15",
-                "minutes": 10,
-                "seconds": 35,
-                "period": 2
-            },
-            {
-                "n": "55",
-                "minutes": 13,
-                "seconds": 0,
-                "period": 2
-            },
-            {
-                "n": "",
-                "minutes": 10,
-                "seconds": 0,
-                "period": 2
-            },
-            {
-                "n": "",
-                "minutes": 13,
-                "seconds": 0,
-                "period": 2
-            },
-            {
-                "n": "",
-                "minutes": 20,
-                "seconds": 0,
-                "period": 2
-            }
-        ]
-    }
-};
-    </script>
+                const set = (id, val) => {
+                    const text = val || "";
+                    const el = document.getElementById(id);
+                    if (el) el.innerText = text;
+                    document.querySelectorAll(`.${id}`).forEach(item => item.innerText = text);
+                };
 
-    <script>
-document.addEventListener("DOMContentLoaded", function() {
-    const d = window.__DADOS_SUMULA__;
-    if (!d) return;
+                // 1. DADOS GERAIS DO CABEÇALHO
+                if (d.general) {
+                    Object.entries(d.general).forEach(([key, field]) => {
+                        set(`general_${key}_name`, field?.name);
+                        set(`general_${key}_value`, field?.value);
+                    });
 
-    const playerLimit = (d.config && d.config.player_length) ? Math.min(parseInt(d.config.player_length), 15) : 15;
+                    // Compatibilidade reversa com IDs antigos
+                    set('general_date', d.general.date?.value);
+                    set('general_n', d.general.n?.value);
+                    set('general_round', d.general.m_set?.value);
+                    set('general_place', d.general.l?.value);
+                }
 
-    const set = (id, val) => {
-        const el = document.getElementById(id);
-        if (el) el.innerText = val || "";
-    };
+                // 2. NOMES DOS TIMES (Corrigido para preencher em todas as tabelas da página)
+                if (d.team_1) {
+                    set('team_1_name_header', d.team_1.name);
+                    set('team_1_name', d.team_1.name);
+                    set('team_1_name_tech', d.team_1.name);
+                }
+                if (d.team_2) {
+                    set('team_2_name_header', d.team_2.name);
+                    set('team_2_name', d.team_2.name);
+                    set('team_2_name_tech', d.team_2.name);
+                }
 
-    // 1. DADOS GERAIS
-    if (d.general) {
-        set('general_title', d.general.title);
-        set('general_sub_title', d.general.sub_title);
-        set('general_stage', d.general.stage);
-        set('general_round', d.general.round);
-        set('general_place', d.general.place);
-        set('general_date', d.general.date);
-    }
 
-    // 2. NOMES DOS TIMES
-    if (d.team_1) set('team_1_name', d.team_1.name);
-    if (d.team_2) set('team_2_name', d.team_2.name);
+                // ==========================================================
+                // 3. BLINDAGEM MATEMÁTICA E SLOTS DINÂMICOS
+                // ==========================================================
+                const colunasDinamicas = d["players-column"] || [];
 
-    // 3. JOGADORES E CARTÕES
-    function preencherTimeManual(timeData, prefixo) {
-        for (let i = 1; i <= 15; i++) {
-            const nomeEl = document.getElementById(`${prefixo}_player_${i}`);
-            const linhaTr = nomeEl ? nomeEl.closest('tr') : null;
+                let totalSizeColunas = 0;
+                colunasDinamicas.forEach((col, index) => {
+                    if (index < 4) totalSizeColunas += (col.size || 0);
+                });
 
-            if (linhaTr) {
-                if (i > playerLimit) {
-                    linhaTr.style.display = "none";
-                } else {
-                    linhaTr.style.display = "table-row";
-                    const p = (timeData && timeData.player) ? timeData.player[i-1] : null;
+                const larguraMaximaDinamicaPorLado = 35;
+                const fatorMultiplicacao = 3;
+                const minNameWidth = 12;
+                const targetTeamWidth = 50;
 
-                    if (p) {
-                        nomeEl.innerText = p.name || "";
-                        // Lógica de Suspensão
-                        if (p.supend) {
-                            nomeEl.style.textDecoration = "line-through";
-                            nomeEl.style.color = "red";
+                const colWidths = colunasDinamicas.slice(0, 4).map(col => {
+                    let largura = (col.size || 0) * fatorMultiplicacao;
+                    if (col.size > 0 && largura < 1.5) largura = 1.5;
+                    if (largura > larguraMaximaDinamicaPorLado) largura = larguraMaximaDinamicaPorLado;
+                    return largura;
+                });
+
+                let totalPorcentagemDinamica = colWidths.reduce((sum, width) => sum + width, 0);
+                const maxDynamicWidth = targetTeamWidth - minNameWidth;
+                const scale = totalPorcentagemDinamica > maxDynamicWidth ? maxDynamicWidth / totalPorcentagemDinamica : 1;
+
+                colunasDinamicas.forEach((col, index) => {
+                    const slotNumero = index + 1;
+                    if (slotNumero > 4) return;
+
+                    let largura = colWidths[index] * scale;
+                    if (col.size === 0) {
+                        largura = 0;
+                    }
+
+                    document.querySelectorAll(`.col-dinamica-${slotNumero}`).forEach(el => {
+                        if (col.size === 0) {
+                            el.style.display = "none";
                         } else {
-                            nomeEl.style.textDecoration = "none";
-                            nomeEl.style.color = "inherit";
+                            el.style.display = "table-cell";
+                            el.style.setProperty('width', `${largura}%`, 'important');
+                            el.style.setProperty('min-width', `${largura}%`, 'important');
+                            el.style.setProperty('max-width', `${largura}%`, 'important');
+                        }
+                        if (el.tagName.toLowerCase() === 'th') {
+                            const tagStrong = el.querySelector('strong');
+                            if (tagStrong) tagStrong.innerText = col.name;
+                            else el.innerText = col.name;
+                        }
+                    });
+                });
+
+                let larguraNome = targetTeamWidth - totalPorcentagemDinamica * scale;
+                if (larguraNome < minNameWidth) larguraNome = minNameWidth;
+                if (larguraNome > 45) larguraNome = 45;
+
+                document.querySelectorAll('.col-jog').forEach(el => {
+                    el.style.setProperty('width', `${larguraNome}%`, 'important');
+                    el.style.setProperty('min-width', `${larguraNome}%`, 'important');
+                    el.style.setProperty('max-width', `${larguraNome}%`, 'important');
+                });
+
+                const visibleColumns = colunasDinamicas.filter(col => col.size !== 0).length;
+                const teamColspan = 1 + visibleColumns;
+                const team1Th = document.getElementById('th_team_1_span');
+                const team2Th = document.getElementById('th_team_2_span');
+                if (team1Th) {
+                    team1Th.colSpan = teamColspan;
+                    team1Th.style.width = 'auto';
+                }
+                if (team2Th) {
+                    team2Th.colSpan = teamColspan;
+                    team2Th.style.width = 'auto';
+                }
+
+                // ==========================================================
+                // 4. JOGADORES, CARTÕES E LÓGICA DE TAMANHO
+                // ==========================================================
+                
+                let sufixo = '';
+                if (totalSizeColunas >= 10) sufixo = '_25';
+                else if (totalSizeColunas >= 8) sufixo = '_30';
+                else if (totalSizeColunas >= 2) sufixo = '_40';
+
+                let propriedadeNome = sufixo === '' ? 'name' : `name${sufixo}`;
+
+                // LÊ O LIMITE DE LINHAS DIRETAMENTE DO JSON
+                const linhasMaximas = d.qtd_players ? parseInt(d.qtd_players) : 20;
+
+                function preencherRoster(timeData, prefixo) {
+                    for (let i = 0; i < 28; i++) {
+                        // CORREÇÃO AQUI: Busca apenas row_0, row_1, etc.
+                        const tr = document.getElementById(`row_${i}`);
+                        if (!tr) continue;
+
+                        if (i >= linhasMaximas) {
+                            tr.style.display = 'none';
+                            continue;
+                        } else {
+                            tr.style.display = '';
+                        }
+                        
+                        const p = (timeData && timeData.player && timeData.player[i]) ? timeData.player[i] : null;
+
+                        let strikeCss = "";
+                        if (p && (p.supend === true || parseInt(p.red_card || 0) >= 1 || parseInt(p.yellow_card || 0) >= 2)) {
+                            strikeCss = "line-through";
+                        }
+                        let colorCss = strikeCss ? "red" : "inherit";
+
+                        // Nome
+                        const nomeEl = document.getElementById(`${prefixo}_player_${i+1}`);
+                        if (nomeEl) {
+                            let nomeExibir = p ? (p[propriedadeNome] || p.name_30 || p.name_40 || p.name || "\u00A0") : "\u00A0";
+                            nomeEl.innerText = nomeExibir;
+                            nomeEl.style.textDecoration = strikeCss || "none";
+                            nomeEl.style.color = colorCss;
+
+                            // Ajuste estético dinâmico de fonte para caber perfeito
+                            if (sufixo === '_25') nomeEl.style.setProperty('font-size', '11px', 'important');
+                            else if (sufixo === '_30') nomeEl.style.setProperty('font-size', '12px', 'important');
+                            else nomeEl.style.setProperty('font-size', '12px', 'important');
                         }
 
-                        set(`${prefixo}_n_${i}`, p.n);
+                        // Colunas Dinâmicas
+                        for (let k = 1; k <= 4; k++) {
+                            const dynEl = document.getElementById(`${prefixo}_p${i}_dinamica_${k}`);
+                            if (dynEl) {
+                                const colConfig = colunasDinamicas[k - 1];
+                                if (colConfig && colConfig.size !== 0) {
+                                    dynEl.style.display = "table-cell";
+                                    dynEl.innerText = (p && p[colConfig.player_key] !== undefined && p[colConfig.player_key] !== "") ? p[colConfig.player_key] : "\u00A0";
+                                } else {
+                                    dynEl.style.display = "none";
+                                }
+                            }
+                        }
 
-                        // Amarelos
-                        const y1 = document.getElementById(`${prefixo}_yellow1_${i}`);
-                        const y2 = document.getElementById(`${prefixo}_yellow2_${i}`);
-                        if (y1) y1.innerText = (p.yellow_card >= 1) ? "X" : "";
-                        if (y2) y2.innerText = (p.yellow_card >= 2) ? "X" : "";
+                        // Fixas
+                        const titEl = document.getElementById(`${prefixo}_p${i}_tit`);
+                        const am1El = document.getElementById(`${prefixo}_p${i}_am1`);
+                        const am2El = document.getElementById(`${prefixo}_p${i}_am2`);
+                        const cvEl  = document.getElementById(`${prefixo}_p${i}_cv`);
 
-                        // Vermelhos
-                        const r1 = document.getElementById(`${prefixo}_red1_${i}`);
-                        const r2 = document.getElementById(`${prefixo}_red2_${i}`);
-                        const v = parseInt(p.red_card || p.red || 0);
-                        if (r1) r1.innerText = (v >= 1) ? "X" : "";
-                        if (r2) r2.innerText = (v >= 2) ? "X" : "";
-
-                        // Azul
-                        const blueEl = document.getElementById(`${prefixo}_blue_${i}`);
-                        if (blueEl) blueEl.innerText = (p.blue_card > 0) ? "X" : "";
-                    } else {
-                        nomeEl.innerText = "";
-                        set(`${prefixo}_n_${i}`, "");
+                        if (titEl) titEl.innerText = (p && p.titular !== undefined && p.titular !== "") ? p.titular : "\u00A0";
+                        if (am1El) am1El.innerText = (p && p.yellow_card >= 1) ? 'X' : "\u00A0";
+                        if (am2El) am2El.innerText = (p && p.yellow_card >= 2) ? 'X' : "\u00A0";
+                        if (cvEl)  cvEl.innerText = (p && parseInt(p.red_card || 0) >= 1) ? 'X' : "\u00A0";
                     }
                 }
-            }
-        }
-    }
 
-    // 4. GOLS
-    function preencherGolsManual(timeData, prefixo) {
-        if (!timeData || !timeData.goals) return;
-        timeData.goals.forEach((gol, i) => {
-            const nEl = document.getElementById(`${prefixo}_gol_n_${i}`);
-            const timeEl = document.getElementById(`${prefixo}_gol_time_${i}`);
-            
-            if (nEl) nEl.innerText = gol.n || "";
-            if (timeEl) {
-                if (gol.minutes !== undefined) {
-                    const min = String(gol.minutes).padStart(2, '0');
-                    const seg = String(gol.seconds || 0).padStart(2, '0');
-                    timeEl.innerText = `${min}:${seg}`;
-                } else {
-                    timeEl.innerText = ""; 
-                }
-            }
-        });
-    }
-
-    // --- EXECUÇÃO ---
-    preencherTimeManual(d.team_1, 'team_1');
-    preencherTimeManual(d.team_2, 'team_2');
-    preencherGolsManual(d.team_1, 'team_1'); // Ajustado para bater com os IDs HTML
-    preencherGolsManual(d.team_2, 'team_2'); // Ajustado para bater com os IDs HTML
-});
+                preencherRoster(d.team_1, 't1');
+                preencherRoster(d.team_2, 't2');
+            })
+            .catch(error => {
+                console.error("Erro ao carregar o JSON:", error);
+            });
+    });
 </script>
 
-
-<script>
-    function createRosterRows(totalRows = 15) {
-        const tbody = document.getElementById('roster-body');
-        tbody.innerHTML = '';
-
-        for (let i = 1; i <= totalRows; i++) {
-            const tr = document.createElement('tr');
-
-            tr.innerHTML = `
-                <td id="team_1_n_${i}" class="text-center"></td>
-                <td class="player-cell"><strong id="team_1_player_${i}"></strong></td>
-                <td  class="divider-line"></td>
-                <td id="team_2_n_${i}" class="text-center"></td>
-                <td class="player-cell"><strong id="team_2_player_${i}"></strong></td>
-            `;
-
-            tbody.appendChild(tr);
-        }
-    }
-
-    // Cria o layout antes de preencher os nomes
-    createRosterRows(13);
-</script>
-     <style>
+<style>
         * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-/* FORMATO A4 RETRATO */
-@page {
-    size: A4 portrait;
-    margin: 10mm;
-}
+        /* FORMATO A4 RETRATO */
+        @page {
+            size: A4 portrait;
+            margin: 10mm;
+        }
 
-body {
-    font-family: Arial, sans-serif;
-    font-size: 11px;
-    background-color: #525252;
-    display: flex;
-    flex-direction: column; /* Empilha as páginas na tela */
-    align-items: center;
-    gap: 20px;
-    padding: 20px 0;
-}
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            background-color: #fff;
+            display: flex;
+            flex-direction: column; 
+            align-items: center;
+            gap: 20px;
+            padding: 20px 0;
+        }
 
-.sheet {
-    background-color: #fff;
-    width: 210mm; 
-    height: 297mm; 
-    padding: 15px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    display: flex;
-    flex-direction: column;
-    gap: 8px; /* Espaço entre as tabelas */
-    overflow: hidden;
-}
+        .sheet {
+            background-color: #fff;
+            width: 258mm; 
+            height: 297mm; 
+            padding: 15px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 8px; 
+            
+        }
 
-/* --- REGRAS PARA IMPRESSÃO --- */
-@media print {
-    body { 
-        background-color: transparent; 
-        padding: 0;
-        gap: 0;
-    }
-    .sheet {
-        box-shadow: none;
-        width: 100%;
-        height: 100%;
-        padding: 0;
-        page-break-after: always; /* Garante que cada .sheet ocupe uma folha */
-    }
-    .sheet:last-child {
-        page-break-after: auto;
-    }
-    /* Força a impressora a imprimir o fundo cinza das tabelas */
-    .bg-gray {
-        background-color: #e0e0e0 !important;
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-    }
-}
+        /* --- REGRAS PARA IMPRESSÃO --- */
+        @media print {
+            body { 
+                background-color: transparent; 
+                padding: 0;
+                gap: 0;
+            }
+            .sheet {
+                box-shadow: none;
+                width: 100%;
+                height: 100%;
+                padding: 0;
+                page-break-after: always; 
+            }
+            .sheet:last-child {
+                page-break-after: auto;
+            }
+            .bg-gray {
+                background-color: #e0e0e0 !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
 
-/* --- TABELAS PADRÃO --- */
-.main-table {
-    width: 100%;
-    border-collapse: collapse;
-}
+        /* --- TABELAS PADRÃO --- */
+        .main-table {
+            border-collapse: collapse;
+        }
 
-.main-table th, .main-table td {
-    border: 2px solid #000;
-    padding: 3px 5px;
-}
+        .main-table th, .main-table td {
+            border: 2px solid #000;
+            padding: 3px 5px;
+        }
 
-.bg-gray {
-    background-color: #e0e0e0;
-}
+        .bg-gray {
+            background-color: #e0e0e0;
+        }
 
-.title-row {
-    font-size: 12px;
-    font-weight: bold;
-    text-align: center;
-    padding: 4px 0 !important;
-}
+        .title-row {
+            font-size: 12px;
+            font-weight: bold;
+            text-align: center;
+            padding: 4px 0 !important;
+        }
 
-.subtitle-row {
-    font-size: 11px;
-    font-weight: bold;
-    text-align: center;
-    padding: 3px 0 !important;
-}
+        .subtitle-row {
+            font-size: 11px;
+            background-color: #edeaea;
+            font-weight: bold;
+            text-align: center;
+            padding: 3px 0 !important;
+        }
 
-.col-header-row th {
-    font-size: 10px;
-    text-align: center;
-    font-weight: bold;
-    padding: 2px !important;
-}
+        .col-header-row th {
+            font-size: 11px;
+            text-transform: uppercase;
+            text-align: center;
+            font-weight: bold;
+            padding: 2px !important;
+        }
 
-/* Utilitários de Texto */
-.text-left { text-align: left !important; }
-.text-center { text-align: center !important; }
-.fw-bold { font-weight: bold !important; }
-.py-small { padding-top: 5px !important; padding-bottom: 5px !important; }
+        /* Utilitários de Texto */
+        .text-left { text-align: left !important; }
+        .text-center { text-align: center !important; }
+        .fw-bold { font-weight: bold !important; }
+        .py-small { padding-top: 5px !important; padding-bottom: 5px !important; }
 
-/* --- TAMANHOS DE LINHAS --- */
-.empty-row-md td { height: 22px; }
-.empty-row-sm td { height: 18px; }
+        /* --- TAMANHOS DE LINHAS --- */
+        .empty-row-md td { height: 22px; }
+        .empty-row-sm td { height: 18px; }
 
-/* --- CRONOLOGIA --- */
-.chrono-row td { height: 18px; }
-.chrono-label {
-    width: 18%;
-    font-size: 10px;
-}
-.chrono-input {
-    width: 7%;
-}
+        /* --- CRONOLOGIA --- */
+        .chrono-row td { height: 18px; }
+        .chrono-label {
+            width: 18%;
+            font-size: 10px;
+        }
+        .chrono-input {
+            width: 7%;
+        }
 
-/* --- JOGADORES (Página 1) --- */
-.flex-grow-table {
-    /* Faz a tabela de jogadores esticar até o fim da primeira folha se precisar */
-    flex-grow: 1; 
-}
-.player-row td {
-    height: 16px; /* Altura controlada para caber as 27 linhas */
-    padding: 1px 5px !important;
-}
+        /* =========================================================
+           A MÁGICA DO CSS AQUI: CORTE FORÇADO NAS COLUNAS
+           ========================================================= */
+        .flex-grow-table {
+            flex-grow: 1; 
+            
+            
+        }
 
+        .flex-grow-table th, .flex-grow-table td {
+            overflow: hidden !important; /* Se o texto for maior que a coluna, ESCONDE */
+            white-space: nowrap !important; /* Proíbe o texto de quebrar pra linha de baixo */
+            text-overflow: clip !important; /* Corta o texto secamente como tesoura */
+        }
 
-/* --- OBSERVAÇÕES (Página 2) --- */
-.obs-table {
-    flex-grow: 1; /* Faz a tabela inteira esticar para ocupar o resto da página 2 */
-    width: 100%;
-}
-.obs-table th {
-    width: 100%;
-}
-.obs-content {
-    height: 150px; /* Faz a célula vazia preencher todo o espaço vertical disponível */
-    border-top: none !important; /* Para não ficar linha grossa abaixo do título */
-}
+        .player-row td {
+            height: 16.5px; 
+            padding: 1px 5px !important;
+            vertical-align: middle;
+        }
 
-/*Bordas nos titulos do header*/
-.border {
-    border-right:2px solid #000;
-    padding: 3px;
-}
+        th[class*="col-dinamica-"] {
+            font-size: 11px; /* Título do cabeçalho um pouco menor para caber mais */
+            text-transform: uppercase;
+        }
+
+        td[class*="col-dinamica-"] {
+            font-size: 12px;
+            padding: 1px 2px !important;
+        }
+
+        .player-cell {
+            padding-left: 6px !important;
+        }
+        
+        .player-cell strong {
+            display: block;
+            width: 100%;
+            text-transform: lowercase; 
+            line-height: 1.2; 
+            font-weight: 500;
+            font-size: 12px; /* Tamanho base do nome */
+            text-transform: uppercase;
+        }
+
+        /* --- OBSERVAÇÕES (Página 2) --- */
+        .obs-table {
+            flex-grow: 1;
+            width: 100%;
+        }
+        .obs-table th {
+            width: 100%;
+        }
+        .obs-content {
+            height: 150px; 
+            border-top: none !important; 
+        }
+
+        .border {
+            border-right: 2px solid #000;
+            padding: 3px;
+        }
     </style>
 </body>
 </html>
