@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Súmula 6 - Futevôlei (A4 Paisagem)</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: #525659;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-size: 11px;
+            padding: 20px;
+        }
+
+        /* FORMATO A4 PAISAGEM */
+        .page-container {
+            width: 297mm;
+            height: 210mm;
+            background: #fff;
+            padding: 8mm;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            border: 2px solid #000;
+        }
+
+        /* TABELAS GERAIS */
+        .main-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            margin-bottom: -1px; /* Funde as bordas das tabelas */
+        }
+        
+        .main-table th, .main-table td {
+            border: 2px solid #000;
+            padding: 4px 6px;
+            vertical-align: middle;
+        }
+
+        .border-thin td { border: 1px solid #000; }
+
+        .text-center { text-align: center; }
+        .font-bold { font-weight: bold; }
+        .text-blue { color: #0000cd; }
+
+        /* CABEÇALHO */
+        .header-table td { height: 60px; }
+        .main-title {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 10px;
+        }
+        .logo-fenabb {
+            color: #0000cd;
+            font-size: 28px;
+            font-weight: bold;
+            font-style: italic;
+            line-height: 1;
+        }
+        .logo-sub {
+            font-size: 10px;
+            color: #000;
+            margin-left: 5px;
+            text-align: left;
+            line-height: 1.1;
+        }
+
+        /* CIRCULOS */
+        .circle {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 1px solid #000;
+            border-radius: 50%;
+            vertical-align: middle;
+            margin-left: 5px;
+        }
+        .circle-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 22px;
+            height: 22px;
+            border: 2px solid #000;
+            border-radius: 50%;
+            background: #e0e0e0;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        /* INNER GRIDS (PONTOS, PENALIDADES, SAQUE) */
+        .inner-grid {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .inner-grid td {
+            border: 1px solid #000;
+            text-align: center;
+            height: 20px;
+            padding: 0;
+            font-weight: bold;
+        }
+
+        /* ESTRUTURA ORDEM SAQUE E TROCA */
+        .saque-container {
+            display: flex;
+            border: 2px solid #000;
+            border-top: none;
+            height: 140px;
+            margin-bottom: -1px;
+        }
+        .saque-box {
+            flex: 1;
+            position: relative;
+        }
+        .troca-box {
+            width: 120px;
+            border-left: 2px solid #000;
+            border-right: 2px solid #000;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .tempos-box {
+            position: absolute;
+            bottom: 0;
+            background: #fff;
+            border: 2px solid #000;
+        }
+        .tempos-box.left { left: 0; border-left: none; border-bottom: none; }
+        .tempos-box.right { right: 0; border-right: none; border-bottom: none; }
+
+        /* FOOTER */
+        .footer-wrapper {
+            display: flex;
+            border: 2px solid #000;
+            flex-grow: 1;
+        }
+        .footer-left {
+            width: 25%;
+            border-right: 2px solid #000;
+            padding: 5px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .footer-center {
+            width: 50%;
+            border-right: 2px solid #000;
+            padding: 5px;
+        }
+        .footer-right {
+            width: 25%;
+            display: flex;
+        }
+
+        .line-fill {
+            flex: 1;
+            border-bottom: 1px solid #000;
+            margin-left: 5px;
+        }
+
+        @media print {
+            @page { size: A4 landscape; margin: 0; }
+            body { background: none; display: block; padding: 0; }
+            .page-container { box-shadow: none; margin: 0; width: 297mm; height: 210mm; border: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-container">
+
+        <table class="main-table header-table">
+            <tr>
+                <td width="50%" class="main-title text-blue">SÚMULA DE FUTEVOLEI</td>
+                <td width="50%">
+                    <div class="logo-container">
+                        <div class="logo-fenabb">FENABB</div>
+                        <div class="logo-sub">Federação<br>das AABB</div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <table class="main-table">
+            <tr>
+                <td width="15%" class="font-bold">JOGO Nº <span id="lbl-jogo" style="font-weight:normal; margin-left:5px;"></span></td>
+                <td width="25%" class="font-bold">CATEGORIA: <span id="lbl-categoria" style="font-weight:normal; margin-left:5px;"></span></td>
+                <td width="20%" class="font-bold">FASE: <span id="lbl-fase" style="font-weight:normal; margin-left:5px;"></span></td>
+                <td width="15%" class="font-bold">DATA: <span id="lbl-data" style="font-weight:normal; margin-left:5px;"></span></td>
+                <td width="12%" class="font-bold">INÍCIO: <span id="lbl-inicio" style="font-weight:normal; margin-left:5px;"></span></td>
+                <td width="13%" class="font-bold">FIM:</td>
+            </tr>
+        </table>
+
+        <table class="main-table" style="border-top:none;">
+            <tr>
+                <td width="42%" class="text-center font-bold">EQUIPE <span id="lbl-team-a" style="margin-left:5px;"></span> <div class="circle"></div></td>
+                <td width="16%" class="text-center font-bold">JOGADORES</td>
+                <td width="42%" class="text-center font-bold">EQUIPE <span id="lbl-team-b" style="margin-left:5px;"></span> <div class="circle"></div></td>
+            </tr>
+        </table>
+        
+        <table class="main-table border-thin" style="border-top:none;">
+            <tr>
+                <td width="21%" class="font-bold"><div class="circle-num">1</div><span id="nome-j1-a" style="font-weight:normal;"></span></td>
+                <td width="21%" class="font-bold"><div class="circle-num">2</div><span id="nome-j2-a" style="font-weight:normal;"></span></td>
+                <td width="8%" style="border-top:2px solid #000; border-bottom:2px solid #000; border-left:2px solid #000; border-right:2px solid #000;"></td>
+                <td width="21%" class="font-bold"><div class="circle-num">1</div><span id="nome-j1-b" style="font-weight:normal;"></span></td>
+                <td width="21%" class="font-bold"><div class="circle-num">2</div><span id="nome-j2-b" style="font-weight:normal;"></span></td>
+            </tr>
+        </table>
+
+        <table class="main-table" style="border-top:none;">
+            <tr>
+                <td width="50%" style="padding: 0; border-right: 2px solid #000;">
+                    <div class="text-center font-bold" style="font-size: 9px; padding: 2px 0;">PENALIDADES: AMARELO[A]; VERMELHO [V]; EXPULSÃO [AV]</div>
+                    <table class="inner-grid" style="border-top: 1px solid #000;">
+                        <tr>
+                            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                        </tr>
+                        <tr>
+                            <td>:</td><td>:</td><td>:</td><td>:</td><td>:</td><td>:</td><td>:</td><td>:</td><td>:</td><td>:</td><td>:</td><td>:</td><td>:</td><td>:</td><td>:</td><td>:</td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="50%" style="padding: 0;">
+                    <div class="text-center font-bold" style="font-size: 9px; padding: 2px 0;">PENALIDADES: AMARELO[A]; VERMELHO [V]; EXPULSÃO [AV]</div>
+                    <table class="inner-grid" style="border-top: 1px solid #000;">
+                        <tr>
+                            <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                        </tr>
+                        <tr>
+                            <td>:</td><td>:</td><td>:</td><td>:</td><td>:</td><td>:</td><td>:</td><td>:</td><td>:</td><td>:</td><td>:</td><td>:</td><td>:</td><td>:</td><td>:</td><td>:</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+        <table class="main-table" style="border-top:none;">
+            <tr>
+                <td width="50%" style="padding: 0; border-right: 2px solid #000;">
+                    <div class="text-center font-bold" style="padding: 2px 0; border-bottom: 1px solid #000;">PONTUAÇÃO</div>
+                    <table class="inner-grid">
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td>
+                        </tr>
+                        <tr>
+                            <td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td>
+                        </tr>
+                    </table>
+                </td>
+                <td width="50%" style="padding: 0;">
+                    <div class="text-center font-bold" style="padding: 2px 0; border-bottom: 1px solid #000;">PONTUAÇÃO</div>
+                    <table class="inner-grid">
+                        <tr>
+                            <td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td><td>15</td>
+                        </tr>
+                        <tr>
+                            <td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td>21</td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td><td>29</td><td>30</td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+
+        <div class="saque-container">
+            
+            <div class="saque-box">
+                <div class="text-center font-bold" style="padding: 2px 0; border-bottom: 1px solid #000;">ORDEM DE SAQUE</div>
+                <table class="inner-grid">
+                    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                </table>
+                <div class="tempos-box left">
+                    <div class="font-bold text-center" style="border-bottom: 2px solid #000;">TEMPOS</div>
+                    <div style="display: flex;">
+                        <div style="width: 30px; height: 20px; text-align: center; border-right: 2px solid #000;">:</div>
+                        <div style="width: 30px; height: 20px; text-align: center;">:</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="troca-box">
+                <div class="text-center font-bold" style="font-size: 8px; padding: 2px 0; border-bottom: 2px solid #000;">PLACAR NA TROCA DE<br>QUADRA</div>
+                <div style="flex: 1; display: flex; flex-direction: column;">
+                    <div style="flex: 1; border-bottom: 1px solid #000; display: flex; align-items: center; justify-content: center; font-weight: bold;">:</div>
+                    <div style="flex: 1; border-bottom: 1px solid #000; display: flex; align-items: center; justify-content: center; font-weight: bold;">:</div>
+                    <div style="flex: 1; border-bottom: 1px solid #000; display: flex; align-items: center; justify-content: center; font-weight: bold;">:</div>
+                    <div style="flex: 1; border-bottom: 1px solid #000; display: flex; align-items: center; justify-content: center; font-weight: bold;">:</div>
+                    <div style="flex: 1; border-bottom: 1px solid #000; display: flex; align-items: center; justify-content: center; font-weight: bold;">:</div>
+                    <div style="flex: 1; display: flex; align-items: center; justify-content: center; font-weight: bold;">:</div>
+                </div>
+            </div>
+
+            <div class="saque-box">
+                <div class="text-center font-bold" style="padding: 2px 0; border-bottom: 1px solid #000;">ORDEM DE SAQUE</div>
+                <table class="inner-grid">
+                    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                    <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+                </table>
+                <div class="tempos-box right">
+                    <div class="font-bold text-center" style="border-bottom: 2px solid #000;">TEMPOS</div>
+                    <div style="display: flex;">
+                        <div style="width: 30px; height: 20px; text-align: center; border-right: 2px solid #000;">:</div>
+                        <div style="width: 30px; height: 20px; text-align: center;">:</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-wrapper">
+            <div class="footer-left">
+                <div class="text-center font-bold" style="font-size: 12px; margin-bottom: 15px;">RESULTADO FINAL</div>
+                <div style="display: flex; font-weight: bold; align-items: flex-end;">VENCEDOR: <div class="line-fill"></div></div>
+                <div style="display: flex; font-weight: bold; align-items: flex-end;">PLACAR: <div class="line-fill"></div></div>
+            </div>
+
+            <div class="footer-center">
+                <div class="text-center font-bold" style="font-size: 12px; margin-bottom: 5px;">OBSERVAÇÕES</div>
+                <div style="display: flex; flex-direction: column; gap: 15px; height: 80%;">
+                    <div style="border-bottom: 1px solid #000; flex: 1;"></div>
+                    <div style="border-bottom: 1px solid #000; flex: 1;"></div>
+                    <div style="border-bottom: 1px solid #000; flex: 1;"></div>
+                </div>
+            </div>
+
+            <div class="footer-right">
+                <div style="flex: 2; padding: 5px; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div style="display: flex; font-weight: bold; align-items: flex-end;">1º ÁRBITRO: <div class="line-fill"></div></div>
+                    <div style="display: flex; font-weight: bold; align-items: flex-end;">2º ÁRBITRO: <div class="line-fill"></div></div>
+                    <div style="display: flex; font-weight: bold; align-items: flex-end;">MESÁRIO: <div class="line-fill"></div></div>
+                </div>
+                
+                <div style="flex: 1; border-left: 2px solid #000; display: flex; flex-direction: column;">
+                    <div style="flex: 1; border-bottom: 1px solid #000; position: relative;">
+                        <div class="font-bold" style="position: absolute; top: 5px; left: 5px;">A</div>
+                        <div class="font-bold text-center" style="position: absolute; bottom: -8px; left: 0; right: 0; background: #fff; z-index: 10;">CAPITÃES</div>
+                    </div>
+                    <div style="flex: 1; position: relative;">
+                        <div class="font-bold" style="position: absolute; bottom: 5px; left: 5px;">B</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            fetch('referencia.json')
+                .then(response => {
+                    if (!response.ok) throw new Error('Erro na rede ao tentar acessar referencia.json');
+                    return response.json();
+                })
+                .then(data => {
+                    renderFutevolei(data);
+                })
+                .catch(error => {
+                    console.error("Erro ao carregar o JSON:", error);
+                });
+        });
+
+        function renderFutevolei(matchData) {
+            const gen = matchData.general;
+            
+            // Dados Gerais
+            document.getElementById('lbl-jogo').innerText = gen.n.value;
+            document.getElementById('lbl-categoria').innerText = `${gen.title.value} - ${gen.sub_title.value}`;
+            document.getElementById('lbl-fase').innerText = gen.fs.value;
+            document.getElementById('lbl-data').innerText = gen.date.value;
+            document.getElementById('lbl-inicio').innerText = gen.hour.value;
+
+            // Nomes Equipes
+            document.getElementById('lbl-team-a').innerText = matchData.team_1.name;
+            document.getElementById('lbl-team-b').innerText = matchData.team_2.name;
+
+            // Jogadores Equipe A (Top 2)
+            if(matchData.team_1.player && matchData.team_1.player.length > 0) {
+                document.getElementById('nome-j1-a').innerText = matchData.team_1.player[0].name || "";
+            }
+            if(matchData.team_1.player && matchData.team_1.player.length > 1) {
+                document.getElementById('nome-j2-a').innerText = matchData.team_1.player[1].name || "";
+            }
+
+            // Jogadores Equipe B (Top 2)
+            if(matchData.team_2.player && matchData.team_2.player.length > 0) {
+                document.getElementById('nome-j1-b').innerText = matchData.team_2.player[0].name || "";
+            }
+            if(matchData.team_2.player && matchData.team_2.player.length > 1) {
+                document.getElementById('nome-j2-b').innerText = matchData.team_2.player[1].name || "";
+            }
+        }
+    </script>
+</body>
+</html>
