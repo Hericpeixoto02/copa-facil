@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Súmula 4 - Xadrez (A4 Retrato)</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: #525659;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-size: 11px;
+            padding: 20px;
+        }
+
+        /* FORMATO A4 RETRATO */
+        .page-container {
+            width: 210mm;
+            height: 297mm;
+            background: #fff;
+            padding: 10mm;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+
+        /* TABELAS GERAIS */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            margin-bottom: -1px; /* Remove bordas duplas */
+        }
+        
+        th, td {
+            border: 1px solid #000;
+            padding: 4px 6px;
+            vertical-align: middle;
+        }
+
+        .text-center { text-align: center; }
+        .text-right { text-align: right; }
+        .font-bold { font-weight: bold; }
+
+        /* CABEÇALHO DA MODALIDADE */
+        .header-table td { height: 80px; }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .logo-fenabb {
+            color: #000080; /* Azul Escuro Padrão FENABB */
+            font-size: 28px;
+            font-weight: bold;
+            font-style: italic;
+            line-height: 1;
+        }
+        .logo-sub {
+            font-size: 10px;
+            color: #000;
+            margin-left: 6px;
+            text-align: left;
+            line-height: 1.2;
+        }
+        .main-title {
+            font-size: 38px;
+            font-weight: bold;
+            text-align: center;
+            letter-spacing: 2px;
+        }
+
+        /* ASSINATURAS */
+        .assinaturas-title {
+            text-align: center;
+            font-weight: bold;
+            padding: 10px 0 5px 0;
+            font-size: 13px;
+        }
+
+        @media print {
+            @page { size: A4 portrait; margin: 0; }
+            body { background: none; display: block; padding: 0; }
+            .page-container { box-shadow: none; margin: 0; width: 210mm; height: 297mm; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-container">
+
+        <table class="header-table">
+            <tr>
+                <td width="30%">
+                    <div class="logo-container">
+                        <div class="logo-fenabb">FENABB</div>
+                        <div class="logo-sub">Federação<br>das AABB</div>
+                    </div>
+                </td>
+                <td width="50%" class="main-title">XADREZ</td>
+                <td width="20%"></td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <td width="50%" style="height: 25px;">EVENTO: <span id="lbl-evento" class="font-bold" style="margin-left: 5px;"></span></td>
+                <td width="50%" style="height: 25px;">LOCAL: <span id="lbl-local" class="font-bold" style="margin-left: 5px;"></span></td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <td width="15%">CONFRONTO:</td>
+                <td width="15%" class="text-right font-bold" id="lbl-conf-a" style="border-right: none;"></td>
+                <td width="5%" class="text-center font-bold" style="border-left: none; border-right: none;">x</td>
+                <td width="15%" class="font-bold" id="lbl-conf-b" style="border-left: none;"></td>
+                <td width="10%" class="text-center">DATA<br><span id="lbl-data" class="font-bold"></span></td>
+                <td width="10%" class="text-center">HORA<br><span id="lbl-hora" class="font-bold"></span></td>
+                <td width="10%" class="text-center">JOGO<br><span id="lbl-jogo" class="font-bold"></span></td>
+                <td width="10%" class="text-center">NAIPE<br></td>
+                <td width="10%" class="text-center">RODADA<br><span id="lbl-rodada" class="font-bold"></span></td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <td width="50%" class="font-bold" style="height: 25px;">Equipe [A]</td>
+                <td width="50%" class="font-bold" style="height: 25px;">Equipe [B]</td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <td width="15%">Registro</td>
+                <td width="35%" class="text-center">Nome</td>
+                <td width="15%">Registro</td>
+                <td width="35%" class="text-center">Nome</td>
+            </tr>
+            <tr>
+                <td style="height: 40px;" id="doc-j1-a" class="text-center font-bold"></td>
+                <td id="nome-j1-a" class="font-bold"></td>
+                <td id="doc-j1-b" class="text-center font-bold"></td>
+                <td id="nome-j1-b" class="font-bold"></td>
+            </tr>
+        </table>
+
+        <table style="border-top: none; flex-grow: 1;">
+            <tr>
+                <td style="position: relative; height: 350px; padding: 0;">
+                    <div style="position: absolute; top: 0; bottom: 0; left: 50%; border-left: 1px solid #000; z-index: 1;"></div>
+                    
+                    <div style="position: absolute; top: 60px; left: 50%; transform: translateX(-50%); background: #fff; border: 1px solid #000; padding: 20px 40px; text-align: center; z-index: 2;">
+                        <div class="font-bold" style="font-size: 18px; margin-bottom: 20px;">RESULTADO</div>
+                        <div style="display: flex; justify-content: center; align-items: center; gap: 20px; font-weight: bold; font-size: 14px;">
+                            Equipe [A] 
+                            <div style="width: 60px; height: 35px; border: 1px solid #000;"></div> 
+                            X 
+                            <div style="width: 60px; height: 35px; border: 1px solid #000;"></div> 
+                            Equipe [B]
+                        </div>
+                    </div>
+
+                    <div style="position: absolute; bottom: 30px; left: 15px; right: 15px; background: #fff; z-index: 2; display: flex; font-weight: bold; align-items: flex-end; font-size: 13px;">
+                        VENCEU A EQUIPE: 
+                        <div style="flex: 1; border-bottom: 1px solid #000; margin-left: 10px;"></div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <div class="assinaturas-title">Assinaturas</div>
+
+        <table>
+            <tr>
+                <td width="50%" style="height: 70px; vertical-align: top;">Assinatura Capitão:</td>
+                <td width="50%" style="height: 70px; vertical-align: top;">Assinatura Capitão:</td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <td width="33%" style="height: 55px; vertical-align: top;">Árbitro</td>
+                <td width="34%" style="vertical-align: top;">Apontador</td>
+                <td width="33%" style="vertical-align: top;">Árbitro Geral</td>
+            </tr>
+            <tr>
+                <td style="height: 55px; vertical-align: top;">Nome do Árbitro</td>
+                <td style="vertical-align: top;">Nome do Apontador</td>
+                <td style="vertical-align: top;">Nome do Árbitro Geral</td>
+            </tr>
+        </table>
+
+    </div>
+
+    <script>
+        const matchData = {
+            "general": {
+                "title": { "value": "COMPETIÇÕES LIGA BELÉM" },
+                "sub_title": { "value": "4° PARAZÃO DO FUTSAL" },
+                "fs": { "value": "1º Fase" },
+                "m_set": { "value": "1º Rodada" },
+                "n": { "value": "2" },
+                "l": { "value": "Ginásio Uepa" },
+                "date": { "value": "11/09/2025" },
+                "hour": { "value": "21:40" }
+            },
+            "team_1": {
+                "name": "RESENHA",
+                "player": [
+                    { "name": "MAURO GONÇALVES LIRA", "doc": "551663" }
+                ]
+            },
+            "team_2": {
+                "name": "LEON",
+                "player": [
+                    { "name": "LUCAS SOARES BARATA", "doc": "551662" }
+                ]
+            }
+        };
+
+        function renderXadrez() {
+            const gen = matchData.general;
+            
+            // Dados Gerais
+            document.getElementById('lbl-evento').innerText = `${gen.title.value} - ${gen.sub_title.value}`;
+            document.getElementById('lbl-local').innerText = gen.l.value;
+            
+            // Confronto e Info da Partida
+            document.getElementById('lbl-conf-a').innerText = matchData.team_1.name;
+            document.getElementById('lbl-conf-b').innerText = matchData.team_2.name;
+            document.getElementById('lbl-data').innerText = gen.date.value;
+            document.getElementById('lbl-hora').innerText = gen.hour.value;
+            document.getElementById('lbl-jogo').innerText = gen.n.value;
+            document.getElementById('lbl-rodada').innerText = gen.m_set.value;
+
+            // Jogador 1 (Equipe A)
+            if(matchData.team_1.player && matchData.team_1.player.length > 0) {
+                document.getElementById('doc-j1-a').innerText = matchData.team_1.player[0].doc || "";
+                document.getElementById('nome-j1-a').innerText = matchData.team_1.player[0].name || "";
+            }
+
+            // Jogador 1 (Equipe B)
+            if(matchData.team_2.player && matchData.team_2.player.length > 0) {
+                document.getElementById('doc-j1-b').innerText = matchData.team_2.player[0].doc || "";
+                document.getElementById('nome-j1-b').innerText = matchData.team_2.player[0].name || "";
+            }
+        }
+
+        // Executa a injeção dos dados na tela
+        renderXadrez();
+    </script>
+</body>
+</html>
