@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Súmula FENABB - Vôlei de Areia (A4 Paisagem)</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: #525659; /* Fundo escuro para destacar a folha na tela */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-size: 9px; /* Reduzido levemente para caber perfeito na altura do A4 */
+        }
+
+        /* CONFIGURAÇÃO EXATA DO A4 PAISAGEM */
+        .page-container {
+            width: 297mm;
+            height: 210mm;
+            background: #fff;
+            padding: 5mm; /* Margem interna da folha */
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: max-content 1fr 1fr; /* Divide a altura certinho */
+            gap: 4px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5); /* Sombra para simular o papel na tela */
+            overflow: hidden;
+        }
+
+        /* Tabelas Genéricas */
+        table {
+            width: 100%;
+            height: 100%; /* Força as tabelas a preencherem o espaço disponível */
+            border-collapse: collapse;
+            text-align: center;
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 1px; /* Espaçamento mínimo */
+        }
+        
+        /* Células diagonais */
+        .diag-slash {
+            background: linear-gradient(to top right, transparent 48%, #000 49%, #000 51%, transparent 52%);
+        }
+
+        /* Header (Ocupa as duas colunas) */
+        .header-section {
+            grid-column: 1 / -1;
+            border: 2px solid #000;
+            display: flex;
+            flex-direction: column;
+        }
+        .header-top {
+            display: flex;
+            border-bottom: 2px solid #000;
+        }
+        .header-title {
+            flex: 2;
+            font-size: 20px;
+            font-weight: bold;
+            padding: 5px;
+            text-align: center;
+            border-right: 2px solid #000;
+        }
+        .header-teams {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 2px;
+        }
+        .circle {
+            width: 24px;
+            height: 24px;
+            border: 1px solid #000;
+            border-radius: 50%;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        /* Layout dos Sets */
+        .set-box {
+            border: 2px solid #000;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .set-title {
+            color: red;
+            font-weight: bold;
+            text-align: center;
+            padding: 1px;
+            border-bottom: 2px solid #000;
+            font-size: 11px;
+        }
+
+        .points-title {
+            font-size: 10px;
+            font-weight: bold;
+            background: #fff;
+        }
+        .p-cell {
+            width: 13px;
+            font-size: 8px;
+            padding: 0;
+            text-align: center;
+        }
+
+        /* Quadro de Informações */
+        .info-box {
+            border: 2px solid #000;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .info-header {
+            display: flex;
+            border-bottom: 2px solid #000;
+        }
+        .info-title {
+            flex: 1;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 10px;
+            text-align: center;
+            border-right: 2px solid #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .info-logo {
+            flex: 1;
+            text-align: center;
+            padding: 5px;
+            color: blue;
+            font-weight: bold;
+            font-size: 16px;
+            font-style: italic;
+        }
+
+        /* CONFIGURAÇÃO PARA IMPRESSÃO (PDF) */
+        @media print {
+            @page {
+                size: A4 landscape; /* Força a impressora a usar A4 Paisagem */
+                margin: 0; /* Remove as margens do navegador */
+            }
+            body {
+                background: none;
+                display: block;
+            }
+            .page-container {
+                box-shadow: none;
+                margin: 0;
+                width: 297mm;
+                height: 210mm;
+                page-break-after: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-container">
+
+        <div class="header-section">
+            <div class="header-top">
+                <div class="header-title">Fenabb - Federação das AABB</div>
+                <div class="header-teams">
+                    <div>A<br>B</div>
+                    <div class="circle"></div>
+                    <div style="width: 80px; border-bottom: 1px solid #000;"></div>
+                    <div>X</div>
+                    <div>A<br>B</div>
+                    <div class="circle"></div>
+                    <div style="width: 80px; border-bottom: 1px solid #000;"></div>
+                </div>
+            </div>
+            <table style="height: auto;">
+                <tr>
+                    <td width="5%">Jogo Nº</td><td width="10%"></td>
+                    <td width="10%">Masculino</td><td width="5%"></td>
+                    <td width="10%">Feminino</td><td width="5%"></td>
+                    <td width="10%">INICIO</td><td width="15%"></td>
+                    <td width="10%">TERMINO</td><td width="15%"></td>
+                </tr>
+            </table>
+            <table style="height: auto;">
+                <tr>
+                    <td width="5%">Elim.</td><td width="5%"></td>
+                    <td width="6%">Classif.</td><td width="5%"></td>
+                    <td width="6%">Semi.F</td><td width="5%"></td>
+                    <td width="5%">Final</td><td width="5%"></td>
+                    <td width="5%">DATA</td><td width="15%"></td>
+                    <td width="5%">Local:</td><td width="15%"></td>
+                    <td width="5%">Praia</td><td width="3%"></td>
+                    <td width="5%">Quadra</td><td width="3%"></td>
+                    <td width="5%">Forma A</td>
+                    <td width="5%">Forma B</td>
+                    <td width="10%">SET 1( ) 2( ) 3( )</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="set-box">
+            <div class="set-title">SET I</div>
+            <table>
+                <tr>
+                    <td width="5%" rowspan="2">Ordem de<br>Saque</td>
+                    <td width="5%" rowspan="2">Equipe</td>
+                    <td width="20%" rowspan="2">Jogador</td>
+                    <td colspan="4">PENALIDADES</td>
+                    <td colspan="18" class="points-title" style="border-bottom: none;"></td>
+                </tr>
+                <tr>
+                    <td width="5%">Advert.</td><td width="5%">Penaliz.</td><td width="5%">Penaliz.</td><td width="5%">Penaliz.</td>
+                    <td class="p-cell">1</td><td class="p-cell">2</td><td class="p-cell">3</td><td class="p-cell">4</td><td class="p-cell">5</td><td class="p-cell">6</td><td class="p-cell">7</td><td class="p-cell">8</td><td class="p-cell">9</td><td class="p-cell">10</td><td class="p-cell">11</td><td class="p-cell">12</td><td class="p-cell">13</td><td class="p-cell">14</td><td class="p-cell">15</td><td class="p-cell">16</td><td class="p-cell">17</td><td class="p-cell">18</td>
+                </tr>
+                <tr>
+                    <td rowspan="2"><strong>I</strong></td>
+                    <td rowspan="2"><div class="circle"></div></td>
+                    <td rowspan="2" class="diag-slash"></td>
+                    <td rowspan="2" class="diag-slash"></td>
+                    <td rowspan="2" class="diag-slash"></td>
+                    <td rowspan="2" class="diag-slash"></td>
+                    <td rowspan="2" class="diag-slash"></td>
+                    <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td class="p-cell">19</td><td class="p-cell">20</td><td class="p-cell">21</td><td class="p-cell">22</td><td class="p-cell">23</td><td class="p-cell">24</td><td class="p-cell">25</td><td class="p-cell">26</td><td class="p-cell">27</td><td class="p-cell">28</td><td class="p-cell">29</td><td class="p-cell">30</td>
+                    <td colspan="6"></td>
+                </tr>
+                <tr>
+                    <td><strong>III</strong></td>
+                    <td class="diag-slash"></td>
+                    <td class="diag-slash"></td>
+                    <td colspan="4">RETARDAMENTOS</td>
+                    <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    <td colspan="6"></td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align: left; padding-left: 5px;"><strong>TEMPOS</strong></td>
+                    <td>Advert.</td><td>Penaliz.</td><td>Penaliz.</td><td></td>
+                    <td colspan="18" class="points-title">Pontos</td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="diag-slash"></td>
+                    <td class="diag-slash"></td><td class="diag-slash"></td><td class="diag-slash"></td><td class="diag-slash"></td>
+                    <td colspan="18"></td>
+                </tr>
+            </table>
+
+            <table style="border-top: 2px solid #000;">
+                <tr>
+                    <td width="5%" rowspan="2">Ordem de<br>Saque</td>
+                    <td width="5%" rowspan="2">Equipe</td>
+                    <td width="20%" rowspan="2">Jogador</td>
+                    <td colspan="4">PENALIDADES</td>
+                    <td class="p-cell">1</td><td class="p-cell">2</td><td class="p-cell">3</td><td class="p-cell">4</td><td class="p-cell">5</td><td class="p-cell">6</td><td class="p-cell">7</td><td class="p-cell">8</td><td class="p-cell">9</td><td class="p-cell">10</td><td class="p-cell">11</td><td class="p-cell">12</td><td class="p-cell">13</td><td class="p-cell">14</td><td class="p-cell">15</td><td class="p-cell">16</td><td class="p-cell">17</td><td class="p-cell">18</td>
+                </tr>
+                <tr>
+                    <td width="5%">Advert.</td><td width="5%">Penaliz.</td><td width="5%">Penaliz.</td><td width="5%">Penaliz.</td>
+                    <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td rowspan="2"><strong>II</strong></td>
+                    <td rowspan="2"><div class="circle"></div></td>
+                    <td rowspan="2" class="diag-slash"></td>
+                    <td rowspan="2" class="diag-slash"></td>
+                    <td rowspan="2" class="diag-slash"></td>
+                    <td rowspan="2" class="diag-slash"></td>
+                    <td rowspan="2" class="diag-slash"></td>
+                    <td colspan="18" class="points-title">Pontos</td>
+                </tr>
+                <tr>
+                    <td class="p-cell">19</td><td class="p-cell">20</td><td class="p-cell">21</td><td class="p-cell">22</td><td class="p-cell">23</td><td class="p-cell">24</td><td class="p-cell">25</td><td class="p-cell">26</td><td class="p-cell">27</td><td class="p-cell">28</td><td class="p-cell">29</td><td class="p-cell">30</td>
+                    <td colspan="6"></td>
+                </tr>
+                <tr>
+                    <td><strong>IV</strong></td>
+                    <td class="diag-slash"></td>
+                    <td class="diag-slash"></td>
+                    <td colspan="4">RETARDAMENTOS</td>
+                    <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    <td colspan="6"></td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align: left; padding-left: 5px;"><strong>TEMPOS</strong></td>
+                    <td>Advert.</td><td>Penaliz.</td><td>Penaliz.</td><td></td>
+                    <td colspan="18" rowspan="2" class="points-title" style="vertical-align: middle;">PONTOS DA TROCA</td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="diag-slash"></td>
+                    <td class="diag-slash"></td><td class="diag-slash"></td><td class="diag-slash"></td><td class="diag-slash"></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="set-box">
+            <div class="set-title">SET II</div>
+            <table>
+                <tr>
+                    <td width="5%" rowspan="2">Ordem de<br>Saque</td>
+                    <td width="5%" rowspan="2">Equipe</td>
+                    <td width="20%" rowspan="2">Jogador</td>
+                    <td colspan="4">PENALIDADES</td>
+                    <td colspan="18" class="points-title" style="border-bottom: none;"></td>
+                </tr>
+                <tr>
+                    <td width="5%">Advert.</td><td width="5%">Penaliz.</td><td width="5%">Penaliz.</td><td width="5%">Penaliz.</td>
+                    <td class="p-cell">1</td><td class="p-cell">2</td><td class="p-cell">3</td><td class="p-cell">4</td><td class="p-cell">5</td><td class="p-cell">6</td><td class="p-cell">7</td><td class="p-cell">8</td><td class="p-cell">9</td><td class="p-cell">10</td><td class="p-cell">11</td><td class="p-cell">12</td><td class="p-cell">13</td><td class="p-cell">14</td><td class="p-cell">15</td><td class="p-cell">16</td><td class="p-cell">17</td><td class="p-cell">18</td>
+                </tr>
+                <tr>
+                    <td rowspan="2"><strong>I</strong></td>
+                    <td rowspan="2"><div class="circle"></div></td>
+                    <td rowspan="2" class="diag-slash"></td>
+                    <td rowspan="2" class="diag-slash"></td>
+                    <td rowspan="2" class="diag-slash"></td>
+                    <td rowspan="2" class="diag-slash"></td>
+                    <td rowspan="2" class="diag-slash"></td>
+                    <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td class="p-cell">19</td><td class="p-cell">20</td><td class="p-cell">21</td><td class="p-cell">22</td><td class="p-cell">23</td><td class="p-cell">24</td><td class="p-cell">25</td><td class="p-cell">26</td><td class="p-cell">27</td><td class="p-cell">28</td><td class="p-cell">29</td><td class="p-cell">30</td>
+                    <td colspan="6"></td>
+                </tr>
+                <tr>
+                    <td><strong>III</strong></td>
+                    <td class="diag-slash"></td>
+                    <td class="diag-slash"></td>
+                    <td colspan="4">RETARDAMENTOS</td>
+                    <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    <td colspan="6"></td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align: left; padding-left: 5px;"><strong>TEMPOS</strong></td>
+                    <td>Advert.</td><td>Penaliz.</td><td>Penaliz.</td><td></td>
+                    <td colspan="18" class="points-title">Pontos</td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="diag-slash"></td>
+                    <td class="diag-slash"></td><td class="diag-slash"></td><td class="diag-slash"></td><td class="diag-slash"></td>
+                    <td colspan="18"></td>
+                </tr>
+            </table>
+
+            <table style="border-top: 2px solid #000;">
+                <tr>
+                    <td width="5%" rowspan="2">Ordem de<br>Saque</td>
+                    <td width="5%" rowspan="2">Equipe</td>
+                    <td width="20%" rowspan="2">Jogador</td>
+                    <td colspan="4">PENALIDADES</td>
+                    <td class="p-cell">1</td><td class="p-cell">2</td><td class="p-cell">3</td><td class="p-cell">4</td><td class="p-cell">5</td><td class="p-cell">6</td><td class="p-cell">7</td><td class="p-cell">8</td><td class="p-cell">9</td><td class="p-cell">10</td><td class="p-cell">11</td><td class="p-cell">12</td><td class="p-cell">13</td><td class="p-cell">14</td><td class="p-cell">15</td><td class="p-cell">16</td><td class="p-cell">17</td><td class="p-cell">18</td>
+                </tr>
+                <tr>
+                    <td width="5%">Advert.</td><td width="5%">Penaliz.</td><td width="5%">Penaliz.</td><td width="5%">Penaliz.</td>
+                    <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td rowspan="2"><strong>II</strong></td>
+                    <td rowspan="2"><div class="circle"></div></td>
+                    <td rowspan="2" class="diag-slash"></td>
+                    <td rowspan="2" class="diag-slash"></td>
+                    <td rowspan="2" class="diag-slash"></td>
+                    <td rowspan="2" class="diag-slash"></td>
+                    <td rowspan="2" class="diag-slash"></td>
+                    <td colspan="18" class="points-title">Pontos</td>
+                </tr>
+                <tr>
+                    <td class="p-cell">19</td><td class="p-cell">20</td><td class="p-cell">21</td><td class="p-cell">22</td><td class="p-cell">23</td><td class="p-cell">24</td><td class="p-cell">25</td><td class="p-cell">26</td><td class="p-cell">27</td><td class="p-cell">28</td><td class="p-cell">29</td><td class="p-cell">30</td>
+                    <td colspan="6"></td>
+                </tr>
+                <tr>
+                    <td><strong>IV</strong></td>
+                    <td class="diag-slash"></td>
+                    <td class="diag-slash"></td>
+                    <td colspan="4">RETARDAMENTOS</td>
+                    <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    <td colspan="6"></td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align: left; padding-left: 5px;"><strong>TEMPOS</strong></td>
+                    <td>Advert.</td><td>Penaliz.</td><td>Penaliz.</td><td></td>
+                    <td colspan="18" rowspan="2" class="points-title" style="vertical-align: middle;">PONTOS DA TROCA</td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="diag-slash"></td>
+                    <td class="diag-slash"></td><td class="diag-slash"></td><td class="diag-slash"></td><td class="diag-slash"></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="set-box">
+            <div class="set-title">SET III</div>
+            <table>
+                <tr>
+                    <td width="5%" rowspan="2">Ordem de<br>Saque</td>
+                    <td width="5%" rowspan="2">Equipe</td>
+                    <td width="20%" rowspan="2">Jogador</td>
+                    <td colspan="4">PENALIDADES</td>
+                    <td colspan="18" class="points-title" style="border-bottom: none;"></td>
+                </tr>
+                <tr>
+                    <td width="5%">Advert.</td><td width="5%">Penaliz.</td><td width="5%">Penaliz.</td><td width="5%">Penaliz.</td>
+                    <td class="p-cell">1</td><td class="p-cell">2</td><td class="p-cell">3</td><td class="p-cell">4</td><td class="p-cell">5</td><td class="p-cell">6</td><td class="p-cell">7</td><td class="p-cell">8</td><td class="p-cell">9</td><td class="p-cell">10</td><td class="p-cell">11</td><td class="p-cell">12</td><td class="p-cell">13</td><td class="p-cell">14</td><td class="p-cell">15</td><td class="p-cell">16</td><td class="p-cell">17</td><td class="p-cell">18</td>
+                </tr>
+                <tr>
+                    <td rowspan="2"><strong>I</strong></td>
+                    <td rowspan="2"><div class="circle"></div></td>
+                    <td rowspan="2" class="diag-slash"></td>
+                    <td rowspan="2" class="diag-slash"></td>
+                    <td rowspan="2" class="diag-slash"></td>
+                    <td rowspan="2" class="diag-slash"></td>
+                    <td rowspan="2" class="diag-slash"></td>
+                    <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td class="p-cell">19</td><td class="p-cell">20</td><td class="p-cell">21</td><td class="p-cell">22</td><td class="p-cell">23</td><td class="p-cell">24</td><td class="p-cell">25</td><td class="p-cell">26</td><td class="p-cell">27</td><td class="p-cell">28</td><td class="p-cell">29</td><td class="p-cell">30</td>
+                    <td colspan="6"></td>
+                </tr>
+                <tr>
+                    <td><strong>III</strong></td>
+                    <td class="diag-slash"></td>
+                    <td class="diag-slash"></td>
+                    <td colspan="4">RETARDAMENTOS</td>
+                    <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    <td colspan="6"></td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align: left; padding-left: 5px;"><strong>TEMPOS</strong></td>
+                    <td>Advert.</td><td>Penaliz.</td><td>Penaliz.</td><td></td>
+                    <td colspan="18" class="points-title">Pontos</td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="diag-slash"></td>
+                    <td class="diag-slash"></td><td class="diag-slash"></td><td class="diag-slash"></td><td class="diag-slash"></td>
+                    <td colspan="18"></td>
+                </tr>
+            </table>
+
+            <table style="border-top: 2px solid #000;">
+                <tr>
+                    <td width="5%" rowspan="2">Ordem de<br>Saque</td>
+                    <td width="5%" rowspan="2">Equipe</td>
+                    <td width="20%" rowspan="2">Jogador</td>
+                    <td colspan="4">PENALIDADES</td>
+                    <td class="p-cell">1</td><td class="p-cell">2</td><td class="p-cell">3</td><td class="p-cell">4</td><td class="p-cell">5</td><td class="p-cell">6</td><td class="p-cell">7</td><td class="p-cell">8</td><td class="p-cell">9</td><td class="p-cell">10</td><td class="p-cell">11</td><td class="p-cell">12</td><td class="p-cell">13</td><td class="p-cell">14</td><td class="p-cell">15</td><td class="p-cell">16</td><td class="p-cell">17</td><td class="p-cell">18</td>
+                </tr>
+                <tr>
+                    <td width="5%">Advert.</td><td width="5%">Penaliz.</td><td width="5%">Penaliz.</td><td width="5%">Penaliz.</td>
+                    <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td rowspan="2"><strong>II</strong></td>
+                    <td rowspan="2"><div class="circle"></div></td>
+                    <td rowspan="2" class="diag-slash"></td>
+                    <td rowspan="2" class="diag-slash"></td>
+                    <td rowspan="2" class="diag-slash"></td>
+                    <td rowspan="2" class="diag-slash"></td>
+                    <td rowspan="2" class="diag-slash"></td>
+                    <td colspan="18" class="points-title">Pontos</td>
+                </tr>
+                <tr>
+                    <td class="p-cell">19</td><td class="p-cell">20</td><td class="p-cell">21</td><td class="p-cell">22</td><td class="p-cell">23</td><td class="p-cell">24</td><td class="p-cell">25</td><td class="p-cell">26</td><td class="p-cell">27</td><td class="p-cell">28</td><td class="p-cell">29</td><td class="p-cell">30</td>
+                    <td colspan="6"></td>
+                </tr>
+                <tr>
+                    <td><strong>IV</strong></td>
+                    <td class="diag-slash"></td>
+                    <td class="diag-slash"></td>
+                    <td colspan="4">RETARDAMENTOS</td>
+                    <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+                    <td colspan="6"></td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align: left; padding-left: 5px;"><strong>TEMPOS</strong></td>
+                    <td>Advert.</td><td>Penaliz.</td><td>Penaliz.</td><td></td>
+                    <td colspan="18" rowspan="2" class="points-title" style="vertical-align: middle;">PONTOS DA TROCA</td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="diag-slash"></td>
+                    <td class="diag-slash"></td><td class="diag-slash"></td><td class="diag-slash"></td><td class="diag-slash"></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="info-box">
+            <div class="info-header">
+                <div class="info-title">VOLEI DE AREIA Masc.</div>
+                <div class="info-logo">FENABB<br><span style="font-size: 10px; font-weight: normal; color: #000;">Federação das AABB</span></div>
+            </div>
+
+            <table style="border-top: none;">
+                <tr>
+                    <td colspan="4" style="background: #e0e0e0; font-weight: bold;">Equipes</td>
+                    <td width="5%" rowspan="5" style="border-top: none;"><br>Ar<br>bi<br>tros<br></td>
+                    <td width="5%">1º</td>
+                    <td width="40%">Nome</td>
+                    <td width="30%">Assinatura</td>
+                </tr>
+                <tr>
+                    <td width="5%">A<br>B</td>
+                    <td width="5%"><div class="circle"></div></td>
+                    <td width="30%">X</td>
+                    <td width="5%">A<br>B</td>
+                    <td>2º</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Jog. Nº</td>
+                    <td colspan="2">Nome do Jogador</td>
+                    <td>Jog. Nº</td>
+                    <td>Nome do Jogador</td>
+                    <td>Apon<br>tador</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td style="height: 15px;"></td><td colspan="2"></td><td></td><td></td>
+                    <td rowspan="2">Fiscais<br>de<br>Linha</td>
+                    <td style="height: 15px;"></td><td></td>
+                </tr>
+                <tr>
+                    <td style="height: 15px;"></td><td colspan="2"></td><td></td><td></td>
+                    <td style="height: 15px;"></td><td></td>
+                </tr>
+            </table>
+
+            <table style="height: 100%;">
+                <tr>
+                    <td colspan="2" style="vertical-align: bottom;">Ass. Capitão (antes do Jogo)</td>
+                    <td colspan="2" style="vertical-align: bottom;">Ass. Capitão (antes do Jogo)</td>
+                    <td rowspan="5" style="border: none; padding: 0;">
+                        <table style="height: 100%; border: none;">
+                            <tr>
+                                <td>EQUIPE</td><td colspan="3">RESULTADO</td><td>EQUIPE</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td><div class="circle" style="width:16px;height:16px;"></div></td>
+                                <td>A<br>B</td>
+                                <td><div class="circle" style="width:16px;height:16px;"></div></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>TEMPO</td><td>PONTOS</td><td>Duração (minutos)</td><td>PONTOS</td><td>TEMPOS</td>
+                            </tr>
+                            <tr><td style="height: 15px;"></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td style="height: 15px;"></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td style="height: 15px;"></td><td></td><td></td><td></td><td></td></tr>
+                            <tr><td colspan="5" style="text-align: left; padding: 2px;">Vencedor:</td></tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="vertical-align: bottom;">Ass. Capitão (após o Jogo)</td>
+                    <td colspan="2" style="vertical-align: bottom;">Ass. Capitão (após o Jogo)</td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: left; vertical-align: top; height: 20px;">Nome do Técnico:</td>
+                    <td colspan="2" style="text-align: left; vertical-align: top; height: 20px;">Nome do Técnico:</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+</body>
+</html>
