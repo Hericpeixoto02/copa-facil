@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Súmula 1 - Futebol Mini Campo (A4 Paisagem)</title>
+    <title>Súmula 1 - Futebol Mini Campo (A4 Paisagem Exato)</title>
+    
     <style>
         * {
             box-sizing: border-box;
@@ -12,10 +13,10 @@
             font-family: Arial, Helvetica, sans-serif;
         }
 
-        /* Oculta margens do navegador e define A4 Paisagem */
+        /* Configuração estrita para a folha A4 Paisagem */
         @page {
             size: A4 landscape;
-            margin: 10mm;
+            margin: 0; 
         }
 
         body {
@@ -24,31 +25,38 @@
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            font-size: 11px;
-            padding: 20px;
+            font-size: 10px; 
         }
 
-        /* Container Principal */
+        /* Container Principal com medidas absolutas do A4 */
         .sheet {
             background-color: #fff;
             width: 297mm; 
-            min-height: 210mm; 
-            padding: 8mm; 
+            height: 210mm; 
+            padding: 6mm; 
             box-shadow: 0 0 10px rgba(0,0,0,0.5);
             display: flex;
             flex-direction: column;
-            gap: 5px;
+            gap: 3px;
+            overflow: hidden; 
         }
 
         @media print {
-            body { background-color: transparent; padding: 0; }
-            .sheet { box-shadow: none; width: 297mm; min-height: 210mm; padding: 0; gap: 4px; }
+            body { background-color: transparent; }
+            .sheet { 
+                box-shadow: none; 
+                width: 297mm; 
+                height: 210mm; 
+                padding: 6mm; 
+                page-break-after: avoid; 
+                page-break-inside: avoid;
+            }
         }
 
         /* Utilitários e Textos */
         .text-center { text-align: center !important; }
         .text-left { text-align: left !important; }
-        .font-bold { font-weight: bold; }
+        .font-bold { font-weight: 300; }
         .text-blue { color: #000080; }
 
         /* Tabelas Gerais */
@@ -58,122 +66,144 @@
         }
         th, td {
             border: 1px solid #000;
-            padding: 3px 5px;
+            padding: 1px 3px; 
             vertical-align: middle;
         }
 
         /* Cabeçalho */
-        .header-table td { height: 50px; border: 2px solid #000; }
+        .header-table { border: 2px solid #000; margin-bottom: -1px; }
+        .header-table td { height: 40px; border: 1px solid #000; } 
+        
         .logo-container {
             display: flex;
             align-items: center;
             justify-content: flex-start;
-            padding-left: 10px;
+            padding-left: 5px;
         }
         .logo-fenabb {
-            font-size: 26px;
+            font-size: 24px;
             font-weight: bold;
             font-style: italic;
             line-height: 1;
         }
         .logo-sub {
-            font-size: 9px;
+            font-size: 8px;
             color: #000;
             margin-left: 5px;
             line-height: 1.1;
         }
         .main-title {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: bold;
             letter-spacing: 1px;
         }
+        
+        .header-right-boxes {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+        .header-right-boxes div {
+            flex: 1;
+            border-right: 1px solid #000;
+        }
+        .header-right-boxes div:last-child { border-right: none; }
 
         /* Informações Gerais */
         .info-table { border: 2px solid #000; }
-        .info-table td { border: 1px solid #000; font-weight: bold; height: 20px; }
-        .info-val { font-weight: normal; margin-left: 5px; color: #333; }
+        .info-table td { border: 1px solid #000; font-weight: bold; height: 18px; }
+        .info-val { font-weight: normal; margin-left: 3px; color: #000; }
 
         /* Estrutura Dupla (Equipe A e B) */
         .split-section {
             display: flex;
             gap: 10px;
             width: 100%;
+            flex-grow: 1;
+            overflow: hidden;
         }
         .team-half {
             flex: 1;
             display: flex;
             flex-direction: column;
-            gap: 5px;
+            gap: 3px;
+            overflow: hidden;
         }
 
         /* Tabela de Gols/Cartões */
         .summary-table { border: 2px solid #000; }
         .summary-table th, .summary-table td { border: 1px solid #000; text-align: center; }
-        .summary-table th { background: #f0f0f0; }
-        .summary-table .empty-row td { height: 18px; }
+        .summary-table .empty-row td { height: 14px; } 
+        .divider-thick { border-left: 4px solid #000 !important; }
 
         .faltas-coletivas-row {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            padding: 2px;
+            padding: 1px 5px;
             font-weight: bold;
         }
-        .fc-boxes { display: flex; }
+        .fc-boxes { display: flex; height: 100%; }
         .fc-boxes div {
-            width: 16px;
-            height: 16px;
-            border: 1px solid #000;
-            border-left: none;
+            width: 26px;
+            height: 14px;
+            border-right: 1px solid #000;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 10px;
+            font-size: 9px;
+            font-weight: bold;
         }
-        .fc-boxes div:first-child { border-left: 1px solid #000; }
+        .fc-boxes div:last-child { border-right: none; }
 
-        /* Tabela de Jogadores (Roster) */
-        .roster-table { border: 2px solid #000; flex-grow: 1; }
-        .roster-table th { background: #f0f0f0; text-align: center; }
-        .roster-table td { height: 20px; }
-        .falta-num { width: 14px; text-align: center; font-weight: bold; font-size: 10px; padding: 0; }
+        /* Tabela de Jogadores (Roster) com Layout Fixo para Forçar as Larguras */
+        .roster-table { 
+            border: 2px solid #000; 
+            flex-grow: 1; 
+            height: 100%; 
+            table-layout: fixed; 
+        }
+        .roster-table th { 
+            text-align: center; 
+            font-weight: bold; 
+            padding: 2px; 
+            font-size: 9px; 
+            text-transform: uppercase;
+            white-space: nowrap; 
+            overflow: hidden; 
+            text-overflow: ellipsis; 
+        }
+        .roster-table td { 
+            height: 14px; 
+            font-size: 11px; 
+            white-space: nowrap; 
+            overflow: hidden; 
+            text-overflow: ellipsis; 
+        } 
+        .falta-num { width: 12px; text-align: center; font-weight: bold; font-size: 9px; padding: 0; }
 
         /* Footer Interno (Capitão, Técnico) */
-        .roster-footer td { font-weight: bold; height: 22px; }
+        .roster-footer td { font-weight: bold; height: 16px; }
+
+        /* Blocos Inferiores (Equipe A / Equipe B - Placar) */
+        .score-block-wrapper {
+            display: flex;
+            align-items: center;
+            margin-top: 1px;
+            margin-left: 20px;
+            font-weight: bold;
+            font-size: 11px;
+        }
+        .score-label { width: 80px; text-align: left; }
+        .score-box { width: 50px; height: 28px; border: 2px solid #000; }
 
         /* Footer Externo (Vencedor) */
-        .bottom-footer {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-            margin-top: auto;
-        }
-        .team-box-footer {
-            display: flex;
-            align-items: center;
-            font-weight: bold;
-        }
-        .team-box-square {
-            width: 60px;
-            height: 30px;
+        .winner-table {
             border: 2px solid #000;
-            margin-left: 10px;
+            width: 100%;
+            margin-top: 2px;
         }
-        .winner-box {
-            display: flex;
-            align-items: center;
-            font-weight: bold;
-            border: 2px solid #000;
-            width: 50%;
-        }
-        .winner-box-title {
-            padding: 5px 10px;
-            border-right: 2px solid #000;
-        }
-        .winner-box-value {
-            flex: 1;
-            padding: 5px;
-        }
+        .winner-table td { height: 20px; font-weight: bold; border: 1px solid #000; }
     </style>
 </head>
 <body>
@@ -182,18 +212,19 @@
 
         <table class="header-table">
             <tr>
-                <td width="25%">
+                <td width="25%" style="border-right: none;">
                     <div class="logo-container">
-                        <div class="logo-fenabb text-blue">FENABB</div>
-                        <div class="logo-sub">Federação<br>das AABB</div>
+                        <img id="img-logo-top" src="" alt="" style="max-height: 35px; max-width: 100%; object-fit: contain; display: none; margin-left: 5px;">
+                        <div id="text-logo-top" style="display: flex; align-items: center;">
+                            <div class="logo-fenabb text-blue">FENABB</div>
+                            <div class="logo-sub">Federação<br>das AABB</div>
+                        </div>
                     </div>
                 </td>
-                <td width="50%" class="text-center main-title">Futebol Mini Campo</td>
-                <td width="25%">
-                    <div style="display: flex; width: 100%; height: 100%;">
-                        <div style="flex:1; border-right: 1px solid #000;"></div>
-                        <div style="flex:1; border-right: 1px solid #000;"></div>
-                        <div style="flex:1;"></div>
+                <td width="50%" class="text-center main-title" style="border-left: none; border-right: none;">Futebol Mini Campo</td>
+                <td width="25%" style="padding: 0; border-left: none;">
+                    <div class="header-right-boxes">
+                        <div></div><div></div><div></div>
                     </div>
                 </td>
             </tr>
@@ -201,19 +232,28 @@
 
         <table class="info-table">
             <tr>
-                <td width="35%">EVENTO: <span id="lbl-evento" class="info-val"></span></td>
-                <td width="45%">LOCAL: <span id="lbl-local" class="info-val"></span></td>
-                <td width="20%">JOGO No. <span id="lbl-jogo" class="info-val"></span></td>
+                <td width="12%" id="lbl-name-evento">EVENTO</td>
+                <td width="43%" id="lbl-val-evento" class="info-val"></td>
+                <td width="10%" id="lbl-name-local">LOCAL:</td>
+                <td width="20%" id="lbl-val-local" class="info-val"></td>
+                <td width="10%" class="text-center" id="lbl-name-jogo">JOGO No.</td>
+                <td width="5%" id="lbl-val-jogo" class="info-val text-center"></td>
             </tr>
             <tr>
-                <td>MESÁRIO: <span class="info-val"></span></td>
-                <td>ÁRBITRO NR. 1: <span class="info-val"></span></td>
-                <td>DATA <span id="lbl-data" class="info-val"></span></td>
+                <td id="lbl-name-mesario">MESÁRIO</td>
+                <td id="lbl-val-mesario" class="info-val"></td>
+                <td id="lbl-name-arb1">ARBITRO NR. 1</td>
+                <td id="lbl-val-arb1" class="info-val"></td>
+                <td class="text-center" id="lbl-name-data">DATA</td>
+                <td id="lbl-val-data" class="info-val text-center"></td>
             </tr>
             <tr>
-                <td>COORD. MODAL: <span class="info-val"></span></td>
-                <td>ÁRBITRO NR. 2: <span class="info-val"></span></td>
-                <td>HORA <span id="lbl-hora" class="info-val"></span></td>
+                <td id="lbl-name-coord">COORD.MODAL:</td>
+                <td id="lbl-val-coord" class="info-val"></td>
+                <td id="lbl-name-arb2">ARBITRO NR. 2</td>
+                <td id="lbl-val-arb2" class="info-val"></td>
+                <td class="text-center" id="lbl-name-hora">HORA</td>
+                <td id="lbl-val-hora" class="info-val text-center"></td>
             </tr>
         </table>
 
@@ -222,26 +262,27 @@
             <div class="team-half">
                 
                 <table class="summary-table">
-                    <tr><td colspan="4" class="text-left font-bold" style="background:#fff;">EQUIPE A : <span id="team_1_name" class="info-val"></span></td></tr>
+                    <tr><td colspan="4" class="text-left font-bold" style="background:#fff; height: 16px;">EQUIPE A : <span id="team_1_name" class="info-val"></span></td></tr>
                     <tr>
                         <td colspan="2" class="font-bold">1o. TEMPO</td>
-                        <td colspan="2" class="font-bold" style="border-left:3px solid #000;">2o. TEMPO</td>
+                        <td colspan="2" class="font-bold divider-thick">2o. TEMPO</td>
                     </tr>
                     <tr>
                         <td width="25%" class="font-bold">GOLS</td><td width="25%" class="font-bold">CARTOES</td>
-                        <td width="25%" class="font-bold" style="border-left:3px solid #000;">GOLS</td><td width="25%" class="font-bold">CARTOES</td>
+                        <td width="25%" class="font-bold divider-thick">GOLS</td><td width="25%" class="font-bold">CARTOES</td>
                     </tr>
-                    <tr class="empty-row"><td></td><td></td><td style="border-left:3px solid #000;"></td><td></td></tr>
-                    <tr class="empty-row"><td></td><td></td><td style="border-left:3px solid #000;"></td><td></td></tr>
-                    <tr class="empty-row"><td></td><td></td><td style="border-left:3px solid #000;"></td><td></td></tr>
-                    <tr class="empty-row"><td></td><td></td><td style="border-left:3px solid #000;"></td><td></td></tr>
+                    <tr class="empty-row"><td></td><td></td><td class="divider-thick"></td><td></td></tr>
+                    <tr class="empty-row"><td></td><td></td><td class="divider-thick"></td><td></td></tr>
+                    <tr class="empty-row"><td></td><td></td><td class="divider-thick"></td><td></td></tr>
+                    <tr class="empty-row"><td></td><td></td><td class="divider-thick"></td><td></td></tr>
+                    <tr class="empty-row"><td></td><td></td><td class="divider-thick"></td><td></td></tr>
                     <tr>
-                        <td colspan="2">
-                            <div class="faltas-coletivas-row">
-                                <span>Faltas Coletivas:</span>
+                        <td colspan="2" style="padding: 0;">
+                            <div class="faltas-coletivas-row" style="justify-content: center;">
+                                Faltas Coletivas:
                             </div>
                         </td>
-                        <td colspan="2" style="padding:0; border-left:3px solid #000;">
+                        <td colspan="2" style="padding:0;" class="divider-thick">
                             <div class="fc-boxes">
                                 <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div><div>10</div>
                             </div>
@@ -249,16 +290,20 @@
                     </tr>
                 </table>
 
-                <table class="roster-table">
-                    <thead id="thead-team-1">
-                        </thead>
-                    <tbody id="tbody-team-1">
-                        </tbody>
-                    <tfoot class="roster-footer" id="tfoot-team-1">
-                        <tr><td id="tf1-l1">CAPITÃO</td><td id="tf1-v1"></td></tr>
-                        <tr><td id="tf1-l2">TÉCNICO</td><td id="tf1-v2"></td></tr>
-                        <tr><td id="tf1-l3">DIRIGENTE</td><td id="tf1-v3"></td></tr>
-                    </tfoot>
+                <div class="text-center font-bold" style="border: 2px solid #000; border-bottom: none; padding: 2px;">EQUIPE A</div>
+
+                <table class="roster-table" id="table-team-1"></table>
+
+                <div class="score-block-wrapper">
+                    <div class="score-label">EQUIPE A</div>
+                    <div class="score-box"></div>
+                </div>
+
+                <table class="winner-table">
+                    <tr>
+                        <td width="40%" class="text-center">EQUIPE VENCEDORA</td>
+                        <td width="60%"></td>
+                    </tr>
                 </table>
 
             </div>
@@ -266,26 +311,27 @@
             <div class="team-half">
                 
                 <table class="summary-table">
-                    <tr><td colspan="4" class="text-left font-bold" style="background:#fff;">EQUIPE B : <span id="team_2_name" class="info-val"></span></td></tr>
+                    <tr><td colspan="4" class="text-left font-bold" style="background:#fff; height: 16px;">EQUIPE B : <span id="team_2_name" class="info-val"></span></td></tr>
                     <tr>
                         <td colspan="2" class="font-bold">1o. TEMPO</td>
-                        <td colspan="2" class="font-bold" style="border-left:3px solid #000;">2o. TEMPO</td>
+                        <td colspan="2" class="font-bold divider-thick">2o. TEMPO</td>
                     </tr>
                     <tr>
                         <td width="25%" class="font-bold">GOLS</td><td width="25%" class="font-bold">CARTOES</td>
-                        <td width="25%" class="font-bold" style="border-left:3px solid #000;">GOLS</td><td width="25%" class="font-bold">CARTOES</td>
+                        <td width="25%" class="font-bold divider-thick">GOLS</td><td width="25%" class="font-bold">CARTOES</td>
                     </tr>
-                    <tr class="empty-row"><td></td><td></td><td style="border-left:3px solid #000;"></td><td></td></tr>
-                    <tr class="empty-row"><td></td><td></td><td style="border-left:3px solid #000;"></td><td></td></tr>
-                    <tr class="empty-row"><td></td><td></td><td style="border-left:3px solid #000;"></td><td></td></tr>
-                    <tr class="empty-row"><td></td><td></td><td style="border-left:3px solid #000;"></td><td></td></tr>
+                    <tr class="empty-row"><td></td><td></td><td class="divider-thick"></td><td></td></tr>
+                    <tr class="empty-row"><td></td><td></td><td class="divider-thick"></td><td></td></tr>
+                    <tr class="empty-row"><td></td><td></td><td class="divider-thick"></td><td></td></tr>
+                    <tr class="empty-row"><td></td><td></td><td class="divider-thick"></td><td></td></tr>
+                    <tr class="empty-row"><td></td><td></td><td class="divider-thick"></td><td></td></tr>
                     <tr>
-                        <td colspan="2">
-                            <div class="faltas-coletivas-row">
-                                <span>Faltas Coletivas:</span>
+                        <td colspan="2" style="padding: 0;">
+                            <div class="faltas-coletivas-row" style="justify-content: center;">
+                                Faltas Coletivas:
                             </div>
                         </td>
-                        <td colspan="2" style="padding:0; border-left:3px solid #000;">
+                        <td colspan="2" style="padding:0;" class="divider-thick">
                             <div class="fc-boxes">
                                 <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div><div>10</div>
                             </div>
@@ -293,35 +339,22 @@
                     </tr>
                 </table>
 
-                <table class="roster-table">
-                    <thead id="thead-team-2">
-                        </thead>
-                    <tbody id="tbody-team-2">
-                        </tbody>
-                    <tfoot class="roster-footer" id="tfoot-team-2">
-                        <tr><td id="tf2-l1">CAPITÃO</td><td id="tf2-v1"></td></tr>
-                        <tr><td id="tf2-l2">TÉCNICO</td><td id="tf2-v2"></td></tr>
-                        <tr><td id="tf2-l3">DIRIGENTE</td><td id="tf2-v3"></td></tr>
-                    </tfoot>
+                <div class="text-center font-bold" style="border: 2px solid #000; border-bottom: none; padding: 2px;">EQUIPE B</div>
+
+                <table class="roster-table" id="table-team-2"></table>
+
+                <div class="score-block-wrapper">
+                    <div class="score-label">EQUIPE B</div>
+                    <div class="score-box"></div>
+                </div>
+
+                <table class="winner-table" style="visibility: hidden;">
+                    <tr>
+                        <td width="40%" class="text-center">EQUIPE VENCEDORA</td>
+                        <td width="60%"></td>
+                    </tr>
                 </table>
 
-            </div>
-
-        </div>
-
-        <div class="bottom-footer">
-            <div class="split-section">
-                <div class="team-half team-box-footer">
-                    EQUIPE A <div class="team-box-square"></div>
-                </div>
-                <div class="team-half team-box-footer">
-                    EQUIPE B <div class="team-box-square"></div>
-                </div>
-            </div>
-            
-            <div class="winner-box">
-                <div class="winner-box-title">EQUIPE VENCEDORA</div>
-                <div class="winner-box-value"></div>
             </div>
         </div>
 
@@ -335,7 +368,15 @@
                     return response.json();
                 })
                 .then(data => {
-                    const getVal = (obj) => (obj && obj.value !== undefined) ? obj.value : (obj || "");
+                    
+                    // Funções auxiliares para buscar "name" e "value" dinamicamente
+                    const getName = (obj, def) => (obj && obj.name !== undefined && obj.name !== "") ? obj.name : def;
+                    const getVal = (obj) => {
+                        if (!obj) return "";
+                        if (obj.value !== undefined) return obj.value;
+                        if (typeof obj === 'string') return obj;
+                        return "";
+                    };
                     const set = (id, val) => {
                         const el = document.getElementById(id);
                         if (el) el.innerHTML = val;
@@ -343,11 +384,50 @@
 
                     // 1. Dados Gerais
                     if (data.general) {
-                        set('lbl-evento', `${getVal(data.general.title)} - ${getVal(data.general.sub_title)}`);
-                        set('lbl-local', getVal(data.general.l) || getVal(data.general.place));
-                        set('lbl-jogo', getVal(data.general.n));
-                        set('lbl-data', getVal(data.general.date));
-                        set('lbl-hora', getVal(data.general.hour));
+                        set('lbl-name-evento', getName(data.general.title, 'EVENTO'));
+                        set('lbl-name-local', getName(data.general.l, 'LOCAL:') || getName(data.general.place, 'LOCAL:'));
+                        set('lbl-name-jogo', getName(data.general.n, 'JOGO No.'));
+                        set('lbl-name-data', getName(data.general.date, 'DATA'));
+                        set('lbl-name-hora', getName(data.general.hour, 'HORA'));
+
+                        let evtSub = getVal(data.general.sub_title);
+                        set('lbl-val-evento', `${getVal(data.general.title)}${evtSub ? ' - ' + evtSub : ''}`);
+                        set('lbl-val-local', getVal(data.general.l) || getVal(data.general.place));
+                        set('lbl-val-jogo', getVal(data.general.n));
+                        
+                        let dataStr = getVal(data.general.date);
+                        if(dataStr && dataStr.includes('undefined')) dataStr = ""; 
+                        set('lbl-val-data', dataStr);
+                        set('lbl-val-hora', getVal(data.general.hour));
+                    }
+
+                    // Palavras do Dicionário
+                    if (data.words) {
+                        set('lbl-name-mesario', getName(data.words.mesario, 'MESÁRIO'));
+                        set('lbl-val-mesario', getVal(data.words.mesario));
+
+                        set('lbl-name-coord', getName(data.words.coord, 'COORD.MODAL:'));
+                        set('lbl-val-coord', getVal(data.words.coord));
+
+                        set('lbl-name-arb1', getName(data.words.arbitro1, 'ARBITRO NR. 1'));
+                        set('lbl-val-arb1', getVal(data.words.arbitro1));
+
+                        set('lbl-name-arb2', getName(data.words.arbitro2, 'ARBITRO NR. 2'));
+                        set('lbl-val-arb2', getVal(data.words.arbitro2));
+
+                        // ====== INJEÇÃO DA LOGO DINÂMICA ======
+                        if(data.words.logo) {
+                            const imgTop = document.getElementById('img-logo-top');
+                            const textTop = document.getElementById('text-logo-top');
+                            if (imgTop) {
+                                let logoUrl = typeof data.words.logo === 'object' ? data.words.logo.value : data.words.logo;
+                                if(logoUrl) {
+                                    imgTop.src = logoUrl;
+                                    imgTop.style.display = 'block';
+                                    if (textTop) textTop.style.display = 'none';
+                                }
+                            }
+                        }
                     }
 
                     // 2. Nomes dos Times
@@ -355,105 +435,114 @@
                     if (data.team_2) set('team_2_name', data.team_2.name);
 
                     // 3. Renderização Dinâmica das Colunas (Tabela de Jogadores)
-                    const dynCols = (data['players-column'] || []).filter(c => c.size > 0); 
+                    const dynCols = (data['players-column'] || []).filter(c => parseFloat(c.size) > 0); 
                     
-                    // Lógica solicitada: Assinatura ANTES do Nome. Outras DEPOIS do Nome.
-                    const colsAss = dynCols.filter(c => c.player_key === 'ass');
-                    const colsOthers = dynCols.filter(c => c.player_key !== 'ass');
+                    // Soma dos Sizes para Lógica do Sufixo (_25, _30, _40)
+                    let totalSizeColunas = 0;
+                    dynCols.forEach(c => {
+                        totalSizeColunas += parseFloat(c.size) || 0;
+                    });
 
-                    // Gerando Cabeçalhos (THEAD)
-                    // Padrão Imagem original: Equipe [Nome], No, Assinatura, Faltas(12345).
-                    // Nossa adaptação: [Assinaturas] | Nome do Atleta | [Outras] | FALTAS (5 colunas)
-                    let theadHtml = `
-                        <tr>
-                            <th colspan="${colsAss.length + 1}">EQUIPE</th>
-                            <th colspan="${colsOthers.length + 5}"></th>
-                        </tr>
-                        <tr>
-                            ${colsAss.map(c => `<th style="width: ${c.size}%;">${c.name}</th>`).join('')}
-                            <th style="width: auto;">Nome do Atleta</th>
-                            ${colsOthers.map(c => `<th style="width: ${c.size}%;">${c.name}</th>`).join('')}
-                            <th colspan="5" style="width: 15%;">FALTAS</th>
-                        </tr>
+                    let sufixo = '_40';
+                    if (totalSizeColunas >= 12) sufixo = '_30';
+                    else if (totalSizeColunas >= 2) sufixo = '_40';
+                    
+                    let propriedadeNome = sufixo === '' ? 'name' : `name${sufixo}`;
+
+                    // AGORA: A Primeira Coluna vai para Antes do Nome. O Resto vai para Depois. (Não importa o player_key)
+                    const colsBefore = dynCols.slice(0, 1);
+                    const colsAfter = dynCols.slice(1);
+
+                    // Criando o Colgroup com a Matemática Exata da Grade de 12 (size / 12 * 40%)
+                    let colgroupHtml = `<colgroup>`;
+                    colsBefore.forEach(c => { colgroupHtml += `<col style="width: ${(parseFloat(c.size) / 12) * 40}%;">`; });
+                    colgroupHtml += `<col style="width: auto;">`; // Nome do Atleta assume o resto do espaço (uns 45%)
+                    colsAfter.forEach(c => { colgroupHtml += `<col style="width: ${(parseFloat(c.size) / 12) * 40}%;">`; });
+                    colgroupHtml += `<col style="width: 3%;"><col style="width: 3%;"><col style="width: 3%;"><col style="width: 3%;"><col style="width: 3%;">`; // Faltas (15%)
+                    colgroupHtml += `</colgroup>`;
+
+                    // Criando Thead
+                    let theadHtml = `<thead><tr>`;
+                    colsBefore.forEach(c => { theadHtml += `<th>${c.name.toUpperCase()}</th>`; });
+                    theadHtml += `<th>Nome do Atleta</th>`;
+                    colsAfter.forEach(c => { theadHtml += `<th>${c.name.toUpperCase()}</th>`; });
+                    theadHtml += `<th colspan="5">FALTAS</th></tr></thead>`;
+
+                    // Criando Tfoot (Rodapé interno)
+                    const colSpanLabel = colsBefore.length + 1;
+                    const colSpanValue = colsAfter.length + 5;
+                    let tfootHtml = `
+                        <tfoot class="roster-footer">
+                            <tr><td colspan="${colSpanLabel}">CAPITÃO</td><td colspan="${colSpanValue}"></td></tr>
+                            <tr><td colspan="${colSpanLabel}">TÉCNICO</td><td colspan="${colSpanValue}"></td></tr>
+                            <tr><td colspan="${colSpanLabel}">DIRIGENTE</td><td colspan="${colSpanValue}"></td></tr>
+                        </tfoot>
                     `;
-                    document.getElementById('thead-team-1').innerHTML = theadHtml;
-                    document.getElementById('thead-team-2').innerHTML = theadHtml;
 
-                    // Ajustando o Colspan do Rodapé (Capitão, Técnico, Dirigente)
-                    // Colunas da Esquerda (Label) = colsAss + Nome
-                    const colSpanLabel = colsAss.length + 1;
-                    // Colunas da Direita (Valor) = colsOthers + 5 de faltas
-                    const colSpanValue = colsOthers.length + 5;
-
-                    for(let i=1; i<=2; i++) {
-                        for(let j=1; j<=3; j++) {
-                            document.getElementById(`tf${i}-l${j}`).colSpan = colSpanLabel;
-                            document.getElementById(`tf${i}-v${j}`).colSpan = colSpanValue;
+                    // Função Auxiliar para gerar o HTML do <td> independentemente da posição
+                    const getTdHtml = (col, p) => {
+                        if (col.player_key === 'ass') {
+                            return `<td class="text-center font-bold"></td>`; // Assinatura vazia
+                        } else {
+                            let val = '';
+                            if (p) {
+                                if (col.player_key === 'doc') val = p.doc || '';
+                                else if (col.player_key === 'n') val = p.n || '';
+                                else val = p[col.player_key] || ''; 
+                            }
+                            return `<td class="text-center font-bold">${val}</td>`;
                         }
-                    }
+                    };
 
-                    // Função para gerar as Linhas dos Jogadores (TBODY)
-                    const qtdPlayers = parseInt(data.qtd_players) || 15; // Súmula de campo costuma ter 15+
-
-                    function renderTbody(teamData, tbodyId) {
-                        let tbodyHtml = '';
+                    // Função para gerar o HTML do Tbody de uma equipe
+                    function buildTbodyHtml(teamData) {
+                        const qtdPlayers = parseInt(data.qtd_players) || 15; 
+                        let tbodyHtml = `<tbody>`;
                         const players = (teamData && teamData.player) ? teamData.player : [];
 
                         for (let i = 0; i < qtdPlayers; i++) {
                             const p = players[i];
-                            let rowHtml = `<tr>`;
+                            tbodyHtml += `<tr>`;
                             
-                            // Injeta as colunas 'Assinatura' ANTES do Nome
-                            colsAss.forEach(col => {
-                                let val = '';
-                                if (p) {
-                                    if (col.player_key === 'doc') val = p.doc || '';
-                                    else if (col.player_key === 'n') val = p.n || '';
-                                    else if (col.player_key === 'ass') val = ''; 
-                                    else val = p[col.player_key] || ''; 
-                                }
-                                rowHtml += `<td class="text-center font-bold">${val}</td>`;
+                            // Injeta a Coluna Antes do Nome
+                            colsBefore.forEach(col => {
+                                tbodyHtml += getTdHtml(col, p);
                             });
 
-                            // Injeta o Nome do Jogador
-                            let pName = p ? (p.name || "") : "";
+                            // Injeta o Nome do Jogador (Com a lógica do Sufixo aplicada)
+                            let pName = "";
+                            if (p) {
+                                pName = p[propriedadeNome] || p.name || "";
+                            }
                             let nameStyle = (p && p.supend) ? "text-decoration: line-through; color: red;" : "";
-                            rowHtml += `<td class="text-left font-bold" style="${nameStyle}">${pName}</td>`;
+                            tbodyHtml += `<td class="text-left font-bold" style="${nameStyle}">${pName}</td>`;
 
-                            // Injeta as OUTRAS colunas DEPOIS do Nome
-                            colsOthers.forEach(col => {
-                                let val = '';
-                                if (p) {
-                                    if (col.player_key === 'doc') val = p.doc || '';
-                                    else if (col.player_key === 'n') val = p.n || '';
-                                    else if (col.player_key === 'ass') val = ''; 
-                                    else val = p[col.player_key] || ''; 
-                                }
-                                rowHtml += `<td class="text-center font-bold">${val}</td>`;
+                            // Injeta as Colunas Depois do Nome
+                            colsAfter.forEach(col => {
+                                tbodyHtml += getTdHtml(col, p);
                             });
 
-                            // FALTAS INDIVIDUAIS (Números 1 a 5 dentro da linha conforme imagem)
-                            rowHtml += `
+                            // Injeta as 5 Faltas Finais fixas
+                            tbodyHtml += `
                                 <td class="falta-num">1</td>
                                 <td class="falta-num">2</td>
                                 <td class="falta-num">3</td>
                                 <td class="falta-num">4</td>
                                 <td class="falta-num">5</td>
-                            `;
-                            
-                            rowHtml += `</tr>`;
-                            tbodyHtml += rowHtml;
+                            </tr>`;
                         }
-                        document.getElementById(tbodyId).innerHTML = tbodyHtml;
+                        tbodyHtml += `</tbody>`;
+                        return tbodyHtml;
                     }
 
-                    // Renderiza para ambos os times
-                    renderTbody(data.team_1, 'tbody-team-1');
-                    renderTbody(data.team_2, 'tbody-team-2');
+                    // Injeta as tabelas inteiras no HTML (Força o navegador a respeitar a largura do Colgroup)
+                    document.getElementById('table-team-1').innerHTML = colgroupHtml + theadHtml + buildTbodyHtml(data.team_1) + tfootHtml;
+                    document.getElementById('table-team-2').innerHTML = colgroupHtml + theadHtml + buildTbodyHtml(data.team_2) + tfootHtml;
 
                 })
                 .catch(err => console.error("Erro ao carregar referencia.json:", err));
         });
     </script>
+
 </body>
 </html>

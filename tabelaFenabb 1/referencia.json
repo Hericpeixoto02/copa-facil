@@ -1,32 +1,40 @@
-
 {
     "qtd_players": 20,
     "starter":true,
     "players-column": [
 
-              
-       {
-            "player_key": "ass",
-            "name": "Assinatura",
-            "size":3
+
+        {
+            "player_key": "doc",
+            "name": "Documento",
+            "size":4  
         },
+              
         {
             "player_key": "ass",
             "name": "Assinatura",
+            "size":4
+        },
+          
+        {
+            "player_key": "age",
+            "name": "Idade",
             "size":3
         },
-          {
-            "player_key": "ass",
-            "name": "Assinatura",
-            "size":3
+          
+        {
+            "player_key": "age",
+            "name": "Idade",
+            "size":2
         }
+          
           
      
     ],
     "general": {
         "title": {
             "name": "Competição:",
-            "value": "COMPETIÇÕES LIGA BELÉM"
+            "value": "LIGA BELÉM"
         },
         "sub_title": {
             "name": "Categoria:",
