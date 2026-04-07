@@ -3,7 +3,260 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Súmula Tênis de Mesa - Logo Ajustada</title>
+    <title>Súmula Tênis de Mesa - Dinâmica</title>
+    
+</head>
+<body>
+
+    <div class="page-container">
+
+        <table class="header-table">
+            <tr>
+                <td width="30%">
+                    <div class="logo-container">
+                        <img id="img-logo-top" src="" alt="" style="max-height: 50px; max-width: 100%; object-fit: contain; display: none; margin: auto;">
+                        <div id="text-logo-top" style="display: flex; align-items: center; justify-content: center; height: 100%;">
+                            <div class="logo-fenabb">FENABB</div>
+                            <div class="logo-sub">Federação<br>das AABB</div>
+                        </div>
+                    </div>
+                </td>
+                <td width="50%" class="main-title">TÊNIS DE MESA</td>
+                <td width="20%"></td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <td width="50%"><span id="lbl-name-evento">EVENTO:</span> <span id="lbl-evento" class="font-bold"></span></td>
+                <td width="50%"><span id="lbl-name-local">LOCAL:</span> <span id="lbl-local" class="font-bold"></span></td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <td width="20%" id="lbl-name-confronto">CONFRONTO:</td>
+                <td width="5%"></td>
+                <td width="20%"></td>
+                <td width="9%" class="text-center" id="lbl-name-chave">CHAVE</td>
+                <td width="10%" class="text-center" id="lbl-name-data">DATA</td>
+                <td width="9%" class="text-center" id="lbl-name-hora">HORA</td>
+                <td width="9%" class="text-center" id="lbl-name-mesa">MESA</td>
+                <td width="9%" class="text-center" id="lbl-name-jogo">JOGO</td>
+                <td width="9%" class="text-center" id="lbl-name-etapa">ETAPA</td>
+            </tr>
+            <tr>
+                <td class="text-right font-bold" id="lbl-conf-a" style="height: 20px;"></td>
+                <td class="text-center font-bold">X</td>
+                <td class="font-bold" id="lbl-conf-b"></td>
+                <td class="text-center font-bold" id="lbl-val-chave"></td>
+                <td class="text-center font-bold" id="lbl-data"></td>
+                <td class="text-center font-bold" id="lbl-hora"></td>
+                <td class="text-center font-bold" id="lbl-val-mesa"></td>
+                <td class="text-center font-bold" id="lbl-jogo"></td>
+                <td class="text-center font-bold" id="lbl-etapa"></td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <td width="50%">EQUIPE [A]</td>
+                <td width="50%">EQUIPE [B]</td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <td width="10%" class="text-center">Código</td>
+                <td width="40%" class="text-center">Nome</td>
+                <td width="10%" class="text-center">Código</td>
+                <td width="40%" class="text-center">Nome</td>
+            </tr>
+            <tr>
+                <td style="height: 22px;" class="text-center" id="doc-j1-a"></td>
+                <td style="padding-left: 5px;" id="nome-j1-a"></td>
+                <td class="text-center" id="doc-j1-b"></td>
+                <td style="padding-left: 5px;" id="nome-j1-b"></td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <td width="25%" class="text-center">Nome</td>
+                <td width="25%" class="text-center">Assinatura</td>
+                <td width="25%" class="text-center">Nome</td>
+                <td width="25%" class="text-center">Assinatura</td>
+            </tr>
+            <tr>
+                <td style="height: 22px;"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+
+        <div style="border: 1px solid #000; border-top: none; padding: 10px 0; margin-bottom: -1px;">
+            
+            <table class="mini-grid">
+                <tr>
+                    <td width="20%">A</td><td width="30%"></td><td width="30%"></td><td width="20%"></td>
+                </tr>
+                <tr>
+                    <td>B</td><td></td><td></td><td></td>
+                </tr>
+            </table>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                <div style="flex: 1;"><div class="tempo-box">Tempo A</div>
+                <div style="flex: 1; height: 38px;"><div class="tempo-box"></div></div>
+            
+            </div>
+                
+                <div style="flex: 1; text-align: center;">
+                    <div class="font-bold" style="margin-bottom: 5px; margin-right: 238px;">RESULTADO</div>
+                    <div class="placar-linha">
+                        Equipe [A] <div class="placar-box"></div> X <div class="placar-box"></div> Equipe [B]
+                    </div>
+                </div>
+
+                <div style="flex: 0;"><div class="tempo-box">Tempo B</div>
+                <div style="flex: 0; height: 38px;"><div class="tempo-box"></div></div>
+            </div>
+
+        </div>
+
+        <table>
+            <tr>
+                <td style="padding: 10px 5px; height: 35px; border-top: none;">
+                    Venceu a Equipe: _____________________________________________________________________________________________________________________________________________________
+                </td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <td class="text-center font-bold" style="padding: 2px;">Assinaturas</td>
+            </tr>
+        </table>
+        
+        <table>
+            <tr>
+                <td width="50%" style="height: 35px; vertical-align: top;">Assinatura Capitão:</td>
+                <td width="50%" style="height: 35px; vertical-align: top;">Assinatura Capitão:</td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <td width="33%" class="text-center" style="padding: 2px;">Árbitro</td>
+                <td width="34%" class="text-center" style="padding: 2px;">Apontador</td>
+                <td width="33%" class="text-center" style="padding: 2px;">Árbitro Geral</td>
+            </tr>
+            <tr>
+                <td style="height: 40px;"></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td class="text-center" style="padding: 2px;">Nome do Árbitro</td>
+                <td class="text-center" style="padding: 2px;">Nome do Apontador</td>
+                <td class="text-center" style="padding: 2px;">Nome do Árbitro Geral</td>
+            </tr>
+            <tr>
+                <td style="height: 25px;"></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+
+        <table class="obs-table">
+            <tr>
+                <td style="border-top: 1px solid #000; height: 20px;">Observação:</td>
+            </tr>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+            <tr><td></td></tr>
+            
+        </table>
+
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            fetch('referencia.json')
+                .then(response => {
+                    if (!response.ok) throw new Error('Erro na rede ao tentar acessar referencia.json');
+                    return response.json();
+                })
+                .then(data => {
+                    const gen = data.general;
+                    const getVal = (obj) => (obj && obj.value !== undefined) ? obj.value : (obj || "");
+                    const getName = (obj, def) => (obj && obj.name !== undefined && obj.name !== "") ? obj.name : def;
+                    const set = (id, val) => {
+                        const el = document.getElementById(id);
+                        if (el) el.innerText = val;
+                    };
+
+                    if (gen) {
+                        // ==== NOMES (LABELS) ====
+                        set('lbl-name-evento', getName(gen.title, 'EVENTO:'));
+                        set('lbl-name-local', getName(gen.l, 'LOCAL:') || getName(gen.place, 'LOCAL:'));
+                        set('lbl-name-data', getName(gen.date, 'DATA'));
+                        set('lbl-name-hora', getName(gen.hour, 'HORA'));
+                        set('lbl-name-jogo', getName(gen.n, 'JOGO'));
+                        set('lbl-name-etapa', getName(gen.fs, 'ETAPA') || getName(gen.stage, 'ETAPA'));
+                        
+                        // Caso o JSON traga "chave", "mesa" ou "confronto" no futuro, os IDs já estão prontos no HTML
+                        // Ex: set('lbl-name-chave', getName(gen.chave, 'CHAVE'));
+
+                        // ==== VALORES ====
+                        set('lbl-evento', `${getVal(gen.title)} - ${getVal(gen.sub_title)}`);
+                        set('lbl-local', getVal(gen.l) || getVal(gen.place));
+                        set('lbl-jogo', getVal(gen.n));
+                        set('lbl-hora', getVal(gen.hour));
+                        set('lbl-etapa', getVal(gen.fs) || getVal(gen.stage));
+                        
+                        let dataStr = getVal(gen.date);
+                        if(dataStr && dataStr.includes('undefined')) dataStr = ""; 
+                        set('lbl-data', dataStr);
+                    }
+
+                    // Confronto
+                    if (data.team_1) set('lbl-conf-a', data.team_1.name);
+                    if (data.team_2) set('lbl-conf-b', data.team_2.name);
+
+                    // Jogador 1 (Equipe A)
+                    if(data.team_1 && data.team_1.player && data.team_1.player.length > 0) {
+                        set('doc-j1-a', data.team_1.player[0].doc || "");
+                        set('nome-j1-a', data.team_1.player[0].name || "");
+                    }
+
+                    // Jogador 1 (Equipe B)
+                    if(data.team_2 && data.team_2.player && data.team_2.player.length > 0) {
+                        set('doc-j1-b', data.team_2.player[0].doc || "");
+                        set('nome-j1-b', data.team_2.player[0].name || "");
+                    }
+
+                    // ====== INJEÇÃO DA LOGO DINÂMICA DO JSON ======
+                    if(data.words && data.words.logo) {
+                        const imgTop = document.getElementById('img-logo-top');
+                        const textTop = document.getElementById('text-logo-top');
+                        if (imgTop) {
+                            imgTop.src = data.words.logo;
+                            imgTop.style.display = 'block';
+                            if (textTop) textTop.style.display = 'none';
+                        }
+                    }
+                })
+                .catch(error => console.error("Erro ao carregar o JSON:", error));
+        });
+    </script>
+
     <style>
         * {
             box-sizing: border-box;
@@ -100,6 +353,7 @@
             padding: 3px;
             text-align: center;
             margin: 0 20px;
+            height: 29px;
         }
 
         .mini-grid {
@@ -117,6 +371,7 @@
             justify-content: center;
             align-items: center;
             gap: 10px;
+            margin-right: 238px;
         }
         .placar-box {
             width: 60px;
@@ -138,239 +393,5 @@
             .page-container { box-shadow: none; margin: 0; width: 297mm; height: 210mm; }
         }
     </style>
-</head>
-<body>
-
-    <div class="page-container">
-
-        <table class="header-table">
-            <tr>
-                <td width="30%">
-                    <div class="logo-container">
-                        <div class="logo-fenabb">FENABB</div>
-                        <div class="logo-sub">Federação<br>das AABB</div>
-                    </div>
-                </td>
-                <td width="50%" class="main-title">TÊNIS DE MESA</td>
-                <td width="20%"></td>
-            </tr>
-        </table>
-
-        <table>
-            <tr>
-                <td width="50%">EVENTO: <span id="lbl-evento" class="font-bold"></span></td>
-                <td width="50%">LOCAL: <span id="lbl-local" class="font-bold"></span></td>
-            </tr>
-        </table>
-
-        <table>
-            <tr>
-                <td width="20%">CONFRONTO:</td>
-                <td width="5%"></td>
-                <td width="20%"></td>
-                <td width="9%" class="text-center">CHAVE</td>
-                <td width="10%" class="text-center">DATA</td>
-                <td width="9%" class="text-center">HORA</td>
-                <td width="9%" class="text-center">MESA</td>
-                <td width="9%" class="text-center">JOGO</td>
-                <td width="9%" class="text-center">ETAPA</td>
-            </tr>
-            <tr>
-                <td class="text-right font-bold" id="lbl-conf-a" style="height: 20px;"></td>
-                <td class="text-center font-bold">X</td>
-                <td class="font-bold" id="lbl-conf-b"></td>
-                <td></td>
-                <td class="text-center font-bold" id="lbl-data"></td>
-                <td class="text-center font-bold" id="lbl-hora"></td>
-                <td></td>
-                <td class="text-center font-bold" id="lbl-jogo"></td>
-                <td class="text-center font-bold" id="lbl-etapa"></td>
-            </tr>
-        </table>
-
-        <table>
-            <tr>
-                <td width="50%">EQUIPE [A]</td>
-                <td width="50%">EQUIPE [B]</td>
-            </tr>
-        </table>
-
-        <table>
-            <tr>
-                <td width="10%" class="text-center">Código</td>
-                <td width="40%" class="text-center">Nome</td>
-                <td width="10%" class="text-center">Código</td>
-                <td width="40%" class="text-center">Nome</td>
-            </tr>
-            <tr>
-                <td style="height: 22px;" class="text-center" id="doc-j1-a"></td>
-                <td style="padding-left: 5px;" id="nome-j1-a"></td>
-                <td class="text-center" id="doc-j1-b"></td>
-                <td style="padding-left: 5px;" id="nome-j1-b"></td>
-            </tr>
-        </table>
-
-        <table>
-            <tr>
-                <td width="25%" class="text-center">Nome</td>
-                <td width="25%" class="text-center">Assinatura</td>
-                <td width="25%" class="text-center">Nome</td>
-                <td width="25%" class="text-center">Assinatura</td>
-            </tr>
-            <tr>
-                <td style="height: 22px;"></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
-
-        <div style="border: 1px solid #000; border-top: none; padding: 10px 0; margin-bottom: -1px;">
-            
-            <table class="mini-grid">
-                <tr>
-                    <td width="20%">A</td><td width="30%"></td><td width="30%"></td><td width="20%"></td>
-                </tr>
-                <tr>
-                    <td>B</td><td></td><td></td><td></td>
-                </tr>
-            </table>
-
-            <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-                <div style="flex: 1;"><div class="tempo-box">Tempo A</div></div>
-                
-                <div style="flex: 1; text-align: center;">
-                    <div class="font-bold" style="margin-bottom: 5px;">RESULTADO</div>
-                    <div class="placar-linha">
-                        Equipe [A] <div class="placar-box"></div> X <div class="placar-box"></div> Equipe [B]
-                    </div>
-                </div>
-
-                <div style="flex: 1; display: flex; justify-content: flex-end;"><div class="tempo-box">Tempo B</div></div>
-            </div>
-
-        </div>
-
-        <table>
-            <tr>
-                <td style="padding: 10px 5px; height: 35px; border-top: none;">
-                    Venceu a Equipe: _____________________________________________________________________________________________________________________________________________________
-                </td>
-            </tr>
-        </table>
-
-        <table>
-            <tr>
-                <td class="text-center font-bold" style="padding: 2px;">Assinaturas</td>
-            </tr>
-        </table>
-        
-        <table>
-            <tr>
-                <td width="50%" style="height: 35px; vertical-align: top;">Assinatura Capitão:</td>
-                <td width="50%" style="height: 35px; vertical-align: top;">Assinatura Capitão:</td>
-            </tr>
-        </table>
-
-        <table>
-            <tr>
-                <td width="33%" class="text-center" style="padding: 2px;">Árbitro</td>
-                <td width="34%" class="text-center" style="padding: 2px;">Apontador</td>
-                <td width="33%" class="text-center" style="padding: 2px;">Árbitro Geral</td>
-            </tr>
-            <tr>
-                <td style="height: 40px;"></td>
-                <td></td>
-                <td></td>
-            </tr>
-            <tr>
-                <td class="text-center" style="padding: 2px;">Nome do Árbitro</td>
-                <td class="text-center" style="padding: 2px;">Nome do Apontador</td>
-                <td class="text-center" style="padding: 2px;">Nome do Árbitro Geral</td>
-            </tr>
-            <tr>
-                <td style="height: 25px;"></td>
-                <td></td>
-                <td></td>
-            </tr>
-        </table>
-
-        <table class="obs-table">
-            <tr>
-                <td style="border-top: 1px solid #000; height: 20px;">Observação:</td>
-            </tr>
-            <tr><td></td></tr>
-            <tr><td></td></tr>
-            <tr><td></td></tr>
-            <tr><td></td></tr>
-            <tr><td></td></tr>
-            <tr><td></td></tr>
-            <tr><td></td></tr>
-            <tr><td></td></tr>
-            <tr><td></td></tr>
-            <tr><td></td></tr>
-            <tr><td></td></tr>
-        </table>
-
-    </div>
-
-    <script>
-        const matchData = {
-            "general": {
-                "title": { "value": "COMPETIÇÕES LIGA BELÉM" },
-                "sub_title": { "value": "4° PARAZÃO DO FUTSAL" },
-                "fs": { "value": "1º Fase" },
-                "n": { "value": "2" },
-                "l": { "value": "Ginásio Uepa" },
-                "date": { "value": "11/09/2025" },
-                "hour": { "value": "21:40" }
-            },
-            "team_1": {
-                "name": "RESENHA",
-                "player": [
-                    { "name": "MAURO GONÇALVES LIRA", "doc": "551663" },
-                    { "name": "ISAIAS PINTO LIMA", "doc": "53165165" }
-                ]
-            },
-            "team_2": {
-                "name": "LEON",
-                "player": [
-                    { "name": "LUCAS SOARES BARATA", "doc": "551662" },
-                    { "name": "THIAGO ALMEIDA FERREIRA", "doc": "" }
-                ]
-            }
-        };
-
-        function renderData() {
-            const gen = matchData.general;
-            
-            // Dados Gerais
-            document.getElementById('lbl-evento').innerText = `${gen.title.value} - ${gen.sub_title.value}`;
-            document.getElementById('lbl-local').innerText = gen.l.value;
-            
-            // Confronto e Info da Partida
-            document.getElementById('lbl-conf-a').innerText = matchData.team_1.name;
-            document.getElementById('lbl-conf-b').innerText = matchData.team_2.name;
-            document.getElementById('lbl-data').innerText = gen.date.value;
-            document.getElementById('lbl-hora').innerText = gen.hour.value;
-            document.getElementById('lbl-jogo').innerText = gen.n.value;
-            document.getElementById('lbl-etapa').innerText = gen.fs.value;
-
-            // Jogador 1 (Equipe A)
-            if(matchData.team_1.player && matchData.team_1.player.length > 0) {
-                document.getElementById('doc-j1-a').innerText = matchData.team_1.player[0].doc || "";
-                document.getElementById('nome-j1-a').innerText = matchData.team_1.player[0].name || "";
-            }
-
-            // Jogador 1 (Equipe B)
-            if(matchData.team_2.player && matchData.team_2.player.length > 0) {
-                document.getElementById('doc-j1-b').innerText = matchData.team_2.player[0].doc || "";
-                document.getElementById('nome-j1-b').innerText = matchData.team_2.player[0].name || "";
-            }
-        }
-
-        // Executa a injeção dos dados
-        renderData();
-    </script>
 </body>
 </html>
