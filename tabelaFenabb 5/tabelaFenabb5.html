@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Súmula 5 - Tênis de Quadra (A4 Retrato - Dinâmica)</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: #525659;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-size: 11px;
+            padding: 20px;
+        }
+
+        /* FORMATO A4 RETRATO */
+        .page-container {
+            width: 210mm;
+            min-height: 297mm; /* Alterado para min-height para acomodar caso venham muitos jogadores */
+            background: #fff;
+            padding: 10mm;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            gap: 8px;
+        }
+
+        /* TABELAS GERAIS */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            margin-bottom: -1px;
+        }
+        
+        th, td {
+            border: 1px solid #000;
+            padding: 4px 6px;
+            vertical-align: middle;
+        }
+
+        .text-center { text-align: center; }
+        .text-right { text-align: right; }
+        .font-bold { font-weight: bold; }
+
+        /* CABEÇALHO */
+        .header-table td { height: 60px; padding: 0; border: 2px solid #000; }
+        
+        .grid-header {
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+        }
+        .grid-header div { border: 1px solid #000; border-top: none; border-left: none; }
+        .grid-header div:nth-child(4n) { border-right: none; }
+        .grid-header div:nth-last-child(-n+4) { border-bottom: none; }
+
+        .main-title {
+            font-size: 32px;
+            font-weight: bold;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+        .logo-fenabb {
+            color: #000080;
+            font-size: 24px;
+            font-weight: bold;
+            font-style: italic;
+            line-height: 1;
+        }
+        .logo-sub {
+            font-size: 9px;
+            color: #000;
+            margin-left: 5px;
+            text-align: left;
+            line-height: 1.1;
+        }
+
+        /* INFORMAÇÕES GERAIS */
+        .info-table { border: 2px solid #000; }
+        .info-table td { border: 1px solid #000; }
+
+        /* ÁREA DAS EQUIPES */
+        .teams-wrapper {
+            display: flex;
+            gap: 10px;
+        }
+        .team-table {
+            flex: 1;
+            border: 2px solid #000;
+        }
+        .team-title {
+            font-weight: bold;
+            padding: 5px;
+        }
+        .col-headers td {
+            font-weight: bold;
+            text-align: center;
+        }
+        .reg-col { width: 25%; text-align: center; border-right: 1px solid #000; }
+        .name-col { width: 75%; }
+        
+        /* Ajuste nas linhas dinâmicas geradas pelo JS */
+        .player-row td {
+            height: 25px;
+        }
+
+        /* SETS GRID (Meio) */
+        .sets-area {
+            display: flex;
+            justify-content: center;
+            margin: 5px 0;
+        }
+        .sets-grid {
+            width: 200px;
+            border: 2px solid #000;
+        }
+        .sets-grid td {
+            width: 25px;
+            height: 25px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 14px;
+            border: 1px solid #000;
+        }
+
+        /* RESULTADO */
+        .result-area {
+            border: 2px solid #000;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        .result-title {
+            font-weight: bold;
+            font-size: 14px;
+            text-align: center;
+            padding: 5px;
+            border-bottom: 1px solid #000;
+        }
+        .placar-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 5px;
+            font-weight: bold;
+        }
+        .side-box { width: 100px; height: 25px; border: 1px solid #000; }
+        .score-box { width: 40px; height: 25px; border: 1px solid #000; }
+        
+        .venceu-row {
+            border-top: 1px solid #000;
+            padding: 10px;
+            font-weight: bold;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        /* ASSINATURAS */
+        .signatures-area {
+            border: 2px solid #000;
+            display: flex;
+            flex-direction: column;
+            margin-top: auto; 
+        }
+        .sig-title {
+            text-align: center;
+            font-weight: bold;
+            padding: 5px;
+            border-bottom: 1px solid #000;
+        }
+        .sig-capitaes {
+            display: flex;
+            border-bottom: 1px solid #000;
+        }
+        .sig-capitaes > div {
+            flex: 1;
+            padding: 5px;
+            height: 45px;
+            font-weight: bold;
+        }
+        .sig-capitaes > div:first-child { border-right: 1px solid #000; }
+
+        .sig-oficiais {
+            display: flex;
+        }
+        .sig-oficiais > div {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid #000;
+        }
+        .sig-oficiais > div:last-child { border-right: none; }
+        
+        .sig-box-top { padding: 5px; height: 40px; border-bottom: 1px solid #000; font-weight: bold; }
+        .sig-box-bot { padding: 5px; height: 30px; font-weight: bold; }
+
+        @media print {
+            @page { size: A4 portrait; margin: 0; }
+            body { background: none; display: block; padding: 0; }
+            .page-container { box-shadow: none; margin: 0; width: 210mm; min-height: 297mm; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page-container">
+
+        <table class="header-table">
+            <tr>
+                <td width="20%">
+                    <div class="grid-header">
+                        <div></div><div></div><div></div><div></div>
+                        <div></div><div></div><div></div><div></div>
+                        <div></div><div></div><div></div><div></div>
+                        <div></div><div></div><div></div><div></div>
+                    </div>
+                </td>
+                <td width="55%" class="main-title">TÊNIS DE QUADRA</td>
+                <td width="25%">
+                    <div class="logo-container">
+                        <div class="logo-fenabb">FENABB</div>
+                        <div class="logo-sub">Federação<br>das AABB</div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <table class="info-table">
+            <tr>
+                <td width="50%" style="height: 25px;">EVENTO: <span id="lbl-evento" style="font-weight:normal; margin-left:5px;"></span></td>
+                <td width="50%" style="height: 25px;">LOCAL: <span id="lbl-local" style="font-weight:normal; margin-left:5px;"></span></td>
+            </tr>
+        </table>
+
+        <table class="info-table">
+            <tr>
+                <td width="15%">CONFRONTO:</td>
+                <td width="15%" class="text-right" id="lbl-conf-a" style="border-right: none; font-weight:normal;"></td>
+                <td width="5%" class="text-center font-bold" style="border-left: none; border-right: none;">x</td>
+                <td width="15%" id="lbl-conf-b" style="border-left: none; font-weight:normal;"></td>
+                <td width="10%" class="text-center">DATA<br><span id="lbl-data" style="font-weight:normal;"></span></td>
+                <td width="10%" class="text-center">HORA<br><span id="lbl-hora" style="font-weight:normal;"></span></td>
+                <td width="10%" class="text-center">JOGO<br><span id="lbl-jogo" style="font-weight:normal;"></span></td>
+                <td width="10%" class="text-center">SEXO<br></td>
+                <td width="10%" class="text-center">GRUPO<br></td>
+            </tr>
+        </table>
+
+        <div class="teams-wrapper">
+            
+            <table class="team-table">
+                <thead>
+                    <tr><td colspan="2" class="team-title">Equipe [A]</td></tr>
+                    <tr class="col-headers">
+                        <td class="reg-col">Registro</td>
+                        <td class="name-col">Nome</td>
+                    </tr>
+                </thead>
+                <tbody id="tbody-a">
+                    </tbody>
+            </table>
+
+            <table class="team-table">
+                <thead>
+                    <tr><td colspan="2" class="team-title">Equipe [B]</td></tr>
+                    <tr class="col-headers">
+                        <td class="reg-col">Registro</td>
+                        <td class="name-col">Nome</td>
+                    </tr>
+                </thead>
+                <tbody id="tbody-b">
+                    </tbody>
+            </table>
+
+        </div>
+
+        <div class="sets-area">
+            <table class="sets-grid">
+                <tr>
+                    <td style="background: #f0f0f0;">A</td><td></td><td></td><td></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td style="background: #f0f0f0;">B</td><td></td><td></td><td></td><td></td><td></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="result-area">
+            <div class="result-title" style="background: #f0f0f0;">RESULTADO</div>
+            
+            <div class="placar-row">
+                <div class="side-box"></div>
+                <div>Equipe [A]</div>
+                <div class="score-box"></div> 
+                <div>X</div> 
+                <div class="score-box"></div> 
+                <div>Equipe [B]</div>
+                <div class="side-box"></div>
+            </div>
+
+            <div class="venceu-row">
+                VENCEU A EQUIPE: 
+                <div style="flex: 1; border-bottom: 1px solid #000; margin-left: 10px;"></div>
+            </div>
+        </div>
+
+        <div class="signatures-area">
+            <div class="sig-title" style="background: #f0f0f0;">Assinaturas</div>
+            
+            <div class="sig-capitaes">
+                <div>Assinatura Capitão:</div>
+                <div>Assinatura Capitão:</div>
+            </div>
+
+            <div class="sig-oficiais">
+                <div>
+                    <div class="sig-box-top">Árbitro</div>
+                    <div class="sig-box-bot">Nome do Árbitro</div>
+                </div>
+                <div>
+                    <div class="sig-box-top">Apontador</div>
+                    <div class="sig-box-bot">Nome do Apontador</div>
+                </div>
+                <div>
+                    <div class="sig-box-top">Árbitro Geral</div>
+                    <div class="sig-box-bot">Nome do Arbitro Geral</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            fetch('referencia.json')
+                .then(response => {
+                    if (!response.ok) throw new Error('Erro na rede ao tentar acessar referencia.json');
+                    return response.json();
+                })
+                .then(data => {
+                    renderTenisQuadra(data);
+                })
+                .catch(error => {
+                    console.error("Erro ao carregar o JSON:", error);
+                });
+        });
+
+        function renderTenisQuadra(matchData) {
+            const gen = matchData.general;
+            
+            // Dados Gerais
+            document.getElementById('lbl-evento').innerText = `${gen.title.value} - ${gen.sub_title.value}`;
+            document.getElementById('lbl-local').innerText = gen.l.value;
+            
+            // Confronto e Info
+            document.getElementById('lbl-conf-a').innerText = matchData.team_1.name;
+            document.getElementById('lbl-conf-b').innerText = matchData.team_2.name;
+            document.getElementById('lbl-data').innerText = gen.date.value;
+            document.getElementById('lbl-hora').innerText = gen.hour.value;
+            document.getElementById('lbl-jogo').innerText = gen.n.value;
+
+            // Qtd Dinâmica (Se não vier no json, garante 1 de fallback)
+            const qtdPlayers = matchData.qtd_players || 1;
+            
+            let htmlA = '';
+            let htmlB = '';
+
+            const playersA = matchData.team_1.player || [];
+            const playersB = matchData.team_2.player || [];
+
+            // Loop dinâmico com base na "qtd_players" do JSON
+            for (let i = 0; i < qtdPlayers; i++) {
+                let docA = playersA[i] ? playersA[i].doc : "";
+                let nameA = playersA[i] ? playersA[i].name : "";
+                htmlA += `<tr class="player-row"><td class="reg-col font-bold">${docA}</td><td class="name-col font-bold">${nameA}</td></tr>`;
+
+                let docB = playersB[i] ? playersB[i].doc : "";
+                let nameB = playersB[i] ? playersB[i].name : "";
+                htmlB += `<tr class="player-row"><td class="reg-col font-bold">${docB}</td><td class="name-col font-bold">${nameB}</td></tr>`;
+            }
+
+            document.getElementById('tbody-a').innerHTML = htmlA;
+            document.getElementById('tbody-b').innerHTML = htmlB;
+        }
+    </script>
+</body>
+</html>
