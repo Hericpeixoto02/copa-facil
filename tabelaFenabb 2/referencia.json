@@ -1,6 +1,6 @@
 
 {
-    "qtd_players": 20,
+    "qtd_players": 4,
     "starter":true,
     "players-column": [
 
@@ -49,11 +49,11 @@
             "value": "Ginásio Uepa"
         },
         "date": {
-            "name": "Data",
+            "name": "Data:",
             "value": "11/09/2025"
         },
         "hour": {
-            "name": "Horário",
+            "name": "Horário:",
             "value": "21:40"
         },
         "cida": {
@@ -91,7 +91,9 @@
         "age": "Idade",
         "jogadores": "Jogadores",
         "peri1_f": "Período 1",
-        "peri2_f": "Período 2"
+        "peri2_f": "Período 2",
+        "logo": "img/logo.png"
+
         
 
     },
