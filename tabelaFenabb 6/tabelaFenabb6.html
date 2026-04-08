@@ -3,186 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Súmula 6 - Futevôlei (A4 Paisagem)</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        body {
-            background-color: #525659;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            font-size: 11px;
-            padding: 20px;
-        }
-
-        /* FORMATO A4 PAISAGEM */
-        .page-container {
-            width: 297mm;
-            height: 210mm;
-            background: #fff;
-            padding: 8mm;
-            display: flex;
-            flex-direction: column;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-            border: 2px solid #000;
-        }
-
-        /* TABELAS GERAIS */
-        .main-table {
-            width: 100%;
-            border-collapse: collapse;
-            text-align: left;
-            margin-bottom: -1px; /* Funde as bordas das tabelas */
-        }
-        
-        .main-table th, .main-table td {
-            border: 2px solid #000;
-            padding: 4px 6px;
-            vertical-align: middle;
-        }
-
-        .border-thin td { border: 1px solid #000; }
-
-        .text-center { text-align: center; }
-        .font-bold { font-weight: bold; }
-        .text-blue { color: #0000cd; }
-
-        /* CABEÇALHO */
-        .header-table td { height: 60px; }
-        .main-title {
-            font-size: 22px;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
-        .logo-container {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            padding-right: 10px;
-        }
-        .logo-fenabb {
-            color: #0000cd;
-            font-size: 28px;
-            font-weight: bold;
-            font-style: italic;
-            line-height: 1;
-        }
-        .logo-sub {
-            font-size: 10px;
-            color: #000;
-            margin-left: 5px;
-            text-align: left;
-            line-height: 1.1;
-        }
-
-        /* CIRCULOS */
-        .circle {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            border: 1px solid #000;
-            border-radius: 50%;
-            vertical-align: middle;
-            margin-left: 5px;
-        }
-        .circle-num {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 22px;
-            height: 22px;
-            border: 2px solid #000;
-            border-radius: 50%;
-            background: #e0e0e0;
-            font-weight: bold;
-            margin-right: 5px;
-        }
-
-        /* INNER GRIDS (PONTOS, PENALIDADES, SAQUE) */
-        .inner-grid {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        .inner-grid td {
-            border: 1px solid #000;
-            text-align: center;
-            height: 20px;
-            padding: 0;
-            font-weight: bold;
-        }
-
-        /* ESTRUTURA ORDEM SAQUE E TROCA */
-        .saque-container {
-            display: flex;
-            border: 2px solid #000;
-            border-top: none;
-            height: 140px;
-            margin-bottom: -1px;
-        }
-        .saque-box {
-            flex: 1;
-            position: relative;
-        }
-        .troca-box {
-            width: 120px;
-            border-left: 2px solid #000;
-            border-right: 2px solid #000;
-            display: flex;
-            flex-direction: column;
-        }
-        
-        .tempos-box {
-            position: absolute;
-            bottom: 0;
-            background: #fff;
-            border: 2px solid #000;
-        }
-        .tempos-box.left { left: 0; border-left: none; border-bottom: none; }
-        .tempos-box.right { right: 0; border-right: none; border-bottom: none; }
-
-        /* FOOTER */
-        .footer-wrapper {
-            display: flex;
-            border: 2px solid #000;
-            flex-grow: 1;
-        }
-        .footer-left {
-            width: 25%;
-            border-right: 2px solid #000;
-            padding: 5px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .footer-center {
-            width: 50%;
-            border-right: 2px solid #000;
-            padding: 5px;
-        }
-        .footer-right {
-            width: 25%;
-            display: flex;
-        }
-
-        .line-fill {
-            flex: 1;
-            border-bottom: 1px solid #000;
-            margin-left: 5px;
-        }
-
-        @media print {
-            @page { size: A4 landscape; margin: 0; }
-            body { background: none; display: block; padding: 0; }
-            .page-container { box-shadow: none; margin: 0; width: 297mm; height: 210mm; border: none; }
-        }
-    </style>
+    <title>Súmula 6 - Futevôlei (A4 Paisagem) - Dinâmica</title>
+    
 </head>
 <body>
 
@@ -193,8 +15,11 @@
                 <td width="50%" class="main-title text-blue">SÚMULA DE FUTEVOLEI</td>
                 <td width="50%">
                     <div class="logo-container">
-                        <div class="logo-fenabb">FENABB</div>
-                        <div class="logo-sub">Federação<br>das AABB</div>
+                        <img id="img-logo-top" src="" alt="" style="max-height: 50px; max-width: 100%; object-fit: contain; display: none; margin: auto 0 auto auto;">
+                        <div id="text-logo-top" style="display: flex; align-items: center; justify-content: flex-end; height: 100%;">
+                            <div class="logo-fenabb">FENABB</div>
+                            <div class="logo-sub">Federação<br>das AABB</div>
+                        </div>
                     </div>
                 </td>
             </tr>
@@ -202,11 +27,11 @@
 
         <table class="main-table">
             <tr>
-                <td width="15%" class="font-bold">JOGO Nº <span id="lbl-jogo" style="font-weight:normal; margin-left:5px;"></span></td>
-                <td width="25%" class="font-bold">CATEGORIA: <span id="lbl-categoria" style="font-weight:normal; margin-left:5px;"></span></td>
-                <td width="20%" class="font-bold">FASE: <span id="lbl-fase" style="font-weight:normal; margin-left:5px;"></span></td>
-                <td width="15%" class="font-bold">DATA: <span id="lbl-data" style="font-weight:normal; margin-left:5px;"></span></td>
-                <td width="12%" class="font-bold">INÍCIO: <span id="lbl-inicio" style="font-weight:normal; margin-left:5px;"></span></td>
+                <td width="15%" class="font-bold"><span id="lbl-name-jogo">JOGO Nº</span> <span id="lbl-jogo" style="font-weight:normal; margin-left:5px;"></span></td>
+                <td width="25%" class="font-bold"><span id="lbl-name-categoria">CATEGORIA:</span> <span id="lbl-categoria" style="font-weight:normal; margin-left:5px;"></span></td>
+                <td width="20%" class="font-bold"><span id="lbl-name-fase">FASE:</span> <span id="lbl-fase" style="font-weight:normal; margin-left:5px;"></span></td>
+                <td width="15%" class="font-bold"><span id="lbl-name-data">DATA:</span> <span id="lbl-data" style="font-weight:normal; margin-left:5px;"></span></td>
+                <td width="12%" class="font-bold"><span id="lbl-name-inicio">INÍCIO:</span> <span id="lbl-inicio" style="font-weight:normal; margin-left:5px;"></span></td>
                 <td width="13%" class="font-bold">FIM:</td>
             </tr>
         </table>
@@ -335,40 +160,57 @@
 
         </div>
 
-        <div class="footer-wrapper">
-            <div class="footer-left">
-                <div class="text-center font-bold" style="font-size: 12px; margin-bottom: 15px;">RESULTADO FINAL</div>
-                <div style="display: flex; font-weight: bold; align-items: flex-end;">VENCEDOR: <div class="line-fill"></div></div>
-                <div style="display: flex; font-weight: bold; align-items: flex-end;">PLACAR: <div class="line-fill"></div></div>
-            </div>
-
-            <div class="footer-center">
-                <div class="text-center font-bold" style="font-size: 12px; margin-bottom: 5px;">OBSERVAÇÕES</div>
-                <div style="display: flex; flex-direction: column; gap: 15px; height: 80%;">
-                    <div style="border-bottom: 1px solid #000; flex: 1;"></div>
-                    <div style="border-bottom: 1px solid #000; flex: 1;"></div>
-                    <div style="border-bottom: 1px solid #000; flex: 1;"></div>
-                </div>
-            </div>
-
-            <div class="footer-right">
-                <div style="flex: 2; padding: 5px; display: flex; flex-direction: column; justify-content: space-between;">
-                    <div style="display: flex; font-weight: bold; align-items: flex-end;">1º ÁRBITRO: <div class="line-fill"></div></div>
-                    <div style="display: flex; font-weight: bold; align-items: flex-end;">2º ÁRBITRO: <div class="line-fill"></div></div>
-                    <div style="display: flex; font-weight: bold; align-items: flex-end;">MESÁRIO: <div class="line-fill"></div></div>
-                </div>
-                
-                <div style="flex: 1; border-left: 2px solid #000; display: flex; flex-direction: column;">
-                    <div style="flex: 1; border-bottom: 1px solid #000; position: relative;">
-                        <div class="font-bold" style="position: absolute; top: 5px; left: 5px;">A</div>
-                        <div class="font-bold text-center" style="position: absolute; bottom: -8px; left: 0; right: 0; background: #fff; z-index: 10;">CAPITÃES</div>
+        <table class="main-table" style="border-top: none; height: 110px;">
+            <tr>
+                <td width="25%" style="vertical-align: top; padding: 5px;">
+                    <div style="display: flex; flex-direction: column; height: 100%; justify-content: space-between;">
+                        <div class="text-center font-bold" style="font-size: 11px;">RESULTADO FINAL</div>
+                        <div style="display: flex; font-weight: bold; align-items: flex-end;">
+                            VENCEDOR: <div class="line-fill"></div>
+                        </div>
+                        <div style="display: flex; font-weight: bold; align-items: flex-end;">
+                            PLACAR: <div class="line-fill"></div>
+                        </div>
                     </div>
-                    <div style="flex: 1; position: relative;">
-                        <div class="font-bold" style="position: absolute; bottom: 5px; left: 5px;">B</div>
+                </td>
+
+                <td width="45%" style="vertical-align: top; padding: 5px;">
+                    <div style="display: flex; flex-direction: column; height: 100%;">
+                        <div class="text-center font-bold" style="font-size: 11px; margin-bottom: 5px;">OBSERVAÇÕES</div>
+                        <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-evenly;">
+                            <div style="border-bottom: 1px solid #000;"></div>
+                            <div style="border-bottom: 1px solid #000;"></div>
+                            <div style="border-bottom: 1px solid #000;"></div>
+                            <div style="border-bottom: 1px solid #000;"></div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
+                </td>
+
+                <td width="22%" style="vertical-align: top; padding: 5px;">
+                    <div style="display: flex; flex-direction: column; height: 100%; justify-content: space-between;">
+                        <div style="display: flex; font-weight: bold; align-items: flex-end;">
+                            1º ÁRBITRO: <div class="line-fill"></div>
+                        </div>
+                        <div style="display: flex; font-weight: bold; align-items: flex-end;">
+                            2º ÁRBITRO: <div class="line-fill"></div>
+                        </div>
+                        <div style="display: flex; font-weight: bold; align-items: flex-end;">
+                            MESÁRIO: <div class="line-fill"></div>
+                        </div>
+                    </div>
+                </td>
+
+                <td width="8%" style="padding: 0; position: relative;">
+                    <div style="display: flex; flex-direction: column; height: 100%;">
+                        <div style="flex: 1; padding: 5px; font-weight: bold; border-bottom: 1px solid #000;">A</div>
+                        <div style="flex: 1; padding: 5px; font-weight: bold; display: flex; align-items: flex-end;">B</div>
+                    </div>
+                    <div class="font-bold text-center" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #fff; padding: 0 3px;">
+                        CAPITÃES
+                    </div>
+                </td>
+            </tr>
+        </table>
 
     </div>
 
@@ -390,33 +232,227 @@
         function renderFutevolei(matchData) {
             const gen = matchData.general;
             
-            // Dados Gerais
-            document.getElementById('lbl-jogo').innerText = gen.n.value;
-            document.getElementById('lbl-categoria').innerText = `${gen.title.value} - ${gen.sub_title.value}`;
-            document.getElementById('lbl-fase').innerText = gen.fs.value;
-            document.getElementById('lbl-data').innerText = gen.date.value;
-            document.getElementById('lbl-inicio').innerText = gen.hour.value;
+            const getVal = (obj) => (obj && obj.value !== undefined) ? obj.value : (obj || "");
+            const getName = (obj, def) => (obj && obj.name !== undefined && obj.name !== "") ? obj.name : def;
+            const set = (id, val) => {
+                const el = document.getElementById(id);
+                if (el) el.innerText = val;
+            };
+
+            if (gen) {
+                // ==== NOMES (LABELS) DINÂMICOS ====
+                set('lbl-name-jogo', getName(gen.n, 'JOGO Nº'));
+                set('lbl-name-categoria', getName(gen.title, 'CATEGORIA:'));
+                set('lbl-name-fase', getName(gen.fs, 'FASE:') || getName(gen.stage, 'FASE:'));
+                set('lbl-name-data', getName(gen.date, 'DATA:'));
+                set('lbl-name-inicio', getName(gen.hour, 'INÍCIO:'));
+
+                // ==== VALORES ====
+                set('lbl-jogo', getVal(gen.n));
+                
+                let eventoTitle = getVal(gen.title);
+                let eventoSub = getVal(gen.sub_title);
+                let eventoFull = eventoTitle;
+                if(eventoSub) eventoFull += " - " + eventoSub;
+                set('lbl-categoria', eventoFull);
+                
+                set('lbl-fase', getVal(gen.fs) || getVal(gen.stage));
+                
+                let dataStr = getVal(gen.date);
+                if(dataStr && dataStr.includes('undefined')) dataStr = ""; 
+                set('lbl-data', dataStr);
+                
+                set('lbl-inicio', getVal(gen.hour));
+            }
 
             // Nomes Equipes
-            document.getElementById('lbl-team-a').innerText = matchData.team_1.name;
-            document.getElementById('lbl-team-b').innerText = matchData.team_2.name;
+            if (matchData.team_1) set('lbl-team-a', matchData.team_1.name);
+            if (matchData.team_2) set('lbl-team-b', matchData.team_2.name);
 
             // Jogadores Equipe A (Top 2)
-            if(matchData.team_1.player && matchData.team_1.player.length > 0) {
-                document.getElementById('nome-j1-a').innerText = matchData.team_1.player[0].name || "";
+            if(matchData.team_1 && matchData.team_1.player && matchData.team_1.player.length > 0) {
+                set('nome-j1-a', matchData.team_1.player[0].name || "");
             }
-            if(matchData.team_1.player && matchData.team_1.player.length > 1) {
-                document.getElementById('nome-j2-a').innerText = matchData.team_1.player[1].name || "";
+            if(matchData.team_1 && matchData.team_1.player && matchData.team_1.player.length > 1) {
+                set('nome-j2-a', matchData.team_1.player[1].name || "");
             }
 
             // Jogadores Equipe B (Top 2)
-            if(matchData.team_2.player && matchData.team_2.player.length > 0) {
-                document.getElementById('nome-j1-b').innerText = matchData.team_2.player[0].name || "";
+            if(matchData.team_2 && matchData.team_2.player && matchData.team_2.player.length > 0) {
+                set('nome-j1-b', matchData.team_2.player[0].name || "");
             }
-            if(matchData.team_2.player && matchData.team_2.player.length > 1) {
-                document.getElementById('nome-j2-b').innerText = matchData.team_2.player[1].name || "";
+            if(matchData.team_2 && matchData.team_2.player && matchData.team_2.player.length > 1) {
+                set('nome-j2-b', matchData.team_2.player[1].name || "");
+            }
+
+            // ====== INJEÇÃO DA LOGO DINÂMICA DO JSON ======
+            if(matchData.words && matchData.words.logo) {
+                const imgTop = document.getElementById('img-logo-top');
+                const textTop = document.getElementById('text-logo-top');
+                if (imgTop) {
+                    imgTop.src = matchData.words.logo;
+                    imgTop.style.display = 'block';
+                    if (textTop) textTop.style.display = 'none';
+                }
             }
         }
     </script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: #525659;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-size: 11px;
+            padding: 20px;
+        }
+
+        /* FORMATO A4 PAISAGEM */
+        .page-container {
+            width: 297mm;
+            height: 210mm;
+            background: #fff;
+            padding: 8mm;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            border: 2px solid #000;
+        }
+
+        /* TABELAS GERAIS */
+        .main-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            margin-bottom: -1px; /* Funde as bordas das tabelas */
+        }
+        
+        .main-table th, .main-table td {
+            border: 2px solid #000;
+            padding: 4px 6px;
+            vertical-align: middle;
+        }
+
+        .border-thin td { border: 1px solid #000; }
+
+        .text-center { text-align: center; }
+        .font-bold { font-weight: bold; }
+        .text-blue { color: #0000cd; }
+
+        /* CABEÇALHO */
+        .header-table td { height: 60px; }
+        .main-title {
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 10px;
+            height: 100%;
+        }
+        .logo-fenabb {
+            color: #0000cd;
+            font-size: 28px;
+            font-weight: bold;
+            font-style: italic;
+            line-height: 1;
+        }
+        .logo-sub {
+            font-size: 10px;
+            color: #000;
+            margin-left: 5px;
+            text-align: left;
+            line-height: 1.1;
+        }
+
+        /* CIRCULOS */
+        .circle {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 1px solid #000;
+            border-radius: 50%;
+            vertical-align: middle;
+            margin-left: 5px;
+        }
+        .circle-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 22px;
+            height: 22px;
+            border: 2px solid #000;
+            border-radius: 50%;
+            background: #e0e0e0;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+
+        /* INNER GRIDS (PONTOS, PENALIDADES, SAQUE) */
+        .inner-grid {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .inner-grid td {
+            border: 1px solid #000;
+            text-align: center;
+            height: 20px;
+            padding: 0;
+            font-weight: bold;
+        }
+
+        /* ESTRUTURA ORDEM SAQUE E TROCA */
+        .saque-container {
+            display: flex;
+            border: 2px solid #000;
+            border-top: none;
+            height: 140px;
+            margin-bottom: -1px;
+        }
+        .saque-box {
+            flex: 1;
+            position: relative;
+        }
+        .troca-box {
+            width: 120px;
+            border-left: 2px solid #000;
+            border-right: 2px solid #000;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .tempos-box {
+            position: absolute;
+            bottom: 0;
+            background: #fff;
+            border: 2px solid #000;
+        }
+        .tempos-box.left { left: 0; border-left: none; border-bottom: none; }
+        .tempos-box.right { right: 0; border-right: none; border-bottom: none; }
+
+        .line-fill {
+            flex: 1;
+            border-bottom: 1px solid #000;
+            margin-left: 5px;
+        }
+
+        @media print {
+            @page { size: A4 landscape; margin: 0; }
+            body { background: none; display: block; padding: 0; }
+            .page-container { box-shadow: none; margin: 0; width: 297mm; height: 210mm; border: none; }
+        }
+    </style>
 </body>
 </html>
