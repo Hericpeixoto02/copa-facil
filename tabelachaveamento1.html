@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Playoffs - Final Game</title>
+   
+</head>
+<body>
+
+    <div class="tournament-board">
+        
+        <div class="header-decor-left">
+            <div class="header-text"><span>THE</span> PLAYOFFS</div>
+        </div>
+        <div class="header-decor-right">
+            <div class="red-stripe thick"></div>
+            <div class="red-stripe thin"></div>
+            <div class="red-stripe thin"></div>
+            <div class="red-stripe thin"></div>
+        </div>
+        <div class="footer-decor">
+            <div class="grey-stripe thin"></div>
+            <div class="grey-stripe thin"></div>
+            <div class="grey-stripe thin"></div>
+            <div class="grey-stripe thick"></div>
+        </div>
+        <div class="footer-solid"></div>
+
+      
+
+        <div class="bracket-area">
+
+            <div class="side left-side">
+                <div class="col col-1">
+                    <div class="match-group">
+                        <div class="team"><span>TEAM 00</span></div><div class="team"><span>TEAM 00</span></div>
+                    </div>
+                    <div class="match-group">
+                        <div class="team"><span>TEAM 00</span></div><div class="team"><span>TEAM 00</span></div>
+                    </div>
+                    <div class="match-group">
+                        <div class="team"><span>TEAM 00</span></div><div class="team"><span>TEAM 00</span></div>
+                    </div>
+                    <div class="match-group">
+                        <div class="team"><span>TEAM 00</span></div><div class="team"><span>TEAM 00</span></div>
+                    </div>
+                </div>
+
+                <div class="col col-2">
+                    <div class="match-group">
+                        <div class="team"><span>TEAM 00</span></div><div class="team"><span>TEAM 00</span></div>
+                    </div>
+                    <div class="match-group">
+                        <div class="team"><span>TEAM 00</span></div><div class="team"><span>TEAM 00</span></div>
+                    </div>
+                </div>
+
+                <div class="col col-3">
+                    <div class="match-group">
+                        <div class="team"><span>TEAM 00</span></div><div class="team"><span>TEAM 00</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="center-side">
+                
+                <div class="route-left-top"></div>
+                <div class="route-right-bottom"></div>
+
+                <div class="team"><span>TEAM 00</span></div>
+                
+                <div class="trophy">
+                    <svg viewBox="0 0 24 24">
+                        <defs>
+                            <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#FFD700" />
+                                <stop offset="100%" stop-color="#B8860B" />
+                            </linearGradient>
+                        </defs>
+                        <path fill="url(#gold)" d="M17 3H7c-1.1 0-2 .9-2 2v4c0 2.2 1.8 4 4 4h.4c1 2.3 3.3 4 5.6 4v3H9v2h6v-2h-3v-3c2.3 0 4.6-1.7 5.6-4h.4c2.2 0 4-1.8 4-4V5c0-1.1-.9-2-2-2zm-8 8H7c-1.1 0-2-.9-2-2V5h4v6zm8-2c0 1.1-.9 2-2 2h-2V5h4v4z"/>
+                    </svg>
+                </div>
+                
+                <div class="team"><span>TEAM 00</span></div>
+            </div>
+
+            <div class="side right-side">
+                <div class="col col-3">
+                    <div class="match-group">
+                        <div class="team"><span>TEAM 00</span></div><div class="team"><span>TEAM 00</span></div>
+                    </div>
+                </div>
+
+                <div class="col col-2">
+                    <div class="match-group">
+                        <div class="team"><span>TEAM 00</span></div><div class="team"><span>TEAM 00</span></div>
+                    </div>
+                    <div class="match-group">
+                        <div class="team"><span>TEAM 00</span></div><div class="team"><span>TEAM 00</span></div>
+                    </div>
+                </div>
+
+                <div class="col col-1">
+                    <div class="match-group">
+                        <div class="team"><span>TEAM 00</span></div><div class="team"><span>TEAM 00</span></div>
+                    </div>
+                    <div class="match-group">
+                        <div class="team"><span>TEAM 00</span></div><div class="team"><span>TEAM 00</span></div>
+                    </div>
+                    <div class="match-group">
+                        <div class="team"><span>TEAM 00</span></div><div class="team"><span>TEAM 00</span></div>
+                    </div>
+                    <div class="match-group">
+                        <div class="team"><span>TEAM 00</span></div><div class="team"><span>TEAM 00</span></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+ <style>
+        /* ==============================================
+           RESET E BACKGROUND DA TELA
+           ============================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #070709; /* Fundo escuro igual a imagem */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: auto;
+            color: white;
+        }
+
+        /* ==============================================
+           ÁREA PRINCIPAL (MANTÉM PROPORÇÃO E ESCALA)
+           ============================================== */
+        .tournament-board {
+            width: 1200px;
+            height: 700px;
+            position: relative;
+            background-color: #09090b; /* Fundo interno */
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+        }
+
+        /* ==============================================
+           GRÁFICOS DE CABEÇALHO E RODAPÉ
+           ============================================== */
+        /* Faixa Vermelha Esquerda (THE PLAYOFFS) */
+        .header-decor-left {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 500px;
+            height: 70px;
+            background: linear-gradient(90deg, #7c0406, #d01118, #e31b23);
+            clip-path: polygon(0 0, 100% 0, calc(100% - 50px) 100%, 0 100%);
+            display: flex;
+            align-items: center;
+            padding-left: 30px;
+            z-index: 10;
+        }
+        .header-text {
+            font-size: 32px;
+            font-weight: 900;
+            font-style: italic;
+            letter-spacing: 2px;
+        }
+        .header-text span {
+            font-size: 14px;
+            vertical-align: super;
+            margin-right: 5px;
+            font-weight: 700;
+        }
+
+        /* Listras Vermelhas (Topo Direita) */
+        .header-decor-right {
+            position: absolute;
+            top: -10px;
+            right: 250px;
+            width: 150px;
+            height: 60px;
+            display: flex;
+            gap: 8px;
+            transform: skewX(-45deg);
+        }
+        .red-stripe {
+            height: 100%;
+            background-color: #e31b23;
+        }
+        .red-stripe.thick { width: 50px; }
+        .red-stripe.thin { width: 10px; }
+
+        /* Listras Cinzas (Rodapé Direita) */
+        .footer-decor {
+            position: absolute;
+            bottom: -10px;
+            right: 50px;
+            width: 400px;
+            height: 50px;
+            display: flex;
+            gap: 8px;
+            transform: skewX(-45deg);
+            justify-content: flex-end;
+            background: #1a1a1f; /* Fundo cinza base do ropdaé */
+            padding-right: 20px;
+        }
+        .grey-stripe {
+            height: 100%;
+            background-color: #fff;
+        }
+        .grey-stripe.thick { width: 100px; background: #2a2a2f; }
+        .grey-stripe.thin { width: 8px; background: #666; }
+
+        /* Rodapé cinza sólido na base inteira */
+        .footer-solid {
+            position: absolute;
+            bottom: 0; left: 0; width: 100%; height: 30px;
+            background-color: #555;
+            clip-path: polygon(0 100%, 100% 100%, 100% 0, 150px 0, 120px 100%);
+            z-index: -1;
+        }
+
+
+        /* ==============================================
+           TEXTOS CENTRAIS (FINAL GAME TOURNAMENT)
+           ============================================== */
+        .center-titles {
+            position: absolute;
+            top: 70px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 10;
+        }
+        .title-final {
+            font-size: 56px;
+            font-weight: 900;
+            font-style: italic;
+            letter-spacing: 4px;
+            position: relative;
+            color: #fff;
+        }
+        .title-final::after {
+            content: '';
+            position: absolute;
+            bottom: 5px; left: 10%;
+            width: 80%; height: 4px;
+            background-color: #e31b23;
+        }
+        .title-game {
+            font-size: 18px;
+            font-weight: bold;
+            color: #e31b23;
+            letter-spacing: 2px;
+            margin-top: -5px;
+        }
+        .title-tourney {
+            font-size: 12px;
+            letter-spacing: 12px;
+            color: #666;
+            margin-top: 15px;
+            margin-left: 12px; /* Compensa o letter-spacing */
+        }
+
+
+        /* ==============================================
+           ESTRUTURA DO CHAVEAMENTO (FLEXBOX)
+           ============================================== */
+        .bracket-area {
+            position: absolute;
+            top: 250px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1060px;
+            height: 380px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .side {
+            display: flex;
+            width: 400px;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .col {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            height: 100%;
+        }
+
+
+        /* ==============================================
+           CAIXAS DOS TIMES (FORMATOS ESPECIAIS)
+           ============================================== */
+        .team {
+            width: 100px;
+            height: 24px;
+            background-color: #c01b22;
+            color: #fff;
+            font-size: 10px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Simula a borda vermelha com fundo preto (Usando pseudo-elemento menor) */
+        .team::before {
+            content: '';
+            position: absolute;
+            background-color: #111; /* Cor escura de dentro da caixa */
+            z-index: 0;
+        }
+
+        .team span {
+            position: relative;
+            z-index: 1; /* Texto por cima de tudo */
+        }
+
+        /* Lado Esquerdo: Base reta na esquerda, ponta na direita */
+        .left-side .team {
+            clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 50%, calc(100% - 10px) 100%, 0 100%);
+        }
+        .left-side .team::before {
+            top: 1px; left: 1px; bottom: 1px; right: 2px;
+            clip-path: polygon(0 0, calc(100% - 9px) 0, 100% 50%, calc(100% - 9px) 100%, 0 100%);
+        }
+
+        /* Lado Direito: Base reta na direita, ponta na esquerda */
+        .right-side .team {
+            clip-path: polygon(10px 0, 100% 0, 100% 100%, 10px 100%, 0 50%);
+        }
+        .right-side .team::before {
+            top: 1px; left: 2px; bottom: 1px; right: 1px;
+            clip-path: polygon(9px 0, 100% 0, 100% 100%, 9px 100%, 0 50%);
+        }
+
+        /* Centro: Ponta dos dois lados */
+        .center-side .team {
+            clip-path: polygon(10px 0, calc(100% - 10px) 0, 100% 50%, calc(100% - 10px) 100%, 10px 100%, 0 50%);
+            margin: 0 auto;
+        }
+        .center-side .team::before {
+            top: 1px; left: 2px; bottom: 1px; right: 2px;
+            clip-path: polygon(9px 0, calc(100% - 9px) 0, 100% 50%, calc(100% - 9px) 100%, 9px 100%, 0 50%);
+        }
+
+
+        /* ==============================================
+           AS LINHAS DO CHAVEAMENTO E GRUPOS
+           ============================================== */
+        .match-group {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Alturas precisas para as chaves conectarem perfeitamente no meio dos times */
+        .col-1 .match-group { height: 55px; } /* Espaço entre 2 times na rodada 1 */
+        .col-2 .match-group { height: 150px; } /* Espaço entre as chaves da rodada 2 */
+        .col-3 .match-group { height: 340px; } /* Espaço da semifinal */
+
+        /* Cor da linha dos brackets */
+        :root {
+            --line-color: #8a1216; /* Vermelho escuro igual a imagem original */
+        }
+
+        /* LINHAS ESQUERDA */
+        .left-side .match-group::after {
+            content: ''; position: absolute;
+            right: -20px; top: 12px; bottom: 12px; /* 12px é metade da altura do .team (24px) */
+            border-right: 1px solid var(--line-color);
+            border-top: 1px solid var(--line-color);
+            border-bottom: 1px solid var(--line-color);
+        }
+        /* Haste horizontal que sai do meio da chave e vai para a próxima coluna */
+        .left-side .match-group::before {
+            content: ''; position: absolute;
+            right: -40px; top: 50%; width: 20px; height: 1px; background-color: var(--line-color);
+        }
+
+        /* LINHAS DIREITA */
+        .right-side .match-group::after {
+            content: ''; position: absolute;
+            left: -20px; top: 12px; bottom: 12px;
+            border-left: 1px solid var(--line-color);
+            border-top: 1px solid var(--line-color);
+            border-bottom: 1px solid var(--line-color);
+        }
+        /* Haste horizontal que sai do meio da chave e vai para a próxima coluna */
+        .right-side .match-group::before {
+            content: ''; position: absolute;
+            left: -40px; top: 50%; width: 20px; height: 1px; background-color: var(--line-color);
+        }
+
+
+        /* ==============================================
+           ÁREA CENTRAL (ROTEAMENTO ASSIMÉTRICO DO TROFÉU)
+           ============================================== */
+        .center-side {
+            position: relative;
+            width: 140px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 15px; /* Espaço entre time de cima, trofeu e time de baixo */
+            z-index: 5;
+        }
+
+        .trophy svg {
+            width: 40px;
+            height: 40px;
+            filter: drop-shadow(0px 5px 5px rgba(0,0,0,0.8));
+        }
+
+        /* --- MÁGICA DA LINHA: Esquerda vai para o Topo (Campeão 1) --- */
+        .route-left-top {
+            position: absolute;
+            left: -30px; /* Pega a ponta da haste da Semifinal Esquerda */
+            bottom: 50%; /* Ancora no meio vertical da tela */
+            width: 40px; 
+            height: 45px; /* Sobe até a altura do time de cima */
+            border-top: 1px solid var(--line-color);
+            border-left: 1px solid var(--line-color);
+            z-index: -1;
+        }
+        /* Complemento horizontal para ligar no Team 00 superior */
+        .route-left-top::after {
+            content: ''; position: absolute;
+            top: -1px; left: 100%; width: 10px; height: 1px; background-color: var(--line-color);
+        }
+
+        /* --- MÁGICA DA LINHA: Direita vai para Baixo (Campeão 2) --- */
+        .route-right-bottom {
+            position: absolute;
+            right: -30px; /* Pega a ponta da haste da Semifinal Direita */
+            top: 50%; /* Ancora no meio vertical da tela */
+            width: 40px;
+            height: 45px; /* Desce até a altura do time de baixo */
+            border-bottom: 1px solid var(--line-color);
+            border-right: 1px solid var(--line-color);
+            z-index: -1;
+        }
+        /* Complemento horizontal para ligar no Team 00 inferior */
+        .route-right-bottom::after {
+            content: ''; position: absolute;
+            bottom: -1px; right: 100%; width: 10px; height: 1px; background-color: var(--line-color);
+        }
+    </style>
+</html>
