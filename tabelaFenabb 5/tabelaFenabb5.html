@@ -4,6 +4,233 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Súmula 5 - Tênis de Quadra (A4 Retrato - Dinâmica)</title>
+    
+</head>
+<body>
+
+    <div class="page-container">
+
+        <table class="header-table">
+            <tr>
+                <td width="20%">
+                    <div class="grid-header">
+                        <div></div><div></div><div></div><div></div>
+                        <div></div><div></div><div></div><div></div>
+                        <div></div><div></div><div></div><div></div>
+                        <div></div><div></div><div></div><div></div>
+                    </div>
+                </td>
+                <td width="55%" class="main-title">TÊNIS DE QUADRA</td>
+                <td width="25%">
+                    <div class="logo-container">
+                        <img id="img-logo-top" src="" alt="" style="max-height: 50px; max-width: 100%; object-fit: contain; display: none; margin: auto;">
+                        <div id="text-logo-top" style="display: flex; align-items: center;">
+                            <div class="logo-fenabb">FENABB</div>
+                            <div class="logo-sub">Federação<br>das AABB</div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+
+        <table class="info-table">
+            <tr>
+                <td width="50%" style="height: 25px;"><span id="lbl-name-evento">EVENTO:</span> <span id="lbl-evento" style="font-weight:normal; margin-left:5px;"></span></td>
+                <td width="50%" style="height: 25px;"><span id="lbl-name-local">LOCAL:</span> <span id="lbl-local" style="font-weight:normal; margin-left:5px;"></span></td>
+            </tr>
+        </table>
+
+        <table class="info-table">
+            <tr>
+                <td width="15%" id="lbl-name-confronto">CONFRONTO:</td>
+                <td width="15%" class="text-right" id="lbl-conf-a" style="border-right: none; font-weight:normal;"></td>
+                <td width="5%" class="text-center font-bold" style="border-left: none; border-right: none;">x</td>
+                <td width="15%" id="lbl-conf-b" style="border-left: none; font-weight:normal;"></td>
+                <td width="10%" class="text-center"><span id="lbl-name-data">DATA</span><br><span id="lbl-data" style="font-weight:normal;"></span></td>
+                <td width="10%" class="text-center"><span id="lbl-name-hora">HORA</span><br><span id="lbl-hora" style="font-weight:normal;"></span></td>
+                <td width="10%" class="text-center"><span id="lbl-name-jogo">JOGO</span><br><span id="lbl-jogo" style="font-weight:normal;"></span></td>
+                <td width="10%" class="text-center"><span id="lbl-name-sexo">SEXO</span><br></td>
+                <td width="10%" class="text-center"><span id="lbl-name-grupo">GRUPO</span><br></td>
+            </tr>
+        </table>
+
+        <div class="teams-wrapper">
+            
+            <table class="team-table">
+                <thead>
+                    <tr><td colspan="2" class="team-title">Equipe [A]</td></tr>
+                    <tr class="col-headers">
+                        <td class="reg-col">Registro</td>
+                        <td class="name-col">Nome</td>
+                    </tr>
+                </thead>
+                <tbody id="tbody-a">
+                    </tbody>
+            </table>
+
+            <table class="team-table">
+                <thead>
+                    <tr><td colspan="2" class="team-title">Equipe [B]</td></tr>
+                    <tr class="col-headers">
+                        <td class="reg-col">Registro</td>
+                        <td class="name-col">Nome</td>
+                    </tr>
+                </thead>
+                <tbody id="tbody-b">
+                    </tbody>
+            </table>
+
+        </div>
+
+        <div class="sets-area">
+            <table class="sets-grid">
+                <tr>
+                    <td style="background: #f0f0f0;">A</td><td></td><td></td><td></td><td></td><td></td>
+                </tr>
+                <tr>
+                    <td style="background: #f0f0f0;">B</td><td></td><td></td><td></td><td></td><td></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="result-area">
+            <div class="result-title" style="background: #f0f0f0;">RESULTADO</div>
+            
+            <div class="placar-row">
+                <div class="side-box"></div>
+                <div>Equipe [A]</div>
+                <div class="score-box"></div> 
+                <div>X</div> 
+                <div class="score-box"></div> 
+                <div>Equipe [B]</div>
+                <div class="side-box"></div>
+            </div>
+
+            <div class="venceu-row">
+                VENCEU A EQUIPE: 
+                <div style="flex: 1; border-bottom: 1px solid #000; margin-left: 10px;"></div>
+            </div>
+        </div>
+
+        <div class="signatures-area">
+            <div class="sig-title" style="background: #f0f0f0;">Assinaturas</div>
+            
+            <div class="sig-capitaes">
+                <div>Assinatura Capitão:</div>
+                <div>Assinatura Capitão:</div>
+            </div>
+
+            <div class="sig-oficiais">
+                <div>
+                    <div class="sig-box-top">Árbitro</div>
+                    <div class="sig-box-bot">Nome do Árbitro</div>
+                </div>
+                <div>
+                    <div class="sig-box-top">Apontador</div>
+                    <div class="sig-box-bot">Nome do Apontador</div>
+                </div>
+                <div>
+                    <div class="sig-box-top">Árbitro Geral</div>
+                    <div class="sig-box-bot">Nome do Arbitro Geral</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            fetch('referencia.json')
+                .then(response => {
+                    if (!response.ok) throw new Error('Erro na rede ao tentar acessar referencia.json');
+                    return response.json();
+                })
+                .then(data => {
+                    renderTenisQuadra(data);
+                })
+                .catch(error => {
+                    console.error("Erro ao carregar o JSON:", error);
+                });
+        });
+
+        function renderTenisQuadra(data) {
+            const gen = data.general;
+            
+            const getVal = (obj) => (obj && obj.value !== undefined) ? obj.value : (obj || "");
+            const getName = (obj, def) => (obj && obj.name !== undefined && obj.name !== "") ? obj.name : def;
+            const set = (id, val) => {
+                const el = document.getElementById(id);
+                if (el) el.innerText = val;
+            };
+
+            if (gen) {
+                // ==== NOMES (LABELS) DINÂMICOS ====
+                set('lbl-name-evento', getName(gen.title, 'EVENTO:'));
+                set('lbl-name-local', getName(gen.l, 'LOCAL:') || getName(gen.place, 'LOCAL:'));
+                set('lbl-name-data', getName(gen.date, 'DATA'));
+                set('lbl-name-hora', getName(gen.hour, 'HORA'));
+                set('lbl-name-jogo', getName(gen.n, 'JOGO'));
+                
+                // Caso queira trazer também Sexo/Grupo do JSON depois:
+                // set('lbl-name-sexo', getName(gen.sexo, 'SEXO'));
+                // set('lbl-name-grupo', getName(gen.grupo, 'GRUPO'));
+
+                // ==== VALORES ====
+                let eventoTitle = getVal(gen.title);
+                let eventoSub = getVal(gen.sub_title);
+                let eventoFull = eventoTitle;
+                if(eventoSub) eventoFull += " - " + eventoSub;
+                set('lbl-evento', eventoFull);
+
+                set('lbl-local', getVal(gen.l) || getVal(gen.place));
+                set('lbl-jogo', getVal(gen.n));
+                set('lbl-hora', getVal(gen.hour));
+
+                let dataStr = getVal(gen.date);
+                if(dataStr && dataStr.includes('undefined')) dataStr = ""; 
+                set('lbl-data', dataStr);
+            }
+
+            // Confronto
+            if (data.team_1) set('lbl-conf-a', data.team_1.name);
+            if (data.team_2) set('lbl-conf-b', data.team_2.name);
+
+            // Qtd Dinâmica (Se não vier no json, garante 1 de fallback)
+            const qtdPlayers = data.qtd_players || 1;
+            
+            let htmlA = '';
+            let htmlB = '';
+
+            const playersA = data.team_1 && data.team_1.player ? data.team_1.player : [];
+            const playersB = data.team_2 && data.team_2.player ? data.team_2.player : [];
+
+            // Loop dinâmico com base na "qtd_players" do JSON
+            for (let i = 0; i < qtdPlayers; i++) {
+                let docA = playersA[i] ? playersA[i].doc : "";
+                let nameA = playersA[i] ? playersA[i].name : "";
+                htmlA += `<tr class="player-row"><td class="reg-col font-bold">${docA}</td><td class="name-col font-bold">${nameA}</td></tr>`;
+
+                let docB = playersB[i] ? playersB[i].doc : "";
+                let nameB = playersB[i] ? playersB[i].name : "";
+                htmlB += `<tr class="player-row"><td class="reg-col font-bold">${docB}</td><td class="name-col font-bold">${nameB}</td></tr>`;
+            }
+
+            document.getElementById('tbody-a').innerHTML = htmlA;
+            document.getElementById('tbody-b').innerHTML = htmlB;
+
+            // ====== INJEÇÃO DA LOGO DINÂMICA DO JSON ======
+            if(data.words && data.words.logo) {
+                const imgTop = document.getElementById('img-logo-top');
+                const textTop = document.getElementById('text-logo-top');
+                if (imgTop) {
+                    imgTop.src = data.words.logo;
+                    imgTop.style.display = 'block';
+                    if (textTop) textTop.style.display = 'none';
+                }
+            }
+        }
+    </script>
+
     <style>
         * {
             box-sizing: border-box;
@@ -219,188 +446,5 @@
             .page-container { box-shadow: none; margin: 0; width: 210mm; min-height: 297mm; }
         }
     </style>
-</head>
-<body>
-
-    <div class="page-container">
-
-        <table class="header-table">
-            <tr>
-                <td width="20%">
-                    <div class="grid-header">
-                        <div></div><div></div><div></div><div></div>
-                        <div></div><div></div><div></div><div></div>
-                        <div></div><div></div><div></div><div></div>
-                        <div></div><div></div><div></div><div></div>
-                    </div>
-                </td>
-                <td width="55%" class="main-title">TÊNIS DE QUADRA</td>
-                <td width="25%">
-                    <div class="logo-container">
-                        <div class="logo-fenabb">FENABB</div>
-                        <div class="logo-sub">Federação<br>das AABB</div>
-                    </div>
-                </td>
-            </tr>
-        </table>
-
-        <table class="info-table">
-            <tr>
-                <td width="50%" style="height: 25px;">EVENTO: <span id="lbl-evento" style="font-weight:normal; margin-left:5px;"></span></td>
-                <td width="50%" style="height: 25px;">LOCAL: <span id="lbl-local" style="font-weight:normal; margin-left:5px;"></span></td>
-            </tr>
-        </table>
-
-        <table class="info-table">
-            <tr>
-                <td width="15%">CONFRONTO:</td>
-                <td width="15%" class="text-right" id="lbl-conf-a" style="border-right: none; font-weight:normal;"></td>
-                <td width="5%" class="text-center font-bold" style="border-left: none; border-right: none;">x</td>
-                <td width="15%" id="lbl-conf-b" style="border-left: none; font-weight:normal;"></td>
-                <td width="10%" class="text-center">DATA<br><span id="lbl-data" style="font-weight:normal;"></span></td>
-                <td width="10%" class="text-center">HORA<br><span id="lbl-hora" style="font-weight:normal;"></span></td>
-                <td width="10%" class="text-center">JOGO<br><span id="lbl-jogo" style="font-weight:normal;"></span></td>
-                <td width="10%" class="text-center">SEXO<br></td>
-                <td width="10%" class="text-center">GRUPO<br></td>
-            </tr>
-        </table>
-
-        <div class="teams-wrapper">
-            
-            <table class="team-table">
-                <thead>
-                    <tr><td colspan="2" class="team-title">Equipe [A]</td></tr>
-                    <tr class="col-headers">
-                        <td class="reg-col">Registro</td>
-                        <td class="name-col">Nome</td>
-                    </tr>
-                </thead>
-                <tbody id="tbody-a">
-                    </tbody>
-            </table>
-
-            <table class="team-table">
-                <thead>
-                    <tr><td colspan="2" class="team-title">Equipe [B]</td></tr>
-                    <tr class="col-headers">
-                        <td class="reg-col">Registro</td>
-                        <td class="name-col">Nome</td>
-                    </tr>
-                </thead>
-                <tbody id="tbody-b">
-                    </tbody>
-            </table>
-
-        </div>
-
-        <div class="sets-area">
-            <table class="sets-grid">
-                <tr>
-                    <td style="background: #f0f0f0;">A</td><td></td><td></td><td></td><td></td><td></td>
-                </tr>
-                <tr>
-                    <td style="background: #f0f0f0;">B</td><td></td><td></td><td></td><td></td><td></td>
-                </tr>
-            </table>
-        </div>
-
-        <div class="result-area">
-            <div class="result-title" style="background: #f0f0f0;">RESULTADO</div>
-            
-            <div class="placar-row">
-                <div class="side-box"></div>
-                <div>Equipe [A]</div>
-                <div class="score-box"></div> 
-                <div>X</div> 
-                <div class="score-box"></div> 
-                <div>Equipe [B]</div>
-                <div class="side-box"></div>
-            </div>
-
-            <div class="venceu-row">
-                VENCEU A EQUIPE: 
-                <div style="flex: 1; border-bottom: 1px solid #000; margin-left: 10px;"></div>
-            </div>
-        </div>
-
-        <div class="signatures-area">
-            <div class="sig-title" style="background: #f0f0f0;">Assinaturas</div>
-            
-            <div class="sig-capitaes">
-                <div>Assinatura Capitão:</div>
-                <div>Assinatura Capitão:</div>
-            </div>
-
-            <div class="sig-oficiais">
-                <div>
-                    <div class="sig-box-top">Árbitro</div>
-                    <div class="sig-box-bot">Nome do Árbitro</div>
-                </div>
-                <div>
-                    <div class="sig-box-top">Apontador</div>
-                    <div class="sig-box-bot">Nome do Apontador</div>
-                </div>
-                <div>
-                    <div class="sig-box-top">Árbitro Geral</div>
-                    <div class="sig-box-bot">Nome do Arbitro Geral</div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            fetch('referencia.json')
-                .then(response => {
-                    if (!response.ok) throw new Error('Erro na rede ao tentar acessar referencia.json');
-                    return response.json();
-                })
-                .then(data => {
-                    renderTenisQuadra(data);
-                })
-                .catch(error => {
-                    console.error("Erro ao carregar o JSON:", error);
-                });
-        });
-
-        function renderTenisQuadra(matchData) {
-            const gen = matchData.general;
-            
-            // Dados Gerais
-            document.getElementById('lbl-evento').innerText = `${gen.title.value} - ${gen.sub_title.value}`;
-            document.getElementById('lbl-local').innerText = gen.l.value;
-            
-            // Confronto e Info
-            document.getElementById('lbl-conf-a').innerText = matchData.team_1.name;
-            document.getElementById('lbl-conf-b').innerText = matchData.team_2.name;
-            document.getElementById('lbl-data').innerText = gen.date.value;
-            document.getElementById('lbl-hora').innerText = gen.hour.value;
-            document.getElementById('lbl-jogo').innerText = gen.n.value;
-
-            // Qtd Dinâmica (Se não vier no json, garante 1 de fallback)
-            const qtdPlayers = matchData.qtd_players || 1;
-            
-            let htmlA = '';
-            let htmlB = '';
-
-            const playersA = matchData.team_1.player || [];
-            const playersB = matchData.team_2.player || [];
-
-            // Loop dinâmico com base na "qtd_players" do JSON
-            for (let i = 0; i < qtdPlayers; i++) {
-                let docA = playersA[i] ? playersA[i].doc : "";
-                let nameA = playersA[i] ? playersA[i].name : "";
-                htmlA += `<tr class="player-row"><td class="reg-col font-bold">${docA}</td><td class="name-col font-bold">${nameA}</td></tr>`;
-
-                let docB = playersB[i] ? playersB[i].doc : "";
-                let nameB = playersB[i] ? playersB[i].name : "";
-                htmlB += `<tr class="player-row"><td class="reg-col font-bold">${docB}</td><td class="name-col font-bold">${nameB}</td></tr>`;
-            }
-
-            document.getElementById('tbody-a').innerHTML = htmlA;
-            document.getElementById('tbody-b').innerHTML = htmlB;
-        }
-    </script>
 </body>
 </html>
