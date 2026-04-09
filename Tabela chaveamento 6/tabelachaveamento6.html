@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chaveamento Semifinais</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box; 
+        }
+
+        /* =========================================
+           CONFIGURAÇÕES PARA O ECRÃ (FRONT-END)
+           ========================================= */
+        body {
+            background-color: #304DED;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            margin: 0;
+            padding: 40px; 
+            overflow: auto; 
+        }
+
+        /* Mantém a proporção exata para as 3 colunas e permite scroll */
+        .scale-fit {
+            width: 800px; 
+            margin: 0 auto; 
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 56px;
+        }
+
+        ul.textos-cabeçalho {
+            display: flex;
+            
+            list-style: none;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        .textos-cabeçalho li {
+            width: 163px;
+            text-align: center;
+        }
+
+        .bracket-wrapper {
+            display: flex;
+            justify-content: center; 
+            align-items: center; 
+            flex-grow: 1; 
+            margin-top: -25px;
+            width: 100%; 
+        }
+
+        .container-equipes {
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            height: 100%; 
+        }
+
+        .box-equipes-semis {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 0; 
+            height: 100%;
+        }
+
+        .equipes-box {
+            background-color: #ffffff;
+            border-radius: 8px;
+            width: 160px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+            position: relative;
+            color: #000;
+        }
+
+        .team {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px;
+            border-bottom: 1px solid #eee;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .team:last-child {
+            border-bottom: none;
+        }
+
+        span.score {
+            background-color: #2040AB;
+            padding: 3px 6px;
+            color: #fff;
+            border-radius: 4px;
+        }
+
+        .center-bracket {
+            font-family: Arial, sans-serif;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+            width: 252px;
+            position: relative;
+        }
+
+        .top-cluster, .bottom-cluster {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .bracket-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .year-outline {
+            font-size: 64px;
+            margin: 0;
+            color: transparent;
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+            letter-spacing: 2px;
+        }
+
+        .schedule-title {
+            font-size: 16px;
+            margin: -10px 0 0 0;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .stage-label {
+            font-size: 11px;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .bracket-stage {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .bottom-cluster .bracket-stage {
+            margin-bottom: 0;
+        }
+
+        .box {
+            background-color: white;
+            border-radius: 6px;
+            height: 28px;
+            width: 220px;
+        }
+
+        .match-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            width: 163px;
+            z-index: 2;
+        }
+
+        .team-row {
+            height: 28px;
+            border-radius: 6px;
+            display: flex;
+            overflow: hidden;
+        }
+
+        .plain-row {
+            background-color: white;
+            width: 100%;
+        }
+
+        .split-row {
+            width: 160px;
+            margin: 0 auto;
+            margin-bottom: 8px;
+            margin-top: 8px;
+        }
+
+        .seed {
+            background-color: #242c9c;
+            color: white;
+            font-size: 9px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+        }
+
+        .name {
+            background-color: white;
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+        }
+
+        .vs-badge {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 10px;
+            font-weight: bold;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2;
+        }
+
+        .small-vs {
+            width: 20px;
+            height: 20px;
+            font-size: 8px;
+            margin-top: 5px;
+        }
+
+        .name p {
+            font-size: 11px;
+            margin-left: 5px;
+        }
+
+        span.name img {
+            margin-left: 5px;
+            width: 20px !important;
+        }
+
+        p.jogo {
+            color: #fff;
+            font-size: 10px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: -7px;
+        }
+
+        /* =========================================
+           TRAÇOS MATEMÁTICOS PARA O FORMATO DE SEMIS
+           ========================================= */
+        
+        /* LINHAS ESQUERDAS - SEMIS (SAÍDA HORIZONTAL) */
+        .container-equipes:nth-child(1) .match-card::after {
+            content: ''; position: absolute; top: 50%; right: -27.5px; width: 27.5px; border-top: 2px solid white; z-index: 0;
+        }
+
+        /* LINHAS DIREITAS - SEMIS (SAÍDA HORIZONTAL) */
+        .container-equipes:nth-child(3) .match-card::before {
+            content: ''; position: absolute; top: 50%; left: -27.5px; width: 27.5px; border-top: 2px solid white; z-index: 0;
+        }
+
+        /* LINHAS CENTRAIS: CONEXÃO EXATA DAS SEMIS PARA A FINAL E 3º LUGAR */
+        .center-lines-up {
+            display:none;
+            position: absolute;
+            bottom: 50%; 
+            left: 50%;
+            transform: translateX(-50%);
+            width: 415px; /* Encontra exatamente as pontas dos traços horizontais das Semifinais */
+            height: 60px;
+            border-top: 2px solid white;
+            border-left: 2px solid white;
+            border-right: 2px solid white;
+            z-index: 1;
+        }
+        .center-lines-up::after {
+            content: ''; position: absolute;
+            bottom: 100%; left: 50%; transform: translateX(-50%);
+            width: 2px; height: 32px; background-color: white;
+        }
+
+        .center-lines-down {
+            display: none;
+            position: absolute;
+            top: 50%; 
+            left: 50%;
+            transform: translateX(-50%);
+            width: 415px;
+            height: 60px;
+            border-bottom: 2px solid white;
+            border-left: 2px solid white;
+            border-right: 2px solid white;
+            z-index: 1;
+        }
+        .center-lines-down::after {
+            content: ''; position: absolute;
+            top: 100%; left: 50%; transform: translateX(-50%);
+            width: 2px; height: 18px; background-color: white;
+        }
+
+        /* =========================================
+           CONFIGURAÇÕES EXCLUSIVAS PARA IMPRESSÃO
+           ========================================= */
+        @media print {
+            @page {
+                size: A4 landscape;
+                margin: 0mm; 
+            }
+            html, body {
+                width: 297mm !important;
+                height: 209mm !important; 
+                margin: 0 !important;
+                padding: 0 !important;
+                overflow: hidden !important; 
+                background-color: #304DED !important;
+                -webkit-print-color-adjust: exact !important; 
+                print-color-adjust: exact !important;
+                page-break-inside: avoid !important;
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+            }
+            .scale-fit {
+                /* Escala ampliada (1.15) para que o chaveamento fique grande e claro na folha A4 */
+                transform: scale(1.15) !important; 
+                transform-origin: center center !important;
+                padding: 0 !important;
+                margin: 0 !important;
+                page-break-inside: avoid !important;
+            }
+        }
+
+    div#semi-1 {
+    margin-top:-51px;
+}
+
+
+
+div#semi-2 {
+    margin-top:-51px;
+}
+
+
+
+h2.schedule-title {
+    color: #fff;
+}
+
+    </style>
+</head>
+<body>
+    <div class="scale-fit">
+
+        <div class="bracket-header">
+                        <h1 class="year-outline">2026</h1>
+                        <h2 class="schedule-title">MATCH SCHEDULE</h2>
+                    </div>
+        <header>
+            <div class="header">
+                <ul class="textos-cabeçalho">
+                    <li>Semi final</li>
+                    <li style="width: 320px; text-align: center; letter-spacing: 2px;">Final</li>
+                    <li>Semi final</li>
+                </ul>
+            </div>
+        </header>
+
+        <main class="bracket-wrapper">
+            
+            <div class="container-equipes">
+                <div class="box-equipes-semis">
+                    <div class="match-card" id="semi-1">
+                        <div><p class="jogo">SEMI FINAL 1</p></div>
+                        <div class="team-row split-row"><span class="name"><img src="img/sao-paulo-futebol-clube-logo-png_seeklogo-122586.png" alt="" width="25px"> <p>Time 1</p></span><span class="seed">2</span></div>
+                        <div class="vs-badge small-vs">X</div>
+                        <div class="team-row split-row"><span class="name"><img src="img/Palmeiras_logo.svg.png" alt="" width="25px"> <p>Time 2</p></span><span class="seed">1</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="center-bracket">
+                
+                <div class="top-cluster">
+                    
+
+                    <div class="bracket-stage winner-stage">
+                        <div class="stage-label">CAMPEÃO</div>
+                        <div class="box winner-box"></div>
+                    </div>
+
+                    <div class="bracket-stage final-stage">
+                        <div class="stage-label" id="final-stage-label">FINAL</div>
+                        <div class="match-card" id="final-match">
+                            <div class="team-row split-row"><span class="name"></span><span class="seed">2</span></div>
+                            <div class="vs-badge small-vs" style="margin-top:1px !important;">X</div>
+                            <div class="team-row split-row"><span class="name"></span><span class="seed">1</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="center-lines-up"></div>
+                <div class="center-lines-down"></div>
+
+                <div class="bottom-cluster">
+                    <div class="bracket-stage third-place-stage">
+                        <div class="stage-label">DISPUTA DO TERCEIRO LUGAR</div>
+                        <div class="match-card">
+                            <div class="team-row split-row"><span class="name"></span><span class="seed">2</span></div>
+                            <div class="vs-badge small-vs" style="margin-top:1px !important;">X</div>
+                            <div class="team-row split-row"><span class="name"></span><span class="seed">1</span></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="container-equipes">
+                <div class="box-equipes-semis">
+                    <div class="match-card" id="semi-2">
+                        <div><p class="jogo">SEMI FINAL 2</p></div>
+                        <div class="team-row split-row"><span class="name"><img src="img/sao-paulo-futebol-clube-logo-png_seeklogo-122586.png" alt="" width="25px"> <p>Time 1</p></span><span class="seed">2</span></div>
+                        <div class="vs-badge small-vs">X</div>
+                        <div class="team-row split-row"><span class="name"><img src="img/Palmeiras_logo.svg.png" alt="" width="25px"> <p>Time 2</p></span><span class="seed">1</span></div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+</body>
+</html>
