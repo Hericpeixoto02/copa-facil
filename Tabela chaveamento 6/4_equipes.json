@@ -1,0 +1,30 @@
+[
+  [
+    {
+      "name1:": "Flamengo",
+      "name2:": "Corinthians",
+      "url1": "https://picsum.photos/seed/flamengo/100/120",
+      "url2": "https://picsum.photos/seed/corinthians/100/120",
+      "r1": "1",
+      "r2": "2"
+    },
+    {
+      "name1:": "Internacional",
+      "name2:": "Atlético Mineiro",
+      "url1": "https://picsum.photos/seed/internacional/100/120",
+      "url2": "https://picsum.photos/seed/atletico-mineiro/100/120",
+      "r1": "2",
+      "r2": "2"
+    }
+  ],
+  [
+    {
+      "name1:": "Corinthians",
+      "name2:": "Internacional",
+      "url1": "https://picsum.photos/seed/corinthians/100/120",
+      "url2": "https://picsum.photos/seed/internacional/100/120",
+      "r1": "3",
+      "r2": "1"
+    }
+  ]
+]
