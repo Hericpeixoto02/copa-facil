@@ -12,6 +12,14 @@
             box-sizing: border-box; 
         }
 
+
+        strong#nome-final-0-t1 {
+ color: #000;
+}
+
+strong#nome-final-0-t2 {
+ color: #000;
+}
         /* =========================================
            CONFIGURAÇÕES PARA A TELA (FRONT-END)
            ========================================= */
@@ -261,6 +269,11 @@
             margin-left: 5px;
         }
 
+        .name strong {
+            font-size: 11px;
+            margin-left: 5px;
+        }
+
         span.name img {
             margin-left: 5px;
             width: 20px !important;
@@ -317,10 +330,10 @@
         /* LINHAS CENTRAIS: CONEXÃO MÁGICA DAS SEMIS PARA A FINAL E 3º LUGAR */
         .center-lines-up {
             position: absolute;
-            bottom: 50%; /* Apoia exatamente na linha imaginária do meio da tela */
+            bottom: 50%; 
             left: 50%;
             transform: translateX(-50%);
-            width: 375px; /* Cobre exatamente o espaço do bloco central e encontra as linhas que vêm das semis */
+            width: 375px; 
             height: 60px;
             border-top: 2px solid white;
             border-left: 2px solid white;
@@ -335,7 +348,7 @@
 
         .center-lines-down {
             position: absolute;
-            top: 50%; /* Fica pendurada exatamente na linha imaginária do meio da tela */
+            top: 50%; 
             left: 50%;
             transform: translateX(-50%);
             width: 375px;
@@ -374,7 +387,6 @@
                 align-items: center !important;
             }
             .scale-fit {
-                /* Escala ampliada para 0.88! A tabela vai ficar grandona na folha A4 e fácil de ler */
                 transform: scale(0.88) !important; 
                 transform-origin: center center !important;
                 padding: 0 !important;
@@ -404,15 +416,15 @@
                 <div class="box-equipes-quartas">
                     <div class="match-card">
                         <div><p class="jogo">QUARTAS 1</p></div>
-                        <div class="team-row split-row"><span class="name"><img src="img/sao-paulo-futebol-clube-logo-png_seeklogo-122586.png" alt="" width="25px"> <p>Time 1</p></span><span class="seed">2</span></div>
+                        <div class="team-row split-row"><span class="name"><img id="img-quartas-0-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-quartas-0-t1"></strong></span><span class="seed" id="placar-quartas-0-t1"></span></div>
                         <div class="vs-badge small-vs">X</div>
-                        <div class="team-row split-row"><span class="name"><img src="img/Palmeiras_logo.svg.png" alt="" width="25px"> <p>Time 2</p></span><span class="seed">1</span></div>
+                        <div class="team-row split-row"><span class="name"><img id="img-quartas-0-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-quartas-0-t2"></strong></span><span class="seed" id="placar-quartas-0-t2"></span></div>
                     </div>
                     <div class="match-card">
                         <div><p class="jogo">QUARTAS 2</p></div>
-                        <div class="team-row split-row"><span class="name"><img src="img/sao-paulo-futebol-clube-logo-png_seeklogo-122586.png" alt="" width="25px"> <p>Time 1</p></span><span class="seed">2</span></div>
+                        <div class="team-row split-row"><span class="name"><img id="img-quartas-1-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-quartas-1-t1"></strong></span><span class="seed" id="placar-quartas-1-t1"></span></div>
                         <div class="vs-badge small-vs">X</div>
-                        <div class="team-row split-row"><span class="name"><img src="img/Palmeiras_logo.svg.png" alt="" width="25px"> <p>Time 2</p></span><span class="seed">1</span></div>
+                        <div class="team-row split-row"><span class="name"><img id="img-quartas-1-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-quartas-1-t2"></strong></span><span class="seed" id="placar-quartas-1-t2"></span></div>
                     </div>
                 </div>
             </div>
@@ -421,9 +433,9 @@
                 <div class="box-equipes-semis">
                     <div class="match-card">
                         <div><p class="jogo">SEMI FINAL 1</p></div>
-                        <div class="team-row split-row"><span class="name"><img src="img/sao-paulo-futebol-clube-logo-png_seeklogo-122586.png" alt="" width="25px"> <p>Time 1</p></span><span class="seed">2</span></div>
+                        <div class="team-row split-row"><span class="name"><img id="img-semis-0-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-semis-0-t1"></strong></span><span class="seed" id="placar-semis-0-t1"></span></div>
                         <div class="vs-badge small-vs">X</div>
-                        <div class="team-row split-row"><span class="name"><img src="img/Palmeiras_logo.svg.png" alt="" width="25px"> <p>Time 2</p></span><span class="seed">1</span></div>
+                        <div class="team-row split-row"><span class="name"><img id="img-semis-0-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-semis-0-t2"></strong></span><span class="seed" id="placar-semis-0-t2"></span></div>
                     </div>
                 </div>
             </div>
@@ -438,15 +450,18 @@
 
                     <div class="bracket-stage winner-stage">
                         <div class="stage-label">CAMPEÃO</div>
-                        <div class="box winner-box"></div>
+                        <div class="box winner-box" style="display:flex; align-items:center; justify-content:center; gap:8px;">
+                            <img id="img-campeao" src="" width="25px" style="display:none;">
+                            <strong id="nome-campeao" style="color:black; font-size:11px; text-transform:uppercase;"></strong>
+                        </div>
                     </div>
 
                     <div class="bracket-stage final-stage">
                         <div class="stage-label">FINAL</div>
                         <div class="match-card">
-                            <div class="team-row split-row"><span class="name"></span><span class="seed">2</span></div>
+                            <div class="team-row split-row"><span class="name"><img id="img-final-0-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-final-0-t1"></strong></span><span class="seed" id="placar-final-0-t1"></span></div>
                             <div class="vs-badge small-vs" style="margin-top:1px !important;">X</div>
-                            <div class="team-row split-row"><span class="name"></span><span class="seed">1</span></div>
+                            <div class="team-row split-row"><span class="name"><img id="img-final-0-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-final-0-t2"></strong></span><span class="seed" id="placar-final-0-t2"></span></div>
                         </div>
                     </div>
                 </div>
@@ -458,9 +473,9 @@
                     <div class="bracket-stage third-place-stage">
                         <div class="stage-label">DISPUTA DO TERCEIRO LUGAR</div>
                         <div class="match-card">
-                            <div class="team-row split-row"><span class="name"></span><span class="seed">2</span></div>
+                            <div class="team-row split-row"><span class="name"><img id="img-terceiro-0-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-terceiro-0-t1"></strong></span><span class="seed" id="placar-terceiro-0-t1"></span></div>
                             <div class="vs-badge small-vs" style="margin-top:1px !important;">X</div>
-                            <div class="team-row split-row"><span class="name"></span><span class="seed">1</span></div>
+                            <div class="team-row split-row"><span class="name"><img id="img-terceiro-0-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-terceiro-0-t2"></strong></span><span class="seed" id="placar-terceiro-0-t2"></span></div>
                         </div>
                     </div>
                 </div>
@@ -471,9 +486,9 @@
                 <div class="box-equipes-semis">
                     <div class="match-card">
                         <div><p class="jogo">SEMI FINAL 2</p></div>
-                        <div class="team-row split-row"><span class="name"><img src="img/sao-paulo-futebol-clube-logo-png_seeklogo-122586.png" alt="" width="25px"> <p>Time 1</p></span><span class="seed">2</span></div>
+                        <div class="team-row split-row"><span class="name"><img id="img-semis-1-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-semis-1-t1"></strong></span><span class="seed" id="placar-semis-1-t1"></span></div>
                         <div class="vs-badge small-vs">X</div>
-                        <div class="team-row split-row"><span class="name"><img src="img/Palmeiras_logo.svg.png" alt="" width="25px"> <p>Time 2</p></span><span class="seed">1</span></div>
+                        <div class="team-row split-row"><span class="name"><img id="img-semis-1-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-semis-1-t2"></strong></span><span class="seed" id="placar-semis-1-t2"></span></div>
                     </div>
                 </div>
             </div>
@@ -482,20 +497,99 @@
                 <div class="box-equipes-quartas">
                     <div class="match-card">
                         <div><p class="jogo">QUARTAS 3</p></div>
-                        <div class="team-row split-row"><span class="name"><img src="img/sao-paulo-futebol-clube-logo-png_seeklogo-122586.png" alt="" width="25px"> <p>Time 1</p></span><span class="seed">2</span></div>
+                        <div class="team-row split-row"><span class="name"><img id="img-quartas-2-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-quartas-2-t1"></strong></span><span class="seed" id="placar-quartas-2-t1"></span></div>
                         <div class="vs-badge small-vs">X</div>
-                        <div class="team-row split-row"><span class="name"><img src="img/Palmeiras_logo.svg.png" alt="" width="25px"> <p>Time 2</p></span><span class="seed">1</span></div>
+                        <div class="team-row split-row"><span class="name"><img id="img-quartas-2-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-quartas-2-t2"></strong></span><span class="seed" id="placar-quartas-2-t2"></span></div>
                     </div>
                     <div class="match-card">
                         <div><p class="jogo">QUARTAS 4</p></div>
-                        <div class="team-row split-row"><span class="name"><img src="img/sao-paulo-futebol-clube-logo-png_seeklogo-122586.png" alt="" width="25px"> <p>Time 1</p></span><span class="seed">2</span></div>
+                        <div class="team-row split-row"><span class="name"><img id="img-quartas-3-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-quartas-3-t1"></strong></span><span class="seed" id="placar-quartas-3-t1"></span></div>
                         <div class="vs-badge small-vs">X</div>
-                        <div class="team-row split-row"><span class="name"><img src="img/Palmeiras_logo.svg.png" alt="" width="25px"> <p>Time 2</p></span><span class="seed">1</span></div>
+                        <div class="team-row split-row"><span class="name"><img id="img-quartas-3-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-quartas-3-t2"></strong></span><span class="seed" id="placar-quartas-3-t2"></span></div>
                     </div>
                 </div>
             </div>
 
         </main>
     </div>
+
+    <script>
+        function preencherFase(fase, dados) {
+            if(!dados) return;
+            
+            dados.forEach((jogo, i) => {
+                const elNome1 = document.getElementById(`nome-${fase}-${i}-t1`);
+                const elImg1 = document.getElementById(`img-${fase}-${i}-t1`);
+                const elPlacar1 = document.getElementById(`placar-${fase}-${i}-t1`);
+                
+                const elNome2 = document.getElementById(`nome-${fase}-${i}-t2`);
+                const elImg2 = document.getElementById(`img-${fase}-${i}-t2`);
+                const elPlacar2 = document.getElementById(`placar-${fase}-${i}-t2`);
+
+                if(elNome1 && jogo["name1:"]) elNome1.innerText = jogo["name1:"];
+                if(elImg1 && jogo.url1) { elImg1.src = jogo.url1; elImg1.style.display = "inline-block"; }
+                if(elPlacar1 && jogo.r1 !== undefined) elPlacar1.innerText = jogo.r1;
+
+                if(elNome2 && jogo["name2:"]) elNome2.innerText = jogo["name2:"];
+                if(elImg2 && jogo.url2) { elImg2.src = jogo.url2; elImg2.style.display = "inline-block"; }
+                if(elPlacar2 && jogo.r2 !== undefined) elPlacar2.innerText = jogo.r2;
+            });
+        }
+
+        function definirCampeao(jogoFinal) {
+            if(!jogoFinal) return;
+
+            const placar1 = parseInt(jogoFinal.r1) || 0;
+            const placar2 = parseInt(jogoFinal.r2) || 0;
+            
+            const elNomeCampeao = document.getElementById('nome-campeao');
+            const elImgCampeao = document.getElementById('img-campeao');
+
+            if(elNomeCampeao && elImgCampeao) {
+                if (placar1 > placar2) {
+                    elNomeCampeao.innerText = jogoFinal["name1:"];
+                    elImgCampeao.src = jogoFinal.url1;
+                    elImgCampeao.style.display = "inline-block";
+                } else if (placar2 > placar1) {
+                    elNomeCampeao.innerText = jogoFinal["name2:"];
+                    elImgCampeao.src = jogoFinal.url2;
+                    elImgCampeao.style.display = "inline-block";
+                } else {
+                    elNomeCampeao.innerText = "EMPATE"; 
+                }
+            }
+        }
+
+        // LÊ O FICHEIRO 8_EQUIPES.JSON
+        fetch('8_equipes.json') 
+            .then(resposta => {
+                if (!resposta.ok) throw new Error("Erro ao carregar o ficheiro JSON.");
+                return resposta.json();
+            })
+            .then(dadosTorneio => {
+                // A estrutura do teu 8_equipes.json:
+                // Índice [0]: Quartos (4 Jogos)
+                // Índice [1]: Meias Finais (2 Jogos)
+                // Índice [2]: Final (1 Jogo)
+
+                preencherFase('quartas', dadosTorneio[0]); 
+                preencherFase('semis', dadosTorneio[1]);   
+                preencherFase('final', dadosTorneio[2]);   
+
+                // Preencher o campeão na caixa do topo usando o jogo da final
+                if(dadosTorneio[2] && dadosTorneio[2].length > 0) {
+                    definirCampeao(dadosTorneio[2][0]);
+                }
+                
+                // Se algum dia adicionares o índice [3] no teu JSON para o Terceiro lugar
+                if(dadosTorneio[3]) {
+                    preencherFase('terceiro', dadosTorneio[3]);
+                }
+            })
+            .catch(erro => {
+                console.error("Erro no Chaveamento:", erro);
+                alert("Atenção: Verifica se o ficheiro '8_equipes.json' está na mesma pasta do HTML e se a página está a ser executada num Servidor Local (Live Server).");
+            });
+    </script>
 </body>
 </html>
