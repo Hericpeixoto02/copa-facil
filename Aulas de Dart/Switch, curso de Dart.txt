@@ -1,0 +1,25 @@
+Switch, curso de Dart:
+
+
+void main() {
+  String status = 'em analise';
+  switch (status) {
+    case 'Aprovado':
+    print ('o aluno foi aprovado');
+    break;
+    case 'Reprovado':
+    print ('o aluno foi reprovado');
+    break;
+    case 'Recuperação':
+    print ('o aluno está de recuperação');
+    break;
+    default:
+    print('Situação não verificada');
+
+  }
+}
+
+
+OBS: Vai utilizar o valor final de não verificado, pois o status "em analise" não esta em nenhuma variável!
+
+

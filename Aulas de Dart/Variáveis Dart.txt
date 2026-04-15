@@ -1,0 +1,133 @@
+Curso de dart:
+
+
+
+PRIMEIRA VARIÁVEL:
+
+
+void main (){
+String nome = "Héric";
+nome = "Peixoto";
+print(nome);
+
+}
+
+OBS: Se houver duas variáveis com mesmo valor, irá priorizar a mais recente.
+
+
+SEGUNDA VARAIÁVEL:
+
+void main (){
+int idade = 23;
+print(idade);
+}
+
+OBS: Para números inteiros que não podem ser quebrados "ex: 34.2".
+
+
+TERCEIRA VARAIÁVEL:
+
+void main (){
+double altura = 23.25;
+print(altura);
+}
+
+
+OBS: Para números quebrados "ex: 34.2".
+
+
+
+QUARTA VARIÁVEL:
+
+void main (){
+bool Heric = true;
+print(Heric);
+}
+
+
+void main (){
+bool Heric = false;
+print(Heric);
+}
+
+
+OBS: Variáveis de validação para saber se um dado é verdadeiro ou falso
+
+
+QUINTA VARIÁVEL:
+
+void main() {
+  List listaProdutos= [
+    1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+  ];
+  print(listaProdutos);
+}
+
+OBS: Variável usada para criação de listas
+
+
+
+SEXTA VARIÁVEL:
+
+void main(){
+  Map usuario = {
+    'nome': 'Héric',
+    'Sobrenome': 'Peixoto',
+    'Idade': 24,
+    'Profissão': 'Programador'
+
+  };
+
+  print(usuario);
+}
+
+
+OBS: Usada para mapear dados de u usuário ou qualquer outra coisa.
+
+OBS 2:  print(usuario.length);  Usar para iprimir o número de dados que tem no MAP OU LISTA.
+
+OBS 3:  print(listaProdutos[2]);  Usar para trazer algo individualmente da lista, apenas na variável lista (sempre começa em 0).
+
+OBS 4:   print(usuario ['nome']);Usar para trazer algo individualmente do MAP, Apenas na variável MAP (Sempre começa em 0).
+
+
+SÉTIMA VARIÁVEL:
+
+
+void main(){
+  var nome;
+  nome='Heric';
+
+  print(nome);
+}
+
+
+
+OU
+
+
+void main(){
+  var idade;
+  idade=24;
+
+  print(idade);
+}
+
+
+
+
+
+OITAVA VARIÁVEL:
+
+void main(){
+  dynamic idade;
+  idade= 'Héric';
+
+  print(idade);
+}
+
+
+
+
+
+ 

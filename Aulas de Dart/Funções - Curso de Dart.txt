@@ -1,0 +1,25 @@
+Funções - Curso de Dart:
+
+
+void main() {
+  boasvindas();
+}
+
+void boasvindas(){
+  String nome ='Héric';
+  print('Bem vindo' + nome);
+}
+
+
+FUNÇÃO 2 (SIMULADOR):
+
+void main() {
+  boasvindas();
+}
+
+void boasvindas(){
+  String nome ='Héric';
+  print('Bem vindo' + nome);
+}
+
+
