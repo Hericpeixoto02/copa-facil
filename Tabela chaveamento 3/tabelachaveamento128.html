@@ -27,7 +27,7 @@
         .stage-label { font-size: 11px; font-weight: bold; text-align: center; margin-bottom: 8px; text-transform: uppercase; }
         .bracket-stage { display: flex; flex-direction: column; align-items: center; position: relative; margin-bottom: 30px; }
         
-        .box { background-color: white; border-radius: 6px; height: 28px; width: 220px; }
+        .box { background-color: white; border-radius: 6px; height: 28px; width: 158px; }
         .match-card { position: relative; display: flex; flex-direction: column; gap: 4px; width: 163px; }
         .team-row { height: 28px; border-radius: 6px; display: flex; overflow: hidden; }
         .split-row { width: 160px; margin: 0 auto; margin-bottom: 8px; margin-top: 8px; }
@@ -64,9 +64,13 @@
 
         @media print {
             @page { size: A4 landscape; margin: 0mm; }
-            html, body { width: 297mm !important; height: 209mm !important; margin: 0 !important; padding: 0 !important; overflow: hidden !important; background-color: #304DED !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; page-break-inside: avoid !important; display: flex !important; justify-content: center !important; align-items: center !important; }
-            .scale-fit { transform: scale(0.22) !important; transform-origin: center center !important; padding: 0 !important; margin: 0 !important; page-break-inside: avoid !important; }
+            html, body { width: 297mm !important; height: 209mm !important; margin: 0 !important; padding: 0 !important; overflow: hidden !important; background-color: #304DED !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; display: flex !important; justify-content: center !important; align-items: center !important; }
+            .scale-fit { transform: scale(0.22) !important; transform-origin: center center !important; padding: 0 !important; margin: 0 !important; }
         }
+
+        img {
+    border-radius: 15px;
+}
     </style>
 </head>
 <body>
@@ -84,11 +88,9 @@
             <div class="container-equipes">
                 <div class="box-equipes-r128">
                     <script>
-                        // Para não estourar o limite de texto visual da resposta, o trecho repetitivo do R128 da ESQUERDA (32 jogos).
-                        // O HTML gerado aqui é estático no código final (Você pode ver no "Inspecionar Elemento", é fixo).
                         for(let i=0; i<32; i++) {
                             document.write(`
-                            <div class="match-card"><div><p class="jogo">JOGO ${i+1}</p></div><div class="team-row split-row"><span class="name"><img id="img-r128-${i}-t1" width="20px" style="display:none;"><strong id="nome-r128-${i}-t1"></strong></span><span class="seed" id="placar-r128-${i}-t1"></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="name"><img id="img-r128-${i}-t2" width="20px" style="display:none;"><strong id="nome-r128-${i}-t2"></strong></span><span class="seed" id="placar-r128-${i}-t2"></span></div></div>
+                            <div class="match-card"><div><p class="jogo" id="label-r128-${i}"></p></div><div class="team-row split-row"><span class="name"><img id="img-r128-${i}-t1" width="20px" style="display:none;"><strong id="nome-r128-${i}-t1"></strong></span><span class="seed" id="placar-r128-${i}-t1"></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="name"><img id="img-r128-${i}-t2" width="20px" style="display:none;"><strong id="nome-r128-${i}-t2"></strong></span><span class="seed" id="placar-r128-${i}-t2"></span></div></div>
                             `);
                         }
                     </script>
@@ -100,7 +102,7 @@
                     <script>
                         for(let i=0; i<16; i++) {
                             document.write(`
-                            <div class="match-card"><div><p class="jogo">JOGO ${i+33}</p></div><div class="team-row split-row"><span class="name"><img id="img-r64-${i}-t1" width="20px" style="display:none;"><strong id="nome-r64-${i}-t1"></strong></span><span class="seed" id="placar-r64-${i}-t1"></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="name"><img id="img-r64-${i}-t2" width="20px" style="display:none;"><strong id="nome-r64-${i}-t2"></strong></span><span class="seed" id="placar-r64-${i}-t2"></span></div></div>
+                            <div class="match-card"><div><p class="jogo" id="label-r64-${i}"></p></div><div class="team-row split-row"><span class="name"><img id="img-r64-${i}-t1" width="20px" style="display:none;"><strong id="nome-r64-${i}-t1"></strong></span><span class="seed" id="placar-r64-${i}-t1"></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="name"><img id="img-r64-${i}-t2" width="20px" style="display:none;"><strong id="nome-r64-${i}-t2"></strong></span><span class="seed" id="placar-r64-${i}-t2"></span></div></div>
                             `);
                         }
                     </script>
@@ -112,7 +114,7 @@
                     <script>
                         for(let i=0; i<8; i++) {
                             document.write(`
-                            <div class="match-card"><div><p class="jogo">JOGO ${i+49}</p></div><div class="team-row split-row"><span class="name"><img id="img-r32-${i}-t1" width="20px" style="display:none;"><strong id="nome-r32-${i}-t1"></strong></span><span class="seed" id="placar-r32-${i}-t1"></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="name"><img id="img-r32-${i}-t2" width="20px" style="display:none;"><strong id="nome-r32-${i}-t2"></strong></span><span class="seed" id="placar-r32-${i}-t2"></span></div></div>
+                            <div class="match-card"><div><p class="jogo" id="label-r32-${i}"></p></div><div class="team-row split-row"><span class="name"><img id="img-r32-${i}-t1" width="20px" style="display:none;"><strong id="nome-r32-${i}-t1"></strong></span><span class="seed" id="placar-r32-${i}-t1"></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="name"><img id="img-r32-${i}-t2" width="20px" style="display:none;"><strong id="nome-r32-${i}-t2"></strong></span><span class="seed" id="placar-r32-${i}-t2"></span></div></div>
                             `);
                         }
                     </script>
@@ -121,17 +123,17 @@
 
             <div class="container-equipes">
                 <div class="box-equipes2">
-                    <div class="match-card"><div><p class="jogo">OITAVAS 1</p></div><div class="team-row split-row"><span class="name"><img id="img-oitavas-0-t1" width="20px" style="display:none;"><strong id="nome-oitavas-0-t1"></strong></span><span class="seed" id="placar-oitavas-0-t1"></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="name"><img id="img-oitavas-0-t2" width="20px" style="display:none;"><strong id="nome-oitavas-0-t2"></strong></span><span class="seed" id="placar-oitavas-0-t2"></span></div></div>
-                    <div class="match-card"><div><p class="jogo">OITAVAS 2</p></div><div class="team-row split-row"><span class="name"><img id="img-oitavas-1-t1" width="20px" style="display:none;"><strong id="nome-oitavas-1-t1"></strong></span><span class="seed" id="placar-oitavas-1-t1"></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="name"><img id="img-oitavas-1-t2" width="20px" style="display:none;"><strong id="nome-oitavas-1-t2"></strong></span><span class="seed" id="placar-oitavas-1-t2"></span></div></div>
-                    <div class="match-card"><div><p class="jogo">OITAVAS 3</p></div><div class="team-row split-row"><span class="name"><img id="img-oitavas-2-t1" width="20px" style="display:none;"><strong id="nome-oitavas-2-t1"></strong></span><span class="seed" id="placar-oitavas-2-t1"></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="name"><img id="img-oitavas-2-t2" width="20px" style="display:none;"><strong id="nome-oitavas-2-t2"></strong></span><span class="seed" id="placar-oitavas-2-t2"></span></div></div>
-                    <div class="match-card"><div><p class="jogo">OITAVAS 4</p></div><div class="team-row split-row"><span class="name"><img id="img-oitavas-3-t1" width="20px" style="display:none;"><strong id="nome-oitavas-3-t1"></strong></span><span class="seed" id="placar-oitavas-3-t1"></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="name"><img id="img-oitavas-3-t2" width="20px" style="display:none;"><strong id="nome-oitavas-3-t2"></strong></span><span class="seed" id="placar-oitavas-3-t2"></span></div></div>
+                    <div class="match-card"><div><p class="jogo" id="label-oitavas-0"></p></div><div class="team-row split-row"><span class="name"><img id="img-oitavas-0-t1" width="20px" style="display:none;"><strong id="nome-oitavas-0-t1"></strong></span><span class="seed" id="placar-oitavas-0-t1"></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="name"><img id="img-oitavas-0-t2" width="20px" style="display:none;"><strong id="nome-oitavas-0-t2"></strong></span><span class="seed" id="placar-oitavas-0-t2"></span></div></div>
+                    <div class="match-card"><div><p class="jogo" id="label-oitavas-1"></p></div><div class="team-row split-row"><span class="name"><img id="img-oitavas-1-t1" width="20px" style="display:none;"><strong id="nome-oitavas-1-t1"></strong></span><span class="seed" id="placar-oitavas-1-t1"></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="name"><img id="img-oitavas-1-t2" width="20px" style="display:none;"><strong id="nome-oitavas-1-t2"></strong></span><span class="seed" id="placar-oitavas-1-t2"></span></div></div>
+                    <div class="match-card"><div><p class="jogo" id="label-oitavas-2"></p></div><div class="team-row split-row"><span class="name"><img id="img-oitavas-2-t1" width="20px" style="display:none;"><strong id="nome-oitavas-2-t1"></strong></span><span class="seed" id="placar-oitavas-2-t1"></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="name"><img id="img-oitavas-2-t2" width="20px" style="display:none;"><strong id="nome-oitavas-2-t2"></strong></span><span class="seed" id="placar-oitavas-2-t2"></span></div></div>
+                    <div class="match-card"><div><p class="jogo" id="label-oitavas-3"></p></div><div class="team-row split-row"><span class="name"><img id="img-oitavas-3-t1" width="20px" style="display:none;"><strong id="nome-oitavas-3-t1"></strong></span><span class="seed" id="placar-oitavas-3-t1"></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="name"><img id="img-oitavas-3-t2" width="20px" style="display:none;"><strong id="nome-oitavas-3-t2"></strong></span><span class="seed" id="placar-oitavas-3-t2"></span></div></div>
                 </div>
             </div>
 
             <div class="container-equipes">
                 <div class="box-equipes3">
-                    <div class="match-card"><div><p class="jogo">QUARTAS 1</p></div><div class="team-row split-row"><span class="name"><img id="img-quartas-0-t1" width="20px" style="display:none;"><strong id="nome-quartas-0-t1"></strong></span><span class="seed" id="placar-quartas-0-t1"></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="name"><img id="img-quartas-0-t2" width="20px" style="display:none;"><strong id="nome-quartas-0-t2"></strong></span><span class="seed" id="placar-quartas-0-t2"></span></div></div>
-                    <div class="match-card"><div><p class="jogo">QUARTAS 2</p></div><div class="team-row split-row"><span class="name"><img id="img-quartas-1-t1" width="20px" style="display:none;"><strong id="nome-quartas-1-t1"></strong></span><span class="seed" id="placar-quartas-1-t1"></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="name"><img id="img-quartas-1-t2" width="20px" style="display:none;"><strong id="nome-quartas-1-t2"></strong></span><span class="seed" id="placar-quartas-1-t2"></span></div></div>
+                    <div class="match-card"><div><p class="jogo" id="label-quartas-0"></p></div><div class="team-row split-row"><span class="name"><img id="img-quartas-0-t1" width="20px" style="display:none;"><strong id="nome-quartas-0-t1"></strong></span><span class="seed" id="placar-quartas-0-t1"></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="name"><img id="img-quartas-0-t2" width="20px" style="display:none;"><strong id="nome-quartas-0-t2"></strong></span><span class="seed" id="placar-quartas-0-t2"></span></div></div>
+                    <div class="match-card"><div><p class="jogo" id="label-quartas-1"></p></div><div class="team-row split-row"><span class="name"><img id="img-quartas-1-t1" width="20px" style="display:none;"><strong id="nome-quartas-1-t1"></strong></span><span class="seed" id="placar-quartas-1-t1"></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="name"><img id="img-quartas-1-t2" width="20px" style="display:none;"><strong id="nome-quartas-1-t2"></strong></span><span class="seed" id="placar-quartas-1-t2"></span></div></div>
                 </div>
             </div>
 
@@ -150,7 +152,7 @@
                 </div>
 
                 <div class="bracket-stage final-stage">
-                    <div class="stage-label">FINAL</div>
+                    <div class="stage-label" id="label-final-0">FINAL</div>
                     <div class="match-card">
                         <div class="team-row split-row"><span class="name"><img id="img-final-0-t1" width="20px" style="display:none;"><strong id="nome-final-0-t1"></strong></span><span class="seed" id="placar-final-0-t1"></span></div>
                         <div class="vs-badge small-vs" style="margin-top:1px !important;">X</div>
@@ -160,7 +162,7 @@
 
                 <div class="semifinals-container">
                     <div class="bracket-stage">
-                        <div class="stage-label">SEMI FINAL 1</div>
+                        <div class="stage-label" id="label-semis-0">SEMI FINAL 1</div>
                         <div class="match-card">
                             <div class="team-row split-row"><span class="name"><img id="img-semis-0-t1" width="20px" style="display:none;"><strong id="nome-semis-0-t1"></strong></span><span class="seed" id="placar-semis-0-t1"></span></div>
                             <div class="vs-badge small-vs" style="margin-top:1px !important;">X</div>
@@ -168,17 +170,17 @@
                         </div>
                     </div>
                     <div class="bracket-stage">
-                        <div class="stage-label">SEMI FINAL 2</div>
+                        <div class="stage-label" id="label-semis-1">SEMI FINAL 2</div>
                         <div class="match-card">
-                            <div class="team-row split-row"><span class="name"><img id="img-semis-1-t1" width="20px" style="display:none;"><strong id="nome-semis-1-t1"></strong></span><span class="seed" id="placar-semis-1-t1"></span></div>
+                            <div class="team-row split-row"><span class="seed" id="placar-semis-1-t1"></span><span class="name"><img id="img-semis-1-t1" width="20px" style="display:none;"><strong id="nome-semis-1-t1"></strong></span></div>
                             <div class="vs-badge small-vs" style="margin-top:1px !important;">X</div>
-                            <div class="team-row split-row"><span class="name"><img id="img-semis-1-t2" width="20px" style="display:none;"><strong id="nome-semis-1-t2"></strong></span><span class="seed" id="placar-semis-1-t2"></span></div>
+                            <div class="team-row split-row"><span class="seed" id="placar-semis-1-t2"></span><span class="name"><img id="img-semis-1-t2" width="20px" style="display:none;"><strong id="nome-semis-1-t2"></strong></span></div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="bracket-stage third-place-stage">
-                    <div class="stage-label">DISPUTA DO TERCEIRO LUGAR</div>
+                    <div class="stage-label" id="label-terceiro-0">DISPUTA DO TERCEIRO LUGAR</div>
                     <div class="match-card">
                         <div class="team-row split-row"><span class="name"><img id="img-terceiro-0-t1" width="20px" style="display:none;"><strong id="nome-terceiro-0-t1"></strong></span><span class="seed" id="placar-terceiro-0-t1"></span></div>
                         <div class="vs-badge small-vs" style="margin-top:1px !important;">X</div>
@@ -189,17 +191,17 @@
 
             <div class="container-equipes">
                 <div class="box-equipes3">
-                    <div class="match-card"><div><p class="jogo">QUARTAS 3</p></div><div class="team-row split-row"><span class="name"><img id="img-quartas-2-t1" width="20px" style="display:none;"><strong id="nome-quartas-2-t1"></strong></span><span class="seed" id="placar-quartas-2-t1"></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="name"><img id="img-quartas-2-t2" width="20px" style="display:none;"><strong id="nome-quartas-2-t2"></strong></span><span class="seed" id="placar-quartas-2-t2"></span></div></div>
-                    <div class="match-card"><div><p class="jogo">QUARTAS 4</p></div><div class="team-row split-row"><span class="name"><img id="img-quartas-3-t1" width="20px" style="display:none;"><strong id="nome-quartas-3-t1"></strong></span><span class="seed" id="placar-quartas-3-t1"></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="name"><img id="img-quartas-3-t2" width="20px" style="display:none;"><strong id="nome-quartas-3-t2"></strong></span><span class="seed" id="placar-quartas-3-t2"></span></div></div>
+                    <div class="match-card"><div><p class="jogo" id="label-quartas-2"></p></div><div class="team-row split-row"><span class="seed" id="placar-quartas-2-t1"></span><span class="name"><img id="img-quartas-2-t1" width="20px" style="display:none;"><strong id="nome-quartas-2-t1"></strong></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="seed" id="placar-quartas-2-t2"></span><span class="name"><img id="img-quartas-2-t2" width="20px" style="display:none;"><strong id="nome-quartas-2-t2"></strong></span></div></div>
+                    <div class="match-card"><div><p class="jogo" id="label-quartas-3"></p></div><div class="team-row split-row"><span class="seed" id="placar-quartas-3-t1"></span><span class="name"><img id="img-quartas-3-t1" width="20px" style="display:none;"><strong id="nome-quartas-3-t1"></strong></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="seed" id="placar-quartas-3-t2"></span><span class="name"><img id="img-quartas-3-t2" width="20px" style="display:none;"><strong id="nome-quartas-3-t2"></strong></span></div></div>
                 </div>
             </div>
 
             <div class="container-equipes">
                 <div class="box-equipes2">
-                    <div class="match-card"><div><p class="jogo">OITAVAS 5</p></div><div class="team-row split-row"><span class="name"><img id="img-oitavas-4-t1" width="20px" style="display:none;"><strong id="nome-oitavas-4-t1"></strong></span><span class="seed" id="placar-oitavas-4-t1"></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="name"><img id="img-oitavas-4-t2" width="20px" style="display:none;"><strong id="nome-oitavas-4-t2"></strong></span><span class="seed" id="placar-oitavas-4-t2"></span></div></div>
-                    <div class="match-card"><div><p class="jogo">OITAVAS 6</p></div><div class="team-row split-row"><span class="name"><img id="img-oitavas-5-t1" width="20px" style="display:none;"><strong id="nome-oitavas-5-t1"></strong></span><span class="seed" id="placar-oitavas-5-t1"></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="name"><img id="img-oitavas-5-t2" width="20px" style="display:none;"><strong id="nome-oitavas-5-t2"></strong></span><span class="seed" id="placar-oitavas-5-t2"></span></div></div>
-                    <div class="match-card"><div><p class="jogo">OITAVAS 7</p></div><div class="team-row split-row"><span class="name"><img id="img-oitavas-6-t1" width="20px" style="display:none;"><strong id="nome-oitavas-6-t1"></strong></span><span class="seed" id="placar-oitavas-6-t1"></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="name"><img id="img-oitavas-6-t2" width="20px" style="display:none;"><strong id="nome-oitavas-6-t2"></strong></span><span class="seed" id="placar-oitavas-6-t2"></span></div></div>
-                    <div class="match-card"><div><p class="jogo">OITAVAS 8</p></div><div class="team-row split-row"><span class="name"><img id="img-oitavas-7-t1" width="20px" style="display:none;"><strong id="nome-oitavas-7-t1"></strong></span><span class="seed" id="placar-oitavas-7-t1"></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="name"><img id="img-oitavas-7-t2" width="20px" style="display:none;"><strong id="nome-oitavas-7-t2"></strong></span><span class="seed" id="placar-oitavas-7-t2"></span></div></div>
+                    <div class="match-card"><div><p class="jogo" id="label-oitavas-4"></p></div><div class="team-row split-row"><span class="seed" id="placar-oitavas-4-t1"></span><span class="name"><img id="img-oitavas-4-t1" width="20px" style="display:none;"><strong id="nome-oitavas-4-t1"></strong></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="seed" id="placar-oitavas-4-t2"></span><span class="name"><img id="img-oitavas-4-t2" width="20px" style="display:none;"><strong id="nome-oitavas-4-t2"></strong></span></div></div>
+                    <div class="match-card"><div><p class="jogo" id="label-oitavas-5"></p></div><div class="team-row split-row"><span class="seed" id="placar-oitavas-5-t1"></span><span class="name"><img id="img-oitavas-5-t1" width="20px" style="display:none;"><strong id="nome-oitavas-5-t1"></strong></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="seed" id="placar-oitavas-5-t2"></span><span class="name"><img id="img-oitavas-5-t2" width="20px" style="display:none;"><strong id="nome-oitavas-5-t2"></strong></span></div></div>
+                    <div class="match-card"><div><p class="jogo" id="label-oitavas-6"></p></div><div class="team-row split-row"><span class="seed" id="placar-oitavas-6-t1"></span><span class="name"><img id="img-oitavas-6-t1" width="20px" style="display:none;"><strong id="nome-oitavas-6-t1"></strong></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="seed" id="placar-oitavas-6-t2"></span><span class="name"><img id="img-oitavas-6-t2" width="20px" style="display:none;"><strong id="nome-oitavas-6-t2"></strong></span></div></div>
+                    <div class="match-card"><div><p class="jogo" id="label-oitavas-7"></p></div><div class="team-row split-row"><span class="seed" id="placar-oitavas-7-t1"></span><span class="name"><img id="img-oitavas-7-t1" width="20px" style="display:none;"><strong id="nome-oitavas-7-t1"></strong></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="seed" id="placar-oitavas-7-t2"></span><span class="name"><img id="img-oitavas-7-t2" width="20px" style="display:none;"><strong id="nome-oitavas-7-t2"></strong></span></div></div>
                 </div>
             </div>
 
@@ -208,7 +210,7 @@
                     <script>
                         for(let i=8; i<16; i++) {
                             document.write(`
-                            <div class="match-card"><div><p class="jogo">JOGO ${i+49}</p></div><div class="team-row split-row"><span class="name"><img id="img-r32-${i}-t1" width="20px" style="display:none;"><strong id="nome-r32-${i}-t1"></strong></span><span class="seed" id="placar-r32-${i}-t1"></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="name"><img id="img-r32-${i}-t2" width="20px" style="display:none;"><strong id="nome-r32-${i}-t2"></strong></span><span class="seed" id="placar-r32-${i}-t2"></span></div></div>
+                            <div class="match-card"><div><p class="jogo" id="label-r32-${i}"></p></div><div class="team-row split-row"><span class="seed" id="placar-r32-${i}-t1"></span><span class="name"><img id="img-r32-${i}-t1" width="20px" style="display:none;"><strong id="nome-r32-${i}-t1"></strong></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="seed" id="placar-r32-${i}-t2"></span><span class="name"><img id="img-r32-${i}-t2" width="20px" style="display:none;"><strong id="nome-r32-${i}-t2"></strong></span></div></div>
                             `);
                         }
                     </script>
@@ -220,7 +222,7 @@
                     <script>
                         for(let i=16; i<32; i++) {
                             document.write(`
-                            <div class="match-card"><div><p class="jogo">JOGO ${i+33}</p></div><div class="team-row split-row"><span class="name"><img id="img-r64-${i}-t1" width="20px" style="display:none;"><strong id="nome-r64-${i}-t1"></strong></span><span class="seed" id="placar-r64-${i}-t1"></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="name"><img id="img-r64-${i}-t2" width="20px" style="display:none;"><strong id="nome-r64-${i}-t2"></strong></span><span class="seed" id="placar-r64-${i}-t2"></span></div></div>
+                            <div class="match-card"><div><p class="jogo" id="label-r64-${i}"></p></div><div class="team-row split-row"><span class="seed" id="placar-r64-${i}-t1"></span><span class="name"><img id="img-r64-${i}-t1" width="20px" style="display:none;"><strong id="nome-r64-${i}-t1"></strong></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="seed" id="placar-r64-${i}-t2"></span><span class="name"><img id="img-r64-${i}-t2" width="20px" style="display:none;"><strong id="nome-r64-${i}-t2"></strong></span></div></div>
                             `);
                         }
                     </script>
@@ -232,7 +234,7 @@
                     <script>
                         for(let i=32; i<64; i++) {
                             document.write(`
-                            <div class="match-card"><div><p class="jogo">JOGO ${i+1}</p></div><div class="team-row split-row"><span class="name"><img id="img-r128-${i}-t1" width="20px" style="display:none;"><strong id="nome-r128-${i}-t1"></strong></span><span class="seed" id="placar-r128-${i}-t1"></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="name"><img id="img-r128-${i}-t2" width="20px" style="display:none;"><strong id="nome-r128-${i}-t2"></strong></span><span class="seed" id="placar-r128-${i}-t2"></span></div></div>
+                            <div class="match-card"><div><p class="jogo" id="label-r128-${i}"></p></div><div class="team-row split-row"><span class="seed" id="placar-r128-${i}-t1"></span><span class="name"><img id="img-r128-${i}-t1" width="20px" style="display:none;"><strong id="nome-r128-${i}-t1"></strong></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="seed" id="placar-r128-${i}-t2"></span><span class="name"><img id="img-r128-${i}-t2" width="20px" style="display:none;"><strong id="nome-r128-${i}-t2"></strong></span></div></div>
                             `);
                         }
                     </script>
@@ -247,6 +249,8 @@
             if(!dados) return;
             
             dados.forEach((jogo, i) => {
+                const elLabel = document.getElementById(`label-${fase}-${i}`);
+
                 const elNome1 = document.getElementById(`nome-${fase}-${i}-t1`);
                 const elImg1 = document.getElementById(`img-${fase}-${i}-t1`);
                 const elPlacar1 = document.getElementById(`placar-${fase}-${i}-t1`);
@@ -255,13 +259,16 @@
                 const elImg2 = document.getElementById(`img-${fase}-${i}-t2`);
                 const elPlacar2 = document.getElementById(`placar-${fase}-${i}-t2`);
 
-                if(elNome1) elNome1.innerText = jogo["name1:"];
-                if(elImg1 && jogo.url1) { elImg1.src = jogo.url1; elImg1.style.display = "inline-block"; }
-                if(elPlacar1) elPlacar1.innerText = jogo.r1;
+                // título do jogo se ele existir no JSON
+                if(elLabel && jogo.label) elLabel.innerText = jogo.label;
 
-                if(elNome2) elNome2.innerText = jogo["name2:"];
+                if(elNome1 && jogo["name1:"]) elNome1.innerText = jogo["name1:"];
+                if(elImg1 && jogo.url1) { elImg1.src = jogo.url1; elImg1.style.display = "inline-block"; }
+                if(elPlacar1 && jogo.r1 !== undefined) elPlacar1.innerText = jogo.r1;
+
+                if(elNome2 && jogo["name2:"]) elNome2.innerText = jogo["name2:"];
                 if(elImg2 && jogo.url2) { elImg2.src = jogo.url2; elImg2.style.display = "inline-block"; }
-                if(elPlacar2) elPlacar2.innerText = jogo.r2;
+                if(elPlacar2 && jogo.r2 !== undefined) elPlacar2.innerText = jogo.r2;
             });
         }
 
@@ -289,14 +296,13 @@
             }
         }
 
-        // Puxando o seu arquivo JSON externo 
+        // FETCH DO ARQUIVO
         fetch('128_equipes.json')
             .then(resposta => {
                 if (!resposta.ok) throw new Error("Erro ao carregar JSON");
                 return resposta.json();
             })
             .then(dadosTorneio => {
-                // Injeta as informações pelos IDs em cada fase
                 preencherFase('r128', dadosTorneio[0]);
                 preencherFase('r64', dadosTorneio[1]);
                 preencherFase('r32', dadosTorneio[2]);
@@ -305,9 +311,13 @@
                 preencherFase('semis', dadosTorneio[5]);
                 preencherFase('final', dadosTorneio[6]);
 
-                // Lê o resultado do Index 6 (Final) e define o campeão no quadradinho principal
                 if(dadosTorneio[6] && dadosTorneio[6].length > 0) {
                     definirCampeao(dadosTorneio[6][0]);
+                }
+                
+                // Terceiro Lugar (Opcional - Se colocar no JSON)
+                if(dadosTorneio[7]) {
+                    preencherFase('terceiro', dadosTorneio[7]);
                 }
             })
             .catch(erro => console.error("Erro no Chaveamento:", erro));
