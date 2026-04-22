@@ -14,13 +14,17 @@
         .bracket-wrapper { display: flex; justify-content: center; align-items: center; flex-grow: 1; gap: 55px; margin-top: -25px; width: 100%; }
         .container-equipes { display: flex; justify-content: center; align-items: stretch; height: 100%; }
         
-        .box-equipes-r128 { display: flex; flex-direction: column; justify-content: center; gap: 16px; height: 100%; }
-        .box-equipes-r64 { display: flex; flex-direction: column; justify-content: center; gap: 134px; height: 100%; }
-        .box-equipes { display: flex; flex-direction: column; justify-content: center; gap: 370px; height: 100%; }
-        .box-equipes2 { display: flex; flex-direction: column; justify-content: center; gap: 842px; height: 100%; }
-        .box-equipes3 { display: flex; flex-direction: column; justify-content: center; gap: 1786px; height: 100%; }
+        /* =========================================
+           NOVAS MATEMÁTICAS EXATAS DE ESPAÇAMENTO 
+           Baseado na altura do card travada em 104px
+           ========================================= */
+        .box-equipes-r128 { display: flex; flex-direction: column; justify-content: center; gap: 24px; height: 100%; }
+        .box-equipes-r64 { display: flex; flex-direction: column; justify-content: center; gap: 152px; height: 100%; }
+        .box-equipes     { display: flex; flex-direction: column; justify-content: center; gap: 408px; height: 100%; } /* Round of 32 */
+        .box-equipes2    { display: flex; flex-direction: column; justify-content: center; gap: 920px; height: 100%; } /* Oitavas */
+        .box-equipes3    { display: flex; flex-direction: column; justify-content: center; gap: 1944px; height: 100%; } /* Quartas */
 
-        .center-bracket { font-family: Arial, sans-serif; color: white; display: flex; flex-direction: column; align-items: center; width: 320px; margin: 0 20px; margin-top: -700px; }
+        .center-bracket { font-family: Arial, sans-serif; color: white; display: flex; flex-direction: column; align-items: center; width: 346px; margin: 0; margin-top: -160px; position: relative; z-index: 10; }
         .bracket-header { text-align: center; margin-bottom: 30px; }
         .year-outline { font-size: 64px; margin: 0; color: transparent; -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5); letter-spacing: 2px; }
         .schedule-title { font-size: 16px; margin: -10px 0 0 0; font-weight: 800; letter-spacing: 1px; }
@@ -28,7 +32,10 @@
         .bracket-stage { display: flex; flex-direction: column; align-items: center; position: relative; margin-bottom: 30px; }
         
         .box { background-color: white; border-radius: 6px; height: 28px; width: 158px; }
-        .match-card { position: relative; display: flex; flex-direction: column; gap: 4px; width: 163px; }
+        
+        /* ALTURA TRAVADA PARA ALINHAMENTO */
+        .match-card { position: relative; display: flex; flex-direction: column; gap: 4px; width: 163px; height: 104px; justify-content: center; }
+        
         .team-row { height: 28px; border-radius: 6px; display: flex; overflow: hidden; }
         .split-row { width: 160px; margin: 0 auto; margin-bottom: 8px; margin-top: 8px; }
         .seed { background-color: #242c9c; color: white; font-size: 9px; font-weight: bold; display: flex; align-items: center; justify-content: center; width: 35px; }
@@ -41,25 +48,82 @@
         .name strong { font-size: 11px; margin-left: 5px; }
         span.name img { margin-left: 5px; width: 20px !important; }
 
-        /* LINHAS ESQUERDAS */
-        .container-equipes:nth-child(1) .match-card:nth-child(odd)::after, .container-equipes:nth-child(2) .match-card:nth-child(odd)::after, .container-equipes:nth-child(3) .match-card:nth-child(odd)::after, .container-equipes:nth-child(4) .match-card:nth-child(odd)::after, .container-equipes:nth-child(5) .match-card:nth-child(odd)::after { content: ''; position: absolute; top: 50%; right: -27.5px; width: 27.5px; border-top: 2px solid white; border-right: 2px solid white; }
-        .container-equipes:nth-child(1) .match-card:nth-child(even)::after, .container-equipes:nth-child(2) .match-card:nth-child(even)::after, .container-equipes:nth-child(3) .match-card:nth-child(even)::after, .container-equipes:nth-child(4) .match-card:nth-child(even)::after, .container-equipes:nth-child(5) .match-card:nth-child(even)::after { content: ''; position: absolute; bottom: 50%; right: -27.5px; width: 27.5px; border-bottom: 2px solid white; border-right: 2px solid white; }
-        .container-equipes:nth-child(1) .match-card::after { height: 59px; } .container-equipes:nth-child(2) .match-card::after { height: 118px; } .container-equipes:nth-child(3) .match-card::after { height: 236px; } .container-equipes:nth-child(4) .match-card::after { height: 472px; } .container-equipes:nth-child(5) .match-card:nth-child(1)::after { height: 244px; } .container-equipes:nth-child(5) .match-card:nth-child(2)::after { height: 1644px; }
-        .container-equipes:nth-child(2) .match-card::before, .container-equipes:nth-child(3) .match-card::before, .container-equipes:nth-child(4) .match-card::before, .container-equipes:nth-child(5) .match-card::before, .semifinals-container .bracket-stage:nth-child(1) .match-card::before { content: ''; position: absolute; top: 50%; left: -27.5px; width: 27.5px; border-top: 2px solid white; }
+        /* --- CORREÇÃO DAS LINHAS CONECTORAS (NTH-OF-TYPE EM VEZ DE NTH-CHILD) --- */
 
-        /* LINHAS DIREITAS */
-        .container-equipes:nth-child(11) .match-card:nth-child(odd)::before, .container-equipes:nth-child(10) .match-card:nth-child(odd)::before, .container-equipes:nth-child(9) .match-card:nth-child(odd)::before, .container-equipes:nth-child(8) .match-card:nth-child(odd)::before, .container-equipes:nth-child(7) .match-card:nth-child(odd)::before { content: ''; position: absolute; top: 50%; left: -27.5px; width: 27.5px; border-top: 2px solid white; border-left: 2px solid white; }
-        .container-equipes:nth-child(11) .match-card:nth-child(even)::before, .container-equipes:nth-child(10) .match-card:nth-child(even)::before, .container-equipes:nth-child(9) .match-card:nth-child(even)::before, .container-equipes:nth-child(8) .match-card:nth-child(even)::before, .container-equipes:nth-child(7) .match-card:nth-child(even)::before { content: ''; position: absolute; bottom: 50%; left: -27.5px; width: 27.5px; border-bottom: 2px solid white; border-left: 2px solid white; }
-        .container-equipes:nth-child(11) .match-card::before { height: 59px; } .container-equipes:nth-child(10) .match-card::before { height: 118px; } .container-equipes:nth-child(9) .match-card::before { height: 236px; } .container-equipes:nth-child(8) .match-card::before { height: 472px; } .container-equipes:nth-child(7) .match-card:nth-child(1)::before { height: 244px; } .container-equipes:nth-child(7) .match-card:nth-child(2)::before { height: 1644px; }
-        .container-equipes:nth-child(10) .match-card::after, .container-equipes:nth-child(9) .match-card::after, .container-equipes:nth-child(8) .match-card::after, .container-equipes:nth-child(7) .match-card::after, .semifinals-container .bracket-stage:nth-child(2) .match-card::after { content: ''; position: absolute; top: 50%; right: -27.5px; width: 27.5px; border-top: 2px solid white; }
+        /* Conectores Esquerdos (Colunas 1 a 5) */
+        .container-equipes:nth-child(1) .match-card:nth-of-type(odd)::after, 
+        .container-equipes:nth-child(2) .match-card:nth-of-type(odd)::after, 
+        .container-equipes:nth-child(3) .match-card:nth-of-type(odd)::after, 
+        .container-equipes:nth-child(4) .match-card:nth-of-type(odd)::after, 
+        .container-equipes:nth-child(5) .match-card:nth-of-type(odd)::after { 
+            content: ''; position: absolute; top: 50%; right: -27.5px; width: 27.5px; border-top: 2px solid white; border-right: 2px solid white; 
+        }
+        
+        .container-equipes:nth-child(1) .match-card:nth-of-type(even)::after, 
+        .container-equipes:nth-child(2) .match-card:nth-of-type(even)::after, 
+        .container-equipes:nth-child(3) .match-card:nth-of-type(even)::after, 
+        .container-equipes:nth-child(4) .match-card:nth-of-type(even)::after, 
+        .container-equipes:nth-child(5) .match-card:nth-of-type(even)::after { 
+            content: ''; position: absolute; bottom: 50%; right: -27.5px; width: 27.5px; border-bottom: 2px solid white; border-right: 2px solid white; 
+        }
 
-        /* LINHAS CENTRAIS */
+        /* Ajuste de Altura das Curvas (Esquerda) com cálculos matemáticos exatos baseados nos gaps */
+        .container-equipes:nth-child(1) .match-card::after { height: 64px; } 
+        .container-equipes:nth-child(2) .match-card::after { height: 128px; } 
+        .container-equipes:nth-child(3) .match-card::after { height: 256px; } 
+        .container-equipes:nth-child(4) .match-card::after { height: 512px; } 
+        .container-equipes:nth-child(5) .match-card::after { height: 1024px; } 
+
+        /* Entradas Horizontais (Esquerda) */
+        .container-equipes:nth-child(2) .match-card::before, 
+        .container-equipes:nth-child(3) .match-card::before, 
+        .container-equipes:nth-child(4) .match-card::before, 
+        .container-equipes:nth-child(5) .match-card::before, 
+        .semifinals-container .bracket-stage:nth-child(1) .match-card::before { 
+            content: ''; position: absolute; top: 50%; left: -27.5px; width: 27.5px; border-top: 2px solid white; 
+        }
+
+        /* Conectores Direitos (Colunas 7 a 11) */
+        .container-equipes:nth-child(11) .match-card:nth-of-type(odd)::before, 
+        .container-equipes:nth-child(10) .match-card:nth-of-type(odd)::before, 
+        .container-equipes:nth-child(9) .match-card:nth-of-type(odd)::before, 
+        .container-equipes:nth-child(8) .match-card:nth-of-type(odd)::before, 
+        .container-equipes:nth-child(7) .match-card:nth-of-type(odd)::before { 
+            content: ''; position: absolute; top: 50%; left: -27.5px; width: 27.5px; border-top: 2px solid white; border-left: 2px solid white; 
+        }
+
+        .container-equipes:nth-child(11) .match-card:nth-of-type(even)::before, 
+        .container-equipes:nth-child(10) .match-card:nth-of-type(even)::before, 
+        .container-equipes:nth-child(9) .match-card:nth-of-type(even)::before, 
+        .container-equipes:nth-child(8) .match-card:nth-of-type(even)::before, 
+        .container-equipes:nth-child(7) .match-card:nth-of-type(even)::before { 
+            content: ''; position: absolute; bottom: 50%; left: -27.5px; width: 27.5px; border-bottom: 2px solid white; border-left: 2px solid white; 
+        }
+
+        /* Ajuste de Altura das Curvas (Direita) com cálculos matemáticos exatos baseados nos gaps */
+        .container-equipes:nth-child(11) .match-card::before { height: 64px; } 
+        .container-equipes:nth-child(10) .match-card::before { height: 128px; } 
+        .container-equipes:nth-child(9) .match-card::before { height: 256px; } 
+        .container-equipes:nth-child(8) .match-card::before { height: 512px; } 
+        .container-equipes:nth-child(7) .match-card::before { height: 1024px; } 
+
+        /* Entradas Horizontais (Direita) */
+        .container-equipes:nth-child(10) .match-card::after, 
+        .container-equipes:nth-child(9) .match-card::after, 
+        .container-equipes:nth-child(8) .match-card::after, 
+        .container-equipes:nth-child(7) .match-card::after, 
+        .semifinals-container .bracket-stage:nth-child(2) .match-card::after { 
+            content: ''; position: absolute; top: 50%; right: -27.5px; width: 27.5px; border-top: 2px solid white; 
+        }
+
+        /* --- FIM DA CORREÇÃO --- */
+
         .bracket-stage.final-stage::before { content: ''; position: absolute; bottom: -40px; left: 50%; transform: translateX(-50%); width: 183px; height: 15px; border-top: 2px solid white; border-left: 2px solid white; border-right: 2px solid white; }
         .bracket-stage.final-stage::after { content: ''; position: absolute; bottom: -24px; left: 50%; transform: translateX(-50%); width: 2px; height: 26px; background-color: white; }
         .bracket-stage.third-place-stage::before { content: ''; position: absolute; top: -30px; left: 50%; transform: translateX(-50%); width: 183px; height: 15px; border-bottom: 2px solid white; border-left: 2px solid white; border-right: 2px solid white; }
         .bracket-stage.third-place-stage::after { content: ''; position: absolute; top: -15px; left: 50%; transform: translateX(-50%); width: 2px; height: 13px; background-color: white; z-index: -1; }
 
-        p.jogo { color: #fff; font-size:10px; font-weight:700; text-align: center; margin-bottom:-7px; }
+        p.jogo { color: #fff; font-size:10px; font-weight:700; text-align: center; margin-bottom: 0px; }
         .vs-badge.small-vs { margin-top:5px; }
 
         @media print {
@@ -68,9 +132,7 @@
             .scale-fit { transform: scale(0.22) !important; transform-origin: center center !important; padding: 0 !important; margin: 0 !important; }
         }
 
-        img {
-    border-radius: 15px;
-}
+        img { border-radius: 15px; }
     </style>
 </head>
 <body>
@@ -84,7 +146,6 @@
         </header>
 
         <main class="bracket-wrapper">
-            
             <div class="container-equipes">
                 <div class="box-equipes-r128">
                     <script>
@@ -259,7 +320,6 @@
                 const elImg2 = document.getElementById(`img-${fase}-${i}-t2`);
                 const elPlacar2 = document.getElementById(`placar-${fase}-${i}-t2`);
 
-                // título do jogo se ele existir no JSON
                 if(elLabel && jogo.label) elLabel.innerText = jogo.label;
 
                 if(elNome1 && jogo["name1:"]) elNome1.innerText = jogo["name1:"];
@@ -296,7 +356,6 @@
             }
         }
 
-        // FETCH DO ARQUIVO
         fetch('128_equipes.json')
             .then(resposta => {
                 if (!resposta.ok) throw new Error("Erro ao carregar JSON");
@@ -315,7 +374,6 @@
                     definirCampeao(dadosTorneio[6][0]);
                 }
                 
-                // Terceiro Lugar (Opcional - Se colocar no JSON)
                 if(dadosTorneio[7]) {
                     preencherFase('terceiro', dadosTorneio[7]);
                 }
