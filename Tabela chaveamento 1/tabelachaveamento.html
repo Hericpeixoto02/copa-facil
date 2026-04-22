@@ -12,9 +12,6 @@
             box-sizing: border-box; 
         }
 
-        /* =========================================
-           CONFIGURAÇÕES PARA A TELA (FRONT-END)
-           ========================================= */
         body {
             background-color: #304DED;
             font-family: Arial, sans-serif;
@@ -23,15 +20,14 @@
             display: flex;
             justify-content: center; 
             align-items: center; 
-            overflow: auto; /* Permite rolagem na tela se o monitor for pequeno */
+            overflow: auto; 
         }
 
-        /* Na tela, mantém a largura original sem encolher */
         .scale-fit {
             width: 1610px; 
             display: flex;
             flex-direction: column;
-            padding: 40px 0; /* Um respiro para não grudar nas bordas do monitor */
+            padding: 40px 0; 
         }
 
         .header {
@@ -156,7 +152,7 @@
             background-color: white;
             border-radius: 6px;
             height: 28px;
-            width: 220px;
+            width: 158px;
         }
 
         .match-card {
@@ -249,21 +245,19 @@
             height: 100%;
         }
 
-        .name p {
+        .name p, .name strong {
             font-size:11px;
             margin-left:5px;
-            
         }
 
         span.name {
-            align-content: center;
+            align-items: center;
         }
         span.name img{
             margin-left:5px;
             width: 20px !important;
         }
 
-        /* TRAÇOS DO CHAVEAMENTO */
         .container-equipes:nth-child(1) .match-card:nth-child(odd)::after,
         .container-equipes:nth-child(2) .match-card:nth-child(odd)::after,
         .container-equipes:nth-child(3) .match-card:nth-child(odd)::after {
@@ -288,6 +282,13 @@
             content: ''; position: absolute; top: 50%; left: -27.5px;
             width: 27.5px; border-top: 2px solid white;
         }
+
+        strong#nome-final-0-t1 { color: #000; }
+        strong#nome-final-0-t2 { color: #000; }
+        strong#nome-semis-0-t1 { color: #000; }
+        strong#nome-semis-0-t2 { color: #000; }
+        strong#nome-semis-1-t1 { color: #000; }
+        strong#nome-semis-1-t2 { color: #000; }
 
         .container-equipes:nth-child(7) .match-card:nth-child(odd)::before,
         .container-equipes:nth-child(6) .match-card:nth-child(odd)::before,
@@ -314,104 +315,22 @@
             width: 27.5px; border-top: 2px solid white;
         }
 
-        .bracket-stage.final-stage::before {
-            content: '';
-            position: absolute;
-            bottom: -40px; 
-            left: 50%;
-            transform: translateX(-50%);
-            width: 183px; 
-            height: 15px; 
-            border-top: 2px solid white;
-            border-left: 2px solid white;
-            border-right: 2px solid white;
-        }
+        .bracket-stage.final-stage::before { content: ''; position: absolute; bottom: -40px; left: 50%; transform: translateX(-50%); width: 183px; height: 15px; border-top: 2px solid white; border-left: 2px solid white; border-right: 2px solid white; }
+        .bracket-stage.final-stage::after { content: ''; position: absolute; bottom: -24px; left: 50%; transform: translateX(-50%); width: 2px; height: 26px; background-color: white; }
+        .bracket-stage.third-place-stage::before { content: ''; position: absolute; top: -30px; left: 50%; transform: translateX(-50%); width: 183px; height: 15px; border-bottom: 2px solid white; border-left: 2px solid white; border-right: 2px solid white; }
+        .bracket-stage.third-place-stage::after { content: ''; position: absolute; top: -15px; left: 50%; transform: translateX(-50%); width: 2px; height: 13px; background-color: white; z-index: -1; }
 
-        .bracket-stage.final-stage::after {
-            content: '';
-            position: absolute;
-            bottom: -24px; 
-            left: 50%;
-            transform: translateX(-50%);
-            width: 2px;
-            height: 26px; 
-            background-color: white;
-        }
-
-        .bracket-stage.third-place-stage::before {
-            content: '';
-            position: absolute;
-            top: -30px; 
-            left: 50%;
-            transform: translateX(-50%);
-            width: 183px; 
-            height: 15px; 
-            border-bottom: 2px solid white;
-            border-left: 2px solid white;
-            border-right: 2px solid white;
-        }
-        
-        span.name {
-    align-items: center; 
-}
-
-        .bracket-stage.third-place-stage::after {
-            content: '';
-            position: absolute;
-            top: -15px; 
-            left: 50%;
-            transform: translateX(-50%);
-            width: 2px;
-            height: 13px; 
-            background-color: white;
-            z-index: -1;
-        }
-
-        /* =========================================
-           CONFIGURAÇÕES EXCLUSIVAS E BLINDADAS PARA IMPRESSÃO
-           ========================================= */
         @media print {
-            @page {
-                size: A4 landscape;
-                margin: 0mm; 
-            }
-            html, body {
-                width: 297mm !important;
-                height: 209mm !important; 
-                margin: 0 !important;
-                padding: 0 !important;
-                overflow: hidden !important; 
-                background-color: #304DED !important;
-                -webkit-print-color-adjust: exact !important; 
-                print-color-adjust: exact !important;
-                page-break-inside: avoid !important;
-            }
-            body {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-            .scale-fit {
-                /* Escala diminuída de 0.67 para 0.60 para criar mais "respiro" (margens) nas laterais na folha impressa */
-                transform: scale(0.66) !important; 
-                transform-origin: center center !important;
-                padding: 0 !important;
-                margin: 0 !important;
-                page-break-inside: avoid !important;
-            }
+            @page { size: A4 landscape; margin: 0mm; }
+            html, body { width: 297mm !important; height: 209mm !important; margin: 0 !important; padding: 0 !important; overflow: hidden !important; background-color: #304DED !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; page-break-inside: avoid !important; }
+            body { display: flex; justify-content: center; align-items: center; }
+            .scale-fit { transform: scale(0.66) !important; transform-origin: center center !important; padding: 0 !important; margin: 0 !important; page-break-inside: avoid !important; }
         }
 
-        p.jogo {
-    color: #fff;
-    font-size:10px;
-    font-weight:700;
-    text-align: center;
-    margin-bottom:-7px;
-}
-
-.vs-badge.small-vs {
-    margin-top:5px;
-}
+        p.jogo { color: #fff; font-size:10px; font-weight:700; text-align: center; margin-bottom:-7px; }
+        .vs-badge.small-vs { margin-top:5px; }
+        img { border-radius:15px; }
+        img#img-campeao { width:20px !important; }
     </style>
 </head>
 <body>
@@ -435,102 +354,30 @@
             
             <div class="container-equipes">
                 <div class="box-equipes">
-                    <div class="match-card">
-                        <div><p class="jogo">JOGO 1</p></div>
-                        <div class="team-row split-row"><span class="name"><img src="img/sao-paulo-futebol-clube-logo-png_seeklogo-122586.png" alt="" width="25px"> <p>FLAMENGO DE ALAGOAS</p></span><span class="seed">2</span></div>
-                        <div class="vs-badge small-vs">X</div>
-                        <div class="team-row split-row"><span class="name"><img src="img/Palmeiras_logo.svg.png" alt="" width="25px"> <p>Time 2</p></span><span class="seed">1</span></div>
-                    </div>
-
-                    <div class="match-card">
-                        <div><p class="jogo">JOGO 2</p></div>
-                        <div class="team-row split-row"><span class="name"><img src="img/sao-paulo-futebol-clube-logo-png_seeklogo-122586.png" alt="" width="25px"> <p>Time 1</p></span><span class="seed">2</span></div>
-                        <div class="vs-badge small-vs">X</div>
-                        <div class="team-row split-row"><span class="name"><img src="img/Palmeiras_logo.svg.png" alt="" width="25px"> <p>Time 2</p></span><span class="seed">1</span></div>
-                    </div>
-
-                    <div class="match-card">
-                        <div><p class="jogo">JOGO 3</p></div>
-                        <div class="team-row split-row"><span class="name"><img src="img/sao-paulo-futebol-clube-logo-png_seeklogo-122586.png" alt="" width="25px"> <p>Time 1</p></span><span class="seed">2</span></div>
-                        <div class="vs-badge small-vs">X</div>
-                        <div class="team-row split-row"><span class="name"><img src="img/Palmeiras_logo.svg.png" alt="" width="25px"> <p>Time 2</p></span><span class="seed">1</span></div>
-                    </div>
-                    <div class="match-card">
-                        <div><p class="jogo">JOGO 4</p></div>
-                        <div class="team-row split-row"><span class="name"><img src="img/sao-paulo-futebol-clube-logo-png_seeklogo-122586.png" alt="" width="25px"> <p>Time 1</p></span><span class="seed">2</span></div>
-                        <div class="vs-badge small-vs">X</div>
-                        <div class="team-row split-row"><span class="name"><img src="img/Palmeiras_logo.svg.png" alt="" width="25px"> <p>Time 2</p></span><span class="seed">1</span></div>
-                    </div>
-                    <div class="match-card">
-                        <div><p class="jogo">JOGO 5</p></div>
-                        <div class="team-row split-row"><span class="name"><img src="img/sao-paulo-futebol-clube-logo-png_seeklogo-122586.png" alt="" width="25px"> <p>Time 1</p></span><span class="seed">2</span></div>
-                        <div class="vs-badge small-vs">X</div>
-                        <div class="team-row split-row"><span class="name"><img src="img/Palmeiras_logo.svg.png" alt="" width="25px"> <p>Time 2</p></span><span class="seed">1</span></div>
-                    </div>
-                    <div class="match-card">
-                        <div><p class="jogo">JOGO 6</p></div>
-                        <div class="team-row split-row"><span class="name"><img src="img/sao-paulo-futebol-clube-logo-png_seeklogo-122586.png" alt="" width="25px"> <p>Time 1</p></span><span class="seed">2</span></div>
-                        <div class="vs-badge small-vs">X</div>
-                        <div class="team-row split-row"><span class="name"><img src="img/Palmeiras_logo.svg.png" alt="" width="25px"> <p>Time 2</p></span><span class="seed">1</span></div>
-                    </div>
-                    <div class="match-card">
-                        <div><p class="jogo">JOGO 7</p></div>
-                    <div class="team-row split-row"><span class="name"><img src="img/sao-paulo-futebol-clube-logo-png_seeklogo-122586.png" alt="" width="25px"> <p>Time 1</p></span><span class="seed">2</span></div>
-                        <div class="vs-badge small-vs">X</div>
-                        <div class="team-row split-row"><span class="name"><img src="img/Palmeiras_logo.svg.png" alt="" width="25px"> <p>Time 2</p></span><span class="seed">1</span></div>
-                    </div>
-                    <div class="match-card">
-                        <div><p class="jogo">JOGO 8</p></div>
-                    <div class="team-row split-row"><span class="name"><img src="img/sao-paulo-futebol-clube-logo-png_seeklogo-122586.png" alt="" width="25px"> <p>Time 1</p></span><span class="seed">2</span></div>
-                        <div class="vs-badge small-vs">X</div>
-                        <div class="team-row split-row"><span class="name"><img src="img/Palmeiras_logo.svg.png" alt="" width="25px"> <p>Time 2</p></span><span class="seed">1</span></div>
-                    </div>
+                    <div class="match-card"><div><p class="jogo" id="label-r32-0"></p></div><div class="team-row split-row"><span class="name"><img id="img-r32-0-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-r32-0-t1"></strong></span><span class="seed" id="placar-r32-0-t1"></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="name"><img id="img-r32-0-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-r32-0-t2"></strong></span><span class="seed" id="placar-r32-0-t2"></span></div></div>
+                    <div class="match-card"><div><p class="jogo" id="label-r32-1"></p></div><div class="team-row split-row"><span class="name"><img id="img-r32-1-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-r32-1-t1"></strong></span><span class="seed" id="placar-r32-1-t1"></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="name"><img id="img-r32-1-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-r32-1-t2"></strong></span><span class="seed" id="placar-r32-1-t2"></span></div></div>
+                    <div class="match-card"><div><p class="jogo" id="label-r32-2"></p></div><div class="team-row split-row"><span class="name"><img id="img-r32-2-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-r32-2-t1"></strong></span><span class="seed" id="placar-r32-2-t1"></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="name"><img id="img-r32-2-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-r32-2-t2"></strong></span><span class="seed" id="placar-r32-2-t2"></span></div></div>
+                    <div class="match-card"><div><p class="jogo" id="label-r32-3"></p></div><div class="team-row split-row"><span class="name"><img id="img-r32-3-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-r32-3-t1"></strong></span><span class="seed" id="placar-r32-3-t1"></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="name"><img id="img-r32-3-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-r32-3-t2"></strong></span><span class="seed" id="placar-r32-3-t2"></span></div></div>
+                    <div class="match-card"><div><p class="jogo" id="label-r32-4"></p></div><div class="team-row split-row"><span class="name"><img id="img-r32-4-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-r32-4-t1"></strong></span><span class="seed" id="placar-r32-4-t1"></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="name"><img id="img-r32-4-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-r32-4-t2"></strong></span><span class="seed" id="placar-r32-4-t2"></span></div></div>
+                    <div class="match-card"><div><p class="jogo" id="label-r32-5"></p></div><div class="team-row split-row"><span class="name"><img id="img-r32-5-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-r32-5-t1"></strong></span><span class="seed" id="placar-r32-5-t1"></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="name"><img id="img-r32-5-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-r32-5-t2"></strong></span><span class="seed" id="placar-r32-5-t2"></span></div></div>
+                    <div class="match-card"><div><p class="jogo" id="label-r32-6"></p></div><div class="team-row split-row"><span class="name"><img id="img-r32-6-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-r32-6-t1"></strong></span><span class="seed" id="placar-r32-6-t1"></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="name"><img id="img-r32-6-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-r32-6-t2"></strong></span><span class="seed" id="placar-r32-6-t2"></span></div></div>
+                    <div class="match-card"><div><p class="jogo" id="label-r32-7"></p></div><div class="team-row split-row"><span class="name"><img id="img-r32-7-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-r32-7-t1"></strong></span><span class="seed" id="placar-r32-7-t1"></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="name"><img id="img-r32-7-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-r32-7-t2"></strong></span><span class="seed" id="placar-r32-7-t2"></span></div></div>
                 </div>
             </div>
 
             <div class="container-equipes">
                 <div class="box-equipes2">
-                    <div class="match-card">
-                        <div><p class="jogo">JOGO 1</p></div>
-                    <div class="team-row split-row"><span class="name"><img src="img/sao-paulo-futebol-clube-logo-png_seeklogo-122586.png" alt="" width="25px"> <p>Time 1</p></span><span class="seed">2</span></div>
-                        <div class="vs-badge small-vs">X</div>
-                        <div class="team-row split-row"><span class="name"><img src="img/Palmeiras_logo.svg.png" alt="" width="25px"> <p>Time 2</p></span><span class="seed">1</span></div>
-                    </div>
-                    <div class="match-card">
-                        <div><p class="jogo">JOGO 2</p></div>
-                        <div class="team-row split-row"><span class="name"><img src="img/sao-paulo-futebol-clube-logo-png_seeklogo-122586.png" alt="" width="25px"> <p>Time 1</p></span><span class="seed">2</span></div>
-                        <div class="vs-badge small-vs">X</div>
-                        <div class="team-row split-row"><span class="name"><img src="img/Palmeiras_logo.svg.png" alt="" width="25px"> <p>Time 2</p></span><span class="seed">1</span></div>
-                    </div>
-                    <div class="match-card">
-                        <div><p class="jogo">JOGO 3</p></div>
-    <div class="team-row split-row"><span class="name"><img src="img/sao-paulo-futebol-clube-logo-png_seeklogo-122586.png" alt="" width="25px"> <p>Time 1</p></span><span class="seed">2</span></div>
-                        <div class="vs-badge small-vs">X</div>
-                        <div class="team-row split-row"><span class="name"><img src="img/Palmeiras_logo.svg.png" alt="" width="25px"> <p>Time 2</p></span><span class="seed">1</span></div>
-                    </div>
-                    <div class="match-card">
-                        <div><p class="jogo">JOGO 4</p></div>
-                    <div class="team-row split-row"><span class="name"><img src="img/sao-paulo-futebol-clube-logo-png_seeklogo-122586.png" alt="" width="25px"> <p>Time 1</p></span><span class="seed">2</span></div>
-                        <div class="vs-badge small-vs">X</div>
-                        <div class="team-row split-row"><span class="name"><img src="img/Palmeiras_logo.svg.png" alt="" width="25px"> <p>Time 2</p></span><span class="seed">1</span></div>
-                    </div>
+                    <div class="match-card"><div><p class="jogo" id="label-oitavas-0"></p></div><div class="team-row split-row"><span class="name"><img id="img-oitavas-0-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-oitavas-0-t1"></strong></span><span class="seed" id="placar-oitavas-0-t1"></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="name"><img id="img-oitavas-0-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-oitavas-0-t2"></strong></span><span class="seed" id="placar-oitavas-0-t2"></span></div></div>
+                    <div class="match-card"><div><p class="jogo" id="label-oitavas-1"></p></div><div class="team-row split-row"><span class="name"><img id="img-oitavas-1-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-oitavas-1-t1"></strong></span><span class="seed" id="placar-oitavas-1-t1"></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="name"><img id="img-oitavas-1-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-oitavas-1-t2"></strong></span><span class="seed" id="placar-oitavas-1-t2"></span></div></div>
+                    <div class="match-card"><div><p class="jogo" id="label-oitavas-2"></p></div><div class="team-row split-row"><span class="name"><img id="img-oitavas-2-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-oitavas-2-t1"></strong></span><span class="seed" id="placar-oitavas-2-t1"></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="name"><img id="img-oitavas-2-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-oitavas-2-t2"></strong></span><span class="seed" id="placar-oitavas-2-t2"></span></div></div>
+                    <div class="match-card"><div><p class="jogo" id="label-oitavas-3"></p></div><div class="team-row split-row"><span class="name"><img id="img-oitavas-3-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-oitavas-3-t1"></strong></span><span class="seed" id="placar-oitavas-3-t1"></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="name"><img id="img-oitavas-3-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-oitavas-3-t2"></strong></span><span class="seed" id="placar-oitavas-3-t2"></span></div></div>
                 </div>
             </div>
 
             <div class="container-equipes">
                 <div class="box-equipes3">
-                    <div class="match-card">
-                        <div><p class="jogo">QUARTAS DE FINAL 1</p></div>
-                        <div class="team-row split-row"><span class="name"><img src="img/sao-paulo-futebol-clube-logo-png_seeklogo-122586.png" alt="" width="25px"> <p>Time 1</p></span><span class="seed">2</span></div>
-                        <div class="vs-badge small-vs">X</div>
-                        <div class="team-row split-row"><span class="name"><img src="img/Palmeiras_logo.svg.png" alt="" width="25px"> <p>Time 2</p></span><span class="seed">1</span></div>
-                    </div>
-                    <div class="match-card">
-                        <div><p class="jogo">QUARTAS DE FINAL 2</p></div>
-                        <div class="team-row split-row"><span class="name"><img src="img/sao-paulo-futebol-clube-logo-png_seeklogo-122586.png" alt="" width="25px"> <p>Time 1</p></span><span class="seed">2</span></div>
-                        <div class="vs-badge small-vs">X</div>
-                        <div class="team-row split-row"><span class="name"><img src="img/Palmeiras_logo.svg.png" alt="" width="25px"> <p>Time 2</p></span><span class="seed">1</span></div>
-                    </div>
+                    <div class="match-card"><div><p class="jogo" id="label-quartas-0"></p></div><div class="team-row split-row"><span class="name"><img id="img-quartas-0-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-quartas-0-t1"></strong></span><span class="seed" id="placar-quartas-0-t1"></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="name"><img id="img-quartas-0-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-quartas-0-t2"></strong></span><span class="seed" id="placar-quartas-0-t2"></span></div></div>
+                    <div class="match-card"><div><p class="jogo" id="label-quartas-1"></p></div><div class="team-row split-row"><span class="name"><img id="img-quartas-1-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-quartas-1-t1"></strong></span><span class="seed" id="placar-quartas-1-t1"></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="name"><img id="img-quartas-1-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-quartas-1-t2"></strong></span><span class="seed" id="placar-quartas-1-t2"></span></div></div>
                 </div>
             </div>
 
@@ -542,148 +389,161 @@
 
                 <div class="bracket-stage winner-stage">
                     <div class="stage-label">CAMPEÃO</div>
-                    <div class="box winner-box"></div>
+                    <div class="box winner-box" style="display:flex; align-items:center; justify-content:center; gap:8px;">
+                        <img id="img-campeao" src="" width="25px" style="display:none;">
+                        <strong id="nome-campeao" style="color:black; font-size:11px; text-transform:uppercase;"></strong>
+                    </div>
                 </div>
 
                 <div class="bracket-stage final-stage">
-                    <div class="stage-label">FINAL</div>
+                    <div class="stage-label" id="label-final-0">FINAL</div>
                     <div class="match-card">
-                        <div class="team-row split-row"><span class="name"></span><span class="seed">2</span></div>
+                        <div class="team-row split-row"><span class="name"><img id="img-final-0-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-final-0-t1"></strong></span><span class="seed" id="placar-final-0-t1"></span></div>
                         <div class="vs-badge small-vs" style="margin-top:1px !important;">X</div>
-                        <div class="team-row split-row"><span class="name"></span><span class="seed">1</span></div>
+                        <div class="team-row split-row"><span class="name"><img id="img-final-0-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-final-0-t2"></strong></span><span class="seed" id="placar-final-0-t2"></span></div>
                     </div>
                 </div>
 
                 <div class="semifinals-container">
                     <div class="bracket-stage">
-                        <div class="stage-label">SEMI FINAL 1</div>
+                        <div class="stage-label" id="label-semis-0">SEMI FINAL 1</div>
                         <div class="match-card">
-                        <div class="team-row split-row"><span class="name"></span><span class="seed">2</span></div>
-                        <div class="vs-badge small-vs" style="margin-top:1px !important;">X</div>
-                        <div class="team-row split-row"><span class="name"></span><span class="seed">1</span></div>
+                            <div class="team-row split-row"><span class="name"><img id="img-semis-0-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-semis-0-t1"></strong></span><span class="seed" id="placar-semis-0-t1"></span></div>
+                            <div class="vs-badge small-vs" style="margin-top:1px !important;">X</div>
+                            <div class="team-row split-row"><span class="name"><img id="img-semis-0-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-semis-0-t2"></strong></span><span class="seed" id="placar-semis-0-t2"></span></div>
+                        </div>
                     </div>
-                    </div>
-
                     <div class="bracket-stage">
-                        <div class="stage-label">SEMI FINAL 2</div>
+                        <div class="stage-label" id="label-semis-1">SEMI FINAL 2</div>
                         <div class="match-card">
-                        <div class="team-row split-row"><span class="name"></span><span class="seed">2</span></div>
-                        <div class="vs-badge small-vs" style="margin-top:1px !important;">X</div>
-                        <div class="team-row split-row"><span class="name"></span><span class="seed">1</span></div>
-                    </div>
+                            <div class="team-row split-row"><span class="seed" id="placar-semis-1-t1"></span><span class="name"><img id="img-semis-1-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-semis-1-t1"></strong></span></div>
+                            <div class="vs-badge small-vs" style="margin-top:1px !important;">X</div>
+                            <div class="team-row split-row"><span class="seed" id="placar-semis-1-t2"></span><span class="name"><img id="img-semis-1-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-semis-1-t2"></strong></span></div>
+                        </div>
                     </div>
                 </div>
 
                 <div class="bracket-stage third-place-stage">
                     <div class="stage-label">DISPUTA DO TERCEIRO LUGAR</div>
                     <div class="match-card">
-                        <div class="team-row split-row"><span class="name"></span><span class="seed">2</span></div>
+                        <div class="team-row split-row"><span class="name"><img id="img-terceiro-0-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-terceiro-0-t1"></strong></span><span class="seed" id="placar-terceiro-0-t1"></span></div>
                         <div class="vs-badge small-vs" style="margin-top:1px !important;">X</div>
-                        <div class="team-row split-row"><span class="name"></span><span class="seed">1</span></div>
+                        <div class="team-row split-row"><span class="name"><img id="img-terceiro-0-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-terceiro-0-t2"></strong></span><span class="seed" id="placar-terceiro-0-t2"></span></div>
                     </div>
                 </div>
             </div>
 
             <div class="container-equipes">
                 <div class="box-equipes3">
-                    <div class="match-card">
-                        <div><p class="jogo">QUARTAS DE FINAL 1</p></div>
-                        <div class="team-row split-row"><span class="name"><img src="img/sao-paulo-futebol-clube-logo-png_seeklogo-122586.png" alt="" width="25px"> <p>Time 1</p></span><span class="seed">2</span></div>
-                        <div class="vs-badge small-vs">X</div>
-                        <div class="team-row split-row"><span class="name"><img src="img/Palmeiras_logo.svg.png" alt="" width="25px"> <p>Time 2</p></span><span class="seed">1</span></div>
-                    </div>
-                    <div class="match-card">
-                        <div><p class="jogo">QUARTAS DE FINAL 2</p></div>
-                        <div class="team-row split-row"><span class="name"><img src="img/sao-paulo-futebol-clube-logo-png_seeklogo-122586.png" alt="" width="25px"> <p>Time 1</p></span><span class="seed">2</span></div>
-                        <div class="vs-badge small-vs">X</div>
-                        <div class="team-row split-row"><span class="name"><img src="img/Palmeiras_logo.svg.png" alt="" width="25px"> <p>Time 2</p></span><span class="seed">1</span></div>
-                    </div>
+                    <div class="match-card"><div><p class="jogo" id="label-quartas-2"></p></div><div class="team-row split-row"><span class="seed" id="placar-quartas-2-t1"></span><span class="name"><img id="img-quartas-2-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-quartas-2-t1"></strong></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="seed" id="placar-quartas-2-t2"></span><span class="name"><img id="img-quartas-2-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-quartas-2-t2"></strong></span></div></div>
+                    <div class="match-card"><div><p class="jogo" id="label-quartas-3"></p></div><div class="team-row split-row"><span class="seed" id="placar-quartas-3-t1"></span><span class="name"><img id="img-quartas-3-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-quartas-3-t1"></strong></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="seed" id="placar-quartas-3-t2"></span><span class="name"><img id="img-quartas-3-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-quartas-3-t2"></strong></span></div></div>
                 </div>
             </div>
 
             <div class="container-equipes">
                 <div class="box-equipes2">
-                <div class="match-card">
-                    <div><p class="jogo">JOGO 1</p></div>
-                        <div class="team-row split-row"><span class="name"><img src="img/sao-paulo-futebol-clube-logo-png_seeklogo-122586.png" alt="" width="25px"> <p>Time 1</p></span><span class="seed">2</span></div>
-                        <div class="vs-badge small-vs">X</div>
-                        <div class="team-row split-row"><span class="name"><img src="img/Palmeiras_logo.svg.png" alt="" width="25px"> <p>Time 2</p></span><span class="seed">1</span></div>
-                    </div>
-                    <div class="match-card">
-                        <div><p class="jogo">JOGO 2</p></div>
-                        <div class="team-row split-row"><span class="name"><img src="img/sao-paulo-futebol-clube-logo-png_seeklogo-122586.png" alt="" width="25px"> <p>Time 1</p></span><span class="seed">2</span></div>
-                        <div class="vs-badge small-vs">X</div>
-                        <div class="team-row split-row"><span class="name"><img src="img/Palmeiras_logo.svg.png" alt="" width="25px"> <p>Time 2</p></span><span class="seed">1</span></div>
-                    </div>
-                    <div class="match-card">
-                        <div><p class="jogo">JOGO 3</p></div>
-                        <div class="team-row split-row"><span class="name"><img src="img/sao-paulo-futebol-clube-logo-png_seeklogo-122586.png" alt="" width="25px"> <p>Time 1</p></span><span class="seed">2</span></div>
-                        <div class="vs-badge small-vs">X</div>
-                        <div class="team-row split-row"><span class="name"><img src="img/Palmeiras_logo.svg.png" alt="" width="25px"> <p>Time 2</p></span><span class="seed">1</span></div>
-                    </div>
-                    <div class="match-card">
-                        <div><p class="jogo">JOGO 4</p></div>
-                        <div class="team-row split-row"><span class="name"><img src="img/sao-paulo-futebol-clube-logo-png_seeklogo-122586.png" alt="" width="25px"> <p>Time 1</p></span><span class="seed">2</span></div>
-                        <div class="vs-badge small-vs">X</div>
-                        <div class="team-row split-row"><span class="name"><img src="img/Palmeiras_logo.svg.png" alt="" width="25px"> <p>Time 2</p></span><span class="seed">1</span></div>
-                    </div>
-            </div>
+                    <div class="match-card"><div><p class="jogo" id="label-oitavas-4"></p></div><div class="team-row split-row"><span class="seed" id="placar-oitavas-4-t1"></span><span class="name"><img id="img-oitavas-4-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-oitavas-4-t1"></strong></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="seed" id="placar-oitavas-4-t2"></span><span class="name"><img id="img-oitavas-4-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-oitavas-4-t2"></strong></span></div></div>
+                    <div class="match-card"><div><p class="jogo" id="label-oitavas-5"></p></div><div class="team-row split-row"><span class="seed" id="placar-oitavas-5-t1"></span><span class="name"><img id="img-oitavas-5-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-oitavas-5-t1"></strong></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="seed" id="placar-oitavas-5-t2"></span><span class="name"><img id="img-oitavas-5-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-oitavas-5-t2"></strong></span></div></div>
+                    <div class="match-card"><div><p class="jogo" id="label-oitavas-6"></p></div><div class="team-row split-row"><span class="seed" id="placar-oitavas-6-t1"></span><span class="name"><img id="img-oitavas-6-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-oitavas-6-t1"></strong></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="seed" id="placar-oitavas-6-t2"></span><span class="name"><img id="img-oitavas-6-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-oitavas-6-t2"></strong></span></div></div>
+                    <div class="match-card"><div><p class="jogo" id="label-oitavas-7"></p></div><div class="team-row split-row"><span class="seed" id="placar-oitavas-7-t1"></span><span class="name"><img id="img-oitavas-7-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-oitavas-7-t1"></strong></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="seed" id="placar-oitavas-7-t2"></span><span class="name"><img id="img-oitavas-7-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-oitavas-7-t2"></strong></span></div></div>
+                </div>
             </div>
 
             <div class="container-equipes">
                 <div class="box-equipes">
-                    <div class="match-card">
-                        <div><p class="jogo">JOGO 1</p></div>
-                        <div class="team-row split-row"><span class="name"><img src="img/sao-paulo-futebol-clube-logo-png_seeklogo-122586.png" alt="" width="25px"> <p>Time 1</p></span><span class="seed">2</span></div>
-                        <div class="vs-badge small-vs">X</div>
-                        <div class="team-row split-row"><span class="name"><img src="img/Palmeiras_logo.svg.png" alt="" width="25px"> <p>Time 2</p></span><span class="seed">1</span></div>
-                    </div>
-                    <div class="match-card">
-                        <div><p class="jogo">JOGO 2</p></div>
-                        <div class="team-row split-row"><span class="name"><img src="img/sao-paulo-futebol-clube-logo-png_seeklogo-122586.png" alt="" width="25px"> <p>Time 1</p></span><span class="seed">2</span></div>
-                        <div class="vs-badge small-vs">X</div>
-                        <div class="team-row split-row"><span class="name"><img src="img/Palmeiras_logo.svg.png" alt="" width="25px"> <p>Time 2</p></span><span class="seed">1</span></div>
-                    </div>
-                    <div class="match-card">
-                        <div><p class="jogo">JOGO 3</p></div>
-                        <div class="team-row split-row"><span class="name"><img src="img/sao-paulo-futebol-clube-logo-png_seeklogo-122586.png" alt="" width="25px"> <p>Time 1</p></span><span class="seed">2</span></div>
-                        <div class="vs-badge small-vs">X</div>
-                        <div class="team-row split-row"><span class="name"><img src="img/Palmeiras_logo.svg.png" alt="" width="25px"> <p>Time 2</p></span><span class="seed">1</span></div>
-                    </div>
-                    <div class="match-card">
-                        <div><p class="jogo">JOGO 4</p></div>
-                        <div class="team-row split-row"><span class="name"><img src="img/sao-paulo-futebol-clube-logo-png_seeklogo-122586.png" alt="" width="25px"> <p>Time 1</p></span><span class="seed">2</span></div>
-                        <div class="vs-badge small-vs">X</div>
-                        <div class="team-row split-row"><span class="name"><img src="img/Palmeiras_logo.svg.png" alt="" width="25px"> <p>Time 2</p></span><span class="seed">1</span></div>
-                    </div>
-                    <div class="match-card">
-                        <div><p class="jogo">JOGO 5</p></div>
-                        <div class="team-row split-row"><span class="name"><img src="img/sao-paulo-futebol-clube-logo-png_seeklogo-122586.png" alt="" width="25px"> <p>Time 1</p></span><span class="seed">2</span></div>
-                        <div class="vs-badge small-vs">X</div>
-                        <div class="team-row split-row"><span class="name"><img src="img/Palmeiras_logo.svg.png" alt="" width="25px"> <p>Time 2</p></span><span class="seed">1</span></div>
-                    </div>
-                    <div class="match-card">
-                        <div><p class="jogo">JOGO 6</p></div>
-                        <div class="team-row split-row"><span class="name"><img src="img/sao-paulo-futebol-clube-logo-png_seeklogo-122586.png" alt="" width="25px"> <p>Time 1</p></span><span class="seed">2</span></div>
-                        <div class="vs-badge small-vs">X</div>
-                        <div class="team-row split-row"><span class="name"><img src="img/Palmeiras_logo.svg.png" alt="" width="25px"> <p>Time 2</p></span><span class="seed">1</span></div>
-                    </div>
-                    <div class="match-card">
-                        <div><p class="jogo">JOGO 7</p></div>
-                        <div class="team-row split-row"><span class="name"><img src="img/sao-paulo-futebol-clube-logo-png_seeklogo-122586.png" alt="" width="25px"> <p>Time 1</p></span><span class="seed">2</span></div>
-                        <div class="vs-badge small-vs">X</div>
-                        <div class="team-row split-row"><span class="name"><img src="img/Palmeiras_logo.svg.png" alt="" width="25px"> <p>Time 2</p></span><span class="seed">1</span></div>
-                    </div>
-                    <div class="match-card">
-                        <div><p class="jogo">JOGO 8</p></div>
-                        <div class="team-row split-row"><span class="name"><img src="img/sao-paulo-futebol-clube-logo-png_seeklogo-122586.png" alt="" width="25px"> <p>Time 1</p></span><span class="seed">2</span></div>
-                        <div class="vs-badge small-vs">X</div>
-                        <div class="team-row split-row"><span class="name"><img src="img/Palmeiras_logo.svg.png" alt="" width="25px"> <p>Time 2</p></span><span class="seed">1</span></div>
-                    </div>
-                </div>
+    <div class="match-card"><div><p class="jogo" id="label-r32-8"></p></div><div class="team-row split-row"><span class="seed" id="placar-r32-8-t1"></span><span class="name"><img id="img-r32-8-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-r32-8-t1"></strong></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="seed" id="placar-r32-8-t2"></span><span class="name"><img id="img-r32-8-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-r32-8-t2"></strong></span></div></div>
+    <div class="match-card"><div><p class="jogo" id="label-r32-9"></p></div><div class="team-row split-row"><span class="seed" id="placar-r32-9-t1"></span><span class="name"><img id="img-r32-9-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-r32-9-t1"></strong></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="seed" id="placar-r32-9-t2"></span><span class="name"><img id="img-r32-9-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-r32-9-t2"></strong></span></div></div>
+    <div class="match-card"><div><p class="jogo" id="label-r32-10"></p></div><div class="team-row split-row"><span class="seed" id="placar-r32-10-t1"></span><span class="name"><img id="img-r32-10-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-r32-10-t1"></strong></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="seed" id="placar-r32-10-t2"></span><span class="name"><img id="img-r32-10-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-r32-10-t2"></strong></span></div></div>
+    <div class="match-card"><div><p class="jogo" id="label-r32-11"></p></div><div class="team-row split-row"><span class="seed" id="placar-r32-11-t1"></span><span class="name"><img id="img-r32-11-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-r32-11-t1"></strong></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="seed" id="placar-r32-11-t2"></span><span class="name"><img id="img-r32-11-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-r32-11-t2"></strong></span></div></div>
+    <div class="match-card"><div><p class="jogo" id="label-r32-12"></p></div><div class="team-row split-row"><span class="seed" id="placar-r32-12-t1"></span><span class="name"><img id="img-r32-12-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-r32-12-t1"></strong></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="seed" id="placar-r32-12-t2"></span><span class="name"><img id="img-r32-12-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-r32-12-t2"></strong></span></div></div>
+    <div class="match-card"><div><p class="jogo" id="label-r32-13"></p></div><div class="team-row split-row"><span class="seed" id="placar-r32-13-t1"></span><span class="name"><img id="img-r32-13-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-r32-13-t1"></strong></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="seed" id="placar-r32-13-t2"></span><span class="name"><img id="img-r32-13-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-r32-13-t2"></strong></span></div></div>
+    <div class="match-card"><div><p class="jogo" id="label-r32-14"></p></div><div class="team-row split-row"><span class="seed" id="placar-r32-14-t1"></span><span class="name"><img id="img-r32-14-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-r32-14-t1"></strong></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="seed" id="placar-r32-14-t2"></span><span class="name"><img id="img-r32-14-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-r32-14-t2"></strong></span></div></div>
+    <div class="match-card"><div><p class="jogo" id="label-r32-15"></p></div><div class="team-row split-row"><span class="seed" id="placar-r32-15-t1"></span><span class="name"><img id="img-r32-15-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-r32-15-t1"></strong></span></div><div class="vs-badge small-vs">X</div><div class="team-row split-row"><span class="seed" id="placar-r32-15-t2"></span><span class="name"><img id="img-r32-15-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-r32-15-t2"></strong></span></div></div>
+</div>
             </div>
 
         </main>
     </div>
+
+    <script>
+        function preencherFase(fase, dados) {
+            if(!dados) return;
+            
+            dados.forEach((jogo, i) => {
+                const elLabel = document.getElementById(`label-${fase}-${i}`);
+
+                const elNome1 = document.getElementById(`nome-${fase}-${i}-t1`);
+                const elImg1 = document.getElementById(`img-${fase}-${i}-t1`);
+                const elPlacar1 = document.getElementById(`placar-${fase}-${i}-t1`);
+                
+                const elNome2 = document.getElementById(`nome-${fase}-${i}-t2`);
+                const elImg2 = document.getElementById(`img-${fase}-${i}-t2`);
+                const elPlacar2 = document.getElementById(`placar-${fase}-${i}-t2`);
+
+                //título dinâmico da partida
+                if(elLabel && jogo.label) elLabel.innerText = jogo.label;
+
+                if(elNome1 && jogo["name1:"]) elNome1.innerText = jogo["name1:"];
+                if(elImg1 && jogo.url1) { elImg1.src = jogo.url1; elImg1.style.display = "inline-block"; }
+                if(elPlacar1 && jogo.r1 !== undefined) elPlacar1.innerText = jogo.r1;
+
+                if(elNome2 && jogo["name2:"]) elNome2.innerText = jogo["name2:"];
+                if(elImg2 && jogo.url2) { elImg2.src = jogo.url2; elImg2.style.display = "inline-block"; }
+                if(elPlacar2 && jogo.r2 !== undefined) elPlacar2.innerText = jogo.r2;
+            });
+        }
+
+        function definirCampeao(jogoFinal) {
+            if(!jogoFinal) return;
+
+            const placar1 = parseInt(jogoFinal.r1) || 0;
+            const placar2 = parseInt(jogoFinal.r2) || 0;
+            
+            const elNomeCampeao = document.getElementById('nome-campeao');
+            const elImgCampeao = document.getElementById('img-campeao');
+
+            if(elNomeCampeao && elImgCampeao) {
+                if (placar1 > placar2) {
+                    elNomeCampeao.innerText = jogoFinal["name1:"];
+                    elImgCampeao.src = jogoFinal.url1;
+                    elImgCampeao.style.display = "inline-block";
+                } else if (placar2 > placar1) {
+                    elNomeCampeao.innerText = jogoFinal["name2:"];
+                    elImgCampeao.src = jogoFinal.url2;
+                    elImgCampeao.style.display = "inline-block";
+                } else {
+                    elNomeCampeao.innerText = "EMPATE"; 
+                }
+            }
+        }
+
+        // LÊ O FICHEIRO 32_EQUIPES.JSON
+        fetch('32_equipes.json') 
+            .then(resposta => {
+                if (!resposta.ok) throw new Error("Erro ao carregar o ficheiro JSON.");
+                return resposta.json();
+            })
+            .then(dadosTorneio => {
+                preencherFase('r32', dadosTorneio[0]);
+                preencherFase('oitavas', dadosTorneio[1]);
+                preencherFase('quartas', dadosTorneio[2]); 
+                preencherFase('semis', dadosTorneio[3]);   
+                preencherFase('final', dadosTorneio[4]);   
+
+                // Preencher o campeão na caixa do topo usando o jogo da final
+                if(dadosTorneio[4] && dadosTorneio[4].length > 0) {
+                    definirCampeao(dadosTorneio[4][0]);
+                }
+                
+                // Se algum dia adicionares o índice [5] no teu JSON para a Disputa do Terceiro lugar
+                if(dadosTorneio[5]) {
+                    preencherFase('terceiro', dadosTorneio[5]);
+                }
+            })
+            .catch(erro => {
+                console.error("Erro no Chaveamento:", erro);
+                alert("Atenção: Verifica se o ficheiro '32_equipes.json' está na mesma pasta do HTML e se a página está a ser executada num Servidor Local (Live Server).");
+            });
+    </script>
 </body>
 </html>
