@@ -168,8 +168,16 @@
             background-color: white;
             border-radius: 6px;
             height: 28px;
-            width: 220px;
+            width: 158px;
         }
+
+        img#img-campeao {
+    width: 20px;
+}
+
+img {
+    border-radius: 15px;
+}
 
         .match-card {
             position: relative;
@@ -180,6 +188,15 @@
             z-index: 2;
         }
 
+
+        strong#nome-final-0-t1 {
+    color: #000;
+}
+
+
+strong#nome-final-0-t2 {
+    color: #000;
+}
         .team-row {
             height: 28px;
             border-radius: 6px;
@@ -256,19 +273,13 @@
             width: 20px !important;
         }
 
-        strong#nome-final-0-t1 {
-    color: #000;
-}
-strong#nome-final-0-t2 {
-    color: #000;
-}
-
         p.jogo {
             color: #fff;
             font-size: 10px;
             font-weight: 700;
             text-align: center;
             margin-bottom: -7px;
+            min-height: 12px;
         }
 
         /* =========================================
@@ -292,7 +303,7 @@ strong#nome-final-0-t2 {
             bottom: 50%; 
             left: 50%;
             transform: translateX(-50%);
-            width: 415px; /* Encontra exatamente as pontas dos traços horizontais das Semifinais */
+            width: 415px; 
             height: 60px;
             border-top: 2px solid white;
             border-left: 2px solid white;
@@ -347,7 +358,6 @@ strong#nome-final-0-t2 {
                 align-items: center !important;
             }
             .scale-fit {
-                /* Escala ampliada (1.15) para que o chaveamento fique grande e claro na folha A4 */
                 transform: scale(1.15) !important; 
                 transform-origin: center center !important;
                 padding: 0 !important;
@@ -356,17 +366,9 @@ strong#nome-final-0-t2 {
             }
         }
 
-        div#semi-1 {
-            margin-top:-51px;
-        }
-
-        div#semi-2 {
-            margin-top:-51px;
-        }
-
-        h2.schedule-title {
-            color: #fff;
-        }
+        div#semi-1 { margin-top:-51px; }
+        div#semi-2 { margin-top:-51px; }
+        h2.schedule-title { color: #fff; }
     </style>
 </head>
 <body>
@@ -391,7 +393,7 @@ strong#nome-final-0-t2 {
             <div class="container-equipes">
                 <div class="box-equipes-semis">
                     <div class="match-card" id="semi-1">
-                        <div><p class="jogo">SEMI FINAL 1</p></div>
+                        <div><p class="jogo" id="label-semis-0"></p></div>
                         <div class="team-row split-row"><span class="name"><img id="img-semis-0-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-semis-0-t1"></strong></span><span class="seed" id="placar-semis-0-t1"></span></div>
                         <div class="vs-badge small-vs">X</div>
                         <div class="team-row split-row"><span class="name"><img id="img-semis-0-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-semis-0-t2"></strong></span><span class="seed" id="placar-semis-0-t2"></span></div>
@@ -411,7 +413,7 @@ strong#nome-final-0-t2 {
                     </div>
 
                     <div class="bracket-stage final-stage">
-                        <div class="stage-label" id="final-stage-label">FINAL</div>
+                        <div class="stage-label" id="label-final-0">FINAL</div>
                         <div class="match-card" id="final-match">
                             <div class="team-row split-row"><span class="name"><img id="img-final-0-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-final-0-t1"></strong></span><span class="seed" id="placar-final-0-t1"></span></div>
                             <div class="vs-badge small-vs" style="margin-top:1px !important;">X</div>
@@ -425,7 +427,7 @@ strong#nome-final-0-t2 {
 
                 <div class="bottom-cluster">
                     <div class="bracket-stage third-place-stage">
-                        <div class="stage-label">DISPUTA DO TERCEIRO LUGAR</div>
+                        <div class="stage-label" id="label-terceiro-0">DISPUTA DO TERCEIRO LUGAR</div>
                         <div class="match-card">
                             <div class="team-row split-row"><span class="name"><img id="img-terceiro-0-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-terceiro-0-t1"></strong></span><span class="seed" id="placar-terceiro-0-t1"></span></div>
                             <div class="vs-badge small-vs" style="margin-top:1px !important;">X</div>
@@ -438,10 +440,10 @@ strong#nome-final-0-t2 {
             <div class="container-equipes">
                 <div class="box-equipes-semis">
                     <div class="match-card" id="semi-2">
-                        <div><p class="jogo">SEMI FINAL 2</p></div>
-                        <div class="team-row split-row"><span class="name"><img id="img-semis-1-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-semis-1-t1"></strong></span><span class="seed" id="placar-semis-1-t1"></span></div>
+                        <div><p class="jogo" id="label-semis-1"></p></div>
+                        <div class="team-row split-row"><span class="seed" id="placar-semis-1-t1"></span><span class="name"><img id="img-semis-1-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-semis-1-t1"></strong></span></div>
                         <div class="vs-badge small-vs">X</div>
-                        <div class="team-row split-row"><span class="name"><img id="img-semis-1-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-semis-1-t2"></strong></span><span class="seed" id="placar-semis-1-t2"></span></div>
+                        <div class="team-row split-row"><span class="seed" id="placar-semis-1-t2"></span><span class="name"><img id="img-semis-1-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-semis-1-t2"></strong></span></div>
                     </div>
                 </div>
             </div>
@@ -454,6 +456,8 @@ strong#nome-final-0-t2 {
             if(!dados) return;
             
             dados.forEach((jogo, i) => {
+                const elLabel = document.getElementById(`label-${fase}-${i}`);
+
                 const elNome1 = document.getElementById(`nome-${fase}-${i}-t1`);
                 const elImg1 = document.getElementById(`img-${fase}-${i}-t1`);
                 const elPlacar1 = document.getElementById(`placar-${fase}-${i}-t1`);
@@ -461,6 +465,9 @@ strong#nome-final-0-t2 {
                 const elNome2 = document.getElementById(`nome-${fase}-${i}-t2`);
                 const elImg2 = document.getElementById(`img-${fase}-${i}-t2`);
                 const elPlacar2 = document.getElementById(`placar-${fase}-${i}-t2`);
+
+                // Atualiza o título dinâmico da partida
+                if(elLabel && jogo.label) elLabel.innerText = jogo.label;
 
                 if(elNome1 && jogo["name1:"]) elNome1.innerText = jogo["name1:"];
                 if(elImg1 && jogo.url1) { elImg1.src = jogo.url1; elImg1.style.display = "inline-block"; }
@@ -504,9 +511,6 @@ strong#nome-final-0-t2 {
             })
             .then(dadosTorneio => {
                 // A estrutura do teu 4_equipes.json:
-                // Índice [0]: Meias Finais (2 Jogos)
-                // Índice [1]: Final (1 Jogo)
-
                 preencherFase('semis', dadosTorneio[0]);   
                 preencherFase('final', dadosTorneio[1]);   
 
@@ -515,7 +519,7 @@ strong#nome-final-0-t2 {
                     definirCampeao(dadosTorneio[1][0]);
                 }
                 
-                // Se algum dia adicionares o índice [2] no teu JSON para o Terceiro lugar
+                // Disputa do Terceiro lugar
                 if(dadosTorneio[2]) {
                     preencherFase('terceiro', dadosTorneio[2]);
                 }
