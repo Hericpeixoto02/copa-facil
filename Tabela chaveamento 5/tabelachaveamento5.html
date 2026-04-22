@@ -12,14 +12,9 @@
             box-sizing: border-box; 
         }
 
+        strong#nome-final-0-t1 { color: #000; }
+        strong#nome-final-0-t2 { color: #000; }
 
-        strong#nome-final-0-t1 {
- color: #000;
-}
-
-strong#nome-final-0-t2 {
- color: #000;
-}
         /* =========================================
            CONFIGURAÇÕES PARA A TELA (FRONT-END)
            ========================================= */
@@ -34,7 +29,7 @@ strong#nome-final-0-t2 {
 
         /* Na tela, mantém a largura original sem encolher e permite o scroll */
         .scale-fit {
-            width: 1200px; /* Largura ajustada para 5 colunas */
+            width: 1200px; 
             margin: 0 auto; 
             display: flex;
             flex-direction: column;
@@ -50,7 +45,7 @@ strong#nome-final-0-t2 {
 
         ul.textos-cabeçalho {
             display: flex;
-            gap: 55px; /* Ajustado para acompanhar o gap das colunas */
+            gap: 55px; 
             list-style: none;
             font-size: 14px;
             font-weight: bold;
@@ -71,6 +66,14 @@ strong#nome-final-0-t2 {
             width: 100%; 
         }
 
+        img {
+    border-radius:15px;
+}
+
+img#img-campeao {
+    width:20px;
+}
+        
         .container-equipes {
             display: flex;
             justify-content: center;
@@ -85,7 +88,7 @@ strong#nome-final-0-t2 {
             display: flex;
             flex-direction: column;
             justify-content: center; 
-            gap: 154px; /* Espaço para abraçar a Semi no meio */
+            gap: 154px; 
             height: 100%;
         }
 
@@ -93,7 +96,7 @@ strong#nome-final-0-t2 {
             display: flex;
             flex-direction: column;
             justify-content: center;
-            gap: 0; /* Apenas 1 jogo */
+            gap: 0; 
             height: 100%;
         }
 
@@ -117,16 +120,9 @@ strong#nome-final-0-t2 {
             font-weight: bold;
         }
 
-        .team:last-child {
-            border-bottom: none;
-        }
+        .team:last-child { border-bottom: none; }
 
-        span.score {
-            background-color: #2040AB;
-            padding: 3px 6px;
-            color: #fff;
-            border-radius: 4px;
-        }
+        span.score { background-color: #2040AB; padding: 3px 6px; color: #fff; border-radius: 4px; }
 
         .center-bracket {
             font-family: Arial, sans-serif;
@@ -135,21 +131,13 @@ strong#nome-final-0-t2 {
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 160px; /* Cria um espaço no meio perfeito para os traços passarem */
+            gap: 160px; 
             width: 320px;
             position: relative;
         }
 
-        .top-cluster, .bottom-cluster {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .bracket-header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
+        .top-cluster, .bottom-cluster { display: flex; flex-direction: column; align-items: center; }
+        .bracket-header { text-align: center; margin-bottom: 30px; }
 
         .year-outline {
             font-size: 64px;
@@ -159,86 +147,20 @@ strong#nome-final-0-t2 {
             letter-spacing: 2px;
         }
 
-        .schedule-title {
-            font-size: 16px;
-            margin: -10px 0 0 0;
-            font-weight: 800;
-            letter-spacing: 1px;
-        }
+        .schedule-title { font-size: 16px; margin: -10px 0 0 0; font-weight: 800; letter-spacing: 1px; }
+        .stage-label { font-size: 11px; font-weight: bold; text-align: center; margin-bottom: 8px; text-transform: uppercase; }
 
-        .stage-label {
-            font-size: 11px;
-            font-weight: bold;
-            text-align: center;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-        }
+        .bracket-stage { display: flex; flex-direction: column; align-items: center; position: relative; margin-bottom: 30px; }
+        .bottom-cluster .bracket-stage { margin-bottom: 0; margin-top:-164px; }
 
-        .bracket-stage {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            position: relative;
-            margin-bottom: 30px;
-        }
+        .box { background-color: white; border-radius: 6px; height: 28px; width: 158px; }
+        .match-card { position: relative; display: flex; flex-direction: column; gap: 4px; width: 163px; z-index: 2; }
+        .team-row { height: 28px; border-radius: 6px; display: flex; overflow: hidden; }
+        .plain-row { background-color: white; width: 100%; }
+        .split-row { width: 160px; margin: 0 auto; margin-bottom: 8px; margin-top: 8px; }
 
-        .bottom-cluster .bracket-stage {
-            margin-bottom: 0;
-            margin-top:-164px;
-        }
-
-        .box {
-            background-color: white;
-            border-radius: 6px;
-            height: 28px;
-            width: 220px;
-        }
-
-        .match-card {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-            width: 163px;
-            z-index: 2;
-        }
-
-        .team-row {
-            height: 28px;
-            border-radius: 6px;
-            display: flex;
-            overflow: hidden;
-        }
-
-        .plain-row {
-            background-color: white;
-            width: 100%;
-        }
-
-        .split-row {
-            width: 160px;
-            margin: 0 auto;
-            margin-bottom: 8px;
-            margin-top: 8px;
-        }
-
-        .seed {
-            background-color: #242c9c;
-            color: white;
-            font-size: 9px;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 35px;
-        }
-
-        .name {
-            background-color: white;
-            flex-grow: 1;
-            display: flex;
-            align-items: center;
-        }
+        .seed { background-color: #242c9c; color: white; font-size: 9px; font-weight: bold; display: flex; align-items: center; justify-content: center; width: 35px; }
+        .name { background-color: white; flex-grow: 1; display: flex; align-items: center; }
 
         .vs-badge {
             position: absolute;
@@ -257,41 +179,16 @@ strong#nome-final-0-t2 {
             z-index: 2;
         }
 
-        .small-vs {
-            width: 20px;
-            height: 20px;
-            font-size: 8px;
-            margin-top: 5px;
-        }
+        .small-vs { width: 20px; height: 20px; font-size: 8px; margin-top: 5px; }
+        .name p { font-size: 11px; margin-left: 5px; }
+        .name strong { font-size: 11px; margin-left: 5px; }
+        span.name img { margin-left: 5px; width: 20px !important; }
 
-        .name p {
-            font-size: 11px;
-            margin-left: 5px;
-        }
-
-        .name strong {
-            font-size: 11px;
-            margin-left: 5px;
-        }
-
-        span.name img {
-            margin-left: 5px;
-            width: 20px !important;
-        }
-
-        p.jogo {
-            color: #fff;
-            font-size: 10px;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: -7px;
-        }
+        p.jogo { color: #fff; font-size: 10px; font-weight: 700; text-align: center; margin-bottom: -7px; min-height: 12px; }
 
         /* =========================================
            TRAÇOS MATEMÁTICOS PARA O NOVO FORMATO
            ========================================= */
-        
-        /* LINHAS ESQUERDAS - QUARTAS (SAÍDA) */
         .container-equipes:nth-child(1) .match-card:nth-child(odd)::after {
             content: ''; position: absolute; top: 50%; right: -27.5px;
             width: 27.5px; height: 109px; border-top: 2px solid white; border-right: 2px solid white;
@@ -300,16 +197,8 @@ strong#nome-final-0-t2 {
             content: ''; position: absolute; bottom: 50%; right: -27.5px;
             width: 27.5px; height: 109px; border-bottom: 2px solid white; border-right: 2px solid white;
         }
-
-        /* LINHAS ESQUERDAS - SEMIS (ENTRADA E SAÍDA HORIZONTAL) */
-        .container-equipes:nth-child(2) .match-card::before {
-            content: ''; position: absolute; top: 50%; left: -27.5px; width: 27.5px; border-top: 2px solid white;
-        }
-        .container-equipes:nth-child(2) .match-card::after {
-            content: ''; position: absolute; top: 50%; right: -27.5px; width: 27.5px; border-top: 2px solid white; z-index: 0;
-        }
-
-        /* LINHAS DIREITAS - QUARTAS (SAÍDA) */
+        .container-equipes:nth-child(2) .match-card::before { content: ''; position: absolute; top: 50%; left: -27.5px; width: 27.5px; border-top: 2px solid white; }
+        .container-equipes:nth-child(2) .match-card::after { content: ''; position: absolute; top: 50%; right: -27.5px; width: 27.5px; border-top: 2px solid white; z-index: 0; }
         .container-equipes:nth-child(5) .match-card:nth-child(odd)::before {
             content: ''; position: absolute; top: 50%; left: -27.5px;
             width: 27.5px; height: 109px; border-top: 2px solid white; border-left: 2px solid white;
@@ -318,81 +207,21 @@ strong#nome-final-0-t2 {
             content: ''; position: absolute; bottom: 50%; left: -27.5px;
             width: 27.5px; height: 109px; border-bottom: 2px solid white; border-left: 2px solid white;
         }
+        .container-equipes:nth-child(4) .match-card::after { content: ''; position: absolute; top: 50%; right: -27.5px; width: 27.5px; border-top: 2px solid white; }
+        .container-equipes:nth-child(4) .match-card::before { content: ''; position: absolute; top: 50%; left: -27.5px; width: 27.5px; border-top: 2px solid white; z-index: 0; }
 
-        /* LINHAS DIREITAS - SEMIS (ENTRADA E SAÍDA HORIZONTAL) */
-        .container-equipes:nth-child(4) .match-card::after {
-            content: ''; position: absolute; top: 50%; right: -27.5px; width: 27.5px; border-top: 2px solid white;
-        }
-        .container-equipes:nth-child(4) .match-card::before {
-            content: ''; position: absolute; top: 50%; left: -27.5px; width: 27.5px; border-top: 2px solid white; z-index: 0;
-        }
-
-        /* LINHAS CENTRAIS: CONEXÃO MÁGICA DAS SEMIS PARA A FINAL E 3º LUGAR */
-        .center-lines-up {
-            position: absolute;
-            bottom: 50%; 
-            left: 50%;
-            transform: translateX(-50%);
-            width: 375px; 
-            height: 60px;
-            border-top: 2px solid white;
-            border-left: 2px solid white;
-            border-right: 2px solid white;
-            z-index: 1;
-        }
-        .center-lines-up::after {
-            content: ''; position: absolute;
-            bottom: 100%; left: 50%; transform: translateX(-50%);
-            width: 2px; height: 17px; background-color: white;
-        }
-
-        .center-lines-down {
-            position: absolute;
-            top: 50%; 
-            left: 50%;
-            transform: translateX(-50%);
-            width: 375px;
-            height: 60px;
-            border-bottom: 2px solid white;
-            border-left: 2px solid white;
-            border-right: 2px solid white;
-            z-index: 1;
-        }
-        .center-lines-down::after {
-            content: ''; position: absolute;
-            top: 100%; left: 50%; transform: translateX(-50%);
-            width: 2px; height: 18px; background-color: white;
-        }
+        .center-lines-up { position: absolute; bottom: 50%; left: 50%; transform: translateX(-50%); width: 375px; height: 60px; border-top: 2px solid white; border-left: 2px solid white; border-right: 2px solid white; z-index: 1; }
+        .center-lines-up::after { content: ''; position: absolute; bottom: 100%; left: 50%; transform: translateX(-50%); width: 2px; height: 17px; background-color: white; }
+        .center-lines-down { position: absolute; top: 50%; left: 50%; transform: translateX(-50%); width: 375px; height: 60px; border-bottom: 2px solid white; border-left: 2px solid white; border-right: 2px solid white; z-index: 1; }
+        .center-lines-down::after { content: ''; position: absolute; top: 100%; left: 50%; transform: translateX(-50%); width: 2px; height: 18px; background-color: white; }
 
         /* =========================================
            CONFIGURAÇÕES EXCLUSIVAS PARA IMPRESSÃO
            ========================================= */
         @media print {
-            @page {
-                size: A4 landscape;
-                margin: 0mm; 
-            }
-            html, body {
-                width: 297mm !important;
-                height: 209mm !important; 
-                margin: 0 !important;
-                padding: 0 !important;
-                overflow: hidden !important; 
-                background-color: #304DED !important;
-                -webkit-print-color-adjust: exact !important; 
-                print-color-adjust: exact !important;
-                page-break-inside: avoid !important;
-                display: flex !important;
-                justify-content: center !important;
-                align-items: center !important;
-            }
-            .scale-fit {
-                transform: scale(0.88) !important; 
-                transform-origin: center center !important;
-                padding: 0 !important;
-                margin: 0 !important;
-                page-break-inside: avoid !important;
-            }
+            @page { size: A4 landscape; margin: 0mm; }
+            html, body { width: 297mm !important; height: 209mm !important; margin: 0 !important; padding: 0 !important; overflow: hidden !important; background-color: #304DED !important; -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; page-break-inside: avoid !important; display: flex !important; justify-content: center !important; align-items: center !important; }
+            .scale-fit { transform: scale(0.88) !important; transform-origin: center center !important; padding: 0 !important; margin: 0 !important; page-break-inside: avoid !important; }
         }
     </style>
 </head>
@@ -415,13 +244,13 @@ strong#nome-final-0-t2 {
             <div class="container-equipes">
                 <div class="box-equipes-quartas">
                     <div class="match-card">
-                        <div><p class="jogo">QUARTAS 1</p></div>
+                        <div><p class="jogo" id="label-quartas-0"></p></div>
                         <div class="team-row split-row"><span class="name"><img id="img-quartas-0-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-quartas-0-t1"></strong></span><span class="seed" id="placar-quartas-0-t1"></span></div>
                         <div class="vs-badge small-vs">X</div>
                         <div class="team-row split-row"><span class="name"><img id="img-quartas-0-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-quartas-0-t2"></strong></span><span class="seed" id="placar-quartas-0-t2"></span></div>
                     </div>
                     <div class="match-card">
-                        <div><p class="jogo">QUARTAS 2</p></div>
+                        <div><p class="jogo" id="label-quartas-1"></p></div>
                         <div class="team-row split-row"><span class="name"><img id="img-quartas-1-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-quartas-1-t1"></strong></span><span class="seed" id="placar-quartas-1-t1"></span></div>
                         <div class="vs-badge small-vs">X</div>
                         <div class="team-row split-row"><span class="name"><img id="img-quartas-1-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-quartas-1-t2"></strong></span><span class="seed" id="placar-quartas-1-t2"></span></div>
@@ -432,7 +261,7 @@ strong#nome-final-0-t2 {
             <div class="container-equipes">
                 <div class="box-equipes-semis">
                     <div class="match-card">
-                        <div><p class="jogo">SEMI FINAL 1</p></div>
+                        <div><p class="jogo" id="label-semis-0"></p></div>
                         <div class="team-row split-row"><span class="name"><img id="img-semis-0-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-semis-0-t1"></strong></span><span class="seed" id="placar-semis-0-t1"></span></div>
                         <div class="vs-badge small-vs">X</div>
                         <div class="team-row split-row"><span class="name"><img id="img-semis-0-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-semis-0-t2"></strong></span><span class="seed" id="placar-semis-0-t2"></span></div>
@@ -457,7 +286,7 @@ strong#nome-final-0-t2 {
                     </div>
 
                     <div class="bracket-stage final-stage">
-                        <div class="stage-label">FINAL</div>
+                        <div class="stage-label" id="label-final-0">FINAL</div>
                         <div class="match-card">
                             <div class="team-row split-row"><span class="name"><img id="img-final-0-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-final-0-t1"></strong></span><span class="seed" id="placar-final-0-t1"></span></div>
                             <div class="vs-badge small-vs" style="margin-top:1px !important;">X</div>
@@ -471,7 +300,7 @@ strong#nome-final-0-t2 {
 
                 <div class="bottom-cluster">
                     <div class="bracket-stage third-place-stage">
-                        <div class="stage-label">DISPUTA DO TERCEIRO LUGAR</div>
+                        <div class="stage-label" id="label-terceiro-0">DISPUTA DO TERCEIRO LUGAR</div>
                         <div class="match-card">
                             <div class="team-row split-row"><span class="name"><img id="img-terceiro-0-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-terceiro-0-t1"></strong></span><span class="seed" id="placar-terceiro-0-t1"></span></div>
                             <div class="vs-badge small-vs" style="margin-top:1px !important;">X</div>
@@ -485,10 +314,10 @@ strong#nome-final-0-t2 {
             <div class="container-equipes">
                 <div class="box-equipes-semis">
                     <div class="match-card">
-                        <div><p class="jogo">SEMI FINAL 2</p></div>
-                        <div class="team-row split-row"><span class="name"><img id="img-semis-1-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-semis-1-t1"></strong></span><span class="seed" id="placar-semis-1-t1"></span></div>
+                        <div><p class="jogo" id="label-semis-1"></p></div>
+                        <div class="team-row split-row"><span class="seed" id="placar-semis-1-t1"></span><span class="name"><img id="img-semis-1-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-semis-1-t1"></strong></span></div>
                         <div class="vs-badge small-vs">X</div>
-                        <div class="team-row split-row"><span class="name"><img id="img-semis-1-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-semis-1-t2"></strong></span><span class="seed" id="placar-semis-1-t2"></span></div>
+                        <div class="team-row split-row"><span class="seed" id="placar-semis-1-t2"></span><span class="name"><img id="img-semis-1-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-semis-1-t2"></strong></span></div>
                     </div>
                 </div>
             </div>
@@ -496,16 +325,16 @@ strong#nome-final-0-t2 {
             <div class="container-equipes">
                 <div class="box-equipes-quartas">
                     <div class="match-card">
-                        <div><p class="jogo">QUARTAS 3</p></div>
-                        <div class="team-row split-row"><span class="name"><img id="img-quartas-2-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-quartas-2-t1"></strong></span><span class="seed" id="placar-quartas-2-t1"></span></div>
+                        <div><p class="jogo" id="label-quartas-2"></p></div>
+                        <div class="team-row split-row"><span class="seed" id="placar-quartas-2-t1"></span><span class="name"><img id="img-quartas-2-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-quartas-2-t1"></strong></span></div>
                         <div class="vs-badge small-vs">X</div>
-                        <div class="team-row split-row"><span class="name"><img id="img-quartas-2-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-quartas-2-t2"></strong></span><span class="seed" id="placar-quartas-2-t2"></span></div>
+                        <div class="team-row split-row"><span class="seed" id="placar-quartas-2-t2"></span><span class="name"><img id="img-quartas-2-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-quartas-2-t2"></strong></span></div>
                     </div>
                     <div class="match-card">
-                        <div><p class="jogo">QUARTAS 4</p></div>
-                        <div class="team-row split-row"><span class="name"><img id="img-quartas-3-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-quartas-3-t1"></strong></span><span class="seed" id="placar-quartas-3-t1"></span></div>
+                        <div><p class="jogo" id="label-quartas-3"></p></div>
+                        <div class="team-row split-row"><span class="seed" id="placar-quartas-3-t1"></span><span class="name"><img id="img-quartas-3-t1" src="" alt="" width="25px" style="display:none;"> <strong id="nome-quartas-3-t1"></strong></span></div>
                         <div class="vs-badge small-vs">X</div>
-                        <div class="team-row split-row"><span class="name"><img id="img-quartas-3-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-quartas-3-t2"></strong></span><span class="seed" id="placar-quartas-3-t2"></span></div>
+                        <div class="team-row split-row"><span class="seed" id="placar-quartas-3-t2"></span><span class="name"><img id="img-quartas-3-t2" src="" alt="" width="25px" style="display:none;"> <strong id="nome-quartas-3-t2"></strong></span></div>
                     </div>
                 </div>
             </div>
@@ -518,6 +347,8 @@ strong#nome-final-0-t2 {
             if(!dados) return;
             
             dados.forEach((jogo, i) => {
+                const elLabel = document.getElementById(`label-${fase}-${i}`);
+
                 const elNome1 = document.getElementById(`nome-${fase}-${i}-t1`);
                 const elImg1 = document.getElementById(`img-${fase}-${i}-t1`);
                 const elPlacar1 = document.getElementById(`placar-${fase}-${i}-t1`);
@@ -525,6 +356,8 @@ strong#nome-final-0-t2 {
                 const elNome2 = document.getElementById(`nome-${fase}-${i}-t2`);
                 const elImg2 = document.getElementById(`img-${fase}-${i}-t2`);
                 const elPlacar2 = document.getElementById(`placar-${fase}-${i}-t2`);
+
+                if(elLabel && jogo.label) elLabel.innerText = jogo.label;
 
                 if(elNome1 && jogo["name1:"]) elNome1.innerText = jogo["name1:"];
                 if(elImg1 && jogo.url1) { elImg1.src = jogo.url1; elImg1.style.display = "inline-block"; }
@@ -567,11 +400,6 @@ strong#nome-final-0-t2 {
                 return resposta.json();
             })
             .then(dadosTorneio => {
-                // A estrutura do teu 8_equipes.json:
-                // Índice [0]: Quartos (4 Jogos)
-                // Índice [1]: Meias Finais (2 Jogos)
-                // Índice [2]: Final (1 Jogo)
-
                 preencherFase('quartas', dadosTorneio[0]); 
                 preencherFase('semis', dadosTorneio[1]);   
                 preencherFase('final', dadosTorneio[2]);   
@@ -581,7 +409,6 @@ strong#nome-final-0-t2 {
                     definirCampeao(dadosTorneio[2][0]);
                 }
                 
-                // Se algum dia adicionares o índice [3] no teu JSON para o Terceiro lugar
                 if(dadosTorneio[3]) {
                     preencherFase('terceiro', dadosTorneio[3]);
                 }
