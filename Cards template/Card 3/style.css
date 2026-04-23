@@ -1,0 +1,202 @@
+/* =========================================
+   RESET E CONFIGURAÇÃO DE PÁGINA
+========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: sans-serif;
+    padding: 20px;
+}
+
+/* =========================================
+   CLASSE DO EFEITO DE RASGÕES (CORREÇÃO FINAL)
+========================================= */
+.efeito-rasgao {
+    /* Torna a cor padrão transparente para o fundo brilhar através */
+    color: transparent;
+    
+    /* Criamos camadas de 'sujeira' usando a cor do fundo (#B98B21) 
+       e terminamos com a cor creme (#ebe4ce) como base do gradiente */
+    background-image: 
+        /* 1. Riscos Diagonais */
+        repeating-linear-gradient(45deg, transparent, transparent 12px, #B98B21 12px, #B98B21 14px),
+        /* 2. Riscos em Contra-diagonal */
+        repeating-linear-gradient(-55deg, transparent, transparent 20px, #B98B21 20px, #B98B21 21px),
+        /* 3. Pequenos pontos de desgaste */
+        radial-gradient(circle at center, #B98B21 1px, transparent 1.5px),
+        /* 4. BASE CREME: Tratada como imagem para evitar o bug do texto preto */
+        linear-gradient(#ebe4ce, #ebe4ce);
+        
+    /* Define o tamanho de cada camada */
+    background-size: 100% 100%, 100% 100%, 12px 12px, 100% 100%;
+    
+    /* Recorta o fundo no formato exato das letras */
+    -webkit-background-clip: text;
+    background-clip: text;
+    
+    /* Sombra subtil para dar profundidade ao "rasgão" */
+    filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.15));
+}
+
+/* =========================================
+   CARD PRINCIPAL
+========================================= */
+.card-resultado {
+    width: 393px;
+    height: 640px;
+    background: #B98B21; /* Cor mostarda do fundo */
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* =========================================
+   TOPO: DATA E TÍTULOS
+========================================= */
+.date-badge {
+    background-color: #4a3c26;
+    color: #ebe4ce;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 1px;
+    padding: 6px 16px;
+    border-radius: 2px;
+    margin-top: 35px;
+}
+
+.header-titles {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.header-titles h1 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 85px;
+    line-height: 0.9;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.header-titles h2 {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 32px;
+    color: #3e3323; /* Cor escura do subtítulo */
+    line-height: 1;
+    letter-spacing: 1px;
+    margin-top: -5px;
+}
+
+/* =========================================
+   PLACAR (SCOREBOARD)
+========================================= */
+.scoreboard {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 35px;
+    gap: 20px;
+    z-index: 2;
+}
+
+.team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+}
+
+.score-number {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 140px;
+    line-height: 0.75;
+}
+
+.team-name {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 26px;
+    color: #3e3323;
+    margin: 20px 0 10px 0;
+    letter-spacing: 1px;
+}
+
+.vs {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 80px;
+    line-height: 0.75;
+    margin-top: 30px; 
+}
+
+/* =========================================
+   ESCUDOS (EM PURO CSS)
+========================================= */
+.shield-border {
+    position: relative;
+    width: 56px;
+    height: 66px;
+    background-color: #3e3323; 
+    clip-path: polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%);
+}
+
+.shield-inner {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 52px;
+    height: 60px;
+    clip-path: polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%);
+}
+
+.green-stripes {
+    background: linear-gradient(90deg, #4ba057 0%, #4ba057 20%, #fff 20%, #fff 40%, #4ba057 40%, #4ba057 60%, #fff 60%, #fff 80%, #4ba057 80%, #4ba057 100%);
+}
+
+.black-stripes {
+    background: linear-gradient(90deg, #1c1c1c 0%, #1c1c1c 20%, #fff 20%, #fff 40%, #1c1c1c 40%, #1c1c1c 60%, #fff 60%, #fff 80%, #1c1c1c 80%, #1c1c1c 100%);
+}
+
+/* =========================================
+   RODAPÉ: CHÃO E BOLA
+========================================= */
+.footer-elements {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+}
+
+.dark-ground {
+    position: absolute;
+    bottom: -30px;
+    left: -10%;
+    width: 120%;
+    height: 100px;
+    background-color: #2b2519;
+    transform: rotate(-4deg);
+    background-image: radial-gradient(circle, #000 1px, transparent 1px);
+    background-size: 6px 6px;
+    background-blend-mode: overlay;
+}
+
+.soccer-ball {
+    position: absolute;
+    bottom: -50px;
+    left: -110px;
+    width: 306px;
+    z-index: 10;
+}
