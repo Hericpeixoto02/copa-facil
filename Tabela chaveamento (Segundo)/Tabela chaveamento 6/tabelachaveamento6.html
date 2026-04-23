@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Playoffs - Final Game</title>
+    <style>
+        /* ==============================================
+           RESET E BACKGROUND
+           ============================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #0a0a0c;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: white;
+            overflow: auto;
+            padding: 40px;
+        }
+
+        .tournament-board {
+            width: 1200px;
+            height: 673px;
+            position: relative;
+            background-color: #0a0a0c;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.9);
+        }
+
+        /* ==============================================
+           CABEÇALHO (THE PLAYOFFS)
+           ============================================== */
+        .header-left {
+            position: absolute;
+            top: 0; left: 0;
+            width: 480px; height: 90px;
+            z-index: 10;
+        }
+        
+        .hl-red {
+            position: absolute;
+            top: 0; left: 0; width: 127%; height: 100%;
+            background-color: #CE2029;
+            clip-path: polygon(0 0, 100% 0, calc(100% - 118px) 100%, 0 100%);
+        }
+            .team-shield {
+    display: none !important;
+}
+        .hl-dark {
+            position: absolute;
+            top: 0; left: 0; width: 576px; height: 100%;
+            background: linear-gradient(90deg, #350709 0%, #CE2029 100%);
+            clip-path: polygon(0 0, 100% 0, calc(100% - 87px) 100%, 0 100%);
+            display: flex;
+            align-items: flex-start;
+            padding-left: 30px;
+            padding-top: 25px;
+        }
+
+        .text-the {
+            font-family: 'Arial Black', sans-serif;
+            font-size: 12px;
+            margin-right: 5px;
+            margin-top: 4px;
+            letter-spacing: 1px;
+        }
+
+        .text-playoffs {
+            font-family: 'Arial Black', sans-serif;
+            font-size: 30px;
+            letter-spacing: 1px;
+            line-height: 1;
+        }
+
+        .header-right {
+            position: absolute;
+            top: -10px; right: 189px;
+            display: flex; gap: 13px;
+            height: 80px;
+            transform: skewX(-56deg);
+            justify-content: flex-end;
+            z-index: 10;
+        }
+        .stripe-red { background: linear-gradient(to right, #CE2029, #310808); height: 60%; }
+        .sr1 { width: 317px; }
+        .sr2 { width: 15px; }
+        .sr3 { width: 11px; }
+        .sr4 { width: 8px; }
+
+        /* ==============================================
+           RODAPÉ (GRAFISMOS CINZAS)
+           ============================================== */
+        .footer-left {
+            position: absolute;
+            bottom: 0; left: 60px;
+            width: 495px; height: 35px;
+            background-color: #8c8c8c;
+            clip-path: polygon(0 100%, 100% 100%, calc(100% - 35px) 0, 70px 0, 35px 100%, 0 100%);
+            z-index: 10;
+        }
+
+        .footer-right {
+            position: absolute;
+            bottom: 0; right: -20px;
+            display: flex; gap: 15px;
+            height: 35px;
+            transform: skewX(50deg);
+            justify-content: flex-end;
+            z-index: 10;
+        }
+        .stripe-grey { height: 100%; background-color: #8c8c8c; }
+        .sg1 { width: 3px; }
+        .sg2 { width: 5px; }
+        .sg3 { width: 8px; }
+        .sg4 { width: 14px; }
+        .sg5 { 
+            width: 450px; 
+            background: linear-gradient(to right, #8c8c8c, #0a0a0c); 
+        }
+
+        /* ==============================================
+           ESTRUTURA DO CHAVEAMENTO (GRID / FLEX)
+           ============================================== */
+        .bracket-area {
+            position: absolute;
+            top: 128px; left: 50%;
+            transform: translateX(-50%);
+            width: 510px; /* Largura ajustada para Semi + Final */
+            height: 420px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .side {
+            display: flex;
+            width: 140px; /* Largura ajustada para 1 coluna */
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .col {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            height: 100%;
+        }
+
+        /* CAIXAS DOS TIMES - ESTILO HEXAGONAL VAZADO */
+        .team {
+            width: 122px;
+            height: 33px;
+            background-color: #d1121b;
+            clip-path: polygon(10px 0, calc(100% - 10px) 0, 100% 50%, calc(100% - 10px) 100%, 10px 100%, 0 50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 5;
+        }
+        p.nometime {
+            margin-top:-2.5px;
+        }
+
+        .team span {
+            width: 110px;
+            height: 24px;
+            background-color: #0a0a0c;
+            clip-path: polygon(9px 0, calc(100% - 9px) 0, 100% 50%, calc(100% - 9px) 100%, 9px 100%, 0 50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 10px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+
+        /* ==============================================
+           MATEMÁTICA DAS LINHAS E ESPAÇAMENTOS
+           ============================================== */
+        .match {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        /* Altura fixada para conectar as pontas da semifinal ao centro perfeitamente */
+        .col1 .match { height: 244px; }
+
+        :root {
+            --line-color: #888;
+            --line-thick: 1.5px;
+        }
+
+        /* CLASSES DE LINHAS PARA CONTROLE INDIVIDUAL */
+        .bracket-line-left {
+            position: absolute;
+            right: -15px; top: 15px; bottom: 17px; width: 15px;
+            border-right: var(--line-thick) solid var(--line-color);
+            border-top: var(--line-thick) solid var(--line-color);
+            border-bottom: var(--line-thick) solid var(--line-color);
+            z-index: 1;
+        }
+
+        .bracket-line-right {
+            position: absolute;
+            left: -15px; top: 13px; bottom: 13px; width: 15px;
+            border-left: var(--line-thick) solid var(--line-color);
+            border-top: var(--line-thick) solid var(--line-color);
+            border-bottom: var(--line-thick) solid var(--line-color);
+            z-index: 1;
+        }
+
+        /* ÁREA CENTRAL */
+        .center-side {
+            width: 140px;
+            height: 100%;
+            position: relative;
+        }
+
+        .center-wrapper-top {
+            position: absolute;
+            top: 92px; left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .center-wrapper-bottom {
+            position: absolute;
+            bottom: 127px; left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .trophy {
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .center-connector-left {
+            position: absolute;
+            left: -58px; top: calc(51% - 0.75px); width: 63px; height: var(--line-thick); 
+            background: var(--line-color); z-index: 1;
+        }
+        .center-connector-right {
+            position: absolute;
+            right: -39px; top: calc(50% - 0.75px); width: 60px; height: var(--line-thick); 
+            background: var(--line-color); z-index: 1;
+        }
+
+
+        div#time1 {
+            background-color: #D41C2B !important;
+        }
+
+        div#time1 span {
+            background-color: #D41C2B !important;
+        }
+
+        .center-wrapper-top {
+            margin-top: 35px;
+        }
+
+        p.nometime {
+            text-align: center;
+        }
+
+        /* CLASSE ADICIONADA PARA O ESCUDO */
+        .team-shield {
+            width: 14px;
+            margin-right: 4px;
+            margin-top: -2.5px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="tournament-board">
+        
+        <div class="header-left">
+            <div class="hl-red"></div>
+            <div class="hl-dark">
+                <span class="text-the"></span>
+                <span class="text-playoffs">CAMPEONATO ALAGOANO</span>
+            </div>
+        </div>
+
+        <div class="header-right">
+            <div class="stripe-red sr1"></div>
+            <div class="stripe-red sr2"></div>
+            <div class="stripe-red sr3"></div>
+            <div class="stripe-red sr4"></div>
+            <div class="stripe-red sr4"></div>
+            <div class="stripe-red sr4"></div>
+            <div class="stripe-red sr4"></div>
+        </div>
+
+        <div class="footer-left"></div>
+        <div class="footer-right">
+            <div class="stripe-grey sg1"></div>
+            <div class="stripe-grey sg2"></div>
+            <div class="stripe-grey sg3"></div>
+            <div class="stripe-grey sg3"></div>
+            <div class="stripe-grey sg3"></div>
+            <div class="stripe-grey sg4"></div>
+            <div class="stripe-grey sg5"></div>
+        </div>
+
+       
+        <div class="bracket-area">
+
+            <div class="side left-side">
+                
+                <div class="col col1">
+                    <div class="match">
+                        <div class="team" id="time1"><span><img id="img-semis-0-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-semis-0-t1"></p></span></div>
+                        <div class="team" id="time1"><span><img id="img-semis-0-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-semis-0-t2"></p></span></div>
+                        <div class="bracket-line-left"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="center-side">
+                
+                <div class="center-wrapper-top">
+                    <div class="team" id="time1"><span><img id="img-final-0-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-final-0-t1"></p></span></div>
+                    <div class="center-connector-left"></div>
+                </div>
+                
+                <div class="trophy">
+                    <img src="img/illustration-icon-trophy-png__1_-removebg-preview.png" alt="" width="80px">
+                </div>
+                
+                <div class="center-wrapper-bottom">
+                    <div class="team"><span><img id="img-final-0-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-final-0-t2"></p></span></div>
+                    <div class="center-connector-right"></div>
+                </div>
+
+            </div>
+
+            <div class="side right-side">
+                
+                <div class="col col1">
+                    <div class="match">
+                        <div class="team"><span><img id="img-semis-1-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-semis-1-t1"></p></span></div>
+                        <div class="team"><span><img id="img-semis-1-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-semis-1-t2"></p></span></div>
+                        <div class="bracket-line-right"></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function preencherFase(fase, dados) {
+            if(!dados) return;
+            
+            dados.forEach((jogo, i) => {
+                const elNome1 = document.getElementById(`nome-${fase}-${i}-t1`);
+                const elImg1 = document.getElementById(`img-${fase}-${i}-t1`);
+                
+                const elNome2 = document.getElementById(`nome-${fase}-${i}-t2`);
+                const elImg2 = document.getElementById(`img-${fase}-${i}-t2`);
+
+                // Limita o tamanho do nome a 15 caracteres para caber com o escudo
+                if(elNome1 && jogo["name1:"]) elNome1.innerText = jogo["name1:"].substring(0, 25);
+                if(elImg1 && jogo.url1) { elImg1.src = jogo.url1; elImg1.style.display = "inline-block"; }
+
+                if(elNome2 && jogo["name2:"]) elNome2.innerText = jogo["name2:"].substring(0, 25);
+                if(elImg2 && jogo.url2) { elImg2.src = jogo.url2; elImg2.style.display = "inline-block"; }
+            });
+        }
+
+        // PUXANDO O SEU FICHEIRO ORIGINAL 4_EQUIPES.JSON
+        fetch('4_equipes.json') 
+            .then(resposta => {
+                if (!resposta.ok) throw new Error("Erro ao carregar o ficheiro JSON.");
+                return resposta.json();
+            })
+            .then(dadosTorneio => {
+                // Atualiza o título do campeonato puxando direto do JSON
+                if (dadosTorneio.titulo) {
+                    const elTitulo = document.querySelector('.text-playoffs');
+                    if (elTitulo) elTitulo.innerText = dadosTorneio.titulo;
+                }
+
+                // O JSON tem 2 fases: Semis e Final
+                const fases = dadosTorneio.fases;
+
+                preencherFase('semis', fases[0]);    // 2 Jogos
+                preencherFase('final', fases[1]);    // 1 Jogo (Centro)
+            })
+            .catch(erro => {
+                console.error("Erro no Chaveamento:", erro);
+                alert("Atenção: Verifica se o ficheiro '4_equipes.json' está na mesma pasta do HTML e se a página está a ser executada num Servidor Local (Live Server).");
+            });
+    </script>
+</body>
+</html>
