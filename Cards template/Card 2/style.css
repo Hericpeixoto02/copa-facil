@@ -1,0 +1,207 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    padding: 20px;
+}
+
+/* Container Principal */
+.card-red {
+    width: 360px;
+    height: 640px;
+    /* Fundo vermelho escuro com um leve gradiente para dar profundidade */
+    background: radial-gradient(circle at center, #b90e15 0%, #7a0306 100%);
+    position: relative;
+    overflow: hidden;
+    color: white;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    
+}
+
+/* Envolve o conteúdo para não sobrepor as barras listradas */
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 30px 0; /* Espaço para as barras superior e inferior */
+    position: relative;
+    z-index: 2;
+}
+
+/* =========================================
+   BARRAS LISTRADAS
+========================================= */
+.striped-bar {
+    position: absolute;
+    width: 100%;
+    height: 12px;
+    z-index: 5;
+    /* Efeito de listras inclinadas via CSS */
+    background: repeating-linear-gradient(
+        -45deg,
+        #ffffff,
+        #ffffff 10px,
+        #900b10 10px,
+        #900b10 20px
+    );
+}
+.top-bar { top: 0; }
+.bottom-bar { bottom: 0; }
+
+/* =========================================
+   CABEÇALHO
+========================================= */
+.header {
+    margin-top: 20px;
+}
+.header h2 {
+    font-weight: 800;
+    font-size: 20px;
+    letter-spacing: 3px;
+    margin-bottom: -5px;
+}
+.jogo-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.jogo-title h1 {
+    font-weight: 900;
+    font-size: 65px;
+    letter-spacing: 2px;
+}
+.bola-letra {
+    width: 60px;
+    height: 60px;
+    margin-left: 5px;
+    /* Adiciona uma sombra para integrar melhor */
+    filter: drop-shadow(0 5px 5px rgba(0,0,0,0.4)); 
+}
+/* =========================================
+   IMAGEM CENTRAL COM PAPEL RASGADO
+========================================= */
+.action-photo-wrapper {
+    width: 100%;
+    margin: 15px 0;
+    /* O truque mágico: cria uma "sombra" branca sólida 6px para cima e 6px para baixo */
+    filter: drop-shadow(0px 6px 0px #ffffff) drop-shadow(0px -6px 0px #ffffff);
+}
+
+/* IMAGEM CENTRAL COM PAPEL RASGADO (IRREGULAR) */
+.action-photo {
+    width: 100%;
+    height: 200px;
+    /* clip-path com coordenadas assimétricas para simular rasgo real */
+    clip-path: polygon(
+        0% -5%, 1% -1%, 19% 4%, 13% 2%, 23% 3%, 34% 5%, 43% 4%, 35% 4%, 52% 3%, 61% 3%, 
+        62% 2%, 79% 0%, 92% 19%, 79% 4%, 65% 2%, 94% 3%, 108% 10%, 107% 16%, 104% 5%, 100% 1%, 
+        
+        107% 105%, 103% 99%, 89% 94%, 83% 98%, 81% 95%, 67% 97%, 76% 96%, 64% 99%, 53% 94%, 
+        60% 97%, 0% 108%, 45% 104%, 31% 92%, 28% 87%, 27% 86%, 49% 110%, 28% 102%, 23% 112%, -13% 103%
+    );
+}
+
+.photo-bg {
+    width: 100%;
+    height: 100%;
+    background-image: url('img/175917164068dad438ace89_1759171640_3x2_md.jpg'); 
+    background-size: cover;
+    background-position: center;
+}
+/* =========================================
+   INFORMAÇÕES (HORÁRIO E FASE)
+========================================= */
+.game-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+.time {
+    font-size: 26px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+.stage-badge {
+    background-color: white;
+    color: #900b10;
+    font-weight: 900;
+    font-size: 20px;
+    padding: 0px 30px;
+    letter-spacing: 2px;
+    width: 67%;
+}
+
+/* =========================================
+   CONFRONTO (LOGOS)
+========================================= */
+.matchup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 10px;
+}
+.team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.team-logo {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
+.team p {
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+.vs {
+    font-size: 35px;
+    font-weight: 900;
+    font-style: italic;
+    margin-top: -20px;
+}
+
+/* =========================================
+   RODAPÉ
+========================================= */
+.footer p {
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+/* =========================================
+   BOLAS FLUTUANTES (Decoração)
+========================================= */
+.floating-ball {
+    position: absolute;
+    width: 146px;
+    z-index: 4;
+    opacity: 0.9;
+}
+.ball-right {
+    top: 56%;
+    right: -82px;
+    transform: translateY(-50%);
+}
+.ball-left {
+    bottom: -46px;
+    left: -92px;
+    rotate: 96deg;
+}
