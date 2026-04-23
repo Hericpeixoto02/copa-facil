@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Playoffs - 128 Equipas</title>
+    <style>
+        /* ==============================================
+           RESET E BACKGROUND
+           ============================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #0a0a0c;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: white;
+            overflow: auto;
+            padding: 40px;
+        }
+
+        .tournament-board {
+            width: 2150px; 
+            height: 3500px; 
+            position: relative;
+            background-color: #0a0a0c;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.9);
+        }
+
+        /* ==============================================
+           CABEÇALHO (THE PLAYOFFS)
+           ============================================== */
+        .header-left { position: absolute; top: 0; left: 0; width: 480px; height: 90px; z-index: 10; }
+        .hl-red { position: absolute; top: 0; left: 0; width: 127%; height: 100%; background-color: #CE2029; clip-path: polygon(0 0, 100% 0, calc(100% - 118px) 100%, 0 100%); }
+        .hl-dark { position: absolute; top: 0; left: 0; width: 1030px; height: 100%; background: linear-gradient(90deg, #350709 0%, #CE2029 100%); clip-path: polygon(0 0, 100% 0, calc(100% - 87px) 100%, 0 100%); display: flex; align-items: flex-start; padding-left: 30px; padding-top: 25px; }
+
+        .text-the { font-family: 'Arial Black', sans-serif; font-size: 12px; margin-right: 5px; margin-top: 4px; letter-spacing: 1px; }
+        .text-playoffs { font-family: 'Arial Black', sans-serif; font-size: 30px; letter-spacing: 1px; line-height: 1; }
+
+        .header-right { position: absolute; top: -10px; right: 189px; display: flex; gap: 13px; height: 80px; transform: skewX(-56deg); justify-content: flex-end; z-index: 10; }
+        .stripe-red { background: linear-gradient(to right, #CE2029, #310808); height: 60%; }
+        .sr1 { width: 847px; } .sr2 { width: 15px; } .sr3 { width: 11px; } .sr4 { width: 8px; }
+
+        /* ==============================================
+           RODAPÉ (GRAFISMOS CINZAS)
+           ============================================== */
+        .footer-left { position: absolute; bottom: 0; left: 60px; width: 895px; height: 35px; background-color: #8c8c8c; clip-path: polygon(0 100%, 100% 100%, calc(100% - 35px) 0, 70px 0, 35px 100%, 0 100%); z-index: 10; }
+        .footer-right { position: absolute; bottom: 0; right: -20px; display: flex; gap: 15px; height: 35px; transform: skewX(50deg); justify-content: flex-end; z-index: 10; }
+        .stripe-grey { height: 100%; background-color: #8c8c8c; }
+        .sg1 { width: 3px; } .sg2 { width: 5px; } .sg3 { width: 8px; } .sg4 { width: 14px; }
+        .sg5 { width: 650px; background: linear-gradient(to right, #8c8c8c, #0a0a0c); }
+
+        .team-shield {
+    display: none !important;
+}
+
+        /* ==============================================
+           ESTRUTURA DO CHAVEAMENTO (GRID / FLEX)
+           ============================================== */
+        .bracket-area { position: absolute; top: 128px; left: 50%; transform: translateX(-50%); width: 1950px; height: 3200px; display: flex; justify-content: space-between; }
+        .side { display: flex; width: 830px; justify-content: space-between; position: relative; }
+        .col { display: flex; flex-direction: column; justify-content: space-around; height: 100%; }
+
+        .team { width: 116px; height: 33px; background-color: #d1121b; clip-path: polygon(10px 0, calc(100% - 10px) 0, 100% 50%, calc(100% - 10px) 100%, 10px 100%, 0 50%); display: flex; justify-content: center; align-items: center; position: relative; z-index: 5; }
+        p.nometime { margin-top:-2.5px; text-align: center; }
+        .team span { width: 110px; height: 24px; background-color: #0a0a0c; clip-path: polygon(9px 0, calc(100% - 9px) 0, 100% 50%, calc(100% - 9px) 100%, 9px 100%, 0 50%); display: flex; justify-content: center; align-items: center; color: #fff; font-size: 10px; font-weight: 800; letter-spacing: 0.5px; }
+
+        /* ==============================================
+           MATEMÁTICA DAS LINHAS E ESPAÇAMENTOS
+           ============================================== */
+        .match { display: flex; flex-direction: column; justify-content: space-between; position: relative; }
+        .col1 .match { height: 77px; }
+        .col2 .match { height: 131px; }
+        .col3 .match { height: 233px; }
+        .col4 .match { height: 432px; }
+        .col5 .match { height: 833px; }
+        .col6 .match { height: 1632px; }
+
+        :root { --line-color: #888; --line-thick: 1.5px; }
+        .bracket-line-left { position: absolute; right: -15px; top: 13px; bottom: 13px; width: 15px; border-right: var(--line-thick) solid var(--line-color); border-top: var(--line-thick) solid var(--line-color); border-bottom: var(--line-thick) solid var(--line-color); z-index: 1; }
+        .connector-line-left { position: absolute; right: -34px; top: calc(50% - 0.75px); width: 19px; height: var(--line-thick); background-color: var(--line-color); z-index: 1; }
+        .bracket-line-right { position: absolute; left: -15px; top: 13px; bottom: 13px; width: 15px; border-left: var(--line-thick) solid var(--line-color); border-top: var(--line-thick) solid var(--line-color); border-bottom: var(--line-thick) solid var(--line-color); z-index: 1; }
+        .connector-line-right { position: absolute; left: -34px; top: calc(50% - 0.75px); width: 19px; height: var(--line-thick); background-color: var(--line-color); z-index: 1; }
+
+        .center-side { width: 140px; height: 17%; position: relative; margin-top: 1324px; }
+        .center-wrapper-top { position: absolute; top: 92px; left: 50%; transform: translateX(-50%); margin-top: 35px; }
+        .center-wrapper-bottom { position: absolute; bottom: 127px; left: 50%; transform: translateX(-50%); }
+        .trophy { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: flex; justify-content: center; align-items: center; }
+
+        .center-connector-left { position: absolute; left: -73px; top: calc(51% - 0.75px); width: 77px; height: var(--line-thick); background: var(--line-color); z-index: 1; }
+        .center-connector-right { position: absolute; right: -73px; top: calc(50% - 0.75px); width: 76px; height: var(--line-thick); background: var(--line-color); z-index: 1; }
+
+        div#time1 { background-color: #D41C2B !important; }
+        div#time1 span { background-color: #D41C2B !important; }
+        
+        .team-shield { width: 14px; margin-right: 4px; margin-top: -2.5px; }
+    </style>
+</head>
+<body>
+
+    <div class="tournament-board">
+        
+        <div class="header-left">
+            <div class="hl-red"></div>
+            <div class="hl-dark">
+                <span class="text-the"></span>
+                <span class="text-playoffs">CAMPEONATO ALAGOANO</span>
+            </div>
+        </div>
+
+        <div class="header-right">
+            <div class="stripe-red sr1"></div><div class="stripe-red sr2"></div><div class="stripe-red sr3"></div><div class="stripe-red sr4"></div><div class="stripe-red sr4"></div><div class="stripe-red sr4"></div><div class="stripe-red sr4"></div>
+        </div>
+
+        <div class="footer-left"></div>
+        <div class="footer-right">
+            <div class="stripe-grey sg1"></div><div class="stripe-grey sg2"></div><div class="stripe-grey sg3"></div><div class="stripe-grey sg3"></div><div class="stripe-grey sg3"></div><div class="stripe-grey sg4"></div><div class="stripe-grey sg5"></div>
+        </div>
+
+        <div class="bracket-area">
+
+            <div class="side left-side">
+                
+                <div class="col col1">
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r128-0-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-0-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r128-0-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-0-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r128-1-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-1-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r128-1-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-1-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r128-2-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-2-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r128-2-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-2-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r128-3-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-3-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r128-3-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-3-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r128-4-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-4-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r128-4-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-4-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r128-5-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-5-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r128-5-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-5-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r128-6-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-6-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r128-6-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-6-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r128-7-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-7-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r128-7-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-7-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r128-8-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-8-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r128-8-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-8-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r128-9-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-9-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r128-9-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-9-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r128-10-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-10-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r128-10-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-10-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r128-11-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-11-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r128-11-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-11-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r128-12-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-12-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r128-12-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-12-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r128-13-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-13-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r128-13-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-13-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r128-14-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-14-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r128-14-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-14-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r128-15-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-15-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r128-15-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-15-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r128-16-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-16-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r128-16-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-16-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r128-17-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-17-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r128-17-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-17-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r128-18-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-18-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r128-18-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-18-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r128-19-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-19-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r128-19-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-19-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r128-20-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-20-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r128-20-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-20-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r128-21-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-21-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r128-21-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-21-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r128-22-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-22-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r128-22-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-22-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r128-23-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-23-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r128-23-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-23-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r128-24-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-24-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r128-24-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-24-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r128-25-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-25-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r128-25-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-25-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r128-26-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-26-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r128-26-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-26-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r128-27-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-27-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r128-27-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-27-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r128-28-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-28-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r128-28-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-28-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r128-29-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-29-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r128-29-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-29-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r128-30-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-30-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r128-30-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-30-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r128-31-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-31-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r128-31-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-31-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                </div>
+
+                <div class="col col2">
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r64-0-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-0-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r64-0-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-0-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r64-1-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-1-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r64-1-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-1-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r64-2-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-2-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r64-2-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-2-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r64-3-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-3-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r64-3-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-3-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r64-4-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-4-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r64-4-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-4-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r64-5-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-5-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r64-5-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-5-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r64-6-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-6-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r64-6-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-6-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r64-7-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-7-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r64-7-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-7-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r64-8-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-8-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r64-8-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-8-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r64-9-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-9-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r64-9-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-9-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r64-10-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-10-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r64-10-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-10-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r64-11-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-11-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r64-11-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-11-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r64-12-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-12-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r64-12-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-12-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r64-13-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-13-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r64-13-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-13-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r64-14-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-14-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r64-14-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-14-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r64-15-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-15-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r64-15-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-15-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                </div>
+
+                <div class="col col3">
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r32-0-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r32-0-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r32-0-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r32-0-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r32-1-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r32-1-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r32-1-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r32-1-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r32-2-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r32-2-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r32-2-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r32-2-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r32-3-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r32-3-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r32-3-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r32-3-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r32-4-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r32-4-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r32-4-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r32-4-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r32-5-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r32-5-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r32-5-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r32-5-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r32-6-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r32-6-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r32-6-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r32-6-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-r32-7-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r32-7-t1"></p></span></div><div class="team" id="time1"><span><img id="img-r32-7-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r32-7-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                </div>
+
+                <div class="col col4">
+                    <div class="match"><div class="team" id="time1"><span><img id="img-oitavas-0-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-oitavas-0-t1"></p></span></div><div class="team" id="time1"><span><img id="img-oitavas-0-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-oitavas-0-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-oitavas-1-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-oitavas-1-t1"></p></span></div><div class="team" id="time1"><span><img id="img-oitavas-1-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-oitavas-1-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-oitavas-2-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-oitavas-2-t1"></p></span></div><div class="team" id="time1"><span><img id="img-oitavas-2-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-oitavas-2-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-oitavas-3-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-oitavas-3-t1"></p></span></div><div class="team" id="time1"><span><img id="img-oitavas-3-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-oitavas-3-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                </div>
+
+                <div class="col col5">
+                    <div class="match"><div class="team" id="time1"><span><img id="img-quartas-0-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-quartas-0-t1"></p></span></div><div class="team" id="time1"><span><img id="img-quartas-0-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-quartas-0-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                    <div class="match"><div class="team" id="time1"><span><img id="img-quartas-1-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-quartas-1-t1"></p></span></div><div class="team" id="time1"><span><img id="img-quartas-1-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-quartas-1-t2"></p></span></div><div class="bracket-line-left"></div><div class="connector-line-left"></div></div>
+                </div>
+
+                <div class="col col6">
+                    <div class="match">
+                        <div class="team" id="time1"><span><img id="img-semis-0-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-semis-0-t1"></p></span></div>
+                        <div class="team" id="time1"><span><img id="img-semis-0-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-semis-0-t2"></p></span></div>
+                        <div class="bracket-line-left"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="center-side">
+                <div class="center-wrapper-top">
+                    <div class="team" id="time1"><span><img id="img-final-0-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-final-0-t1"></p></span></div>
+                    <div class="center-connector-left"></div>
+                </div>
+                
+                <div class="trophy">
+                    <img src="img/illustration-icon-trophy-png__1_-removebg-preview.png" alt="" width="80px">
+                </div>
+                
+                <div class="center-wrapper-bottom">
+                    <div class="team"><span><img id="img-final-0-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-final-0-t2"></p></span></div>
+                    <div class="center-connector-right"></div>
+                </div>
+            </div>
+
+            <div class="side right-side">
+                
+                <div class="col col6">
+                    <div class="match">
+                        <div class="team"><span><img id="img-semis-1-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-semis-1-t1"></p></span></div>
+                        <div class="team"><span><img id="img-semis-1-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-semis-1-t2"></p></span></div>
+                        <div class="bracket-line-right"></div>
+                    </div>
+                </div>
+
+                <div class="col col5">
+                    <div class="match"><div class="team"><span><img id="img-quartas-2-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-quartas-2-t1"></p></span></div><div class="team"><span><img id="img-quartas-2-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-quartas-2-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-quartas-3-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-quartas-3-t1"></p></span></div><div class="team"><span><img id="img-quartas-3-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-quartas-3-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                </div>
+
+                <div class="col col4">
+                    <div class="match"><div class="team"><span><img id="img-oitavas-4-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-oitavas-4-t1"></p></span></div><div class="team"><span><img id="img-oitavas-4-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-oitavas-4-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-oitavas-5-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-oitavas-5-t1"></p></span></div><div class="team"><span><img id="img-oitavas-5-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-oitavas-5-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-oitavas-6-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-oitavas-6-t1"></p></span></div><div class="team"><span><img id="img-oitavas-6-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-oitavas-6-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-oitavas-7-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-oitavas-7-t1"></p></span></div><div class="team"><span><img id="img-oitavas-7-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-oitavas-7-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                </div>
+
+                <div class="col col3">
+                    <div class="match"><div class="team"><span><img id="img-r32-8-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r32-8-t1"></p></span></div><div class="team"><span><img id="img-r32-8-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r32-8-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r32-9-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r32-9-t1"></p></span></div><div class="team"><span><img id="img-r32-9-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r32-9-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r32-10-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r32-10-t1"></p></span></div><div class="team"><span><img id="img-r32-10-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r32-10-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r32-11-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r32-11-t1"></p></span></div><div class="team"><span><img id="img-r32-11-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r32-11-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r32-12-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r32-12-t1"></p></span></div><div class="team"><span><img id="img-r32-12-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r32-12-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r32-13-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r32-13-t1"></p></span></div><div class="team"><span><img id="img-r32-13-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r32-13-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r32-14-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r32-14-t1"></p></span></div><div class="team"><span><img id="img-r32-14-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r32-14-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r32-15-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r32-15-t1"></p></span></div><div class="team"><span><img id="img-r32-15-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r32-15-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                </div>
+
+                <div class="col col2">
+                    <div class="match"><div class="team"><span><img id="img-r64-16-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-16-t1"></p></span></div><div class="team"><span><img id="img-r64-16-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-16-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r64-17-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-17-t1"></p></span></div><div class="team"><span><img id="img-r64-17-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-17-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r64-18-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-18-t1"></p></span></div><div class="team"><span><img id="img-r64-18-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-18-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r64-19-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-19-t1"></p></span></div><div class="team"><span><img id="img-r64-19-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-19-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r64-20-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-20-t1"></p></span></div><div class="team"><span><img id="img-r64-20-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-20-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r64-21-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-21-t1"></p></span></div><div class="team"><span><img id="img-r64-21-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-21-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r64-22-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-22-t1"></p></span></div><div class="team"><span><img id="img-r64-22-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-22-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r64-23-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-23-t1"></p></span></div><div class="team"><span><img id="img-r64-23-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-23-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r64-24-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-24-t1"></p></span></div><div class="team"><span><img id="img-r64-24-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-24-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r64-25-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-25-t1"></p></span></div><div class="team"><span><img id="img-r64-25-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-25-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r64-26-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-26-t1"></p></span></div><div class="team"><span><img id="img-r64-26-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-26-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r64-27-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-27-t1"></p></span></div><div class="team"><span><img id="img-r64-27-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-27-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r64-28-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-28-t1"></p></span></div><div class="team"><span><img id="img-r64-28-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-28-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r64-29-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-29-t1"></p></span></div><div class="team"><span><img id="img-r64-29-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-29-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r64-30-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-30-t1"></p></span></div><div class="team"><span><img id="img-r64-30-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-30-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r64-31-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-31-t1"></p></span></div><div class="team"><span><img id="img-r64-31-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r64-31-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                </div>
+
+                <div class="col col1">
+                    <div class="match"><div class="team"><span><img id="img-r128-32-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-32-t1"></p></span></div><div class="team"><span><img id="img-r128-32-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-32-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r128-33-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-33-t1"></p></span></div><div class="team"><span><img id="img-r128-33-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-33-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r128-34-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-34-t1"></p></span></div><div class="team"><span><img id="img-r128-34-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-34-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r128-35-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-35-t1"></p></span></div><div class="team"><span><img id="img-r128-35-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-35-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r128-36-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-36-t1"></p></span></div><div class="team"><span><img id="img-r128-36-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-36-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r128-37-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-37-t1"></p></span></div><div class="team"><span><img id="img-r128-37-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-37-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r128-38-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-38-t1"></p></span></div><div class="team"><span><img id="img-r128-38-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-38-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r128-39-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-39-t1"></p></span></div><div class="team"><span><img id="img-r128-39-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-39-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r128-40-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-40-t1"></p></span></div><div class="team"><span><img id="img-r128-40-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-40-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r128-41-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-41-t1"></p></span></div><div class="team"><span><img id="img-r128-41-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-41-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r128-42-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-42-t1"></p></span></div><div class="team"><span><img id="img-r128-42-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-42-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r128-43-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-43-t1"></p></span></div><div class="team"><span><img id="img-r128-43-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-43-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r128-44-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-44-t1"></p></span></div><div class="team"><span><img id="img-r128-44-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-44-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r128-45-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-45-t1"></p></span></div><div class="team"><span><img id="img-r128-45-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-45-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r128-46-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-46-t1"></p></span></div><div class="team"><span><img id="img-r128-46-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-46-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r128-47-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-47-t1"></p></span></div><div class="team"><span><img id="img-r128-47-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-47-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r128-48-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-48-t1"></p></span></div><div class="team"><span><img id="img-r128-48-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-48-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r128-49-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-49-t1"></p></span></div><div class="team"><span><img id="img-r128-49-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-49-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r128-50-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-50-t1"></p></span></div><div class="team"><span><img id="img-r128-50-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-50-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r128-51-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-51-t1"></p></span></div><div class="team"><span><img id="img-r128-51-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-51-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r128-52-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-52-t1"></p></span></div><div class="team"><span><img id="img-r128-52-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-52-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r128-53-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-53-t1"></p></span></div><div class="team"><span><img id="img-r128-53-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-53-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r128-54-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-54-t1"></p></span></div><div class="team"><span><img id="img-r128-54-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-54-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r128-55-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-55-t1"></p></span></div><div class="team"><span><img id="img-r128-55-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-55-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r128-56-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-56-t1"></p></span></div><div class="team"><span><img id="img-r128-56-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-56-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r128-57-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-57-t1"></p></span></div><div class="team"><span><img id="img-r128-57-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-57-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r128-58-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-58-t1"></p></span></div><div class="team"><span><img id="img-r128-58-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-58-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r128-59-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-59-t1"></p></span></div><div class="team"><span><img id="img-r128-59-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-59-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r128-60-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-60-t1"></p></span></div><div class="team"><span><img id="img-r128-60-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-60-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r128-61-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-61-t1"></p></span></div><div class="team"><span><img id="img-r128-61-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-61-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r128-62-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-62-t1"></p></span></div><div class="team"><span><img id="img-r128-62-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-62-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                    <div class="match"><div class="team"><span><img id="img-r128-63-t1" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-63-t1"></p></span></div><div class="team"><span><img id="img-r128-63-t2" class="team-shield" style="display:none;"><p class="nometime" id="nome-r128-63-t2"></p></span></div><div class="bracket-line-right"></div><div class="connector-line-right"></div></div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function preencherFase(fase, dados) {
+            if(!dados) return;
+            
+            dados.forEach((jogo, i) => {
+                const elNome1 = document.getElementById(`nome-${fase}-${i}-t1`);
+                const elImg1 = document.getElementById(`img-${fase}-${i}-t1`);
+                
+                const elNome2 = document.getElementById(`nome-${fase}-${i}-t2`);
+                const elImg2 = document.getElementById(`img-${fase}-${i}-t2`);
+
+                // Limita o tamanho do nome a 15 caracteres para caber com o escudo
+                if(elNome1 && jogo["name1:"]) elNome1.innerText = jogo["name1:"].substring(0, 25);
+                if(elImg1 && jogo.url1) { elImg1.src = jogo.url1; elImg1.style.display = "inline-block"; }
+
+                if(elNome2 && jogo["name2:"]) elNome2.innerText = jogo["name2:"].substring(0, 25);
+                if(elImg2 && jogo.url2) { elImg2.src = jogo.url2; elImg2.style.display = "inline-block"; }
+            });
+        }
+
+        // PUXANDO O SEU FICHEIRO ORIGINAL 128_EQUIPES.JSON
+        fetch('128_equipes.json') 
+            .then(resposta => {
+                if (!resposta.ok) throw new Error("Erro ao carregar o ficheiro JSON.");
+                return resposta.json();
+            })
+            .then(dadosTorneio => {
+                // Atualiza o título do campeonato puxando direto do JSON
+                if (dadosTorneio.titulo) {
+                    const elTitulo = document.querySelector('.text-playoffs');
+                    if (elTitulo) elTitulo.innerText = dadosTorneio.titulo;
+                }
+
+                // O JSON é um objeto com o array "fases" dentro, então usamos dadosTorneio.fases
+                const fases = dadosTorneio.fases;
+
+                // A estrutura completa do 128_equipes.json
+                preencherFase('r128', fases[0]);     // 64 Jogos
+                preencherFase('r64', fases[1]);      // 32 Jogos
+                preencherFase('r32', fases[2]);      // 16 Jogos
+                preencherFase('oitavas', fases[3]);  // 8 Jogos
+                preencherFase('quartas', fases[4]);  // 4 Jogos
+                preencherFase('semis', fases[5]);    // 2 Jogos
+                preencherFase('final', fases[6]);    // 1 Jogo (Centro)
+            })
+            .catch(erro => {
+                console.error("Erro no Chaveamento:", erro);
+                alert("Atenção: Verifica se o ficheiro '128_equipes.json' está na mesma pasta do HTML e se a página está a ser executada num Servidor Local (Live Server).");
+            });
+    </script>
+</body>
+</html>
