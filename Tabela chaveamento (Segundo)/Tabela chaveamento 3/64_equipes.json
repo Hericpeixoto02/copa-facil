@@ -1,0 +1,83 @@
+{
+  "titulo": "CAMPEONATO ALAGOANO",
+  "fases":
+
+[
+     [
+    { "name1:": "Flamengo", "name2:": "Palmeiras", "url1": "https://picsum.photos/seed/flamengo/100/120", "url2": "https://picsum.photos/seed/palmeiras/100/120", "r1": "2", "r2": "1" },
+    { "name1:": "Corinthians", "name2:": "Grêmio", "url1": "https://picsum.photos/seed/corinthians/100/120", "url2": "https://picsum.photos/seed/gremio/100/120", "r1": "3", "r2": "0" },
+    { "name1:": "São Paulo", "name2:": "Internacional", "url1": "https://picsum.photos/seed/sao-paulo/100/120", "url2": "https://picsum.photos/seed/internacional/100/120", "r1": "1", "r2": "2" },
+    { "name1:": "Bahia", "name2:": "Atlético Mineiro", "url1": "https://picsum.photos/seed/bahia/100/120", "url2": "https://picsum.photos/seed/atletico-mineiro/100/120", "r1": "0", "r2": "1" },
+    { "name1:": "Vasco", "name2:": "Cruzeiro", "url1": "https://picsum.photos/seed/vasco/100/120", "url2": "https://picsum.photos/seed/cruzeiro/100/120", "r1": "1", "r2": "0" },
+    { "name1:": "Botafogo", "name2:": "Fortaleza", "url1": "https://picsum.photos/seed/botafogo/100/120", "url2": "https://picsum.photos/seed/fortaleza/100/120", "r1": "2", "r2": "2" },
+    { "name1:": "Ceará", "name2:": "Sport", "url1": "https://picsum.photos/seed/ceara/100/120", "url2": "https://picsum.photos/seed/sport/100/120", "r1": "0", "r2": "1" },
+    { "name1:": "Santos", "name2:": "Fluminense", "url1": "https://picsum.photos/seed/santos/100/120", "url2": "https://picsum.photos/seed/fluminense/100/120", "r1": "4", "r2": "2" },
+    { "name1:": "Juventude", "name2:": "Chapecoense", "url1": "https://picsum.photos/seed/juventude/100/120", "url2": "https://picsum.photos/seed/chapecoense/100/120", "r1": "2", "r2": "0" },
+    { "name1:": "Avaí", "name2:": "Coritiba", "url1": "https://picsum.photos/seed/avai/100/120", "url2": "https://picsum.photos/seed/coritiba/100/120", "r1": "1", "r2": "1" },
+    { "name1:": "Goiás", "name2:": "Atlético Goianiense", "url1": "https://picsum.photos/seed/goias/100/120", "url2": "https://picsum.photos/seed/atletico-goianiense/100/120", "r1": "3", "r2": "2" },
+    { "name1:": "América MG", "name2:": "Bragantino", "url1": "https://picsum.photos/seed/america-mg/100/120", "url2": "https://picsum.photos/seed/bragantino/100/120", "r1": "0", "r2": "1" },
+    { "name1:": "CSA", "name2:": "CRB", "url1": "https://picsum.photos/seed/csa/100/120", "url2": "https://picsum.photos/seed/crb/100/120", "r1": "2", "r2": "3" },
+    { "name1:": "Remo", "name2:": "Paysandu", "url1": "https://picsum.photos/seed/remo/100/120", "url2": "https://picsum.photos/seed/paysandu/100/120", "r1": "1", "r2": "0" },
+    { "name1:": "Náutico", "name2:": "Santa Cruz", "url1": "https://picsum.photos/seed/nautico/100/120", "url2": "https://picsum.photos/seed/santa-cruz/100/120", "r1": "2", "r2": "2" },
+    { "name1:": "Vitória", "name2:": "Ponte Preta", "url1": "https://picsum.photos/seed/vitoria/100/120", "url2": "https://picsum.photos/seed/ponte-preta/100/120", "r1": "1", "r2": "3" },
+        { "name1:": "Flamengo", "name2:": "Palmeiras", "url1": "https://picsum.photos/seed/flamengo/100/120", "url2": "https://picsum.photos/seed/palmeiras/100/120", "r1": "2", "r2": "1" },
+    { "name1:": "Corinthians", "name2:": "Grêmio", "url1": "https://picsum.photos/seed/corinthians/100/120", "url2": "https://picsum.photos/seed/gremio/100/120", "r1": "3", "r2": "0" },
+    { "name1:": "São Paulo", "name2:": "Internacional", "url1": "https://picsum.photos/seed/sao-paulo/100/120", "url2": "https://picsum.photos/seed/internacional/100/120", "r1": "1", "r2": "2" },
+    { "name1:": "Bahia", "name2:": "Atlético Mineiro", "url1": "https://picsum.photos/seed/bahia/100/120", "url2": "https://picsum.photos/seed/atletico-mineiro/100/120", "r1": "0", "r2": "1" },
+    { "name1:": "Vasco", "name2:": "Cruzeiro", "url1": "https://picsum.photos/seed/vasco/100/120", "url2": "https://picsum.photos/seed/cruzeiro/100/120", "r1": "1", "r2": "0" },
+    { "name1:": "Botafogo", "name2:": "Fortaleza", "url1": "https://picsum.photos/seed/botafogo/100/120", "url2": "https://picsum.photos/seed/fortaleza/100/120", "r1": "2", "r2": "2" },
+    { "name1:": "Ceará", "name2:": "Sport", "url1": "https://picsum.photos/seed/ceara/100/120", "url2": "https://picsum.photos/seed/sport/100/120", "r1": "0", "r2": "1" },
+    { "name1:": "Santos", "name2:": "Fluminense", "url1": "https://picsum.photos/seed/santos/100/120", "url2": "https://picsum.photos/seed/fluminense/100/120", "r1": "4", "r2": "2" },
+    { "name1:": "Juventude", "name2:": "Chapecoense", "url1": "https://picsum.photos/seed/juventude/100/120", "url2": "https://picsum.photos/seed/chapecoense/100/120", "r1": "2", "r2": "0" },
+    { "name1:": "Avaí", "name2:": "Coritiba", "url1": "https://picsum.photos/seed/avai/100/120", "url2": "https://picsum.photos/seed/coritiba/100/120", "r1": "1", "r2": "1" },
+    { "name1:": "Goiás", "name2:": "Atlético Goianiense", "url1": "https://picsum.photos/seed/goias/100/120", "url2": "https://picsum.photos/seed/atletico-goianiense/100/120", "r1": "3", "r2": "2" },
+    { "name1:": "América MG", "name2:": "Bragantino", "url1": "https://picsum.photos/seed/america-mg/100/120", "url2": "https://picsum.photos/seed/bragantino/100/120", "r1": "0", "r2": "1" },
+    { "name1:": "CSA", "name2:": "CRB", "url1": "https://picsum.photos/seed/csa/100/120", "url2": "https://picsum.photos/seed/crb/100/120", "r1": "2", "r2": "3" },
+    { "name1:": "Remo", "name2:": "Paysandu", "url1": "https://picsum.photos/seed/remo/100/120", "url2": "https://picsum.photos/seed/paysandu/100/120", "r1": "1", "r2": "0" },
+    { "name1:": "Náutico", "name2:": "Santa Cruz", "url1": "https://picsum.photos/seed/nautico/100/120", "url2": "https://picsum.photos/seed/santa-cruz/100/120", "r1": "2", "r2": "2" },
+    { "name1:": "Vitória", "name2:": "Ponte Preta", "url1": "https://picsum.photos/seed/vitoria/100/120", "url2": "https://picsum.photos/seed/ponte-preta/100/120", "r1": "1", "r2": "3" }
+  ],
+  [
+    { "name1:": "Flamengo", "name2:": "Palmeiras", "url1": "https://picsum.photos/seed/flamengo/100/120", "url2": "https://picsum.photos/seed/palmeiras/100/120", "r1": "2", "r2": "1" },
+    { "name1:": "Corinthians", "name2:": "Grêmio", "url1": "https://picsum.photos/seed/corinthians/100/120", "url2": "https://picsum.photos/seed/gremio/100/120", "r1": "3", "r2": "0" },
+    { "name1:": "São Paulo", "name2:": "Internacional", "url1": "https://picsum.photos/seed/sao-paulo/100/120", "url2": "https://picsum.photos/seed/internacional/100/120", "r1": "1", "r2": "2" },
+    { "name1:": "Bahia", "name2:": "Atlético Mineiro", "url1": "https://picsum.photos/seed/bahia/100/120", "url2": "https://picsum.photos/seed/atletico-mineiro/100/120", "r1": "0", "r2": "1" },
+    { "name1:": "Vasco", "name2:": "Cruzeiro", "url1": "https://picsum.photos/seed/vasco/100/120", "url2": "https://picsum.photos/seed/cruzeiro/100/120", "r1": "1", "r2": "0" },
+    { "name1:": "Botafogo", "name2:": "Fortaleza", "url1": "https://picsum.photos/seed/botafogo/100/120", "url2": "https://picsum.photos/seed/fortaleza/100/120", "r1": "2", "r2": "2" },
+    { "name1:": "Ceará", "name2:": "Sport", "url1": "https://picsum.photos/seed/ceara/100/120", "url2": "https://picsum.photos/seed/sport/100/120", "r1": "0", "r2": "1" },
+    { "name1:": "Santos", "name2:": "Fluminense", "url1": "https://picsum.photos/seed/santos/100/120", "url2": "https://picsum.photos/seed/fluminense/100/120", "r1": "4", "r2": "2" },
+    { "name1:": "Juventude", "name2:": "Chapecoense", "url1": "https://picsum.photos/seed/juventude/100/120", "url2": "https://picsum.photos/seed/chapecoense/100/120", "r1": "2", "r2": "0" },
+    { "name1:": "Avaí", "name2:": "Coritiba", "url1": "https://picsum.photos/seed/avai/100/120", "url2": "https://picsum.photos/seed/coritiba/100/120", "r1": "1", "r2": "1" },
+    { "name1:": "Goiás", "name2:": "Atlético Goianiense", "url1": "https://picsum.photos/seed/goias/100/120", "url2": "https://picsum.photos/seed/atletico-goianiense/100/120", "r1": "3", "r2": "2" },
+    { "name1:": "América MG", "name2:": "Bragantino", "url1": "https://picsum.photos/seed/america-mg/100/120", "url2": "https://picsum.photos/seed/bragantino/100/120", "r1": "0", "r2": "1" },
+    { "name1:": "CSA", "name2:": "CRB", "url1": "https://picsum.photos/seed/csa/100/120", "url2": "https://picsum.photos/seed/crb/100/120", "r1": "2", "r2": "3" },
+    { "name1:": "Remo", "name2:": "Paysandu", "url1": "https://picsum.photos/seed/remo/100/120", "url2": "https://picsum.photos/seed/paysandu/100/120", "r1": "1", "r2": "0" },
+    { "name1:": "Náutico", "name2:": "Santa Cruz", "url1": "https://picsum.photos/seed/nautico/100/120", "url2": "https://picsum.photos/seed/santa-cruz/100/120", "r1": "2", "r2": "2" },
+    { "name1:": "Vitória", "name2:": "Ponte Preta", "url1": "https://picsum.photos/seed/vitoria/100/120", "url2": "https://picsum.photos/seed/ponte-preta/100/120", "r1": "1", "r2": "3" }
+  ],
+  [
+    { "name1:": "Flamengo", "name2:": "Corinthians", "url1": "https://picsum.photos/seed/flamengo/100/120", "url2": "https://picsum.photos/seed/corinthians/100/120", "r1": "1", "r2": "2" },
+    { "name1:": "Internacional", "name2:": "Atlético Mineiro", "url1": "https://picsum.photos/seed/internacional/100/120", "url2": "https://picsum.photos/seed/atletico-mineiro/100/120", "r1": "2", "r2": "1" },
+    { "name1:": "Vasco", "name2:": "Botafogo", "url1": "https://picsum.photos/seed/vasco/100/120", "url2": "https://picsum.photos/seed/botafogo/100/120", "r1": "0", "r2": "3" },
+    { "name1:": "Sport", "name2:": "Santos", "url1": "https://picsum.photos/seed/sport/100/120", "url2": "https://picsum.photos/seed/santos/100/120", "r1": "1", "r2": "2" },
+    { "name1:": "Juventude", "name2:": "Avaí", "url1": "https://picsum.photos/seed/juventude/100/120", "url2": "https://picsum.photos/seed/avai/100/120", "r1": "2", "r2": "1" },
+    { "name1:": "Goiás", "name2:": "Bragantino", "url1": "https://picsum.photos/seed/goias/100/120", "url2": "https://picsum.photos/seed/bragantino/100/120", "r1": "0", "r2": "2" },
+    { "name1:": "CRB", "name2:": "Remo", "url1": "https://picsum.photos/seed/crb/100/120", "url2": "https://picsum.photos/seed/remo/100/120", "r1": "3", "r2": "1" },
+    { "name1:": "Náutico", "name2:": "Ponte Preta", "url1": "https://picsum.photos/seed/nautico/100/120", "url2": "https://picsum.photos/seed/ponte-preta/100/120", "r1": "1", "r2": "2" }
+  ],
+  [
+    { "name1:": "Corinthians", "name2:": "Internacional", "url1": "https://picsum.photos/seed/corinthians/100/120", "url2": "https://picsum.photos/seed/internacional/100/120", "r1": "2", "r2": "0" },
+    { "name1:": "Botafogo", "name2:": "Santos", "url1": "https://picsum.photos/seed/botafogo/100/120", "url2": "https://picsum.photos/seed/santos/100/120", "r1": "1", "r2": "3" },
+    { "name1:": "Juventude", "name2:": "Bragantino", "url1": "https://picsum.photos/seed/juventude/100/120", "url2": "https://picsum.photos/seed/bragantino/100/120", "r1": "0", "r2": "1" },
+    { "name1:": "CRB", "name2:": "Ponte Preta", "url1": "https://picsum.photos/seed/crb/100/120", "url2": "https://picsum.photos/seed/ponte-preta/100/120", "r1": "2", "r2": "2" }
+  ],
+  [
+    { "name1:": "Corinthians", "name2:": "Santos", "url1": "https://picsum.photos/seed/corinthians/100/120", "url2": "https://picsum.photos/seed/santos/100/120", "r1": "3", "r2": "2" },
+    { "name1:": "Bragantino", "name2:": "CRB", "url1": "https://picsum.photos/seed/bragantino/100/120", "url2": "https://picsum.photos/seed/crb/100/120", "r1": "1", "r2": "0" }
+  ],
+  [
+    { "name1:": "Corinthians", "name2:": "Santos", "url1": "https://picsum.photos/seed/corinthians/100/120", "url2": "https://picsum.photos/seed/bragantino/100/120", "r1": "2", "r2": "1" }
+  ]
+]
+
+}
