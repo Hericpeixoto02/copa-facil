@@ -1,55 +1,45 @@
 <!DOCTYPE html>
-<html lang="pt-PT">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resultado Fim de Jogo</title>
+    <title>Resultado - Fim de Jogo</title>
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-feed.css">
 </head>
 <body>
-
-    <div class="card-resultado">
+    <div class="card">
+        <div class="footer-texture"></div>
         
-        <div class="date-badge">
-            10.07.2024 | 07 HORAS
-        </div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Soccerball.svg" class="ball" alt="Bola de Futebol">
 
-        <div class="header-titles">
-            <h1 class="efeito-textura">FIM DE JOGO!</h1>
-            <h2>RESULTADO FINAL</h2>
-        </div>
-
-        <div class="scoreboard">
-            <div class="team">
-                <div class="score-number efeito-textura">2</div>
-                <div class="team-name">BORCELE</div>
-                <div class="shield-border">
-                    <div class="shield-inner green-stripes"></div>
-                </div>
+        <div class="content">
+            <div class="header">
+                <span class="date-time">10.07.2024 | 07 HORAS</span>
             </div>
 
-            <div class="vs efeito-textura">X</div>
+            <div class="titles">
+                <h1>FIM DE JOGO!</h1>
+                <h2>RESULTADO FINAL</h2>
+            </div>
 
-            <div class="team">
-                <div class="score-number efeito-textura">2</div>
-                <div class="team-name">FAUSTINO</div>
-                <div class="shield-border">
-                    <div class="shield-inner black-stripes"></div>
+            <div class="score-container">
+                <span class="score-number">2</span>
+                <span class="score-x">X</span>
+                <span class="score-number">2</span>
+            </div>
+
+            <div class="teams-container">
+                <div class="team">
+                    <span class="team-name">BORCELE</span>
+                    <div class="shield green-shield"></div>
+                </div>
+                <div class="team">
+                    <span class="team-name">FAUSTINO</span>
+                    <div class="shield black-shield"></div>
                 </div>
             </div>
         </div>
-
-        <div class="footer-elements">
-            <div class="dark-ground"></div>
-            <img src="img/dirtysoccerballc4dmodel001-removebg-preview.png" alt="Bola de Futebol" class="soccer-ball">
-        </div>
-
     </div>
-
 </body>
 </html>
