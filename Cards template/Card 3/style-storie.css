@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@700&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body, html {
+    width: 100%; height: 100%;
+    display: flex; justify-content: center; align-items: center;
+    background-color: #222; font-family: 'Oswald', sans-serif;
+}
+
+.card {
+    background: radial-gradient(circle at 50% 50%, #d4a331, #c08f25);
+    position: relative; overflow: hidden; container-type: inline-size;
+    display: flex; flex-direction: column; align-items: center;
+    /* Proporções Story */
+    width: 100%; max-width: 1080px;
+    aspect-ratio: 9 / 16;
+}
+
+.footer-texture {
+    position: absolute; bottom: 0; left: 0; width: 100%; height: 50cqw;
+    background-color: #322d23;
+    clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%);
+    z-index: 1;
+}
+
+.ball {
+    position: absolute; bottom: -5cqw; left: -15cqw;
+    width: 70cqw; height: 70cqw; z-index: 2; border-radius: 50%;
+    filter: sepia(0.6) contrast(1.2) brightness(0.8) drop-shadow(10px 10px 15px rgba(0,0,0,0.5));
+}
+
+.content {
+    position: relative; z-index: 3;
+    display: flex; flex-direction: column; align-items: center;
+    width: 100%; height: 100%; padding-top: 25%;
+}
+
+.date-time {
+    background-color: #433924; color: #fff;
+    padding: 2cqw 5cqw; font-size: 4cqw;
+    border-radius: 1cqw; letter-spacing: 0.1cqw;
+}
+
+.titles { text-align: center; margin-top: 10cqw; }
+.titles h1 { font-family: 'Anton', sans-serif; color: #e5e1cd; font-size: 22cqw; line-height: 0.9; text-shadow: 4px 4px 0 #a97e20; }
+.titles h2 { color: #373328; font-size: 7cqw; margin-top: -1cqw; }
+
+.score-container {
+    display: flex; align-items: center; justify-content: center; gap: 8cqw; margin-top: 15cqw;
+    font-family: 'Anton', sans-serif; color: #e5e1cd; text-shadow: 4px 4px 0 #a97e20;
+}
+.score-number { font-size: 32cqw; line-height: 1; }
+.score-x { font-size: 16cqw; }
+
+.teams-container { display: flex; justify-content: space-between; width: 75cqw; margin-top: 5cqw; }
+.team { display: flex; flex-direction: column; align-items: center; width: 40%; }
+.team-name { color: #373328; font-size: 6cqw; margin-bottom: 3cqw; }
+
+.shield { width: 18cqw; height: 22cqw; clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%); }
+.green-shield { background: linear-gradient(to right, #489b5a 0%, #489b5a 14.28%, #fff 14.28%, #fff 28.56%, #489b5a 28.56%, #489b5a 42.84%, #fff 42.84%, #fff 57.12%, #489b5a 57.12%, #489b5a 71.4%, #fff 71.4%, #fff 85.68%, #489b5a 85.68%, #489b5a 100%); }
+.black-shield { background: linear-gradient(to right, #211f1e 0%, #211f1e 14.28%, #fff 14.28%, #fff 28.56%, #211f1e 28.56%, #211f1e 42.84%, #fff 42.84%, #fff 57.12%, #211f1e 57.12%, #211f1e 71.4%, #fff 71.4%, #fff 85.68%, #211f1e 85.68%, #211f1e 100%); }
+
+/* 100% NO PC */
+@media (min-width: 1024px) {
+    .card { width: 100vw; height: 100vh; max-width: none; aspect-ratio: auto; }
+    .content { justify-content: center; padding-top: 5vh; }
+    .titles h1 { font-size: 15vmin; }
+    .titles h2 { font-size: 4.5vmin; }
+    .score-number { font-size: 20vmin; }
+    .score-x { font-size: 10vmin; }
+    .date-time { font-size: 2.5vmin; padding: 1vmin 2vmin; }
+    .team-name { font-size: 4vmin; margin-bottom: 1.5vmin; }
+    .shield { width: 12vmin; height: 15vmin; }
+    .teams-container { width: 60vmin; }
+    .ball { width: 40vmin; height: 40vmin; bottom: -5vmin; left: -5vmin; }
+    .footer-texture { height: 20vmin; }
+}
