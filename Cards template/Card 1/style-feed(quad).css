@@ -1,0 +1,158 @@
+/* ============================================================
+   CONFIGURAÇÃO DE FORMATO (Altere aqui o valor de --altura)
+   ============================================================ */
+:root {
+    --largura: 1008px;
+    --altura: 1080px;
+}
+
+/* Importação das fontes */
+@font-face {
+    font-family: 'Edo';
+    src: url('fontes/edosz.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+/* Container Principal */
+.card {
+    width: var(--largura);
+    height: var(--altura);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgb(0 0 0 / 81%)), 
+                url(img/estadio-de-futebol-iluminado-espaco-em-branco_488220-30758.avif);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    padding-bottom: 70px; /* Ajustado proporcionalmente (25px * 2.8) */
+}
+
+/* Detalhes Laterais (Listras) */
+.stripes {
+    position: absolute;
+    width: 134px; /* 48px * 2.8 */
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    z-index: 0; 
+}
+.stripes-left { left: -42px; transform: rotate(25deg); top: 15%; }
+.stripes-right { right: -39px; transform: rotate(24deg); top: 10%;} 
+
+.stripe {
+    height: 42px; /* 15px * 2.8 */
+    width: 100%;
+}
+.yellow { background-color: #EDD00B; }
+.green { background-color: #1BFF5F; }
+
+/* Camada de frente */
+.header, .matchup, .time-banner, .footer {
+    position: relative;
+    z-index: 1;
+}
+
+/* Título */
+.header {
+    margin-top: 84px; /* 30px * 2.8 */
+}
+.header h2 {
+    font-size: 106px; /* 38px * 2.8 */
+    font-weight: normal;
+    font-family: 'Edo', sans-serif;
+    rotate: -8deg;
+}
+.header h1 {
+    font-size: 221px; /* 79px * 2.8 */
+    line-height: 0.8;
+    font-family: 'Edo', sans-serif;
+    margin-top: 11px;
+    rotate: -6deg;
+    font-weight: 100;
+}
+
+/* Confronto (Logos) */
+.matchup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 42px;
+}
+.team-logo {
+    width: 224px; /* 80px * 2.8 */
+    height: 224px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 17px;
+}
+.team-logo img {
+    max-width: 100%;
+    border-radius: 50%;
+    object-fit: contain;
+}
+.vs {
+    font-family: 'Edo', sans-serif;
+    font-size: 160px; /* 57px * 2.8 */
+}
+
+/* Faixa de Horário */
+.time-banner {
+    background-color: #ffd634;
+    color: black;
+    transform: skewY(-6deg);
+    margin: 28px 0; 
+}
+.time-banner span {
+    font-family: 'Edo', sans-serif;
+    font-size: 106px; /* 38px * 2.8 */
+    display: block;
+    transform: skewY(-1deg); 
+    margin-top: 17px;
+}
+
+/* Rodapé */
+.footer {
+    width: 100%;
+    padding: 0 56px;
+}
+.championship {
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 5px;
+    font-size: 39px; /* 14px * 2.8 */
+    margin-bottom: 14px;
+}
+.line {
+    height: 3px;
+    background-color: #f7d54e;
+    width: 80%;
+    margin: 28px auto;
+}
+.address {
+    font-size: 34px; /* 12px * 2.8 */
+    opacity: 0.8;
+    line-height: 1.4;
+}
