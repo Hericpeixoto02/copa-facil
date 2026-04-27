@@ -1,7 +1,19 @@
+/* ============================================================
+   CONFIGURAÇÃO DE FORMATO (Altere aqui o valor de --altura)
+   ============================================================ */
+:root {
+    --largura: 1008px;
+    
+    /* DESCOMENTE APENAS A LINHA DO FORMATO DESEJADO: */
+    --altura: 1350px; /* Feed Retrato (4:5) */
+     --altura: 1080px; 
+     --altura: 1920px; 
+}
+
 /* Importação das fontes */
 @font-face {
     font-family: 'Edo';
-    src: url('edo.ttf/edosz.ttf'); /* Mantido o seu caminho original */
+    src: url('fontes/edosz.ttf');
 }
 
 * {
@@ -11,60 +23,54 @@
 }
 
 body {
-    background-color: #fff;
+    background-color: #f0f0f0;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     font-family: Arial, sans-serif;
-    padding: 20px; /* Evita colar nas bordas do navegador */
 }
 
 /* Container Principal */
 .card {
-    width: 360px; 
-    height: 569px;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgb(0 0 0 / 81%)), url(img/estadio-de-futebol-iluminado-espaco-em-branco_488220-30758.avif);
+    width: 100%;
+    height: var(--altura);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgb(0 0 0 / 81%)), 
+                url(img/estadio-de-futebol-iluminado-espaco-em-branco_488220-30758.avif);
     background-size: cover;
     background-position: center;
     position: relative;
     overflow: hidden;
     color: white;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    border-radius: 6px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    border-radius: 15px;
     display: flex;
     flex-direction: column;
     justify-content: space-between; 
-    padding-bottom: 25px;  
+    padding-bottom: 70px; /* Ajustado proporcionalmente (25px * 2.8) */
 }
-
-
-.proporcao-1920 { height: 640px; } /* Story / Reels (9:16) */
-.proporcao-1350 { height: 450px; } /* Feed Retrato (4:5) */
-.proporcao-1080 { height: 360px; } /* Feed Quadrado (1:1) */
-
 
 /* Detalhes Laterais (Listras) */
 .stripes {
     position: absolute;
-    width: 48px;
+    width: 134px; /* 48px * 2.8 */
     display: flex;
     flex-direction: column;
-    gap: 5px;
-    z-index: 0; /* Joga as listras para trás */
+    gap: 14px;
+    z-index: 0; 
 }
-.stripes-left { left: -15px; transform: rotate(25deg);top: 15%; }
-.stripes-right { right: -14px; transform: rotate(24deg); top: 10%;} /* Ajustei a rotação para espelhar certinho */
+.stripes-left { left: -42px; transform: rotate(25deg); top: 15%; }
+.stripes-right { right: -39px; transform: rotate(24deg); top: 10%;} 
 
 .stripe {
-    height: 15px;
+    height: 42px; /* 15px * 2.8 */
     width: 100%;
 }
 .yellow { background-color: #EDD00B; }
 .green { background-color: #1BFF5F; }
 
-/* Garante que os textos e logos fiquem na frente das listras */
+/* Camada de frente */
 .header, .matchup, .time-banner, .footer {
     position: relative;
     z-index: 1;
@@ -72,19 +78,19 @@ body {
 
 /* Título */
 .header {
-    margin-top: 30px;
+    margin-top: 84px; /* 30px * 2.8 */
 }
 .header h2 {
-    font-size: 38px;
+    font-size: 106px; /* 38px * 2.8 */
     font-weight: normal;
     font-family: 'Edo', sans-serif;
     rotate: -8deg;
 }
 .header h1 {
-    font-size: 79px;
+    font-size: 221px; /* 79px * 2.8 */
     line-height: 0.8;
     font-family: 'Edo', sans-serif;
-    margin-top: 4px;
+    margin-top: 11px;
     rotate: -6deg;
     font-weight: 100;
 }
@@ -94,17 +100,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;
+    gap: 42px;
 }
 .team-logo {
-    width: 80px; /* Reduzido levemente para caber bem na versão quadrada */
-    height: 80px;
+    width: 224px; /* 80px * 2.8 */
+    height: 224px;
     background-color: white;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 6px;
+    padding: 17px;
 }
 .team-logo img {
     max-width: 100%;
@@ -113,8 +119,7 @@ body {
 }
 .vs {
     font-family: 'Edo', sans-serif;
-    font-size: 57px;
-    
+    font-size: 160px; /* 57px * 2.8 */
 }
 
 /* Faixa de Horário */
@@ -122,37 +127,36 @@ body {
     background-color: #ffd634;
     color: black;
     transform: skewY(-6deg);
-    margin: 10px 0; /* Removido o margin gigantesco antigo */
+    margin: 28px 0; 
 }
 .time-banner span {
     font-family: 'Edo', sans-serif;
-    font-size: 38px;
+    font-size: 106px; /* 38px * 2.8 */
     display: block;
-    transform: skewY(-1deg); /* Desfaz a inclinação no texto */
-    margin-top: 6px;
+    transform: skewY(-1deg); 
+    margin-top: 17px;
 }
 
 /* Rodapé */
 .footer {
     width: 100%;
-    padding: 0 20px;
-    /* Removido o position absolute para não encavalar! */
+    padding: 0 56px;
 }
 .championship {
     text-transform: uppercase;
     font-weight: bold;
-    letter-spacing: 2px;
-    font-size: 14px;
-    margin-bottom: 5px;
+    letter-spacing: 5px;
+    font-size: 39px; /* 14px * 2.8 */
+    margin-bottom: 14px;
 }
 .line {
-    height: 1px;
+    height: 3px;
     background-color: #f7d54e;
     width: 80%;
-    margin: 10px auto;
+    margin: 28px auto;
 }
 .address {
-    font-size: 12px;
+    font-size: 34px; /* 12px * 2.8 */
     opacity: 0.8;
     line-height: 1.4;
 }
