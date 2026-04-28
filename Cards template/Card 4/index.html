@@ -1,56 +1,301 @@
 <!DOCTYPE html>
-<html lang="pt-PT">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Card Venha Torcer</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="style.css">
+    <title>Card de Jogo Oficial - Juvenal</title>
+    <style>
+        /* =========================================
+           RESET E CONTROLES DE TELA
+        ========================================= */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            background-color: #111;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+            font-family: 'Arial Black', Impact, sans-serif;
+        }
+
+        .format-controls {display:none;}
+        /* Painel para você testar os formatos (Não aparece na imagem final) */
+        .format-controls {
+            position: fixed;
+            top: 20px; left: 20px;
+            z-index: 1000;
+            background: rgba(0,0,0,0.8);
+            padding: 15px; border-radius: 8px; border: 1px solid #333;
+            display: flex; flex-direction: column; gap: 10px;
+        }
+        .format-controls button {
+            background: #f1c40f; color: #000; border: none;
+            padding: 8px 15px; font-weight: bold; cursor: pointer; border-radius: 4px;
+        }
+        .format-controls button:hover { background: #d4ac0d; }
+
+        /* =========================================
+           O CONTAINER PRINCIPAL RESPONSIVO
+        ========================================= */
+        .card-wrapper {
+            position: relative;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            box-shadow: 0 0 50px rgba(0,0,0,0.8);
+            transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        /* As 4 Variações Solicitadas */
+        .card-wrapper.pc-full { width: 100vw; height: 100vh; }
+        .card-wrapper.story    { height: 95vh; aspect-ratio: 9/16; }
+        .card-wrapper.feed     { height: 90vh; aspect-ratio: 4/5; }
+        .card-wrapper.square   { height: 85vh; aspect-ratio: 1/1; }
+
+        /* =========================================
+           FUNDO: ESTÁDIO ESCURO + GRAMADO
+        ========================================= */
+        .background {
+            position: absolute;
+            inset: 0;
+            background: 
+                linear-gradient(180deg, #06080a 0%, rgba(6,8,10,0.8) 35%, transparent 65%),
+                url('https://images.unsplash.com/photo-1556056504-5c7696c4c28d?q=80&w=1920') center bottom / cover;
+            z-index: 1;
+        }
+
+        /* Detalhes de Bolinhas Originais (Em SVG embutido para perfeição) */
+        .dots-arrow {
+            position: absolute; top: 4%; left: 4%; width: 10%; height: 15%; min-width: 50px; min-height: 80px; z-index: 2; opacity: 0.8;
+            background-image: url('data:image/svg+xml;utf8,<svg width="60" height="100" viewBox="0 0 60 100" fill="white" xmlns="http://www.w3.org/2000/svg"><circle cx="30" cy="10" r="2.5"/><circle cx="20" cy="20" r="2.5"/><circle cx="40" cy="20" r="2.5"/><circle cx="10" cy="30" r="2.5"/><circle cx="50" cy="30" r="2.5"/><circle cx="30" cy="40" r="2.5"/><circle cx="20" cy="50" r="2.5"/><circle cx="40" cy="50" r="2.5"/><circle cx="10" cy="60" r="2.5"/><circle cx="50" cy="60" r="2.5"/><circle cx="30" cy="70" r="2.5"/><circle cx="20" cy="80" r="2.5"/><circle cx="40" cy="80" r="2.5"/><circle cx="10" cy="90" r="2.5"/><circle cx="50" cy="90" r="2.5"/></svg>');
+            background-repeat: no-repeat; background-size: contain;
+        }
+        .dots-grid {
+            position: absolute; bottom: 5%; right: 0; width: 15%; height: 20%; min-width: 60px; min-height: 60px; z-index: 2; opacity: 0.6;
+            background-image: url('data:image/svg+xml;utf8,<svg width="60" height="60" viewBox="0 0 60 60" fill="white" xmlns="http://www.w3.org/2000/svg"><pattern id="dots" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse"><circle cx="2.5" cy="2.5" r="1.5"/></pattern><rect x="0" y="0" width="100%" height="100%" fill="url(#dots)" /></svg>');
+            background-repeat: repeat;
+        }
+
+        /* =========================================
+           BOLA DE FUTEBOL
+        ========================================= */
+        .soccer-ball {
+            position: absolute;
+            right: -8%;
+            top: 25%;
+            width: clamp(150px, 45%, 500px);
+            z-index: 15; /* Fica acima da letra O */
+            filter: drop-shadow(-10px 15px 15px rgba(0,0,0,0.8));
+            transform: rotate(15deg);
+        }
+
+        /* =========================================
+           CONTEÚDO E TIPOGRAFIA
+        ========================================= */
+        .content {
+            position: relative;
+            z-index: 10;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            padding: clamp(20px, 6%, 80px) clamp(10px, 4%, 40px);
+        }
+
+        /* Texturas Grunge Reais e Sombras */
+        .shadow-wrap { filter: drop-shadow(4px 5px 6px rgba(0,0,0,0.9)); }
+        
+        .grunge-text {
+            background-image: url('https://www.transparenttextures.com/patterns/dust.png'); /* Textura de pó/desgaste */
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+        }
+
+        /* Topo */
+        .top-section { text-align: center; margin-top: 2%; width: 100%; display: flex; flex-direction: column; align-items: center; }
+        
+        .subtitle {
+            color: #ffbc00;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            font-size: clamp(12px, 2vmin, 24px);
+            letter-spacing: clamp(4px, 0.8vmin, 12px);
+            margin-bottom: 2%;
+        }
+
+        .title-hoje {
+            font-family: Impact, sans-serif;
+            font-size: clamp(45px, 9vmin, 140px);
+            background-color: #ffbc00; /* Dourado */
+            line-height: 0.9;
+        }
+
+        .title-jogo {
+            font-family: Impact, sans-serif;
+            font-size: clamp(90px, 18vmin, 280px);
+            background-color: #ffffff; /* Branco */
+            line-height: 0.8;
+            letter-spacing: clamp(-1px, -0.3vmin, -3px);
+            position: relative;
+            z-index: 10;
+        }
+
+        /* =========================================
+           SEÇÃO VERSUS (OS TIMES E O X)
+        ========================================= */
+        .versus-section {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            max-width: 800px;
+            margin: auto 0;
+            z-index: 5;
+        }
+
+        .team-box {
+            background-color: #e8e8e8;
+            color: #1a1a1a;
+            font-family: Arial, sans-serif;
+            font-weight: 900;
+            font-size: clamp(12px, 2.5vmin, 30px);
+            text-align: center;
+            padding: clamp(10px, 2vmin, 25px) clamp(15px, 4vmin, 50px);
+            border-radius: clamp(10px, 1.5vmin, 20px);
+            width: 42%;
+            line-height: 1.1;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            text-transform: uppercase;
+        }
+        
+        /* Distanciamento central para encaixar o X */
+        .team-box:first-child { margin-right: 4%; }
+        .team-box:last-child { margin-left: 4%; }
+
+        .vs-circle {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: clamp(45px, 8vmin, 100px);
+            height: clamp(45px, 8vmin, 100px);
+            background: linear-gradient(135deg, #ffd32c, #d9a000);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+            z-index: 10;
+        }
+        
+        .vs-x {
+            color: #fff;
+            font-family: Arial, sans-serif;
+            font-weight: 900;
+            font-size: clamp(24px, 4.5vmin, 60px);
+            text-shadow: 2px 3px 5px rgba(0,0,0,0.4);
+        }
+
+        /* =========================================
+           RODAPÉ (HORÁRIO E LOCAL)
+        ========================================= */
+        .bottom-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 2%;
+        }
+
+        .time-text {
+            font-family: Impact, sans-serif;
+            font-size: clamp(55px, 11vmin, 170px);
+            background-color: #ffffff;
+            line-height: 1;
+            margin-bottom: clamp(10px, 1.5vmin, 20px);
+        }
+
+        .location-box {
+            background-color: #0b0b0b;
+            padding: clamp(6px, 1.2vmin, 15px) clamp(20px, 4vmin, 60px);
+            transform: skewX(-15deg); /* Caixa Inclinada */
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
+        }
+
+        .location-text {
+            color: #fff;
+            font-family: Arial, sans-serif;
+            font-style: italic;
+            font-weight: 900;
+            font-size: clamp(14px, 2.5vmin, 35px);
+            transform: skewX(15deg); /* Desfaz a inclinação só na letra */
+            letter-spacing: clamp(1px, 0.2vmin, 3px);
+            text-transform: uppercase;
+        }
+
+    </style>
 </head>
 <body>
 
-    <div class="card-torcida">
+
+
+    <div id="artboard" class="card-wrapper pc-full">
         
-        <div class="bg-top"></div>
-        <div class="bg-bottom"></div>
-
-        <div class="dots dot-arrow-tl"></div>
-        <div class="dots dot-arrow-br"></div>
-
+        <div class="background"></div>
+        <div class="dots-arrow"></div>
+        <div class="dots-grid"></div>
+        
+        
         <div class="content">
             
-            <p class="subtitle">VENHA TORCER!</p>
-
-            <div class="main-title">
-                <h2>HOJE TEM</h2>
-                <h1>JOGO</h1>
-            </div>
-
-            <img src="https://cdn-icons-png.flaticon.com/512/53/53283.png" alt="Bola na rede" class="soccer-ball">
-
-            <div class="matchup-container">
-                <div class="team-pill">
-                    CLUBE<br>FAUSTINO
+            <div class="top-section">
+                <div class="subtitle">VENHA TORCER!</div>
+                
+                <div class="shadow-wrap">
+                    <div class="title-hoje grunge-text">HOJE TEM</div>
                 </div>
                 
-                <div class="vs-circle">X</div>
-                
-                <div class="team-pill">
-                    CLUBE<br>BORCELLE
+                <div class="shadow-wrap" style="z-index: 10;">
+                    <div class="title-jogo grunge-text">JOGO</div>
                 </div>
             </div>
 
-            <div class="footer-info">
-                <h3 class="time">ÀS 20H</h3>
-                <div class="location-box">NO CLUBE FAUSTINO</div>
+            <div class="versus-section">
+                <div class="team-box">CLUBE<br>FAUSTINO</div>
+                <div class="vs-circle">
+                    <span class="vs-x">X</span>
+                </div>
+                <div class="team-box">CLUBE<br>BORCELLE</div>
+            </div>
+
+            <div class="bottom-section">
+                <div class="shadow-wrap">
+                    <div class="time-text grunge-text">ÀS 20H</div>
+                </div>
+                
+                <div class="location-box">
+                    <div class="location-text">NO CLUBE FAUSTINO</div>
+                </div>
             </div>
 
         </div>
     </div>
+
+    <script>
+        function changeFormat(formatClass) {
+            const artboard = document.getElementById('artboard');
+            artboard.className = 'card-wrapper ' + formatClass;
+        }
+    </script>
 
 </body>
 </html>
