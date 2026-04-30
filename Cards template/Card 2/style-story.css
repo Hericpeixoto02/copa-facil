@@ -89,35 +89,65 @@ body {
 }
 
 /* =========================================
-   IMAGEM CENTRAL COM PAPEL RASGADO
+   EFEITO RASGADO COM MÁSCARA (COR ALTERÁVEL)
 ========================================= */
+
 .action-photo-wrapper {
+    position: relative;
     width: 100%;
-    margin: 42px 0; /* 15px * 2.8 */
-    /* Sombra branca do papel rasgado ajustada */
-    filter: drop-shadow(0px 17px 0px #ffffff) drop-shadow(0px -17px 0px #ffffff);
+    margin: 42px 0;
+    
+    /* VARIÁVEL DE COR: Mude a cor da borda inteira aqui! */
+    --cor-da-borda: #fff; 
 }
 
-.action-photo {
-    width: 100%;
-    height: 560px; /* 200px * 2.8 */
-    /* O clip-path usa % por isso se mantém estável, mas a altura fixa foi escalada */
-    clip-path: polygon(
-        0% -5%, 1% -1%, 19% 4%, 13% 2%, 23% 3%, 34% 5%, 43% 4%, 35% 4%, 52% 3%, 61% 3%, 
-        62% 2%, 79% 0%, 92% 19%, 79% 4%, 65% 2%, 94% 3%, 108% 10%, 107% 16%, 104% 5%, 100% 1%, 
-        107% 105%, 103% 99%, 89% 94%, 83% 98%, 81% 95%, 67% 97%, 76% 96%, 64% 99%, 53% 94%, 
-        60% 97%, 0% 108%, 45% 104%, 31% 92%, 28% 87%, 27% 86%, 49% 110%, 28% 102%, 23% 112%, -13% 103%
-    );
+.action-photo-wrapper{
+    filter: none !important;
 }
 
 .photo-bg {
     width: 100%;
-    height: 100%;
+    height: 560px;
     background-image: url('img/175917164068dad438ace89_1759171640_3x2_md.jpg'); 
     background-size: cover;
     background-position: center;
 }
 
+/* Configuração base para os rasgos */
+.rasgo {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Grossura do rasgo - ajuste conforme seu PNG */
+    z-index: 10;
+    
+    /* A COR QUE VOCÊ QUERIA ALTERAR FICA AQUI! */
+    background-color: var(--cor-da-borda); 
+
+    /* Configurações da Máscara */
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+}
+
+/* Máscara do Topo */
+.rasgo-topo {
+    top: -160px; /* Cobre bem a quina da foto */
+    /* Coloque o caminho da sua imagem PNG de rasgo aqui */
+    -webkit-mask-image: url('img/png-clipart-paper-torn-thumbnail-removebg-preview.png');
+    mask-image: url('img/png-clipart-paper-torn-thumbnail-removebg-preview.png');
+}
+
+/* Máscara da Base */
+.rasgo-base {
+    bottom: -151px;
+    -webkit-mask-image: url('img/png-clipart-paper-torn-thumbnail-removebg-preview.png');
+    mask-image: url('img/png-clipart-paper-torn-thumbnail-removebg-preview.png');
+    
+    /* Gira a mesma máscara de cabeça para baixo para a base */
+    transform: rotate(180deg); 
+}
 /* =========================================
    INFORMAÇÕES (HORÁRIO E FASE)
 ========================================= */
@@ -170,19 +200,27 @@ body {
 }
 .vs {
     font-size: 98px; /* 35px * 2.8 */
-    font-weight: 900;
-    font-style: italic;
+    font-weight: 400 !important;
     margin-top: -56px;
+    font-family: 'edo';
+    src: url('fontes/edo.woff');
 }
 
+
+/* Importação das fontes */
+@font-face {
+    font-family: 'Edo';
+    src: url('fontes/edosz.ttf');
+}
 /* =========================================
    RODAPÉ
 ========================================= */
 .footer p {
-    font-size: 25px; /* 9px * 2.8 */
-    font-weight: 800;
+    font-size: 17px; /* 9px * 2.8 */
+    font-weight: 600 !important;
     letter-spacing: 6px;
     margin-bottom: 28px;
+    margin-top: 159px;
 }
 
 /* =========================================
