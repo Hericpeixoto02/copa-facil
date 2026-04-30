@@ -3,7 +3,7 @@
    ============================================================ */
 :root {
     --largura: 1008px;
-    altura: 1350px; 
+    altura: 1080px; 
     
 }
 
@@ -27,22 +27,13 @@ body {
     width: var(--largura);
     height: var(--altura);
     /* Fundo vermelho escuro com gradiente */
-    
+    background: radial-gradient(circle at center, #b90e15 0%, #7a0306 100%);
     position: relative;
     overflow: hidden;
     color: white;
     text-align: center;
     box-shadow: 0 30px 80px rgba(0,0,0,0.6);
-    /* Fundo com textura/ruído intensificado + o seu gradiente original */
-    background: 
-        /* Repare no opacity="0.4" e no baseFrequency="0.65" no final do SVG */
-        url('data:image/svg+xml;utf8,%3Csvg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cfilter id="noiseFilter"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="100%25" height="100%25" filter="url(%23noiseFilter)" opacity="0.4"/%3E%3C/svg%3E'),
-        radial-gradient(circle at center, #b90e15 0%, #7a0306 100%) !important;
-        
-    /* O "multiply" escurece as partes da textura sobre o vermelho, marcando bem o fundo */
-    background-blend-mode: multiply !important;
 }
-
 
 /* Envolve o conteúdo */
 .content-wrapper {
@@ -180,7 +171,7 @@ body {
 .vs {
     font-size: 98px; /* 35px * 2.8 */
     font-weight: 900;
-   
+    
     margin-top: -56px;
 }
 
